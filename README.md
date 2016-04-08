@@ -1,6 +1,6 @@
-# ShiftOS C#
+# ShiftOS
 
-ShiftOS C# is the official C# rewrite of the original ShiftOS 0.0.9. It is led by Michael VanOverbeek and developed by the community.
+Welcome to the official C# rewrite of the original ShiftOS 0.0.9. It is led by Michael VanOverbeek and developed by the community.
 
 ShiftOS C# is licensed under the GNU General Public License 3.0. Before making any changes, I cannot stress this enough - PLEASE read the license document found in the root of the project.
 
