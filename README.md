@@ -4,6 +4,10 @@ Welcome to the official C# rewrite of the original ShiftOS 0.0.9. It is led by M
 
 ShiftOS C# is licensed under the GNU General Public License 3.0. Before making any changes, I cannot stress this enough - PLEASE read the license document found in the root of the project.
 
+## Code Documentation
+
+Most of the code you'll be using in ShiftOS is documented and Visual Studio will tell you what it all means.
+
 ## How to contribute
 
 You can contribute by forking the source code to your own repo, and pulling it down to your computer using a Git client. We recommend GitHub for Desktop. You can also use Atlassian SourceTree, or any other Git clients. It's up to you.

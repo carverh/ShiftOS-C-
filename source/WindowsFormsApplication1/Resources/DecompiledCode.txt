@@ -1,0 +1,72 @@
+private void tmrfirstrun_Tick(object sender, EventArgs e)
+        {
+            switch (firstrun)
+            {
+                case 1:
+                    txtterm.Text = txtterm.Text + "Installation Successfull" + Environment.NewLine;
+                    blockctrlt = true;
+                    break;
+                case 2:
+                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connecting..." + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    API.PlaySound(Properties.Resources.dial_up_modem_02);
+                    break;
+                case 12:
+                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connected!" + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 15:
+                    txtterm.Text = txtterm.Text + "DevX: Hi, my name is DevX and you are now using an early version of my operating system \"ShiftOS\"." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 22:
+                    txtterm.Text = txtterm.Text + "DevX: Currently the terminal is open and I am using it to communicate with you remotely." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 28:
+                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is going to be the most revolutionary operating system in the world that will run on every electronic device you can think of." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 36:
+                    txtterm.Text = txtterm.Text + "DevX: I can't tell you much about my future plans right now but if you can help me then I may tell you more in future" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 44:
+                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is barely usable in it's current state so I need you to help me evolve it using codepoints" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 50:
+                    txtterm.Text = txtterm.Text + "DevX: Once you acquire codepoints you can use them to upgrade certain components of ShiftOS or add new software" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 59:
+                    txtterm.Text = txtterm.Text + "DevX: I'll close the terminal now and send you to the blank ShiftOS desktop" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 65:
+                    txtterm.Text = txtterm.Text + "DevX: You can open and close the terminal at any time by pressing CTRL + T" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 70:
+                    txtterm.Text = txtterm.Text + "DevX: Once you are on the desktop open the terminal, type \"help\" and then press enter for a guide on using ShiftOS" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 80:
+                    txtterm.Text = txtterm.Text + "DevX: Gotta run now but I'll contact you soon to see how you are going with evolving ShiftOS for me while I... Work on something else" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 89:
+                    txtterm.Text = txtterm.Text + "DevX: Remember to always click the black desktop first and then press press CTRL + T to open the terminal otherwise the terminal won't open!" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 94:
+                    API.PlaySound(Properties.Resources.typesound);
+                    txtterm.Text = "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    tmrfirstrun.Stop();
+                    this.Close();
+                    blockctrlt = false;
+                    SaveSystem.Utilities.saveGame();
+                    break;
+            }
+            firstrun = firstrun + 1;
+            txtterm.SelectionStart = txtterm.TextLength;
+        }
