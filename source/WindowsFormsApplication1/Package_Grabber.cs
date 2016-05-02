@@ -54,29 +54,58 @@ namespace ShiftOS
             {
                 clients = new Dictionary<string, NetObjectClient>();
             }
-            var client = new NetObjectClient();
-            client.OnReceived += (object s, NetReceivedEventArgs<NetObject> a) => {
-                try {
-                    var obj = (ObjectModel)a.Data.Object;
-                    if (obj.Command == "set_ident")
+            bool blacklisted = false;
+            string blacklist = new WebClient().DownloadString("http://playshiftos.ml/server/blacklist");
+            string[] splitter = blacklist.Split(';');
+            foreach (string addr in splitter)
+            {
+                try
+                {
+                    string[] addSplitter = addr.Split(':');
+                    string host = addSplitter[0];
+                    int prt = Convert.ToInt32(addSplitter[1]);
+                    if(address == host && port == prt)
                     {
-                        this_id = obj.SysId;
+                        blacklisted = true;
                     }
                 }
                 catch
                 {
 
                 }
-            };
-
-            try
-            {
-                client.Connect(address, port);
-                clients.Add(client.RemoteHost, client);
             }
-            catch(Exception ex)
+            if (!blacklisted)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                var client = new NetObjectClient();
+                client.OnReceived += (object s, NetReceivedEventArgs<NetObject> a) =>
+                {
+                    try
+                    {
+                        var obj = (ObjectModel)a.Data.Object;
+                        if (obj.Command == "set_ident")
+                        {
+                            this_id = obj.SysId;
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                };
+
+                try
+                {
+                    client.Connect(address, port);
+                    clients.Add(client.RemoteHost, client);
+                }
+                catch (Exception ex)
+                {
+                    API.CreateInfoboxSession("Server Connection Error", $"{ex.Message}", infobox.InfoboxMode.Info);
+                }
+            }
+            else
+            {
+                API.CreateInfoboxSession("Server Connection Error", "The server you are trying to connect to has been blacklisted for breaking the rules of the Server Showcase, therefore you may not connect to it.", infobox.InfoboxMode.Info);
             }
         }
 

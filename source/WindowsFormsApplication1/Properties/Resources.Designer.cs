@@ -1446,16 +1446,6 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Linux_Mint_7 {
-            get {
-                object obj = ResourceManager.GetObject("Linux_Mint_7", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap loadbutton {
@@ -1492,16 +1482,6 @@ namespace ShiftOS.Properties {
             get {
                 object obj = ResourceManager.GetObject("minimatchlabyrinthpreview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NetSockets {
-            get {
-                object obj = ResourceManager.GetObject("NetSockets", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

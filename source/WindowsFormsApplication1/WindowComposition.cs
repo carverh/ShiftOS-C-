@@ -346,26 +346,31 @@ namespace ShiftOS
             {
             
                 case WindowDragEffect.Shake:
-                    var rnd = new Random();
-                    int xOffset = 0;
-                    int yOffset = 0;
-
-                    xOffset = rnd.Next(API.CurrentSkin.ShakeMinOffset, API.CurrentSkin.ShakeMaxOffset);
-                    yOffset = rnd.Next(API.CurrentSkin.ShakeMinOffset, API.CurrentSkin.ShakeMaxOffset);
-                    int leftright = rnd.Next(0, 1);
-                    if (API.Upgrades["fancyeffects"] == true)
-                    {
-                        form.Left += MouseX * xOffset;
-                        form.Top += MouseY * yOffset;
-                    }
-                    else
-                    {
-                        form.Left += MouseX;
-                        form.Top += MouseY;
-                    }
-                   
+                    Shake(form, MouseX, MouseY);
                     break;
             }
+        }
+
+        //Copyright - Adonis S. Deliannis
+        public static void Shake(Form form, int mouseX, int mouseY)
+        {
+            Point mouse = form.PointToScreen(new Point(mouseX, mouseY));
+            int xDist = mouse.X - form.Location.X;
+            int yDist = mouse.Y - form. Location.Y;
+            int X = xDist;
+            int Y = yDist;
+            Random r = new Random();
+            int JiggleCount = 0;
+            int Z = 15;
+
+            while (JiggleCount < 1000)
+            {
+                form.Location = new Point(r.Next(X - Z, X + Z), r.Next(Y - Z, Y + Z));
+                JiggleCount++;
+            }
+
+            JiggleCount = 0;
+            form.Location = new Point(X, Y);
         }
     }
 

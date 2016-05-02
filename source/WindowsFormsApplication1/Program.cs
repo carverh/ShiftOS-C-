@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO.Compression;
 using System.ComponentModel;
+using System.Threading;
 
 namespace ShiftOS
 {
@@ -22,7 +23,26 @@ namespace ShiftOS
             Application.SetCompatibleTextRenderingDefault(false);
             //Extract all dependencies before starting the engine.
             ExtractDependencies();
-            Package_Grabber.ConnectToServer("shiftos.cloudapp.net", 4433);
+            var poolThread = new Thread(new ThreadStart(new Action(() => {
+                //Download ShiftOS server startup-pool
+                string pool = new WebClient().DownloadString("http://playshiftos.ml/server/startup_pool");
+                string[] splitter = pool.Split(';');
+                foreach(string address in splitter)
+                {
+                    try
+                    {
+                        string[] addSplitter = address.Split(':');
+                        string host = addSplitter[0];
+                        int port = Convert.ToInt32(addSplitter[1]);
+                        Package_Grabber.ConnectToServer(host, port);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            })));
+            poolThread.Start();
             //Start the Windows Forms backend
             Paths.RegisterPaths(); //Sets ShiftOS path variables based on the current OS.
             SaveSystem.Utilities.CheckForOlderSaves(); //Backs up C:\ShiftOS on Windows systems if it exists and doesn't contain a _engineInfo.txt file telling ShiftOS what engine created it.
@@ -87,10 +107,6 @@ namespace ShiftOS
         {
             //Wow. This'll make it easy for people...
             string path = Directory.GetParent(Application.ExecutablePath).FullName;
-            if(!File.Exists(path + OSInfo.DirectorySeparator + "NetSockets.dll"))
-            {
-                File.WriteAllBytes(path + OSInfo.DirectorySeparator + "NetSockets.dll", Properties.Resources.NetSockets);
-            }
             string temppath = path + OSInfo.DirectorySeparator + "temp";
             string zippath = path + OSInfo.DirectorySeparator + "depend.zip";
             var wc = new WebClient();
