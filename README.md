@@ -31,3 +31,7 @@ You can commit changes to your fork, but to have them in the main project, creat
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+## Where's Michael?
+
+I'm taking a break, working on some other projects. Check 'em out if you want!
