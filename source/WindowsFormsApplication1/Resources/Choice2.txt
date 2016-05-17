@@ -1,0 +1,8 @@
+{
+	"Hey! It's the user! So, you ready to start destroying DevX?":"???",
+	"Alright, well there's quite a few things you'll need to do.":"???",
+	"You may realize that ShiftOS is quite locked down. This is to prevent anything bad from happening.":"???",
+	"However, in your Terminal, you should be able to run 'quests' to view all the tasks we need to accomplish.":"???",
+	"You'll also see a window near the App Launcher, I will use it to talk to you as we do things.":"???",
+	"Well. Let's get started.":"???"
+}

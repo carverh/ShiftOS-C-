@@ -102,7 +102,10 @@ namespace ShiftOS
                     btnok_Click(s, (EventArgs)a);
                 }
             };
-            API.PlaySound(Properties.Resources.infobox);
+            if (API.InfoboxesPlaySounds)
+            {
+                API.PlaySound(Properties.Resources.infobox);
+            }
         }
 
         

@@ -85,6 +85,19 @@ namespace ShiftOS
         /// </summary>
         public static bool DeveloperMode = true;
 
+        /// <summary>
+        /// If this is true, only certain applications will open and only
+        /// certain features will work.
+        /// 
+        /// This is useful for story plots like the End Game where you don't
+        /// want the user being distracted by novelty features when they should
+        /// be focusing on what's happening.
+        /// 
+        /// Think of it like the opposite of what Developer Mode would do.
+        /// </summary>
+        public static bool LimitedMode = false;
+
+        public static bool InfoboxesPlaySounds = true;
 
         public static List<Process> RunningModProcesses = new List<Process>();
         public static Dictionary<string, string> CommandAliases = new Dictionary<string, string>();
@@ -284,126 +297,134 @@ namespace ShiftOS
         /// <param name="modSAA">File to run.</param>
         public static void LaunchMod(string modSAA)
         {
-            if (Upgrades["shiftnet"] == true)
+            if (!LimitedMode)
             {
-                if (File.Exists(modSAA))
+                if (Upgrades["shiftnet"] == true)
                 {
-                    if (File.ReadAllText(modSAA) == HiddenAPMCommand)
+                    if (File.Exists(modSAA))
                     {
-                        CreateForm(new Appscape(), "Appscape Package Manager", Properties.Resources.iconAppscape);
-                    }
-                    else if(File.ReadAllText(modSAA) == HiddenDecryptorCommand)
-                    {
-                        CreateForm(new ShiftnetDecryptor(), "Shiftnet Decryptor", Properties.Resources.iconShiftnet);
-                    }
-                    else if(File.ReadAllText(modSAA) == HiddenBDiggerCommand)
-                    {
-                        CreateForm(new BitnoteDigger(), "Bitnote Digger", Properties.Resources.iconBitnoteDigger);
-                    }
-                    else if(File.ReadAllText(modSAA) == HiddenBWalletCommand)
-                    {
-                        CreateForm(new BitnoteWallet(), "Bitnote Wallet", Properties.Resources.iconBitnoteWallet);
-                    }
-                    else if (File.ReadAllText(modSAA) == HiddenShiftnetCommand)
-                    {
-                        CreateForm(new Shiftnet(), "Shiftnet", Properties.Resources.iconShiftnet);
-                    }
-                    else if (File.ReadAllText(modSAA) == HiddenBTNConvertCommand)
-                    {
-                        CreateForm(new BitnoteConverter(), "Bitnote Converter", Properties.Resources.iconBitnoteWallet);
-                    }
-                    else if (File.ReadAllText(modSAA) == HiddenDodgeCommand)
-                    {
-                        CreateForm(new Dodge(), "Dodge", Properties.Resources.iconDodge);
-                    }
-                    else if (File.ReadAllText(modSAA) == HiddenLabyrinthCommand)
-                    {
-                        CreateForm(new Labyrinth(), "Labyrinth", null);
-                    }
-                    else if (File.ReadAllText(modSAA) == HiddenQuickChatCommand)
-                    {
-                        CreateForm(new QuickChat(), "QuickChat", null);
-                    }
-                    else {
-                        try
+                        if (File.ReadAllText(modSAA) == HiddenAPMCommand)
                         {
-                            ExtractFile(modSAA, Paths.Mod_Temp, true);
-                            var l = new LuaInterpreter(Paths.Mod_Temp + "main.lua");
+                            CreateForm(new Appscape(), "Appscape Package Manager", Properties.Resources.iconAppscape);
                         }
-                        catch(Exception ex)
+                        else if (File.ReadAllText(modSAA) == HiddenDecryptorCommand)
                         {
-                            LogException("Error launching mod file (.saa): " + ex.Message, false);
-                            CreateInfoboxSession("Error", "Could not launch the .saa file you specified. It is unsupported by this version of ShiftOS.", infobox.InfoboxMode.Info);
+                            CreateForm(new ShiftnetDecryptor(), "Shiftnet Decryptor", Properties.Resources.iconShiftnet);
                         }
-                    }
-                    var story_rnd = new Random();
-                    int story_chance = story_rnd.Next(0, 100);
-                    switch (story_chance)
-                    {
-                        case 4:
-                            if (API.Upgrades["otherplayerstory"] == false)
+                        else if (File.ReadAllText(modSAA) == HiddenBDiggerCommand)
+                        {
+                            CreateForm(new BitnoteDigger(), "Bitnote Digger", Properties.Resources.iconBitnoteDigger);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenBWalletCommand)
+                        {
+                            CreateForm(new BitnoteWallet(), "Bitnote Wallet", Properties.Resources.iconBitnoteWallet);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenShiftnetCommand)
+                        {
+                            CreateForm(new Shiftnet(), "Shiftnet", Properties.Resources.iconShiftnet);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenBTNConvertCommand)
+                        {
+                            CreateForm(new BitnoteConverter(), "Bitnote Converter", Properties.Resources.iconBitnoteWallet);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenDodgeCommand)
+                        {
+                            CreateForm(new Dodge(), "Dodge", Properties.Resources.iconDodge);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenLabyrinthCommand)
+                        {
+                            CreateForm(new Labyrinth(), "Labyrinth", null);
+                        }
+                        else if (File.ReadAllText(modSAA) == HiddenQuickChatCommand)
+                        {
+                            CreateForm(new QuickChat(), "QuickChat", null);
+                        }
+                        else
+                        {
+                            try
                             {
-                                var t = new Terminal();
-                                API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                t.StartOtherPlayerStory();
+                                ExtractFile(modSAA, Paths.Mod_Temp, true);
+                                var l = new LuaInterpreter(Paths.Mod_Temp + "main.lua");
                             }
-                            break;
-                        case 25:
-                            if (API.Upgrades["devxfurious"] == false)
+                            catch (Exception ex)
                             {
-                                var t = new Terminal();
-                                API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                t.StartDevXFuriousStory();
+                                LogException("Error launching mod file (.saa): " + ex.Message, false);
+                                CreateInfoboxSession("Error", "Could not launch the .saa file you specified. It is unsupported by this version of ShiftOS.", infobox.InfoboxMode.Info);
                             }
-                            break;
-                        case 30:
-                            if (API.Upgrades["aidennirh"] == false)
-                            {
-                                var t = new Terminal();
-                                API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                t.StartAidenNirhStory();
-                            }
-                            break;
-                        case 75:
-                            if (API.Upgrades["hacker101"] == false)
-                            {
-                                var t = new Terminal();
-                                API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                t.StartHacker101Story();
-                            }
-                            break;
-                        //case 1000:
-                        //    t.StartJonathanLadouceurStory();
-                        //    break;
-                        //Do you honestly think HE would appear in ShiftOS? Yugh. NO.
-                        default:
-                            if (API.Upgrades["devxfurious"] == true)
-                            {
-                                if (API.Upgrades["otherplayerrescue"] == false)
+                        }
+                        var story_rnd = new Random();
+                        int story_chance = story_rnd.Next(0, 100);
+                        switch (story_chance)
+                        {
+                            case 4:
+                                if (API.Upgrades["otherplayerstory"] == false)
                                 {
                                     var t = new Terminal();
-                                    t.StartOtherPlayerSysFix();
-                                    CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    t.StartOtherPlayerStory();
                                 }
-                                else
+                                break;
+                            case 25:
+                                if (API.Upgrades["devxfurious"] == false)
                                 {
-                                    if(API.Upgrades["midgamebridge"] == false)
+                                    var t = new Terminal();
+                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    t.StartDevXFuriousStory();
+                                }
+                                break;
+                            case 30:
+                                if (API.Upgrades["aidennirh"] == false)
+                                {
+                                    var t = new Terminal();
+                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    t.StartAidenNirhStory();
+                                }
+                                break;
+                            case 75:
+                                if (API.Upgrades["hacker101"] == false)
+                                {
+                                    var t = new Terminal();
+                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    t.StartHacker101Story();
+                                }
+                                break;
+                            //case 1000:
+                            //    t.StartJonathanLadouceurStory();
+                            //    break;
+                            //Do you honestly think HE would appear in ShiftOS? Yugh. NO.
+                            default:
+                                if (API.Upgrades["devxfurious"] == true)
+                                {
+                                    if (API.Upgrades["otherplayerrescue"] == false)
                                     {
-                                        /*var t = new Terminal();
-                                        t.StartBridgeToMidGame();
-                                        CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);*/
+                                        var t = new Terminal();
+                                        t.StartOtherPlayerSysFix();
+                                        CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    }
+                                    else
+                                    {
+                                        if (API.Upgrades["midgamebridge"] == false)
+                                        {
+                                            /*var t = new Terminal();
+                                            t.StartBridgeToMidGame();
+                                            CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);*/
 
+                                        }
                                     }
                                 }
-                            }
-                            break;
+                                break;
+                        }
+
                     }
-                    
+                    else
+                    {
+                        throw new ModNotFoundException();
+                    }
                 }
-                else
-                {
-                    throw new ModNotFoundException();
-                }
+            }
+            else
+            {
+                CreateInfoboxSession("Limited mode", "ShiftOS is in limited mode and cannot perform this action. Please complete the current Mission first.", infobox.InfoboxMode.Info);
             }
         }
         
@@ -661,22 +682,37 @@ namespace ShiftOS
             Skinning.Utilities.LoadEmbeddedNamePack();
             //System Applications
             AppLauncherItems.Clear();
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ArtpadName, GetIcon("Artpad"), "open_program('artpad')", Upgrades["alartpad"]));
+            if (!LimitedMode)
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ArtpadName, GetIcon("Artpad"), "open_program('artpad')", Upgrades["alartpad"]));
             AppLauncherItems.Add(new ApplauncherItem(LoadedNames.FileSkimmerName, GetIcon("FileSkimmer"), "open_program('file_skimmer')", Upgrades["alfileskimmer"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.SkinLoaderName, GetIcon("SkinLoader"), "open_program('skinloader')", Upgrades["skinning"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShiftoriumName, GetIcon("Shiftorium"), "open_program('shiftorium')", Upgrades["alshiftorium"]));
+            if (!LimitedMode)
+            {
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.SkinLoaderName, GetIcon("SkinLoader"), "open_program('skinloader')", Upgrades["skinning"]));
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShiftoriumName, GetIcon("Shiftorium"), "open_program('shiftorium')", Upgrades["alshiftorium"]));
+            }
             AppLauncherItems.Add(new ApplauncherItem("HoloChat", GetIcon("HoloChat"), "open_program('holochat')", API.Upgrades["holochat"]));
-            AppLauncherItems.Add(new ApplauncherItem("Icon Manager", GetIcon("IconManager"), "open_program('iconmanager')", Upgrades["iconmanager"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShifterName, GetIcon("Shifter"), "open_program('shifter')", Upgrades["alshifter"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.NameChangerName, GetIcon("NameChanger"), "open_program('name_changer')", Upgrades["namechanger"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.PongName, GetIcon("Pong"), "open_program('pong')", Upgrades["alpong"]));
+            if (!LimitedMode)
+            {
+                AppLauncherItems.Add(new ApplauncherItem("Icon Manager", GetIcon("IconManager"), "open_program('iconmanager')", Upgrades["iconmanager"]));
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShifterName, GetIcon("Shifter"), "open_program('shifter')", Upgrades["alshifter"]));
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.NameChangerName, GetIcon("NameChanger"), "open_program('name_changer')", Upgrades["namechanger"]));
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.PongName, GetIcon("Pong"), "open_program('pong')", Upgrades["alpong"]));
+            }
+            if(LimitedMode)
+            {
+                AppLauncherItems.Add(new ApplauncherItem("Quest Viewer", GetIcon("QuestViewer"), "open_program('quests')", true));
+            }
             AppLauncherItems.Add(new ApplauncherItem(LoadedNames.TextpadName, GetIcon("TextPad"), "open_program('textpad')", Upgrades["altextpad"]));
             AppLauncherItems.Add(new ApplauncherItem(LoadedNames.TerminalName, GetIcon("Terminal"), "open_terminal()", true));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.KnowledgeInputName, GetIcon("KI"), "open_program('ki')", true));
-            
-            //System Features
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.UnityName, GetIcon("Unity"), "toggle_unity()", Upgrades["alunity"]));
-            AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShutdownName, GetIcon("Shutdown"), "shutdown()", Upgrades["applaunchershutdown"]));
+            if (!LimitedMode)
+            {
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.KnowledgeInputName, GetIcon("KI"), "open_program('ki')", true));
+
+
+                //System Features
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.UnityName, GetIcon("Unity"), "toggle_unity()", Upgrades["alunity"]));
+                AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShutdownName, GetIcon("Shutdown"), "shutdown()", Upgrades["applaunchershutdown"]));
+            }
         }
 
         /// <summary>
@@ -711,6 +747,17 @@ namespace ShiftOS
         {
             Stream str = file;
             SoundPlayer player = new SoundPlayer(str);
+            player.Play();
+        }
+
+        /// <summary>
+        /// Plays a sound from a byte[] array. Useful for MP3s and other formats.
+        /// </summary>
+        /// <param name="file">The byte[] aray</param>
+        public static void PlaySound(byte[] file)
+        {
+            Stream mstr = new MemoryStream(file);
+            SoundPlayer player = new SoundPlayer(mstr);
             player.Play();
         }
 
@@ -831,46 +878,62 @@ namespace ShiftOS
         /// </summary>
         public static void ShutDownShiftOS()
         {
-            //Disconnect from server.
-            foreach(string ip in Package_Grabber.clients.Keys)
+            if (!LimitedMode)
             {
-                Package_Grabber.Disconnect(ip);
-            }
-            //Close all mods.
-            WindowComposition.ShuttingDown = true;
-            if (RunningModProcesses.Count > 0)
-            {
-                foreach (Process mod in RunningModProcesses)
+                //dispose audio clients
+                Audio.DisposeAll();
+                //Disconnect from server.
+                try
                 {
-                    try {
-                        mod.Kill();
-                    }
-                    catch(Exception ex)
+                    foreach (string ip in Package_Grabber.clients.Keys)
                     {
-                        LogException(ex.Message, false);
+                        Package_Grabber.Disconnect(ip);
                     }
                 }
-                SaveSystem.Utilities.saveGame();
-                Application.Exit();
-                
-            }
-            SaveSystem.Utilities.saveGame();
-            //Right before the game closes...
-            try
-            {
-                if (Directory.Exists(Paths.Mod_Temp))
-                    Directory.Delete(Paths.Mod_Temp, true);
-            }
-            catch(Exception ex)
-            {
-                API.LogException(ex.Message, false);
-            }
-            finally
-            {
-                //Alright, ShiftOS! HAVE AT IT!
-                Application.Exit();
-            }
+                catch
+                {
 
+                }
+                //Close all mods.
+                WindowComposition.ShuttingDown = true;
+                if (RunningModProcesses.Count > 0)
+                {
+                    foreach (Process mod in RunningModProcesses)
+                    {
+                        try
+                        {
+                            mod.Kill();
+                        }
+                        catch (Exception ex)
+                        {
+                            LogException(ex.Message, false);
+                        }
+                    }
+                    SaveSystem.Utilities.saveGame();
+                    Application.Exit();
+
+                }
+                SaveSystem.Utilities.saveGame();
+                //Right before the game closes...
+                try
+                {
+                    if (Directory.Exists(Paths.Mod_Temp))
+                        Directory.Delete(Paths.Mod_Temp, true);
+                }
+                catch (Exception ex)
+                {
+                    API.LogException(ex.Message, false);
+                }
+                finally
+                {
+                    //Alright, ShiftOS! HAVE AT IT!
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                CreateInfoboxSession("Limited mode", "ShiftOS is in limited mode and cannot be shut down. Please complete the current mission before shutting down.", infobox.InfoboxMode.Info);
+            }
         }
 
         /// <summary>
@@ -942,125 +1005,136 @@ namespace ShiftOS
         /// <param name="AppIcon">Icon to display on the titlebar.</param>
         public static void CreateForm(Form formToCreate, string AppName, Image AppIcon)
         {
-
-            if (Upgrades["multitasking"] == false && formToCreate.Name != "infobox")
+            if(API.CurrentSession == null)
             {
-                CloseEverything();
+                API.CurrentSession = new ShiftOSDesktop();
             }
-            var bw = new BackgroundWorker();
-            bw.DoWork += (object sen, DoWorkEventArgs eva) =>
+            try
             {
-                WindowComposition.SafeToAddControls = false;
+                if (Upgrades["multitasking"] == false && formToCreate.Name != "infobox")
+                {
+                    CloseEverything();
+                }
+                var bw = new BackgroundWorker();
+                bw.DoWork += (object sen, DoWorkEventArgs eva) =>
+                {
+                    WindowComposition.SafeToAddControls = false;
                 //bugfix: Close any terminal if WindowedTerminal isn't installed.
                 if (Upgrades["windowedterminal"] == false)
-                {
+                    {
+                        API.CurrentSession.Invoke(new Action(() =>
+                        {
+                            foreach (Form frm in OpenPrograms)
+                            {
+                                if (frm.Name.ToLower() == "terminal")
+                                {
+                                    API.CurrentSession.Invoke(new Action(() =>
+                                    {
+                                        frm.Close();
+                                    }));
+                                }
+                            }
+                        }));
+                    }
+                    WindowBorder brdr = new WindowBorder(AppName, AppIcon);
+                    brdr.Name = "api_brdr";
+                    formToCreate.Controls.Add(brdr);
+                    formToCreate.ShowInTaskbar = false;
+                    brdr.Show();
+                    formToCreate.FormBorderStyle = FormBorderStyle.None;
+                    brdr.Dock = DockStyle.Fill;
+                    BordersToUpdate.Add(brdr);
+                    List<Control> duplicates = new List<Control>();
+                    foreach (Control ctrl in formToCreate.Controls)
+                    {
+                        if (ctrl.Name != "api_brdr")
+                        {
+                            ctrl.Hide();
+                            brdr.pgcontents.Controls.Add(ctrl);
+                            duplicates.Add(ctrl);
+                        }
+                    }
+                    foreach (Control ctrl in duplicates)
+                    {
+                        try
+                        {
+                            formToCreate.Controls.Remove(ctrl);
+                            ctrl.Show();
+                        }
+                        catch (Exception ex)
+                        {
+                            API.CurrentSession.Invoke(new Action(() =>
+                            {
+                                ctrl.Show();
+                            }));
+                        }
+                    }
+                    WindowComposition.ShowForm(formToCreate, CurrentSkin.WindowOpenAnimation);
                     API.CurrentSession.Invoke(new Action(() =>
                     {
-                        foreach (Form frm in OpenPrograms)
+                        brdr.justopened = true;
+                        formToCreate.TopMost = true;
+
+                    //Open terminal on CTRL+T press on any form.
+                    formToCreate.KeyDown += (object sender, KeyEventArgs e) =>
                         {
-                            if (frm.Name.ToLower() == "terminal")
+                            if (e.KeyCode == Keys.T && e.Control && formToCreate.Name != "Terminal")
                             {
-                                API.CurrentSession.Invoke(new Action(() =>
-                                {
-                                    frm.Close();
-                                }));
+                                CreateForm(new Terminal(), CurrentSave.TerminalName, Properties.Resources.iconTerminal);
                             }
-                        }
-                    }));
-                }
-                WindowBorder brdr = new WindowBorder(AppName, AppIcon);
-                brdr.Name = "api_brdr";
-                formToCreate.Controls.Add(brdr);
-                formToCreate.ShowInTaskbar = false;
-                brdr.Show();
-                formToCreate.FormBorderStyle = FormBorderStyle.None;
-                brdr.Dock = DockStyle.Fill;
-                BordersToUpdate.Add(brdr);
-                List<Control> duplicates = new List<Control>();
-                foreach (Control ctrl in formToCreate.Controls)
-                {
-                    if (ctrl.Name != "api_brdr")
-                    {
-                        ctrl.Hide();
-                        brdr.pgcontents.Controls.Add(ctrl);
-                        duplicates.Add(ctrl);
-                    }
-                }
-                foreach (Control ctrl in duplicates)
-                {
-                    try {
-                        formToCreate.Controls.Remove(ctrl);
-                        ctrl.Show();
-                    }
-                    catch(Exception ex)
-                    {
-                        API.CurrentSession.Invoke(new Action(() =>
-                        {
-                            ctrl.Show();
-                        }));
-                    }
-                }
-                WindowComposition.ShowForm(formToCreate, CurrentSkin.WindowOpenAnimation);
-                API.CurrentSession.Invoke(new Action(() =>
-                {
-                    brdr.justopened = true;
-                    formToCreate.TopMost = true;
-                
-                //Open terminal on CTRL+T press on any form.
-                formToCreate.KeyDown += (object sender, KeyEventArgs e) =>
-                    {
-                        if (e.KeyCode == Keys.T && e.Control && formToCreate.Name != "Terminal")
-                        {
-                            CreateForm(new Terminal(), CurrentSave.TerminalName, Properties.Resources.iconTerminal);
-                        }
-                        if (formToCreate.Name != "Terminal" || Upgrades["windowedterminal"] == true)
-                        {
+                            if (formToCreate.Name != "Terminal" || Upgrades["windowedterminal"] == true)
+                            {
                             //Movable Windows
                             if (API.Upgrades["movablewindows"] == true)
-                            {
-                                if (e.KeyCode == Keys.A && e.Control)
                                 {
-                                    e.Handled = true;
-                                    formToCreate.Location = new Point(formToCreate.Location.X - 30, formToCreate.Location.Y);
-                                }
-                                if (e.KeyCode == Keys.D && e.Control)
-                                {
-                                    e.Handled = true;
-                                    formToCreate.Location = new Point(formToCreate.Location.X + 30, formToCreate.Location.Y);
-                                }
-                                if (e.KeyCode == Keys.W && e.Control)
-                                {
-                                    e.Handled = true;
-                                    formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y - 30);
-                                }
-                                if (e.KeyCode == Keys.S && e.Control)
-                                {
-                                    e.Handled = true;
-                                    formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y + 30);
+                                    if (e.KeyCode == Keys.A && e.Control)
+                                    {
+                                        e.Handled = true;
+                                        formToCreate.Location = new Point(formToCreate.Location.X - 30, formToCreate.Location.Y);
+                                    }
+                                    if (e.KeyCode == Keys.D && e.Control)
+                                    {
+                                        e.Handled = true;
+                                        formToCreate.Location = new Point(formToCreate.Location.X + 30, formToCreate.Location.Y);
+                                    }
+                                    if (e.KeyCode == Keys.W && e.Control)
+                                    {
+                                        e.Handled = true;
+                                        formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y - 30);
+                                    }
+                                    if (e.KeyCode == Keys.S && e.Control)
+                                    {
+                                        e.Handled = true;
+                                        formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y + 30);
+                                    }
                                 }
                             }
+                        };
+                        formToCreate.TransparencyKey = Skinning.Utilities.globaltransparencycolour;
+                        OpenPrograms.Add(formToCreate);
+                        if (AppName == "Enemy Hacker")
+                        {
+                            API.CurrentSession.Invoke(new Action(() =>
+                            {
+                                formToCreate.Left = Screen.PrimaryScreen.Bounds.Width - formToCreate.Width;
+                            }));
                         }
-                    };
-                formToCreate.TransparencyKey = Skinning.Utilities.globaltransparencycolour;
-                OpenPrograms.Add(formToCreate);
-                    if(AppName == "Enemy Hacker")
-                    {
-                        API.CurrentSession.Invoke(new Action(() =>
+                        else if (AppName == "You")
                         {
-                            formToCreate.Left = Screen.PrimaryScreen.Bounds.Width - formToCreate.Width;
-                        }));
-                    }
-                    else if(AppName == "You")
-                    {
-                        API.CurrentSession.Invoke(new Action(() =>
-                        {
-                            formToCreate.Left = 0;
-                        }));
-                    }
-                }));
-                WindowComposition.SafeToAddControls = true;
-            };
-            bw.RunWorkerAsync();
+                            API.CurrentSession.Invoke(new Action(() =>
+                            {
+                                formToCreate.Left = 0;
+                            }));
+                        }
+                    }));
+                    WindowComposition.SafeToAddControls = true;
+                };
+                bw.RunWorkerAsync();
+            }
+            catch
+            {
+
+            }
         }
 
         /// <summary>
@@ -1639,15 +1713,44 @@ namespace ShiftOS
             bool succeeded = true;
             switch (cmd)
             {
-                case "iconmanager":
-                    if(API.Upgrades["iconmanager"])
+                case "quests":
+                    if(LimitedMode)
                     {
-                        CreateForm(new IconManager(), "Icon Manager", GetIcon("IconManager"));
+                        CreateForm(new FinalMission.QuestViewer(), "Quest Viewer", GetIcon("QuestViewer"));
+                    }
+                    else
+                    {
+                        succeeded = false;
+                    }
+                    break;
+                case "iconmanager":
+                    if (!LimitedMode)
+                    {
+                        if (API.Upgrades["iconmanager"])
+                        {
+                            CreateForm(new IconManager(), "Icon Manager", GetIcon("IconManager"));
+                            
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
+                    }
+                    else
+                    {
+                        succeeded = false;
                     }
                     break;
                 case "knowledge_input":
                 case "ki":
-                    API.CreateForm(new KnowledgeInput(), API.LoadedNames.KnowledgeInputName, GetIcon("KI"));
+                    if (!LimitedMode)
+                    {
+                        API.CreateForm(new KnowledgeInput(), API.LoadedNames.KnowledgeInputName, GetIcon("KI"));
+                    }
+                    else
+                    {
+                        succeeded = false;
+                    }
                     break;
                 case "holochat":
                     if(API.Upgrades["holochat"] == true)
@@ -1661,9 +1764,16 @@ namespace ShiftOS
                     break;
                 case "namechanger":
                 case "name_changer":
-                    if (API.Upgrades["namechanger"] == true)
+                    if (!LimitedMode)
                     {
-                        CreateForm(new NameChanger(), LoadedNames.NameChangerName, GetIcon("NameChanger"));
+                        if (API.Upgrades["namechanger"] == true)
+                        {
+                            CreateForm(new NameChanger(), LoadedNames.NameChangerName, GetIcon("NameChanger"));
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
                     }
                     else
                     {
@@ -1671,9 +1781,16 @@ namespace ShiftOS
                     }
                     break;
                 case "artpad":
-                    if(API.Upgrades["artpad"] == true)
+                    if (!LimitedMode)
                     {
-                        CreateForm(new Artpad(), LoadedNames.ArtpadName, GetIcon("Artpad"));
+                        if (API.Upgrades["artpad"] == true)
+                        {
+                            CreateForm(new Artpad(), LoadedNames.ArtpadName, GetIcon("Artpad"));
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
                     }
                     else
                     {
@@ -1691,9 +1808,16 @@ namespace ShiftOS
                     break;
                 case "skinloader":
                 case "skin_loader":
-                    if(Upgrades["skinning"] == true)
+                    if (!LimitedMode)
                     {
-                        CreateForm(new SkinLoader(), "Skin Loader", GetIcon("SkinLoader"));
+                        if (Upgrades["skinning"] == true)
+                        {
+                            CreateForm(new SkinLoader(), "Skin Loader", GetIcon("SkinLoader"));
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
                     }
                     else
                     {
@@ -1701,26 +1825,36 @@ namespace ShiftOS
                     }
                     break;
                 case "shifter":
-                    if(Upgrades["shifter"] == true)
+                    if (!LimitedMode)
                     {
-                        CreateForm(new Shifter(), "Shifter", GetIcon("Shifter"));
+                        if (Upgrades["shifter"] == true)
+                        {
+                            CreateForm(new Shifter(), "Shifter", GetIcon("Shifter"));
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
                     }
                     else
                     {
                         succeeded = false;
                     }
                     break;
-                /* TEMP-REMOVED: I just can't get it to work.
-                case "jumper":
-                    CreateForm(new Jumper(), "Jumper", null);
-                    break;
-                */
                 case "pong":
-                    if (Upgrades["pong"] == true)
+                    if (!LimitedMode)
                     {
-                        CreateForm(new Pong(), "Pong", GetIcon("Pong"));
+                        if (Upgrades["pong"] == true)
+                        {
+                            CreateForm(new Pong(), "Pong", GetIcon("Pong"));
+                        }
+                        else
+                        {
+                            succeeded = false;
+                        }
                     }
-                    else {
+                    else
+                    {
                         succeeded = false;
                     }
                     break;
@@ -1735,7 +1869,14 @@ namespace ShiftOS
                     }
                     break;
                 case "shiftorium":
-                    CreateForm(new Shiftorium.Frontend(), LoadedNames.ShiftoriumName, GetIcon("Shiftorium"));
+                    if (!LimitedMode)
+                    {
+                        CreateForm(new Shiftorium.Frontend(), LoadedNames.ShiftoriumName, GetIcon("Shiftorium"));
+                    }
+                    else
+                    {
+                        succeeded = false;
+                    }
                     break;
                 default:
                     succeeded = false;

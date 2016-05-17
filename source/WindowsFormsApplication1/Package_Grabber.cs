@@ -100,7 +100,6 @@ namespace ShiftOS
                 }
                 catch (Exception ex)
                 {
-                    API.CreateInfoboxSession("Server Connection Error", $"{ex.Message}", infobox.InfoboxMode.Info);
                 }
             }
             else

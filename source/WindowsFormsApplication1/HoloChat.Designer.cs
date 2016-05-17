@@ -170,6 +170,7 @@
             this.txtchat.Size = new System.Drawing.Size(641, 388);
             this.txtchat.TabIndex = 2;
             this.txtchat.Text = "";
+            this.txtchat.TextChanged += new System.EventHandler(this.txtchat_TextChanged);
             // 
             // txtsend
             // 

@@ -1177,4 +1177,28 @@
   <data name="NoIconFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NoIconFound.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Welcome_to_Chaos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Welcome to Chaos.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Choice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Choice1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Choice2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Choice2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Choice3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Choice3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="You_Passed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\You_Passed.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DevX_Firewall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DevX_Primary.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DevX_PrimaryNet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DevX_PrimaryNet.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DevX_Secondary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DevX_Secondary.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,7 +24,7 @@ namespace ShiftOS
 
         public ChatClient Client = null;
         public Dictionary<string, string> IPs = null;
-
+        
         private void HoloChat_Load(object sender, EventArgs e)
         {
             SetupUI();
@@ -35,85 +36,105 @@ namespace ShiftOS
         /// </summary>
         public void SetupUI()
         {
-            IPs = new Dictionary<string, string>();
-            lbrooms.Items.Clear();
-            foreach (var client in Package_Grabber.clients)
+            if (!API.LimitedMode)
             {
-                if (client.Value.IsConnected)
+                IPs = new Dictionary<string, string>();
+                lbrooms.Items.Clear();
+                foreach (var client in Package_Grabber.clients)
                 {
-                    client.Value.OnReceived += (object s, NetReceivedEventArgs<NetObject> a) =>
+                    if (client.Value.IsConnected)
                     {
-                        try
+                        client.Value.OnReceived += (object s, NetReceivedEventArgs<NetObject> a) =>
                         {
-                            if (!IPs.ContainsKey(client.Key))
+                            try
                             {
-                                var obj = (ObjectModel)a.Data.Object;
-                                if (obj.Command == "name")
+                                if (!IPs.ContainsKey(client.Key))
                                 {
-                                    string name = (string)obj.OptionalObject;
-                                    IPs.Add(client.Key, name);
-                                }
-                            }
-                            else
-                            {
-                                var obj = (ObjectModel)a.Data.Object;
-                                if (obj.Command == "name")
-                                {
-                                    string name = (string)obj.OptionalObject;
-                                    IPs[client.Key] = name;
-                                }
-                            }
-                            this.Invoke(new Action(() =>
-                            {
-                                string r = "";
-                                foreach (string room in lbrooms.Items)
-                                {
-                                    if (room == IPs[client.Key])
+                                    var obj = (ObjectModel)a.Data.Object;
+                                    if (obj.Command == "name")
                                     {
-                                        r = room;
+                                        string name = (string)obj.OptionalObject;
+                                        IPs.Add(client.Key, name);
                                     }
                                 }
-                                if (r == "")
+                                else
                                 {
-                                    lbrooms.Items.Add(IPs[client.Key]);
+                                    var obj = (ObjectModel)a.Data.Object;
+                                    if (obj.Command == "name")
+                                    {
+                                        string name = (string)obj.OptionalObject;
+                                        IPs[client.Key] = name;
+                                    }
                                 }
-                            }));
-                        }
-                        catch
-                        {
+                                this.Invoke(new Action(() =>
+                                {
+                                    string r = "";
+                                    foreach (string room in lbrooms.Items)
+                                    {
+                                        if (room == IPs[client.Key])
+                                        {
+                                            r = room;
+                                        }
+                                    }
+                                    if (r == "")
+                                    {
+                                        lbrooms.Items.Add(IPs[client.Key]);
+                                    }
+                                }));
+                            }
+                            catch
+                            {
 
-                        }
-                    };
-                    Package_Grabber.SendMessage(client.Key, "chat get_name");
+                            }
+                        };
+                        Package_Grabber.SendMessage(client.Key, "chat get_name");
+                    }
                 }
             }
-
+            else
+            {
+                if (FinalMission.EndGameHandler.FakeHoloChatRoom != null)
+                {
+                    lbrooms.Items.Clear();
+                    lbrooms.Items.Add(FinalMission.EndGameHandler.FakeHoloChatRoom.Name);
+                }
+            }
         }
 
         private void btnconnect_Click(object sender, EventArgs e)
         {
             if(lbrooms.SelectedItem != null)
             {
-                string topic = (string)lbrooms.SelectedItem;
-                string ip = "";
-                foreach(var obj in IPs)
+                if (!API.LimitedMode)
                 {
-                    if(obj.Value == topic)
+                    string topic = (string)lbrooms.SelectedItem;
+                    string ip = "";
+                    foreach (var obj in IPs)
                     {
-                        ip = obj.Key;
+                        if (obj.Value == topic)
+                        {
+                            ip = obj.Key;
+                        }
+                    }
+                    if (ip != "")
+                    {
+                        API.CreateInfoboxSession("Choose a Nickname", "Please enter a nick name.", infobox.InfoboxMode.TextEntry);
+                        API.InfoboxSession.FormClosing += (object s, FormClosingEventArgs a) =>
+                        {
+                            var res = API.GetInfoboxResult();
+                            if (res != "fail")
+                            {
+                                SetupClient(ip, res);
+                            }
+                        };
                     }
                 }
-                if(ip != "")
+                else
                 {
-                    API.CreateInfoboxSession("Choose a Nickname", "Please enter a nick name.", infobox.InfoboxMode.TextEntry);
-                    API.InfoboxSession.FormClosing += (object s, FormClosingEventArgs a) =>
+                    if((string)lbrooms.SelectedItem == FinalMission.EndGameHandler.FakeHoloChatRoom.Name)
                     {
-                        var res = API.GetInfoboxResult();
-                        if(res != "fail")
-                        {
-                            SetupClient(ip, res);
-                        }
-                    };
+                        SetupFakeClient(FinalMission.EndGameHandler.FakeHoloChatRoom);
+                    }
                 }
             }
         }
@@ -180,10 +201,53 @@ namespace ShiftOS
 
         }
 
+        public void SetupFakeClient(FakeChatClient fClient)
+        {
+            lbtopic.Text = fClient.Topic;
+            var t = new System.Windows.Forms.Timer();
+            t.Interval = 500;
+            t.Tick += (object s, EventArgs a) =>
+            {
+                //userlist
+                lbusers.Items.Clear();
+                foreach (var user in fClient.OtherCharacters)
+                {
+                    lbusers.Items.Add(user);
+                }
+            };
+            t.Start();
+
+            int m = 0;
+            //message buffer
+            var mb = new System.Windows.Forms.Timer();
+            mb.Tick += (object s, EventArgs a) =>
+            {
+                string message = fClient.Messages.Keys.ElementAt(m);
+                string user = fClient.Messages[message];
+                //show message on textbox
+                txtchat.AppendText(Environment.NewLine + $"<{user}> {message}");
+                if(m < fClient.Messages.Count - 1)
+                {
+                    m += 1;
+                }
+                else
+                {
+                    mb.Stop();
+                    //Completed the objective!
+                    FinalMission.EndGameHandler.GoToNextObjective();
+                }
+            };
+            mb.Interval = 4000;
+            mb.Start();
+            tmrui.Stop();
+            pnlintro.Hide();
+        }
+
         private void txtsend_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
+                e.SuppressKeyPress = true;
                 if (txtsend.Text != "")
                 {
                     if (txtsend.Text.ToLower() == "/disconnect")
@@ -226,6 +290,13 @@ namespace ShiftOS
         {
             SetupUI();
         }
+
+        private void txtchat_TextChanged(object sender, EventArgs e)
+        {
+            txtchat.Select(txtchat.TextLength, 0);
+            txtchat.ScrollToCaret();
+            txtsend.Focus();
+        }
     }
 
     public class ChatClient
@@ -262,6 +333,65 @@ namespace ShiftOS
                         {
                             switch (args[1])
                             {
+                                case "userbanned":
+                                    try
+                                    {
+                                        var usr = (ChatUser)obj.OptionalObject;
+                                        if(usr.Name == nick)
+                                        {
+                                            API.CurrentSession.Invoke(new Action(() =>
+                                            {
+                                                API.CreateInfoboxSession("You're banned.", "You have been banned from this chat.", infobox.InfoboxMode.Info);
+                                                Leave();
+                                            }));
+                                        }
+                                    }
+                                    catch
+                                    {
+
+                                    }
+                                    break;
+                                case "auth_req":
+                                    try
+                                    {
+                                        var usr = (ChatUser)obj.OptionalObject;
+                                        if (usr.Name == nick)
+                                        {
+                                            Thread.Sleep(1000);
+                                            API.CurrentSession.Invoke(new Action(() =>
+                                            {
+                                                API.CreateInfoboxSession("Enter Password", "Please enter your password.", infobox.InfoboxMode.TextEntry);
+                                                API.InfoboxSession.FormClosing += (object sen, FormClosingEventArgs arg) =>
+                                                {
+                                                    var result = API.GetInfoboxResult();
+                                                    AuthenticateWithServer(usr.Name, result);
+                                                };
+                                            }));
+                                        }
+                                    }
+                                    catch
+                                    {
+
+                                    }
+                                    break;
+                                case "auth_fail":
+                                    try
+                                    {
+                                        var usr = (ChatUser)obj.OptionalObject;
+                                        if (usr.Name == nick)
+                                        {
+                                            API.CurrentSession.Invoke(new Action(() =>
+                                            {
+                                                API.CreateInfoboxSession("Error", "You have entered an incorrect password.", infobox.InfoboxMode.Info);
+                                            }));
+                                        }
+                                    }
+                                    catch
+                                    {
+
+                                    }
+
+                                    break;
                                 case "joined":
                                     try
                                     {
@@ -386,6 +516,20 @@ namespace ShiftOS
         #region Methods
 
         /// <summary>
+        /// Authenticates with the server.
+        /// </summary>
+        /// <param name="password">Password to authenticate using.</param>
+        public void AuthenticateWithServer(string nick, string password)
+        {
+            var usr = new ChatUser();
+            usr.Name = nick;
+            var msg = new ChatMessage();
+            msg.Text = password;
+            msg.User = usr;
+            Package_Grabber.SendMessage(IP_Address, "chat authenticate", msg);
+        }
+
+        /// <summary>
         /// Joins the server.
         /// </summary>
         /// <param name="nick">Nickname.</param>
@@ -458,5 +602,13 @@ namespace ShiftOS
         }
 
         #endregion
+    }
+
+    public class FakeChatClient
+    {
+        public string Name { get; set; }
+        public string Topic { get; set; }
+        public List<string> OtherCharacters { get; set; }
+        public Dictionary<string, string> Messages { get; set; }
     }
 }

@@ -498,6 +498,10 @@ namespace ShiftOS
         /// <param name="client">The client to add to.</param>
         public void GenerateNewDevKey(AppscapeClient client)
         {
+            if(client.DevList == null)
+            {
+                client.DevList = new Dictionary<string, AppscapeModder>();
+            }
             var rnd = new Random();
             int key = rnd.Next(1, 99999999);
             var dev = new AppscapeModder();
@@ -741,14 +745,14 @@ namespace ShiftOS
         {
             if(lvnets.SelectedItems.Count > 0)
             {
-                try
-                {
+                //try
+                //{
                     GenerateNewDevKey((AppscapeClient)lvnets.SelectedItems[0].Tag);
-                }
-                catch
+                /*}
+                catch (Exception ex)
                 {
-                    API.CreateInfoboxSession("Error", "An error has occurred trying to process the request.", infobox.InfoboxMode.Info);
-                }
+                    API.CreateInfoboxSession("Error", "An error has occurred trying to process the request: {ex.Message}", infobox.InfoboxMode.Info);
+                }*/
             }
         }
     }

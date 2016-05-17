@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,7 +33,7 @@ namespace ShiftOS
 
         public void StartOtherPlayerStory()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -154,7 +156,7 @@ namespace ShiftOS
         {
             if(ModLogger == true)
             {
-                var tmrlog = new Timer();
+                var tmrlog = new System.Windows.Forms.Timer();
                 tmrlog.Interval = 500;
                 tmrlog.Tick += (object s, EventArgs a) =>
                 {
@@ -525,9 +527,92 @@ namespace ShiftOS
 
         }
 
+        internal void StartShellShock()
+        {
+            var t = new Thread(new ThreadStart(new Action(() =>
+            {
+                Thread.Sleep(300);
+                WriteLine("Sending false packet to shiftnet://devx/tracker...");
+                Thread.Sleep(100);
+                WriteLine("Awaiting reply from server...");
+                Thread.Sleep(5000);
+                WriteLine("Got reply with header \"SOS_TRK_GET\".");
+                Thread.Sleep(50);
+                WriteLine("[kernel] Sending usage log to server...");
+                WriteLine("Intercepting outgoing request...");
+                Thread.Sleep(200);
+                WriteLine("Got packet contents...");
+                Thread.Sleep(25);
+                WriteLine("Sifting...");
+                Thread.Sleep(500);
+                WriteLine("Found connection data for shiftnet://devx/tracker.");
+                Thread.Sleep(100);
+                WriteLine(@"Username: devx
+Password: z7fjsd3");
+                Thread.Sleep(100);
+                WriteLine("Authenticating with SSH server on shiftnet://devx/tracker running Arch Linux x86_64...");
+                Thread.Sleep(1000);
+                WriteLine("[SSH] Access granted.");
+                Thread.Sleep(100);
+                WriteLine($"[Message] ???: We're in. In about 75 seconds DevX's server will go down. It'll be quite cool actually, Don't know if you've ever seen a forkbomb in action, but because you're in an SSH session with DevX's server and I'm also controlling the same session you're gonna see one. Oh, yeah, this server's the only one of his that doesn't actually run ShiftOS.");
+                Thread.Sleep(25000);
+                this.Invoke(new Action(() =>
+                {
+                    txtterm.Text = "";
+                }));
+                int i = 60;
+                while(i >= 1)
+                {
+                    Thread.Sleep(1000);
+                    WriteLine($"Beginning attack on server in {i} seconds.");
+                    i -= 1;
+                }
+                WriteLine("[devx@tracker ~]$ ");
+                string cmd = ":`(`)`{` `:`|`:` `&` `}`;`:"; //yep. I'm pretending to use a forkbomb on DevX's server. This'll be FUN to code. </sarcasm>
+                foreach(string c in cmd.Split('`'))
+                {
+                    Thread.Sleep(100);
+                    this.Invoke(new Action(() =>
+                    {
+                        txtterm.Text += c;
+                    }));
+                }
+                WriteLine("[devx@tracker ~]$ ");
+                WriteLine("[Message] ???: Alright. I entered the command for you. Looks like it did nothing. DevX wouldn't even know what's happening... but keep your terminal open for 30 seconds.");
+                Thread.Sleep(30000);
+                this.Invoke(new Action(() =>
+                {
+                    FinalMission.EndGameHandler.GoToNextObjective();
+                }));
+                int progress = 0;
+                while(progress <= 10000)
+                {
+                    int r = new Random().Next(0, 1);
+                    switch(r)
+                    {
+                        case 0:
+                            WriteLine("-bash: fork: Resource temporarily unavailable");
+                            break;
+                        case 1:
+                            WriteLine("-bash: fork: retry: Resource temporarily unavailable");
+                            break;
+                    }
+                    Thread.Sleep(progress / 10);
+                    progress++;
+                }
+                WriteLine("[SSH] Connection to server dropped.");
+                this.Invoke(new Action(() =>
+                {
+                    FinalMission.EndGameHandler.GoToNextObjective();
+                }));
+                this.Invoke(new Action(() => { this.Close(); }));
+            })));
+            t.Start();
+        }
+
         internal void StartBridgeToMidGame()
         {
-            var t2 = new Timer();
+            var t2 = new System.Windows.Forms.Timer();
             t2.Interval = 4000;
             int i2 = 0;
             t2.Tick += (object s, EventArgs e) =>
@@ -594,7 +679,7 @@ namespace ShiftOS
                 i2 += 1;
             };
 
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
 
@@ -752,7 +837,7 @@ namespace ShiftOS
 
         internal void StartAidenNirhStory()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -790,7 +875,7 @@ namespace ShiftOS
 
         internal void StartHacker101Story()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             
@@ -880,7 +965,7 @@ namespace ShiftOS
 
         internal void StartOtherPlayerSysFix()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -988,7 +1073,7 @@ namespace ShiftOS
 
         internal void StartHackerBattleIntro()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -1079,7 +1164,7 @@ namespace ShiftOS
 
         internal void StartDevXFuriousStory()
         {
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -1125,7 +1210,7 @@ namespace ShiftOS
         /// </summary>
         public void StartShiftnetStory()
         {
-            Timer tmrstory = new Timer();
+            System.Windows.Forms.Timer tmrstory = new System.Windows.Forms.Timer();
             tmrstory.Interval = 10000;
             int i = 0;
             WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
@@ -1304,6 +1389,28 @@ namespace ShiftOS
             string[] args = command.ToLower().Split(' ');
             switch (args[0])
             {
+                case "endgame_test":
+                    try
+                    {
+                        switch(args[1])
+                        {
+                            case "choice_screen":
+                                var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
+                                cscreen.WindowState = FormWindowState.Maximized;
+                                //cscreen.TopMost = true;
+                                cscreen.Show();
+                                break;
+                            case "limitedmode":
+                                API.LimitedMode = !API.LimitedMode;
+                                WriteLine($"Limited mode set to {API.LimitedMode}.");
+                                break;
+                        }
+                    }
+                    catch
+                    {
+                        WriteLine("Invalid arguments.");
+                    }
+                    break;
                 case "fake_buy":
                     try
                     {
@@ -1436,13 +1543,24 @@ namespace ShiftOS
                         }
                         else
                         {
-                            WriteLine("Path is not a directory or does not contain main.lua file.");
+                            WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
                         }
                     }
                     catch(Exception ex)
                     {
                         WriteLine("make: Invalid arguments.");
                     }
+                    break;
+                case "toggle_music":
+                    if(Audio.Enabled == false)
+                    {
+                        WriteLine(@"Music enabled.
+
+Warning: The music player code in ShiftOS has a memory leak issue and is quite CPU-intensive. If your CPU fan starts to spin up while listening to a song, that's why.
+
+Warning: Music is not embedded within the game. You must download the external resources directory at http://playshiftos.ml/shiftos/resources.zip to have applications play their music.");
+                    }
+                    Audio.Enabled = !Audio.Enabled;
                     break;
                 case "linux":
                     if(API.DeveloperMode)
@@ -1461,6 +1579,17 @@ namespace ShiftOS
                         wrongcommand();
                     }
                     break;
+                case "netgen":
+                    if (API.DeveloperMode)
+                    {
+                        WriteLine("Starting netgen...");
+                        API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
                 case "enemy_test":
                     var e = new EnemyHacker("DevX", "I am the god of this world.", "I am the god of this world.", 100, 100, "Hard");
                     e.AddModule(new Module(SystemType.Antivirus, 4, "you_can't_stop_me"));
@@ -1468,10 +1597,14 @@ namespace ShiftOS
                     e.AddModule(new Module(SystemType.DedicatedDDoS, 2, "dos"));
                     e.AddModule(new Module(SystemType.Turret, 4, "remotehost"));
                     e.AddModule(new Module(SystemType.Turret, 2, "boom"));
-                    API.CreateForm(new Hacking_YourHealth(e), "You", Properties.Resources.iconTerminal);
+                    string json = JsonConvert.SerializeObject(e);
+                    var tp = new TextPad();
+                    API.CreateForm(tp, "Enemy JSON", API.GetIcon("TextPad"));
+                    tp.txtuserinput.Text = json;
                     break;
                 case "htest":
-                    API.CreateForm(new Hacking_YourHealth(), "You", Properties.Resources.iconTerminal);
+                    var hui = new HackUI();
+                    hui.Show();
                     break;
                 case "lua":
                     if(API.DeveloperMode == true)
@@ -1681,58 +1814,119 @@ namespace ShiftOS
                     }
                     break;
                 case "spkg":
-                    if (API.Upgrades["shiftnet"] == true)
+                    if (!API.LimitedMode)
                     {
-                        try
+                        if (API.Upgrades["shiftnet"] == true)
                         {
-                            switch (args[1].ToLower())
+                            try
                             {
-                                case "install":
-                                    if (args[2] != null && args[2] != "")
-                                    {
-                                        string pkgname = args[2].ToLower().Replace(".pkg", "");
-                                        if (Package_Grabber.GetPackage(pkgname) == true)
+                                switch (args[1].ToLower())
+                                {
+                                    case "install":
+                                        if (args[2] != null && args[2] != "")
                                         {
-                                            WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
-                                            string r = Package_Grabber.ExtractPackage();
-                                            if (r == "fail")
+                                            string pkgname = args[2].ToLower().Replace(".pkg", "");
+                                            if (Package_Grabber.GetPackage(pkgname) == true)
                                             {
-                                                WriteLine("[FATAL] Could not install package.");
-                                                WriteLine("spkg: Killed.");
-                                            }
-                                            else
-                                            {
-                                                WriteLine("Extracted " + pkgname + " to " + r + "...");
-                                                var res2 = Package_Grabber.InstallPackage(r + "\\");
-                                                if (res2 != "success")
+                                                WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
+                                                string r = Package_Grabber.ExtractPackage();
+                                                if (r == "fail")
                                                 {
-                                                    WriteLine("[FATAL] Could not install package. " + res2);
+                                                    WriteLine("[FATAL] Could not install package.");
                                                     WriteLine("spkg: Killed.");
                                                 }
                                                 else
                                                 {
-                                                    WriteLine("[DONE] Package installed.");
+                                                    WriteLine("Extracted " + pkgname + " to " + r + "...");
+                                                    var res2 = Package_Grabber.InstallPackage(r + "\\");
+                                                    if (res2 != "success")
+                                                    {
+                                                        WriteLine("[FATAL] Could not install package. " + res2);
+                                                        WriteLine("spkg: Killed.");
+                                                    }
+                                                    else
+                                                    {
+                                                        WriteLine("[DONE] Package installed.");
+                                                    }
                                                 }
                                             }
+                                            else
+                                            {
+                                                WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                            }
                                         }
-                                        else
-                                        {
-                                            WriteLine("spkg: Package '" + args[2] + "' not found.");
-                                        }
-                                    }
-                                    break;
-                                default:
-                                    WriteLine("spkg: Invalid argument: " + args[1]);
-                                    break;
+                                        break;
+                                    default:
+                                        WriteLine("spkg: Invalid argument: " + args[1]);
+                                        break;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                WriteLine("spkg: " + ex.Message);
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            WriteLine("spkg: " + ex.Message);
+                            wrongcommand();
                         }
-                    } else
+                    }
+                    else
                     {
-                        wrongcommand();
+                        try
+                        {
+                            if(args[2] == "god_utils")
+                            {
+                                if(FinalMission.EndGameHandler.GodModeInstallEnabled == true)
+                                {
+                                    var t = new Thread(new ThreadStart(new Action(() =>
+                                    {
+                                        WriteLine("Downloading package 'god_utils'... Please wait.");
+                                        Thread.Sleep(10000);
+                                        WriteLine("Download complete.");
+                                        Thread.Sleep(100);
+                                        WriteLine("Beginning installation.");
+                                        Thread.Sleep(1000);
+                                        WriteLine(@" == GOD MODE ==
+
+God Mode gives you FULL control of ShiftOS. You can add/remove Codepoints, buy or unbuy Shiftorium upgrades, and can do whatever you want.
+
+Installing core applications...");
+                                        Thread.Sleep(250);
+                                        WriteLine("Installing subpackage 'json_edit'...");
+                                        Thread.Sleep(250);
+                                        WriteLine("Installing subpackage 'upgrade_mod'...");
+                                        Thread.Sleep(100);
+                                        WriteLine("Installing subpackage 'hijacker'...");
+                                        Thread.Sleep(500);
+                                        WriteLine(@" == HIJACKER by DevX ==
+
+HIJACKER is a utility that allows you to hijack any system and install ShiftOS on it during a hacker battle.");
+                                        Thread.Sleep(100);
+                                        WriteLine("[hijacker] Injecting HIJACKER code into hbattleui.sft...");
+                                        Thread.Sleep(150);
+                                        WriteLine("[hijacker] Done.");
+                                        this.Invoke(new Action(() =>
+                                        {
+                                            StartChoice1EndStory();
+                                        }));
+                                    })));
+                                    t.Start();
+                                }                                
+                                else
+                                {
+                                    WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                }
+                            }
+                            else
+                            {
+                                WriteLine("spkg: Package '" + args[2] + "' not found.");
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("spkg: Missing arguments.");
+                        }
                     }
                     break;
                 case "alias":
@@ -2131,6 +2325,107 @@ namespace ShiftOS
             //cmds(UBound(cmds)) = command
         }
 
+        private void StartChoice1EndStory()
+        {
+            var t = new System.Windows.Forms.Timer();
+            int i = 0;
+            t.Interval = 4000;
+            t.Tick += (object s, EventArgs a) =>
+            {
+                switch(i)
+                {
+                    case 0:
+                        WriteLine("User '<unknown>' connected as '???'");
+                        break;
+                    case 1:
+                        WriteLine($"???: {API.Username}! What are you doing!?");
+                        break;
+                    case 2:
+                        WriteLine("???: I went onto the Hacker Alliance room earlier and DevX was on there...");
+                        break;
+                    case 3:
+                        WriteLine("???: And he told me you SIDED WITH HIM.");
+                        break;
+                    case 4:
+                        WriteLine("???: This is a HUGE mistake! Listen!");
+                        break;
+                    case 5:
+                        WriteLine("???: He's lying to you. Listen. DevX is not what you think he is.");
+                        break;
+                    case 6:
+                        WriteLine("???: He isn't a human! He's an AI! We were all played!");
+                        break;
+                    case 7:
+                        WriteLine("???: I'm telling the truth, I swear!");
+                        break;
+                    case 8:
+                        WriteLine("???: You want proof? - holochat_cmd: ERROR: Remote host closed connection.");
+                        break;
+                    case 9:
+                        WriteLine("spkg: Rebooting system in 8 seconds.");
+                        break;
+                    case 11:
+                        API.Upgrades["titlebar"] = false;
+                        API.Upgrades["windowedterminal"] = false; //terminals must be fullscreen
+                        var trm = new Terminal();
+                        this.Close();
+                        API.CreateForm(trm, "Terminal", API.GetIcon("Terminal"));
+                        trm.StartReboot();
+                        break;
+                }
+                i += 1;
+            };
+            t.Start();
+        }
+        
+        public void StartReboot()
+        {
+            txtterm.Text = "";
+            var t1 = new Thread(new ThreadStart(new Action(() =>
+            {
+                Thread.Sleep(500);
+                WriteLine("ShiftOS: Kernel deactivated.");
+                Thread.Sleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    txtterm.Text = "";
+                }));
+                Thread.Sleep(1000);
+                WriteLine("Welcome to ShiftOS.");
+                Thread.Sleep(500);
+                WriteLine("Starting core...");
+                API.Upgrades["windowedterminal"] = true;
+                Thread.Sleep(450);
+                WriteLine($"Your username is {API.Username}.");
+                Thread.Sleep(100);
+                WriteLine($"You have {API.Codepoints} Codepoints.");
+                WriteLine("Loading modules...");
+                Thread.Sleep(750);
+                foreach(var upg in API.Upgrades)
+                {
+                    if(upg.Value == true)
+                    {
+                        WriteLine($"Loaded module {upg.Key}...");
+                    }
+                    Thread.Sleep(100);
+                }
+                WriteLine("Starting desktop.");
+                this.Invoke(new Action(() =>
+                {
+                    var s = new ShiftOSDesktop();
+                    s.Show();
+                    s.EndGame_AttachEvents();
+                }));
+                Thread.Sleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    FinalMission.EndGameHandler.GoToNextObjective();
+                }));
+                API.Upgrades["titlebar"] = true;
+            })));
+            t1.Start();
+        }
+
         public void Crash()
         {
             txtterm.Text = "";
@@ -2138,7 +2433,7 @@ namespace ShiftOS
             WriteLine(Environment.NewLine);
             WriteLine("PANIC_ID: 750_15_4W3S0M3");
             WriteLine("PANIC_DESC: System became too unstable to function properly. In 5 seconds, your session will be resumed.");
-            var t = new Timer();
+            var t = new System.Windows.Forms.Timer();
             t.Interval = 1000;
             int p = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -2518,13 +2813,19 @@ namespace ShiftOS
 
         public void WriteLine(string text)
         {
-            if (txtterm.Text.Length > 0)
+            txtterm.Invoke(new Action(() =>
             {
-                txtterm.Text += Environment.NewLine + text;
-            } else
-            {
-                txtterm.Text += text;
-            }
+                if (txtterm.Text.Length > 0)
+                {
+                    txtterm.Text += Environment.NewLine + text;
+                }
+                else
+                {
+                    txtterm.Text += text;
+                }
+                txtterm.Select(txtterm.TextLength, 0);
+                txtterm.ScrollToCaret();
+            }));
         }
         private bool Zooming = false;
 

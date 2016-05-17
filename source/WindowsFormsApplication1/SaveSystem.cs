@@ -422,6 +422,7 @@ namespace SaveSystem
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Fancy - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Software - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("HoloChat - 0 CP", null, null, "nodisplay", "fundamental"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("Story Complete - 0 CP", null, null, "nodisplay", "fundamental"));
         }
 
         /// <summary>

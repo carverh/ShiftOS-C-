@@ -1,0 +1,16 @@
+{
+	"User! You're here. You came just in time.":"???",
+	"Yeah, we have a bit of a problem over here.":"Hacker101",
+	"DevX found out.":"Hacker101",
+	"We've had this chat running secretly for a year now, and only you know about it":"???",
+	"But somehow DevX found out about it.":"???",
+	"Reading your logs, well, it seems you want out of this all, don't you?":"???",
+	"Well, Hacker101, tell the user what we can do.":"???"
+	"Well I've got good news and bad news for you, user.":"Hacker101",
+	"Good news is, when DevX got on here, he gave us a bit of a present to keep us 'quiet'.":"Hacker101",
+	"And it's his latest archive of your system before you were hijacked.":"Hacker101",
+	"Bad news is, the only way to break through ShiftOS and apply the archived system is, well...":"Hacker101",
+	"We're looking at a 5% chance of this working properly.":"Hacker101",
+	"If you REALLY want this, well, you're gonna have to wait until we can get DevX off our backs first.":"???",
+	"In the mean time, you may want to kiss your ShiftOS goodbye, because once we're done there's NO going back.","???"	
+}

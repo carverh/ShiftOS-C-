@@ -12,6 +12,7 @@ using System.Threading;
 using Newtonsoft.Json;
 using System.IO;
 using System.Diagnostics;
+using ShiftOS.FinalMission;
 
 namespace ShiftOS
 {
@@ -45,6 +46,38 @@ namespace ShiftOS
         {
             UnityEnabled = value;
             SetupDesktop();
+        }
+
+        public void EndGame_AttachEvents()
+        {
+            FinalMission.EndGameHandler.ObjectiveCompleted += (object s, EventArgs a) =>
+            {
+            };
+            FinalMission.EndGameHandler.MissionComplete += (object s, EventArgs a) =>
+            {
+                API.LimitedMode = false;
+                SetupDesktop();
+                API.CloseEverything();
+                switch(FinalMission.EndGameHandler.CurrentChoice)
+                {
+                    case Choice.SideWithDevX:
+                        var t = new System.Windows.Forms.Timer();
+                        t.Interval = 10000;
+                        t.Tick += (object se, EventArgs ea) =>
+                        {
+                            var tp = new TextPad();
+                            API.CreateForm(tp, API.LoadedNames.TextpadName, API.GetIcon("TextPad"));
+                            tp.txtuserinput.Text = Properties.Resources.You_Passed;
+                            tp.FormClosing += (sen, args) =>
+                            {
+                                API.Upgrades["storycomplete"] = true;
+                            };
+                            t.Stop();
+                        };
+                        t.Start();
+                        break;
+                }
+            };
         }
 
         private void ShiftOSDesktop_Load(object sender, EventArgs e)

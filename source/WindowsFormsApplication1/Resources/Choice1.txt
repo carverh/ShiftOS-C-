@@ -1,0 +1,8 @@
+{
+	"Ahhh, the user. Such a surprise...":"DevX",
+	"How dare you break my plans? How dare you STILL use the Shiftnet?":"DevX",
+	"Huh. Just read your system log. It says you want to side with me.":"DevX",
+	"Alright, fine. After all, you seem to be extremely good at this.":"DevX",
+	"You know how to install Shiftnet packages, right? Well I need you to install the package 'god_utils'.":"DevX",
+	"I'll contact you when you're done.":"DevX"
+}

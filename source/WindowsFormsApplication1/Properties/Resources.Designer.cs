@@ -786,6 +786,55 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;Ahhh, the user. Such a surprise...&quot;:&quot;DevX&quot;,
+        ///	&quot;How dare you break my plans? How dare you STILL use the Shiftnet?&quot;:&quot;DevX&quot;,
+        ///	&quot;Huh. Just read your system log. It says you want to side with me.&quot;:&quot;DevX&quot;,
+        ///	&quot;Alright, fine. After all, you seem to be extremely good at this.&quot;:&quot;DevX&quot;,
+        ///	&quot;You know how to install Shiftnet packages, right? Well I need you to install the package &apos;god_utils&apos;.&quot;:&quot;DevX&quot;,
+        ///	&quot;I&apos;ll contact you when you&apos;re done.&quot;:&quot;DevX&quot;
+        ///}.
+        /// </summary>
+        internal static string Choice1 {
+            get {
+                return ResourceManager.GetString("Choice1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;Hey! It&apos;s the user! So, you ready to start destroying DevX?&quot;:&quot;???&quot;,
+        ///	&quot;Alright, well there&apos;s quite a few things you&apos;ll need to do.&quot;:&quot;???&quot;,
+        ///	&quot;You may realize that ShiftOS is quite locked down. This is to prevent anything bad from happening.&quot;:&quot;???&quot;,
+        ///	&quot;However, in your Terminal, you should be able to run &apos;quests&apos; to view all the tasks we need to accomplish.&quot;:&quot;???&quot;,
+        ///	&quot;You&apos;ll also see a window near the App Launcher, I will use it to talk to you as we do things.&quot;:&quot;???&quot;,
+        ///	&quot;Well. Let&apos;s get started.&quot;:&quot;???&quot;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Choice2 {
+            get {
+                return ResourceManager.GetString("Choice2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;User! You&apos;re here. You came just in time.&quot;:&quot;???&quot;,
+        ///	&quot;Yeah, we have a bit of a problem over here.&quot;:&quot;Hacker101&quot;,
+        ///	&quot;DevX found out.&quot;:&quot;Hacker101&quot;,
+        ///	&quot;We&apos;ve had this chat running secretly for a year now, and only you know about it&quot;:&quot;???&quot;,
+        ///	&quot;But somehow DevX found out about it.&quot;:&quot;???&quot;,
+        ///	&quot;Reading your logs, well, it seems you want out of this all, don&apos;t you?&quot;:&quot;???&quot;,
+        ///	&quot;Well, Hacker101, tell the user what we can do.&quot;:&quot;???&quot;
+        ///	&quot;Well I&apos;ve got good news and bad news for you, user.&quot;:&quot;Hacker101&quot;,
+        ///	&quot;Good news is, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Choice3 {
+            get {
+                return ResourceManager.GetString("Choice3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap christmas_skin {
@@ -894,6 +943,34 @@ namespace ShiftOS.Properties {
         internal static string DesktopPlusPlusAbout {
             get {
                 return ResourceManager.GetString("DesktopPlusPlusAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;Name&quot;:&quot;DevX Firewall&quot;,&quot;FriendDesc&quot;:&quot;DevX&apos;s firewall.&quot;,&quot;Description&quot;:&quot;DevX&apos;s firewall.&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;unknown&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;devx_firewall&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;trt_alpha&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:529,&quot;Y&quot;:214},{&quot;Hostname&quot;:&quot;trt_beta&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:670,&quot;Y&quot;:211},{&quot;Hostname&quot;:&quot;trt_charlie&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:2,&quot;X&quot;:604,&quot;Y&quot;:279},{&quot;Hostname&quot;:&quot;trt_delta&quot;,&quot;Mod [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DevX_Firewall {
+            get {
+                return ResourceManager.GetString("DevX_Firewall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;Name&quot;:&quot;DevX Primary&quot;,&quot;FriendDesc&quot;:&quot;DevX&apos;s primary network&quot;,&quot;Description&quot;:&quot;DevX&apos;s primary network&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;unknown&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;devx_primary&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;protector1&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:5,&quot;HP&quot;:0,&quot;Grade&quot;:2,&quot;X&quot;:534,&quot;Y&quot;:231},{&quot;Hostname&quot;:&quot;worm_unit1&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:6,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:660,&quot;Y&quot;:205},{&quot;Hostname&quot;:&quot;main_turret&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:4,&quot;X&quot;:530,&quot;Y&quot;:186},{&quot;Hostname&quot;:&quot;an [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DevX_PrimaryNet {
+            get {
+                return ResourceManager.GetString("DevX_PrimaryNet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///{&quot;Name&quot;:&quot;DevX Secondary&quot;,&quot;FriendDesc&quot;:&quot;I will DESTROY you.&quot;,&quot;Description&quot;:&quot;I will DESTROY you.&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;unknown&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;devx_secondary&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;trt_alpha&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:4,&quot;X&quot;:535,&quot;Y&quot;:221},{&quot;Hostname&quot;:&quot;trt_beta&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:4,&quot;X&quot;:534,&quot;Y&quot;:268},{&quot;Hostname&quot;:&quot;trt_charlie&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:4,&quot;X&quot;:532,&quot;Y&quot;:174},{&quot;Hostname&quot;:&quot;trt_d [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DevX_Secondary {
+            get {
+                return ResourceManager.GetString("DevX_Secondary", resourceCulture);
             }
         }
         
@@ -3596,11 +3673,39 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Welcome_to_Chaos {
+            get {
+                object obj = ResourceManager.GetObject("Welcome_to_Chaos", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream writesound {
             get {
                 return ResourceManager.GetStream("writesound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From: DevX
+        ///To: You
+        ///Subject: You passed the test.
+        ///
+        ///Body:
+        ///Hey there. So I see you&apos;ve installed my &apos;god_utils&apos; package like I said. Well, listen. It&apos;s time I explain truly everything that&apos;s been going on.
+        ///
+        ///You see, ShiftOS was a test. It was a test to see how an average computer user would cope with having their data lost, and having to test an experimental operating system and help develop it into a full, usable environment.
+        ///
+        ///You were the first to make it to the end, so it&apos;s time I tell you the truth [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string You_Passed {
+            get {
+                return ResourceManager.GetString("You_Passed", resourceCulture);
             }
         }
         

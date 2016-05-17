@@ -24,22 +24,29 @@ namespace ShiftOS
             //Extract all dependencies before starting the engine.
             ExtractDependencies();
             var poolThread = new Thread(new ThreadStart(new Action(() => {
-                //Download ShiftOS server startup-pool
-                string pool = new WebClient().DownloadString("http://playshiftos.ml/server/startup_pool");
-                string[] splitter = pool.Split(';');
-                foreach(string address in splitter)
+                try
                 {
-                    try
+                    //Download ShiftOS server startup-pool
+                    string pool = new WebClient().DownloadString("http://playshiftos.ml/server/startup_pool");
+                    string[] splitter = pool.Split(';');
+                    foreach (string address in splitter)
                     {
-                        string[] addSplitter = address.Split(':');
-                        string host = addSplitter[0];
-                        int port = Convert.ToInt32(addSplitter[1]);
-                        Package_Grabber.ConnectToServer(host, port);
-                    }
-                    catch
-                    {
+                        try
+                        {
+                            string[] addSplitter = address.Split(':');
+                            string host = addSplitter[0];
+                            int port = Convert.ToInt32(addSplitter[1]);
+                            Package_Grabber.ConnectToServer(host, port);
+                        }
+                        catch
+                        {
 
+                        }
                     }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("[ServerThread/WARNING] Couldn't retrieve startup pool. Not connecting to any servers.");
                 }
             })));
             poolThread.Start();
