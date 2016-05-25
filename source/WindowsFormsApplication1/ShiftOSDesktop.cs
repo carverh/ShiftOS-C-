@@ -735,8 +735,8 @@ namespace ShiftOS
             {
                 this.ContextMenuStrip = cmbdesktopoptions;
                 NewToolStripMenuItem.Visible = API.Upgrades["desktopicons"];
-                addDesktopPanelToolStripMenuItem.Visible = API.Upgrades["desktoppanel"];
-                //addDesktopPanelToolStripMenuItem.Visible = API.Upgrades["midgamebridge"]; //Uncomment when mid game bridge sequence finished.
+                addDesktopPanelToolStripMenuItem.Visible = API.Upgrades["advanceddesktop"];
+                widgetManagerToolStripMenuItem.Visible = API.Upgrades["advanceddesktop"]; //Uncomment when mid game bridge sequence finished.
 
 
             }
@@ -770,36 +770,38 @@ namespace ShiftOS
                 }
             };
             wlocmenu.DropDownItems.Clear();
-            foreach (var p in DesktopPanels)
+            if (API.Upgrades["advanceddesktop"])
             {
-                var dp = (Skinning.DesktopPanel)p.Tag;
-                p.ContextMenuStrip = cbdpanel;
-                var itm = new ToolStripMenuItem();
-                itm.Text = dp.Position;
-                wlocmenu.DropDownItems.Add(itm);
-                itm.Click += (object s, EventArgs a) =>
+                foreach (var p in DesktopPanels)
                 {
-                    if (SelectedObject != null)
+                    var dp = (Skinning.DesktopPanel)p.Tag;
+                    p.ContextMenuStrip = cbdpanel;
+                    var itm = new ToolStripMenuItem();
+                    itm.Text = dp.Position;
+                    wlocmenu.DropDownItems.Add(itm);
+                    itm.Click += (object s, EventArgs a) =>
                     {
-                        if (SelectedObject == AppLauncherPanel)
+                        if (SelectedObject != null)
                         {
-                            API.CurrentSkin.ALPosition = itm.Text;
+                            if (SelectedObject == AppLauncherPanel)
+                            {
+                                API.CurrentSkin.ALPosition = itm.Text;
+                            }
+                            else if (SelectedObject == Clock)
+                            {
+                                API.CurrentSkin.ClockPosition = itm.Text;
+                            }
+                            else if (SelectedObject == PanelButtonHolder)
+                            {
+                                API.CurrentSkin.PanelButtonPosition = itm.Text;
+                            }
+                            SelectedObject.Parent.Controls.Remove(SelectedObject);
+                            SetupDesktopPanel();
+                            Skinning.Utilities.saveskin();
                         }
-                        else if (SelectedObject == Clock)
-                        {
-                            API.CurrentSkin.ClockPosition = itm.Text;
-                        }
-                        else if (SelectedObject == PanelButtonHolder)
-                        {
-                            API.CurrentSkin.PanelButtonPosition = itm.Text;
-                        }
-                        SelectedObject.Parent.Controls.Remove(SelectedObject);
-                        SetupDesktopPanel();
-                        Skinning.Utilities.saveskin();
-                    }
-                };
+                    };
+                }
             }
-
         }
 
         public void SetupPanelClock()

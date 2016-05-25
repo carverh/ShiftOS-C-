@@ -112,46 +112,6 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap appscapeaudioplayerbox {
-            get {
-                object obj = ResourceManager.GetObject("appscapeaudioplayerbox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeaudioplayerprice {
-            get {
-                object obj = ResourceManager.GetObject("appscapeaudioplayerprice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeaudioplayerpricepressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapeaudioplayerpricepressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapecalculator {
-            get {
-                object obj = ResourceManager.GetObject("appscapecalculator", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ArtPadcirclerubber {
             get {
                 object obj = ResourceManager.GetObject("ArtPadcirclerubber", resourceCulture);

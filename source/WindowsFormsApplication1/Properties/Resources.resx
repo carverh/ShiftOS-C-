@@ -142,9 +142,6 @@
   <data name="upgradealshiftorium" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradealshiftorium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeaudioplayerpricepressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeaudioplayerpricepressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="crash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,9 +165,6 @@
   </data>
   <data name="upgradeyellowshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeyellowshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeaudioplayerprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeaudioplayerprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradegrayshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradegrayshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -510,9 +504,6 @@
   </data>
   <data name="ArtPadlinetool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArtPadlinetool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapecalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapecalculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_3beepvirus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3beepvirus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -990,9 +981,6 @@
   </data>
   <data name="floodgateicn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\floodgateicn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeaudioplayerbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeaudioplayerbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="downloadmanagericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\downloadmanagericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
