@@ -33,6 +33,7 @@ namespace SaveSystem
         public int CodepointMultiplier = 1;
         public int PriceDivider = 1;
         public string CloudID = "";
+        public List<string> CompletedNets = new List<string>();
     }
 
     public class PrivateBitnoteAddress
@@ -412,17 +413,26 @@ namespace SaveSystem
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Hack Command - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Hacker Battles - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Mid Game Bridge - 0 CP", null, null, "nodisplay", "fundamental"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("Network Browser - 0 CP", null, null, "nodisplay", "fundamental"));
 
             //0.1.1/new
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Fancy Effects - 5000 CP", null, "Have you ever wanted to make your operating system look fancy, adding fade effects and other animations to various parts of the UI? If so, this upgrade is for you!", "limitlesscustomshades;shiftnet", "fancy"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Shift Fancy Effects - 45 CP", null, "ShiftOS is looking pretty darn fine now. But, let's make it look even better. With this upgrade you will be able to customize fancy effects in the Shifter!", "advancedshifter;fancyeffects", "fancy"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Icon Manager - 45 CP", null, "Add even more customization options to ShiftOS using the new Icon Manager. This tool allows you to change almost any icon on the system!", "advancedshifter;appicons", "useful"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("FS External Devices - 175 CP", null, "Ever wanted to see the contents of another device on the system? For example, a USB drive, CD, floppy, or another hard drive? Well this upgrade is for you. It will give File Skimmer the ability to see other drives on the system.", "fileskimmer", "useful"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("Advanced Desktop - 50 CP", null, "Want to further customize the desktop panel? Want to add even more panels, and add custom widgets to the panels? This upgrade's for you!", "desktoppanel;midgamebridge", "useful"));
             //0.1.1/category
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Useful - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Fancy - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Software - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("HoloChat - 0 CP", null, null, "nodisplay", "fundamental"));
             DefaultUpgrades.Add(new Shiftorium.Upgrade("Story Complete - 0 CP", null, null, "nodisplay", "fundamental"));
+
+            //0.1.1/netbrowser/tiers
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("nb_tier_easy - 0 CP", null, null, "nodisplay", "fundamental"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("nb_tier_medium - 0 CP", null, null, "nodisplay", "fundamental"));
+            DefaultUpgrades.Add(new Shiftorium.Upgrade("nb_tier_hard - 0 CP", null, null, "nodisplay", "fundamental"));
+
         }
 
         /// <summary>

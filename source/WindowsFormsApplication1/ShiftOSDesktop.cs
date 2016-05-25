@@ -178,7 +178,7 @@ namespace ShiftOS
                     this.BackColor = Color.FromArgb(r, g, b);
                     this.BackgroundImage = null;
                 }
-                if (Viruses.InfectedWith("holyfuckmyears"))
+                if (Viruses.InfectedWith("ow"))
                 {
                     Random rand = new Random();
                     switch (rand.Next(0, 3)) {
@@ -241,7 +241,32 @@ namespace ShiftOS
             CheckUnity();
             SetupWidgets();
             CheckForChristmas();
-
+            //Set up the context menus.
+            addDesktopPanelToolStripMenuItem.Visible = API.Upgrades["advanceddesktop"];
+            widgetManagerToolStripMenuItem.Visible = API.Upgrades["advanceddesktop"];
+            if (API.Upgrades["advanceddesktop"])
+            {
+                AppLauncherPanel.ContextMenuStrip = cbwidget;
+                Clock.ContextMenuStrip = cbwidget;
+                PanelButtonHolder.ContextMenuStrip = cbwidget;
+            }
+            else
+            {
+                AppLauncherPanel.ContextMenuStrip = null;
+                Clock.ContextMenuStrip = null;
+                PanelButtonHolder.ContextMenuStrip = null;
+            }
+            foreach(var dp in DesktopPanels)
+            {
+                if(API.Upgrades["advanceddesktop"])
+                {
+                    dp.ContextMenuStrip = cbdpanel;
+                }
+                else
+                {
+                    dp.ContextMenuStrip = cbdpanel;
+                }
+            }
         }
 
         public void SetupWidgets()
@@ -455,57 +480,42 @@ namespace ShiftOS
                 {
                     if (this.Controls.Contains(pnl))
                     {
+                        pnl.Hide();
                         this.Controls.Remove(pnl);
                     }
                 }
             }
+            var old_list = new List<Skinning.DesktopPanel>();
+            var dp = new Skinning.DesktopPanel();
+            dp.Position = API.CurrentSkin.desktoppanelposition;
+            dp.Height = API.CurrentSkin.desktoppanelheight;
+            dp.BackgroundColor = API.CurrentSkin.desktoppanelcolour;
+            dp.BackgroundImage = API.CurrentSkinImages.desktoppanel;
+            old_list.Add(dp);
+
             if (API.CurrentSkin.DesktopPanels.Count == 0)
             {
-                var dp = new Skinning.DesktopPanel();
-                dp.Position = API.CurrentSkin.desktoppanelposition;
-                dp.Height = API.CurrentSkin.desktoppanelheight;
-                dp.BackgroundColor = API.CurrentSkin.desktoppanelcolour;
-                API.CurrentSkin.DesktopPanels.Add(dp);
+                API.CurrentSkin.DesktopPanels = old_list;
             }
-            DesktopPanels = new List<Panel>();
-            foreach (var dp in API.CurrentSkin.DesktopPanels)
+            if(API.Upgrades["advanceddesktop"])
             {
-                Panel pnl = new Panel();
-                pnl.BackColor = dp.BackgroundColor;
-                switch (dp.Position)
-                {
-                    case "Top":
-                        pnl.Dock = DockStyle.Top;
-                        break;
-                    case "Bottom":
-                        pnl.Dock = DockStyle.Bottom;
-                        break;
-                }
-                pnl.Tag = dp;
-                pnl.Height = dp.Height;
-                this.DesktopPanels.Add(pnl);
-                this.Controls.Add(pnl);
+                SetupPanels(API.CurrentSkin.DesktopPanels);
             }
-            if (DesktopPanels != null)
+            else
             {
-                foreach (var pnl in DesktopPanels)
+                if(API.Upgrades["desktoppanel"])
                 {
-                    if (this.Controls.Contains(pnl))
-                    {
-                        this.Controls.Remove(pnl);
-                    }
+                    SetupPanels(old_list);
                 }
             }
-            if (API.CurrentSkin.DesktopPanels.Count == 0)
-            {
-                var dp = new Skinning.DesktopPanel();
-                dp.Position = "Top";
-                dp.Height = API.CurrentSkin.desktoppanelheight;
-                dp.BackgroundColor = API.CurrentSkin.desktoppanelcolour;
-                API.CurrentSkin.DesktopPanels.Add(dp);
-            }
+            desktopappmenu.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.applauncherlayout;
+        }
+
+        public void SetupPanels(List<Skinning.DesktopPanel> lst)
+        {
             DesktopPanels = new List<Panel>();
-            foreach (var dp in API.CurrentSkin.DesktopPanels)
+
+            foreach (var dp in lst)
             {
                 Panel pnl = new Panel();
                 pnl.BackColor = dp.BackgroundColor;
@@ -522,7 +532,7 @@ namespace ShiftOS
                 pnl.Height = dp.Height;
                 pnl.MouseMove += (object s, MouseEventArgs a) =>
                 {
-                    if(MovingControl != null)
+                    if (MovingControl != null)
                     {
                         var newloc = new Point(a.X + 15, 0);
                         var proper = pnl.PointToClient(newloc);
@@ -531,15 +541,15 @@ namespace ShiftOS
                 };
                 pnl.MouseDown += (object s, MouseEventArgs a) =>
                 {
-                    if(MovingControl != null)
+                    if (MovingControl != null)
                     {
-                        if(a.Button == MouseButtons.Left)
+                        if (a.Button == MouseButtons.Left)
                         {
                             var w = (Skinning.DesktopWidget)MovingControl.Tag;
                             w.XLocation = MovingControl.Left;
                             Skinning.Utilities.saveskin();
                         }
-                        else if(a.Button == MouseButtons.Left)
+                        else if (a.Button == MouseButtons.Left)
                         {
                             var w = (Skinning.DesktopWidget)MovingControl.Tag;
                             MovingControl.Left = w.XLocation;
@@ -549,50 +559,63 @@ namespace ShiftOS
                         MovingControl = null;
                     }
                 };
-                this.DesktopPanels.Add(pnl);
-                this.Controls.Add(pnl);
-            }
-            //AL bug fix with mouse-over/click behavior
-            desktopappmenu.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.applauncherlayout;
-            foreach (var dp in DesktopPanels)
-            {
+                DesktopPanels.Add(pnl);
                 if (API.Upgrades["desktoppanel"] == true)
                 {
-                    if (API.CurrentSkinImages.desktoppanel == null)
+                    if (dp.BackgroundImage == null)
                     {
-                        dp.BackgroundImage = null;
+                        pnl.BackgroundImage = null;
                     }
-                    else {
-                        dp.BackgroundImage = API.CurrentSkinImages.desktoppanel;
-                        dp.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.desktoppanellayout;
-                        dp.BackColor = Color.Transparent;
-                    }
-                    var t = (Skinning.DesktopPanel)dp.Tag;
-                    if (API.CurrentSkin.ALPosition == t.Position)
+                    else
                     {
-                        ChangePosition(AppLauncherPanel, dp);
+                        pnl.BackgroundImage = dp.BackgroundImage;
+                        pnl.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.desktoppanellayout;
+                        pnl.BackColor = Color.Transparent;
                     }
-                    if (API.CurrentSkin.PanelButtonPosition == t.Position)
+                    if (lst.Count > 1)
                     {
-                        ChangePosition(PanelButtonHolder, dp);
+                        if (API.CurrentSkin.ALPosition == dp.Position)
+                        {
+                            ChangePosition(AppLauncherPanel, pnl);
+                        }
+                        if (API.CurrentSkin.PanelButtonPosition == dp.Position)
+                        {
+                            ChangePosition(PanelButtonHolder, pnl);
+                        }
+                        if (API.CurrentSkin.ClockPosition == dp.Position)
+                        {
+                            ChangePosition(Clock, pnl);
+                        }
                     }
-                    if (API.CurrentSkin.ClockPosition == t.Position)
+                    else
                     {
-                        ChangePosition(Clock, dp);
+                        ChangePosition(AppLauncherPanel, pnl);
+                        ChangePosition(PanelButtonHolder, pnl);
+                        ChangePosition(Clock, pnl);
                     }
-                    dp.MouseDown += (object s, MouseEventArgs a) =>
+                    pnl.MouseDown += (object s, MouseEventArgs a) =>
                     {
                         if (a.Button == MouseButtons.Right)
                         {
-                            SelectedObject = dp;
+                            SelectedObject = pnl;
                         }
                     };
-                    dp.Size = new Size(desktoppanel.Size.Width, API.CurrentSkin.desktoppanelheight);
-                    dp.Show();
+                    if (API.Upgrades["advanceddesktop"])
+                    {
+                        pnl.ContextMenuStrip = cbdpanel;
+                    }
+                    else
+                    {
+                        pnl.ContextMenuStrip = null;
+                    }
+                    pnl.Size = new Size(desktoppanel.Size.Width, dp.Height);
+                    this.Controls.Add(pnl);
+                    pnl.Show();
                 }
-                else {
-                    dp.Hide();
-                    this.Controls.Remove(dp);
+                else
+                {
+                    pnl.Hide();
+                    this.Controls.Remove(pnl);
                 }
             }
 
@@ -1155,6 +1178,12 @@ namespace ShiftOS
         private void widgetManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             API.CreateForm(new WidgetManager(), "Widget Manager", API.GetIcon("WidgetManager"));
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dp = (Skinning.DesktopPanel)SelectedObject.Tag;
+            API.CreateForm(new PanelManager(dp), "Panel Options", API.GetIcon("PanelOptions"));
         }
     }
 

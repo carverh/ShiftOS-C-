@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetGen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlnetdesign = new System.Windows.Forms.Panel();
+            this.pnlpcinfo = new System.Windows.Forms.Panel();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.lbpcinfo = new System.Windows.Forms.Label();
+            this.lbmoduletitle = new System.Windows.Forms.Label();
+            this.btncloseinfo = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnaddmodule = new System.Windows.Forms.Button();
             this.pnlbuy = new System.Windows.Forms.Panel();
@@ -43,6 +48,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btndonebuying = new System.Windows.Forms.Button();
             this.pnlnetinf = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbdifficulty = new System.Windows.Forms.ComboBox();
+            this.txtfspeed = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtfskill = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtnetdesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtnetname = new System.Windows.Forms.TextBox();
@@ -53,23 +64,26 @@
             this.pnlnetinfo = new System.Windows.Forms.Panel();
             this.lbdescription = new System.Windows.Forms.Label();
             this.lbtitle = new System.Windows.Forms.Label();
-            this.pnlpcinfo = new System.Windows.Forms.Panel();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.lbpcinfo = new System.Windows.Forms.Label();
-            this.lbmoduletitle = new System.Windows.Forms.Label();
-            this.btncloseinfo = new System.Windows.Forms.Button();
+            this.btnloadfromtemplate = new System.Windows.Forms.Button();
+            this.pnltemplates = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbnets = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnrecreate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlnetdesign.SuspendLayout();
+            this.pnlpcinfo.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlbuy.SuspendLayout();
             this.pnlnetinf.SuspendLayout();
             this.flbuttons.SuspendLayout();
             this.pnlnetinfo.SuspendLayout();
-            this.pnlpcinfo.SuspendLayout();
+            this.pnltemplates.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnltemplates);
             this.panel1.Controls.Add(this.pnlnetdesign);
             this.panel1.Controls.Add(this.pnlnetinf);
             this.panel1.Controls.Add(this.flbuttons);
@@ -77,7 +91,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1242, 605);
+            this.panel1.Size = new System.Drawing.Size(894, 591);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -89,17 +103,75 @@
             this.pnlnetdesign.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlnetdesign.Location = new System.Drawing.Point(0, 76);
             this.pnlnetdesign.Name = "pnlnetdesign";
-            this.pnlnetdesign.Size = new System.Drawing.Size(1242, 498);
+            this.pnlnetdesign.Size = new System.Drawing.Size(894, 484);
             this.pnlnetdesign.TabIndex = 6;
             this.pnlnetdesign.MouseDown += new System.Windows.Forms.MouseEventHandler(this.place_module);
+            // 
+            // pnlpcinfo
+            // 
+            this.pnlpcinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlpcinfo.Controls.Add(this.btndelete);
+            this.pnlpcinfo.Controls.Add(this.lbpcinfo);
+            this.pnlpcinfo.Controls.Add(this.lbmoduletitle);
+            this.pnlpcinfo.Controls.Add(this.btncloseinfo);
+            this.pnlpcinfo.Location = new System.Drawing.Point(43, 167);
+            this.pnlpcinfo.Name = "pnlpcinfo";
+            this.pnlpcinfo.Size = new System.Drawing.Size(382, 280);
+            this.pnlpcinfo.TabIndex = 9;
+            this.pnlpcinfo.Visible = false;
+            // 
+            // btndelete
+            // 
+            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndelete.AutoSize = true;
+            this.btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndelete.Location = new System.Drawing.Point(106, 254);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(59, 23);
+            this.btndelete.TabIndex = 8;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // lbpcinfo
+            // 
+            this.lbpcinfo.Location = new System.Drawing.Point(12, 41);
+            this.lbpcinfo.Name = "lbpcinfo";
+            this.lbpcinfo.Size = new System.Drawing.Size(367, 86);
+            this.lbpcinfo.TabIndex = 6;
+            this.lbpcinfo.Text = resources.GetString("lbpcinfo.Text");
+            // 
+            // lbmoduletitle
+            // 
+            this.lbmoduletitle.AutoSize = true;
+            this.lbmoduletitle.Location = new System.Drawing.Point(10, 12);
+            this.lbmoduletitle.Name = "lbmoduletitle";
+            this.lbmoduletitle.Size = new System.Drawing.Size(75, 11);
+            this.lbmoduletitle.TabIndex = 2;
+            this.lbmoduletitle.Text = "Add Module";
+            // 
+            // btncloseinfo
+            // 
+            this.btncloseinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncloseinfo.AutoSize = true;
+            this.btncloseinfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncloseinfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncloseinfo.Location = new System.Drawing.Point(327, 254);
+            this.btncloseinfo.Name = "btncloseinfo";
+            this.btncloseinfo.Size = new System.Drawing.Size(52, 23);
+            this.btncloseinfo.TabIndex = 1;
+            this.btncloseinfo.Text = "Done.";
+            this.btncloseinfo.UseVisualStyleBackColor = true;
+            this.btncloseinfo.Click += new System.EventHandler(this.btncloseinfo_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnaddmodule);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 467);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 453);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1242, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(894, 31);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // btnaddmodule
@@ -126,7 +198,7 @@
             this.pnlbuy.Controls.Add(this.cmbbuyable);
             this.pnlbuy.Controls.Add(this.label4);
             this.pnlbuy.Controls.Add(this.btndonebuying);
-            this.pnlbuy.Location = new System.Drawing.Point(3, 162);
+            this.pnlbuy.Location = new System.Drawing.Point(3, 148);
             this.pnlbuy.Name = "pnlbuy";
             this.pnlbuy.Size = new System.Drawing.Size(382, 299);
             this.pnlbuy.TabIndex = 7;
@@ -217,6 +289,12 @@
             // 
             // pnlnetinf
             // 
+            this.pnlnetinf.Controls.Add(this.label6);
+            this.pnlnetinf.Controls.Add(this.cbdifficulty);
+            this.pnlnetinf.Controls.Add(this.txtfspeed);
+            this.pnlnetinf.Controls.Add(this.label5);
+            this.pnlnetinf.Controls.Add(this.txtfskill);
+            this.pnlnetinf.Controls.Add(this.label3);
             this.pnlnetinf.Controls.Add(this.txtnetdesc);
             this.pnlnetinf.Controls.Add(this.label2);
             this.pnlnetinf.Controls.Add(this.txtnetname);
@@ -224,8 +302,73 @@
             this.pnlnetinf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlnetinf.Location = new System.Drawing.Point(0, 76);
             this.pnlnetinf.Name = "pnlnetinf";
-            this.pnlnetinf.Size = new System.Drawing.Size(1242, 498);
+            this.pnlnetinf.Size = new System.Drawing.Size(894, 484);
             this.pnlnetinf.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(40, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 11);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Difficulty (Tier)";
+            // 
+            // cbdifficulty
+            // 
+            this.cbdifficulty.BackColor = System.Drawing.Color.Black;
+            this.cbdifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbdifficulty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbdifficulty.ForeColor = System.Drawing.Color.Green;
+            this.cbdifficulty.FormattingEnabled = true;
+            this.cbdifficulty.Items.AddRange(new object[] {
+            "easy",
+            "medium",
+            "hard"});
+            this.cbdifficulty.Location = new System.Drawing.Point(170, 222);
+            this.cbdifficulty.Name = "cbdifficulty";
+            this.cbdifficulty.Size = new System.Drawing.Size(121, 19);
+            this.cbdifficulty.TabIndex = 10;
+            // 
+            // txtfspeed
+            // 
+            this.txtfspeed.BackColor = System.Drawing.Color.Black;
+            this.txtfspeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfspeed.ForeColor = System.Drawing.Color.Green;
+            this.txtfspeed.Location = new System.Drawing.Point(142, 172);
+            this.txtfspeed.Name = "txtfspeed";
+            this.txtfspeed.Size = new System.Drawing.Size(41, 18);
+            this.txtfspeed.TabIndex = 9;
+            this.txtfspeed.TextChanged += new System.EventHandler(this.txtfspeed_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(40, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 11);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "F. Speed";
+            // 
+            // txtfskill
+            // 
+            this.txtfskill.BackColor = System.Drawing.Color.Black;
+            this.txtfskill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfskill.ForeColor = System.Drawing.Color.Green;
+            this.txtfskill.Location = new System.Drawing.Point(142, 146);
+            this.txtfskill.Name = "txtfskill";
+            this.txtfskill.Size = new System.Drawing.Size(41, 18);
+            this.txtfskill.TabIndex = 7;
+            this.txtfskill.TextChanged += new System.EventHandler(this.txtfskill_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 11);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "F. Skill";
             // 
             // txtnetdesc
             // 
@@ -234,7 +377,7 @@
             this.txtnetdesc.ForeColor = System.Drawing.Color.Green;
             this.txtnetdesc.Location = new System.Drawing.Point(142, 80);
             this.txtnetdesc.Name = "txtnetdesc";
-            this.txtnetdesc.Size = new System.Drawing.Size(511, 18);
+            this.txtnetdesc.Size = new System.Drawing.Size(492, 18);
             this.txtnetdesc.TabIndex = 5;
             // 
             // label2
@@ -271,9 +414,9 @@
             this.flbuttons.Controls.Add(this.btnback);
             this.flbuttons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flbuttons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flbuttons.Location = new System.Drawing.Point(0, 574);
+            this.flbuttons.Location = new System.Drawing.Point(0, 560);
             this.flbuttons.Name = "flbuttons";
-            this.flbuttons.Size = new System.Drawing.Size(1242, 31);
+            this.flbuttons.Size = new System.Drawing.Size(894, 31);
             this.flbuttons.TabIndex = 0;
             // 
             // btnnext
@@ -281,7 +424,7 @@
             this.btnnext.AutoSize = true;
             this.btnnext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnext.Location = new System.Drawing.Point(1194, 3);
+            this.btnnext.Location = new System.Drawing.Point(846, 3);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(45, 23);
             this.btnnext.TabIndex = 0;
@@ -294,7 +437,7 @@
             this.btnback.AutoSize = true;
             this.btnback.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnback.Location = new System.Drawing.Point(1143, 3);
+            this.btnback.Location = new System.Drawing.Point(795, 3);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(45, 23);
             this.btnback.TabIndex = 1;
@@ -304,12 +447,13 @@
             // 
             // pnlnetinfo
             // 
+            this.pnlnetinfo.Controls.Add(this.btnloadfromtemplate);
             this.pnlnetinfo.Controls.Add(this.lbdescription);
             this.pnlnetinfo.Controls.Add(this.lbtitle);
             this.pnlnetinfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlnetinfo.Location = new System.Drawing.Point(0, 0);
             this.pnlnetinfo.Name = "pnlnetinfo";
-            this.pnlnetinfo.Size = new System.Drawing.Size(1242, 76);
+            this.pnlnetinfo.Size = new System.Drawing.Size(894, 76);
             this.pnlnetinfo.TabIndex = 1;
             // 
             // lbdescription
@@ -318,7 +462,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbdescription.Location = new System.Drawing.Point(15, 31);
             this.lbdescription.Name = "lbdescription";
-            this.lbdescription.Size = new System.Drawing.Size(1215, 36);
+            this.lbdescription.Size = new System.Drawing.Size(867, 36);
             this.lbdescription.TabIndex = 1;
             this.lbdescription.Text = "Information about the network.";
             // 
@@ -332,78 +476,95 @@
             this.lbtitle.TabIndex = 0;
             this.lbtitle.Text = "Network Information";
             // 
-            // pnlpcinfo
+            // btnloadfromtemplate
             // 
-            this.pnlpcinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlpcinfo.Controls.Add(this.btndelete);
-            this.pnlpcinfo.Controls.Add(this.lbpcinfo);
-            this.pnlpcinfo.Controls.Add(this.lbmoduletitle);
-            this.pnlpcinfo.Controls.Add(this.btncloseinfo);
-            this.pnlpcinfo.Location = new System.Drawing.Point(391, 181);
-            this.pnlpcinfo.Name = "pnlpcinfo";
-            this.pnlpcinfo.Size = new System.Drawing.Size(382, 280);
-            this.pnlpcinfo.TabIndex = 9;
-            this.pnlpcinfo.Visible = false;
+            this.btnloadfromtemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnloadfromtemplate.AutoSize = true;
+            this.btnloadfromtemplate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnloadfromtemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnloadfromtemplate.Location = new System.Drawing.Point(683, 47);
+            this.btnloadfromtemplate.Name = "btnloadfromtemplate";
+            this.btnloadfromtemplate.Size = new System.Drawing.Size(199, 23);
+            this.btnloadfromtemplate.TabIndex = 2;
+            this.btnloadfromtemplate.Text = "This button breaks things.";
+            this.btnloadfromtemplate.UseVisualStyleBackColor = true;
+            this.btnloadfromtemplate.Visible = false;
+            this.btnloadfromtemplate.Click += new System.EventHandler(this.btnloadfromtemplate_Click);
             // 
-            // btndelete
+            // pnltemplates
             // 
-            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndelete.AutoSize = true;
-            this.btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndelete.Location = new System.Drawing.Point(106, 254);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(59, 23);
-            this.btndelete.TabIndex = 8;
-            this.btndelete.Text = "Delete";
-            this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            this.pnltemplates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnltemplates.Controls.Add(this.label9);
+            this.pnltemplates.Controls.Add(this.cbnets);
+            this.pnltemplates.Controls.Add(this.label10);
+            this.pnltemplates.Controls.Add(this.btnrecreate);
+            this.pnltemplates.Location = new System.Drawing.Point(256, 146);
+            this.pnltemplates.Name = "pnltemplates";
+            this.pnltemplates.Size = new System.Drawing.Size(382, 299);
+            this.pnltemplates.TabIndex = 8;
+            this.pnltemplates.Visible = false;
             // 
-            // lbpcinfo
+            // label9
             // 
-            this.lbpcinfo.Location = new System.Drawing.Point(12, 41);
-            this.lbpcinfo.Name = "lbpcinfo";
-            this.lbpcinfo.Size = new System.Drawing.Size(367, 86);
-            this.lbpcinfo.TabIndex = 6;
-            this.lbpcinfo.Text = resources.GetString("lbpcinfo.Text");
+            this.label9.Location = new System.Drawing.Point(10, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(367, 156);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Please choose a network from the above list. Net Generator will attempt to grab d" +
+    "ata about the network and recreate it for you.";
             // 
-            // lbmoduletitle
+            // cbnets
             // 
-            this.lbmoduletitle.AutoSize = true;
-            this.lbmoduletitle.Location = new System.Drawing.Point(10, 12);
-            this.lbmoduletitle.Name = "lbmoduletitle";
-            this.lbmoduletitle.Size = new System.Drawing.Size(75, 11);
-            this.lbmoduletitle.TabIndex = 2;
-            this.lbmoduletitle.Text = "Add Module";
+            this.cbnets.BackColor = System.Drawing.Color.Black;
+            this.cbnets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbnets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbnets.ForeColor = System.Drawing.Color.White;
+            this.cbnets.FormattingEnabled = true;
+            this.cbnets.Location = new System.Drawing.Point(12, 38);
+            this.cbnets.Name = "cbnets";
+            this.cbnets.Size = new System.Drawing.Size(360, 19);
+            this.cbnets.TabIndex = 3;
             // 
-            // btncloseinfo
+            // label10
             // 
-            this.btncloseinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncloseinfo.AutoSize = true;
-            this.btncloseinfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncloseinfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncloseinfo.Location = new System.Drawing.Point(327, 254);
-            this.btncloseinfo.Name = "btncloseinfo";
-            this.btncloseinfo.Size = new System.Drawing.Size(52, 23);
-            this.btncloseinfo.TabIndex = 1;
-            this.btncloseinfo.Text = "Done.";
-            this.btncloseinfo.UseVisualStyleBackColor = true;
-            this.btncloseinfo.Click += new System.EventHandler(this.btncloseinfo_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 11);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Load from Network";
+            // 
+            // btnrecreate
+            // 
+            this.btnrecreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrecreate.AutoSize = true;
+            this.btnrecreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnrecreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrecreate.Location = new System.Drawing.Point(334, 273);
+            this.btnrecreate.Name = "btnrecreate";
+            this.btnrecreate.Size = new System.Drawing.Size(45, 23);
+            this.btnrecreate.TabIndex = 1;
+            this.btnrecreate.Text = "Done";
+            this.btnrecreate.UseVisualStyleBackColor = true;
+            this.btnrecreate.Click += new System.EventHandler(this.btnrecreate_Click);
             // 
             // NetGen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1242, 605);
+            this.ClientSize = new System.Drawing.Size(894, 591);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Lucida Console", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGreen;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NetGen";
             this.Text = "NetGen";
             this.Load += new System.EventHandler(this.NetGen_Load);
             this.panel1.ResumeLayout(false);
             this.pnlnetdesign.ResumeLayout(false);
+            this.pnlpcinfo.ResumeLayout(false);
+            this.pnlpcinfo.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.pnlbuy.ResumeLayout(false);
@@ -414,8 +575,8 @@
             this.flbuttons.PerformLayout();
             this.pnlnetinfo.ResumeLayout(false);
             this.pnlnetinfo.PerformLayout();
-            this.pnlpcinfo.ResumeLayout(false);
-            this.pnlpcinfo.PerformLayout();
+            this.pnltemplates.ResumeLayout(false);
+            this.pnltemplates.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -451,5 +612,17 @@
         private System.Windows.Forms.Label lbpcinfo;
         private System.Windows.Forms.Label lbmoduletitle;
         private System.Windows.Forms.Button btncloseinfo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbdifficulty;
+        private System.Windows.Forms.TextBox txtfspeed;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtfskill;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnloadfromtemplate;
+        private System.Windows.Forms.Panel pnltemplates;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbnets;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnrecreate;
     }
 }

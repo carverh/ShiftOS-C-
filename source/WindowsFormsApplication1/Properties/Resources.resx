@@ -715,9 +715,6 @@
   <data name="upgradeartpadpaintbrushtool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpaintbrushtool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconColourPicker_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconColourPicker.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="object_small2.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_small2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1200,5 +1197,26 @@
   </data>
   <data name="DevX_Secondary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DevX_Secondary.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Hacker_AustinWalker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hacker_AustinWalker.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Hacker_DanaRoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hacker_DanaRoss.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Hacker_JonathanRivard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hacker_JonathanRivard.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MidGame_Holochat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MidGame_Holochat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NetBrowser_Enemies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NetBrowser_Enemies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="iconColourPicker_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconColourPicker.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AustinWalkerCompletionStory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AustinWalkerCompletionStory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

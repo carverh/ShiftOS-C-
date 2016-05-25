@@ -193,6 +193,35 @@ namespace ShiftOS
             command = command.ToLower();
         }
 
+        internal void StartDanaRossStory()
+        {
+            var t = new Thread(new ThreadStart(new Action(() =>
+            {
+                WriteLine("User <65.48.121.24> connecting as 'Dana'");
+                API.PlaySound(Properties.Resources.dial_up_modem_02);
+                WriteLine("Dana: Hey! That was quite the battle, huh?");
+                BeepSleep(1000);
+                WriteLine("Dana: Well - since you beat me, let me let you in on a little secret.");
+                BeepSleep(3000);
+                WriteLine("Dana: ShiftOS's desktop may seem pretty complicated and customizable for you right now, but trust me. It gets better.");
+                BeepSleep(2500);
+                WriteLine("Dana: I'm gonna patch your Shiftorium so you can get some neat upgrades!");
+                BeepSleep(3000);
+                WriteLine("Dana: Also, if you feel like doing more hacker battles, why not check out Tier 2 in the Network Browser?");
+                BeepSleep(2750);
+                WriteLine("Dana: I've also added my network modules to your network - you'll just have to wait for them to regenerate.");
+                BeepSleep(500);
+                WriteLine("Dana: Well, talk to you some other time!");
+                BeepSleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    API.Upgrades["midgamebridge"] = true;
+                    this.Close();
+                }));
+            })));
+            t.Start();
+        }
+
         // ERROR: Handles clauses are not supported in C#
         private void txtterm_Click(object sender, EventArgs e)
         {
@@ -1190,14 +1219,61 @@ Password: z7fjsd3");
                         WriteLine("DevX: I don't know what I'll do... I don't know when I'll do it... but you will wish you never touched a computer in your life...");
                         break;
                     case 6:
-                        API.Upgrades["devxfurious"] = true;
                         t.Stop();
                         Viruses.DropDevXPayload();
                         this.Close();
+                        var trm = new Terminal();
+                        API.CreateForm(trm, API.LoadedNames.TerminalName, API.GetIcon("Terminal"));
+                        trm.StartDevXFuriousStory2();
                         break;
                 }
                 i += 1;
             };
+            t.Start();
+        }
+
+        private void StartDevXFuriousStory2()
+        {
+            var t = new Thread(new ThreadStart(new Action(() =>
+            {
+                WriteLine("User '???' connecting...");
+                API.PlaySound(Properties.Resources.dial_up_modem_02);
+                WriteLine("???: Hello? Ummm... this is awkward...");
+                BeepSleep(3000);
+                WriteLine("???: Listen - I'm a hacker. Well, not really. I'm friends with one.");
+                BeepSleep(3000);
+                WriteLine("???: Seems like DevX completely obliterated your system with one of his viruses.");
+                BeepSleep(2500);
+                WriteLine("???: I'll fix that for you.");
+                API.Upgrades["virusscanner"] = true;
+                this.Invoke(new Action(() =>
+                {
+                    this.command = "vscan";
+                    this.DoCommand();
+                }));
+                BeepSleep(1000);
+                WriteLine("???: Better? Cool. Now, I need your help.");
+                BeepSleep(1250);
+                WriteLine("???: I can't reveal my identity yet - but I co-own this chat-room...");
+                BeepSleep(1175);
+                WriteLine("???: It's called the 'Hacker Alliance'.");
+                BeepSleep(1000);
+                WriteLine("???: I'm going to install something called 'HoloChat' on your system. It'll be quick.");
+                BeepSleep(2000);
+                WriteLine("Installing HoloChat...");
+                API.Upgrades["holochat"] = true;
+                Thread.Sleep(100);
+                WriteLine("Done. Resetting desktop...");
+                this.Invoke(new Action(() => { API.CurrentSession.SetupDesktop(); }));
+                WriteLine("Done.");
+                Thread.Sleep(3000);
+                WriteLine("???: Alright - I'll talk to you soon. Just join that chat room when you're ready.");
+                BeepSleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    this.Close();
+                }));
+            })));
             t.Start();
         }
 
@@ -1215,86 +1291,49 @@ Password: z7fjsd3");
             int i = 0;
             WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
             API.PlaySound(Properties.Resources.dial_up_modem_02);
-            tmrstory.Tick += (object s, EventArgs a) =>
+            var t = new Thread(new ThreadStart(new Action(() =>
             {
-                switch(i)
+                WriteLine("Maureen Fenn: Hey there, user! I have something to show you.");
+                BeepSleep(4000);
+                WriteLine("Maureen Fenn: So, there's this thing called the 'Shiftnet'");
+                BeepSleep(3750);
+                WriteLine("Maureen Fenn: Turns out, that DevX wants to keep it a secret, as such he only installed it on his and my systems.");
+                BeepSleep(4250);
+                WriteLine("Maureen Fenn: But what's the point of listening to DevX when we have people like you who like to experiment?");
+                BeepSleep(4000);
+                WriteLine("Maureen Fenn: Well, to be fair - he can destroy whatever he wants. Just like he did my company, Minimatch.");
+                BeepSleep(3000);
+                WriteLine("Maureen Fenn: But who cares! I'm going to install a few things on your system.");
+                API.Upgrades["shiftnet"] = true;
+                this.Invoke(new Action(() =>
                 {
-                    case 0:
-                        WriteLine("Maureen Fenn: Hello, My name is Maureen Fenn. I want to talk to you about something.");
-                        break;
-                    case 1:
-                        WriteLine("Maureen Fenn: I am another ShiftOS user. DevX hijacked my computer and installed ShiftOS on it about 2 years ago.");
-                        break;
-                    case 2:
-                        WriteLine("Maureen Fenn: For some reason, he wanted me to develop some applications for ShiftOS and sell them on a Shiftnet website.");
-                        break;
-                    case 3:
-                        WriteLine("Maureen Fenn: He installed the Shiftnet on my system and gave me a neat little API to code them in.");
-                        break;
-                    case 4:
-                        WriteLine("Maureen Fenn: It seems that I am the only one who has access to the Shiftnet, so seeings as you are able to run it on your system,");
-                        break;
-                    case 5:
-                        WriteLine("Maureen Fenn: I figured I would install the Shiftnet client onto your computer.");
-                        break;
-                    case 6:
-                        WriteLine("Maureen Fenn: Just let me connect to your system and install the Shiftnet for you.");
-                        WriteLine("mf@" + API.OSName + " $> root");
-                        break;
-                    case 7:
-                        API.PlaySound(Properties.Resources.typesound);
-                        if(API.Upgrades["multitasking"] == true)
-                        {
-                            API.CreateInfoboxSession("Root connection", "A root connection has been established to your system. Be aware of any unusual, unwanted actions.", infobox.InfoboxMode.Info);
-                        }
-                        else
-                        {
-                            WriteLine("mf: Root connection established!");
-                        }
-                        break;
-                    case 8:
-                        WriteLine("Starting installation of package 'shiftnet.pkg'...");
-                        if(!Directory.Exists(Paths.Applications))
-                        {
-                            Directory.CreateDirectory(Paths.Applications);
-                            
-                        }
-                        //Download Shiftnet package using spkg.
-                        API.Upgrades["shiftnet"] = true;
-                        command = "spkg install shiftnet";
-                        i = 66;
-                        DoCommand();
-                        break;
-                    case 9:
-                        WriteLine("mf: Root connection disbanded.");
-                        WriteLine("Maureen Fenn: There, the Shiftnet is now installed on your system!");
-                        break;
-                    case 10:
-                        WriteLine("Maureen Fenn: I have also hacked on a few Shiftorium upgrades for you to make it a bit easier to run applications from the Shiftnet.");
-                        break;
-                    case 11:
-                        WriteLine("Maureen Fenn: Be sure to check the Shiftorium, and my Shiftnet website on shiftnet://main/minimatch/home.rnp");
-                        break;
-                    case 12:
-                        WriteLine("Maureen Fenn: Also, try not to venture too far off the main server cluster (shiftnet://main/), you may not know who's doing what. The main cluster is safe.");
-                        break;
-                    case 13:
-                        WriteLine("Maureen Fenn: The Shiftnet also comes with a utility that will let you install software from it. Just run 'help' to find out more.");
-                        break;
-                    case 14:
-                        WriteLine("Maureen Fenn: Anyways, I gotta go. Have fun using the Shiftnet! I'm gonna go... work on something else.");
-                        ShiftOS.Hacking.AddCharacter(new Character("Maureen Fenn", "It's time I get back at DevX for what he's done.", 40, 75, 2));
-                        tmrstory.Stop();
-                        this.Close();
-                        break;
-                    case 67:
-                        i = 9;
-                        break;
-                }
-                API.PlaySound(Properties.Resources.typesound);
-                i += 1;
-            };
-            tmrstory.Start();
+                    this.command = "spkg install shiftnet";
+                    this.DoCommand();
+                }));
+                WriteLine("Shiftnet installed on system...");
+                Thread.Sleep(4000);
+                WriteLine("Maureen Fenn: All done! Oh - just before I leave... go ahead and explore the Shiftnet!");
+                BeepSleep(3000);
+                WriteLine("Maureen Fenn: But, be careful. Don't venture off the main server. You never know what's elsewhere...");
+                BeepSleep(1000);
+                WriteLine("Maureen Fenn: Well, bye!");
+                this.Invoke(new Action(() =>
+                {
+                    API.CurrentSession.SetupDesktop();
+                    this.Close();
+                }));
+            })));
+            t.Start();
+        }
+
+        /// <summary>
+        /// *BEEP* ZZZZZZZZzzzzzzzzzzz.......
+        /// </summary>
+        /// <param name="time">Time to sleep.</param>
+        private void BeepSleep(int time)
+        {
+            API.PlaySound(Properties.Resources.writesound);
+            Thread.Sleep(time);
         }
 
         private List<string> GetFonts()
@@ -1389,6 +1428,28 @@ Password: z7fjsd3");
             string[] args = command.ToLower().Split(' ');
             switch (args[0])
             {
+                case "upg":
+                    if(API.DeveloperMode)
+                    {
+                        try
+                        {
+                            switch(args[1])
+                            {
+                                case "get":
+                                    WriteLine(API.Upgrades[args[2]].ToString());
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
                 case "endgame_test":
                     try
                     {

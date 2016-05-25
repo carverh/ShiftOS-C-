@@ -128,6 +128,7 @@ namespace ShiftOS
         /// </summary>
         public File_Skimmer()
         {
+            MountMgr.Init();
             InitializeComponent();
         }
 
@@ -176,12 +177,27 @@ namespace ShiftOS
                             {
                                 if (lbcurrentfolder.Text != "/")
                                 {
-                                    CurrentFolder = Directory.GetParent(CurrentFolder).FullName;
-                                    ListFiles();
+                                    if (lbcurrentfolder.Text == MountPoint.Replace("\\", "/"))
+                                    {
+                                        CurrentFolder = Paths.SaveRoot;
+                                        ListFiles();
+                                    }
+                                    else
+                                    {
+                                        CurrentFolder = Directory.GetParent(CurrentFolder).FullName;
+                                        ListFiles();
+                                    }
                                 } else
                                 {
                                     API.CreateInfoboxSession("Can't read directory", "File Skimmer is not able to read the requested directory as it is not formatted with the ShiftFS file system.", infobox.InfoboxMode.Info);
                                 }
+                            }
+                            else if(tag.StartsWith("drv:"))
+                            {
+                                string drivepath = tag.Remove(0, 4);
+                                CurrentFolder = drivepath;
+                                MountPoint = drivepath;
+                                ListFiles();
                             }
                         }
                     }
@@ -198,11 +214,14 @@ namespace ShiftOS
             };
         }
 
+        string MountPoint = null;
+
         /// <summary>
         /// Lists all the files in the current folder.
         /// </summary>
         public void ListFiles()
         {
+            MountMgr.Init();
             SetupImages();
             txtfilename.Text = "";
             //SetupUI();
@@ -223,6 +242,18 @@ namespace ShiftOS
             upone.Tag = "_uponedir";
             upone.ImageKey = "directory";
             lvfiles.Items.Add(upone);
+            if(CurrentFolder == Paths.SaveRoot)
+            {
+                foreach(var drive in MountMgr.links)
+                {
+                    var dinf = new DirectoryInfo(drive.Key);
+                    var item = new ListViewItem();
+                    item.Text = drive.Value;
+                    item.Tag = "drv:" + dinf.FullName;
+                    lvfiles.Items.Add(item);
+                    item.ImageKey = "directory";
+                }
+            }
             foreach (string dir in Directory.GetDirectories(CurrentFolder))
             {
                 var dirinf = new DirectoryInfo(dir);

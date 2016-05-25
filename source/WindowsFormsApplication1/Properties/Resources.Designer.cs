@@ -660,6 +660,20 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///&quot;Hey! Seems your Network Browser&apos;s working pretty well, huh?&quot;:&quot;Richard Ladouceur&quot;,
+        ///&quot;I keep reading news about networks on the list going offline.&quot;:&quot;Richard Ladouceur&quot;,
+        ///&quot;It&apos;s great to see you&apos;re doing this, because pretty soon, it&apos;ll be DevX&apos;s turn to suffer your wrath.&quot;:&quot;Richard Ladouceur&quot;,
+        ///&quot;I&apos;ve patched your Network Browser to allow you to fight in Tier 3 battles.&quot;:&quot;Richard Ladouceur&quot;,
+        ///&quot;Just be careful - if I&apos;m able to see all of this news, there&apos;s no doubt DevX has his eyes on it.&quot;:&quot;Richard Ladouce [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AustinWalkerCompletionStory {
+            get {
+                return ResourceManager.GetString("AustinWalkerCompletionStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BeginButton_Image {
@@ -1114,6 +1128,33 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;IsLeader&quot;:true,&quot;Name&quot;:&quot;Austin Walker&quot;,&quot;FriendDesc&quot;:&quot;Austin Walker is a retired programmer who worked at Orange Inc. In an attempt to gain even more money, he has trained himself with hacker battles.&quot;,&quot;Description&quot;:&quot;Austin Walker is a retired programmer who worked at Orange Inc. In an attempt to gain even more money, he has trained himself with hacker battles.&quot;,&quot;FriendSpeed&quot;:45,&quot;FriendSkill&quot;:150,&quot;Difficulty&quot;:&quot;medium&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;austin_walker&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:100,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Hacker_AustinWalker {
+            get {
+                return ResourceManager.GetString("Hacker_AustinWalker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;Name&quot;:&quot;Dana Ross&quot;,&quot;FriendDesc&quot;:&quot;Dana Ross is a new, yet experienced ShiftOS user. She is also experienced in hacking, and is a worthy adversary for any Tier 1 network who dares try her.&quot;,&quot;Description&quot;:&quot;Dana Ross is a new, yet experienced ShiftOS user. She is also experienced in hacking, and is a worthy adversary for any Tier 1 network who dares try her.&quot;,&quot;FriendSpeed&quot;:100,&quot;FriendSkill&quot;:100,&quot;Difficulty&quot;:&quot;easy&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;dana_ross&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostna [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Hacker_DanaRoss {
+            get {
+                return ResourceManager.GetString("Hacker_DanaRoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {}.
+        /// </summary>
+        internal static string Hacker_JonathanRivard {
+            get {
+                return ResourceManager.GetString("Hacker_JonathanRivard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap iconAppscape {
@@ -1533,6 +1574,23 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;Ahhh, User! I see the installation was successful and you made it.&quot;:&quot;Richard Ladouceur&quot;,
+        ///	&quot;Oh - sorry. I&apos;m who you know as &apos;???&apos;.&quot;:&quot;Richard Ladouceur&quot;,
+        ///	&quot;So listen. You&apos;ve heard of Hacker Battles, right?&quot;:&quot;Richard Ladouceur&quot;,
+        ///	&quot;Well - every skilled hacker needs to know who to hit.&quot;:&quot;Richard Ladouceur&quot;,
+        ///	&quot;Remember that hacker friend I told you about earlier?&quot;:&quot;Richard Ladouceur&quot;,
+        ///	&quot;Yeah - that&apos;s me...&quot;:&quot;Hacker101&quot;,
+        ///	&quot;Me and Richard have plans - and we need your help.&quot;:&quot;Hacker101&quot;,
+        ///	&quot;We&apos;re plannin [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MidGame_Holochat {
+            get {
+                return ResourceManager.GetString("MidGame_Holochat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Minimatchbackground {
@@ -1559,6 +1617,16 @@ namespace ShiftOS.Properties {
             get {
                 object obj = ResourceManager.GetObject("minimatchlabyrinthpreview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///&quot;BufferOverflow&quot;:{&quot;IsLeader&quot;:false,&quot;Name&quot;:&quot;BufferOverflow&quot;,&quot;FriendDesc&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;Description&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;easy&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;bufferoverflow&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:100,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;main_av&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:1,&quot;HP&quot;:0,&quot;Grade&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string NetBrowser_Enemies {
+            get {
+                return ResourceManager.GetString("NetBrowser_Enemies", resourceCulture);
             }
         }
         

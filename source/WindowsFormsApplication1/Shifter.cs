@@ -605,7 +605,16 @@ namespace ShiftOS
             pnldesktoppaneloptions.Show();
             pnldesktoppaneloptions.BringToFront();
             SetupDesktopPanelValues();
-
+            if(API.Upgrades["advanceddesktop"])
+            {
+                lbpanelcolor.Hide();
+                pnldesktoppanelcolour.Hide();
+                lbheight.Hide();
+                txtdesktoppanelheight.Hide();
+                lbposition.Hide();
+                combodesktoppanelposition.Hide();
+                lbwarning.Text = "Desktop Panel customization has been moved from the Shifter! You can right-click panels to change their settings and add/remove widgets.";
+            }
         }
 
         private void btnapply_Click(object sender, EventArgs e)

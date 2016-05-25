@@ -284,6 +284,8 @@ namespace Skinning
         public string Position = "Top";
         public int Height = 24;
         public Color BackgroundColor = Color.Gray;
+        public Image BackgroundImage = null;
+        public string ImagePath = null;
     }
 
     public class PanelWidget
@@ -441,6 +443,42 @@ namespace Skinning
         }
 
         /// <summary>
+        /// Loads background images for all desktop panels
+        /// </summary>
+        public static void LoadPanels()
+        {
+            foreach(var pnl in loadedSkin.DesktopPanels)
+            {
+                string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
+                if (File.Exists(dpath))
+                {
+                    pnl.BackgroundImage = Image.FromFile(dpath);
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Saves background images of panels
+        /// </summary>
+        public static void SavePanels()
+        {
+            string dir = Paths.LoadedSkin + "panels";
+            if(Directory.Exists(dir))
+            {
+                Directory.Delete(dir, true);
+            }
+            Directory.CreateDirectory(dir);
+            foreach(var pnl in loadedSkin.DesktopPanels)
+            {
+                string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
+                if(pnl.BackgroundImage != null)
+                {
+                    pnl.BackgroundImage.Save(dpath);
+                    pnl.BackgroundImage = null;
+                }
+            }
+        }
+        /// <summary>
         /// Randomize some skin variables. Used for a virus.
         /// </summary>
         public static void Randomize()
@@ -517,26 +555,26 @@ namespace Skinning
         {
             if(Directory.Exists(Paths.LoadedSkin))
             {
-                try
-                {
+                //try {
                     string rawData = File.ReadAllText(Paths.LoadedSkin + "data.json");
                     loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
                     if (File.Exists(Paths.LoadedSkin + "panels.json"))
                     {
                         string panels = File.ReadAllText(Paths.LoadedSkin + "panels.json");
                         loadedSkin.DesktopPanels = JsonConvert.DeserializeObject<List<DesktopPanel>>(panels);
+                        LoadPanels();
                     }
                     loadimages();
                     LoadEmbeddedNamePack();
-                }
-                catch (Exception ex)
+                /*}
+                catch
                 {
                     //No skin to load.
                     loadedSkin = new Skin();
                     loadedskin_images = new Images();
                     saveskin();
 
-                }
+                }*/
             } else
             {
                 loadedSkin = new Skin();
@@ -751,6 +789,7 @@ namespace Skinning
             saveimages();
             string rawjson = JsonConvert.SerializeObject(loadedSkin);
             File.WriteAllText(Paths.LoadedSkin + "data.json", rawjson);
+            SavePanels();
             string panels = JsonConvert.SerializeObject(loadedSkin.DesktopPanels);
             File.WriteAllText(Paths.LoadedSkin + "panels.json", panels);
             SaveEmbeddedNamePack();

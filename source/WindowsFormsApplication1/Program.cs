@@ -66,6 +66,13 @@ namespace ShiftOS
             //Load ShiftOS skin
             Skinning.Utilities.loadskin();
             SaveSystem.ShiftoriumRegistry.UpdateShiftorium();
+            //Lua bootscreen.
+            if(File.Exists(Paths.SaveRoot + "BOOT"))
+            {
+                string lua = File.ReadAllText(Paths.SaveRoot + "BOOT");
+                var l = new LuaInterpreter();
+                l.mod(lua);
+            }
             //Start recieving calls from the Modding API...
             Application.Run(new ShiftOSDesktop());
             //By now, the API receiver has been loaded,

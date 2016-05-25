@@ -21,6 +21,24 @@ namespace ShiftOS
         public static List<Module> MyNetwork = new List<Module>();
         public static bool Failure = false;
         public static DateTime FailDate = DateTime.Now;
+        internal static string HackerBattleAward = null;
+        public static Timer RepairTimer = null;
+
+        public static Module MyCore
+        {
+            get
+            {
+                var m = new Module(SystemType.Core, 1, "invalid");
+                foreach(var mod in MyNetwork)
+                {
+                    if(mod.Hostname == "localhost")
+                    {
+                        m = mod;
+                    }
+                }
+                return m;
+            }
+        }
 
         /// <summary>
         /// Gives a shiftorium upgrade for free.
@@ -474,6 +492,59 @@ namespace ShiftOS
                 File.WriteAllText(Paths.Drivers + "Network.dri", API.Encryption.Encrypt(JsonConvert.SerializeObject(MyNetwork)));
 
             }
+            List<Module> coresToRemove = new List<Module>();
+            foreach(var m in MyNetwork)
+            {
+                if(m.Type == SystemType.Core && m != MyCore)
+                {
+                    coresToRemove.Add(m);
+                }
+            }
+            foreach(var m in coresToRemove)
+            {
+                MyNetwork.Remove(m);
+            }
+            RepairTimer = new Timer();
+            RepairTimer.Interval = 2000;
+            var r = new Random();
+            RepairTimer.Tick += (object s, EventArgs a) =>
+            {
+                var repairable = new List<Module>();
+                foreach(var mod in MyNetwork)
+                {
+                    if(mod.HP < mod.GetTotalHP())
+                    {
+                        repairable.Add(mod);
+                    }
+                }
+                int index = r.Next(0, repairable.Count);
+                try
+                {
+                    int increase = 1;
+                    foreach(var mod in MyNetwork)
+                    {
+                        if(mod.Type == SystemType.RepairModule)
+                        {
+                            increase += mod.HP / 4;
+                        }
+                    }
+                   
+                    var m = repairable[index];
+                    while(m.HP + increase > m.GetTotalHP())
+                    {
+                        increase -= 1;
+                    }
+                    if(m.HP < m.GetTotalHP())
+                    {
+                        m.HP += increase;
+                    }
+                }
+                catch
+                {
+
+                }
+            };
+            RepairTimer.Start();
         }
 
         /// <summary>
@@ -588,34 +659,10 @@ namespace ShiftOS
         public Computer Deploy()
         {
             var c = new Computer();
+            c.TotalHP = GetTotalHP(); //for proper status display
             c.Hostname = Hostname;
             c.Type = Type;
-            switch (Type)
-            {
-                case SystemType.Core:
-                    c.HP = 100;
-                    break;
-                default:
-                    switch (Grade)
-                    {
-                        case 1:
-                            c.HP = 10;
-                            break;
-                        case 2:
-                            c.HP = 20;
-                            break;
-                        case 3:
-                            c.HP = 40;
-                            break;
-                        case 4:
-                            c.HP = 80;
-                            break;
-                        default:
-                            c.HP = 10;
-                            break;
-                    }
-                    break;
-            }
+            c.HP = HP;
             c.Visible = true;
             c.Grade = Grade;
             if(X != 0 && Y != 0)
@@ -623,6 +670,30 @@ namespace ShiftOS
                 c.Location = new Point(X, Y);
             }
             return c;
+        }
+
+        public int GetTotalHP()
+        {
+            switch (Type)
+            {
+                case SystemType.Core:
+                    return 100;
+                default:
+                    switch (Grade)
+                    {
+                        case 1:
+                            return 10;
+                        case 2:
+                            return 20;
+                        case 3:
+                            return 40;
+                        case 4:
+                            return 80;
+                        default:
+                            return 10;
+
+                    }
+            }
         }
     }
 
@@ -661,6 +732,7 @@ namespace ShiftOS
             Network.Add(m); //Hacker will always have a core system.
         }
 
+        public bool IsLeader = false;
         public string Name { get; set; }
         public string FriendDesc { get; set; }
         public string Description { get; set; }

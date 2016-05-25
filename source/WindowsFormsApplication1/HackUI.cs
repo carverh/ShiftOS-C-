@@ -151,11 +151,13 @@ namespace ShiftOS
             if (UserRequestedClose == false)
             {
                 tmrplayerhealthdetect.Stop();
-                foreach (var pc in AllPlayerComputers)
-                {
-                    pc.HP = 0;
-                }
             }
+            else
+            {
+                e.Cancel = true;
+                API.CreateInfoboxSession("Can't retreat now.", "You started this battle, and made it this far. Finish what you started. Don't run away.", infobox.InfoboxMode.Info);
+            }
+            Hacking.RepairTimer.Start(); //Now the player can repair.
         }
 
         public Computer SelectedPlayerComputer = null;
@@ -450,8 +452,11 @@ namespace ShiftOS
                 }
                 if (m == null)
                 {
-                    cmbmodules.Items.Add(item.Hostname);
-                    FutureModules.Add(item.Hostname, item.Type);
+                    if (item.HP > 0)
+                    {
+                        cmbmodules.Items.Add(item.Hostname);
+                        FutureModules.Add(item.Hostname, item.Type);
+                    }
                 }
             }
 
@@ -703,7 +708,9 @@ namespace ShiftOS
                         }
                         if (cont2 == true)
                         {
-                            GetMyNet().Add(new Module(mod.Type, Convert.ToInt32(txtgrade.Text), hname));
+                            var newModule = new Module(mod.Type, Convert.ToInt32(txtgrade.Text), hname);
+                            newModule.HP = newModule.GetTotalHP();
+                            GetMyNet().Add(newModule);
                             API.RemoveCodepoints(mod.Cost);
                             API.CreateInfoboxSession("Module added.", "To deploy the module to the network, select 'Add Module' and choose the hostname from the menu.", infobox.InfoboxMode.Info);
                             pnlbuy.Hide();
@@ -945,6 +952,7 @@ namespace ShiftOS
 
         private void HackUI_Load(object sender, EventArgs e)
         {
+            Hacking.RepairTimer.Stop(); //Don't want the player to be able to repair dead modules during a battle!
             this.TopMost = true;
             arc = new AudioResourceClient("HackerBattle");
             arc.SongFinished += (object s, EventArgs a) =>
@@ -975,8 +983,8 @@ namespace ShiftOS
             var rnd = new Random();
             foreach (Module m in ThisEnemyHacker.Network)
             {
+                m.HP = m.GetTotalHP();
                 var c = m.Deploy();
-                c.Location = new Point(m.X, m.Y);
                 if (c.Type == SystemType.Core)
                 {
                     ThisEnemyPC = c;
@@ -984,6 +992,7 @@ namespace ShiftOS
                     ThisPlayerPC.EnemyComputer = ThisEnemyPC;
                 }
                 AddEnemyModule(c);
+                c.Location = new Point(m.X, m.Y);
             }
         }
 
@@ -1102,7 +1111,7 @@ namespace ShiftOS
 
         public void Enemy_Firewall_Deflect(Computer fwall)
         {
-            //Safegaurd...
+            //Safeguard... also apparently I can't spell... because this used to be 'Safegaurd'...
             if (fwall.Type == SystemType.Firewall)
             {
                 var r = fwall.GetAreaOfEffect();

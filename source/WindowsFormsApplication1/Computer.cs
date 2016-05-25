@@ -12,6 +12,8 @@ namespace ShiftOS
 {
     public partial class Computer : UserControl
     {
+        public int TotalHP = 100;
+
         public Computer()
         {
             InitializeComponent();
@@ -318,6 +320,16 @@ namespace ShiftOS
                 if (this.HP > 0)
                 {
                     lbstats.Text = $"HP: {_HP}";
+                    if(!Enemy)
+                    {
+                        foreach(var m in Hacking.MyNetwork)
+                        {
+                            if(m.Hostname == Hostname)
+                            {
+                                m.HP = _HP;
+                            }
+                        }
+                    }
                     switch (Type)
                     {
                         case SystemType.Core:
@@ -369,8 +381,24 @@ namespace ShiftOS
                     {
                         if (API.Upgrades["limitlesscustomshades"] == true)
                         {
-                            int mod = _HP % 255;
-                            this.BackColor = Color.FromArgb(255, mod, mod);
+                            if(_HP > TotalHP / 2)
+                            {
+                                this.BackColor = Color.Green;
+                                lbstats.ForeColor = Color.Black;
+                            }
+                            else
+                            {
+                                if(_HP > TotalHP / 3)
+                                {
+                                    this.BackColor = Color.Orange;
+                                    lbstats.ForeColor = Color.Black;
+                                }
+                                else
+                                {
+                                    this.BackColor = Color.Red;
+                                    lbstats.ForeColor = Color.White;
+                                }
+                            }
                         }
                         if (Enemy == true)
                         {

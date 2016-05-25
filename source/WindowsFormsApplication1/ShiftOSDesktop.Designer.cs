@@ -155,6 +155,7 @@
             this.ShortcutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDesktopPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.widgetManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgshiftnetapps = new System.Windows.Forms.ImageList(this.components);
             this.lbldebug = new System.Windows.Forms.Label();
             this.lblog = new System.Windows.Forms.Label();
@@ -170,7 +171,6 @@
             this.appLauncherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelButtonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.widgetManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desktoppanel.SuspendLayout();
             this.applaunchermenuholder.SuspendLayout();
             this.desktopappmenu.SuspendLayout();
@@ -237,19 +237,21 @@
             // 
             this.pnlnotifications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlnotifications.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlnotifications.Location = new System.Drawing.Point(1083, 0);
+            this.pnlnotifications.Location = new System.Drawing.Point(132, 0);
             this.pnlnotifications.Name = "pnlnotifications";
-            this.pnlnotifications.Size = new System.Drawing.Size(88, 24);
+            this.pnlnotifications.Size = new System.Drawing.Size(1039, 24);
             this.pnlnotifications.TabIndex = 2;
             // 
             // pnlpanelbuttonholder
             // 
+            this.pnlpanelbuttonholder.AutoSize = true;
+            this.pnlpanelbuttonholder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlpanelbuttonholder.BackColor = System.Drawing.Color.Transparent;
             this.pnlpanelbuttonholder.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlpanelbuttonholder.Location = new System.Drawing.Point(130, 0);
             this.pnlpanelbuttonholder.Name = "pnlpanelbuttonholder";
             this.pnlpanelbuttonholder.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.pnlpanelbuttonholder.Size = new System.Drawing.Size(953, 24);
+            this.pnlpanelbuttonholder.Size = new System.Drawing.Size(2, 24);
             this.pnlpanelbuttonholder.TabIndex = 1;
             // 
             // applaunchermenuholder
@@ -1157,7 +1159,7 @@
             this.addDesktopPanelToolStripMenuItem,
             this.widgetManagerToolStripMenuItem});
             this.cmbdesktopoptions.Name = "ContextMenuStrip1";
-            this.cmbdesktopoptions.Size = new System.Drawing.Size(175, 92);
+            this.cmbdesktopoptions.Size = new System.Drawing.Size(175, 70);
             // 
             // NewToolStripMenuItem
             // 
@@ -1177,49 +1179,49 @@
             // FolderToolStripMenuItem
             // 
             this.FolderToolStripMenuItem.Name = "FolderToolStripMenuItem";
-            this.FolderToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.FolderToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.FolderToolStripMenuItem.Text = "Folder";
             this.FolderToolStripMenuItem.Click += new System.EventHandler(this.FolderToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem2
             // 
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            this.ToolStripMenuItem2.Size = new System.Drawing.Size(151, 6);
+            this.ToolStripMenuItem2.Size = new System.Drawing.Size(152, 6);
             // 
             // ArtpadPictureToolStripMenuItem
             // 
             this.ArtpadPictureToolStripMenuItem.Name = "ArtpadPictureToolStripMenuItem";
-            this.ArtpadPictureToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.ArtpadPictureToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.ArtpadPictureToolStripMenuItem.Text = "Artpad Picture";
             // 
             // TextDocumentToolStripMenuItem
             // 
             this.TextDocumentToolStripMenuItem.Name = "TextDocumentToolStripMenuItem";
-            this.TextDocumentToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.TextDocumentToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.TextDocumentToolStripMenuItem.Text = "Text Document";
             // 
             // NewSkin
             // 
             this.NewSkin.Name = "NewSkin";
-            this.NewSkin.Size = new System.Drawing.Size(154, 22);
+            this.NewSkin.Size = new System.Drawing.Size(155, 22);
             this.NewSkin.Text = "Skin";
             this.NewSkin.Click += new System.EventHandler(this.NewSkin_Click);
             // 
             // WebpageToolStripMenuItem
             // 
             this.WebpageToolStripMenuItem.Name = "WebpageToolStripMenuItem";
-            this.WebpageToolStripMenuItem.Size = new System.Drawing.Size(151, 6);
+            this.WebpageToolStripMenuItem.Size = new System.Drawing.Size(152, 6);
             // 
             // ShortcutToolStripMenuItem
             // 
             this.ShortcutToolStripMenuItem.Name = "ShortcutToolStripMenuItem";
-            this.ShortcutToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.ShortcutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.ShortcutToolStripMenuItem.Text = "Shortcut";
             // 
             // scriptToolStripMenuItem
             // 
             this.scriptToolStripMenuItem.Name = "scriptToolStripMenuItem";
-            this.scriptToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.scriptToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.scriptToolStripMenuItem.Text = "Script";
             this.scriptToolStripMenuItem.Click += new System.EventHandler(this.scriptToolStripMenuItem_Click);
             // 
@@ -1229,6 +1231,13 @@
             this.addDesktopPanelToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.addDesktopPanelToolStripMenuItem.Text = "Add Desktop Panel";
             this.addDesktopPanelToolStripMenuItem.Click += new System.EventHandler(this.addDesktopPanelToolStripMenuItem_Click);
+            // 
+            // widgetManagerToolStripMenuItem
+            // 
+            this.widgetManagerToolStripMenuItem.Name = "widgetManagerToolStripMenuItem";
+            this.widgetManagerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.widgetManagerToolStripMenuItem.Text = "Widget Manager";
+            this.widgetManagerToolStripMenuItem.Click += new System.EventHandler(this.widgetManagerToolStripMenuItem_Click);
             // 
             // imgshiftnetapps
             // 
@@ -1317,6 +1326,7 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // placeHereToolStripMenuItem
             // 
@@ -1349,13 +1359,6 @@
             this.clockToolStripMenuItem1.Text = "Clock";
             this.clockToolStripMenuItem1.Click += new System.EventHandler(this.clockToolStripMenuItem1_Click);
             // 
-            // widgetManagerToolStripMenuItem
-            // 
-            this.widgetManagerToolStripMenuItem.Name = "widgetManagerToolStripMenuItem";
-            this.widgetManagerToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.widgetManagerToolStripMenuItem.Text = "Widget Manager";
-            this.widgetManagerToolStripMenuItem.Click += new System.EventHandler(this.widgetManagerToolStripMenuItem_Click);
-            // 
             // ShiftOSDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1372,6 +1375,7 @@
             this.Text = "ShiftOSDesktop";
             this.Load += new System.EventHandler(this.ShiftOSDesktop_Load);
             this.desktoppanel.ResumeLayout(false);
+            this.desktoppanel.PerformLayout();
             this.applaunchermenuholder.ResumeLayout(false);
             this.desktopappmenu.ResumeLayout(false);
             this.desktopappmenu.PerformLayout();

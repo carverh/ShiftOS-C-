@@ -1,0 +1,18 @@
+{
+	"Ahhh, User! I see the installation was successful and you made it.":"Richard Ladouceur",
+	"Oh - sorry. I'm who you know as '???'.":"Richard Ladouceur",
+	"So listen. You've heard of Hacker Battles, right?":"Richard Ladouceur",
+	"Well - every skilled hacker needs to know who to hit.":"Richard Ladouceur",
+	"Remember that hacker friend I told you about earlier?":"Richard Ladouceur",
+	"Yeah - that's me...":"Hacker101",
+	"Me and Richard have plans - and we need your help.":"Hacker101",
+	"We're planning on stopping DevX right in his tracks.":"Richard Ladouceur",
+	"And since you have the tools, we figured we'd get you on board.":"Richard Ladouceur",
+	"But first - I need to install ANOTHER thing on your system.":"Richard Ladouceur",
+	"It's called the 'Network Browser'. It's a handy tool that'll list various networks you can take down.":"Hacker101",
+	"It'll tell you their name, leader skill, leader speed, and their tier.":"Hacker101",
+	"install:networkbrowser":"Hacker101",
+	"Done. For now, we've locked it to only showing Tier 1 networks.":"Richard Ladouceur",
+	"Beat all the Tier 1 networks, and beat the leader, and you'll gain a special reward.":"Hacker101",
+	"Anyways, that's all we've gotta say. Talk to ya later!":"Hacker101"
+}

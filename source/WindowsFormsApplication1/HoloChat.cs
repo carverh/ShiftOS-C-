@@ -1,4 +1,5 @@
 ﻿using NetSockets;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,15 @@ namespace ShiftOS
             {
                 IPs = new Dictionary<string, string>();
                 lbrooms.Items.Clear();
+                this.Invoke(new Action(() =>
+                {
+                    if (API.Upgrades["networkbrowser"] == false)
+                    {
+                        API.CreateInfoboxSession(Hacker_Alliance.Name, Hacker_Alliance.Topic, infobox.InfoboxMode.Info);
+                        lbrooms.Items.Add(Hacker_Alliance.Name);
+                    }
+                }));
+
                 foreach (var client in Package_Grabber.clients)
                 {
                     if (client.Value.IsConnected)
@@ -90,6 +100,7 @@ namespace ShiftOS
                         Package_Grabber.SendMessage(client.Key, "chat get_name");
                     }
                 }
+                
             }
             else
             {
@@ -101,6 +112,25 @@ namespace ShiftOS
             }
         }
 
+        private FakeChatClient Hacker_Alliance
+        {
+            get
+            {
+                var r = new FakeChatClient();
+                r.Name = "The Hacker Alliance";
+                r.OtherCharacters = new List<string>();
+                if (!API.Upgrades["networkbrowser"])
+                {
+                    r.OtherCharacters.Add("Richard Ladouceur"); //Dear djdeedahx0 and other non-ShiftOS members: DEAL with the last name - I'm not creative. - Michael
+                    r.OtherCharacters.Add("Hacker101");
+                    r.Messages = JsonConvert.DeserializeObject<Dictionary<string, string>>(Properties.Resources.MidGame_Holochat);
+                    r.Topic = "The Hacker Alliance - Please welcome our newest user!";
+                }
+                return r;
+
+            }
+        }
+
         private void btnconnect_Click(object sender, EventArgs e)
         {
             if(lbrooms.SelectedItem != null)
@@ -108,25 +138,32 @@ namespace ShiftOS
                 if (!API.LimitedMode)
                 {
                     string topic = (string)lbrooms.SelectedItem;
-                    string ip = "";
-                    foreach (var obj in IPs)
+                    if (topic == Hacker_Alliance.Name)
                     {
-                        if (obj.Value == topic)
-                        {
-                            ip = obj.Key;
-                        }
+                        SetupFakeClient(Hacker_Alliance);
                     }
-                    if (ip != "")
+                    else
                     {
-                        API.CreateInfoboxSession("Choose a Nickname", "Please enter a nick name.", infobox.InfoboxMode.TextEntry);
-                        API.InfoboxSession.FormClosing += (object s, FormClosingEventArgs a) =>
+                        string ip = "";
+                        foreach (var obj in IPs)
                         {
-                            var res = API.GetInfoboxResult();
-                            if (res != "fail")
+                            if (obj.Value == topic)
                             {
-                                SetupClient(ip, res);
+                                ip = obj.Key;
                             }
-                        };
+                        }
+                        if (ip != "")
+                        {
+                            API.CreateInfoboxSession("Choose a Nickname", "Please enter a nick name.", infobox.InfoboxMode.TextEntry);
+                            API.InfoboxSession.FormClosing += (object s, FormClosingEventArgs a) =>
+                            {
+                                var res = API.GetInfoboxResult();
+                                if (res != "fail")
+                                {
+                                    SetupClient(ip, res);
+                                }
+                            };
+                        }
                     }
                 }
                 else
@@ -225,8 +262,24 @@ namespace ShiftOS
                 string message = fClient.Messages.Keys.ElementAt(m);
                 string user = fClient.Messages[message];
                 //show message on textbox
-                txtchat.AppendText(Environment.NewLine + $"<{user}> {message}");
-                if(m < fClient.Messages.Count - 1)
+                if (message.StartsWith("install:"))
+                {
+                    try
+                    {
+                        string upg = message.Remove(0, 8);
+                        API.Upgrades[upg] = true;
+                        API.CurrentSession.SetupDesktop();
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                else
+                {
+                    txtchat.AppendText(Environment.NewLine + $"<{user}> {message}");
+                }
+                if (m < fClient.Messages.Count - 1)
                 {
                     m += 1;
                 }

@@ -1,0 +1,7 @@
+{
+"Hey! Seems your Network Browser's working pretty well, huh?":"Richard Ladouceur",
+"I keep reading news about networks on the list going offline.":"Richard Ladouceur",
+"It's great to see you're doing this, because pretty soon, it'll be DevX's turn to suffer your wrath.":"Richard Ladouceur",
+"I've patched your Network Browser to allow you to fight in Tier 3 battles.":"Richard Ladouceur",
+"Just be careful - if I'm able to see all of this news, there's no doubt DevX has his eyes on it.":"Richard Ladouceur"
+}

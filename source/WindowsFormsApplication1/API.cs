@@ -353,64 +353,15 @@ namespace ShiftOS
                             }
                         }
                         var story_rnd = new Random();
-                        int story_chance = story_rnd.Next(0, 100);
-                        switch (story_chance)
-                        {
-                            case 4:
-                                if (API.Upgrades["otherplayerstory"] == false)
+                        int story_chance = story_rnd.Next(0, 3);
+                        switch (story_chance) {
+                            case 2:
+                                if(API.Upgrades["holochat"] == false)
                                 {
                                     var t = new Terminal();
-                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                    t.StartOtherPlayerStory();
-                                }
-                                break;
-                            case 25:
-                                if (API.Upgrades["devxfurious"] == false)
-                                {
-                                    var t = new Terminal();
-                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
+                                    API.CreateForm(t, API.LoadedNames.TerminalName, API.GetIcon("Terminal"));
                                     t.StartDevXFuriousStory();
-                                }
-                                break;
-                            case 30:
-                                if (API.Upgrades["aidennirh"] == false)
-                                {
-                                    var t = new Terminal();
-                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                    t.StartAidenNirhStory();
-                                }
-                                break;
-                            case 75:
-                                if (API.Upgrades["hacker101"] == false)
-                                {
-                                    var t = new Terminal();
-                                    API.CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                    t.StartHacker101Story();
-                                }
-                                break;
-                            //case 1000:
-                            //    t.StartJonathanLadouceurStory();
-                            //    break;
-                            //Do you honestly think HE would appear in ShiftOS? Yugh. NO.
-                            default:
-                                if (API.Upgrades["devxfurious"] == true)
-                                {
-                                    if (API.Upgrades["otherplayerrescue"] == false)
-                                    {
-                                        var t = new Terminal();
-                                        t.StartOtherPlayerSysFix();
-                                        CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);
-                                    }
-                                    else
-                                    {
-                                        if (API.Upgrades["midgamebridge"] == false)
-                                        {
-                                            /*var t = new Terminal();
-                                            t.StartBridgeToMidGame();
-                                            CreateForm(t, LoadedNames.TerminalName, Properties.Resources.iconTerminal);*/
-
-                                        }
-                                    }
+                                    t.BringToFront();
                                 }
                                 break;
                         }
@@ -687,6 +638,7 @@ namespace ShiftOS
             AppLauncherItems.Add(new ApplauncherItem(LoadedNames.FileSkimmerName, GetIcon("FileSkimmer"), "open_program('file_skimmer')", Upgrades["alfileskimmer"]));
             if (!LimitedMode)
             {
+                AppLauncherItems.Add(new ApplauncherItem("Network Browser", GetIcon("NetworkBrowser"), "open_program('netbrowse')", Upgrades["networkbrowser"]));
                 AppLauncherItems.Add(new ApplauncherItem(LoadedNames.SkinLoaderName, GetIcon("SkinLoader"), "open_program('skinloader')", Upgrades["skinning"]));
                 AppLauncherItems.Add(new ApplauncherItem(LoadedNames.ShiftoriumName, GetIcon("Shiftorium"), "open_program('shiftorium')", Upgrades["alshiftorium"]));
             }
@@ -1713,6 +1665,16 @@ namespace ShiftOS
             bool succeeded = true;
             switch (cmd)
             {
+                case "netbrowse":
+                    if(Upgrades["networkbrowser"])
+                    {
+                        CreateForm(new NetworkBrowser(), "Network Browser", GetIcon("NetworkBrowser"));
+                    }
+                    else
+                    {
+                        succeeded = false;
+                    }
+                    break;
                 case "quests":
                     if(LimitedMode)
                     {

@@ -110,14 +110,14 @@ namespace ShiftOS
             this.Label95 = new System.Windows.Forms.Label();
             this.pnldesktoppaneloptions = new System.Windows.Forms.Panel();
             this.btnpanelbuttons = new System.Windows.Forms.Button();
-            this.Label27 = new System.Windows.Forms.Label();
+            this.lbwarning = new System.Windows.Forms.Label();
             this.combodesktoppanelposition = new System.Windows.Forms.ComboBox();
-            this.Label46 = new System.Windows.Forms.Label();
+            this.lbposition = new System.Windows.Forms.Label();
             this.Label47 = new System.Windows.Forms.Label();
             this.txtdesktoppanelheight = new System.Windows.Forms.NumericUpDown();
-            this.Label48 = new System.Windows.Forms.Label();
+            this.lbheight = new System.Windows.Forms.Label();
             this.pnldesktoppanelcolour = new System.Windows.Forms.Panel();
-            this.Label49 = new System.Windows.Forms.Label();
+            this.lbpanelcolor = new System.Windows.Forms.Label();
             this.pnldesktopbackgroundoptions = new System.Windows.Forms.Panel();
             this.pnldesktopcolour = new System.Windows.Forms.Panel();
             this.Label45 = new System.Windows.Forms.Label();
@@ -699,10 +699,10 @@ namespace ShiftOS
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnldesktopoptions.BackColor = System.Drawing.Color.White;
+            this.pnldesktopoptions.Controls.Add(this.pnldesktoppaneloptions);
             this.pnldesktopoptions.Controls.Add(this.pnlapplauncheroptions);
             this.pnldesktopoptions.Controls.Add(this.pnldesktopintro);
             this.pnldesktopoptions.Controls.Add(this.pnlpanelbuttonsoptions);
-            this.pnldesktopoptions.Controls.Add(this.pnldesktoppaneloptions);
             this.pnldesktopoptions.Controls.Add(this.pnldesktopbackgroundoptions);
             this.pnldesktopoptions.Controls.Add(this.pnlpanelclockoptions);
             this.pnldesktopoptions.Controls.Add(this.pnldesktoppreview);
@@ -1430,14 +1430,14 @@ namespace ShiftOS
             // 
             this.pnldesktoppaneloptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnldesktoppaneloptions.Controls.Add(this.btnpanelbuttons);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label27);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbwarning);
             this.pnldesktoppaneloptions.Controls.Add(this.combodesktoppanelposition);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label46);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbposition);
             this.pnldesktoppaneloptions.Controls.Add(this.Label47);
             this.pnldesktoppaneloptions.Controls.Add(this.txtdesktoppanelheight);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label48);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbheight);
             this.pnldesktoppaneloptions.Controls.Add(this.pnldesktoppanelcolour);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label49);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbpanelcolor);
             this.pnldesktoppaneloptions.Location = new System.Drawing.Point(135, 159);
             this.pnldesktoppaneloptions.Name = "pnldesktoppaneloptions";
             this.pnldesktoppaneloptions.Size = new System.Drawing.Size(317, 140);
@@ -1457,13 +1457,13 @@ namespace ShiftOS
             this.btnpanelbuttons.UseVisualStyleBackColor = false;
             this.btnpanelbuttons.Click += new System.EventHandler(this.btnpanelbuttons_Click);
             // 
-            // Label27
+            // lbwarning
             // 
-            this.Label27.Location = new System.Drawing.Point(3, 52);
-            this.Label27.Name = "Label27";
-            this.Label27.Size = new System.Drawing.Size(290, 42);
-            this.Label27.TabIndex = 8;
-            this.Label27.Text = "Warning: If you set the panel position to the bottom you must hide your windows t" +
+            this.lbwarning.Location = new System.Drawing.Point(3, 52);
+            this.lbwarning.Name = "lbwarning";
+            this.lbwarning.Size = new System.Drawing.Size(290, 42);
+            this.lbwarning.TabIndex = 8;
+            this.lbwarning.Text = "Warning: If you set the panel position to the bottom you must hide your windows t" +
     "askbar and restart ShiftOS on your host operating system to prevent a visual bug" +
     ".";
             // 
@@ -1480,15 +1480,15 @@ namespace ShiftOS
             this.combodesktoppanelposition.TabIndex = 7;
             this.combodesktoppanelposition.SelectedIndexChanged += new System.EventHandler(this.combodesktoppanelposition_SelectedIndexChanged);
             // 
-            // Label46
+            // lbposition
             // 
-            this.Label46.AutoSize = true;
-            this.Label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label46.Location = new System.Drawing.Point(3, 31);
-            this.Label46.Name = "Label46";
-            this.Label46.Size = new System.Drawing.Size(97, 16);
-            this.Label46.TabIndex = 6;
-            this.Label46.Text = "Panel Position:";
+            this.lbposition.AutoSize = true;
+            this.lbposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbposition.Location = new System.Drawing.Point(3, 31);
+            this.lbposition.Name = "lbposition";
+            this.lbposition.Size = new System.Drawing.Size(97, 16);
+            this.lbposition.TabIndex = 6;
+            this.lbposition.Text = "Panel Position:";
             // 
             // Label47
             // 
@@ -1512,15 +1512,15 @@ namespace ShiftOS
             this.txtdesktoppanelheight.TabIndex = 4;
             this.txtdesktoppanelheight.ValueChanged += new System.EventHandler(this.txtdesktoppanelheight_ValueChanged);
             // 
-            // Label48
+            // lbheight
             // 
-            this.Label48.AutoSize = true;
-            this.Label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label48.Location = new System.Drawing.Point(138, 7);
-            this.Label48.Name = "Label48";
-            this.Label48.Size = new System.Drawing.Size(50, 16);
-            this.Label48.TabIndex = 2;
-            this.Label48.Text = "Height:";
+            this.lbheight.AutoSize = true;
+            this.lbheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbheight.Location = new System.Drawing.Point(138, 7);
+            this.lbheight.Name = "lbheight";
+            this.lbheight.Size = new System.Drawing.Size(50, 16);
+            this.lbheight.TabIndex = 2;
+            this.lbheight.Text = "Height:";
             // 
             // pnldesktoppanelcolour
             // 
@@ -1530,15 +1530,15 @@ namespace ShiftOS
             this.pnldesktoppanelcolour.TabIndex = 1;
             this.pnldesktoppanelcolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeDesktopPanelColor);
             // 
-            // Label49
+            // lbpanelcolor
             // 
-            this.Label49.AutoSize = true;
-            this.Label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label49.Location = new System.Drawing.Point(3, 7);
-            this.Label49.Name = "Label49";
-            this.Label49.Size = new System.Drawing.Size(88, 16);
-            this.Label49.TabIndex = 0;
-            this.Label49.Text = "Panel Colour:";
+            this.lbpanelcolor.AutoSize = true;
+            this.lbpanelcolor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbpanelcolor.Location = new System.Drawing.Point(3, 7);
+            this.lbpanelcolor.Name = "lbpanelcolor";
+            this.lbpanelcolor.Size = new System.Drawing.Size(88, 16);
+            this.lbpanelcolor.TabIndex = 0;
+            this.lbpanelcolor.Text = "Panel Colour:";
             // 
             // pnldesktopbackgroundoptions
             // 
@@ -3510,8 +3510,8 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.pnldesktopcomposition);
             this.pgcontents.Controls.Add(this.pnldesktopoptions);
+            this.pgcontents.Controls.Add(this.pnldesktopcomposition);
             this.pgcontents.Controls.Add(this.pnlreset);
             this.pgcontents.Controls.Add(this.pnlwindowsoptions);
             this.pgcontents.Controls.Add(this.pnlmenus);
@@ -5201,14 +5201,14 @@ namespace ShiftOS
         private System.Windows.Forms.Label Label95;
         private System.Windows.Forms.Panel pnldesktoppaneloptions;
         private System.Windows.Forms.Button btnpanelbuttons;
-        private System.Windows.Forms.Label Label27;
+        private System.Windows.Forms.Label lbwarning;
         private System.Windows.Forms.ComboBox combodesktoppanelposition;
-        private System.Windows.Forms.Label Label46;
+        private System.Windows.Forms.Label lbposition;
         private System.Windows.Forms.Label Label47;
         private System.Windows.Forms.NumericUpDown txtdesktoppanelheight;
-        private System.Windows.Forms.Label Label48;
+        private System.Windows.Forms.Label lbheight;
         private System.Windows.Forms.Panel pnldesktoppanelcolour;
-        private System.Windows.Forms.Label Label49;
+        private System.Windows.Forms.Label lbpanelcolor;
         private System.Windows.Forms.Panel pnlapplauncheroptions;
         private System.Windows.Forms.Label Label71;
         private System.Windows.Forms.TextBox txtapplauncherwidth;

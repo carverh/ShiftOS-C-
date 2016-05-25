@@ -46,8 +46,28 @@ namespace ShiftOS
                     pnlnetinf.BringToFront();
                     break;
                 case 1:
+                    //clear potential
+                    if(potentialModules != null)
+                    {
+                        foreach(var p in potentialModules)
+                        {
+                            pnlnetdesign.Controls.Remove(p);
+                            p.Hide();
+                            
+                        }
+                        potentialModules = new List<Computer>();
+                    }
                     //create net
-                    network = new EnemyHacker(txtnetname.Text, txtnetdesc.Text, txtnetdesc.Text, 0, 0, "unknown");
+                    if (overwrite_net == true)
+                    {
+                        network = new EnemyHacker(txtnetname.Text, txtnetdesc.Text, txtnetdesc.Text, this.skill, this.speed, cbdifficulty.Text);
+                    }
+                    else
+                    {
+                        network = new EnemyHacker(txtnetname.Text, txtnetdesc.Text, txtnetdesc.Text, this.skill, this.speed, cbdifficulty.Text);
+                        network.Network = TemplateNet;
+                    }
+                    network.Network[0].HP = network.Network[0].GetTotalHP();
                     var c = network.Network[0].Deploy();
                     c.Left = (pnlnetdesign.Width - 64) / 2;
                     c.Top = (pnlnetdesign.Height - 64) / 2;
@@ -213,7 +233,7 @@ namespace ShiftOS
                     var coordinates = pnlnetdesign.PointToClient(Cursor.Position);
                     int x = coordinates.X;
                     int y = coordinates.Y;
-
+                    fmod.HP = fmod.GetTotalHP();
                     var computerToPlace = fmod.Deploy();
                     computerToPlace.Location = new Point(x, y);
                     pnlnetdesign.Controls.Add(computerToPlace);
@@ -261,6 +281,81 @@ namespace ShiftOS
         {
             SelectedSystem = null;
             pnlpcinfo.Hide();
+        }
+
+        int skill = 0;
+        int speed = 0;
+
+        private void txtfskill_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                skill = Convert.ToInt32(txtfskill.Text);
+            }
+            catch
+            {
+                txtfskill.Text = skill.ToString();
+            }
+        }
+
+        private void txtfspeed_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                speed = Convert.ToInt32(txtfspeed.Text);
+            }
+            catch
+            {
+                txtfspeed.Text = speed.ToString();
+            }
+        }
+
+        Dictionary<string, EnemyHacker> Templates = null;
+
+        public void SetupTemplates()
+        {
+            Templates = JsonConvert.DeserializeObject<Dictionary<string, EnemyHacker>>(Properties.Resources.NetBrowser_Enemies);
+            cbnets.Items.Clear();
+            foreach(var t in Templates)
+            {
+                cbnets.Items.Add(t.Key);
+            }
+        }
+
+        private void btnloadfromtemplate_Click(object sender, EventArgs e)
+        {
+            SetupTemplates();
+            pnltemplates.BringToFront();
+            pnltemplates.Visible = !pnltemplates.Visible;
+        }
+
+        bool overwrite_net = true;
+        List<Module> TemplateNet = null;
+
+        public void SetupTemplate(EnemyHacker t)
+        {
+            txtnetname.Text = t.Name;
+            txtnetdesc.Text = t.Description;
+            txtfskill.Text = t.FriendSkill.ToString();
+            txtfspeed.Text = t.FriendSpeed.ToString();
+            cbdifficulty.SelectedItem = t.Difficulty;
+            stage = 0;
+            overwrite_net = false;
+            TemplateNet = t.Network;
+            SetupUI();
+        }
+
+        private void btnrecreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetupTemplate(Templates[cbnets.Text]);
+                pnltemplates.Hide();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -268,7 +268,14 @@
     <Compile Include="Labyrinth.Designer.cs">
       <DependentUpon>Labyrinth.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViewEx.Designer.cs">
+      <DependentUpon>ListViewEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lua_Interp.cs" />
+    <Compile Include="MountMgr.cs" />
     <Compile Include="NameChanger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +288,18 @@
     <Compile Include="NetGen.Designer.cs">
       <DependentUpon>NetGen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetModuleStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NetModuleStatus.Designer.cs">
+      <DependentUpon>NetModuleStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkBrowser.Designer.cs">
+      <DependentUpon>NetworkBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notification.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +308,12 @@
     </Compile>
     <Compile Include="OSInfo.cs" />
     <Compile Include="Package_Grabber.cs" />
+    <Compile Include="PanelManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelManager.Designer.cs">
+      <DependentUpon>PanelManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,14 +473,26 @@
     <EmbeddedResource Include="KnowledgeInput.resx">
       <DependentUpon>KnowledgeInput.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListViewEx.resx">
+      <DependentUpon>ListViewEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NameChanger.resx">
       <DependentUpon>NameChanger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NetGen.resx">
       <DependentUpon>NetGen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NetModuleStatus.resx">
+      <DependentUpon>NetModuleStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkBrowser.resx">
+      <DependentUpon>NetworkBrowser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notification.resx">
       <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelManager.resx">
+      <DependentUpon>PanelManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pong.resx">
       <DependentUpon>Pong.cs</DependentUpon>
@@ -624,7 +661,6 @@
     <None Include="Resources\iconBitnoteWallet.png" />
     <None Include="Resources\iconCalculator.png" />
     <None Include="Resources\iconClock.png" />
-    <None Include="Resources\iconColourPicker.fw.png" />
     <None Include="Resources\iconDodge.png" />
     <None Include="Resources\iconDownloader.png" />
     <None Include="Resources\iconFileOpener.fw.png" />
@@ -900,6 +936,13 @@
     <None Include="Resources\DevX_Primary.txt" />
     <None Include="Resources\DevX_PrimaryNet.txt" />
     <None Include="Resources\DevX_Secondary.txt" />
+    <None Include="Resources\MidGame_Holochat.txt" />
+    <None Include="Resources\NetBrowser_Enemies.txt" />
+    <None Include="Resources\Hacker_DanaRoss.txt" />
+    <None Include="Resources\Hacker_AustinWalker.txt" />
+    <None Include="Resources\Hacker_JonathanRivard.txt" />
+    <None Include="Resources\iconColourPicker.fw.png" />
+    <None Include="Resources\AustinWalkerCompletionStory.txt" />
     <Content Include="Snakey.Designer.vb" />
     <Content Include="Snakey.vb" />
     <Compile Include="ShiftOSDesktop.cs">
