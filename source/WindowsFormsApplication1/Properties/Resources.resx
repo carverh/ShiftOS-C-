@@ -136,9 +136,6 @@
   <data name="dial_up_modem_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dial-up-modem-02.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ShiftOS_License" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShiftOS License.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="upgraderollupcommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgraderollupcommand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,14 +172,8 @@
   <data name="appscapeaudioplayerprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appscapeaudioplayerprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfoaudioplayertext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfoaudioplayertext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradegrayshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradegrayshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapetitlebanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapetitlebanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradepinkcustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradepinkcustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,9 +211,6 @@
   <data name="upgradeskicarbrands" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeskicarbrands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapecalculatorprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapecalculatorprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icongraphicpicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icongraphicpicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -234,9 +222,6 @@
   </data>
   <data name="shiftomizericonpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shiftomizericonpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Minimatchbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimatchbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeshiftpanelclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeshiftpanelclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,9 +238,6 @@
   <data name="webforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\webforward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeundefinedpricepressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeundefinedpricepressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradegray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradegray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,9 +252,6 @@
   </data>
   <data name="upgradepink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradepink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapecalculatorpricepressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapecalculatorpricepressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconNameChanger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconNameChanger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,9 +280,6 @@
   <data name="Symbolinfo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Symbolinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimatchdodgepreviewimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimatchdodgepreviewimage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconBitnoteWallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBitnoteWallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -331,9 +307,6 @@
   <data name="upgradeshiftpanelbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeshiftpanelbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimatchlabyrinthpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimatchlabyrinthpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fileiconsaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fileiconsaa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -342,12 +315,6 @@
   </data>
   <data name="deletefile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletefile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfobuybutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfobuybutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapewelcometoappscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapewelcometoappscape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuitButton.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuitButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -360,9 +327,6 @@
   </data>
   <data name="ArtPadsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArtPadsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapevideoplayerpricepressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapevideoplayerpricepressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgrademultitasking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgrademultitasking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,20 +343,11 @@
   <data name="iconPong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapewebbrowserprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapewebbrowserprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradewindowedterminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradewindowedterminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeartpad128colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpad128colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeorcwrite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeorcwrite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LICENSE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LICENSE.md;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="upgradedesktoppanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradedesktoppanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -427,9 +382,6 @@
   <data name="upgradetextpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradetextpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Industrial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Industrial.skn;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="upgradeblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -439,9 +391,6 @@
   <data name="upgradealfileskimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradealfileskimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfobackbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfobackbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="zoombutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoombutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -450,9 +399,6 @@
   </data>
   <data name="openicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DesktopPlusPlusAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DesktopPlusPlusAbout.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="updatecustomcolourpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\updatecustomcolourpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,14 +439,8 @@
   <data name="upgradeartpadpixellimit4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpixellimit4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapedepositnowbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapedepositnowbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradeclosebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeclosebutton.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfoorcwritetext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfoorcwritetext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ArtPadsquarerubberselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArtPadsquarerubberselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -586,9 +526,6 @@
   <data name="iconShiftnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconShiftnet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapewebbrowser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapewebbrowser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconAudioPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconAudioPlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -601,17 +538,8 @@
   <data name="upgradeartpadnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfoaudioplayervisualpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfoaudioplayervisualpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="christmaseasteregg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\christmaseasteregg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapemoresoftware" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapemoresoftware.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfowebbrowsertext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfowebbrowsertext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ArtPadredo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArtPadredo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -627,9 +555,6 @@
   </data>
   <data name="upgradefileskimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradefileskimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeundefinedprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeundefinedprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeknowledgeinput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeknowledgeinput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,9 +577,6 @@
   <data name="iconSkinShifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSkinShifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapevideoplayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapevideoplayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="skinfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skinfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -670,14 +592,8 @@
   <data name="upgradecolourpickericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradecolourpickericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapewebbrowserpricepressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapewebbrowserpricepressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradetextpadicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradetextpadicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bitnotewalletdownload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bitnotewalletdownload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeinfoboxicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeinfoboxicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -736,9 +652,6 @@
   <data name="iconBitnoteDigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBitnoteDigger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfovideoplayertext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfovideoplayertext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconmaze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmaze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -751,9 +664,6 @@
   <data name="upgradeartpadpixellimit4096" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpixellimit4096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bitnotewalletpreviewscreenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bitnotewalletpreviewscreenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="object_large.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_large.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -762,9 +672,6 @@
   </data>
   <data name="iconSkinLoader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSkinLoader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bitnotediggergradetable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bitnotediggergradetable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="uparrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uparrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -805,17 +712,11 @@
   <data name="ArtPadpixelplacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArtPadpixelplacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapedepositbitnotewalletscreenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapedepositbitnotewalletscreenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="newfolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newfolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fileiconnone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fileiconnone.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfobutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfobutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Receive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Receive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -844,17 +745,11 @@
   <data name="upgradealunitymode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradealunitymode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfoorcwritevisualpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfoorcwritevisualpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="snakeyback" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\snakeyback.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bitnotewebsitetitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bitnotewebsitetitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfloodgate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfloodgate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -867,9 +762,6 @@
   </data>
   <data name="upgradeshifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeshifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfovideoplayervisualpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfovideoplayervisualpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconFileSkimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconFileSkimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -913,9 +805,6 @@
   <data name="upgradeadvancedshifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeadvancedshifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bitnoteswebsidepnl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bitnoteswebsidepnl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradebluecustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradebluecustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -927,9 +816,6 @@
   </data>
   <data name="upgradekiaddons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradekiaddons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfocalculatortext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfocalculatortext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradetrm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradetrm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -961,9 +847,6 @@
   <data name="stretchbuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stretchbuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapevideoplayerprice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapevideoplayerprice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pixelsetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixelsetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -981,9 +864,6 @@
   </data>
   <data name="upgradekielements" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradekielements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapeinfowebbrowservisualpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfowebbrowservisualpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradealartpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradealartpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1024,9 +904,6 @@
   <data name="upgradeclockicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeclockicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfocalculatorvisualpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfocalculatorvisualpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upgradeapplaunchermenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeapplaunchermenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1066,17 +943,8 @@
   <data name="deletefolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletefolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapeinfobuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapeinfobuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="previousbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previousbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appscapedepositinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapedepositinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CatalystGrammar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CatalystGrammar.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="upgradeartpad16colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpad16colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1129,17 +997,8 @@
   <data name="downloadmanagericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\downloadmanagericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appscapedownloadbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appscapedownloadbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconSysinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSysinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fileiconskin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fileiconnone2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BitnotesAcceptedHereLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BitnotesAcceptedHereLogo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconSnakey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSnakey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1173,9 +1032,6 @@
   </data>
   <data name="NoIconFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NoIconFound.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Welcome_to_Chaos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Welcome to Chaos.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Choice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Choice1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

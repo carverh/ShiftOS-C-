@@ -152,326 +152,6 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap appscapecalculatorprice {
-            get {
-                object obj = ResourceManager.GetObject("appscapecalculatorprice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapecalculatorpricepressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapecalculatorpricepressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapedepositbitnotewalletscreenshot {
-            get {
-                object obj = ResourceManager.GetObject("appscapedepositbitnotewalletscreenshot", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapedepositinfo {
-            get {
-                object obj = ResourceManager.GetObject("appscapedepositinfo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapedepositnowbutton {
-            get {
-                object obj = ResourceManager.GetObject("appscapedepositnowbutton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapedownloadbutton {
-            get {
-                object obj = ResourceManager.GetObject("appscapedownloadbutton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfoaudioplayertext {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfoaudioplayertext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfoaudioplayervisualpreview {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfoaudioplayervisualpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfobackbutton {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfobackbutton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfobutton {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfobutton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfobuttonpressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfobuttonpressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfobuybutton {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfobuybutton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfocalculatortext {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfocalculatortext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfocalculatorvisualpreview {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfocalculatorvisualpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfoorcwritetext {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfoorcwritetext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfoorcwritevisualpreview {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfoorcwritevisualpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfovideoplayertext {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfovideoplayertext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfovideoplayervisualpreview {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfovideoplayervisualpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfowebbrowsertext {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfowebbrowsertext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeinfowebbrowservisualpreview {
-            get {
-                object obj = ResourceManager.GetObject("appscapeinfowebbrowservisualpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapemoresoftware {
-            get {
-                object obj = ResourceManager.GetObject("appscapemoresoftware", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeorcwrite {
-            get {
-                object obj = ResourceManager.GetObject("appscapeorcwrite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapetitlebanner {
-            get {
-                object obj = ResourceManager.GetObject("appscapetitlebanner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeundefinedprice {
-            get {
-                object obj = ResourceManager.GetObject("appscapeundefinedprice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapeundefinedpricepressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapeundefinedpricepressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapevideoplayer {
-            get {
-                object obj = ResourceManager.GetObject("appscapevideoplayer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapevideoplayerprice {
-            get {
-                object obj = ResourceManager.GetObject("appscapevideoplayerprice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapevideoplayerpricepressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapevideoplayerpricepressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapewebbrowser {
-            get {
-                object obj = ResourceManager.GetObject("appscapewebbrowser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapewebbrowserprice {
-            get {
-                object obj = ResourceManager.GetObject("appscapewebbrowserprice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapewebbrowserpricepressed {
-            get {
-                object obj = ResourceManager.GetObject("appscapewebbrowserpricepressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap appscapewelcometoappscape {
-            get {
-                object obj = ResourceManager.GetObject("appscapewelcometoappscape", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ArtPadcirclerubber {
             get {
                 object obj = ResourceManager.GetObject("ArtPadcirclerubber", resourceCulture);
@@ -696,92 +376,6 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bitnotediggergradetable {
-            get {
-                object obj = ResourceManager.GetObject("bitnotediggergradetable", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BitnotesAcceptedHereLogo {
-            get {
-                object obj = ResourceManager.GetObject("BitnotesAcceptedHereLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bitnoteswebsidepnl {
-            get {
-                object obj = ResourceManager.GetObject("bitnoteswebsidepnl", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bitnotewalletdownload {
-            get {
-                object obj = ResourceManager.GetObject("bitnotewalletdownload", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bitnotewalletpreviewscreenshot {
-            get {
-                object obj = ResourceManager.GetObject("bitnotewalletpreviewscreenshot", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bitnotewebsitetitle {
-            get {
-                object obj = ResourceManager.GetObject("bitnotewebsitetitle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-        ///&lt;grammar version=&quot;1.0&quot; xml:lang=&quot;en-US&quot;
-        ///         xmlns=&quot;http://www.w3.org/2001/06/grammar&quot;
-        ///         tag-format=&quot;semantics/1.0&quot; root=&quot;Main&quot;&gt;
-        ///  
-        ///  &lt;!-- Catalyst Grammar File
-        ///       
-        ///       This file gives Catalyst the ability to recognize
-        ///       audio input and give a proper response.
-        ///		
-        ///  --&gt;
-        ///  
-        ///  &lt;rule id=&quot;Main&quot;&gt;
-        ///    &lt;item&gt;
-        ///      How much Code Points do I have?
-        ///    &lt;/item&gt;
-        ///    &lt;item&gt;Can you run &lt;ruleref uri=&quot;#programs&quot;/&gt;?&lt;/item&gt;
-        ///    &lt;item&gt;Can you mini [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string CatalystGrammar {
-            get {
-                return ResourceManager.GetString("CatalystGrammar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap centrebutton {
             get {
                 object obj = ResourceManager.GetObject("centrebutton", resourceCulture);
@@ -948,19 +542,6 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Desktop++ v1.0
-        ///
-        ///Ever wanted to have a useful desktop with icons? Icons that can open files, websites or other content? Icons that can be dragged across the screen any way you like? Well, Desktop++ is for you. Desktop++ constantly scans &apos;C:/ShiftOS/Home/Desktop&apos; and creates an icon for each file and folder within.
-        ///
-        ///Desktop++ also allows you to change between Icon and Tile view, where Tile view gives more information, and Icon View allows simplicity and draggability. It also allows you to dump a Text File [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string DesktopPlusPlusAbout {
-            get {
-                return ResourceManager.GetString("DesktopPlusPlusAbout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {&quot;Name&quot;:&quot;DevX Firewall&quot;,&quot;FriendDesc&quot;:&quot;DevX&apos;s firewall.&quot;,&quot;Description&quot;:&quot;DevX&apos;s firewall.&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;unknown&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;devx_firewall&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;trt_alpha&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:529,&quot;Y&quot;:214},{&quot;Hostname&quot;:&quot;trt_beta&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:1,&quot;X&quot;:670,&quot;Y&quot;:211},{&quot;Hostname&quot;:&quot;trt_charlie&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:3,&quot;HP&quot;:0,&quot;Grade&quot;:2,&quot;X&quot;:604,&quot;Y&quot;:279},{&quot;Hostname&quot;:&quot;trt_delta&quot;,&quot;Mod [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DevX_Firewall {
@@ -1090,16 +671,6 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fileiconskin {
-            get {
-                object obj = ResourceManager.GetObject("fileiconskin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fileskimmericon_fw {
             get {
                 object obj = ResourceManager.GetObject("fileskimmericon_fw", resourceCulture);
@@ -1146,7 +717,7 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {}.
+        ///   Looks up a localized string similar to {&quot;IsLeader&quot;:false,&quot;Name&quot;:&quot;Jonathan Rivard&quot;,&quot;FriendDesc&quot;:&quot;Jonathan is a 13 year old from the city of New York, who was also hijacked by DevX and told to try ShiftOS out. He was a member of the Hacker Alliance, but decided to leave to accomplish his goal of becoming a hacker battle giant. Just goes to show that kids can also be extremely competent hackers.&quot;,&quot;Description&quot;:&quot;Jonathan is a 13 year old from the city of New York, who was also hijacked by DevX and told to try ShiftOS out. He was a member of the Hack [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Hacker_JonathanRivard {
             get {
@@ -1515,16 +1086,6 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Industrial {
-            get {
-                object obj = ResourceManager.GetObject("Industrial", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream infobox {
@@ -1554,16 +1115,6 @@ namespace ShiftOS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] LICENSE {
-            get {
-                object obj = ResourceManager.GetObject("LICENSE", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap loadbutton {
@@ -1587,36 +1138,6 @@ namespace ShiftOS.Properties {
         internal static string MidGame_Holochat {
             get {
                 return ResourceManager.GetString("MidGame_Holochat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Minimatchbackground {
-            get {
-                object obj = ResourceManager.GetObject("Minimatchbackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap minimatchdodgepreviewimage {
-            get {
-                object obj = ResourceManager.GetObject("minimatchdodgepreviewimage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap minimatchlabyrinthpreview {
-            get {
-                object obj = ResourceManager.GetObject("minimatchlabyrinthpreview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1945,29 +1466,6 @@ namespace ShiftOS.Properties {
             get {
                 object obj = ResourceManager.GetObject("shiftomizersliderrightarrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Apache License
-        ///                           Version 2.0, January 2004
-        ///                        http://www.apache.org/licenses/
-        ///
-        ///   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
-        ///
-        ///   1. Definitions.
-        ///
-        ///      &quot;License&quot; shall mean the terms and conditions for use, reproduction,
-        ///      and distribution as defined by Sections 1 through 9 of this document.
-        ///
-        ///      &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
-        ///      the copyright owner that is granting the License.
-        ///
-        ///      &quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ShiftOS_License {
-            get {
-                return ResourceManager.GetString("ShiftOS_License", resourceCulture);
             }
         }
         
@@ -3737,16 +3235,6 @@ namespace ShiftOS.Properties {
             get {
                 object obj = ResourceManager.GetObject("webhome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Welcome_to_Chaos {
-            get {
-                object obj = ResourceManager.GetObject("Welcome_to_Chaos", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
