@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbtutorial.Text" xml:space="preserve">
-    <value>When you press 'Done', simply click where you'd like to place the new module. You can right-click the playing field to cancel the deployment.
-
-Some modules have a range of effect. For example, an Antivirus will only heal modules within it's area of effect and only if their HP is below 10. This can be upgraded.
-
-To upgrade a module, simply right-click it on the playing field and choose 'Upgrade this module'.
-
-If you would like to buy a new module, click 'Buy new module'.</value>
-  </data>
   <data name="lbmoduleinfo.Text" xml:space="preserve">
     <value>When you press 'Done', simply click where you'd like to place the new module. You can right-click the playing field to cancel the deployment.
 
@@ -145,6 +136,15 @@ To upgrade a module, simply right-click it on the playing field and choose 'Upgr
 If you would like to buy a new module, click 'Buy new module'.</value>
   </data>
   <data name="lbpcinfo.Text" xml:space="preserve">
+    <value>When you press 'Done', simply click where you'd like to place the new module. You can right-click the playing field to cancel the deployment.
+
+Some modules have a range of effect. For example, an Antivirus will only heal modules within it's area of effect and only if their HP is below 10. This can be upgraded.
+
+To upgrade a module, simply right-click it on the playing field and choose 'Upgrade this module'.
+
+If you would like to buy a new module, click 'Buy new module'.</value>
+  </data>
+  <data name="lbtutorial.Text" xml:space="preserve">
     <value>When you press 'Done', simply click where you'd like to place the new module. You can right-click the playing field to cancel the deployment.
 
 Some modules have a range of effect. For example, an Antivirus will only heal modules within it's area of effect and only if their HP is below 10. This can be upgraded.

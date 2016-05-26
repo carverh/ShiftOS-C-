@@ -36,11 +36,10 @@
             this.lbenemystats = new System.Windows.Forms.Label();
             this.txtyourconsole = new System.Windows.Forms.TextBox();
             this.pnlyou = new System.Windows.Forms.Panel();
-            this.btnnext = new System.Windows.Forms.Button();
-            this.lbtutorial = new System.Windows.Forms.Label();
             this.lbcompromised = new System.Windows.Forms.Label();
             this.lbstats = new System.Windows.Forms.Label();
             this.txtenemyconsole = new System.Windows.Forms.TextBox();
+            this.btnnext = new System.Windows.Forms.Button();
             this.pnlbuy = new System.Windows.Forms.Panel();
             this.txthostname = new System.Windows.Forms.TextBox();
             this.lbhostname = new System.Windows.Forms.Label();
@@ -69,6 +68,8 @@
             this.btntogglemusic = new System.Windows.Forms.Button();
             this.lbsong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnltutorial = new System.Windows.Forms.Panel();
+            this.lbtutorial = new System.Windows.Forms.Label();
             this.tmrplayerhealthdetect = new System.Windows.Forms.Timer(this.components);
             this.tmrenemyhealthdetect = new System.Windows.Forms.Timer(this.components);
             this.tmrredraw = new System.Windows.Forms.Timer(this.components);
@@ -80,6 +81,7 @@
             this.pnlpcinfo.SuspendLayout();
             this.flcontrols.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnltutorial.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbui
@@ -98,7 +100,7 @@
             this.tbui.RowCount = 2;
             this.tbui.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tbui.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbui.Size = new System.Drawing.Size(1339, 742);
+            this.tbui.Size = new System.Drawing.Size(1339, 710);
             this.tbui.TabIndex = 0;
             // 
             // pnlenemy
@@ -109,9 +111,9 @@
             this.pnlenemy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlenemy.Font = new System.Drawing.Font("Lucida Console", 8.25F);
             this.pnlenemy.ForeColor = System.Drawing.Color.White;
-            this.pnlenemy.Location = new System.Drawing.Point(673, 374);
+            this.pnlenemy.Location = new System.Drawing.Point(673, 358);
             this.pnlenemy.Name = "pnlenemy";
-            this.pnlenemy.Size = new System.Drawing.Size(662, 364);
+            this.pnlenemy.Size = new System.Drawing.Size(662, 348);
             this.pnlenemy.TabIndex = 4;
             // 
             // lbenemycompromised
@@ -139,18 +141,16 @@
             this.txtyourconsole.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtyourconsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtyourconsole.ForeColor = System.Drawing.Color.LightGreen;
-            this.txtyourconsole.Location = new System.Drawing.Point(4, 374);
+            this.txtyourconsole.Location = new System.Drawing.Point(4, 358);
             this.txtyourconsole.Multiline = true;
             this.txtyourconsole.Name = "txtyourconsole";
-            this.txtyourconsole.Size = new System.Drawing.Size(662, 364);
+            this.txtyourconsole.Size = new System.Drawing.Size(662, 348);
             this.txtyourconsole.TabIndex = 3;
             this.txtyourconsole.Text = "PLAYER CONSOLE";
             // 
             // pnlyou
             // 
             this.pnlyou.BackColor = System.Drawing.Color.Black;
-            this.pnlyou.Controls.Add(this.btnnext);
-            this.pnlyou.Controls.Add(this.lbtutorial);
             this.pnlyou.Controls.Add(this.lbcompromised);
             this.pnlyou.Controls.Add(this.lbstats);
             this.pnlyou.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,35 +158,9 @@
             this.pnlyou.ForeColor = System.Drawing.Color.White;
             this.pnlyou.Location = new System.Drawing.Point(4, 4);
             this.pnlyou.Name = "pnlyou";
-            this.pnlyou.Size = new System.Drawing.Size(662, 363);
+            this.pnlyou.Size = new System.Drawing.Size(662, 347);
             this.pnlyou.TabIndex = 1;
             this.pnlyou.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playfield_MouseDown);
-            // 
-            // btnnext
-            // 
-            this.btnnext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnnext.AutoSize = true;
-            this.btnnext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnext.Location = new System.Drawing.Point(581, 102);
-            this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(66, 23);
-            this.btnnext.TabIndex = 9;
-            this.btnnext.Text = "Next >>";
-            this.btnnext.UseVisualStyleBackColor = true;
-            this.btnnext.Visible = false;
-            this.btnnext.TextChanged += new System.EventHandler(this.btnnext_Click);
-            // 
-            // lbtutorial
-            // 
-            this.lbtutorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbtutorial.Location = new System.Drawing.Point(280, 13);
-            this.lbtutorial.Name = "lbtutorial";
-            this.lbtutorial.Size = new System.Drawing.Size(367, 86);
-            this.lbtutorial.TabIndex = 8;
-            this.lbtutorial.Text = resources.GetString("lbtutorial.Text");
-            this.lbtutorial.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lbtutorial.Visible = false;
             // 
             // lbcompromised
             // 
@@ -216,9 +190,24 @@
             this.txtenemyconsole.Location = new System.Drawing.Point(673, 4);
             this.txtenemyconsole.Multiline = true;
             this.txtenemyconsole.Name = "txtenemyconsole";
-            this.txtenemyconsole.Size = new System.Drawing.Size(662, 363);
+            this.txtenemyconsole.Size = new System.Drawing.Size(662, 347);
             this.txtenemyconsole.TabIndex = 2;
             this.txtenemyconsole.Text = "ENEMY CONSOLE";
+            // 
+            // btnnext
+            // 
+            this.btnnext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnnext.AutoSize = true;
+            this.btnnext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext.Location = new System.Drawing.Point(294, 161);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(66, 23);
+            this.btnnext.TabIndex = 9;
+            this.btnnext.Text = "Next >>";
+            this.btnnext.UseVisualStyleBackColor = true;
+            this.btnnext.Visible = false;
+            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
             // pnlbuy
             // 
@@ -231,7 +220,7 @@
             this.pnlbuy.Controls.Add(this.cmbbuyable);
             this.pnlbuy.Controls.Add(this.label4);
             this.pnlbuy.Controls.Add(this.btndonebuying);
-            this.pnlbuy.Location = new System.Drawing.Point(7, 437);
+            this.pnlbuy.Location = new System.Drawing.Point(7, 405);
             this.pnlbuy.Name = "pnlbuy";
             this.pnlbuy.Size = new System.Drawing.Size(382, 299);
             this.pnlbuy.TabIndex = 6;
@@ -328,7 +317,7 @@
             this.pnldefensemanager.Controls.Add(this.cmbmodules);
             this.pnldefensemanager.Controls.Add(this.label1);
             this.pnldefensemanager.Controls.Add(this.button1);
-            this.pnldefensemanager.Location = new System.Drawing.Point(395, 456);
+            this.pnldefensemanager.Location = new System.Drawing.Point(395, 424);
             this.pnldefensemanager.Name = "pnldefensemanager";
             this.pnldefensemanager.Size = new System.Drawing.Size(382, 280);
             this.pnldefensemanager.TabIndex = 5;
@@ -400,7 +389,7 @@
             this.pnlpcinfo.Controls.Add(this.lbpcinfo);
             this.pnlpcinfo.Controls.Add(this.lbmoduletitle);
             this.pnlpcinfo.Controls.Add(this.btncloseinfo);
-            this.pnlpcinfo.Location = new System.Drawing.Point(783, 456);
+            this.pnlpcinfo.Location = new System.Drawing.Point(783, 424);
             this.pnlpcinfo.Name = "pnlpcinfo";
             this.pnlpcinfo.Size = new System.Drawing.Size(382, 280);
             this.pnlpcinfo.TabIndex = 7;
@@ -480,7 +469,7 @@
             this.flcontrols.Controls.Add(this.btntogglemusic);
             this.flcontrols.Controls.Add(this.lbsong);
             this.flcontrols.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flcontrols.Location = new System.Drawing.Point(0, 742);
+            this.flcontrols.Location = new System.Drawing.Point(0, 710);
             this.flcontrols.Name = "flcontrols";
             this.flcontrols.Size = new System.Drawing.Size(1339, 31);
             this.flcontrols.TabIndex = 4;
@@ -531,6 +520,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pnltutorial);
             this.panel2.Controls.Add(this.pnlbuy);
             this.panel2.Controls.Add(this.pnlpcinfo);
             this.panel2.Controls.Add(this.pnldefensemanager);
@@ -539,8 +529,29 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1339, 773);
+            this.panel2.Size = new System.Drawing.Size(1339, 741);
             this.panel2.TabIndex = 1;
+            // 
+            // pnltutorial
+            // 
+            this.pnltutorial.Controls.Add(this.btnnext);
+            this.pnltutorial.Controls.Add(this.lbtutorial);
+            this.pnltutorial.Location = new System.Drawing.Point(174, 161);
+            this.pnltutorial.Name = "pnltutorial";
+            this.pnltutorial.Size = new System.Drawing.Size(363, 187);
+            this.pnltutorial.TabIndex = 10;
+            this.pnltutorial.Visible = false;
+            // 
+            // lbtutorial
+            // 
+            this.lbtutorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbtutorial.Location = new System.Drawing.Point(-2, 50);
+            this.lbtutorial.Name = "lbtutorial";
+            this.lbtutorial.Size = new System.Drawing.Size(367, 86);
+            this.lbtutorial.TabIndex = 9;
+            this.lbtutorial.Text = resources.GetString("lbtutorial.Text");
+            this.lbtutorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbtutorial.Visible = false;
             // 
             // tmrplayerhealthdetect
             // 
@@ -559,7 +570,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1339, 773);
+            this.ClientSize = new System.Drawing.Size(1339, 741);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Lucida Console", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGreen;
@@ -583,6 +594,8 @@
             this.flcontrols.ResumeLayout(false);
             this.flcontrols.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnltutorial.ResumeLayout(false);
+            this.pnltutorial.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -607,7 +620,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnnext;
-        private System.Windows.Forms.Label lbtutorial;
         private System.Windows.Forms.Panel pnlpcinfo;
         private System.Windows.Forms.Label lbtargets;
         private System.Windows.Forms.Button btnpoweroff;
@@ -631,5 +643,7 @@
         private System.Windows.Forms.Label lbcodepoints;
         private System.Windows.Forms.Button btntogglemusic;
         private System.Windows.Forms.Label lbsong;
+        private System.Windows.Forms.Panel pnltutorial;
+        private System.Windows.Forms.Label lbtutorial;
     }
 }

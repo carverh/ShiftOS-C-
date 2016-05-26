@@ -58,7 +58,7 @@ namespace ShiftOS
                 API.LimitedMode = false;
                 SetupDesktop();
                 API.CloseEverything();
-                switch(FinalMission.EndGameHandler.CurrentChoice)
+                switch (FinalMission.EndGameHandler.CurrentChoice)
                 {
                     case Choice.SideWithDevX:
                         var t = new System.Windows.Forms.Timer();
@@ -96,9 +96,9 @@ namespace ShiftOS
                 }
                 else if (ea.KeyCode == Keys.D && ea.Control)
                 {
-                    if(API.DeveloperMode == true)
+                    if (API.DeveloperMode == true)
                     {
-                        if(ShowDebug == true)
+                        if (ShowDebug == true)
                         {
                             ShowDebug = false;
                         }
@@ -118,13 +118,13 @@ namespace ShiftOS
             clocktick.Interval = 2;
             clocktick.Tick += (object s, EventArgs a) =>
             {
-                if(API.Upgrades["hacking"])
+                if (API.Upgrades["hacking"])
                 {
                     if (API.Upgrades["hackerbattles"] == false)
                     {
                         var rnd = new Random();
                         int c = rnd.Next(1, 1000);
-                        if(c == 500)
+                        if (c == 500)
                         {
                             var t = new Terminal();
                             API.CreateForm(t, API.LoadedNames.TerminalName, Properties.Resources.iconTerminal);
@@ -148,7 +148,7 @@ namespace ShiftOS
                             lblog.Location = new Point(this.Width - lblog.Width - 5, 4);
                             break;
                     }
-                    if(File.Exists(Paths.SystemDir + "_Log.txt"))
+                    if (File.Exists(Paths.SystemDir + "_Log.txt"))
                     {
                         lblog.Text = File.ReadAllText(Paths.SystemDir + "_Log.txt");
                     }
@@ -169,7 +169,7 @@ namespace ShiftOS
                     lbldebug.Hide();
                     lblog.Hide();
                 }
-                if(Viruses.InfectedWith("seized"))
+                if (Viruses.InfectedWith("seized"))
                 {
                     Random rnd = new Random();
                     int r = rnd.Next(0, 255);
@@ -196,7 +196,7 @@ namespace ShiftOS
             };
             clocktick.Start();
 
-            if(API.Upgrades["trmfiles"] == true)
+            if (API.Upgrades["trmfiles"] == true)
             {
                 if (File.Exists(Paths.SystemDir + "AutoStart.trm"))
                 {
@@ -256,34 +256,36 @@ namespace ShiftOS
                 Clock.ContextMenuStrip = null;
                 PanelButtonHolder.ContextMenuStrip = null;
             }
-            foreach(var dp in DesktopPanels)
-            {
-                if(API.Upgrades["advanceddesktop"])
+            if (DesktopPanels != null) {
+                foreach (var dp in DesktopPanels)
                 {
-                    dp.ContextMenuStrip = cbdpanel;
-                }
-                else
-                {
-                    dp.ContextMenuStrip = cbdpanel;
+                    if (API.Upgrades["advanceddesktop"])
+                    {
+                        dp.ContextMenuStrip = cbdpanel;
+                    }
+                    else
+                    {
+                        dp.ContextMenuStrip = cbdpanel;
+                    }
                 }
             }
         }
 
         public void SetupWidgets()
         {
-            foreach(var w in API.CurrentSkin.Widgets)
+            foreach (var w in API.CurrentSkin.Widgets)
             {
-                foreach(var dp in DesktopPanels)
+                foreach (var dp in DesktopPanels)
                 {
                     var t = (Skinning.DesktopPanel)dp.Tag;
-                    if(t.Position == w.Panel)
+                    if (t.Position == w.Panel)
                     {
                         SetupWidget(dp, w);
                     }
                 }
             }
         }
-
+    
         public void SetupWidget(Panel p, Skinning.DesktopWidget w)
         {
             if(WidgetsToMaintain != null)
@@ -623,6 +625,11 @@ namespace ShiftOS
 
         public void SetupAppLauncher()
         {
+            NewToolStripMenuItem.Visible = API.Upgrades["fsnewfolder"];
+            ArtpadPictureToolStripMenuItem.Visible = /*API.Upgrades["artpadsave"]*/false; // not yet implemented
+            TextDocumentToolStripMenuItem.Visible = API.Upgrades["textpadsave"];
+            NewSkin.Visible = API.Upgrades["skinning"];
+            scriptToolStripMenuItem.Visible = /*API.Upgrades["shiftnet"]*/false; //not yet implemented
             API.GetAppLauncherItems();
             if (API.Upgrades["applaunchermenu"] == true)
             {
@@ -1105,9 +1112,13 @@ namespace ShiftOS
             API.InfoboxSession.FormClosing += (object s, FormClosingEventArgs a) =>
             {
                 var res = API.GetInfoboxResult();
-                if(!File.Exists(Paths.Desktop + res))
+                if (res != "Cancelled")
                 {
-                    Skinning.Utilities.saveskintofile(Paths.Desktop + res);
+                    if (!File.Exists(Paths.Desktop + res + ".skn"))
+                    {
+                        Skinning.Utilities.saveskintofile(Paths.Desktop + res + ".skn");
+                        SetupDesktopIcons();
+                    }
                 }
             };
         }
@@ -1186,6 +1197,27 @@ namespace ShiftOS
         {
             var dp = (Skinning.DesktopPanel)SelectedObject.Tag;
             API.CreateForm(new PanelManager(dp), "Panel Options", API.GetIcon("PanelOptions"));
+        }
+
+        private void TextDocumentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            API.CreateInfoboxSession("New Text Document", "Please type a name for your document.", infobox.InfoboxMode.TextEntry);
+            API.InfoboxSession.FormClosing += (o, a) =>
+            {
+                var res = API.GetInfoboxResult();
+                if(res != "Cancelled")
+                {
+                    if(!File.Exists(Paths.Desktop + res + ".txt"))
+                    {
+                        File.WriteAllText(Paths.Desktop + res + ".txt", "");
+                        SetupDesktopIcons();
+                    }
+                    else
+                    {
+                        API.CreateInfoboxSession("File exists!", "The file name you entered already exists.", infobox.InfoboxMode.Info);
+                    }
+                }
+            };
         }
     }
 

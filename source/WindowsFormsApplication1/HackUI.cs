@@ -37,7 +37,9 @@ namespace ShiftOS
         private void LoadPlayerScreen()
         {
             AntiVirusBounds = new List<Rectangle>();
-            TutorialNetwork.Add(new Module(SystemType.Core, 1, "localhost"));
+            var tc = new Module(SystemType.Core, 1, "localhost");
+            tc.HP = 100;
+            TutorialNetwork.Add(tc);
             foreach (var m in GetMyNet())
             {
                 if (m.Type == SystemType.Core)
@@ -90,6 +92,12 @@ namespace ShiftOS
 
         private void tmrplayerhealthdetect_Tick(object sender, EventArgs e)
         {
+            if(ThisPlayerPC != null)
+            {
+                ThisPlayerPC.Left = (pnlyou.Width - ThisPlayerPC.Width) / 2;
+                ThisPlayerPC.Top = (pnlyou.Height - ThisPlayerPC.Height) / 2;
+
+            }
             var rnd = new Random();
             int chance = 0;
             foreach (var pc in AllPlayerComputers)
@@ -131,9 +139,16 @@ namespace ShiftOS
             {
                 TotalPlayerHP = health;
             }
-            decimal percent = (health / TotalPlayerHP) * 100;
-            lbstats.Text = $"System Health: {percent}%";
-            if (ThisPlayerPC.HP <= 0)
+            try
+            {
+                decimal percent = (health / TotalPlayerHP) * 100;
+                lbstats.Text = $"System Health: {percent}%";
+            }
+            catch
+            {
+
+            }
+                if (ThisPlayerPC.HP <= 0)
             {
                 API.CreateInfoboxSession("System compromised.", "The enemy hacker has overthrown your defenses and compromised your system. You will need to wait an hour before you can start another hack battle.", infobox.InfoboxMode.Info);
                 Hacking.Failure = true;
@@ -147,17 +162,22 @@ namespace ShiftOS
 
         private void this_Closing(object sender, FormClosingEventArgs e)
         {
-            arc.Dispose();
             if (UserRequestedClose == false)
             {
+                arc.Dispose();
+                Computer[] pcs = { };
+                AllPlayerComputers.CopyTo(pcs);
+                foreach(var pc in pcs)
+                {
+                    pc.Dispose();
+                }
                 tmrplayerhealthdetect.Stop();
+                Hacking.RepairTimer.Start(); //Now the player can repair.
             }
             else
             {
                 e.Cancel = true;
-                API.CreateInfoboxSession("Can't retreat now.", "You started this battle, and made it this far. Finish what you started. Don't run away.", infobox.InfoboxMode.Info);
             }
-            Hacking.RepairTimer.Start(); //Now the player can repair.
         }
 
         public Computer SelectedPlayerComputer = null;
@@ -789,30 +809,33 @@ namespace ShiftOS
         {
             TutorialProgress = p;
             lbtutorial.Show();
+            pnltutorial.Show();
+            pnltutorial.Left = (this.Width - pnltutorial.Width) / 2;
+            pnltutorial.Top = (this.Height - pnltutorial.Height) / 2;
             switch (p)
             {
                 case 0:
-                    lbtutorial.Text = "Welcome to the Hacker Battle tutorial. This guide will teach you the fundamentals and basics of taking part in a Hacker Battle. When you're done here, you'll have all you need for a very basic network.";
+                    lbtutorial.Text = "Welcome to the Hacker Battle tutorial. This guide will teach you the fundamentals and basics of taking part in a Hacker Battle. When you're done here, you'll be able to start up a network and start dominating others' networks.";
                     btnaddmodule.Hide();
                     btnnext.Show();
                     break;
                 case 1:
-                    lbtutorial.Text = "When a battle commenses, you will see two windows. The one on the left, is your network. You can view information about all computers on the network, buy new systems, upgrade them and deploy them.";
+                    lbtutorial.Text = "Let's go over the user interface. It's quite simple, actually. There are 4 different displays on your screen. One for your network, one for your console, and same for the enemy.";
                     break;
                 case 2:
-                    lbtutorial.Text = "On the right is the enemy's network. This window will show you the strength (HP) of all enemy systems, and will allow you to target specific systems to take down.";
+                    lbtutorial.Text = "On the left side is your console and playfield. Your console will log all the actions that happen on your network. Your Playfield is a visual representation of your network. Each square represents a different module. Most of your actions will take place in the Playfield.";
                     break;
                 case 3:
-                    lbtutorial.Text = "On the top-left corner of both windows is the network health indicator. It will display a percentage of the entire network health.";
+                    lbtutorial.Text = "On the right is the enemy's console and playfield. Both playfields will show the HP (health) of each module, and the total network HP.";
                     break;
                 case 4:
                     lbtutorial.Text = "If the enemy's total network health hits 0%, or his core's strength hits 0%, you win.";
                     break;
                 case 5:
-                    lbtutorial.Text = "However, if the same happens to you, you will lose the battle.";
+                    lbtutorial.Text = "However, if the same happens to you, you will lose the battle, and won't be able to fight back until your Core heals.";
                     break;
                 case 6:
-                    lbtutorial.Text = "You can click on your Core to view information about it.";
+                    lbtutorial.Text = "Each network has one core. It is represented by the square in the centre of the playfield. Click on your Core to view information about it.";
                     btnnext.Hide();
                     break;
                 case 7:
@@ -841,16 +864,19 @@ namespace ShiftOS
                     btnnext.Hide();
                     break;
                 case 13:
+                    btnbuy.Hide();
                     lbtutorial.Text = "You can select a module from the list of hostnames. Only modules that are not powered on will display in the menu.";
                     btnnext.Show();
                     BuyableModules = new List<FutureModule>();
                     BuyableModules.Add(new FutureModule("Antivirus", 0, "This module will heal any other module within it's area of effect to 10 HP. Higher grades can improve it's area of effect.", SystemType.Antivirus));
                     break;
                 case 14:
+                    btnbuy.Show();
                     lbtutorial.Text = "In this demonstration, you have no other modules to deploy. You will need to buy some modules to get started. Click [Buy New Module] to continue.";
                     btnnext.Hide();
                     break;
                 case 15:
+                    cmbbuyable.Enabled = false;
                     lbtutorial.Text = "Let's go over the user interface, shall we? At the top is a list of all possible module types.";
                     btnnext.Show();
                     btndonebuying.Hide();
@@ -865,6 +891,7 @@ namespace ShiftOS
                     lbmoduleinfo.Show();
                     break;
                 case 17:
+                    cmbbuyable.Enabled = true;
                     lbtutorial.Text = "We need an Antivirus module, so go ahead and select it from the menu.";
                     btnnext.Hide();
                     break;
@@ -923,6 +950,8 @@ namespace ShiftOS
                     lbtutorial.Text = "Some modules do not work on a target-based system. Some may work using an area-of-effect system (like an Antivirus), and some may target the entire enemy network.";
                     break;
                 case 32:
+                    pnltutorial.Left = this.Width - pnltutorial.Width;
+                    pnltutorial.Top = this.Height - flcontrols.Height - pnltutorial.Height;
                     lbtutorial.Text = "We have reset both your Cores' health. Go ahead and finish off the enemy Core using your newfound skills.";
                     ThisPlayerPC.HP = 100;
                     ThisEnemyPC.HP = 100;
@@ -932,6 +961,7 @@ namespace ShiftOS
                     BuyableModules.Add(new FutureModule("Turret", 0, "It's not super-effective, but the Turret will blast through any Grade 1 defenses pretty quickly. The higher the grade, the higher the strength.", SystemType.Turret));
                     break;
                 default:
+                    btnnext.Show();
                     lbtutorial.Text = "This concludes the Hacker Battle tutorial. Happy hunting, soldier. Just kidding. Stay safe.";
                     btnnext.Text = "Close";
                     break;
@@ -1249,7 +1279,39 @@ namespace ShiftOS
                     }
                     else
                     {
-                        API.CreateInfoboxSession("You won.", "You have successfully overthrown the enemy network.", infobox.InfoboxMode.Info);
+                        string message = "You have successfully beaten the enemy hacker.";
+                        if (ThisEnemyHacker.IsLeader == false)
+                        {
+                            switch(rnd.Next(0, 5))
+                            {
+                                case 1:
+                                    API.AddCodepoints(1000);
+                                    message = "You have beaten the enemy. You have earned some precious Codepoints for your effort!";
+                                    break;
+                                case 2:
+                                    message = "You have beaten the enemy. As a reward, all Shiftorium Upgrades cost half-price.";
+                                    Hacking.GiveHack(Hack.PriceDrop);
+                                    break;
+                                case 3:
+                                    message = "You have beaten the enemy. As a reward, applications will now pay out more Codepoints than usual.";
+                                    Hacking.GiveHack(Hack.PayoutIncrease);
+                                    break;
+                                case 4:
+                                    message = "The enemy has recognized your skill and has decided to become a friend. You can now hire them for free as a partner during a system hack.";
+                                    //befriend the enemy.
+                                    var skill = ThisEnemyHacker.FriendSkill;
+                                    var speed = ThisEnemyHacker.FriendSpeed;
+                                    var desc = ThisEnemyHacker.FriendDesc;
+                                    var name = ThisEnemyHacker.Name;
+                                    Hacking.AddCharacter(new Character(name, desc, skill, speed, 0));
+                                    break;
+                                default:
+                                    message = "You have successfully beaten the enemy hacker.";
+                                    break;
+                            }
+                        }
+                        API.CreateInfoboxSession("You won.", message, infobox.InfoboxMode.Info);
+
                         UserRequestedClose = false;
                         var h = OnWin;
                         if(h != null)
@@ -1317,5 +1379,7 @@ namespace ShiftOS
         {
             arc.Pause();
         }
+
+        
     }
 }

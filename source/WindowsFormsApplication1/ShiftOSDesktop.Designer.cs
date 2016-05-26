@@ -1199,6 +1199,7 @@
             this.TextDocumentToolStripMenuItem.Name = "TextDocumentToolStripMenuItem";
             this.TextDocumentToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.TextDocumentToolStripMenuItem.Text = "Text Document";
+            this.TextDocumentToolStripMenuItem.Click += new System.EventHandler(this.TextDocumentToolStripMenuItem_Click);
             // 
             // NewSkin
             // 
@@ -1211,16 +1212,19 @@
             // 
             this.WebpageToolStripMenuItem.Name = "WebpageToolStripMenuItem";
             this.WebpageToolStripMenuItem.Size = new System.Drawing.Size(152, 6);
+            this.WebpageToolStripMenuItem.Visible = false;
             // 
             // ShortcutToolStripMenuItem
             // 
             this.ShortcutToolStripMenuItem.Name = "ShortcutToolStripMenuItem";
             this.ShortcutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.ShortcutToolStripMenuItem.Text = "Shortcut";
+            this.ShortcutToolStripMenuItem.Visible = false;
             // 
             // scriptToolStripMenuItem
             // 
             this.scriptToolStripMenuItem.Name = "scriptToolStripMenuItem";
+            this.scriptToolStripMenuItem.ShowShortcutKeys = false;
             this.scriptToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.scriptToolStripMenuItem.Text = "Script";
             this.scriptToolStripMenuItem.Click += new System.EventHandler(this.scriptToolStripMenuItem_Click);

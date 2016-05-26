@@ -449,7 +449,7 @@ namespace Skinning
         {
             foreach(var pnl in loadedSkin.DesktopPanels)
             {
-                string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
+                string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.ImagePath;
                 if (File.Exists(dpath))
                 {
                     pnl.BackgroundImage = Image.FromFile(dpath);
@@ -469,16 +469,18 @@ namespace Skinning
             }
             foreach (var pnl in loadedSkin.DesktopPanels)
             {
-                string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
                 if (pnl.BackgroundImage != null)
                 {
                     try
                     {
+                        pnl.ImagePath = pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
+                        string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.ImagePath;
                         pnl.BackgroundImage.Save(dpath);
                         pnl.BackgroundImage = null;
                     }
                     catch
                     {
+                        pnl.ImagePath = null;
                         pnl.BackgroundImage = null;
                     }
                 }
@@ -561,7 +563,7 @@ namespace Skinning
         {
             if(Directory.Exists(Paths.LoadedSkin))
             {
-                //try {
+                try {
                     string rawData = File.ReadAllText(Paths.LoadedSkin + "data.json");
                     loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
                     if (File.Exists(Paths.LoadedSkin + "panels.json"))
@@ -572,7 +574,7 @@ namespace Skinning
                     }
                     loadimages();
                     LoadEmbeddedNamePack();
-                /*}
+                }
                 catch
                 {
                     //No skin to load.
@@ -580,7 +582,7 @@ namespace Skinning
                     loadedskin_images = new Images();
                     saveskin();
 
-                }*/
+                }
             } else
             {
                 loadedSkin = new Skin();
@@ -598,6 +600,8 @@ namespace Skinning
             try
             {
                 //Extract the .SKN
+                loadedSkin = new Skin();
+                loadedskin_images = new Images();
                 API.ExtractFile(filepath, Paths.LoadedSkin, true);
                 //OK, so the skin's been extracted.
                 //Now, let's load in the skin data.

@@ -561,10 +561,6 @@
   <ItemGroup>
     <None Include="bin\Debug\Newtonsoft.Json.dll" />
     <None Include="bin\Debug\NetSockets.dll" />
-    <Content Include="Dodge.Designer.vb" />
-    <Content Include="Dodge.vb" />
-    <Content Include="FloatyBird.Designer.vb" />
-    <Content Include="FloatyBird.vb" />
     <Content Include="Labyrinth.designer.vb" />
     <Content Include="Labyrinth.vb" />
     <Compile Include="Paths.cs" />
@@ -943,8 +939,6 @@
     <None Include="Resources\Hacker_JonathanRivard.txt" />
     <None Include="Resources\iconColourPicker.fw.png" />
     <None Include="Resources\AustinWalkerCompletionStory.txt" />
-    <Content Include="Snakey.Designer.vb" />
-    <Content Include="Snakey.vb" />
     <Compile Include="ShiftOSDesktop.cs">
       <SubType>Form</SubType>
     </Compile>

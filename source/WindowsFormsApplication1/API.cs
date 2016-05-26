@@ -83,7 +83,7 @@ namespace ShiftOS
         /// to test new features or to bring in lots of codepoints. This is why
         /// Developer mode should ALWAYS be off in non-dev releases, to prevent cheating.
         /// </summary>
-        public static bool DeveloperMode = true;
+        public static bool DeveloperMode = false;
 
         /// <summary>
         /// If this is true, only certain applications will open and only
@@ -1120,9 +1120,16 @@ namespace ShiftOS
         /// </summary>
         public static void UpdateWindows()
         {
-            foreach (WindowBorder brdr in BordersToUpdate)
+            try
             {
-                brdr.setupall();
+                foreach (WindowBorder brdr in BordersToUpdate)
+                {
+                    brdr.setupall();
+                }
+            }
+            catch
+            {
+
             }
         }
 

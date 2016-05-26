@@ -385,84 +385,30 @@ namespace ShiftOS
                 {
                     if (Hacking == false)
                     {
-                        if (ki_running == false)
+                        ReadCommand();
+                        if (command != "")
                         {
-                            ReadCommand();
-                            if (command != "")
-                            {
-                                DoCommand();
-                            }
+                            DoCommand();
+                        }
 
-                            if (command == "clear")
+                        if (command == "clear")
+                        {
+                            txtterm.Text = txtterm.Text + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                            txtterm.Select(txtterm.Text.Length, 0);
+                        }
+                        else if (command == "lua")
+                        {
+                            if (Lua_API.UseLuaAPI == false)
                             {
-                                txtterm.Text = txtterm.Text + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                                txtterm.Select(txtterm.Text.Length, 0);
-
-                            }
-                            else if(command == "lua")
-                            {
-                                if(Lua_API.UseLuaAPI == false)
-                                {
-                                    txtterm.Text = txtterm.Text + Environment.NewLine + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                                    txtterm.Select(txtterm.Text.Length, 0);
-                                }
-                            }
-                            else {
                                 txtterm.Text = txtterm.Text + Environment.NewLine + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
                                 txtterm.Select(txtterm.Text.Length, 0);
                             }
                         }
                         else
                         {
-                            switch (ki_mode)
-                            {
-                                case "category":
-                                    try
-                                    {
-                                        int cmdint = Convert.ToInt16(txtterm.Lines[txtterm.Lines.Length - 1].ToLower().Replace("> ", ""));
-                                        ki_choosetopic(cmdint);
-                                        WriteLine("> ");
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        string cmdstr = txtterm.Lines[txtterm.Lines.Length - 1].ToLower().Replace("> ", "");
-                                        if (cmdstr == "exit")
-                                        {
-                                            ki_stop();
-                                            WriteLine(API.CurrentSave.username + "@" + API.CurrentSave.osname + " $> ");
-                                        }
-                                        else
-                                        {
-                                            //SATAN IS HERE because the player didn't choose a number. Just kidding. It's just a placeholder.
-                                            ki_choosetopic(666);
-                                            WriteLine("> ");
-                                        }
-                                    }
-                                    break;
-                                case "guessing":
-                                    string cmd = txtterm.Lines[txtterm.Lines.Length - 1].ToLower().Replace("> ", "");
-                                    if (cmd == "exit")
-                                    {
-                                        ki_stop();
-                                        WriteLine(API.CurrentSave.username + "@" + API.CurrentSave.osname + " $> ");
-                                    }
-                                    else if (cmd == "clear")
-                                    {
-                                        txtterm.Text = "";
-                                        WriteLine("You have guessed " + ki_guessesThisSession.ToString() + " of a possible " + API.KnowledgeInputData.GetLengthOfPossible().ToString() + " guesses.");
-                                        WriteLine("> ");
-                                    }
-                                    else
-                                    {
-                                        ki_guess(cmd);
-                                        WriteLine("You have guessed " + ki_guessesThisSession.ToString() + " of a possible " + API.KnowledgeInputData.GetLengthOfPossible().ToString() + " guesses.");
-                                        WriteLine("> ");
-                                    }
-                                    break;
-                            }
-                            txtterm.Select(txtterm.TextLength, 0);
+                            txtterm.Text = txtterm.Text + Environment.NewLine + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                            txtterm.Select(txtterm.Text.Length, 0);
                         }
-
                         trackpos = 0;
                     }
                     else
@@ -1479,6 +1425,9 @@ Password: z7fjsd3");
                         wrongcommand();
                     }
                     break;
+                case "htutorial":
+                    ShiftOS.Hacking.StartBattleTutorial();
+                    break;
                 case "fake_buy":
                     if (API.DeveloperMode)
                     {
@@ -1584,16 +1533,6 @@ Password: z7fjsd3");
                     }
                     else { wrongcommand(); }
                     break;
-                case "htutorial":
-                    if (API.DeveloperMode)
-                    {
-                        ShiftOS.Hacking.StartBattleTutorial();
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
                 case "make":
                     try
                     {
@@ -1650,15 +1589,8 @@ Warning: Music is not embedded within the game. You must download the external r
                     }
                     break;
                 case "netgen":
-                    if (API.DeveloperMode)
-                    {
-                        WriteLine("Starting netgen...");
-                        API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    WriteLine("Starting netgen...");
+                    API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
                     break;
                 case "lua":
                     if(API.DeveloperMode == true)
@@ -2421,88 +2353,6 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             txtterm.Text = txtterm.Text + Environment.NewLine + "Command not recognized - Type 'help' for a list of commands!" + Environment.NewLine;
         }
 
-        private void ki_stop()
-        {
-            ki_running = false;
-            WriteLine("Bye.");
-            API.KnowledgeInputData.SaveGuesses();
-        }
-
-        private void ki_listtopics()
-        {
-            WriteLine("Categories:" + Environment.NewLine);
-            WriteLine("1: Animals");
-        }
-
-        private bool ki_running = false;
-        private string ki_mode = "category";
-        private int ki_guessesThisSession = 0;
-
-        public void StartKnowledgeInput()
-        {
-            ki_running = true;
-            ki_mode = "category";
-            WriteLine("Welcome to Knowledge Input!");
-            ki_listtopics();
-            WriteLine("> ");
-        }
-
-        private void ki_choosetopic(int topic_number)
-        {
-            switch(topic_number)
-            {
-                case 1:
-                    API.KnowledgeInputData.Category = "Animals";
-                    API.KnowledgeInputData.RegisterDictionaries();
-                    ki_mode = "guessing";
-                    ki_guessesThisSession = API.KnowledgeInputData.GetRightGuesses();
-                    WriteLine("You have picked option #" + topic_number.ToString());
-                    break;
-                default:
-                    WriteLine("knowledge_input: Not a valid choice!");
-                    break;
-            }
-        }
-        
-        private void ki_guess(string guess)
-        {
-            switch (API.KnowledgeInputData.Guess(guess)) {
-                case "success":
-                    WriteLine("Right!");
-                    if(ki_guessesThisSession < API.KnowledgeInputData.GetLengthOfPossible())
-                    {
-                        ki_guessesThisSession += 1;
-                        if((ki_guessesThisSession % 10) == 0)
-                        {
-                            WriteLine("You have earned " + ki_guessesThisSession.ToString() + " Codepoints.");
-                            API.AddCodepoints(ki_guessesThisSession);
-                        }
-                    }
-                    else
-                    {
-                        WriteLine("You have guessed all the possible answers for this category. Therefore, you have been awarded 10000 CP.");
-                        API.AddCodepoints(10000);
-                    }
-                    break;
-                case "already_guessed":
-                    WriteLine("Already guessed!");
-                    break;
-                default:
-                    if (guess.ToLower() == "jonathan ladouceur")
-                    {
-                        API.CreateInfoboxSession("Terminal", "Terminal has performed a terrorist operation and must be taken out back and shot. Reason: NOT OK.", infobox.InfoboxMode.Info);
-                        //insert story here
-                        this.Close();
-                        API.RemoveCodepoints(10);
-                    }
-                    else
-                    {
-                        WriteLine("Not a valid guess!");
-                    }
-                    break;
-            } 
-        }
-
         bool Hacking = false;
 
         private Control objToWriteTo = null;
@@ -2781,7 +2631,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
 
         public void WriteLine(string text)
         {
-            txtterm.Invoke(new Action(() =>
+            API.CurrentSession.Invoke(new Action(() =>
             {
                 if (txtterm.Text.Length > 0)
                 {

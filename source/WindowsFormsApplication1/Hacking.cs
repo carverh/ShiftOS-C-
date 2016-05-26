@@ -437,7 +437,7 @@ namespace ShiftOS
         public static void StartBattleTutorial()
         {
             var e = new EnemyHacker("Tutorial", "Tutorial hacker", "Tutorial hacker", 0, 0, "easy");
-            var y = new Hacking_YourHealth(e);
+            var y = new HackUI(e);
             y.IsTutorial = true;
             API.CreateForm(y, "You", Properties.Resources.iconTerminal);
         }
@@ -486,6 +486,7 @@ namespace ShiftOS
             else
             {
                 var c = new Module(SystemType.Core, 1, "localhost");
+                c.HP = 100; //bugfix: core not appearing during battle on new save
                 c.X = 0;
                 c.Y = 0;
                 MyNetwork.Add(c);

@@ -45,7 +45,6 @@ namespace ShiftOS
                 {
                     if (API.Upgrades["networkbrowser"] == false)
                     {
-                        API.CreateInfoboxSession(Hacker_Alliance.Name, Hacker_Alliance.Topic, infobox.InfoboxMode.Info);
                         lbrooms.Items.Add(Hacker_Alliance.Name);
                     }
                 }));

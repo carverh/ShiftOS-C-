@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ShiftOS
 {
@@ -48,10 +49,18 @@ namespace ShiftOS
         public string LuaAction = "open_program(\"shiftorium\")";
         private void Icon_Click(object sender, EventArgs e)
         {
-            var li = new LuaInterpreter();
-            li.mod(LuaAction);
-            lbiconname.BackColor = Color.White;
-            t.Start();
+            if (File.Exists(Paths.Desktop + IconName))
+            {
+                var fs = new File_Skimmer();
+                fs.OpenFile(Paths.Desktop + IconName);
+            }
+            else
+            {
+                var li = new LuaInterpreter();
+                li.mod(LuaAction);
+                lbiconname.BackColor = Color.White;
+                t.Start();
+            }
         }
 
         public Timer t = new Timer();
