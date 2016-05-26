@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -482,6 +483,7 @@ namespace ShiftOS
 
         public void GrabSkinData()
         {
+            Skinning.Utilities.SavePanels();
             string json = JsonConvert.SerializeObject(API.CurrentSkin);
             CustomizingSkin = JsonConvert.DeserializeObject<Skinning.Skin>(json);
             GetAllImages();
@@ -625,6 +627,8 @@ namespace ShiftOS
 
             Skinning.Utilities.loadedSkin = CustomizingSkin;
             Skinning.Utilities.loadedskin_images = CustomizingImages;
+            API.CurrentSkin.DesktopPanels = JsonConvert.DeserializeObject<List<Skinning.DesktopPanel>>(File.ReadAllText(Paths.LoadedSkin + "panels.json"));
+            Skinning.Utilities.LoadPanels();
             Skinning.Utilities.saveimages();
             Skinning.Utilities.saveskin();
             API.AddCodepoints(codepointstogive);

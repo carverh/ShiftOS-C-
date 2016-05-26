@@ -30,6 +30,7 @@ namespace ShiftOS
                     var c = API.GetLastColorFromSession();
                     pnl.BackgroundColor = c;
                     pnl.BackgroundImage = null;
+                    pnl.ImagePath = null;
                 };
             }
             else if(e.Button == MouseButtons.Right)

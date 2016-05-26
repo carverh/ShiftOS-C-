@@ -1451,46 +1451,60 @@ Password: z7fjsd3");
                     }
                     break;
                 case "endgame_test":
-                    try
+                    if (API.DeveloperMode)
                     {
-                        switch(args[1])
+                        try
                         {
-                            case "choice_screen":
-                                var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
-                                cscreen.WindowState = FormWindowState.Maximized;
-                                //cscreen.TopMost = true;
-                                cscreen.Show();
-                                break;
-                            case "limitedmode":
-                                API.LimitedMode = !API.LimitedMode;
-                                WriteLine($"Limited mode set to {API.LimitedMode}.");
-                                break;
+                            switch (args[1])
+                            {
+                                case "choice_screen":
+                                    var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
+                                    cscreen.WindowState = FormWindowState.Maximized;
+                                    //cscreen.TopMost = true;
+                                    cscreen.Show();
+                                    break;
+                                case "limitedmode":
+                                    API.LimitedMode = !API.LimitedMode;
+                                    WriteLine($"Limited mode set to {API.LimitedMode}.");
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("Invalid arguments.");
                         }
                     }
-                    catch
+                    else
                     {
-                        WriteLine("Invalid arguments.");
+                        wrongcommand();
                     }
                     break;
                 case "fake_buy":
-                    try
+                    if (API.DeveloperMode)
                     {
-                        if(API.Upgrades.ContainsKey(args[1]))
+                        try
                         {
-                            API.Upgrades[args[1]] = true;
-                            WriteLine($"Bought upgrade {args[1]}.");
-                            API.CurrentSession.SetupAppLauncher();
-                            API.UpdateWindows();
-                            SaveSystem.Utilities.saveGame();
+                            if (API.Upgrades.ContainsKey(args[1]))
+                            {
+                                API.Upgrades[args[1]] = true;
+                                WriteLine($"Bought upgrade {args[1]}.");
+                                API.CurrentSession.SetupAppLauncher();
+                                API.UpdateWindows();
+                                SaveSystem.Utilities.saveGame();
+                            }
+                            else
+                            {
+                                WriteLine("Upgrade not found.");
+                            }
                         }
-                        else
+                        catch
                         {
-                            WriteLine("Upgrade not found.");
+                            WriteLine("fake_buy: Bad arguments.");
                         }
                     }
-                    catch
+                    else
                     {
-                        WriteLine("fake_buy: Bad arguments.");
+                        wrongcommand();
                     }
                     break;
                 case "connections":
@@ -1571,21 +1585,9 @@ Password: z7fjsd3");
                     else { wrongcommand(); }
                     break;
                 case "htutorial":
-                    ShiftOS.Hacking.StartBattleTutorial();
-                    break;
-                case "lua_test":
-                    if(API.DeveloperMode == true)
+                    if (API.DeveloperMode)
                     {
-                        if(Lua_API.UseLuaAPI == true)
-                        {
-                            WriteLine("Lua API disabled, 'saa' command uses old Modding API");
-                            Lua_API.UseLuaAPI = false;
-                        }
-                        else
-                        {
-                            WriteLine("ShiftOS Lua API enabled. 'saa' command now parses Lua code and interprets it.");
-                            Lua_API.UseLuaAPI = true;
-                        }
+                        ShiftOS.Hacking.StartBattleTutorial();
                     }
                     else
                     {
@@ -1613,15 +1615,22 @@ Password: z7fjsd3");
                     }
                     break;
                 case "toggle_music":
-                    if(Audio.Enabled == false)
+                    if (API.DeveloperMode)
                     {
-                        WriteLine(@"Music enabled.
+                        if (Audio.Enabled == false)
+                        {
+                            WriteLine(@"Music enabled.
 
 Warning: The music player code in ShiftOS has a memory leak issue and is quite CPU-intensive. If your CPU fan starts to spin up while listening to a song, that's why.
 
 Warning: Music is not embedded within the game. You must download the external resources directory at http://playshiftos.ml/shiftos/resources.zip to have applications play their music.");
+                        }
+                        Audio.Enabled = !Audio.Enabled;
                     }
-                    Audio.Enabled = !Audio.Enabled;
+                    else
+                    {
+                        wrongcommand();
+                    }
                     break;
                 case "linux":
                     if(API.DeveloperMode)
@@ -1650,22 +1659,6 @@ Warning: Music is not embedded within the game. You must download the external r
                     {
                         wrongcommand();
                     }
-                    break;
-                case "enemy_test":
-                    var e = new EnemyHacker("DevX", "I am the god of this world.", "I am the god of this world.", 100, 100, "Hard");
-                    e.AddModule(new Module(SystemType.Antivirus, 4, "you_can't_stop_me"));
-                    e.AddModule(new Module(SystemType.Antivirus, 4, "not_happening"));
-                    e.AddModule(new Module(SystemType.DedicatedDDoS, 2, "dos"));
-                    e.AddModule(new Module(SystemType.Turret, 4, "remotehost"));
-                    e.AddModule(new Module(SystemType.Turret, 2, "boom"));
-                    string json = JsonConvert.SerializeObject(e);
-                    var tp = new TextPad();
-                    API.CreateForm(tp, "Enemy JSON", API.GetIcon("TextPad"));
-                    tp.txtuserinput.Text = json;
-                    break;
-                case "htest":
-                    var hui = new HackUI();
-                    hui.Show();
                     break;
                 case "lua":
                     if(API.DeveloperMode == true)
@@ -1720,18 +1713,7 @@ Warning: Music is not embedded within the game. You must download the external r
                         wrongcommand();
                     }
                     break;
-                case "unitytest":
-                    if (API.DeveloperMode == true)
-                    {
-                        var u = new AlternateDesktop();
-                        u.Show();
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                    case "virusscanner":
+                case "virusscanner":
                 case "vscan":
                     if(API.Upgrades["virusscanner"] == true)
                     {
@@ -1792,26 +1774,16 @@ Warning: Music is not embedded within the game. You must download the external r
                         wrongcommand();
                     }
                     break;
-                case "infect":
-                    try {
-                        if (API.DeveloperMode == true)
-                        {
-                            Viruses.InfectRandom();
-                            WriteLine("A random file has been infected.");
-                        }
-                        else
-                        {
-                            wrongcommand();
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        WriteLine("infect: Error. Probably a mess-up with the virus scanner.");
-                    }
-                    break;
                 case "binarywater":
-                    ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
-                    WriteLine("Philip Adams is now in the list of hirable hackers.");
+                    if (API.DeveloperMode)
+                    {
+                        ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
+                        WriteLine("Philip Adams is now in the list of hirable hackers.");
+                    }
+                    else
+                    {
+                        WriteLine("I see you went in the ShiftOS source code... ummm yeah... this isn't a developer mode release so I can't just give you a full-skilled hacker even if you beg.");
+                    }
                     break;
                 case "color":
                     try
@@ -2159,73 +2131,9 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                     {
                         showhelp(args[1]);
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         showhelp();
-                    }
-                    break;
-                case "kill":
-                    if(API.Upgrades["shiftnet"] == true)
-                    {
-                        List<Process> cleanup = new List<Process>();
-                        try
-                        {
-                            foreach (Process mod in API.RunningModProcesses)
-                            {
-                                try
-                                {
-                                    if (args[1] == mod.Id.ToString() || args[1].ToLower() == mod.ProcessName.Remove(0, 1).Replace(".exe", "").ToLower())
-                                    {
-                                        WriteLine("[" + mod.Id.ToString() + "] - Killed.");
-                                        cleanup.Add(mod);
-                                        mod.Kill();
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-
-                                }
-                            }
-                        }
-                        catch(Exception ex)
-                        {
-                            WriteLine("kill: Missing argument.");
-                        }
-                        foreach (Process prc in cleanup)
-                        {
-                            try
-                            {
-                                API.RunningModProcesses.Remove(prc);
-                            }
-                            catch (Exception ex)
-                            {
-
-                            }
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "proclist":
-                    if(API.Upgrades["shiftnet"] == true)
-                    {
-                        WriteLine("Running Applications:");
-                        foreach(Process mod in API.RunningModProcesses)
-                        {
-                            try {
-                                WriteLine("[" + mod.Id.ToString() + "] " + mod.ProcessName.Replace(".exe", ""));
-                            }
-                            catch(Exception ex)
-                            {
-
-                            }
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
                     }
                     break;
                 case "codepoints":
@@ -2383,7 +2291,6 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                     }
                     break;
             }
-            //cmds(UBound(cmds)) = command
         }
 
         private void StartChoice1EndStory()

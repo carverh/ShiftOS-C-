@@ -463,18 +463,24 @@ namespace Skinning
         public static void SavePanels()
         {
             string dir = Paths.LoadedSkin + "panels";
-            if(Directory.Exists(dir))
+            if (!Directory.Exists(dir))
             {
-                Directory.Delete(dir, true);
+                Directory.CreateDirectory(dir);
             }
-            Directory.CreateDirectory(dir);
-            foreach(var pnl in loadedSkin.DesktopPanels)
+            foreach (var pnl in loadedSkin.DesktopPanels)
             {
                 string dpath = Paths.LoadedSkin + "panels" + OSInfo.DirectorySeparator + pnl.Position + loadedSkin.DesktopPanels.IndexOf(pnl).ToString();
-                if(pnl.BackgroundImage != null)
+                if (pnl.BackgroundImage != null)
                 {
-                    pnl.BackgroundImage.Save(dpath);
-                    pnl.BackgroundImage = null;
+                    try
+                    {
+                        pnl.BackgroundImage.Save(dpath);
+                        pnl.BackgroundImage = null;
+                    }
+                    catch
+                    {
+                        pnl.BackgroundImage = null;
+                    }
                 }
             }
         }
