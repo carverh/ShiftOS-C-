@@ -34,4 +34,4 @@ You can commit changes to your fork, but to have them in the main project, creat
     
 ## Where's Michael?
 
-I'm taking a break, working on some other projects. Check 'em out if you want!
+Don't worry. I'm here.
