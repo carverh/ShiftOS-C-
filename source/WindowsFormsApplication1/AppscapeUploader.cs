@@ -31,8 +31,6 @@ namespace ShiftOS
         private AppscapeModder MyProfile = null;
         private AppscapeClient Repo = null;
 
-        private string result = "cancelled";
-
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,7 +50,7 @@ namespace ShiftOS
                 {
                     pkg.Cost = Convert.ToDecimal(Convert.ToDecimal(txtprice.Text).ToString("#.#####"));
                 }
-                catch(Exception ex)
+                catch
                 {
                     ContinueUpload = false;
                     API.CreateInfoboxSession("Error", "You have entered an incorrect price value.", infobox.InfoboxMode.Info);
@@ -112,7 +110,6 @@ namespace ShiftOS
 
 
 
-                result = "finished";
                 this.Close();
             }
         }
@@ -136,7 +133,7 @@ namespace ShiftOS
                     RecursiveControlSetup(c);
                 }
             }
-            catch(Exception ex) {
+            catch {
 
             }
         }
@@ -325,7 +322,7 @@ namespace ShiftOS
                                 ZipFile.CreateFromDirectory(dir, API.GetFSResult());
                                 API.CreateInfoboxSession("Success", "The SAA file has been created successfully.", infobox.InfoboxMode.Info);
                             }
-                            catch(Exception ex)
+                            catch
                             {
                                 API.CreateInfoboxSession("Error", "Could not create the SAA file.", infobox.InfoboxMode.Info);
                             }

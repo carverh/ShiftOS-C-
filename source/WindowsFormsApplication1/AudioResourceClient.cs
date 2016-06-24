@@ -1,7 +1,4 @@
-﻿// WARNING: This thing likes leaking memory.
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,241 +7,202 @@ using System.IO;
 using NAudio;
 using NAudio.Wave;
 using System.Threading;
+using Newtonsoft.Json;
+using AxWMPLib;
+using System.Windows.Forms;
+using WMPLib;
 
 namespace ShiftOS
 {
+    public class AudioData
+    {
+        public string StartURL { get; set; }
+        public Dictionary<string, List<string>> Files { get; set; }
+        public Dictionary<string, List<Visualizer>> Visualizers = null;
+    }
+
     public class Audio
     {
-        public static List<AudioResourceClient> Clients = null;
-        internal static bool Enabled = false;
-
-        public static void DisposeAll()
+        public static string Name
         {
-            if(Clients != null)
+            get
             {
-                foreach(var client in Clients)
+                string res = null;
+                try
                 {
-                    client.Dispose();
+                    if (_wmp != null)
+                    {
+                        if (_wmp.currentMedia != null)
+                        {
+                            res = _wmp.currentMedia.name;
+                        }
+
+                    }
+                }
+                catch
+                {
+
+                }
+                return res;
+            }
+        }
+
+        private static AudioData _ad = null;
+        public static WindowsMediaPlayer _wmp = null;
+        public static bool running = true;
+        
+        public static int CurrentPosition
+        {
+            get
+            {
+                try
+                {
+                    if (_wmp != null)
+                    {
+                        return (int)_wmp.controls.currentPosition;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                catch
+                {
+                    return 0;
                 }
             }
         }
+
+        public static int CurrentPositionMS
+        {
+            get
+            {
+                try
+                {
+                    if (_wmp != null)
+                    {
+                        return (int)(_wmp.controls.currentPosition * 100);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+        }
+
+
+        public static void LoadAudioData()
+        {
+            var t = new Thread(new ThreadStart(() =>
+            {
+                _wmp = new WindowsMediaPlayer();
+                _wmp.settings.autoStart = true;
+                _wmp.settings.volume = API.LoadedSettings.MusicVolume;
+            }));
+            t.Start();
+            _ad = JsonConvert.DeserializeObject<AudioData>(Properties.Resources.MusicData);
+        }
+
+        public static void Play(string list)
+        {
+            _forceStop = false;
+            var lst = _ad.Files[list];
+            var rnd = new Random();
+            int i = rnd.Next(0, lst.Count);
+            _wmp.URL = _ad.StartURL + list + "/" + _ad.Files[list][i] + ".mp3";
+            _wmp.PlayStateChange += (o) =>
+            {
+                if (o == (int)WMPPlayState.wmppsMediaEnded)
+                {
+                    var t = new System.Windows.Forms.Timer();
+                    t.Interval = 1000;
+                    t.Tick += (object s, EventArgs a) =>
+                    {
+                        t.Stop();
+                        Stopped?.Invoke(_wmp, new EventArgs());
+                    };
+                    t.Start();
+                }
+            };
+
+        }
+
+        public static event EventHandler Stopped;
+
+        public static bool _forceStop = false;
+
+        public static void Mute()
+        {
+            _wmp.settings.volume = 0;
+        }
+
+        public static void VolumeUp()
+        {
+            if(_wmp.settings.volume < 90)
+            {
+                _wmp.settings.volume += 10;
+            }
+        }
+
+        public static void VolumeDown()
+        {
+            if(_wmp.settings.volume > 0)
+            {
+                _wmp.settings.volume -= 10;
+            }
+        }
+
+        public static void Pause()
+        {
+            _wmp.controls.pause();
+        }
+
+        public static void Unpause()
+        {
+            _wmp.controls.play();
+        }
+
+        public static void ForceStop()
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                _forceStop = true;
+                _wmp.controls.stop();
+            })).Start();
+        }
+
+        internal static Visualizer GetVisualizer()
+        {
+            Visualizer v = null;
+            foreach(var vis in _ad.Visualizers[Name])
+            {
+                if (vis.startTime <= CurrentPosition && vis.endTime >= CurrentPosition)
+                    v = vis;
+            }
+            return v;
+        }
     }
 
-    public class AudioResourceClient
+    public class Visualizer
     {
-
-
-        public AudioResourceClient(string folder)
-        {
-            if (Audio.Enabled)
-            {
-                if (Audio.Clients == null)
-                {
-                    Audio.Clients = new List<AudioResourceClient>();
-                }
-                Audio.Clients.Add(this);
-                string real = folder.Replace(";", OSInfo.DirectorySeparator);
-                real_path = "resources" + OSInfo.DirectorySeparator + real;
-                soundPlayer = new WaveOut();
-                var t = new Thread(new ThreadStart(new Action(() =>
-                {
-                    while (disposed == false)
-                    {
-                        switch (soundPlayer.PlaybackState)
-                        {
-                            case PlaybackState.Stopped:
-                                if (fireEvents)
-                                {
-                                    if (currentStream != null)
-                                        currentStream.Dispose();
-                                    currentStream = null;
-                                    currentProvider = null;
-                                    var h = SongFinished;
-                                    if (h != null)
-                                    {
-                                        API.CurrentSession.Invoke(new Action(() =>
-                                        {
-                                            h(this, new EventArgs());
-                                        }));
-                                    }
-
-                                }
-
-                                break;
-                        }
-                    }
-                })));
-                t.Start();
-            }
-        }
-
-        public string CurrentSong
-        {
-            get { return currentSong; }
-        }
-
-        private string real_path = null;
-        private WaveOut soundPlayer = null;
-        private bool disposed = false;
-        private bool playing = false;
-        private bool loopActive = false;
-        private string currentSong = "";
-        protected Thread soundThread;
-        private Stream currentStream = null;
-        private IWaveProvider currentProvider = null;
-        private bool fireEvents = false;
-
-        public event EventHandler SongFinished;
-
-        public void Play(byte[] songbytes)
-        {
-            if (Audio.Enabled)
-            {
-                var t = new Thread(new ThreadStart(new Action(() =>
-                {
-                    try
-                    {
-                        if (disposed == false)
-                        {
-                            if (currentProvider != null)
-                            {
-                                currentProvider = null;
-                            }
-                            if (currentStream != null)
-                            {
-                                currentStream.Dispose();
-                                currentStream = null;
-                            }
-                            Stream s = new MemoryStream(songbytes);
-                            IWaveProvider provider = new RawSourceWaveStream(s, new WaveFormat());
-                            soundPlayer.Init(provider);
-                            soundPlayer.Play();
-                            fireEvents = true;
-                            currentStream = s;
-                            currentProvider = provider;
-                        }
-                    }
-                    catch
-                    {
-
-                    }
-                })));
-                soundThread = t;
-                t.Start();
-            }
-        }
-
-        public void PlayMP3(byte[] songbytes)
-        {
-            if (Audio.Enabled)
-            {
-                var t = new Thread(new ThreadStart(new Action(() =>
-                {
-                    if (currentProvider != null)
-                    {
-                        currentProvider = null;
-                    }
-                    if (currentStream != null)
-                    {
-                        currentStream.Dispose();
-                        currentStream = null;
-                    }
-                    Stream s = new MemoryStream(songbytes);
-                    IWaveProvider provider = new Mp3FileReader(s);
-                    soundPlayer.Init(provider);
-                    soundPlayer.Play();
-                    currentStream = s;
-                    currentProvider = provider;
-                })));
-                soundThread = t;
-                t.Start();
-            }
-        }
-
-
-        public void Play(string file)
-        {
-            if (Audio.Enabled)
-            {
-                if (File.Exists(real_path + OSInfo.DirectorySeparator + file + ".wav"))
-                {
-                    currentSong = file;
-                    Play(File.ReadAllBytes(real_path + OSInfo.DirectorySeparator + file + ".wav"));
-                }
-                else if (File.Exists(real_path + OSInfo.DirectorySeparator + file + ".mp3"))
-                {
-                    currentSong = file;
-                    PlayMP3(File.ReadAllBytes(real_path + OSInfo.DirectorySeparator + file + ".mp3"));
-                }
-            }
-        }
-
-        public void Stop()
-        {
-            if (Audio.Enabled)
-            {
-                var t = new Thread(new ThreadStart(new Action(() =>
-                {
-                    fireEvents = false;
-                    soundPlayer.Stop();
-                    if (currentProvider != null)
-                    {
-                        currentProvider = null;
-                    }
-                    if (currentStream != null)
-                    {
-                        currentStream.Dispose();
-                        currentStream = null;
-                    }
-                })));
-                t.Start();
-            }
-        }
-
-        public void Pause()
-        {
-            if (Audio.Enabled)
-            {
-                if (soundPlayer.PlaybackState == PlaybackState.Playing)
-                {
-                    soundPlayer.Pause();
-                }
-                else if (soundPlayer.PlaybackState == PlaybackState.Paused)
-                {
-                    soundPlayer.Resume();
-                }
-            }
-        }
-
-        public void PlayRandom()
-        {
-            if (Audio.Enabled)
-            {
-                int r = new Random().Next(0, Directory.GetFiles(real_path).Length);
-                var files = Directory.GetFiles(real_path);
-                FileInfo finf = new FileInfo(files[r]);
-                string name = finf.Name.Replace(finf.Extension, "");
-                Play(name);
-
-            }
-        }
-
-        public void Dispose()
-        {
-            if (Audio.Enabled)
-            {
-                if (currentProvider != null)
-                {
-                    currentProvider = null;
-                }
-                if (currentStream != null)
-                {
-                    currentStream.Dispose();
-                    currentStream = null;
-                }
-                soundPlayer.Dispose();
-                disposed = true;
-            }
-        }
+        public int startTime { get; set; }
+        public int endTime { get; set; }
+        public VisualizerType type { get; set; }
+        public bool R { get; set; }
+        public bool G { get; set; }
+        public bool B { get; set; }
     }
+
+    public enum VisualizerType
+    {
+        Pulse,
+        BuildUp,
+        CalmDown
+    }
+
 }

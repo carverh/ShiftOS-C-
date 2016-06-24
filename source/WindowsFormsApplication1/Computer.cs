@@ -45,8 +45,7 @@ namespace ShiftOS
             }
         }
 
-        private SystemType _Type = SystemType.Core;
-
+        
         public SystemType Type
         {
             get; set;
@@ -112,8 +111,6 @@ namespace ShiftOS
                     return AttackType.Core;
                 case SystemType.Turret:
                     return AttackType.Virus;
-                case SystemType.FTPServer:
-                    return AttackType.Backdoor;
                 default:
                     return AttackType.None;
             }
@@ -284,29 +281,30 @@ namespace ShiftOS
             {
                 case SystemType.Core:
                     return 100;
-                    break;
                 default:
                     switch (Grade)
                     {
                         case 1:
                             return 10;
-                            break;
                         case 2:
                             return 20;
-                            break;
                         case 3:
                             return 40;
-                            break;
                         case 4:
                             return 80;
-                            break;
                         default:
                             return 10;
-                            break;
                     }
-                    break;
             }
         }
+
+        public Timer HealthTimer = null;
+
+        public bool AlreadyEnslaved = false;
+        public bool Enslaved = false;
+
+        public event EventHandler EnslavedModule;
+
 
         public event EventHandler MassDDoS;
 
@@ -341,7 +339,7 @@ namespace ShiftOS
                                         (this.Parent.Height - this.Height) / 2
                                     );
                             }
-                            catch (Exception ex)
+                            catch 
                             {
 
                             }
@@ -359,6 +357,26 @@ namespace ShiftOS
                                 }
                             }
                             this.Size = new Size(32, 32);
+                            break;
+                        case SystemType.ModuleStealer:
+                            var rnd = new Random();
+                            int num = rnd.Next(0, 2500 / Grade);
+                            if(num == 25)
+                            {
+                                StolenModule?.Invoke(this, new EventArgs());
+                            }
+                            break;
+                        case SystemType.Enslaver:
+                            if (AlreadyEnslaved == false)
+                            {
+                                var ernd = new Random();
+                                int num2 = ernd.Next(0, 2500 / Grade);
+                                if (num2 == 25)
+                                {
+                                    AlreadyEnslaved = true;
+                                    EnslavedModule?.Invoke(this, new EventArgs());
+                                }
+                            }
                             break;
                         case SystemType.ServerStack:
                             var r2 = new Random();
@@ -419,7 +437,10 @@ namespace ShiftOS
                 }
             };
             t.Start();
+            HealthTimer = t;
         }
+
+        public event EventHandler StolenModule;
 
         public event EventHandler OnDestruction;
 
@@ -446,16 +467,16 @@ namespace ShiftOS
 
     public enum SystemType
     {
-        Core,
-        Antivirus,
-        DedicatedDDoS,
-        Turret,
-        FTPServer,
-        Firewall,
-        ServerStack,
-        Enslaver,
-        DamageLogger,
-        RepairModule,
+        Core = 0,
+        Antivirus = 1,
+        DedicatedDDoS = 2,
+        Turret = 3,
+        FTPServer = 4,
+        Firewall = 5,
+        ServerStack = 6,
+        Enslaver = 7,
+        RepairModule = 9,
+        ModuleStealer = 8,
     }
 
     public enum AttackType {

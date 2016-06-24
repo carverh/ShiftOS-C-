@@ -186,6 +186,32 @@ namespace SaveSystem
 
         public static List<Shiftorium.Upgrade> DefaultUpgrades = new List<Shiftorium.Upgrade>();
 
+        public static List<string> GetCategories(bool showBought)
+        {
+            List<string> cats = new List<string>();
+            foreach(var upg in DefaultUpgrades)
+            {
+                if(upg.id.Contains("dummy"))
+                {
+                    if(!cats.Contains(upg.Category.ToLower()))
+                    {
+                        if(API.Upgrades[upg.Category.ToLower()])
+                        {
+                            if(showBought == true)
+                            {
+                                cats.Add(upg.Category.ToLower());
+                            }
+                        }
+                        else
+                        {
+                            cats.Add(upg.Category.ToLower());
+                        }
+                        
+                    }
+                }
+            }
+            return cats; //Meow! No. I don't mean the animal. I mean "Categories".
+        }
 
         /// <summary>
         /// Adds upgrade info (such as CP, description, etc) to the registry. Add your Shiftorium upgrades here.
@@ -460,13 +486,14 @@ namespace SaveSystem
                     try
                     {
                         ShiftoriumUpgrades[kv.Key] = kv.Value;
-                    } catch(Exception ex)
+                    } catch
                     {
                         Console.WriteLine("[Shiftorium/Registry] [ERROR] Upgrade {0} from disk doesn't seem to be found in the 'Default Upgrades' dictionary. This may be caused by a bug.", kv.Key);
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
+
             {
                 string shiftoriumjson = JsonConvert.SerializeObject(ShiftoriumUpgrades);
                 if (API.DeveloperMode == true)
@@ -505,10 +532,10 @@ namespace Shiftorium
         /// <returns>Whether the upgrade could be bought.</returns>
         public static bool Buy(Upgrade upgradeToBuy)
         {
-            if(API.Codepoints >= upgradeToBuy.Cost)
+            if(API.Codepoints >= upgradeToBuy.Cost / API.CurrentSave.PriceDivider)
             {
                 SaveSystem.ShiftoriumRegistry.ShiftoriumUpgrades[upgradeToBuy.id] = true;
-                SaveSystem.Utilities.LoadedSave.codepoints -= upgradeToBuy.Cost;
+                SaveSystem.Utilities.LoadedSave.codepoints -= upgradeToBuy.Cost / API.CurrentSave.PriceDivider;
                 SaveSystem.Utilities.saveGame();
                 API.UpdateWindows();
                 API.Log("[Shiftorium] Upgrade \"" + upgradeToBuy.id + "\" bought successfully, game saved.");
@@ -561,7 +588,7 @@ namespace Shiftorium
 
 
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         if (upgrade.id.Contains("dummy"))
                         {

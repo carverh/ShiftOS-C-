@@ -236,7 +236,7 @@ namespace ShiftOS
                         pbappscreenshot.Show();
                         pbappscreenshot.Load(pkg.ScreenshotPath);
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         pbappscreenshot.Hide();
                     }
@@ -266,7 +266,7 @@ namespace ShiftOS
                         pbappicon.Show();
                         pbappicon.Load("http://playshiftos.ml/appscape/packages/" + pkg.PkgIconPath);
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         pbappicon.Hide();
                     }
@@ -490,8 +490,6 @@ namespace ShiftOS
             return new KeyValuePair<AppscapeModder, AppscapeClient>(dev, clt);
         }
 
-        private Dictionary<string, AppscapeModder> LocalDevList = null;
-
         /// <summary>
         /// Adds a new developer key to the specified client's listing.
         /// </summary>
@@ -670,7 +668,7 @@ namespace ShiftOS
                 {
                     pkg.Cost = Convert.ToDecimal(Convert.ToDecimal(txtprice.Text).ToString("#.#####"));
                 }
-                catch (Exception ex)
+                catch
                 {
                     ContinueUpload = false;
                     API.CreateInfoboxSession("Error", "You have entered an incorrect price value.", infobox.InfoboxMode.Info);
@@ -871,7 +869,7 @@ namespace ShiftOS
                 };
                 _IP = ip_address;
             }
-            catch(Exception ex)
+            catch
             {
                 throw new ArgumentException("IP address not found in client list.");
             }

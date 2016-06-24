@@ -581,7 +581,7 @@ namespace ShiftOS
                 SetPreviewSkin(false);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtdesktoppanelheight.Text = CustomizingSkin.desktoppanelheight.ToString();
             }
@@ -800,7 +800,7 @@ namespace ShiftOS
                 SetPreviewSkin(false);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txtappbuttontextsize.Text = CustomizingSkin.applicationbuttontextsize.ToString();
             }
@@ -828,7 +828,7 @@ namespace ShiftOS
                 SetPreviewSkin(false);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtapplicationsbuttonheight.Text = CustomizingSkin.applicationbuttonheight.ToString();
             }
@@ -842,7 +842,7 @@ namespace ShiftOS
                 SetPreviewSkin(false);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtapplauncherwidth.Text = CustomizingSkin.applaunchermenuholderwidth.ToString();
             }
@@ -1005,8 +1005,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttonwidth = Convert.ToInt16(txtpanelbuttonwidth.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
-            {
+            catch{
                 txtpanelbuttonwidth.Text = CustomizingSkin.panelbuttonwidth.ToString();
             }
             SetPreviewSkin(false);
@@ -1019,7 +1018,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttoninitialgap = Convert.ToInt16(txtpanelbuttoninitalgap.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttoninitalgap.Text = CustomizingSkin.panelbuttoninitialgap.ToString();
             }
@@ -1033,7 +1032,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttonheight = Convert.ToInt16(txtpanelbuttonheight.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch
             {
                 txtpanelbuttonheight.Text = CustomizingSkin.panelbuttonheight.ToString();
             }
@@ -1047,7 +1046,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttongap = Convert.ToInt16(txtpanelbuttongap.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch
             {
                 txtpanelbuttongap.Text = CustomizingSkin.panelbuttongap.ToString();
             }
@@ -1121,7 +1120,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttoniconsize = Convert.ToInt16(txtpanelbuttoniconsize.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch
             {
                 txtpanelbuttoniconsize.Text = CustomizingSkin.panelbuttoniconsize.ToString();
             }
@@ -1135,7 +1134,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttoniconside = Convert.ToInt16(txtpanelbuttoniconside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttoniconside.Text = CustomizingSkin.panelbuttoniconside.ToString();
             }
@@ -1149,7 +1148,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttonicontop = Convert.ToInt16(txtpanelbuttonicontop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttonicontop.Text = CustomizingSkin.panelbuttonicontop.ToString();
             }
@@ -1163,7 +1162,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttontextside = Convert.ToInt16(txtpanelbuttontextside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttontextside.Text = CustomizingSkin.panelbuttontextside.ToString();
             }
@@ -1177,7 +1176,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttontexttop = Convert.ToInt16(txtpanelbuttontexttop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttontexttop.Text = CustomizingSkin.panelbuttontexttop.ToString();
             }
@@ -1191,7 +1190,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttontextsize = Convert.ToInt16(txtpaneltextbuttonsize.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpaneltextbuttonsize.Text = CustomizingSkin.panelbuttontextsize.ToString();
             }
@@ -1205,7 +1204,7 @@ namespace ShiftOS
                 CustomizingSkin.panelbuttonfromtop = Convert.ToInt16(txtpanelbuttontop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtpanelbuttontop.Text = CustomizingSkin.panelbuttonfromtop.ToString();
             }
@@ -1297,7 +1296,7 @@ namespace ShiftOS
                 CustomizingSkin.panelclocktextsize = Convert.ToInt16(txtclocktextsize.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclocktextsize.Text = CustomizingSkin.panelclocktextsize.ToString();
             }
@@ -1311,7 +1310,7 @@ namespace ShiftOS
                 CustomizingSkin.panelclocktexttop = Convert.ToInt16(txtclocktextfromtop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclocktextfromtop.Text = CustomizingSkin.panelclocktexttop.ToString(); //Funny story: I accidentally assigned 'panelcocktexttop' to that property. xD - Michael VanOverbeek
             }
@@ -1358,7 +1357,7 @@ namespace ShiftOS
                 CustomizingSkin.titletextfromtop = Convert.ToInt16(txttitletexttop.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txttitletexttop.Text = CustomizingSkin.titletextfromtop.ToString();
             }
@@ -1372,7 +1371,7 @@ namespace ShiftOS
                 CustomizingSkin.titletextfromside = Convert.ToInt16(txttitletextside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txttitletextside.Text = CustomizingSkin.titletextfromside.ToString();
             }
@@ -1407,7 +1406,7 @@ namespace ShiftOS
                 CustomizingSkin.titletextfontsize = Convert.ToInt16(txttitletextsize.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txttitletextsize.Text = CustomizingSkin.titletextfontsize.ToString();
             }
@@ -1746,7 +1745,7 @@ namespace ShiftOS
                 CustomizingSkin.borderwidth = Convert.ToInt16(txtbordersize.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txtbordersize.Text = CustomizingSkin.borderwidth.ToString();
             }
@@ -1836,7 +1835,7 @@ namespace ShiftOS
                 CustomizingSkin.titlebarheight = Convert.ToInt16(txttitlebarheight.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txttitlebarheight.Text = CustomizingSkin.titlebarheight.ToString();
             }
@@ -1850,7 +1849,7 @@ namespace ShiftOS
                 CustomizingSkin.titlebarcornerwidth = Convert.ToInt16(txttitlebarcornerwidth.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txttitlebarcornerwidth.Text = CustomizingSkin.titlebarcornerwidth.ToString();
             }
@@ -1926,7 +1925,7 @@ namespace ShiftOS
                 CustomizingSkin.titleiconfromside = Convert.ToInt16(txticonfromside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txticonfromside.Text = CustomizingSkin.titleiconfromside.ToString();
             }
@@ -1940,7 +1939,7 @@ namespace ShiftOS
                 CustomizingSkin.titleiconfromtop = Convert.ToInt16(txticonfromtop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txticonfromtop.Text = CustomizingSkin.titleiconfromtop.ToString();
             }
@@ -2064,7 +2063,7 @@ namespace ShiftOS
                 CustomizingSkin.minbtnsize.Height = Convert.ToInt16(txtminimizebuttonheight.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txtminimizebuttonheight.Text = CustomizingSkin.minbtnsize.Height.ToString();
             }
@@ -2078,7 +2077,7 @@ namespace ShiftOS
                 CustomizingSkin.minbtnsize.Width = Convert.ToInt16(txtminimizebuttonwidth.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtminimizebuttonwidth.Text = CustomizingSkin.minbtnsize.Width.ToString();
             }
@@ -2092,7 +2091,7 @@ namespace ShiftOS
                 CustomizingSkin.minbtnfromtop = Convert.ToInt16(txtminimizebuttontop.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txtminimizebuttontop.Text = CustomizingSkin.minbtnfromtop.ToString();
             }
@@ -2106,7 +2105,7 @@ namespace ShiftOS
                 CustomizingSkin.minbtnfromside = Convert.ToInt16(txtminimizebuttonside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtminimizebuttonside.Text = CustomizingSkin.minbtnfromside.ToString();
             }
@@ -2155,7 +2154,7 @@ namespace ShiftOS
                 CustomizingSkin.rollbtnsize.Height = Convert.ToInt16(txtrollupbuttonheight.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtrollupbuttonheight.Text = CustomizingSkin.rollbtnsize.Height.ToString();
             }
@@ -2169,7 +2168,7 @@ namespace ShiftOS
                 CustomizingSkin.rollbtnsize.Width = Convert.ToInt16(txtrollupbuttonwidth.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtrollupbuttonwidth.Text = CustomizingSkin.rollbtnsize.Width.ToString();
             }
@@ -2183,7 +2182,7 @@ namespace ShiftOS
                 CustomizingSkin.rollbtnfromtop = Convert.ToInt16(txtrollupbuttontop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtrollupbuttontop.Text = CustomizingSkin.rollbtnfromtop.ToString();
             }
@@ -2197,7 +2196,7 @@ namespace ShiftOS
                 CustomizingSkin.rollbtnfromside = Convert.ToInt16(txtrollupbuttonside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtrollupbuttonside.Text = CustomizingSkin.rollbtnfromside.ToString();
             }
@@ -2246,7 +2245,7 @@ namespace ShiftOS
                 CustomizingSkin.closebtnsize.Height = Convert.ToInt16(txtclosebuttonheight.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclosebuttonheight.Text = CustomizingSkin.closebtnsize.Height.ToString();
             }
@@ -2260,7 +2259,7 @@ namespace ShiftOS
                 CustomizingSkin.closebtnsize.Width = Convert.ToInt16(txtclosebuttonwidth.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclosebuttonwidth.Text = CustomizingSkin.closebtnsize.Width.ToString();
             }
@@ -2274,7 +2273,7 @@ namespace ShiftOS
                 CustomizingSkin.closebtnfromtop = Convert.ToInt16(txtclosebuttonfromtop.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclosebuttonfromtop.Text = CustomizingSkin.closebtnfromtop.ToString();
             }
@@ -2288,7 +2287,7 @@ namespace ShiftOS
                 CustomizingSkin.closebtnfromside = Convert.ToInt16(txtclosebuttonfromside.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtclosebuttonfromside.Text = CustomizingSkin.closebtnfromside.ToString();
             }
@@ -2899,7 +2898,7 @@ namespace ShiftOS
                 CustomizingSkin.DragFadeInterval = Convert.ToInt32(txtfadespeed.Text);
                 AddCP(1);
             }
-            catch(Exception ex)
+            catch
             {
                 txtfadespeed.Text = CustomizingSkin.DragFadeInterval.ToString();
             }
@@ -2912,7 +2911,7 @@ namespace ShiftOS
                 CustomizingSkin.DragFadeSpeed = Convert.ToDouble(txtdragfadedec.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtdragfadedec.Text = CustomizingSkin.DragFadeSpeed.ToString();
             }
@@ -2932,7 +2931,7 @@ namespace ShiftOS
                 CustomizingSkin.DragFadeLevel = Convert.ToDouble(txtdragopacitydec.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtdragopacitydec.Text = CustomizingSkin.DragFadeLevel.ToString();
             }
@@ -2945,7 +2944,7 @@ namespace ShiftOS
                 CustomizingSkin.ShakeMaxOffset = Convert.ToInt32(txtshakemax.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtshakemax.Text = CustomizingSkin.ShakeMaxOffset.ToString();
             }
@@ -2958,7 +2957,7 @@ namespace ShiftOS
                 CustomizingSkin.ShakeMinOffset = Convert.ToInt32(txtshakeminoffset.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtshakeminoffset.Text = CustomizingSkin.ShakeMinOffset.ToString();
             }
@@ -2971,7 +2970,7 @@ namespace ShiftOS
                 CustomizingSkin.WindowFadeTime = Convert.ToInt32(txtwinfadespeed.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtwinfadespeed.Text = CustomizingSkin.WindowFadeTime.ToString();
             }
@@ -2984,9 +2983,110 @@ namespace ShiftOS
                 CustomizingSkin.WindowFadeSpeed = Convert.ToDecimal(txtwinfadedec.Text);
                 AddCP(1);
             }
-            catch (Exception ex)
+            catch 
             {
                 txtwinfadedec.Text = CustomizingSkin.WindowFadeSpeed.ToString();
+            }
+        }
+
+        private void btnmore_Click(object sender, EventArgs e)
+        {
+            pnlluaoptions.Show();
+            pnlluaoptions.BringToFront();
+            SetupLuaUI();
+            
+        }
+
+        public void SetupLuaUI()
+        {
+            pnlluafield.Controls.Clear();
+            flmorebuttons.Controls.Clear();
+            if (API.LuaShifterRegistry == null)
+            {
+                var l = new Label();
+                l.Dock = DockStyle.Fill;
+                l.TextAlign = ContentAlignment.MiddleCenter;
+                l.Font = new Font("Microsoft Sans Serif", 12);
+                l.Text = @"Nothing to show here.
+
+There are no options to show here yet.
+
+You can add options in the Lua interpreter using the shifter_add_category(string name), shifter_add_value(string category, string name, value), and shifter_remove_category(string name) methods. Applications may also add their own values.";
+                pnlluafield.Controls.Add(l);
+                l.Show();
+            }
+            else
+            {
+                foreach (var kv in API.LuaShifterRegistry)
+                {
+                    var b = new Button();
+                    b.Text = kv.Key;
+                    b.FlatStyle = FlatStyle.Flat;
+                    b.AutoSize = true;
+                    b.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                    flmorebuttons.Controls.Add(b);
+                    b.Show();
+                    b.Click += (object s, EventArgs a) =>
+                    {
+                        SetupLuaForm(kv.Value);
+                    };
+                }
+            }
+        }
+
+        public void SetupLuaForm(Dictionary<string, object> d)
+        {
+            pnlluafield.Controls.Clear();
+            foreach(var kv in d)
+            {
+                IShifterSetting l = new ShifterTextInput();
+                if (kv.Value is string)
+                    l = new ShifterTextInput();
+                if (kv.Value is Image)
+                    l = new ShifterGraphicInput();
+                if (kv.Value is Color)
+                    l = new ShifterColorInput();
+                if (kv.Value is int || kv.Value is float || kv.Value is double || kv.Value is decimal)
+                    l = new ShifterIntInput();
+                if(l is ShifterIntInput)
+                {
+                    var i = l as ShifterIntInput;
+                    if (kv.Value is int)
+                        i.NoDecimal = true;
+                    else
+                        i.NoDecimal = false;
+                }
+                if (pnlluafield.Controls.Count > 0)
+                {
+                    var ctrl = pnlluafield.Controls[pnlluafield.Controls.Count - 1];
+                    l.Location = new Point(ctrl.Left + ctrl.Width + 5, ctrl.Top);
+                    if(l.Left + l.Width > pnlluafield.Width)
+                    {
+                        l.Left = 2;
+                        l.Top = ctrl.Top + ctrl.Height + 2;
+                    }
+                }
+                else
+                {
+                    l.Location = new Point(2, 2);
+                }
+
+                pnlluafield.Controls.Add(l);
+                l.Show();
+                l.Font = new Font("Microsoft Sans Serif", 9);
+                l.Text = kv.Key;
+                l.Value = kv.Value;
+                l.OnValueChange += (hello, its_me) => 
+                {
+                    foreach(var dict in API.LuaShifterRegistry)
+                    {
+                        if(API.LuaShifterRegistry[dict.Key] == d)
+                        {
+                            API.LuaShifterRegistry[dict.Key][kv.Key] = l.Value;
+                        }
+                    }
+                };
+                
             }
         }
     }

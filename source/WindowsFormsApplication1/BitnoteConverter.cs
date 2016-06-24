@@ -37,7 +37,7 @@ namespace ShiftOS
                 lbstatus.Text = "> " + decstr + " BTN";
                 BitnotesToAdd = Convert.ToDecimal(decstr);
             }
-            catch(Exception ex)
+            catch
             {
                 BitnotesToAdd = 0;
             }

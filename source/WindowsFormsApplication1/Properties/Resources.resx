@@ -220,7 +220,7 @@
   <data name="upgradeshiftpanelclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeshiftpanelclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BeginButton.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BeginButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BeginButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeamandpm" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -310,7 +310,7 @@
   <data name="deletefile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletefile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QuitButton.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="QuitButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuitButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ArtPadnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -412,7 +412,7 @@
   <data name="upgradegreencustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradegreencustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="player_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stopbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -610,7 +610,7 @@
   <data name="iconDownloader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconDownloader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_mid2.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_mid2_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_mid2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fileicondirectory" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -622,7 +622,7 @@
   <data name="upgradeartpadpaintbrushtool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpaintbrushtool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_small2.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_small2_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_small2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TotalBalanceClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -655,7 +655,7 @@
   <data name="upgradeartpadpixellimit4096" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpixellimit4096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_large.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_large_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_large.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anycolourshade4" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -778,7 +778,7 @@
   <data name="upgradeartpadpixelplacermovementmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradeartpadpixelplacermovementmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_small.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_small_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_small.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeosname" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -868,7 +868,7 @@
   <data name="upgrademinutesssincemidnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgrademinutesssincemidnight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_mid.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_mid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\object_mid.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upgradeunitymode" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -1009,7 +1009,7 @@
   <data name="upgradepinkshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upgradepinkshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PicBonus.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PicBonus_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PicBonus.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notify_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -1062,5 +1062,11 @@
   </data>
   <data name="AustinWalkerCompletionStory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AustinWalkerCompletionStory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MusicData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MusicData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Credits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Credits.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

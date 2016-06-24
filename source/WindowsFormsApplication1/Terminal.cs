@@ -19,9 +19,12 @@ namespace ShiftOS
 {
     public partial class Terminal : Form
     {
+        string current_dir = "";
+
         public Terminal()
         {
             InitializeComponent();
+            current_dir = Paths.SaveRoot;
         }
 
         public Terminal(bool modlog)
@@ -29,6 +32,7 @@ namespace ShiftOS
             ModLogger = modlog;
             InitializeComponent();
             API.LoggerTerminal = this;
+            current_dir = Paths.SaveRoot;
         }
 
         public void StartOtherPlayerStory()
@@ -110,7 +114,7 @@ namespace ShiftOS
             tmrshutdown.Tick += new EventHandler(tmrshutdown_Tick);
             if (Hacking == false)
             {
-                WriteLine(SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ");
+                WriteLine(prefix);
             }
             txtterm.Select(txtterm.TextLength, 0);
             if (API.Upgrades["terminalscrollbar"] == true)
@@ -186,10 +190,12 @@ namespace ShiftOS
         int firstrun;
         public bool sendinputtomod = false;
 
+        string prefix = $"{API.Username}@{API.OSName} $> ";
+
         private void ReadCommand()
         {
             command = txtterm.Lines[txtterm.Lines.Length - 1];
-            command = command.Replace(SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ", "");
+            command = command.Replace(prefix, "");
             command = command.ToLower();
         }
 
@@ -393,20 +399,12 @@ namespace ShiftOS
 
                         if (command == "clear")
                         {
-                            txtterm.Text = txtterm.Text + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                            txtterm.Text = txtterm.Text + prefix;
                             txtterm.Select(txtterm.Text.Length, 0);
-                        }
-                        else if (command == "lua")
-                        {
-                            if (Lua_API.UseLuaAPI == false)
-                            {
-                                txtterm.Text = txtterm.Text + Environment.NewLine + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                                txtterm.Select(txtterm.Text.Length, 0);
-                            }
                         }
                         else
                         {
-                            txtterm.Text = txtterm.Text + Environment.NewLine + SaveSystem.Utilities.LoadedSave.username + "@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                            txtterm.Text = txtterm.Text + Environment.NewLine + prefix;
                             txtterm.Select(txtterm.Text.Length, 0);
                         }
                         trackpos = 0;
@@ -583,6 +581,11 @@ Password: z7fjsd3");
                 this.Invoke(new Action(() => { this.Close(); }));
             })));
             t.Start();
+        }
+
+        public void SetPrefix(string _prefix)
+        {
+            prefix = _prefix;    
         }
 
         internal void StartBridgeToMidGame()
@@ -787,7 +790,7 @@ Password: z7fjsd3");
                 WriteLine($"Description: {h.Description}");
                 WriteLine(Environment.NewLine + "LEFT: Previous Attack, RIGHT: Next Attack, ENTER: Confirm");
             }
-            catch (Exception ex)
+            catch 
             {
                 WriteLine("There are no entries to display in this list.");
             }
@@ -1234,7 +1237,6 @@ Password: z7fjsd3");
         {
             System.Windows.Forms.Timer tmrstory = new System.Windows.Forms.Timer();
             tmrstory.Interval = 10000;
-            int i = 0;
             WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
             API.PlaySound(Properties.Resources.dial_up_modem_02);
             var t = new Thread(new ThreadStart(new Action(() =>
@@ -1368,12 +1370,69 @@ Password: z7fjsd3");
 
         private bool LuaMode = false;
 
+        public string GetPath(string path)
+        {
+            return path.Replace(Paths.SaveRoot, "").Replace(OSInfo.DirectorySeparator, "/");
+        }
+
+        public string GetParent(string path)
+        {
+            var d = new DirectoryInfo(path);
+            return d.Parent.FullName;
+        }
+
         public void DoCommand()
         {
             API.LastRanCommand = command;
             string[] args = command.ToLower().Split(' ');
             switch (args[0])
             {
+                case "ls":
+                case "dir":
+                    if(API.Upgrades["fileskimmer"])
+                    {
+                        foreach(var d in Directory.GetDirectories(current_dir))
+                        {
+                            WriteLine($"[DIR] {new DirectoryInfo(d).Name}");
+                        }
+                        foreach (var d in Directory.GetFiles(current_dir))
+                        {
+                            WriteLine($"{new FileInfo(d).Name}");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "cd":
+                    if (API.Upgrades["fileskimmer"])
+                    {
+                        if (args[1] == "..")
+                        {
+                            if (GetPath(current_dir) != "/")
+                            {
+                                current_dir = GetParent(current_dir);
+                                SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                            }
+                            else
+                            {
+                                WriteLine("cd: Can't go up past the root.");
+                            }
+                        }
+                        else
+                        {
+                            string newdir = current_dir + OSInfo.DirectorySeparator;
+                            foreach (var dir in Directory.GetDirectories(current_dir))
+                            {
+                                if (new DirectoryInfo(dir).Name.ToLower() == args[1])
+                                    newdir = dir;
+                            }
+                            current_dir = newdir;
+                            SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                        }
+                    }
+                    break;
                 case "upg":
                     if(API.DeveloperMode)
                     {
@@ -1467,6 +1526,9 @@ Password: z7fjsd3");
                                     WriteLine($"Hostname: {client.Key}, Port: {client.Value.RemotePort}, Online: {client.Value.IsConnected}");
                                 }
                                 break;
+                            case "gui":
+                                API.CreateForm(new ConnectionManager(), "Connections", API.GetIcon("Connections"));
+                                break;
                             case "drop":
                                 foreach(var client in Package_Grabber.clients)
                                 {
@@ -1497,7 +1559,7 @@ Password: z7fjsd3");
                                 break;
                         }
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         WriteLine("connections: Missing arguments.");
                     }
@@ -1526,7 +1588,7 @@ Password: z7fjsd3");
                                     break;
                             }
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             WriteLine("Missing arguments.");
                         }
@@ -1548,27 +1610,9 @@ Password: z7fjsd3");
                             WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
                         }
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         WriteLine("make: Invalid arguments.");
-                    }
-                    break;
-                case "toggle_music":
-                    if (API.DeveloperMode)
-                    {
-                        if (Audio.Enabled == false)
-                        {
-                            WriteLine(@"Music enabled.
-
-Warning: The music player code in ShiftOS has a memory leak issue and is quite CPU-intensive. If your CPU fan starts to spin up while listening to a song, that's why.
-
-Warning: Music is not embedded within the game. You must download the external resources directory at http://playshiftos.ml/shiftos/resources.zip to have applications play their music.");
-                        }
-                        Audio.Enabled = !Audio.Enabled;
-                    }
-                    else
-                    {
-                        wrongcommand();
                     }
                     break;
                 case "linux":
@@ -1613,7 +1657,7 @@ Warning: Music is not embedded within the game. You must download the external r
                                 WriteLine("Lua script file not found.");
                             }
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             this.LuaMode = true;
                             this.Interpreter = new LuaInterpreter();
@@ -1946,7 +1990,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                                 break;
                         }
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         WriteLine("alias: Missing arguments. Try alias --help for help with the Alias command.");
                     }
@@ -1958,7 +2002,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         {
                             API.CurrentSave.username = args[1];
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             WriteLine("username: Missing arguments.");
                         }
@@ -1975,7 +2019,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         {
                             API.CurrentSave.osname = args[1];
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             WriteLine("osname: Missing arguments.");
                         }
@@ -2145,7 +2189,8 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                                     wrongcommand();
                                     break;
                             }
-                        } catch(Exception ex) {
+                        } catch
+                        {
                             wrongcommand(); //Debug command pretends to be an invalid command if an exception is thrown.
                         }
                     }
@@ -2163,6 +2208,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                 case "syncsave":
                     WriteLine("Command removed.");
                     break;
+                    
                 default:
                     if (API.OpenProgram(args[0]) == false)
                     {
@@ -2672,7 +2718,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             try {
                 txtterm.Font = new Font(fname, fsize);
             }
-            catch(Exception ex)
+            catch
             {
                 txtterm.Font = new Font(fname, 9);
             }

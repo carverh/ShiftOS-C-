@@ -98,7 +98,7 @@ namespace ShiftOS
                     client.Connect(address, port);
                     clients.Add(client.RemoteHost, client);
                 }
-                catch (Exception ex)
+                catch 
                 {
                 }
             }
@@ -191,7 +191,7 @@ namespace ShiftOS
                 wc.DownloadFile("http://playshiftos.ml/shiftnet/packages/" + pkgname + ".pkg", downloadpath + pkgname + ".pkg");
                 LastPackage_DownloadPath = downloadpath + pkgname + ".pkg";
             }
-            catch (WebException wex)
+            catch
             {
                 result = false;
             }
@@ -248,7 +248,7 @@ namespace ShiftOS
                 ZipFile.ExtractToDirectory(localpath, packagedir);
                 return packagedir;
             }
-            catch (Exception ex)
+            catch 
             {
                 return "fail";
             }

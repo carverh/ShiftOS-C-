@@ -23,6 +23,7 @@ namespace ShiftOS
 				public static string Videos;
 			public static string SystemDir;
                 public static string AutoStart;
+                public static string APIs;
 				public static string SkinDir;
 					public static string LoadedSkin;
                         public static string Icons;
@@ -77,6 +78,7 @@ namespace ShiftOS
                     Bitnote = Drivers + "BNWallet.dri";
                     Icons = LoadedSkin + "Icons\\";
                     WidgetFiles = SystemDir + "Widgets\\";
+                    APIs = SystemDir + "APIs\\";
 				break;
 			default:
 				SaveRoot = OSInfo.homePath () + "/.local/lib/.shiftos";
@@ -104,6 +106,7 @@ namespace ShiftOS
                     Bitnote = Drivers + "BNWallet.dri";
                     Icons = LoadedSkin + "Icons/";
                     WidgetFiles = SystemDir + "Widgets/";
+                    APIs = SystemDir + "APIs/";
                     break;
 			}
 

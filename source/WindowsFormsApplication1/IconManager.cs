@@ -48,7 +48,7 @@ namespace ShiftOS
                     IconControl ic = (IconControl)ctrl;
                     Skinning.Utilities.IconRegistry[ic.IconName] = ic.LargeImage;
                 }
-                catch(Exception ex)
+                catch
                 {
                     IconControl ic = (IconControl)ctrl;
                     Skinning.Utilities.IconRegistry.Add(ic.IconName, ic.LargeImage);
@@ -105,7 +105,7 @@ namespace ShiftOS
                                 API.IconRegistry[finf.Name] = Image.FromStream(stream);
                             }
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             API.IconRegistry.Add(finf.Name, Image.FromFile(finf.FullName));
                         }

@@ -17,22 +17,19 @@ namespace ShiftOS.FinalMission
 {
     public partial class ChooseYourApproach : Form
     {
-        bool Playing = false;
-        private AudioResourceClient audioClient = null;
-
+        
         public ChooseYourApproach()
         {
-            audioClient = new AudioResourceClient("EndGame;RossBugden");
-            InitializeComponent();
-            //Music thread.
-            audioClient.Play("Rapture");
-            audioClient.SongFinished += (object s, EventArgs a) =>
+            Audio.Play("endgame");
+            Audio.Stopped += (o, a) =>
             {
-                if (musicEnabled)
+                if (this != null)
                 {
-                    audioClient.Play("Rapture");
+                    Audio.Play("endgame");
                 }
             };
+            InitializeComponent();
+            //Music thread.
         }
 
         private void lbdesc_Click(object sender, EventArgs e)
@@ -128,9 +125,7 @@ namespace ShiftOS.FinalMission
 
         private void onClose(object sender, FormClosingEventArgs e)
         {
-            audioClient.Stop();
-            audioClient.Dispose();
-            audioClient = null;
+            Audio.ForceStop();
         }
 
         bool musicEnabled = true;
@@ -139,11 +134,11 @@ namespace ShiftOS.FinalMission
         {
             if (musicEnabled)
             {
-                audioClient.Stop();
+                Audio.ForceStop();
             }
             else
             {
-                audioClient.Play("Rapture");
+                Audio.Play("hackerbattle_ambient");
             }
             musicEnabled = !musicEnabled;
         }

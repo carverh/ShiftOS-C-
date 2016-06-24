@@ -146,6 +146,18 @@
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionManager.Designer.cs">
+      <DependentUpon>ConnectionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditScroller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditScroller.Designer.cs">
+      <DependentUpon>CreditScroller.cs</DependentUpon>
+    </Compile>
     <Compile Include="DesktopIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="FinalMission\QuestViewer.Designer.cs">
       <DependentUpon>QuestViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Graphic_Picker.cs">
       <SubType>Form</SubType>
@@ -346,6 +364,30 @@
     <Compile Include="Shifter.Designer.cs">
       <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShifterColorInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShifterColorInput.Designer.cs">
+      <DependentUpon>ShifterColorInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShifterGraphicInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShifterGraphicInput.Designer.cs">
+      <DependentUpon>ShifterGraphicInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShifterIntInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShifterIntInput.Designer.cs">
+      <DependentUpon>ShifterIntInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShifterTextInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShifterTextInput.Designer.cs">
+      <DependentUpon>ShifterTextInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shiftnet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +458,12 @@
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionManager.resx">
+      <DependentUpon>ConnectionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditScroller.resx">
+      <DependentUpon>CreditScroller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DesktopIcon.resx">
       <DependentUpon>DesktopIcon.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FinalMission\QuestViewer.resx">
       <DependentUpon>QuestViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameSettings.resx">
+      <DependentUpon>GameSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphic_Picker.resx">
       <DependentUpon>Graphic_Picker.cs</DependentUpon>
@@ -511,6 +562,18 @@
     <EmbeddedResource Include="Shifter.resx">
       <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShifterColorInput.resx">
+      <DependentUpon>ShifterColorInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShifterGraphicInput.resx">
+      <DependentUpon>ShifterGraphicInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShifterIntInput.resx">
+      <DependentUpon>ShifterIntInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShifterTextInput.resx">
+      <DependentUpon>ShifterTextInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Shiftnet.resx">
       <DependentUpon>Shiftnet.cs</DependentUpon>
     </EmbeddedResource>
@@ -559,6 +622,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Credits.txt" />
+    <None Include="Resources\MusicData.txt" />
     <None Include="bin\Debug\Newtonsoft.Json.dll" />
     <None Include="bin\Debug\NetSockets.dll" />
     <Content Include="Labyrinth.designer.vb" />
@@ -959,7 +1024,25 @@
     </Compile>
     <Compile Include="undo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -116,7 +116,7 @@ namespace ShiftOS
                     PanelButton pbtn = (PanelButton)s.Tag;
                     API.ToggleMinimized(pbtn.FormToManage);
                 }
-                catch (Exception ex)
+                catch 
                 {
 
                 }

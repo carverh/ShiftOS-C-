@@ -31,7 +31,6 @@ namespace ShiftOS
         bool levelup;
         int rewardbase;
 
-        string[] savecontent;
         int totalguessed;
         int level;
 
@@ -314,8 +313,6 @@ namespace ShiftOS
             }
         }
 
-        int chance = 101;
-        // ERROR: Handles clauses are not supported in C#
         
         // ERROR: Handles clauses are not supported in C#
         private void me_closing()

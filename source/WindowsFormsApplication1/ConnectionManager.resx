@@ -117,45 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="clocktick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
-  <metadata name="customizationtime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>238, 17</value>
-  </metadata>
-  <metadata name="timerearned.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>390, 17</value>
-  </metadata>
-  <data name="Label64.Text" xml:space="preserve">
-    <value>The Shifter is your one-stop shop for customizing every aspect of ShiftOS. From colors to fonts, from images to sizes and locations, we have it all!
-
-Simply click the buttons on the right to choose a category, and then from there, choose a sub-category, and have fun customizing! In ShiftOS, the sky and your hard drive space is the limit!</value>
-  </data>
-  <metadata name="predesktopappmenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>508, 17</value>
-  </metadata>
-  <metadata name="predesktopappmenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>508, 17</value>
-  </metadata>
-  <data name="Label109.Text" xml:space="preserve">
-    <value>Have you made a nice skin and want a clean slate to make another? Do you want to reverse back to regular ShiftOS? Well, fear not, the 'Reset' button is here. Just click it, and ShiftOS will wok it's magic.</value>
-  </data>
-  <data name="label116.Text" xml:space="preserve">
-    <value>The Advanced Shifter allows you to customize even more of ShiftOS by letting you customize virtually every aspect of the various menus in ShiftOS.
-
-These menus include the App Launcher menu, any context menus, and any toolbars within applications.
-
-There's a lot to customize, so we've grouped everything into categories on the left.
-
-Customize to your heart's content!</value>
-  </data>
-  <metadata name="tmrfix.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>673, 17</value>
-  </metadata>
-  <metadata name="tmrdelay.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>756, 17</value>
-  </metadata>
 </root>

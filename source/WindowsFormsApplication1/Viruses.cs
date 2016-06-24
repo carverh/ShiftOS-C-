@@ -121,7 +121,7 @@ namespace ShiftOS
                             }
                             Directory.Delete(pth, true);
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             API.LogException("Corrupted package file detected while checking for infections... skipping.", false);
                         }
@@ -146,7 +146,7 @@ namespace ShiftOS
                                     }
                                 }
                             }
-                            catch (CryptographicException cex)
+                            catch
                             {
                                 if (encrypted != "")
                                 {
@@ -326,7 +326,7 @@ namespace ShiftOS
                             unencryptedfile += ";" + infectionString;
                             File.WriteAllText(finf.FullName, API.Encryption.Encrypt(unencryptedfile));
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             File.WriteAllText(finf.FullName, API.Encryption.Encrypt(infectionString));
                         }
@@ -348,7 +348,7 @@ namespace ShiftOS
                         unencryptedfile += ";" + infectionString;
                         File.WriteAllText(finf.FullName, API.Encryption.Encrypt(unencryptedfile));
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         File.WriteAllText(finf.FullName, API.Encryption.Encrypt(infectionString));
                     }
@@ -359,7 +359,6 @@ namespace ShiftOS
 
         public static void DisInfect(string FileName)
         {
-            bool cont = false;
             FileInfo finf = new FileInfo(FileName);
             switch (finf.Extension)
             {
@@ -379,7 +378,7 @@ namespace ShiftOS
                             dirsep = "/";
                             break;
                     }
-                    if(File.Exists(pth + dirsep + virusfilename))
+                    if (File.Exists(pth + dirsep + virusfilename))
                     {
                         File.Delete(pth + dirsep + virusfilename);
                     }
@@ -401,15 +400,13 @@ namespace ShiftOS
                             unencryptedfile = "";
                             File.WriteAllText(finf.FullName, API.Encryption.Encrypt(unencryptedfile));
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             File.WriteAllText(finf.FullName, "");
                         }
                     }
                     break;
-                default:
-                    cont = true;
-                    break;
+
 
             }
             CheckForInfected();
@@ -457,7 +454,7 @@ namespace ShiftOS
                             unencryptedfile += ";" + infectionString;
                             File.WriteAllText(finf.FullName, API.Encryption.Encrypt(unencryptedfile));
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             File.WriteAllText(finf.FullName, API.Encryption.Encrypt(infectionString));
                         }
@@ -479,7 +476,7 @@ namespace ShiftOS
                         unencryptedfile += ";" + infectionString;
                         File.WriteAllText(finf.FullName, API.Encryption.Encrypt(unencryptedfile));
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         File.WriteAllText(finf.FullName, API.Encryption.Encrypt(infectionString));
                     }
@@ -553,7 +550,7 @@ namespace ShiftOS
                 InfectFile(file, VirusID.ImTheShifterNow);
                 InfectFile(file, VirusID.MouseTrap);
             }
-            catch(NotHappeningException nhex)
+            catch
             {
                 DropDevXPayload();
             }
@@ -600,10 +597,8 @@ namespace ShiftOS
                     case 7:
                     case 9:
                         return Chars[rnd.Next(0, Chars.Length - 1)].ToUpper();
-                        break;
                     default:
                         return Chars[rnd.Next(0, Chars.Length - 1)].ToLower();
-                        break;
                 }
             }
         }

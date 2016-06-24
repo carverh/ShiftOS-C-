@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace ShiftOS
         public HackUI()
         {
             InitializeComponent();
+            this.TopMost = false;
             ThisEnemyHacker = new EnemyHacker("Test Dummy", "A test hacker", "A test hacker", 1, 1, "easy");
         }
 
@@ -104,11 +106,16 @@ namespace ShiftOS
             {
                 if (pc.Disabled == false)
                 {
-                    if (pc.Enemies != null)
+                    var elist = new List<Computer>();
+                    if (pc.Enslaved)
+                        elist = AllPlayerComputers;
+                    else
+                        elist = pc.Enemies;
+                    if (elist != null)
                     {
-                        foreach (var enemy in pc.Enemies)
+                        foreach (var enemy in elist)
                         {
-                            if (AllEnemyComputers.Contains(enemy))
+                            if (enemy != null && enemy.HP > 0)
                             {
                                 chance = rnd.Next(1, 15);
                                 if (chance == 7)
@@ -150,7 +157,7 @@ namespace ShiftOS
             }
                 if (ThisPlayerPC.HP <= 0)
             {
-                API.CreateInfoboxSession("System compromised.", "The enemy hacker has overthrown your defenses and compromised your system. You will need to wait an hour before you can start another hack battle.", infobox.InfoboxMode.Info);
+                API.CreateInfoboxSession("System compromised.", "The enemy hacker has overthrown your defenses and compromised your system. You will need to wait until your core heals before beginning another battle.", infobox.InfoboxMode.Info);
                 Hacking.Failure = true;
                 Hacking.FailDate = DateTime.Now;
                 UserRequestedClose = false;
@@ -162,16 +169,35 @@ namespace ShiftOS
 
         private void this_Closing(object sender, FormClosingEventArgs e)
         {
+            var t = new Thread(new ThreadStart(() =>
+            {
+                int prev_volume = Audio._wmp.settings.volume;
+                while(Audio._wmp.settings.volume > 0)
+                {
+                    Thread.Sleep(100);
+                    Audio._wmp.settings.volume -= 1;
+                }
+                Audio.ForceStop();
+                Audio._wmp.settings.volume = prev_volume;
+            }));
+            t.Start();
             if (UserRequestedClose == false)
             {
-                arc.Dispose();
-                Computer[] pcs = { };
+                this.TopMost = false;
+                Computer[] pcs = new Computer[AllPlayerComputers.Count];
                 AllPlayerComputers.CopyTo(pcs);
-                foreach(var pc in pcs)
+                foreach (var pc in pcs)
                 {
-                    pc.Dispose();
+                    pc?.Dispose();
+                }
+                Computer[] epcs = new Computer[AllEnemyComputers.Count];
+                AllEnemyComputers.CopyTo(epcs);
+                foreach (var epc in epcs)
+                {
+                    epc?.Dispose();
                 }
                 tmrplayerhealthdetect.Stop();
+                tmrenemyhealthdetect.Stop();
                 Hacking.RepairTimer.Start(); //Now the player can repair.
             }
             else
@@ -182,6 +208,8 @@ namespace ShiftOS
 
         public Computer SelectedPlayerComputer = null;
 
+        public Computer module_to_steal = null;
+
         public void AddModule(Computer newModule)
         {
             pnlyou.Controls.Add(newModule);
@@ -190,6 +218,49 @@ namespace ShiftOS
             TotalPlayerHP += newModule.HP;
             AllPlayerComputers.Add(newModule);
             newModule.Show();
+            newModule.StolenModule += (o, a) =>
+            {
+                var t = new Thread(new ThreadStart(() =>
+                {
+                    var rnd = new Random();
+                    var lst = new List<Computer>();
+                    if (newModule.Enslaved)
+                        lst = AllPlayerComputers;
+                    else
+                        lst = AllEnemyComputers;
+                    WriteLine($"[{newModule.Hostname}] Starting network hack...");
+                    Thread.Sleep(5000);
+
+                    var pc = lst[rnd.Next(0, lst.Count)];
+                    this.Invoke(new Action(() =>
+                    {
+                        if (pc.Type != SystemType.Core)
+                        {
+                            module_to_steal = pc;
+
+                            pgpong.Left = (this.Width - pgpong.Width) / 2;
+                            pgpong.Top = (this.Height - pgpong.Height) / 2;
+
+                            pgpong.Show();
+                            newgame();
+                        }
+                    }));
+                }));
+                t.Start();
+            };
+            newModule.EnslavedModule += (o, e) =>
+            {
+                if(!newModule.Enslaved)
+                {
+                    var pc = AllEnemyComputers[rand.Next(0, AllEnemyComputers.Count)];
+                    if(!pc.Enslaved)
+                    {
+                        WriteLine($"[{newModule.Hostname}] Successfully enslaved {pc.Hostname}");
+                        pc.Enslaved = true;
+                    }
+                    
+                }
+            };
             newModule.OnDestruction += (object s, EventArgs a) =>
             {
                 if (this.SelectedPlayerComputer == newModule)
@@ -268,7 +339,10 @@ namespace ShiftOS
             {
                 newModule.MassDDoS += (object s, EventArgs a) =>
                 {
-                    WormToEnemy();
+                    if (newModule.Enslaved)
+                        WormToPlayer();
+                    else
+                        WormToEnemy();
                 };
             }
         }
@@ -289,6 +363,15 @@ namespace ShiftOS
 
         public void ShowPCInfo(string hostname)
         {
+            Computer c = null;
+            foreach (var pc in AllPlayerComputers)
+            {
+                if (pc.Hostname == hostname)
+                {
+                    c = pc;
+                }
+            }
+
             Module mod = null;
             foreach (var m in GetMyNet())
             {
@@ -302,7 +385,7 @@ namespace ShiftOS
                 pnlpcinfo.Left = 7;
                 pnlpcinfo.Show();
                 lbmoduletitle.Text = "Module Info - " + hostname;
-                lbpcinfo.Text = $"Hostname: {hostname}{Environment.NewLine}Type: {mod.Type.ToString()}";
+                lbpcinfo.Text = $"Hostname: {hostname}{Environment.NewLine}Type: {mod.Type.ToString()}{Environment.NewLine}{Environment.NewLine}";
                 if (mod.Type == SystemType.Core)
                 {
                     lbpcinfo.Text += Environment.NewLine + "This represents your main system. If this module is destroyed, you will automatically lose the battle. Protect it at all costs.";
@@ -322,37 +405,37 @@ namespace ShiftOS
                     }
                     btnpoweroff.Show();
                 }
-            }
-            Computer c = null;
-            foreach (var pc in AllPlayerComputers)
-            {
-                if (pc.Hostname == hostname)
-                {
-                    c = pc;
-                }
+                
             }
             if (c != null)
             {
-                lbtargets.Text = "Targets: ";
-                if (c.Enemies != null)
+                if (c.Enslaved)
                 {
-                    if (c.Enemies.Count > 0)
+                    lbtargets.Text = "*** WARNING ***: This module has been ENSLAVED! Consider a redeploy.";
+                }
+                else
+                {
+                    lbtargets.Text = "Targets: ";
+                    if (c.Enemies != null)
                     {
-                        foreach (var pc in c.Enemies)
+                        if (c.Enemies.Count > 0)
                         {
-                            lbtargets.Text += " " + pc.Hostname + ",";
+                            foreach (var pc in c.Enemies)
+                            {
+                                lbtargets.Text += " " + pc.Hostname + ",";
+                            }
+                        }
+                        else
+                        {
+                            lbtargets.Text += " - Click on an enemy module to target it.";
                         }
                     }
                     else
                     {
                         lbtargets.Text += " - Click on an enemy module to target it.";
                     }
+                    lbtargets.Text += Environment.NewLine + "Some modules will not fire at their targets.";
                 }
-                else
-                {
-                    lbtargets.Text += " - Click on an enemy module to target it.";
-                }
-                lbtargets.Text += Environment.NewLine + "Some modules will not fire at their targets.";
             }
         }
 
@@ -514,7 +597,7 @@ namespace ShiftOS
                         {
                             SystemType type = FutureModules[cmbmodules.Text];
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             cont = false;
                             API.CreateInfoboxSession("Error", "Please select a module type.", infobox.InfoboxMode.Info);
@@ -680,7 +763,7 @@ namespace ShiftOS
                 }
                 SetupModuleInfo();
             }
-            catch (Exception ex)
+            catch 
             {
                 txtgrade.Text = "1";
                 SetupModuleInfo();
@@ -982,18 +1065,24 @@ namespace ShiftOS
 
         private void HackUI_Load(object sender, EventArgs e)
         {
+            this.TopMost = false;
+            Audio.Stopped += (o, a) =>
+            {
+                if (this != null)
+                {
+                    Audio.Play("hackerbattle_ambient");
+                }
+            };
+            Audio.Play("hackerbattle_ambient");
+
             Hacking.RepairTimer.Stop(); //Don't want the player to be able to repair dead modules during a battle!
             this.TopMost = true;
-            arc = new AudioResourceClient("HackerBattle");
-            arc.SongFinished += (object s, EventArgs a) =>
-            {
-                arc.PlayRandom();
-            };
-            arc.PlayRandom();
             this.WindowState = FormWindowState.Maximized;
             //this.TopMost = true;
             LoadPlayerScreen();
             LoadEnemyScreen();
+            tmrvisualizer.Interval = 10;
+            tmrvisualizer.Start();
         }
 
         #region ENEMY
@@ -1056,6 +1145,49 @@ namespace ShiftOS
             int hp = newModule.HP;
             TotalEnemyHP += (decimal)newModule.HP;
             newModule.Show();
+
+            newModule.StolenModule += (o, a) =>
+            {
+                var t = new Thread(new ThreadStart(() =>
+                {
+                    var lst = new List<Computer>();
+                    if (!newModule.Enslaved)
+                        lst = AllPlayerComputers;
+                    else
+                        lst = AllEnemyComputers;
+                    WriteLine_Enemy($"[{newModule.Hostname}] Starting network hack...");
+                    Thread.Sleep(5000);
+
+                    var pc = lst[rnd.Next(0, lst.Count)];
+                    this.Invoke(new Action(() =>
+                    {
+                        if (pc.Type != SystemType.Core)
+                        {
+                            module_to_steal = pc;
+
+                            pgpong.Left = (this.Width - pgpong.Width) / 2;
+                            pgpong.Top = (this.Height - pgpong.Height) / 2;
+
+                            pgpong.Show();
+                            newgame();
+                        }
+                    }));
+                }));
+                t.Start();
+            };
+            newModule.EnslavedModule += (o, e) =>
+            {
+                if (!newModule.Enslaved)
+                {
+                    var pc = AllPlayerComputers[rand.Next(0, AllPlayerComputers.Count)];
+                    if (!pc.Enslaved)
+                    {
+                        WriteLine_Enemy($"[{newModule.Hostname}] Successfully enslaved {pc.Hostname}");
+                        pc.Enslaved = true;
+                    }
+
+                }
+            };
             newModule.OnDestruction += (object s, EventArgs a) =>
             {
                 if (this.SelectedEnemyComputer == newModule)
@@ -1134,7 +1266,10 @@ namespace ShiftOS
             {
                 newModule.MassDDoS += (object s, EventArgs a) =>
                 {
-                    WormToPlayer();
+                    if (newModule.Enslaved)
+                        WormToEnemy();
+                    else
+                        WormToPlayer();
                 };
             }
         }
@@ -1142,7 +1277,7 @@ namespace ShiftOS
         public void Enemy_Firewall_Deflect(Computer fwall)
         {
             //Safeguard... also apparently I can't spell... because this used to be 'Safegaurd'...
-            if (fwall.Type == SystemType.Firewall)
+            if (fwall.Enslaved == false && fwall.Type == SystemType.Firewall)
             {
                 var r = fwall.GetAreaOfEffect();
                 foreach (var pc in AllEnemyComputers)
@@ -1218,13 +1353,10 @@ namespace ShiftOS
 
         private void tmrenemyhealthdetect_Tick(object sender, EventArgs e)
         {
-            lbsong.Visible = Audio.Enabled;
-            btntogglemusic.Visible = Audio.Enabled;
+            lbsong.Visible = true;
+            btntogglemusic.Visible = true;
 
-            if(arc != null)
-            {
-                lbsong.Text = $"Ross Bugden - {arc.CurrentSong}";
-            }
+            lbsong.Text = Audio.Name + " @ " + Audio.CurrentPosition;
 
             decimal health = 0;
             lbcodepoints.Text = $"Codepoints: {API.Codepoints}";
@@ -1234,7 +1366,12 @@ namespace ShiftOS
             {
                 if (pc.Disabled == false)
                 {
-                    foreach (var enemy in AllPlayerComputers)
+                    var elist = new List<Computer>();
+                    if (pc.Enslaved)
+                        elist = AllEnemyComputers;
+                    else
+                        elist = AllPlayerComputers;
+                    foreach (var enemy in elist)
                     {
                         chance = rnd.Next(1, 20);
                         if (chance == 10)
@@ -1282,7 +1419,7 @@ namespace ShiftOS
                         string message = "You have successfully beaten the enemy hacker.";
                         if (ThisEnemyHacker.IsLeader == false)
                         {
-                            switch(rnd.Next(0, 5))
+                            switch(rnd.Next(0, 6))
                             {
                                 case 1:
                                     API.AddCodepoints(1000);
@@ -1304,6 +1441,15 @@ namespace ShiftOS
                                     var desc = ThisEnemyHacker.FriendDesc;
                                     var name = ThisEnemyHacker.Name;
                                     Hacking.AddCharacter(new Character(name, desc, skill, speed, 0));
+                                    break;
+                                case 5:
+                                    var cats = SaveSystem.ShiftoriumRegistry.GetCategories(false);
+                                    string cat = cats[rnd.Next(0, cats.Count - 1)];
+                                    if (API.Upgrades[cat] == false)
+                                    {
+                                        API.Upgrades[cat] = true;
+                                        message = $"You have beaten the enemy, and as a result, the {cat.ToUpper()} Shiftorium category has been unlocked.";
+                                    }
                                     break;
                                 default:
                                     message = "You have successfully beaten the enemy hacker.";
@@ -1344,42 +1490,432 @@ namespace ShiftOS
         
         public void WriteLine_Enemy(string text)
         {
-            if(txtenemyconsole.Text.Length == 0)
+            try
             {
-                txtenemyconsole.Text = text + Environment.NewLine;
+                if (txtenemyconsole.Text.Length == 0)
+                {
+                    txtenemyconsole.Text = text + Environment.NewLine;
+                }
+                else
+                {
+                    txtenemyconsole.Text += text + Environment.NewLine;
+                }
+                txtenemyconsole.Select(txtenemyconsole.TextLength, 0);
+                txtenemyconsole.ScrollToCaret();
             }
-            else
+            catch
             {
-                txtenemyconsole.Text += text + Environment.NewLine;
+                this.Invoke(new Action(() => { WriteLine_Enemy(text); }));
             }
-            txtenemyconsole.Select(txtenemyconsole.TextLength, 0);
-            txtenemyconsole.ScrollToCaret();
         }
 
         public void WriteLine(string text)
         {
-            if (txtyourconsole.Text.Length == 0)
+            try
             {
-                txtyourconsole.Text = text + Environment.NewLine;
+                if (txtyourconsole.Text.Length == 0)
+                {
+                    txtyourconsole.Text = text + Environment.NewLine;
+                }
+                else
+                {
+                    txtyourconsole.Text += text + Environment.NewLine;
+                }
+                txtyourconsole.Select(txtyourconsole.TextLength, 0);
+                txtyourconsole.ScrollToCaret();
             }
-            else
+            catch
             {
-                txtyourconsole.Text += text + Environment.NewLine;
+                this.Invoke(new Action(() => { WriteLine(text); }));
             }
-            txtyourconsole.Select(txtyourconsole.TextLength, 0);
-            txtyourconsole.ScrollToCaret();
         }
 
         #endregion
 
-        AudioResourceClient arc = null;
-        bool musicenabled = true;
+        bool playing = true;
 
         private void button2_Click(object sender, EventArgs e)
         {
-            arc.Pause();
+            if (playing == true)
+            {
+                Audio.ForceStop();
+            }
+            else
+            {
+                Audio.Play("hackerbattle_ambient");
+            }
+            playing = !playing;
         }
 
-        
+        Panel winningPlayfield = null;
+
+        int bgcol = 0;
+        int pulse = 0;
+        Panel losingPlayfield = null;
+        private void tmrvisualizer_Tick(object sender, EventArgs e)
+        {
+            int enemy_hp = 0;
+            int player_hp = 0;
+            foreach(var p in AllPlayerComputers)
+            {
+                player_hp += p.HP;
+            }
+            foreach (var p in AllEnemyComputers)
+            {
+                enemy_hp += p.HP;
+            }
+
+            if (player_hp >= enemy_hp)
+            {
+                winningPlayfield = pnlyou;
+                losingPlayfield = pnlenemy;
+            }
+            else
+            {
+                winningPlayfield = pnlenemy;
+                losingPlayfield = pnlyou;
+            }
+
+            losingPlayfield.BackColor = Color.Black;
+
+
+            try
+            {
+                var visualizer = Audio.GetVisualizer();
+                switch(visualizer.type)
+                {
+                    case VisualizerType.Pulse:
+                        tmrvisualizer.Interval = 1;
+                        if(pulse == 0)
+                        {
+                            if(bgcol < 255)
+                            {
+                                bgcol += 10;
+                            }
+                            else
+                            {
+                                pulse = 1;
+                            }
+                        }
+                        else
+                        {
+                            if(bgcol > 0)
+                            {
+                                bgcol -= 10;
+                            }
+                            else
+                            {
+                                pulse = 0;
+                            }
+                        }
+                        break;
+                    case VisualizerType.CalmDown:
+                        bgcol = 255 - MathEx.LinearInterpolate(visualizer.startTime * 100, visualizer.endTime * 100, Audio.CurrentPositionMS, 0, 255);
+                        break;
+                    case VisualizerType.BuildUp:
+                        bgcol = MathEx.LinearInterpolate(visualizer.startTime, visualizer.endTime, Audio.CurrentPosition, 0, 255);
+                        break;
+                }
+                Color c = new Color();
+                int r = 0;
+                int g = 0;
+                int b = 0;
+                if (visualizer.R)
+                    r = bgcol;
+                if (visualizer.G)
+                    g = bgcol;
+                if (visualizer.B)
+                    b = bgcol;
+                c = Color.FromArgb(r, g, b);
+                if(playing)
+                    winningPlayfield.BackColor = c;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void pongMain_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            paddleHuman.Location = new Point(paddleHuman.Location.X, (MousePosition.Y - pgpong.Location.Y) - (paddleHuman.Height / 2));
+        }
+
+
+        private void pongGameTimer_Tick(object sender, EventArgs e)
+        {
+            //Set the computer player to move according to the ball's position.
+            if (ball.Location.X > 500 - xVel * 10 && xVel > 0)
+            {
+                if (ball.Location.Y > paddleComputer.Location.Y + 50)
+                {
+                    paddleComputer.Location = new Point(paddleComputer.Location.X, paddleComputer.Location.Y + computerspeed * 2 + ((int)yveldec / 2));
+                }
+                if (ball.Location.Y < paddleComputer.Location.Y + 50)
+                {
+                    paddleComputer.Location = new Point(paddleComputer.Location.X, paddleComputer.Location.Y - computerspeed * 2 + ((int)yveldec / 2));
+                }
+                casualposition = rand.Next(-150, 201);
+            }
+
+            //Set Xvel and Yvel speeds from decimal
+            if (xVel > 0)
+                xVel = (int)Math.Round(xveldec);
+            if (xVel < 0)
+                xVel = (int)-Math.Round(xveldec);
+            if (yVel > 0)
+                yVel = (int)Math.Round(yveldec);
+            if (yVel < 0)
+                yVel = (int)-Math.Round(yveldec);
+
+            // Move the game ball.
+            ball.Location = new Point(ball.Location.X + xVel, ball.Location.Y + yVel);
+
+            // Check for top wall.
+            if (ball.Location.Y < 0)
+            {
+                ball.Location = new Point(ball.Location.X, 0);
+                yVel = -yVel;
+            }
+
+            // Check for bottom wall.
+            if (ball.Location.Y > pgpong.Height - ball.Height)
+            {
+                ball.Location = new Point(ball.Location.X, pgpong.Height - ball.Size.Height);
+                yVel = -yVel;
+            }
+
+            // Check for player paddle.
+            if (ball.Bounds.IntersectsWith(paddleHuman.Bounds))
+            {
+                ball.Location = new Point(paddleHuman.Location.X + ball.Size.Width, ball.Location.Y);
+                //randomly increase x or y speed of ball
+                switch (rand.Next(1, 3))
+                {
+                    case 1:
+                        xveldec = xveldec + incrementx;
+                        break;
+                    case 2:
+                        if (yveldec > 0)
+                            yveldec = yveldec + incrementy;
+                        if (yveldec < 0)
+                            yveldec = yveldec - incrementy;
+                        break;
+                }
+                xVel = -xVel;
+            }
+
+            // Check for computer paddle.
+            if (ball.Bounds.IntersectsWith(paddleComputer.Bounds))
+            {
+                ball.Location = new Point(paddleComputer.Location.X - paddleComputer.Size.Width + 1, ball.Location.Y);
+                xveldec = xveldec + incrementx;
+                xVel = -xVel;
+            }
+
+            // Check for left wall.
+            if (ball.Location.X < -100)
+            {
+                var m = module_to_steal;
+                if (m.Enemy)
+                    AllEnemyComputers.Remove(m);
+
+                var lst = new List<Module>();
+                if (!m.Enemy)
+                    lst = MyNetwork;
+                else
+                    lst = ThisEnemyHacker.Network;
+
+                string hn = m.Hostname;
+
+                Module mod = null;
+                foreach(var pc in lst)
+                {
+                    if(pc.Hostname == hn)
+                    {
+                        mod = pc;
+                    }
+                }
+
+                if (!AllPlayerComputers.Contains(m))
+                    AddModule(mod.Deploy());
+
+                if(!Hacking.MyNetwork.Contains(mod))
+                {
+                    Hacking.MyNetwork.Add(mod);
+                }
+
+                if(module_to_steal.Parent != pnlyou)
+                {
+                    module_to_steal.Parent.Controls.Remove(module_to_steal);
+                    module_to_steal.Dispose();
+                }
+                tmrcountdown.Stop();
+                pongGameTimer.Stop();
+                counter.Stop();
+                pgpong.Hide();
+            }
+
+            // Check for right wall.
+            if (ball.Location.X > pgpong.Width - ball.Size.Width - paddleComputer.Width + 100)
+            {
+                var m = module_to_steal;
+                if (!m.Enemy)
+                    AllPlayerComputers.Remove(m);
+
+                var lst = new List<Module>();
+                if (!m.Enemy)
+                    lst = MyNetwork;
+                else
+                    lst = ThisEnemyHacker.Network;
+
+                string hn = m.Hostname;
+
+                Module mod = null;
+                foreach (var pc in lst)
+                {
+                    if (pc.Hostname == hn)
+                    {
+                        mod = pc;
+                    }
+                }
+
+                if (!AllEnemyComputers.Contains(m))
+                    AddEnemyModule(mod.Deploy());
+
+                if (!ThisEnemyHacker.Network.Contains(mod))
+                {
+                    ThisEnemyHacker.Network.Add(mod);
+                }
+
+                if (module_to_steal.Parent != pnlenemy)
+                {
+                    module_to_steal.Parent.Controls.Remove(module_to_steal);
+                    module_to_steal.Dispose();
+                }
+                tmrcountdown.Stop();
+                pongGameTimer.Stop();
+                counter.Stop();
+                pgpong.Hide();
+            }
+
+            //lblstats.Text = "Xspeed: " & Math.Abs(xVel) & " Yspeed: " & Math.Abs(yVel) & " Human Location: " & paddleHuman.Location.ToString & " Computer Location: " & paddleComputer.Location.ToString & Environment.NewLine & " Ball Location: " & ball.Location.ToString & " Xdec: " & xveldec & " Ydec: " & yveldec & " Xinc: " & incrementx & " Yinc: " & incrementy
+            lblstatsX.Text = "Xspeed: " + xveldec;
+            lblstatsY.Text = "Yspeed: " + yveldec;
+
+            lbllevelandtime.Text = "Level: " + level;
+
+            if (xVel > 20 || xVel < -20)
+            {
+                paddleHuman.Width = Math.Abs(xVel);
+                paddleComputer.Width = Math.Abs(xVel);
+            }
+            else
+            {
+                paddleHuman.Width = 20;
+                paddleComputer.Width = 20;
+            }
+
+            computerspeed = Math.Abs(yVel);
+
+            //  pgcontents.Refresh()
+            // pgcontents.CreateGraphics.FillRectangle(Brushes.Black, ball.Location.X, ball.Location.Y, ball.Width, ball.Height)
+
+        }
+
+        #region pong visualizer variables
+
+        Random rand = new Random();
+        int xVel = 7;
+        int yVel = 8;
+        int computerspeed = 8;
+        int level = 1;
+        int secondsleft = 60;
+        int casualposition;
+        double xveldec = 3.0;
+        double yveldec = 3.0;
+        double incrementx = 0.4;
+        double incrementy = 0.2;
+        int levelxspeed = 3;
+        int levelyspeed = 3;
+        int[] levelrewards = new int[50];
+        int countdown = 3;
+
+        #endregion
+
+        private void counter_Tick(object sender, EventArgs e)
+        {
+            secondsleft = secondsleft - 1;
+            if (secondsleft == -1)
+            {
+                secondsleft = 60;
+                level = level + 1;
+            }
+        }
+
+        private void tmrcountdown_Tick(object sender, EventArgs e)
+        {
+            switch (countdown)
+            {
+                case 0:
+                    countdown = 3;
+                    lblcountdown.Hide();
+                    pongGameTimer.Start();
+                    counter.Start();
+                    tmrcountdown.Stop();
+                    break;
+                case 1:
+                    lblcountdown.Text = "1";
+                    countdown = countdown - 1;
+                    break;
+                case 2:
+                    lblcountdown.Text = "2";
+                    countdown = countdown - 1;
+                    break;
+                case 3:
+                    lblcountdown.Text = "3";
+                    countdown = countdown - 1;
+                    lblcountdown.Show();
+                    break;
+            }
+
+        }
+
+        private void newgame()
+        {
+            level = 1;
+            secondsleft = 60;
+            //reset stats text
+            lblstatsX.Text = "Xspeed: ";
+            lblstatsY.Text = "Yspeed: ";
+
+            levelxspeed = 3;
+            levelyspeed = 3;
+
+            incrementx = 0.4;
+            incrementy = 0.2;
+
+            xveldec = levelxspeed;
+            yveldec = levelyspeed;
+
+            tmrcountdown.Start();
+            if (xVel < 0)
+                xVel = Math.Abs(xVel);
+            lbllevelandtime.Text = "Level: " + level + " - " + secondsleft + " Seconds Left";
+        }
+    }
+}
+
+namespace System
+{
+    public class MathEx
+    {
+        public static int LinearInterpolate(int input_start, int input_end, int input, int output_start, int output_end)
+        {
+            int input_range = input_end - input_start;
+            int output_range = output_end - output_start;
+
+            return (input - input_start) * output_range / input_range + output_start;
+        }
     }
 }

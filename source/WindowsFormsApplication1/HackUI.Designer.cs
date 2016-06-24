@@ -68,11 +68,23 @@
             this.btntogglemusic = new System.Windows.Forms.Button();
             this.lbsong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pgpong = new System.Windows.Forms.Panel();
+            this.lblcountdown = new System.Windows.Forms.Label();
+            this.ball = new System.Windows.Forms.Panel();
+            this.paddleHuman = new System.Windows.Forms.PictureBox();
+            this.paddleComputer = new System.Windows.Forms.Panel();
+            this.lbllevelandtime = new System.Windows.Forms.Label();
+            this.lblstatsY = new System.Windows.Forms.Label();
+            this.lblstatsX = new System.Windows.Forms.Label();
             this.pnltutorial = new System.Windows.Forms.Panel();
             this.lbtutorial = new System.Windows.Forms.Label();
             this.tmrplayerhealthdetect = new System.Windows.Forms.Timer(this.components);
             this.tmrenemyhealthdetect = new System.Windows.Forms.Timer(this.components);
             this.tmrredraw = new System.Windows.Forms.Timer(this.components);
+            this.tmrvisualizer = new System.Windows.Forms.Timer(this.components);
+            this.pongGameTimer = new System.Windows.Forms.Timer(this.components);
+            this.counter = new System.Windows.Forms.Timer(this.components);
+            this.tmrcountdown = new System.Windows.Forms.Timer(this.components);
             this.tbui.SuspendLayout();
             this.pnlenemy.SuspendLayout();
             this.pnlyou.SuspendLayout();
@@ -81,6 +93,8 @@
             this.pnlpcinfo.SuspendLayout();
             this.flcontrols.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pgpong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paddleHuman)).BeginInit();
             this.pnltutorial.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,7 +160,6 @@
             this.txtyourconsole.Name = "txtyourconsole";
             this.txtyourconsole.Size = new System.Drawing.Size(662, 348);
             this.txtyourconsole.TabIndex = 3;
-            this.txtyourconsole.Text = "PLAYER CONSOLE";
             // 
             // pnlyou
             // 
@@ -192,7 +205,6 @@
             this.txtenemyconsole.Name = "txtenemyconsole";
             this.txtenemyconsole.Size = new System.Drawing.Size(662, 347);
             this.txtenemyconsole.TabIndex = 2;
-            this.txtenemyconsole.Text = "ENEMY CONSOLE";
             // 
             // btnnext
             // 
@@ -513,13 +525,14 @@
             // 
             this.lbsong.Location = new System.Drawing.Point(336, 0);
             this.lbsong.Name = "lbsong";
-            this.lbsong.Size = new System.Drawing.Size(127, 26);
+            this.lbsong.Size = new System.Drawing.Size(414, 26);
             this.lbsong.TabIndex = 3;
             this.lbsong.Text = "Codepoints:";
             this.lbsong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pgpong);
             this.panel2.Controls.Add(this.pnltutorial);
             this.panel2.Controls.Add(this.pnlbuy);
             this.panel2.Controls.Add(this.pnlpcinfo);
@@ -531,6 +544,96 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1339, 741);
             this.panel2.TabIndex = 1;
+            // 
+            // pgpong
+            // 
+            this.pgpong.BackColor = System.Drawing.Color.Black;
+            this.pgpong.Controls.Add(this.lblcountdown);
+            this.pgpong.Controls.Add(this.ball);
+            this.pgpong.Controls.Add(this.paddleHuman);
+            this.pgpong.Controls.Add(this.paddleComputer);
+            this.pgpong.Controls.Add(this.lbllevelandtime);
+            this.pgpong.Controls.Add(this.lblstatsY);
+            this.pgpong.Controls.Add(this.lblstatsX);
+            this.pgpong.ForeColor = System.Drawing.Color.White;
+            this.pgpong.Location = new System.Drawing.Point(0, 0);
+            this.pgpong.Name = "pgpong";
+            this.pgpong.Size = new System.Drawing.Size(700, 400);
+            this.pgpong.TabIndex = 22;
+            this.pgpong.Visible = false;
+            this.pgpong.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pongMain_MouseMove);
+            // 
+            // lblcountdown
+            // 
+            this.lblcountdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcountdown.Location = new System.Drawing.Point(187, 152);
+            this.lblcountdown.Name = "lblcountdown";
+            this.lblcountdown.Size = new System.Drawing.Size(315, 49);
+            this.lblcountdown.TabIndex = 7;
+            this.lblcountdown.Text = "3";
+            this.lblcountdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblcountdown.Visible = false;
+            // 
+            // ball
+            // 
+            this.ball.BackColor = System.Drawing.Color.Gray;
+            this.ball.Location = new System.Drawing.Point(300, 152);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(20, 20);
+            this.ball.TabIndex = 2;
+            // 
+            // paddleHuman
+            // 
+            this.paddleHuman.BackColor = System.Drawing.Color.Gray;
+            this.paddleHuman.Location = new System.Drawing.Point(10, 134);
+            this.paddleHuman.Name = "paddleHuman";
+            this.paddleHuman.Size = new System.Drawing.Size(20, 100);
+            this.paddleHuman.TabIndex = 3;
+            this.paddleHuman.TabStop = false;
+            // 
+            // paddleComputer
+            // 
+            this.paddleComputer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paddleComputer.BackColor = System.Drawing.Color.Gray;
+            this.paddleComputer.Location = new System.Drawing.Point(666, 134);
+            this.paddleComputer.MaximumSize = new System.Drawing.Size(20, 100);
+            this.paddleComputer.Name = "paddleComputer";
+            this.paddleComputer.Size = new System.Drawing.Size(20, 100);
+            this.paddleComputer.TabIndex = 1;
+            // 
+            // lbllevelandtime
+            // 
+            this.lbllevelandtime.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbllevelandtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllevelandtime.Location = new System.Drawing.Point(0, 0);
+            this.lbllevelandtime.Name = "lbllevelandtime";
+            this.lbllevelandtime.Size = new System.Drawing.Size(700, 22);
+            this.lbllevelandtime.TabIndex = 4;
+            this.lbllevelandtime.Text = "Level: 1";
+            this.lbllevelandtime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblstatsY
+            // 
+            this.lblstatsY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblstatsY.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatsY.Location = new System.Drawing.Point(542, 356);
+            this.lblstatsY.Name = "lblstatsY";
+            this.lblstatsY.Size = new System.Drawing.Size(144, 35);
+            this.lblstatsY.TabIndex = 11;
+            this.lblstatsY.Text = "Yspeed:";
+            this.lblstatsY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblstatsX
+            // 
+            this.lblstatsX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblstatsX.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatsX.Location = new System.Drawing.Point(3, 356);
+            this.lblstatsX.Name = "lblstatsX";
+            this.lblstatsX.Size = new System.Drawing.Size(144, 35);
+            this.lblstatsX.TabIndex = 5;
+            this.lblstatsX.Text = "Xspeed: ";
+            this.lblstatsX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnltutorial
             // 
@@ -565,6 +668,25 @@
             // 
             this.tmrredraw.Tick += new System.EventHandler(this.tmrredraw_Tick);
             // 
+            // tmrvisualizer
+            // 
+            this.tmrvisualizer.Tick += new System.EventHandler(this.tmrvisualizer_Tick);
+            // 
+            // pongGameTimer
+            // 
+            this.pongGameTimer.Interval = 30;
+            this.pongGameTimer.Tick += new System.EventHandler(this.pongGameTimer_Tick);
+            // 
+            // counter
+            // 
+            this.counter.Interval = 1000;
+            this.counter.Tick += new System.EventHandler(this.counter_Tick);
+            // 
+            // tmrcountdown
+            // 
+            this.tmrcountdown.Interval = 1000;
+            this.tmrcountdown.Tick += new System.EventHandler(this.tmrcountdown_Tick);
+            // 
             // HackUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 11F);
@@ -594,6 +716,8 @@
             this.flcontrols.ResumeLayout(false);
             this.flcontrols.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pgpong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.paddleHuman)).EndInit();
             this.pnltutorial.ResumeLayout(false);
             this.pnltutorial.PerformLayout();
             this.ResumeLayout(false);
@@ -645,5 +769,17 @@
         private System.Windows.Forms.Label lbsong;
         private System.Windows.Forms.Panel pnltutorial;
         private System.Windows.Forms.Label lbtutorial;
+        private System.Windows.Forms.Timer tmrvisualizer;
+        internal System.Windows.Forms.Panel pgpong;
+        internal System.Windows.Forms.Label lblcountdown;
+        internal System.Windows.Forms.Panel ball;
+        internal System.Windows.Forms.PictureBox paddleHuman;
+        internal System.Windows.Forms.Panel paddleComputer;
+        internal System.Windows.Forms.Label lbllevelandtime;
+        internal System.Windows.Forms.Label lblstatsY;
+        internal System.Windows.Forms.Label lblstatsX;
+        internal System.Windows.Forms.Timer pongGameTimer;
+        internal System.Windows.Forms.Timer counter;
+        internal System.Windows.Forms.Timer tmrcountdown;
     }
 }

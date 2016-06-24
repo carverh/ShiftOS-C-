@@ -34,6 +34,7 @@ namespace ShiftOS
             this.Label1 = new System.Windows.Forms.Label();
             this.btnapply = new System.Windows.Forms.Button();
             this.catholder = new System.Windows.Forms.Panel();
+            this.btnmore = new System.Windows.Forms.Button();
             this.btnreset = new System.Windows.Forms.Button();
             this.btnwindowcomposition = new System.Windows.Forms.Button();
             this.btndesktopicons = new System.Windows.Forms.Button();
@@ -46,6 +47,16 @@ namespace ShiftOS
             this.Label64 = new System.Windows.Forms.Label();
             this.Label63 = new System.Windows.Forms.Label();
             this.pnldesktopoptions = new System.Windows.Forms.Panel();
+            this.pnldesktoppaneloptions = new System.Windows.Forms.Panel();
+            this.btnpanelbuttons = new System.Windows.Forms.Button();
+            this.lbwarning = new System.Windows.Forms.Label();
+            this.combodesktoppanelposition = new System.Windows.Forms.ComboBox();
+            this.lbposition = new System.Windows.Forms.Label();
+            this.Label47 = new System.Windows.Forms.Label();
+            this.txtdesktoppanelheight = new System.Windows.Forms.NumericUpDown();
+            this.lbheight = new System.Windows.Forms.Label();
+            this.pnldesktoppanelcolour = new System.Windows.Forms.Panel();
+            this.lbpanelcolor = new System.Windows.Forms.Label();
             this.pnlapplauncheroptions = new System.Windows.Forms.Panel();
             this.pnlalhover = new System.Windows.Forms.Panel();
             this.label119 = new System.Windows.Forms.Label();
@@ -108,16 +119,6 @@ namespace ShiftOS
             this.Label91 = new System.Windows.Forms.Label();
             this.pnlpanelbuttoncolour = new System.Windows.Forms.Panel();
             this.Label95 = new System.Windows.Forms.Label();
-            this.pnldesktoppaneloptions = new System.Windows.Forms.Panel();
-            this.btnpanelbuttons = new System.Windows.Forms.Button();
-            this.lbwarning = new System.Windows.Forms.Label();
-            this.combodesktoppanelposition = new System.Windows.Forms.ComboBox();
-            this.lbposition = new System.Windows.Forms.Label();
-            this.Label47 = new System.Windows.Forms.Label();
-            this.txtdesktoppanelheight = new System.Windows.Forms.NumericUpDown();
-            this.lbheight = new System.Windows.Forms.Label();
-            this.pnldesktoppanelcolour = new System.Windows.Forms.Panel();
-            this.lbpanelcolor = new System.Windows.Forms.Label();
             this.pnldesktopbackgroundoptions = new System.Windows.Forms.Panel();
             this.pnldesktopcolour = new System.Windows.Forms.Panel();
             this.Label45 = new System.Windows.Forms.Label();
@@ -437,14 +438,17 @@ namespace ShiftOS
             this.label74 = new System.Windows.Forms.Label();
             this.tmrfix = new System.Windows.Forms.Timer(this.components);
             this.tmrdelay = new System.Windows.Forms.Timer(this.components);
+            this.pnlluaoptions = new System.Windows.Forms.Panel();
+            this.flmorebuttons = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlluafield = new System.Windows.Forms.Panel();
             this.catholder.SuspendLayout();
             this.pnlshifterintro.SuspendLayout();
             this.pnldesktopoptions.SuspendLayout();
+            this.pnldesktoppaneloptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).BeginInit();
             this.pnlapplauncheroptions.SuspendLayout();
             this.pnldesktopintro.SuspendLayout();
             this.pnlpanelbuttonsoptions.SuspendLayout();
-            this.pnldesktoppaneloptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).BeginInit();
             this.pnldesktopbackgroundoptions.SuspendLayout();
             this.pnlpanelclockoptions.SuspendLayout();
             this.pnldesktoppreview.SuspendLayout();
@@ -487,6 +491,7 @@ namespace ShiftOS
             this.pnlbasic.SuspendLayout();
             this.pnlmenusintro.SuspendLayout();
             this.pnlmenucategories.SuspendLayout();
+            this.pnlluaoptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // clocktick
@@ -532,6 +537,7 @@ namespace ShiftOS
             this.catholder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.catholder.BackColor = System.Drawing.Color.White;
+            this.catholder.Controls.Add(this.btnmore);
             this.catholder.Controls.Add(this.btnreset);
             this.catholder.Controls.Add(this.btnwindowcomposition);
             this.catholder.Controls.Add(this.btndesktopicons);
@@ -542,6 +548,21 @@ namespace ShiftOS
             this.catholder.Name = "catholder";
             this.catholder.Size = new System.Drawing.Size(119, 271);
             this.catholder.TabIndex = 5;
+            // 
+            // btnmore
+            // 
+            this.btnmore.BackColor = System.Drawing.Color.White;
+            this.btnmore.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnmore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmore.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmore.Location = new System.Drawing.Point(0, 174);
+            this.btnmore.Name = "btnmore";
+            this.btnmore.Size = new System.Drawing.Size(119, 29);
+            this.btnmore.TabIndex = 11;
+            this.btnmore.TabStop = false;
+            this.btnmore.Text = "More";
+            this.btnmore.UseVisualStyleBackColor = false;
+            this.btnmore.Click += new System.EventHandler(this.btnmore_Click);
             // 
             // btnreset
             // 
@@ -699,8 +720,8 @@ namespace ShiftOS
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnldesktopoptions.BackColor = System.Drawing.Color.White;
-            this.pnldesktopoptions.Controls.Add(this.pnldesktoppaneloptions);
             this.pnldesktopoptions.Controls.Add(this.pnlapplauncheroptions);
+            this.pnldesktopoptions.Controls.Add(this.pnldesktoppaneloptions);
             this.pnldesktopoptions.Controls.Add(this.pnldesktopintro);
             this.pnldesktopoptions.Controls.Add(this.pnlpanelbuttonsoptions);
             this.pnldesktopoptions.Controls.Add(this.pnldesktopbackgroundoptions);
@@ -712,6 +733,120 @@ namespace ShiftOS
             this.pnldesktopoptions.Size = new System.Drawing.Size(457, 306);
             this.pnldesktopoptions.TabIndex = 16;
             this.pnldesktopoptions.Visible = false;
+            // 
+            // pnldesktoppaneloptions
+            // 
+            this.pnldesktoppaneloptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnldesktoppaneloptions.Controls.Add(this.btnpanelbuttons);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbwarning);
+            this.pnldesktoppaneloptions.Controls.Add(this.combodesktoppanelposition);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbposition);
+            this.pnldesktoppaneloptions.Controls.Add(this.Label47);
+            this.pnldesktoppaneloptions.Controls.Add(this.txtdesktoppanelheight);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbheight);
+            this.pnldesktoppaneloptions.Controls.Add(this.pnldesktoppanelcolour);
+            this.pnldesktoppaneloptions.Controls.Add(this.lbpanelcolor);
+            this.pnldesktoppaneloptions.Location = new System.Drawing.Point(135, 159);
+            this.pnldesktoppaneloptions.Name = "pnldesktoppaneloptions";
+            this.pnldesktoppaneloptions.Size = new System.Drawing.Size(317, 140);
+            this.pnldesktoppaneloptions.TabIndex = 9;
+            this.pnldesktoppaneloptions.Visible = false;
+            // 
+            // btnpanelbuttons
+            // 
+            this.btnpanelbuttons.BackColor = System.Drawing.Color.White;
+            this.btnpanelbuttons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpanelbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpanelbuttons.Location = new System.Drawing.Point(193, 101);
+            this.btnpanelbuttons.Name = "btnpanelbuttons";
+            this.btnpanelbuttons.Size = new System.Drawing.Size(119, 29);
+            this.btnpanelbuttons.TabIndex = 8;
+            this.btnpanelbuttons.Text = "Panel Buttons >";
+            this.btnpanelbuttons.UseVisualStyleBackColor = false;
+            this.btnpanelbuttons.Click += new System.EventHandler(this.btnpanelbuttons_Click);
+            // 
+            // lbwarning
+            // 
+            this.lbwarning.Location = new System.Drawing.Point(3, 52);
+            this.lbwarning.Name = "lbwarning";
+            this.lbwarning.Size = new System.Drawing.Size(290, 42);
+            this.lbwarning.TabIndex = 8;
+            this.lbwarning.Text = "Warning: If you set the panel position to the bottom you must hide your windows t" +
+    "askbar and restart ShiftOS on your host operating system to prevent a visual bug" +
+    ".";
+            // 
+            // combodesktoppanelposition
+            // 
+            this.combodesktoppanelposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combodesktoppanelposition.FormattingEnabled = true;
+            this.combodesktoppanelposition.Items.AddRange(new object[] {
+            "Top",
+            "Bottom"});
+            this.combodesktoppanelposition.Location = new System.Drawing.Point(103, 28);
+            this.combodesktoppanelposition.Name = "combodesktoppanelposition";
+            this.combodesktoppanelposition.Size = new System.Drawing.Size(59, 24);
+            this.combodesktoppanelposition.TabIndex = 7;
+            this.combodesktoppanelposition.SelectedIndexChanged += new System.EventHandler(this.combodesktoppanelposition_SelectedIndexChanged);
+            // 
+            // lbposition
+            // 
+            this.lbposition.AutoSize = true;
+            this.lbposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbposition.Location = new System.Drawing.Point(3, 31);
+            this.lbposition.Name = "lbposition";
+            this.lbposition.Size = new System.Drawing.Size(97, 16);
+            this.lbposition.TabIndex = 6;
+            this.lbposition.Text = "Panel Position:";
+            // 
+            // Label47
+            // 
+            this.Label47.AutoSize = true;
+            this.Label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label47.Location = new System.Drawing.Point(226, 8);
+            this.Label47.Name = "Label47";
+            this.Label47.Size = new System.Drawing.Size(22, 16);
+            this.Label47.TabIndex = 5;
+            this.Label47.Text = "px";
+            // 
+            // txtdesktoppanelheight
+            // 
+            this.txtdesktoppanelheight.BackColor = System.Drawing.Color.White;
+            this.txtdesktoppanelheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdesktoppanelheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdesktoppanelheight.ForeColor = System.Drawing.Color.Black;
+            this.txtdesktoppanelheight.Location = new System.Drawing.Point(189, 5);
+            this.txtdesktoppanelheight.Name = "txtdesktoppanelheight";
+            this.txtdesktoppanelheight.Size = new System.Drawing.Size(37, 22);
+            this.txtdesktoppanelheight.TabIndex = 4;
+            this.txtdesktoppanelheight.ValueChanged += new System.EventHandler(this.txtdesktoppanelheight_ValueChanged);
+            // 
+            // lbheight
+            // 
+            this.lbheight.AutoSize = true;
+            this.lbheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbheight.Location = new System.Drawing.Point(138, 7);
+            this.lbheight.Name = "lbheight";
+            this.lbheight.Size = new System.Drawing.Size(50, 16);
+            this.lbheight.TabIndex = 2;
+            this.lbheight.Text = "Height:";
+            // 
+            // pnldesktoppanelcolour
+            // 
+            this.pnldesktoppanelcolour.Location = new System.Drawing.Point(92, 5);
+            this.pnldesktoppanelcolour.Name = "pnldesktoppanelcolour";
+            this.pnldesktoppanelcolour.Size = new System.Drawing.Size(41, 20);
+            this.pnldesktoppanelcolour.TabIndex = 1;
+            this.pnldesktoppanelcolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeDesktopPanelColor);
+            // 
+            // lbpanelcolor
+            // 
+            this.lbpanelcolor.AutoSize = true;
+            this.lbpanelcolor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbpanelcolor.Location = new System.Drawing.Point(3, 7);
+            this.lbpanelcolor.Name = "lbpanelcolor";
+            this.lbpanelcolor.Size = new System.Drawing.Size(88, 16);
+            this.lbpanelcolor.TabIndex = 0;
+            this.lbpanelcolor.Text = "Panel Colour:";
             // 
             // pnlapplauncheroptions
             // 
@@ -1425,120 +1560,6 @@ namespace ShiftOS
             this.Label95.Size = new System.Drawing.Size(90, 16);
             this.Label95.TabIndex = 0;
             this.Label95.Text = "Button Colour:";
-            // 
-            // pnldesktoppaneloptions
-            // 
-            this.pnldesktoppaneloptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktoppaneloptions.Controls.Add(this.btnpanelbuttons);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbwarning);
-            this.pnldesktoppaneloptions.Controls.Add(this.combodesktoppanelposition);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbposition);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label47);
-            this.pnldesktoppaneloptions.Controls.Add(this.txtdesktoppanelheight);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbheight);
-            this.pnldesktoppaneloptions.Controls.Add(this.pnldesktoppanelcolour);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbpanelcolor);
-            this.pnldesktoppaneloptions.Location = new System.Drawing.Point(135, 159);
-            this.pnldesktoppaneloptions.Name = "pnldesktoppaneloptions";
-            this.pnldesktoppaneloptions.Size = new System.Drawing.Size(317, 140);
-            this.pnldesktoppaneloptions.TabIndex = 9;
-            this.pnldesktoppaneloptions.Visible = false;
-            // 
-            // btnpanelbuttons
-            // 
-            this.btnpanelbuttons.BackColor = System.Drawing.Color.White;
-            this.btnpanelbuttons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpanelbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpanelbuttons.Location = new System.Drawing.Point(193, 101);
-            this.btnpanelbuttons.Name = "btnpanelbuttons";
-            this.btnpanelbuttons.Size = new System.Drawing.Size(119, 29);
-            this.btnpanelbuttons.TabIndex = 8;
-            this.btnpanelbuttons.Text = "Panel Buttons >";
-            this.btnpanelbuttons.UseVisualStyleBackColor = false;
-            this.btnpanelbuttons.Click += new System.EventHandler(this.btnpanelbuttons_Click);
-            // 
-            // lbwarning
-            // 
-            this.lbwarning.Location = new System.Drawing.Point(3, 52);
-            this.lbwarning.Name = "lbwarning";
-            this.lbwarning.Size = new System.Drawing.Size(290, 42);
-            this.lbwarning.TabIndex = 8;
-            this.lbwarning.Text = "Warning: If you set the panel position to the bottom you must hide your windows t" +
-    "askbar and restart ShiftOS on your host operating system to prevent a visual bug" +
-    ".";
-            // 
-            // combodesktoppanelposition
-            // 
-            this.combodesktoppanelposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combodesktoppanelposition.FormattingEnabled = true;
-            this.combodesktoppanelposition.Items.AddRange(new object[] {
-            "Top",
-            "Bottom"});
-            this.combodesktoppanelposition.Location = new System.Drawing.Point(103, 28);
-            this.combodesktoppanelposition.Name = "combodesktoppanelposition";
-            this.combodesktoppanelposition.Size = new System.Drawing.Size(59, 24);
-            this.combodesktoppanelposition.TabIndex = 7;
-            this.combodesktoppanelposition.SelectedIndexChanged += new System.EventHandler(this.combodesktoppanelposition_SelectedIndexChanged);
-            // 
-            // lbposition
-            // 
-            this.lbposition.AutoSize = true;
-            this.lbposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbposition.Location = new System.Drawing.Point(3, 31);
-            this.lbposition.Name = "lbposition";
-            this.lbposition.Size = new System.Drawing.Size(97, 16);
-            this.lbposition.TabIndex = 6;
-            this.lbposition.Text = "Panel Position:";
-            // 
-            // Label47
-            // 
-            this.Label47.AutoSize = true;
-            this.Label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label47.Location = new System.Drawing.Point(226, 8);
-            this.Label47.Name = "Label47";
-            this.Label47.Size = new System.Drawing.Size(22, 16);
-            this.Label47.TabIndex = 5;
-            this.Label47.Text = "px";
-            // 
-            // txtdesktoppanelheight
-            // 
-            this.txtdesktoppanelheight.BackColor = System.Drawing.Color.White;
-            this.txtdesktoppanelheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdesktoppanelheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdesktoppanelheight.ForeColor = System.Drawing.Color.Black;
-            this.txtdesktoppanelheight.Location = new System.Drawing.Point(189, 5);
-            this.txtdesktoppanelheight.Name = "txtdesktoppanelheight";
-            this.txtdesktoppanelheight.Size = new System.Drawing.Size(37, 22);
-            this.txtdesktoppanelheight.TabIndex = 4;
-            this.txtdesktoppanelheight.ValueChanged += new System.EventHandler(this.txtdesktoppanelheight_ValueChanged);
-            // 
-            // lbheight
-            // 
-            this.lbheight.AutoSize = true;
-            this.lbheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbheight.Location = new System.Drawing.Point(138, 7);
-            this.lbheight.Name = "lbheight";
-            this.lbheight.Size = new System.Drawing.Size(50, 16);
-            this.lbheight.TabIndex = 2;
-            this.lbheight.Text = "Height:";
-            // 
-            // pnldesktoppanelcolour
-            // 
-            this.pnldesktoppanelcolour.Location = new System.Drawing.Point(92, 5);
-            this.pnldesktoppanelcolour.Name = "pnldesktoppanelcolour";
-            this.pnldesktoppanelcolour.Size = new System.Drawing.Size(41, 20);
-            this.pnldesktoppanelcolour.TabIndex = 1;
-            this.pnldesktoppanelcolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeDesktopPanelColor);
-            // 
-            // lbpanelcolor
-            // 
-            this.lbpanelcolor.AutoSize = true;
-            this.lbpanelcolor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbpanelcolor.Location = new System.Drawing.Point(3, 7);
-            this.lbpanelcolor.Name = "lbpanelcolor";
-            this.lbpanelcolor.Size = new System.Drawing.Size(88, 16);
-            this.lbpanelcolor.TabIndex = 0;
-            this.lbpanelcolor.Text = "Panel Colour:";
             // 
             // pnldesktopbackgroundoptions
             // 
@@ -3511,6 +3532,7 @@ namespace ShiftOS
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
             this.pgcontents.Controls.Add(this.pnldesktopoptions);
+            this.pgcontents.Controls.Add(this.pnlluaoptions);
             this.pgcontents.Controls.Add(this.pnldesktopcomposition);
             this.pgcontents.Controls.Add(this.pnlreset);
             this.pgcontents.Controls.Add(this.pnlwindowsoptions);
@@ -5054,6 +5076,38 @@ namespace ShiftOS
             // 
             this.tmrfix.Interval = 5000;
             // 
+            // pnlluaoptions
+            // 
+            this.pnlluaoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlluaoptions.BackColor = System.Drawing.Color.White;
+            this.pnlluaoptions.Controls.Add(this.pnlluafield);
+            this.pnlluaoptions.Controls.Add(this.flmorebuttons);
+            this.pnlluaoptions.Location = new System.Drawing.Point(139, 9);
+            this.pnlluaoptions.Name = "pnlluaoptions";
+            this.pnlluaoptions.Size = new System.Drawing.Size(457, 306);
+            this.pnlluaoptions.TabIndex = 21;
+            this.pnlluaoptions.Visible = false;
+            // 
+            // flmorebuttons
+            // 
+            this.flmorebuttons.AutoSize = true;
+            this.flmorebuttons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flmorebuttons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flmorebuttons.Location = new System.Drawing.Point(0, 0);
+            this.flmorebuttons.Name = "flmorebuttons";
+            this.flmorebuttons.Size = new System.Drawing.Size(457, 0);
+            this.flmorebuttons.TabIndex = 0;
+            // 
+            // pnlluafield
+            // 
+            this.pnlluafield.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlluafield.Location = new System.Drawing.Point(0, 0);
+            this.pnlluafield.Name = "pnlluafield";
+            this.pnlluafield.Size = new System.Drawing.Size(457, 306);
+            this.pnlluafield.TabIndex = 1;
+            // 
             // Shifter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5069,15 +5123,15 @@ namespace ShiftOS
             this.pnlshifterintro.ResumeLayout(false);
             this.pnlshifterintro.PerformLayout();
             this.pnldesktopoptions.ResumeLayout(false);
+            this.pnldesktoppaneloptions.ResumeLayout(false);
+            this.pnldesktoppaneloptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).EndInit();
             this.pnlapplauncheroptions.ResumeLayout(false);
             this.pnlapplauncheroptions.PerformLayout();
             this.pnldesktopintro.ResumeLayout(false);
             this.pnldesktopintro.PerformLayout();
             this.pnlpanelbuttonsoptions.ResumeLayout(false);
             this.pnlpanelbuttonsoptions.PerformLayout();
-            this.pnldesktoppaneloptions.ResumeLayout(false);
-            this.pnldesktoppaneloptions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).EndInit();
             this.pnldesktopbackgroundoptions.ResumeLayout(false);
             this.pnldesktopbackgroundoptions.PerformLayout();
             this.pnlpanelclockoptions.ResumeLayout(false);
@@ -5143,6 +5197,8 @@ namespace ShiftOS
             this.pnlbasic.PerformLayout();
             this.pnlmenusintro.ResumeLayout(false);
             this.pnlmenucategories.ResumeLayout(false);
+            this.pnlluaoptions.ResumeLayout(false);
+            this.pnlluaoptions.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5556,5 +5612,9 @@ namespace ShiftOS
         private Label label150;
         private TextBox txtwinfadespeed;
         private Label label151;
+        private Button btnmore;
+        private Panel pnlluaoptions;
+        private FlowLayoutPanel flmorebuttons;
+        private Panel pnlluafield;
     }
 }

@@ -76,7 +76,7 @@ namespace ShiftOS
                 };
                 t.RunWorkerAsync();
             }
-            catch(Exception ex)
+            catch
             {
                 SyncBitnotes(new List<SaveSystem.PrivateBitnoteAddress>());
                 API.CreateInfoboxSession("Error", "You cannot sync your Bitnotes as the connection to the server has failed.", infobox.InfoboxMode.Info);
@@ -211,7 +211,7 @@ namespace ShiftOS
                 };
                 _IP = IP;
             }
-            catch (Exception ex)
+            catch 
             {
                 throw new ArgumentException("IP address not found in client list.");
             }

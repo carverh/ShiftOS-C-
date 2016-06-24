@@ -177,10 +177,11 @@ namespace ShiftOS
                             {
                                 if (lbcurrentfolder.Text != "/")
                                 {
-                                    if (lbcurrentfolder.Text == MountPoint.Replace("\\", "/"))
+                                    if (MountPoint != null && lbcurrentfolder.Text == MountPoint.Replace("\\", "/"))
                                     {
                                         CurrentFolder = Paths.SaveRoot;
                                         ListFiles();
+                                        
                                     }
                                     else
                                     {
@@ -402,24 +403,18 @@ namespace ShiftOS
                 case ".docx":
                 case ".txt":
                     return "doc";
-                    break;
                 case ".exe":
                 case ".saa":
                     return "application";
-                    break;
                 case ".stp":
                 case ".pkg":
                 case ".mod":
                     return "package";
-                    break;
                 case ".skn":
                 case ".spk":
                     return "skin";
-                    break;
                 default:
                     return "none";
-                    break;
-
             }
         }
 
@@ -454,7 +449,7 @@ namespace ShiftOS
                                 Directory.CreateDirectory(fullname);
                             }
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             API.CreateInfoboxSession("Error", "File Skimmer could not create the directory.", infobox.InfoboxMode.Info);
                         }
@@ -598,7 +593,7 @@ namespace ShiftOS
                     txtfilename.Text = itm.Text;
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }

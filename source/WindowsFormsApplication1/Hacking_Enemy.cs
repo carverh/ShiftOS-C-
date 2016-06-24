@@ -285,7 +285,7 @@ namespace ShiftOS
                     }
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }

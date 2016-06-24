@@ -139,7 +139,7 @@ namespace ShiftOS
             f.Font = new Font(OSInfo.GetMonospaceFont(), 9);
             var l = new Label();
             int p = 0;
-            int speed = 100000 / h.Speed; //If a hacker has a speed of one, it will take 100,000 milliseconds to move 1% in the hack progress. Divide it by a thousand, you get 10,000 seconds.
+            int speed = 10000 / h.Speed; //If a hacker has a speed of one, it will take 10,000 milliseconds to move 1% in the hack progress. Divide it by a thousand, you get 1,000 seconds.
             var t = new Timer();
             t.Interval = speed;
             f.FormBorderStyle = FormBorderStyle.None;
@@ -169,7 +169,7 @@ namespace ShiftOS
                     {
                         l.Text = $"Progress: {p}%";
                         int fail = new Random().Next(0, h.Skill * h.Speed);
-                        if (fail == h.Skill / 2)
+                        if (fail == 1)
                         {
                             l.Text = "Hack failed.";
                         }
@@ -201,6 +201,8 @@ namespace ShiftOS
         {
             var lst = new List<FutureModule>();
             lst.Add(new FutureModule("Antivirus", 15, "This module will heal any other module within it's area of effect to 10 HP. Higher grades can improve it's area of effect.", SystemType.Antivirus));
+            lst.Add(new FutureModule("Enslaver", 75, "The Enslaver is a scary module for an opposing network. At any time, the Enslaver can take over any module on the enemy network and turn it against them.", SystemType.Enslaver));
+            lst.Add(new FutureModule("Module Thief", 100, "The Module Thief can hack into the enemy's network and attempt to steal one of their modules and bring them into your network temporarily though. Be careful though, it might not work all the time!", SystemType.ModuleStealer));
             lst.Add(new FutureModule("Dedicated DDoS module", 10, "This module will attempt to disable the enemy network by sending a DDoS attack allowing you to take a breather.", SystemType.DedicatedDDoS));
             lst.Add(new FutureModule("Turret", 5, "It's not super-effective, but the Turret will blast through any Grade 1 defenses pretty quickly. The higher the grade, the higher the strength.", SystemType.Turret));
             lst.Add(new FutureModule("Firewall", 20, "Will decrease the amount of damage taken by any module within it's area of effect. The higher the grade, the bigger the area of effect and more protection it offers.", SystemType.Firewall));
@@ -228,7 +230,7 @@ namespace ShiftOS
                 f.Font = new Font(OSInfo.GetMonospaceFont(), 9);
                 var l = new Label();
                 int p = 0;
-                int speed = 100000 / h.Speed; //If a hacker has a speed of one, it will take 100,000 milliseconds to move 1% in the hack progress. Divide it by a thousand, you get 10,000 seconds.
+                int speed = 10000 / h.Speed; //If a hacker has a speed of one, it will take 10,000 milliseconds to move 1% in the hack progress. Divide it by a thousand, you get 1,000 seconds.
                 var t = new Timer();
                 t.Interval = speed;
                 f.FormBorderStyle = FormBorderStyle.None;
@@ -257,8 +259,8 @@ namespace ShiftOS
                         if (p <= 100)
                         {
                             l.Text = $"Progress: {p}%";
-                            int fail = new Random().Next(0, h.Skill + h.Speed);
-                            if (fail == h.Skill / 2)
+                            int fail = new Random().Next(0, h.Skill * h.Speed);
+                            if (fail == 1)
                             {
                                 l.Text = "Hack failed.";
                             }
@@ -342,7 +344,7 @@ namespace ShiftOS
                                         break;
                                 }
                             }
-                            catch(Exception ex)
+                            catch
                             {
                                 t.Stop();
                                 var tr = new Terminal();
@@ -553,6 +555,15 @@ namespace ShiftOS
         /// </summary>
         public static void SaveCharacters()
         {
+            if (MyNetwork == null)
+            {
+                MyNetwork = new List<Module>();
+                var c = new Module(SystemType.Core, 1, "localhost");
+                c.HP = 100; //bugfix: core not appearing during battle on new save
+                c.X = 0;
+                c.Y = 0;
+                MyNetwork.Add(c);
+            }
             File.WriteAllText(Paths.SystemDir + "_hackers.json", API.Encryption.Encrypt(JsonConvert.SerializeObject(Characters)));
             File.WriteAllText(Paths.SystemDir + "_hacktools.json", API.Encryption.Encrypt(JsonConvert.SerializeObject(Tools)));
             File.WriteAllText(Paths.Drivers + "Network.dri", API.Encryption.Encrypt(JsonConvert.SerializeObject(MyNetwork)));

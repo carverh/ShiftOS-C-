@@ -16,6 +16,16 @@ using System.ComponentModel;
 
 namespace ShiftOS
 {
+    public static class Consts
+    {
+        public const string Version = "0.1.2";
+    }
+
+    public class Settings
+    {
+        public int MusicVolume { get; set; }
+    }
+
     public class PanelButton
     {
         /// <summary>
@@ -71,6 +81,12 @@ namespace ShiftOS
 
     public class API
     {
+
+        /// <summary>
+        /// Settings file.
+        /// </summary>
+        public static Settings LoadedSettings = null;
+
         /// <summary>
         /// Whether or not dev commands like '05tray' are available.
         /// Typically, this is set to true if the release is classified as
@@ -83,7 +99,7 @@ namespace ShiftOS
         /// to test new features or to bring in lots of codepoints. This is why
         /// Developer mode should ALWAYS be off in non-dev releases, to prevent cheating.
         /// </summary>
-        public static bool DeveloperMode = false;
+        public static bool DeveloperMode = true;
 
         /// <summary>
         /// If this is true, only certain applications will open and only
@@ -98,6 +114,22 @@ namespace ShiftOS
         public static bool LimitedMode = false;
 
         public static bool InfoboxesPlaySounds = true;
+
+        public static void SkinControl(Control c)
+        {
+            if(c is Button)
+            {
+                var b = c as Button;
+                b.FlatStyle = FlatStyle.Flat;
+            }
+            if(c is Panel || c is FlowLayoutPanel)
+            {
+                foreach(Control child in c.Controls)
+                {
+                    SkinControl(child);
+                }
+            }
+        }
 
         public static List<Process> RunningModProcesses = new List<Process>();
         public static Dictionary<string, string> CommandAliases = new Dictionary<string, string>();
@@ -830,16 +862,17 @@ namespace ShiftOS
         /// </summary>
         public static void ShutDownShiftOS()
         {
+            File.WriteAllText(Paths.SystemDir + "settings.json", JsonConvert.SerializeObject(LoadedSettings));
+            Audio.running = false;
             if (!LimitedMode)
             {
-                //dispose audio clients
-                Audio.DisposeAll();
                 //Disconnect from server.
                 try
                 {
-                    foreach (string ip in Package_Grabber.clients.Keys)
+                    foreach (var ip in Package_Grabber.clients)
                     {
-                        Package_Grabber.Disconnect(ip);
+                        if (ip.Value.IsConnected)
+                            ip.Value.Disconnect();
                     }
                 }
                 catch
@@ -1012,12 +1045,14 @@ namespace ShiftOS
                         {
                             formToCreate.Controls.Remove(ctrl);
                             ctrl.Show();
+                            SkinControl(ctrl);
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             API.CurrentSession.Invoke(new Action(() =>
                             {
                                 ctrl.Show();
+                                SkinControl(ctrl);
                             }));
                         }
                     }
@@ -1197,7 +1232,8 @@ namespace ShiftOS
         /// <returns>I don't know.</returns>
         public static bool CloseProgram(string command)
         {
-            try {
+            try
+            {
                 List<PanelButton> PanelButtonsToKill = new List<PanelButton>();
                 bool closed = false;
                 foreach (Form app in OpenPrograms)
@@ -1236,7 +1272,8 @@ namespace ShiftOS
                     PanelButtons.Remove(pbtn);
                 }
                 return closed;
-            } catch(Exception ex)
+            }
+            catch
             {
                 return false;
             }
@@ -1608,7 +1645,7 @@ namespace ShiftOS
                                 return "success";
                             }
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             API.LogException("User didn't guess a valid knowledge input guess.", false);
                             return "not_valid";
@@ -1672,6 +1709,17 @@ namespace ShiftOS
             bool succeeded = true;
             switch (cmd)
             {
+
+                case "settings":
+                    API.CreateForm(new GameSettings(), "Settings", API.GetIcon("Settings"));
+                    break;
+                case "credits":
+                    var c = new CreditScroller();
+                    c.FormBorderStyle = FormBorderStyle.None;
+                    c.Show();
+                    c.WindowState = FormWindowState.Maximized;
+                    c.TopMost = true;
+                    break;
                 case "netbrowse":
                     if(Upgrades["networkbrowser"])
                     {
@@ -1909,6 +1957,7 @@ namespace ShiftOS
         public static Color[] graymemory = new Color[16];
         public static Color[] yellowmemory = new Color[16];
         public static Color[] pinkmemory = new Color[16];
+        internal static Dictionary<string, Dictionary<string, object>> LuaShifterRegistry = null;
 
         #endregion
     }

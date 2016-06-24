@@ -1,0 +1,45 @@
+{
+"StartURL":"http://michael.playshiftos.ml/shiftos/soundtrack/",
+"Files":{"endgame":["Tom Vanko & Mark Vank - Origin"], "hackerbattle_ambient":["HardMix - Evolution", "Lastep - NeveS", "Timmo Hendriks - That Happen", "Mark Vank & Miza - Dark Generation"]},
+"Visualizers":{
+		"Mark Vank & Miza - Dark Generation":[{"R":false, "G":true, "B":false, "type":"Pulse", "startTime":0, "endTime":30},
+											  {"R":false, "G":true, "B":false, "type":"BuildUp", "startTime":30, "endTime":60},
+											  {"R":false, "G":true, "B":true, "type":"BuildUp", "startTime":60, "endTime":75},
+											  {"R":true, "G":false, "B":false, "type":"Pulse", "startTime":75, "endTime":105},
+											  {"R":false, "G":true, "B":false, "type":"Pulse", "startTime":106, "endTime":135},
+											  {"R":false, "G":true, "B":true, "type":"BuildUp", "startTime":135, "endTime":150},
+											  {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":150, "endTime":175},
+											  {"R":true, "G":true, "B":false, "type":"CalmDown", "startTime":175, "endTime":212}
+											  ],
+		"HardMix - Evolution":				 [{"R":false, "G":false, "B":true, "type":"Pulse", "startTime":0, "endTime":15},
+												{"R":false, "G":true, "B":true, "type":"Pulse", "startTime":15, "endTime":30},
+												{"R":true, "G":false, "B":true, "type":"BuildUp", "startTime":30, "endTime":83},
+												{"R":true, "G":false, "B":false, "type":"BuildUp", "startTime":83, "endTime":97},
+												{"R":true, "G":false, "B":false, "type":"Pulse", "startTime":97, "endTime":130},
+												{"R":true, "G":false, "B":true, "type":"BuildUp", "startTime":130, "endTime":175},
+												{"R":true, "G":false, "B":false, "type":"BuildUp", "startTime":175, "endTime":190},
+												{"R":true, "G":false, "B":false, "type":"Pulse", "startTime":190, "endTime":220},
+												{"R":false, "G":false, "B":true, "type":"CalmDown", "startTime":220, "endTime":252}
+											  ],
+		"Lastep - NeveS":                     [{"R":true, "G":true, "B":true, "type":"Pulse", "startTime":0, "endTime":47},
+											   {"R":true, "G":true, "B":false, "type":"BuildUp", "startTime":47, "endTime":78},
+											   {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":78, "endTime":110},
+											   {"R":true, "G":false, "B":false, "type":"Pulse", "startTime":110, "endTime":157},
+											   {"R":true, "G":true, "B":false, "type":"BuildUp", "startTime":157, "endTime":190},
+											   {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":190, "endTime":220}
+											  ],
+		"Timmo Hendriks - That Happen":       [{"R":false, "G":false, "B":true, "type":"Pulse", "startTime":0, "endTime":30},
+										       {"R":false, "G":true, "B":true, "type":"Pulse", "startTime":30, "endTime":60},
+											   {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":60, "endTime":90},
+											   {"R":true, "G":false, "B":true, "type":"Pulse", "startTime":90, "endTime":120},
+											   {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":120, "endTime":135},
+											   {"R":true, "G":false, "B":false, "type":"BuildUp", "startTime":135, "endTime":165},
+											   {"R":true, "B":false, "G":false, "type":"Pulse", "startTime":165, "endTime":195},
+											   {"R":false, "G":false, "B":true, "type":"BuildUp", "startTime":195, "endTime":240},
+											   {"R":false, "G":false, "B":true, "type":"Pulse", "startTime":240, "endTime":255},
+											   {"R":true, "G":false, "B":false, "type":"BuildUp", "startTime":255, "endTime":285},
+											   {"R":true, "G":true, "B":false, "type":"Pulse", "startTime":285, "endTime":330},
+											   {"R":true, "G":true, "B":false, "type":"CalmDown", "startTime":330, "endTime":377}
+											  ]
+	}
+}

@@ -229,7 +229,7 @@ namespace ShiftOS
                 canvasbitmap.SetPixel(Convert.ToInt32(txtpixelsetterxcoordinate.Text), Convert.ToInt32(txtpixelsetterycoordinate.Text), drawingcolour);
                 picdrawingdisplay.Invalidate();
             }
-            catch (Exception ex)
+            catch 
             {
                 API.CreateInfoboxSession("ArtPad - Placement Error!", "You have specified invalid coordinates for the pixel setter." + Environment.NewLine + Environment.NewLine + "Remember that the top left pixel has the coordinates 0, 0", infobox.InfoboxMode.Info);
             }
@@ -344,7 +344,7 @@ namespace ShiftOS
                 e.Graphics.DrawImage(canvasbitmap, 0, 0);
                 e.Graphics.DrawImage(previewcanvasbitmap, 0, 0);
             }
-            catch (System.OutOfMemoryException ex)
+            catch 
             {
                 
             }
@@ -1075,7 +1075,7 @@ namespace ShiftOS
                         }
                     }
                 }
-                catch(Exception ex)
+                catch
                 {
 
                 }
@@ -1295,7 +1295,7 @@ namespace ShiftOS
                 graphicsbitmap = Graphics.FromImage(canvasbitmap);
                 picdrawingdisplay.Invalidate();
             }
-            catch (Exception ex)
+            catch 
             {
                 API.CreateInfoboxSession("ArtPad - Undo Error!"
                 ,"There doesn't appear to be any more actions to undo." + Environment.NewLine + Environment.NewLine + "One more step back would undo the creation of the canvas. If this is your goal just click new.", infobox.InfoboxMode.Info);
@@ -1312,7 +1312,7 @@ namespace ShiftOS
                 graphicsbitmap = Graphics.FromImage(canvasbitmap);
                 picdrawingdisplay.Invalidate();
             }
-            catch (Exception ex)
+            catch 
             {
                 API.CreateInfoboxSession("ArtPad - Redo Error!"
                 , "There doesn't appear to be any more actions to redo." + Environment.NewLine + Environment.NewLine + "If you have drawn on the canvas recently all future history would have been wiped!", infobox.InfoboxMode.Info);

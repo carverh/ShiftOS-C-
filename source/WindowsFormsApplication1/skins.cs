@@ -421,7 +421,7 @@ namespace Skinning
                                 LoadedNames.NameChangerName = "Name Changer";
                             }
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             LoadedNames = new NamePack();
                         }
@@ -609,7 +609,7 @@ namespace Skinning
                 loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
                 //Now, images.
                 loadimages();
-            } catch(Exception ex)
+            } catch
             {
                 API.CreateInfoboxSession("Error loading skin", "An error has occurred while loading the skin file. This could be because the skin file is no longer supported by this version of ShiftOS.", infobox.InfoboxMode.Info);
             }
@@ -657,7 +657,7 @@ namespace Skinning
                     fStream.Close();
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 GenDefaultIconPack();
             }

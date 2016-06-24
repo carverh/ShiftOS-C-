@@ -182,7 +182,7 @@ namespace ShiftOS
                                     t.Stop();
                                 }
                             }
-                            catch (Exception ex)
+                            catch 
                             {
                                 formToClose = null;
                             }
@@ -237,7 +237,6 @@ namespace ShiftOS
                         }
                     };
                     t.Start();
-                    break;
                     break;
                 case WindowAnimationStyle.ToAppLauncher:
                     _CanClose = false;

@@ -17,7 +17,37 @@ namespace ShiftOS
             InitializeComponent();
         }
 
-#region " Properties "
+        #region " Properties "
+
+        private string _label = "Progress:";
+        private bool show_label = false;
+
+        public string Label
+        {
+            get
+            {
+                return _label;
+            }
+            set
+            {
+                _label = value;
+                this.Invalidate();
+            }
+        }
+
+        public bool ShowLabel
+        {
+            get
+            {
+                return show_label;
+            }
+            set
+            {
+                show_label = value;
+                this.Invalidate();
+            }
+        }
+
 
         private int _Value = 0;
         public int Value
@@ -295,6 +325,9 @@ namespace ShiftOS
         private void DoPaintValue(Graphics g)
         {
             string valStr = GetRelativeValue().ToString() + "%";
+            if (show_label)
+                valStr = _label + " " + valStr;
+
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
             SizeF s = g.MeasureString(valStr, this.Font);

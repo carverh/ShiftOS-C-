@@ -8,6 +8,7 @@ using System.Net;
 using System.IO.Compression;
 using System.ComponentModel;
 using System.Threading;
+using Newtonsoft.Json;
 
 namespace ShiftOS
 {
@@ -19,6 +20,7 @@ namespace ShiftOS
         [STAThread]
         static void Main(string[] args)
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Extract all dependencies before starting the engine.
@@ -44,7 +46,7 @@ namespace ShiftOS
                         }
                     }
                 }
-                catch(Exception ex)
+                catch
                 {
                     Console.WriteLine("[ServerThread/WARNING] Couldn't retrieve startup pool. Not connecting to any servers.");
                 }
@@ -52,6 +54,17 @@ namespace ShiftOS
             poolThread.Start();
             //Start the Windows Forms backend
             Paths.RegisterPaths(); //Sets ShiftOS path variables based on the current OS.
+            if (File.Exists(Paths.SystemDir + "settings.json"))
+            {
+                API.LoadedSettings = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(Paths.SystemDir + "settings.json"));
+            }
+            else
+            {
+                API.LoadedSettings = new Settings();
+                API.LoadedSettings.MusicVolume = 50;
+                File.WriteAllText(Paths.SystemDir + "settings.json", JsonConvert.SerializeObject(API.LoadedSettings));
+            }
+            Audio.LoadAudioData();
             SaveSystem.Utilities.CheckForOlderSaves(); //Backs up C:\ShiftOS on Windows systems if it exists and doesn't contain a _engineInfo.txt file telling ShiftOS what engine created it.
             //If there isn't a save folder at the directory specified by ShiftOS.Paths.SaveRoot, create a new save.
             //If not, load that save.
@@ -111,7 +124,7 @@ namespace ShiftOS
                     }
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }
@@ -140,7 +153,6 @@ namespace ShiftOS
                 {
                     Directory.Delete(temppath, true);
                 }
-                bool firstfile = false;
                 ZipFile.ExtractToDirectory(zippath, temppath);
                 foreach (string f in Directory.GetFiles(temppath))
                 {
@@ -164,7 +176,7 @@ namespace ShiftOS
                 w.Dispose();
                 GC.Collect();
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Sorry to break the immersion, but we're currently downloading ShiftOS dependencies that'll make the game run MUCH better, such as the Lua engine and Gecko web renderer. Give us a moment. ShiftOS will continue to run while this happens but some things won't work right until we're finished.");
                 wc.DownloadFileAsync(new Uri("http://playshiftos.ml/shiftos/dependencies/ShiftOS_Dependencies.zip"), zippath);

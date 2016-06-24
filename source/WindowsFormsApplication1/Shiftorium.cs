@@ -77,7 +77,7 @@ namespace Shiftorium
                     btnhack.Hide();
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 lbcategory.Text = "No upgrades!";
             }
@@ -132,12 +132,12 @@ namespace Shiftorium
                         lbupgradename.Text = upgrade.Name.Replace($" - {upgrade.Cost} CP", "");
                         lbudescription.Text = upgrade.Description;
                         btnbuy.Show();
-                        lbprice.Text = upgrade.Cost.ToString() + " CP";
+                        lbprice.Text = (upgrade.Cost / API.CurrentSave.PriceDivider).ToString() + " CP";
                         picpreview.Image = upgrade.Preview;
                         selectedUpgrade = upgrade;
                     }
                 }
-            } catch(Exception ex)
+            } catch
             {
                 //do nothing.
             }

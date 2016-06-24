@@ -111,6 +111,90 @@ namespace ShiftOS
         /// </summary>
         public void RegisterCore()
         {
+            //Shifter Extension API
+            mod.shifter_add_category = new Action<string>((name) =>
+            {
+                bool add = true;
+                if(API.LuaShifterRegistry == null)
+                {
+                    API.LuaShifterRegistry = new Dictionary<string, Dictionary<string, object>>();
+                }
+                foreach(var kv in API.LuaShifterRegistry)
+                {
+                    if (kv.Key == name)
+                        add = false;
+                }
+                if(add == true)
+                {
+                    API.LuaShifterRegistry.Add(name, new Dictionary<string, object>());
+                }
+                else
+                {
+                    Errors.Add($"shifter_add_category(\"{name}\"): Error: Category already exists!");
+                }
+            });
+            mod.shifter_remove_category = new Action<string>((name) =>
+            {
+                if(API.LuaShifterRegistry.ContainsKey(name))
+                {
+                    API.LuaShifterRegistry.Remove(name);
+                }
+                else
+                {
+                    Errors.Add($"shifter_remove_category(\"{name}\"): No such category.");
+                }
+            });
+            mod.shifter_add_value = new Action<string, string, object>((cat, name, in_value) =>
+            {
+                if(API.LuaShifterRegistry.ContainsKey(cat))
+                {
+                    var lst = API.LuaShifterRegistry[cat];
+                    if(!lst.ContainsKey(name))
+                    {
+                        lst.Add(name, in_value);
+                    }
+                    else
+                    {
+                        Errors.Add($"shifter_add_value(\"{cat}\", \"{name}\", in_value): Category was found, but it already contained a value with the specified name.");
+                    }
+                }
+                else
+                {
+                    Errors.Add($"shifter_add_value(\"{cat}\", \"{name}\", in_value): Category not found.");
+                }
+            });
+            mod.shifter_get_value = new Func<string, string, object>((cat, name) =>
+            {
+                if (API.LuaShifterRegistry.ContainsKey(cat))
+                {
+                    var lst = API.LuaShifterRegistry[cat];
+                    if (lst.ContainsKey(name))
+                    {
+                        return lst[name];
+                    }
+                    else
+                    {
+                        Errors.Add($"shifter_add_value(\"{cat}\", \"{name}\", in_value): Category was found, but it already contained a value with the specified name.");
+                        return null;
+                    }
+                }
+                else
+                {
+                    Errors.Add($"shifter_add_value(\"{cat}\", \"{name}\", in_value): Category not found.");
+                    return null;
+                }
+            });
+
+
+            //APIs.
+            mod.load_api = new Action<string>((name) =>
+            {
+                if(File.Exists(Paths.APIs + name + ".lua"))
+                {
+                    mod(File.ReadAllText(Paths.APIs + name + ".lua"));
+                }
+            });
+
             //Functions with Return Values
             mod.get_app_launcher_items = new Func<List<ApplauncherItem>>(() =>
             {
@@ -159,7 +243,7 @@ namespace ShiftOS
                 {
                     return Color.FromArgb(r, g, b);
                 }
-                catch(Exception ex)
+                catch
                 {
                     Errors.Add("Invalid color values. Values must be a minimum of 0 and a maximum of 255.");
                     return new Color();
@@ -497,7 +581,7 @@ namespace ShiftOS
                             i = it;
                         }
                     }
-                    catch(Exception ex)
+                    catch
                     {
 
                     }
@@ -959,7 +1043,6 @@ namespace ShiftOS
             return ctrl;
         }
 
-        private bool Beeping = false;
 
         /// <summary>
         /// Broken, piece of dump beep function.

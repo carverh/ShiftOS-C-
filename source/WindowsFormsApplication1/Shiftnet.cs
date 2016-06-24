@@ -87,7 +87,7 @@ namespace ShiftOS
                         return HtmlTemplate.Replace("#BODY#", "That page was not found.");
                     }
                 }
-                catch (WebException ex)
+                catch 
                 {
                     LastUrl = "shiftnet://not_found";
                     return HtmlTemplate.Replace("#BODY#", "That page was not found.");

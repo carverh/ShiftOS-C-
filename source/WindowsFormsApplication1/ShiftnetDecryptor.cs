@@ -46,7 +46,7 @@ namespace ShiftOS
                     RecursiveControlSetup(c);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
 
             }
@@ -87,7 +87,7 @@ namespace ShiftOS
                     {
                         encrypted_contents = new WebClient().DownloadString(currentaddress);
                     }
-                    catch(Exception ex)
+                    catch
                     {
                         WriteLine(" *** ERROR: Remote file could not be accessed.");
                         tmrdecrypt.Stop();

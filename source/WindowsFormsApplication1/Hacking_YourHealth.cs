@@ -488,7 +488,7 @@ namespace ShiftOS
                         {
                             SystemType type = FutureModules[cmbmodules.Text];
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             cont = false;
                             API.CreateInfoboxSession("Error", "Please select a module type.", infobox.InfoboxMode.Info);
@@ -654,7 +654,7 @@ namespace ShiftOS
                 }
                 SetupModuleInfo();
             }
-            catch(Exception ex)
+            catch
             {
                 txtgrade.Text = "1";
                 SetupModuleInfo();

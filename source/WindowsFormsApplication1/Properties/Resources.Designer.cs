@@ -318,7 +318,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap BeginButton_Image {
             get {
-                object obj = ResourceManager.GetObject("BeginButton.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("BeginButton_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -459,6 +459,52 @@ namespace ShiftOS.Properties {
             get {
                 object obj = ResourceManager.GetObject("crash_ofm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShiftOS #VER#
+        ///
+        ///
+        ///
+        ///A game by Michael VanOverbeek
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// == External Libraries / Dependencies == 
+        ///
+        ///  JSON.NET - Version 8.0.2
+        ///  By James Newton-King
+        ///  http://www.newtonsoft.com/json
+        ///
+        ///
+        ///  DynamicLua 1.1.1
+        ///  By Niklas Rother
+        ///  http://www.github.com/nrother/dynamiclua
+        ///
+        ///
+        ///  GeckoFX .NET wrapper for Gecko and xulrunner - 1.0.5
+        ///  By EmaGht
+        ///
+        ///
+        ///  and various other amazing .NET libraries
+        ///
+        ///
+        ///
+        ///
+        ///== Music ==
+        ///
+        ///All music in ShiftOS is provided by Free Songs to Use, whose YouTube channel ca [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
             }
         }
         
@@ -1103,7 +1149,21 @@ namespace ShiftOS.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///&quot;BufferOverflow&quot;:{&quot;IsLeader&quot;:false,&quot;Name&quot;:&quot;BufferOverflow&quot;,&quot;FriendDesc&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;Description&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;FriendSpeed&quot;:0,&quot;FriendSkill&quot;:0,&quot;Difficulty&quot;:&quot;easy&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;bufferoverflow&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:100,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;main_av&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:1,&quot;HP&quot;:0,&quot;Grade&quot;: [rest of string was truncated]&quot;;.
+        ///&quot;StartURL&quot;:&quot;http://michael.playshiftos.ml/shiftos/soundtrack/&quot;,
+        ///&quot;Files&quot;:{&quot;endgame&quot;:[&quot;Tom Vanko &amp; Mark Vank - Origin&quot;], &quot;hackerbattle_ambient&quot;:[&quot;HardMix - Evolution&quot;, &quot;Lastep - NeveS&quot;, &quot;Timmo Hendriks - That Happen&quot;, &quot;Eric Rodriguez - Lion&quot;, &quot;Mark Vank &amp; Miza - Dark Generation&quot;]},
+        ///&quot;Visualizers&quot;:{
+        ///		&quot;Mark Vank &amp; Miza - Dark Generation&quot;:[{&quot;R&quot;:false, &quot;G&quot;:true, &quot;B&quot;:false, &quot;type&quot;:&quot;Pulse&quot;, &quot;startTime&quot;:0, &quot;endTime&quot;:30},
+        ///											  {&quot;R&quot;:false, &quot;G&quot;:true, &quot;B&quot;:false, &quot;type&quot;:&quot;BuildUp&quot;, &quot;startTime&quot;:30, &quot;endTime&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MusicData {
+            get {
+                return ResourceManager.GetString("MusicData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///&quot;BufferOverflow&quot;:{&quot;IsLeader&quot;:false,&quot;Name&quot;:&quot;BufferOverflow&quot;,&quot;FriendDesc&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;Description&quot;:&quot;BufferOverflow is a question-and-answer site with millions of Shifters willing to share their knowledge.&quot;,&quot;FriendSpeed&quot;:65,&quot;FriendSkill&quot;:50,&quot;Difficulty&quot;:&quot;easy&quot;,&quot;Network&quot;:[{&quot;Hostname&quot;:&quot;bufferoverflow&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:0,&quot;HP&quot;:100,&quot;Grade&quot;:1,&quot;X&quot;:0,&quot;Y&quot;:0},{&quot;Hostname&quot;:&quot;main_av&quot;,&quot;ModuleType&quot;:0,&quot;Type&quot;:1,&quot;HP&quot;:0,&quot;Grade [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string NetBrowser_Enemies {
             get {
@@ -1166,7 +1226,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap object_large_Image {
             get {
-                object obj = ResourceManager.GetObject("object_large.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("object_large_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1176,7 +1236,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap object_mid_Image {
             get {
-                object obj = ResourceManager.GetObject("object_mid.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("object_mid_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1186,7 +1246,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap object_mid2_Image {
             get {
-                object obj = ResourceManager.GetObject("object_mid2.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("object_mid2_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1196,7 +1256,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap object_small_Image {
             get {
-                object obj = ResourceManager.GetObject("object_small.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("object_small_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1206,7 +1266,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap object_small2_Image {
             get {
-                object obj = ResourceManager.GetObject("object_small2.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("object_small2_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1236,7 +1296,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap PicBonus_Image {
             get {
-                object obj = ResourceManager.GetObject("PicBonus.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("PicBonus_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1266,7 +1326,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap player_Image {
             get {
-                object obj = ResourceManager.GetObject("player.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("player_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1286,7 +1346,7 @@ namespace ShiftOS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap QuitButton_Image {
             get {
-                object obj = ResourceManager.GetObject("QuitButton.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("QuitButton_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

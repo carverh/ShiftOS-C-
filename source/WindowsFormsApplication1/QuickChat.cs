@@ -52,7 +52,7 @@ namespace ShiftOS
                     this.Close();
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }
@@ -72,7 +72,7 @@ namespace ShiftOS
                     }
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }

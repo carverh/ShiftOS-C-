@@ -385,7 +385,7 @@ namespace ShiftOS
                                 ctrl.Width = w.Width;
                                 Skinning.Utilities.saveskin();
                             }
-                            catch(Exception ex)
+                            catch
                             {
                                 AddNotification("Invalid width", "You have entered an invalid width.");
                             }
@@ -397,7 +397,7 @@ namespace ShiftOS
                     l.mod.widget(ctrl);
                     
                 }
-                catch(Exception ex)
+                catch
                 {
                     API.CreateInfoboxSession("Widget Error", $"An error has occurred creating this \"{w.Name}\". It'll stay, but it may not function as intended.", infobox.InfoboxMode.Info);
                 }
@@ -666,7 +666,7 @@ namespace ShiftOS
                             NewAL = new ApplauncherItem(TEMP_AL.Name, Image.FromFile(Paths.Applications + TEMP_AL.AppDirectory + "\\" + TEMP_AL.Icon), lua, true);
                             imgshiftnetapps.Images.Add(file, NewAL.Icon);
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             NewAL = new ApplauncherItem(TEMP_AL.Name, null, lua, true);
                         }
@@ -894,7 +894,7 @@ namespace ShiftOS
                 ctrl.Parent.Controls.Remove(ctrl);
                 newPanel.Controls.Add(ctrl);
             }
-            catch(Exception ex)
+            catch
             {
                 newPanel.Controls.Add(ctrl);
             }
@@ -996,7 +996,7 @@ namespace ShiftOS
                         API.ToggleMinimized(frm);
                     }
                 }
-                catch (Exception ex)
+                catch 
                 {
 
                 }
