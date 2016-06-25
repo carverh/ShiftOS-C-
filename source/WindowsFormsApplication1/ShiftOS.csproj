@@ -626,8 +626,6 @@
     <None Include="Resources\MusicData.txt" />
     <None Include="bin\Debug\Newtonsoft.Json.dll" />
     <None Include="bin\Debug\NetSockets.dll" />
-    <Content Include="Labyrinth.designer.vb" />
-    <Content Include="Labyrinth.vb" />
     <Compile Include="Paths.cs" />
     <None Include="Resources\3beepvirus.wav" />
     <None Include="Resources\anycolourshade.png" />
