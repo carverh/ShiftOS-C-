@@ -65,18 +65,31 @@ namespace ShiftOS.Online.Hacking
                 }
             };
             Package_Grabber.SendMessage(si.IPAddress, "get_matchmaking");
+            int index = 0;
             MakerTimer.Tick += (o, e) =>
             {
-                int index = rnd.Next(0, Players.Count - 1);
-                if (Players[index] != API.CurrentSave.MyOnlineNetwork && Players[index].Name != null)
+                try
                 {
-                    SelectedNetwork = Players[index];
-                    MakerTimer.Stop();
-                    SelectedNetworkListener = new NetListener(si, SelectedNetwork);
-                    SelectedNetworkTransmitter = new NetTransmitter(si, SelectedNetwork);
-                    Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
+                    if (Players[index] != API.CurrentSave.MyOnlineNetwork && Players[index].Name != null)
+                    {
+                        SelectedNetwork = Players[index];
+                        MakerTimer.Stop();
+                        SelectedNetworkListener = new NetListener(si, SelectedNetwork);
+                        SelectedNetworkTransmitter = new NetTransmitter(si, SelectedNetwork);
+                        Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
+                    }
+                    else
+                    {
+                        index += 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    invoke(() => { API.CreateInfoboxSession("Cannot make a match.", "Network Browser had trouble making a match with another network. Error: " + ex.Message, infobox.InfoboxMode.Info); });
                 }
             };
+            MakerTimer.Interval = 50;
+            MakerTimer.Start();
         }
 
 
@@ -186,6 +199,7 @@ namespace ShiftOS.Online.Hacking
             EnemyIdent = enemy.Name + ";" + enemy.Description;
             serverInfo = si;
             var h = new HackUI(this, Matchmaker.SelectedNetworkListener);
+            h.Show();
             //HackUI will handle everything else to do with our network.
         }
 

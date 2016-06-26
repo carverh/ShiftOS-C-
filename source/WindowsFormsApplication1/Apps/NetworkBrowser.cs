@@ -395,13 +395,16 @@ Those above values only matter if the leader decides to become a friend. If they
             t.Tick += (o, a) =>
             {
                 SetupSidePane(Online.Hacking.Matchmaker.Players[sindex]);
-                if(sindex < Online.Hacking.Matchmaker.Players.Count - 1)
+                if (Matchmaker.Players.Count > 1)
                 {
-                    sindex = 0;
-                }
-                else
-                {
-                    sindex += 1;
+                    if (sindex < Online.Hacking.Matchmaker.Players.Count - 1)
+                    {
+                        sindex = 0;
+                    }
+                    else
+                    {
+                        sindex += 1;
+                    }
                 }
             };
             t.Start();
