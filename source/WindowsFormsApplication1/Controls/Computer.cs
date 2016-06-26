@@ -14,6 +14,8 @@ namespace ShiftOS
     {
         public int TotalHP = 100;
 
+        public Online.Hacking.NetTransmitter Transmitter = null;
+
         public Computer()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace ShiftOS
         public void Repair(int hp)
         {
             this._HP += hp;
+            Transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.SetHealth, $"{Hostname} {_HP}");
             var h = OnRepair;
             if(h != null)
             {
@@ -175,6 +178,7 @@ namespace ShiftOS
             }
             else {
                 this._HP -= amount / DamageDefector;
+                Transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.SetHealth, $"{Hostname} {_HP}");
                 EventHandler handler = HP_Decreased;
                 if (handler != null)
                 {
@@ -187,6 +191,7 @@ namespace ShiftOS
 
         public void Disable()
         {
+            Transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.Disabled, $"{Hostname}");
             var t = new Timer();
             t.Interval = 1000;
             int i = 0;

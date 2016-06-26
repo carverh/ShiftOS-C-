@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbnetdesc.Text" xml:space="preserve">
+    <value>Welcome to the Network Browser. Here, you can choose various enemy networks to battle and conquer. On the left is the network selection panel, and it will let you choose what network you'd like to fight. When you beat a network, it's removed from the list.
+
+Below the network selection panel is a Tier button. You can click it to change the difficulty of networks that you will fight. The higher the tier, the harder the battle. Beside that button, is the Screen button. Clicking it will switch between the Network Selection panel and your Network Status panel which will show you the health of all your modules if they are below max.
+
+You can start the battle using the "Start Battle" button, and you can join an online session using the "Battle online" button. It is wise to practice offline, as offline networks are more predictable than online ones - and you require more speed to battle against another real player. But, this is ShiftOS. Do what you wish.</value>
+  </data>
   <metadata name="tmrcalctotal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

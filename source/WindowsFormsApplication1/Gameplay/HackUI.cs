@@ -22,9 +22,21 @@ namespace ShiftOS
 
         public event EventHandler OnWin;
 
+        private bool InOnlineBattle = false;
+        private Online.Hacking.NetTransmitter transmitter = null;
+        private Online.Hacking.NetListener receiver = null;
+
         public HackUI(EnemyHacker enemy)
         {
             ThisEnemyHacker = enemy;
+            InitializeComponent();
+        }
+
+        public HackUI(Online.Hacking.NetTransmitter t, Online.Hacking.NetListener l)
+        {
+            InOnlineBattle = true;
+            transmitter = t;
+            receiver = l;
             InitializeComponent();
         }
 
@@ -212,6 +224,11 @@ namespace ShiftOS
 
         public void AddModule(Computer newModule)
         {
+            if (InOnlineBattle)
+            {
+                newModule.Transmitter = transmitter;
+                transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.PlaceModule, new Online.Hacking.Module { Grade = newModule.Grade, Hostname = newModule.Hostname, HP = newModule.HP, Type = (int)newModule.Type, X = newModule.Left, Y = newModule.Top });
+            }
             pnlyou.Controls.Add(newModule);
             int hp = newModule.HP;
             WriteLine($"[Network] Welcome to the network, {newModule.Hostname}!");
@@ -274,6 +291,7 @@ namespace ShiftOS
                 AllPlayerComputers.Remove(newModule);
                 newModule.Dispose();
                 WriteLine($"[Network] {newModule.Hostname} has gone OFFLINE.");
+                transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.RemoveModule, newModule.Hostname);
             };
             newModule.Select += (object s, EventArgs e) =>
             {
@@ -1078,9 +1096,11 @@ namespace ShiftOS
             Hacking.RepairTimer.Stop(); //Don't want the player to be able to repair dead modules during a battle!
             this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
-            //this.TopMost = true;
             LoadPlayerScreen();
-            LoadEnemyScreen();
+            if (InOnlineBattle)
+                LoadOnlineEnemy();
+            else
+                LoadEnemyScreen();
             tmrvisualizer.Interval = 10;
             tmrvisualizer.Start();
         }
@@ -1527,6 +1547,72 @@ namespace ShiftOS
             catch
             {
                 this.Invoke(new Action(() => { WriteLine(text); }));
+            }
+        }
+
+        #endregion
+
+        #region ONLINE ENEMY
+
+        public void LoadOnlineEnemy()
+        {
+            AllEnemyComputers = new List<Computer>();
+            tmrenemyhealthdetect.Start();
+            //register event handlers
+            receiver.ModuleHealthSet += Receiver_ModuleHealthSet;
+            receiver.ModulePlaced += Receiver_ModulePlaced;
+            receiver.ModuleUpgraded += Receiver_ModuleUpgraded;
+            receiver.ModuleRemoved += Receiver_ModuleRemoved;
+        }
+
+        private void Receiver_ModuleRemoved(object sender, Online.Hacking.Events.ModuleRemoved e)
+        {
+            Computer c = null;
+            foreach(var m in AllEnemyComputers)
+            {
+                if(m.Hostname == e.new_module)
+                {
+                    c = m;
+                }
+            }
+            AllEnemyComputers.Remove(c);
+            c.Dispose();
+        }
+
+        private void Receiver_ModuleUpgraded(object sender, Online.Hacking.Events.ModuleUpgraded e)
+        {
+            foreach(var m in AllEnemyComputers)
+            {
+                if (m.Hostname == e.hostname)
+                    m.Grade = e.grade;
+            }
+        }
+
+        private void Receiver_ModulePlaced(object sender, Online.Hacking.Events.ModulePlaced e)
+        {
+            var newModule = new Module((SystemType)e.new_module.Type, e.new_module.Grade, e.new_module.Hostname);
+            newModule.HP = e.new_module.HP;
+            newModule.X = e.new_module.X;
+            newModule.Y = e.new_module.Y;
+            AddEnemyModule(newModule.Deploy());
+        }
+
+        private void Receiver_ModuleHealthSet(object sender, Online.Hacking.Events.Health e)
+        {
+            var mod = new Computer();
+            foreach(var m in AllEnemyComputers)
+            {
+                if (m.Hostname == e.host_name)
+                    mod = m;
+            }
+            int health_amount = mod.HP - e.health;
+            if(health_amount > 0)
+            {
+                mod.Repair(health_amount);
+            }
+            else if(health_amount < 0)
+            {
+                mod.LaunchAttack(AttackType.Virus, -health_amount);
             }
         }
 

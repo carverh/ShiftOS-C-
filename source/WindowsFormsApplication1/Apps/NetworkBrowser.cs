@@ -23,6 +23,36 @@ namespace ShiftOS
 
         private void NetworkBrowser_Load(object sender, EventArgs e)
         {
+            Online.Hacking.Matchmaker.Initiated += (o, a) =>
+            {
+                if (selected_server == null)
+                {
+                    lbonlineservers.Items.Clear();
+                    foreach (var s in Online.Hacking.Matchmaker.Servers)
+                    {
+                        lbonlineservers.Items.Add(s.ServerName);
+                    }
+                }
+            };
+            Online.Hacking.Matchmaker.MorePlayersFound += (o, a) =>
+            {
+                if(selected_server != null)
+                {
+                    lbonlineheader.Text = selected_server.ServerName + " - Lobby";
+                    lbonlinedesc.Text = $@"Network Browser is waiting for the server to pair you with another network...
+
+
+Players in lobby: {Online.Hacking.Matchmaker.Players.Count}
+
+My Network:
+ - {Hacking.MyNetwork.Count} available modules
+ - {API.Codepoints} codepoints
+ - {API.CurrentSave.MyOnlineNetwork.Wins} wins, {API.CurrentSave.MyOnlineNetwork.Losses} losses.
+
+You can set your name and description in the Network Status page.";
+
+                }
+            };
             LoadNetworks();
             SetupSidePane();
             pnlmynet.Hide();
@@ -107,16 +137,29 @@ Those above values only matter if the leader decides to become a friend. If they
 
         public void SetupUI(List<string> tier)
         {
-            if (tier.Count > 0)
+            pnlonline.Visible = online_mode;
+            pnlonline.BringToFront();
+            btnjoinlobby.Enabled = (selected_server != null);
+            if (online_mode)
             {
-                foreach (var t in tier)
+                if(Online.Hacking.Matchmaker.Servers == null)
                 {
-                    lbnets.Items.Add(t);
+                    Online.Hacking.Matchmaker.Initiate();
                 }
             }
             else
             {
-                AddLeader(CurrentTier);
+                if (tier.Count > 0)
+                {
+                    foreach (var t in tier)
+                    {
+                        lbnets.Items.Add(t);
+                    }
+                }
+                else
+                {
+                    AddLeader(CurrentTier);
+                }
             }
         }
 
@@ -197,61 +240,68 @@ Those above values only matter if the leader decides to become a friend. If they
             }
             else
             {
-                string tier_upgrade = null;
-                if (SelectedNet.IsLeader == true)
+                if (online_mode == false)
                 {
-                    tier_upgrade = "nb_tier_" + CurrentTier;
-                }
-                var hui = new HackUI(SelectedNet);
-                hui.OnWin += (object s, EventArgs a) =>
-                {
-                    if (tier_upgrade != null)
+                    string tier_upgrade = null;
+                    if (SelectedNet.IsLeader == true)
                     {
-                        API.Upgrades[tier_upgrade] = true;
-                        if(CurrentTier == "easy")
-                        {
-                            if(API.Upgrades["midgamebridge"] == false)
-                            {
-                                var term = new Terminal();
-                                API.CreateForm(term, API.LoadedNames.TerminalName, API.GetIcon("Terminal"));
-                                term.StartDanaRossStory();
-                            }
-                        }
-                        else if(CurrentTier == "medium")
-                        {
-                            var h = new HoloChat();
-                            var fakeroom = new FakeChatClient();
-                            fakeroom.Name = "The Hacker Alliance";
-                            fakeroom.Topic = "The Hacker Alliance - We are the masters. DevX cannot control us.";
-                            fakeroom.OtherCharacters = new List<string>(new [] {"Richard Ladouceur"});
-                            fakeroom.Messages = JsonConvert.DeserializeObject<Dictionary<string, string>>(Properties.Resources.AustinWalkerCompletionStory);
-                            API.CreateForm(h, "QuickChat", API.GetIcon("QuickChat"));
-                            var t = new Thread(new ThreadStart(new Action(() =>
-                            {
-                                Thread.Sleep(200);
-                                h.Invoke(new Action(() =>
-                                {
-                                    h.SetupFakeClient(fakeroom);
-                                }));
-                            })));
-                            
-                        }
-                        foreach(var mod in SelectedNet.Network)
-                        {
-                            if (mod.Type != SystemType.Core)
-                            {
-                                mod.HP = 0;
-                                Hacking.MyNetwork.Add(mod);
-                            }
-                        }
-                        SetupMyNet();
+                        tier_upgrade = "nb_tier_" + CurrentTier;
                     }
-                    API.CurrentSave.CompletedNets.Add(SelectedNet.Name);
-                    SelectedNet = null;
-                    LoadNetworks();
-                    SetupSidePane();
-                };
-                hui.Show();
+                    var hui = new HackUI(SelectedNet);
+                    hui.OnWin += (object s, EventArgs a) =>
+                    {
+                        if (tier_upgrade != null)
+                        {
+                            API.Upgrades[tier_upgrade] = true;
+                            if (CurrentTier == "easy")
+                            {
+                                if (API.Upgrades["midgamebridge"] == false)
+                                {
+                                    var term = new Terminal();
+                                    API.CreateForm(term, API.LoadedNames.TerminalName, API.GetIcon("Terminal"));
+                                    term.StartDanaRossStory();
+                                }
+                            }
+                            else if (CurrentTier == "medium")
+                            {
+                                var h = new HoloChat();
+                                var fakeroom = new FakeChatClient();
+                                fakeroom.Name = "The Hacker Alliance";
+                                fakeroom.Topic = "The Hacker Alliance - We are the masters. DevX cannot control us.";
+                                fakeroom.OtherCharacters = new List<string>(new[] { "Richard Ladouceur" });
+                                fakeroom.Messages = JsonConvert.DeserializeObject<Dictionary<string, string>>(Properties.Resources.AustinWalkerCompletionStory);
+                                API.CreateForm(h, "QuickChat", API.GetIcon("QuickChat"));
+                                var t = new Thread(new ThreadStart(new Action(() =>
+                                {
+                                    Thread.Sleep(200);
+                                    h.Invoke(new Action(() =>
+                                    {
+                                        h.SetupFakeClient(fakeroom);
+                                    }));
+                                })));
+
+                            }
+                            foreach (var mod in SelectedNet.Network)
+                            {
+                                if (mod.Type != SystemType.Core)
+                                {
+                                    mod.HP = 0;
+                                    Hacking.MyNetwork.Add(mod);
+                                }
+                            }
+                            SetupMyNet();
+                        }
+                        API.CurrentSave.CompletedNets.Add(SelectedNet.Name);
+                        SelectedNet = null;
+                        LoadNetworks();
+                        SetupSidePane();
+                    };
+                    hui.Show();
+                }
+                else
+                {
+                    //nyi
+                }
             }
         }
 
@@ -296,6 +346,37 @@ Those above values only matter if the leader decides to become a friend. If they
             }
             pgtotalhealth.MaxValue = total;
             pgtotalhealth.Value = hp;
+        }
+
+        bool online_mode = false;
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            online_mode = !online_mode;
+            LoadNetworks();
+        }
+
+        Online.Hacking.ServerInfo selected_server = null;
+
+        private void lbonlineservers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var server_name = lbonlineservers.SelectedItem as string;
+            var server = new Online.Hacking.ServerInfo();
+            foreach(var srv in Online.Hacking.Matchmaker.Servers)
+            {
+                if (srv.ServerName == server_name)
+                    server = srv;
+            }
+            selected_server = server;
+            LoadNetworks();
+        }
+
+        private void btnjoinlobby_Click(object sender, EventArgs e)
+        {
+            lbonlineservers.Hide();
+            API.CurrentSave.MyOnlineNetwork.Codepoints = API.Codepoints;
+            Package_Grabber.SendMessage(selected_server.IPAddress, "join_lobby", API.CurrentSave.MyOnlineNetwork);
+            Online.Hacking.Matchmaker.Matchmake(selected_server);
         }
     }
 }

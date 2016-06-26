@@ -249,18 +249,6 @@ namespace ShiftOS
                     return new Color();
                 }
             });
-            mod.speechrec_create = new Func<SpeechListener>(() =>
-            {
-                return new SpeechListener();
-            });
-            mod.speechrec_on_recognize = new Action<SpeechListener, string>((obj, func) =>
-            {
-                obj.OnRecognize += (object s, EventArgs a) =>
-                {
-                    mod($"{func}('{s.ToString()}')");
-                };
-                obj.Engine.RecognizeAsync();
-            });
             mod.get_desktop_session = new Func<Form>(() =>
             {
                 return API.CurrentSession;

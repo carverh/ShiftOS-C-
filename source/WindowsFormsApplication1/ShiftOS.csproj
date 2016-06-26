@@ -84,72 +84,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlternateDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlternateDesktop.Designer.cs">
-      <DependentUpon>AlternateDesktop.cs</DependentUpon>
-    </Compile>
     <Compile Include="API.cs" />
-    <Compile Include="Appscape.cs">
+    <Compile Include="Apps\Appscape.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Appscape.Designer.cs">
+    <Compile Include="Apps\Appscape.Designer.cs">
       <DependentUpon>Appscape.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppscapeUploader.cs">
+    <Compile Include="Apps\AppscapeUploader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppscapeUploader.Designer.cs">
+    <Compile Include="Apps\AppscapeUploader.Designer.cs">
       <DependentUpon>AppscapeUploader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Artpad.cs">
+    <Compile Include="Apps\Artpad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Artpad.Designer.cs">
+    <Compile Include="Apps\Artpad.Designer.cs">
       <DependentUpon>Artpad.cs</DependentUpon>
     </Compile>
-    <Compile Include="AudioResourceClient.cs" />
-    <Compile Include="BitnoteConverter.cs">
+    <Compile Include="Engine\AudioResourceClient.cs" />
+    <Compile Include="Apps\BitnoteConverter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BitnoteConverter.Designer.cs">
+    <Compile Include="Apps\BitnoteConverter.Designer.cs">
       <DependentUpon>BitnoteConverter.cs</DependentUpon>
     </Compile>
-    <Compile Include="BitnoteDigger.cs">
+    <Compile Include="Apps\BitnoteDigger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BitnoteDigger.Designer.cs">
+    <Compile Include="Apps\BitnoteDigger.Designer.cs">
       <DependentUpon>BitnoteDigger.cs</DependentUpon>
     </Compile>
-    <Compile Include="BitnoteWallet.cs">
+    <Compile Include="Apps\BitnoteWallet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BitnoteWallet.Designer.cs">
+    <Compile Include="Apps\BitnoteWallet.Designer.cs">
       <DependentUpon>BitnoteWallet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Color_Picker.cs">
+    <Compile Include="Dialogs\Color_Picker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Color_Picker.Designer.cs">
+    <Compile Include="Dialogs\Color_Picker.Designer.cs">
       <DependentUpon>Color_Picker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Computer.cs">
+    <Compile Include="Controls\Computer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Computer.Designer.cs">
+    <Compile Include="Controls\Computer.Designer.cs">
       <DependentUpon>Computer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.cs">
+    <Compile Include="Controls\Connection.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Connection.Designer.cs">
+    <Compile Include="Controls\Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConnectionManager.cs">
+    <Compile Include="Online\ConnectionManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConnectionManager.Designer.cs">
+    <Compile Include="Online\ConnectionManager.Designer.cs">
       <DependentUpon>ConnectionManager.cs</DependentUpon>
     </Compile>
     <Compile Include="CreditScroller.cs">
@@ -158,22 +152,22 @@
     <Compile Include="CreditScroller.Designer.cs">
       <DependentUpon>CreditScroller.cs</DependentUpon>
     </Compile>
-    <Compile Include="DesktopIcon.cs">
+    <Compile Include="Controls\DesktopIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DesktopIcon.Designer.cs">
+    <Compile Include="Controls\DesktopIcon.Designer.cs">
       <DependentUpon>DesktopIcon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dodge.cs">
+    <Compile Include="Apps\Dodge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dodge.Designer.cs">
+    <Compile Include="Apps\Dodge.Designer.cs">
       <DependentUpon>Dodge.cs</DependentUpon>
     </Compile>
-    <Compile Include="File Skimmer.cs">
+    <Compile Include="Apps\File Skimmer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="File Skimmer.Designer.cs">
+    <Compile Include="Apps\File Skimmer.Designer.cs">
       <DependentUpon>File Skimmer.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalMission\ChoiceControl.cs">
@@ -207,142 +201,120 @@
     <Compile Include="GameSettings.Designer.cs">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graphic_Picker.cs">
+    <Compile Include="Dialogs\Graphic_Picker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphic_Picker.Designer.cs">
+    <Compile Include="Dialogs\Graphic_Picker.Designer.cs">
       <DependentUpon>Graphic_Picker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hacking.cs" />
-    <Compile Include="Hacking_Enemy.cs">
+    <Compile Include="Gameplay\Hacking.cs" />
+    <Compile Include="Gameplay\HackUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hacking_Enemy.Designer.cs">
-      <DependentUpon>Hacking_Enemy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hacking_YourHealth.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hacking_YourHealth.Designer.cs">
-      <DependentUpon>Hacking_YourHealth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HackUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HackUI.Designer.cs">
+    <Compile Include="Gameplay\HackUI.Designer.cs">
       <DependentUpon>HackUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="HijackScreen.cs">
+    <Compile Include="Gameplay\HijackScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HijackScreen.Designer.cs">
+    <Compile Include="Gameplay\HijackScreen.Designer.cs">
       <DependentUpon>HijackScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoloChat.cs">
+    <Compile Include="Apps\HoloChat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoloChat.Designer.cs">
+    <Compile Include="Apps\HoloChat.Designer.cs">
       <DependentUpon>HoloChat.cs</DependentUpon>
     </Compile>
-    <Compile Include="IconControl.cs">
+    <Compile Include="Controls\IconControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="IconControl.Designer.cs">
+    <Compile Include="Controls\IconControl.Designer.cs">
       <DependentUpon>IconControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="IconManager.cs">
+    <Compile Include="Apps\IconManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IconManager.Designer.cs">
+    <Compile Include="Apps\IconManager.Designer.cs">
       <DependentUpon>IconManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageSelector.cs">
+    <Compile Include="Controls\ImageSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ImageSelector.Designer.cs">
+    <Compile Include="Controls\ImageSelector.Designer.cs">
       <DependentUpon>ImageSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="infobox.cs">
+    <Compile Include="Controls\infobox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="infobox.Designer.cs">
+    <Compile Include="Controls\infobox.Designer.cs">
       <DependentUpon>infobox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jumper.cs">
+    <Compile Include="Apps\KnowledgeInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Jumper.Designer.cs">
-      <DependentUpon>Jumper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KnowledgeInput.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KnowledgeInput.Designer.cs">
+    <Compile Include="Apps\KnowledgeInput.Designer.cs">
       <DependentUpon>KnowledgeInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Labyrinth.cs">
+    <Compile Include="Apps\Labyrinth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Labyrinth.Designer.cs">
+    <Compile Include="Apps\Labyrinth.Designer.cs">
       <DependentUpon>Labyrinth.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListViewEx.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ListViewEx.Designer.cs">
-      <DependentUpon>ListViewEx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lua_Interp.cs" />
-    <Compile Include="MountMgr.cs" />
-    <Compile Include="NameChanger.cs">
+    <Compile Include="Engine\Lua_Interp.cs" />
+    <Compile Include="HostLayer\MountMgr.cs" />
+    <Compile Include="Apps\NameChanger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NameChanger.Designer.cs">
+    <Compile Include="Apps\NameChanger.Designer.cs">
       <DependentUpon>NameChanger.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetGen.cs">
+    <Compile Include="Apps\NetGen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NetGen.Designer.cs">
+    <Compile Include="Apps\NetGen.Designer.cs">
       <DependentUpon>NetGen.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetModuleStatus.cs">
+    <Compile Include="Controls\NetModuleStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NetModuleStatus.Designer.cs">
+    <Compile Include="Controls\NetModuleStatus.Designer.cs">
       <DependentUpon>NetModuleStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetworkBrowser.cs">
+    <Compile Include="Apps\NetworkBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NetworkBrowser.Designer.cs">
+    <Compile Include="Apps\NetworkBrowser.Designer.cs">
       <DependentUpon>NetworkBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notification.cs">
+    <Compile Include="Controls\Notification.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Notification.Designer.cs">
+    <Compile Include="Controls\Notification.Designer.cs">
       <DependentUpon>Notification.cs</DependentUpon>
     </Compile>
-    <Compile Include="OSInfo.cs" />
-    <Compile Include="Package_Grabber.cs" />
-    <Compile Include="PanelManager.cs">
+    <Compile Include="HostLayer\OSInfo.cs" />
+    <Compile Include="Online\Hacking\Matchmaker.cs" />
+    <Compile Include="Online\Hacking\Objects.cs" />
+    <Compile Include="Online\Package_Grabber.cs" />
+    <Compile Include="Apps\PanelManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PanelManager.Designer.cs">
+    <Compile Include="Apps\PanelManager.Designer.cs">
       <DependentUpon>PanelManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pong.cs">
+    <Compile Include="Apps\Pong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pong.Designer.cs">
+    <Compile Include="Apps\Pong.Designer.cs">
       <DependentUpon>Pong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressBarEX.cs">
+    <Compile Include="Controls\ProgressBarEX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressBarEX.Designer.cs">
+    <Compile Include="Controls\ProgressBarEX.Designer.cs">
       <DependentUpon>ProgressBarEX.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -351,126 +323,115 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="QuickChat.cs">
+    <Compile Include="Apps\Shifter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuickChat.Designer.cs">
-      <DependentUpon>QuickChat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RemoteCoherence.cs" />
-    <Compile Include="Shifter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Shifter.Designer.cs">
+    <Compile Include="Apps\Shifter.Designer.cs">
       <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShifterColorInput.cs">
+    <Compile Include="Controls\ShifterColorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShifterColorInput.Designer.cs">
+    <Compile Include="Controls\ShifterColorInput.Designer.cs">
       <DependentUpon>ShifterColorInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShifterGraphicInput.cs">
+    <Compile Include="Controls\ShifterGraphicInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShifterGraphicInput.Designer.cs">
+    <Compile Include="Controls\ShifterGraphicInput.Designer.cs">
       <DependentUpon>ShifterGraphicInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShifterIntInput.cs">
+    <Compile Include="Controls\ShifterIntInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShifterIntInput.Designer.cs">
+    <Compile Include="Controls\ShifterIntInput.Designer.cs">
       <DependentUpon>ShifterIntInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShifterTextInput.cs">
+    <Compile Include="Controls\ShifterTextInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShifterTextInput.Designer.cs">
+    <Compile Include="Controls\ShifterTextInput.Designer.cs">
       <DependentUpon>ShifterTextInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shiftnet.cs">
+    <Compile Include="Apps\Shiftnet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shiftnet.Designer.cs">
+    <Compile Include="Apps\Shiftnet.Designer.cs">
       <DependentUpon>Shiftnet.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftnetDecryptor.cs">
+    <Compile Include="Apps\ShiftnetDecryptor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShiftnetDecryptor.Designer.cs">
+    <Compile Include="Apps\ShiftnetDecryptor.Designer.cs">
       <DependentUpon>ShiftnetDecryptor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShiftOSColorTable.cs" />
-    <Compile Include="SkinLoader.cs">
+    <Compile Include="SkinEngine\ShiftOSColorTable.cs" />
+    <Compile Include="Apps\SkinLoader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SkinLoader.Designer.cs">
+    <Compile Include="Apps\SkinLoader.Designer.cs">
       <DependentUpon>SkinLoader.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpeechListener.cs" />
-    <Compile Include="TextPad.cs">
+    <Compile Include="Apps\TextPad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TextPad.Designer.cs">
+    <Compile Include="Apps\TextPad.Designer.cs">
       <DependentUpon>TextPad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viruses.cs" />
-    <Compile Include="WidgetManager.cs">
+    <Compile Include="Engine\Viruses.cs" />
+    <Compile Include="Apps\WidgetManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WidgetManager.Designer.cs">
+    <Compile Include="Apps\WidgetManager.Designer.cs">
       <DependentUpon>WidgetManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowBorder.cs">
+    <Compile Include="Controls\WindowBorder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="WindowBorder.Designer.cs">
+    <Compile Include="Controls\WindowBorder.Designer.cs">
       <DependentUpon>WindowBorder.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowComposition.cs" />
-    <EmbeddedResource Include="AlternateDesktop.resx">
-      <DependentUpon>AlternateDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Appscape.resx">
+    <Compile Include="SkinEngine\WindowComposition.cs" />
+    <EmbeddedResource Include="Apps\Appscape.resx">
       <DependentUpon>Appscape.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppscapeUploader.resx">
+    <EmbeddedResource Include="Apps\AppscapeUploader.resx">
       <DependentUpon>AppscapeUploader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Artpad.resx">
+    <EmbeddedResource Include="Apps\Artpad.resx">
       <DependentUpon>Artpad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BitnoteConverter.resx">
+    <EmbeddedResource Include="Apps\BitnoteConverter.resx">
       <DependentUpon>BitnoteConverter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BitnoteDigger.resx">
+    <EmbeddedResource Include="Apps\BitnoteDigger.resx">
       <DependentUpon>BitnoteDigger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BitnoteWallet.resx">
+    <EmbeddedResource Include="Apps\BitnoteWallet.resx">
       <DependentUpon>BitnoteWallet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Color_Picker.resx">
+    <EmbeddedResource Include="Dialogs\Color_Picker.resx">
       <DependentUpon>Color_Picker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Computer.resx">
+    <EmbeddedResource Include="Controls\Computer.resx">
       <DependentUpon>Computer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connection.resx">
+    <EmbeddedResource Include="Controls\Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionManager.resx">
+    <EmbeddedResource Include="Online\ConnectionManager.resx">
       <DependentUpon>ConnectionManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreditScroller.resx">
       <DependentUpon>CreditScroller.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DesktopIcon.resx">
+    <EmbeddedResource Include="Controls\DesktopIcon.resx">
       <DependentUpon>DesktopIcon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dodge.resx">
+    <EmbeddedResource Include="Apps\Dodge.resx">
       <DependentUpon>Dodge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="File Skimmer.resx">
+    <EmbeddedResource Include="Apps\File Skimmer.resx">
       <DependentUpon>File Skimmer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinalMission\ChoiceControl.resx">
@@ -488,67 +449,55 @@
     <EmbeddedResource Include="GameSettings.resx">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphic_Picker.resx">
+    <EmbeddedResource Include="Dialogs\Graphic_Picker.resx">
       <DependentUpon>Graphic_Picker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hacking_Enemy.resx">
-      <DependentUpon>Hacking_Enemy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hacking_YourHealth.resx">
-      <DependentUpon>Hacking_YourHealth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HackUI.resx">
+    <EmbeddedResource Include="Gameplay\HackUI.resx">
       <DependentUpon>HackUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HijackScreen.resx">
+    <EmbeddedResource Include="Gameplay\HijackScreen.resx">
       <DependentUpon>HijackScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoloChat.resx">
+    <EmbeddedResource Include="Apps\HoloChat.resx">
       <DependentUpon>HoloChat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IconControl.resx">
+    <EmbeddedResource Include="Controls\IconControl.resx">
       <DependentUpon>IconControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IconManager.resx">
+    <EmbeddedResource Include="Apps\IconManager.resx">
       <DependentUpon>IconManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageSelector.resx">
+    <EmbeddedResource Include="Controls\ImageSelector.resx">
       <DependentUpon>ImageSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="infobox.resx">
+    <EmbeddedResource Include="Controls\infobox.resx">
       <DependentUpon>infobox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Jumper.resx">
-      <DependentUpon>Jumper.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KnowledgeInput.resx">
+    <EmbeddedResource Include="Apps\KnowledgeInput.resx">
       <DependentUpon>KnowledgeInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListViewEx.resx">
-      <DependentUpon>ListViewEx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NameChanger.resx">
+    <EmbeddedResource Include="Apps\NameChanger.resx">
       <DependentUpon>NameChanger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetGen.resx">
+    <EmbeddedResource Include="Apps\NetGen.resx">
       <DependentUpon>NetGen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetModuleStatus.resx">
+    <EmbeddedResource Include="Controls\NetModuleStatus.resx">
       <DependentUpon>NetModuleStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetworkBrowser.resx">
+    <EmbeddedResource Include="Apps\NetworkBrowser.resx">
       <DependentUpon>NetworkBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notification.resx">
+    <EmbeddedResource Include="Controls\Notification.resx">
       <DependentUpon>Notification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PanelManager.resx">
+    <EmbeddedResource Include="Apps\PanelManager.resx">
       <DependentUpon>PanelManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pong.resx">
+    <EmbeddedResource Include="Apps\Pong.resx">
       <DependentUpon>Pong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressBarEX.resx">
+    <EmbeddedResource Include="Controls\ProgressBarEX.resx">
       <DependentUpon>ProgressBarEX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -556,52 +505,46 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuickChat.resx">
-      <DependentUpon>QuickChat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Shifter.resx">
+    <EmbeddedResource Include="Apps\Shifter.resx">
       <DependentUpon>Shifter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShifterColorInput.resx">
+    <EmbeddedResource Include="Controls\ShifterColorInput.resx">
       <DependentUpon>ShifterColorInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShifterGraphicInput.resx">
+    <EmbeddedResource Include="Controls\ShifterGraphicInput.resx">
       <DependentUpon>ShifterGraphicInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShifterIntInput.resx">
+    <EmbeddedResource Include="Controls\ShifterIntInput.resx">
       <DependentUpon>ShifterIntInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShifterTextInput.resx">
+    <EmbeddedResource Include="Controls\ShifterTextInput.resx">
       <DependentUpon>ShifterTextInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shiftnet.resx">
+    <EmbeddedResource Include="Apps\Shiftnet.resx">
       <DependentUpon>Shiftnet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShiftnetDecryptor.resx">
+    <EmbeddedResource Include="Apps\ShiftnetDecryptor.resx">
       <DependentUpon>ShiftnetDecryptor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shiftorium.resx">
+    <EmbeddedResource Include="Apps\Shiftorium.resx">
       <DependentUpon>Shiftorium.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShiftOSDesktop.resx">
+    <EmbeddedResource Include="Desktop\ShiftOSDesktop.resx">
       <DependentUpon>ShiftOSDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SkinLoader.resx">
+    <EmbeddedResource Include="Apps\SkinLoader.resx">
       <DependentUpon>SkinLoader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Template.resx">
-      <DependentUpon>Template.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Terminal.resx">
+    <EmbeddedResource Include="Apps\Terminal.resx">
       <DependentUpon>Terminal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextPad.resx">
+    <EmbeddedResource Include="Apps\TextPad.resx">
       <DependentUpon>TextPad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WidgetManager.resx">
+    <EmbeddedResource Include="Apps\WidgetManager.resx">
       <DependentUpon>WidgetManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowBorder.resx">
+    <EmbeddedResource Include="Controls\WindowBorder.resx">
       <DependentUpon>WindowBorder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -626,7 +569,7 @@
     <None Include="Resources\MusicData.txt" />
     <None Include="bin\Debug\Newtonsoft.Json.dll" />
     <None Include="bin\Debug\NetSockets.dll" />
-    <Compile Include="Paths.cs" />
+    <Compile Include="HostLayer\Paths.cs" />
     <None Include="Resources\3beepvirus.wav" />
     <None Include="Resources\anycolourshade.png" />
     <None Include="Resources\anycolourshade2.png" />
@@ -964,14 +907,14 @@
     <None Include="Resources\christmas_skin.jpg" />
     <None Include="Resources\jumperplayer.bmp" />
     <None Include="Resources\upgradeadvancedshifter.png" />
-    <Compile Include="SaveSystem.cs" />
-    <Compile Include="Shiftorium.cs">
+    <Compile Include="Engine\SaveSystem.cs" />
+    <Compile Include="Apps\Shiftorium.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shiftorium.Designer.cs">
+    <Compile Include="Apps\Shiftorium.Designer.cs">
       <DependentUpon>Shiftorium.cs</DependentUpon>
     </Compile>
-    <Compile Include="skins.cs" />
+    <Compile Include="SkinEngine\skins.cs" />
     <None Include="Resources\Icon.bmp" />
     <None Include="Resources\QuitButton.Image.png" />
     <None Include="Resources\BeginButton.Image.png" />
@@ -1002,25 +945,19 @@
     <None Include="Resources\Hacker_JonathanRivard.txt" />
     <None Include="Resources\iconColourPicker.fw.png" />
     <None Include="Resources\AustinWalkerCompletionStory.txt" />
-    <Compile Include="ShiftOSDesktop.cs">
+    <Compile Include="Desktop\ShiftOSDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShiftOSDesktop.Designer.cs">
+    <Compile Include="Desktop\ShiftOSDesktop.Designer.cs">
       <DependentUpon>ShiftOSDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Template.cs">
+    <Compile Include="Apps\Terminal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Template.Designer.cs">
-      <DependentUpon>Template.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Terminal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Terminal.Designer.cs">
+    <Compile Include="Apps\Terminal.Designer.cs">
       <DependentUpon>Terminal.cs</DependentUpon>
     </Compile>
-    <Compile Include="undo.cs" />
+    <Compile Include="Engine\undo.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
@@ -1041,6 +978,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

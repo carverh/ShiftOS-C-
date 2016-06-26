@@ -367,10 +367,6 @@ namespace ShiftOS
                         {
                             CreateForm(new Labyrinth(), "Labyrinth", null);
                         }
-                        else if (File.ReadAllText(modSAA) == HiddenQuickChatCommand)
-                        {
-                            CreateForm(new QuickChat(), "QuickChat", null);
-                        }
                         else
                         {
                             try

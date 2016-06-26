@@ -34,6 +34,7 @@ namespace SaveSystem
         public int PriceDivider = 1;
         public string CloudID = "";
         public List<string> CompletedNets = new List<string>();
+        public ShiftOS.Online.Hacking.Network MyOnlineNetwork = new ShiftOS.Online.Hacking.Network();
     }
 
     public class PrivateBitnoteAddress
