@@ -44,7 +44,7 @@ namespace ShiftOS
 
 Players in lobby: {Online.Hacking.Matchmaker.Players.Count}
 
-My Network:
+{API.CurrentSave.MyOnlineNetwork.Name} - My Network:
  - {Hacking.MyNetwork.Count} available modules
  - {API.Codepoints} codepoints
  - {API.CurrentSave.MyOnlineNetwork.Wins} wins, {API.CurrentSave.MyOnlineNetwork.Losses} losses.
@@ -352,8 +352,19 @@ Those above values only matter if the leader decides to become a friend. If they
         
         private void button1_Click(object sender, EventArgs e)
         {
-            online_mode = !online_mode;
-            LoadNetworks();
+            var me = API.CurrentSave.MyOnlineNetwork;
+            if (me.Name == null && me.Description == null)
+            {
+                pnlmynet.Show();
+                pnlmynet.BringToFront();
+                SetupMyNet();
+                API.CreateInfoboxSession("Make a name for yourself.", "Before you can battle online, please enter a name and a description that people will see when you matchmake. When you're done, click Battle Online again.", infobox.InfoboxMode.Info);
+            }
+            else
+            {
+                online_mode = !online_mode;
+                LoadNetworks();
+            }
         }
 
         Online.Hacking.ServerInfo selected_server = null;
@@ -385,6 +396,16 @@ Those above values only matter if the leader decides to become a friend. If they
             {
                 Package_Grabber.SendMessage(selected_server.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
             }
+        }
+
+        private void txtmydescription_TextChanged(object sender, EventArgs e)
+        {
+            API.CurrentSave.MyOnlineNetwork.Description = txtmydescription.Text;
+        }
+
+        private void txtmyname_TextChanged(object sender, EventArgs e)
+        {
+            API.CurrentSave.MyOnlineNetwork.Name = txtmyname.Text;
         }
     }
 }

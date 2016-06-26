@@ -40,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnscreen = new System.Windows.Forms.Button();
             this.pnlmynet = new System.Windows.Forms.Panel();
-            this.pgtotalhealth = new ShiftOS.ProgressBarEX();
             this.flmodules = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +52,11 @@
             this.lbnetdesc = new System.Windows.Forms.Label();
             this.lbtitle = new System.Windows.Forms.Label();
             this.tmrcalctotal = new System.Windows.Forms.Timer(this.components);
+            this.pgtotalhealth = new ShiftOS.ProgressBarEX();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtmyname = new System.Windows.Forms.TextBox();
+            this.txtmydescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnlonline.SuspendLayout();
             this.pnlmynet.SuspendLayout();
@@ -61,11 +65,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlmynet);
             this.panel1.Controls.Add(this.pnlonline);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnscreen);
-            this.panel1.Controls.Add(this.pnlmynet);
             this.panel1.Controls.Add(this.btntier);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -174,6 +178,10 @@
             this.pnlmynet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlmynet.Controls.Add(this.txtmydescription);
+            this.pnlmynet.Controls.Add(this.txtmyname);
+            this.pnlmynet.Controls.Add(this.label7);
+            this.pnlmynet.Controls.Add(this.label6);
             this.pnlmynet.Controls.Add(this.pgtotalhealth);
             this.pnlmynet.Controls.Add(this.flmodules);
             this.pnlmynet.Controls.Add(this.label5);
@@ -183,28 +191,6 @@
             this.pnlmynet.Size = new System.Drawing.Size(404, 447);
             this.pnlmynet.TabIndex = 6;
             // 
-            // pgtotalhealth
-            // 
-            this.pgtotalhealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pgtotalhealth.BackColor = System.Drawing.Color.Black;
-            this.pgtotalhealth.BlockSeparation = 3;
-            this.pgtotalhealth.BlockWidth = 5;
-            this.pgtotalhealth.Color = System.Drawing.Color.Gray;
-            this.pgtotalhealth.Label = "Progress:";
-            this.pgtotalhealth.Location = new System.Drawing.Point(7, 98);
-            this.pgtotalhealth.MaxValue = 100;
-            this.pgtotalhealth.MinValue = 0;
-            this.pgtotalhealth.Name = "pgtotalhealth";
-            this.pgtotalhealth.Orientation = ShiftOS.ProgressBarEX.ProgressBarOrientation.Horizontal;
-            this.pgtotalhealth.ShowLabel = false;
-            this.pgtotalhealth.ShowValue = true;
-            this.pgtotalhealth.Size = new System.Drawing.Size(394, 32);
-            this.pgtotalhealth.Step = 10;
-            this.pgtotalhealth.Style = ShiftOS.ProgressBarEX.ProgressBarExStyle.Continuous;
-            this.pgtotalhealth.TabIndex = 4;
-            this.pgtotalhealth.Value = 0;
-            // 
             // flmodules
             // 
             this.flmodules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -213,7 +199,7 @@
             this.flmodules.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flmodules.Location = new System.Drawing.Point(7, 140);
             this.flmodules.Name = "flmodules";
-            this.flmodules.Size = new System.Drawing.Size(394, 298);
+            this.flmodules.Size = new System.Drawing.Size(394, 219);
             this.flmodules.TabIndex = 3;
             this.flmodules.WrapContents = false;
             // 
@@ -327,6 +313,65 @@
             this.tmrcalctotal.Enabled = true;
             this.tmrcalctotal.Tick += new System.EventHandler(this.tmrcalctotal_Tick);
             // 
+            // pgtotalhealth
+            // 
+            this.pgtotalhealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgtotalhealth.BackColor = System.Drawing.Color.Black;
+            this.pgtotalhealth.BlockSeparation = 3;
+            this.pgtotalhealth.BlockWidth = 5;
+            this.pgtotalhealth.Color = System.Drawing.Color.Gray;
+            this.pgtotalhealth.Label = "Progress:";
+            this.pgtotalhealth.Location = new System.Drawing.Point(7, 98);
+            this.pgtotalhealth.MaxValue = 100;
+            this.pgtotalhealth.MinValue = 0;
+            this.pgtotalhealth.Name = "pgtotalhealth";
+            this.pgtotalhealth.Orientation = ShiftOS.ProgressBarEX.ProgressBarOrientation.Horizontal;
+            this.pgtotalhealth.ShowLabel = false;
+            this.pgtotalhealth.ShowValue = true;
+            this.pgtotalhealth.Size = new System.Drawing.Size(394, 32);
+            this.pgtotalhealth.Step = 10;
+            this.pgtotalhealth.Style = ShiftOS.ProgressBarEX.ProgressBarExStyle.Continuous;
+            this.pgtotalhealth.TabIndex = 4;
+            this.pgtotalhealth.Value = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 369);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Your name:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 400);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Description:";
+            // 
+            // txtmyname
+            // 
+            this.txtmyname.Location = new System.Drawing.Point(74, 366);
+            this.txtmyname.MaxLength = 18;
+            this.txtmyname.Name = "txtmyname";
+            this.txtmyname.Size = new System.Drawing.Size(186, 20);
+            this.txtmyname.TabIndex = 7;
+            this.txtmyname.TextChanged += new System.EventHandler(this.txtmyname_TextChanged);
+            // 
+            // txtmydescription
+            // 
+            this.txtmydescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtmydescription.Location = new System.Drawing.Point(74, 397);
+            this.txtmydescription.Name = "txtmydescription";
+            this.txtmydescription.Size = new System.Drawing.Size(316, 20);
+            this.txtmydescription.TabIndex = 8;
+            this.txtmydescription.TextChanged += new System.EventHandler(this.txtmydescription_TextChanged);
+            // 
             // NetworkBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,5 +421,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lbonlineservers;
         private System.Windows.Forms.Button btnjoinlobby;
+        private System.Windows.Forms.TextBox txtmydescription;
+        private System.Windows.Forms.TextBox txtmyname;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
