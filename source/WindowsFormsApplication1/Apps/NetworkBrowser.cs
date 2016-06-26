@@ -378,5 +378,13 @@ Those above values only matter if the leader decides to become a friend. If they
             Package_Grabber.SendMessage(selected_server.IPAddress, "join_lobby", API.CurrentSave.MyOnlineNetwork);
             Online.Hacking.Matchmaker.Matchmake(selected_server);
         }
+
+        private void stop_matchmake(object sender, FormClosingEventArgs e)
+        {
+            if(selected_server != null)
+            {
+                Package_Grabber.SendMessage(selected_server.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
+            }
+        }
     }
 }

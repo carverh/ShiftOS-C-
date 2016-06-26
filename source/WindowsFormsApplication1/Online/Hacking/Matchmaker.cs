@@ -74,6 +74,7 @@ namespace ShiftOS.Online.Hacking
                     MakerTimer.Stop();
                     SelectedNetworkListener = new NetListener(si, SelectedNetwork);
                     SelectedNetworkTransmitter = new NetTransmitter(si, SelectedNetwork);
+                    Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
                 }
             };
         }

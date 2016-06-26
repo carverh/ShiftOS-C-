@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetworkBrowser));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlonline = new System.Windows.Forms.Panel();
+            this.btnjoinlobby = new System.Windows.Forms.Button();
+            this.lbonlineservers = new System.Windows.Forms.ListBox();
+            this.lbonlinedesc = new System.Windows.Forms.Label();
+            this.lbonlineheader = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnscreen = new System.Windows.Forms.Button();
             this.pnlmynet = new System.Windows.Forms.Panel();
@@ -47,16 +53,10 @@
             this.lbnetdesc = new System.Windows.Forms.Label();
             this.lbtitle = new System.Windows.Forms.Label();
             this.tmrcalctotal = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.pnlonline = new System.Windows.Forms.Panel();
-            this.lbonlinedesc = new System.Windows.Forms.Label();
-            this.lbonlineheader = new System.Windows.Forms.Label();
-            this.lbonlineservers = new System.Windows.Forms.ListBox();
-            this.btnjoinlobby = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.pnlonline.SuspendLayout();
             this.pnlmynet.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlonline.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +77,75 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(725, 495);
             this.panel1.TabIndex = 0;
+            // 
+            // pnlonline
+            // 
+            this.pnlonline.Controls.Add(this.btnjoinlobby);
+            this.pnlonline.Controls.Add(this.lbonlineservers);
+            this.pnlonline.Controls.Add(this.lbonlinedesc);
+            this.pnlonline.Controls.Add(this.lbonlineheader);
+            this.pnlonline.Location = new System.Drawing.Point(12, 12);
+            this.pnlonline.Name = "pnlonline";
+            this.pnlonline.Size = new System.Drawing.Size(404, 447);
+            this.pnlonline.TabIndex = 10;
+            // 
+            // btnjoinlobby
+            // 
+            this.btnjoinlobby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnjoinlobby.Enabled = false;
+            this.btnjoinlobby.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnjoinlobby.Location = new System.Drawing.Point(306, 415);
+            this.btnjoinlobby.Name = "btnjoinlobby";
+            this.btnjoinlobby.Size = new System.Drawing.Size(84, 23);
+            this.btnjoinlobby.TabIndex = 8;
+            this.btnjoinlobby.Text = "Join Lobby";
+            this.btnjoinlobby.UseVisualStyleBackColor = true;
+            this.btnjoinlobby.Click += new System.EventHandler(this.btnjoinlobby_Click);
+            // 
+            // lbonlineservers
+            // 
+            this.lbonlineservers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbonlineservers.BackColor = System.Drawing.Color.Black;
+            this.lbonlineservers.ForeColor = System.Drawing.Color.White;
+            this.lbonlineservers.FormattingEnabled = true;
+            this.lbonlineservers.Location = new System.Drawing.Point(1, 72);
+            this.lbonlineservers.Name = "lbonlineservers";
+            this.lbonlineservers.Size = new System.Drawing.Size(389, 329);
+            this.lbonlineservers.TabIndex = 4;
+            this.lbonlineservers.SelectedIndexChanged += new System.EventHandler(this.lbonlineservers_SelectedIndexChanged);
+            // 
+            // lbonlinedesc
+            // 
+            this.lbonlinedesc.Location = new System.Drawing.Point(4, 37);
+            this.lbonlinedesc.Name = "lbonlinedesc";
+            this.lbonlinedesc.Size = new System.Drawing.Size(386, 364);
+            this.lbonlinedesc.TabIndex = 3;
+            this.lbonlinedesc.Text = "You can battle other Shifters over the Internet by joining a lobby and waiting fo" +
+    "r a match to be made. Please select a server from the list below.";
+            // 
+            // lbonlineheader
+            // 
+            this.lbonlineheader.AutoSize = true;
+            this.lbonlineheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbonlineheader.Location = new System.Drawing.Point(3, 5);
+            this.lbonlineheader.Name = "lbonlineheader";
+            this.lbonlineheader.Size = new System.Drawing.Size(106, 20);
+            this.lbonlineheader.TabIndex = 2;
+            this.lbonlineheader.Text = "Online battles";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(549, 465);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Battle online!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -258,75 +327,6 @@
             this.tmrcalctotal.Enabled = true;
             this.tmrcalctotal.Tick += new System.EventHandler(this.tmrcalctotal_Tick);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(549, 465);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Battle online!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pnlonline
-            // 
-            this.pnlonline.Controls.Add(this.btnjoinlobby);
-            this.pnlonline.Controls.Add(this.lbonlineservers);
-            this.pnlonline.Controls.Add(this.lbonlinedesc);
-            this.pnlonline.Controls.Add(this.lbonlineheader);
-            this.pnlonline.Location = new System.Drawing.Point(12, 12);
-            this.pnlonline.Name = "pnlonline";
-            this.pnlonline.Size = new System.Drawing.Size(404, 447);
-            this.pnlonline.TabIndex = 10;
-            // 
-            // lbonlinedesc
-            // 
-            this.lbonlinedesc.Location = new System.Drawing.Point(4, 37);
-            this.lbonlinedesc.Name = "lbonlinedesc";
-            this.lbonlinedesc.Size = new System.Drawing.Size(386, 364);
-            this.lbonlinedesc.TabIndex = 3;
-            this.lbonlinedesc.Text = "You can battle other Shifters over the Internet by joining a lobby and waiting fo" +
-    "r a match to be made. Please select a server from the list below.";
-            // 
-            // lbonlineheader
-            // 
-            this.lbonlineheader.AutoSize = true;
-            this.lbonlineheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbonlineheader.Location = new System.Drawing.Point(3, 5);
-            this.lbonlineheader.Name = "lbonlineheader";
-            this.lbonlineheader.Size = new System.Drawing.Size(106, 20);
-            this.lbonlineheader.TabIndex = 2;
-            this.lbonlineheader.Text = "Online battles";
-            // 
-            // lbonlineservers
-            // 
-            this.lbonlineservers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbonlineservers.BackColor = System.Drawing.Color.Black;
-            this.lbonlineservers.ForeColor = System.Drawing.Color.White;
-            this.lbonlineservers.FormattingEnabled = true;
-            this.lbonlineservers.Location = new System.Drawing.Point(1, 72);
-            this.lbonlineservers.Name = "lbonlineservers";
-            this.lbonlineservers.Size = new System.Drawing.Size(389, 329);
-            this.lbonlineservers.TabIndex = 4;
-            this.lbonlineservers.SelectedIndexChanged += new System.EventHandler(this.lbonlineservers_SelectedIndexChanged);
-            // 
-            // btnjoinlobby
-            // 
-            this.btnjoinlobby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnjoinlobby.Enabled = false;
-            this.btnjoinlobby.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnjoinlobby.Location = new System.Drawing.Point(306, 415);
-            this.btnjoinlobby.Name = "btnjoinlobby";
-            this.btnjoinlobby.Size = new System.Drawing.Size(84, 23);
-            this.btnjoinlobby.TabIndex = 8;
-            this.btnjoinlobby.Text = "Join Lobby";
-            this.btnjoinlobby.UseVisualStyleBackColor = true;
-            this.btnjoinlobby.Click += new System.EventHandler(this.btnjoinlobby_Click);
-            // 
             // NetworkBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,15 +337,16 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "NetworkBrowser";
             this.Text = "NetworkBrowser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.stop_matchmake);
             this.Load += new System.EventHandler(this.NetworkBrowser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlonline.ResumeLayout(false);
+            this.pnlonline.PerformLayout();
             this.pnlmynet.ResumeLayout(false);
             this.pnlmynet.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.pnlonline.ResumeLayout(false);
-            this.pnlonline.PerformLayout();
             this.ResumeLayout(false);
 
         }
