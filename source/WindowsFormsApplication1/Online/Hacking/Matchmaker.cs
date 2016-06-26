@@ -68,7 +68,7 @@ namespace ShiftOS.Online.Hacking
             MakerTimer.Tick += (o, e) =>
             {
                 int index = rnd.Next(0, Players.Count - 1);
-                if (Players[index] != API.CurrentSave.MyOnlineNetwork)
+                if (Players[index] != API.CurrentSave.MyOnlineNetwork && Players[index].Name != null)
                 {
                     SelectedNetwork = Players[index];
                     MakerTimer.Stop();

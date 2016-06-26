@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShiftOS.Online.Hacking;
 
 namespace ShiftOS
 {
@@ -388,6 +389,45 @@ Those above values only matter if the leader decides to become a friend. If they
             API.CurrentSave.MyOnlineNetwork.Codepoints = API.Codepoints;
             Package_Grabber.SendMessage(selected_server.IPAddress, "join_lobby", API.CurrentSave.MyOnlineNetwork);
             Online.Hacking.Matchmaker.Matchmake(selected_server);
+            var t = new System.Windows.Forms.Timer();
+            t.Interval = 5000;
+            int sindex = 0;
+            t.Tick += (o, a) =>
+            {
+                SetupSidePane(Online.Hacking.Matchmaker.Players[sindex]);
+                if(sindex < Online.Hacking.Matchmaker.Players.Count - 1)
+                {
+                    sindex = 0;
+                }
+                else
+                {
+                    sindex += 1;
+                }
+            };
+            t.Start();
+        }
+
+        private void SetupSidePane(Network network)
+        {
+            try
+            {
+                lbtitle.Text = network.Name;
+                lbnetdesc.Text = $@"{network.Description}
+
+ - {network.Codepoints} codepoints.
+ - {network.Wins} wins, {network.Losses} losses.";
+            }
+            catch
+            {
+                lbtitle.Text = "<null>";
+                lbnetdesc.Text = @"<no description>
+
+ - unknown codepoints.
+ - unknown wins, unknown losses.
+
+
+If you see this happen, it's a phantom client. The server won't pair you with it.";
+            }
         }
 
         private void stop_matchmake(object sender, FormClosingEventArgs e)
