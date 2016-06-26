@@ -85,7 +85,6 @@ namespace ShiftOS.Online.Hacking
                 }
                 catch (Exception ex)
                 {
-                    invoke(() => { API.CreateInfoboxSession("Cannot make a match.", "Network Browser had trouble making a match with another network. Error: " + ex.Message, infobox.InfoboxMode.Info); });
                 }
             };
             MakerTimer.Interval = 50;
