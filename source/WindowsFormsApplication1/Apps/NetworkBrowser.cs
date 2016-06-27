@@ -387,24 +387,31 @@ Those above values only matter if the leader decides to become a friend. If they
         {
             lbonlineservers.Hide();
             API.CurrentSave.MyOnlineNetwork.Codepoints = API.Codepoints;
-            Package_Grabber.SendMessage(selected_server.IPAddress, "join_lobby", API.CurrentSave.MyOnlineNetwork);
+            Package_Grabber.SendMessage(selected_server.IPAddress, $"join_lobby {JsonConvert.SerializeObject(API.CurrentSave.MyOnlineNetwork)}");
             Online.Hacking.Matchmaker.Matchmake(selected_server);
             var t = new System.Windows.Forms.Timer();
             t.Interval = 5000;
             int sindex = 0;
             t.Tick += (o, a) =>
             {
-                SetupSidePane(Online.Hacking.Matchmaker.Players[sindex]);
-                if (Matchmaker.Players.Count > 1)
+                try
                 {
-                    if (sindex < Online.Hacking.Matchmaker.Players.Count - 1)
+                    SetupSidePane(Online.Hacking.Matchmaker.Players[sindex]);
+                    if (Matchmaker.Players.Count > 1)
                     {
-                        sindex = 0;
+                        if (sindex < Online.Hacking.Matchmaker.Players.Count - 1)
+                        {
+                            sindex = 0;
+                        }
+                        else
+                        {
+                            sindex += 1;
+                        }
                     }
-                    else
-                    {
-                        sindex += 1;
-                    }
+                }
+                catch
+                {
+
                 }
             };
             t.Start();
@@ -437,7 +444,7 @@ If you see this happen, it's a phantom client. The server won't pair you with it
         {
             if(selected_server != null)
             {
-                Package_Grabber.SendMessage(selected_server.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
+                Package_Grabber.SendMessage(selected_server.IPAddress, $"leave_lobby {JsonConvert.SerializeObject(API.CurrentSave.MyOnlineNetwork)}");
             }
         }
 

@@ -33,7 +33,7 @@ namespace ShiftOS.Online.Hacking
                     var om = (e.Data.Object as ObjectModel);
                     if(om.Command == "server_info")
                     {
-                        var si = om.OptionalObject as ServerInfo;
+                        var si = JsonConvert.DeserializeObject<ServerInfo>(om.OptionalObject as string);
                         si.IPAddress = c.Value.RemoteHost;
                         Servers.Add(si);
                         invoke(() =>
@@ -70,13 +70,13 @@ namespace ShiftOS.Online.Hacking
             {
                 try
                 {
-                    if (Players[index] != API.CurrentSave.MyOnlineNetwork && Players[index].Name != null)
+                    if (Players[index].Name != API.CurrentSave.MyOnlineNetwork.Name && Players[index].Name != null)
                     {
                         SelectedNetwork = Players[index];
                         MakerTimer.Stop();
                         SelectedNetworkListener = new NetListener(si, SelectedNetwork);
                         SelectedNetworkTransmitter = new NetTransmitter(si, SelectedNetwork);
-                        Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby", API.CurrentSave.MyOnlineNetwork);
+                        Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby {JsonConvert.SerializeObject(API.CurrentSave.MyOnlineNetwork)}");
                     }
                     else
                     {
@@ -120,29 +120,29 @@ namespace ShiftOS.Online.Hacking
             {
                 if(e.Data.Object is string)
                 {
-                    string data = e.Data.Object as string;
-                    string[] args = data.Split(' ');
-                    if (args[1] == net.Name + ";" + net.Description) {
+                    var data = JsonConvert.DeserializeObject<ObjectModel>(e.Data.Object as string);
+                    string[] args = data.Command.Split(' ');
+                    if ((data.OptionalObject as Network) == net) {
                         switch (args[0].ToLower())
                         {
                             case "set_health":
-                                string hn = args[2];
-                                int hp = Convert.ToInt32(args[3]);
+                                string hn = args[1];
+                                int hp = Convert.ToInt32(args[2]);
                                 invoke(() => { ModuleHealthSet?.Invoke(this, new Events.Health { host_name = hn, health = hp }); });
                                 break;
                             case "place_module":
-                                string hostname = args[2];
-                                int grade = Convert.ToInt32(args[3]);
-                                int newhp = Convert.ToInt32(args[4]);
-                                int x = Convert.ToInt32(args[5]);
-                                int y = Convert.ToInt32(args[6]);
-                                int type = Convert.ToInt32(args[7]);
+                                string hostname = args[1];
+                                int grade = Convert.ToInt32(args[2]);
+                                int newhp = Convert.ToInt32(args[3]);
+                                int x = Convert.ToInt32(args[4]);
+                                int y = Convert.ToInt32(args[5]);
+                                int type = Convert.ToInt32(args[6]);
                                 var moduleToPlace = new Module { Grade = grade, Hostname = hostname, HP = newhp, Type = type, X = x, Y = y };
                                 MyModules.Add(moduleToPlace);
                                 invoke(() => { ModulePlaced?.Invoke(this, new Events.ModulePlaced { new_module = moduleToPlace }); });
                                 break;
                             case "remove_module":
-                                string hostnametoremove = args[2];
+                                string hostnametoremove = args[1];
                                 var m = new Module();
                                 foreach (var mod in MyModules)
                                 {
@@ -158,15 +158,15 @@ namespace ShiftOS.Online.Hacking
                             case "upgrade":
                                 invoke(() =>
                                 {
-                                    string hostnametoupgrade = args[2];
-                                    int newgrade = Convert.ToInt32(args[3]);
+                                    string hostnametoupgrade = args[1];
+                                    int newgrade = Convert.ToInt32(args[2]);
                                     ModuleUpgraded?.Invoke(this, new Events.ModuleUpgraded { hostname = hostnametoupgrade, grade = newgrade });
                                 });
                                 break;
                             case "disable":
                                 invoke(() =>
                                 {
-                                    string name = args[2];
+                                    string name = args[1];
                                     ModuleDisabled?.Invoke(this, new Events.Disabled { hostName = name });
                                 });
                                 break;
@@ -191,11 +191,11 @@ namespace ShiftOS.Online.Hacking
     public class NetTransmitter
     {
         public ServerInfo serverInfo = null;
-        public string EnemyIdent = "";
+        public Network EnemyIdent = null;
 
         public NetTransmitter(ServerInfo si, Network enemy)
         {
-            EnemyIdent = enemy.Name + ";" + enemy.Description;
+            EnemyIdent = enemy;
             serverInfo = si;
             var h = new HackUI(this, Matchmaker.SelectedNetworkListener);
             h.Show();
@@ -208,23 +208,23 @@ namespace ShiftOS.Online.Hacking
             {
                 case Messages.PlaceModule:
                     var m = value as Module;
-                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"place_module {EnemyIdent} {m.Hostname} {m.Grade} {m.HP} {m.X} {m.Y} {m.Type}");
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"place_module {m.Hostname} {m.Grade} {m.HP} {m.X} {m.Y} {m.Type}", EnemyIdent);
                     break;
                 case Messages.Upgrade:
                     string upgradestr = value as string;
-                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"upgrade {EnemyIdent} {upgradestr}");
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"upgrade {upgradestr}", EnemyIdent);
                     break;
                 case Messages.RemoveModule:
                     string hostnametoremove = value as string;
-                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"remove_module {EnemyIdent} {hostnametoremove}");
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"remove_module {hostnametoremove}", EnemyIdent);
                     break;
                 case Messages.SetHealth:
                     string healthsetstr = value as string;
-                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"set_health {EnemyIdent} {healthsetstr}");
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"set_health {healthsetstr}", EnemyIdent);
                     break;
                 case Messages.Disabled:
                     string hnamestr = value as string;
-                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"disable {EnemyIdent} {hnamestr}");
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"disable {hnamestr}", EnemyIdent);
                     break;
             }
         }
