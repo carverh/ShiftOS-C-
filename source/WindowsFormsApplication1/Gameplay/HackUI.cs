@@ -235,49 +235,52 @@ namespace ShiftOS
             TotalPlayerHP += newModule.HP;
             AllPlayerComputers.Add(newModule);
             newModule.Show();
-            newModule.StolenModule += (o, a) =>
+            if (!InOnlineBattle)
             {
-                var t = new Thread(new ThreadStart(() =>
+                newModule.StolenModule += (o, a) =>
                 {
-                    var rnd = new Random();
-                    var lst = new List<Computer>();
-                    if (newModule.Enslaved)
-                        lst = AllPlayerComputers;
-                    else
-                        lst = AllEnemyComputers;
-                    WriteLine($"[{newModule.Hostname}] Starting network hack...");
-                    Thread.Sleep(5000);
-
-                    var pc = lst[rnd.Next(0, lst.Count)];
-                    this.Invoke(new Action(() =>
+                    var t = new Thread(new ThreadStart(() =>
                     {
-                        if (pc.Type != SystemType.Core)
+                        var rnd = new Random();
+                        var lst = new List<Computer>();
+                        if (newModule.Enslaved)
+                            lst = AllPlayerComputers;
+                        else
+                            lst = AllEnemyComputers;
+                        WriteLine($"[{newModule.Hostname}] Starting network hack...");
+                        Thread.Sleep(5000);
+
+                        var pc = lst[rnd.Next(0, lst.Count)];
+                        this.Invoke(new Action(() =>
                         {
-                            module_to_steal = pc;
+                            if (pc.Type != SystemType.Core)
+                            {
+                                module_to_steal = pc;
 
-                            pgpong.Left = (this.Width - pgpong.Width) / 2;
-                            pgpong.Top = (this.Height - pgpong.Height) / 2;
+                                pgpong.Left = (this.Width - pgpong.Width) / 2;
+                                pgpong.Top = (this.Height - pgpong.Height) / 2;
 
-                            pgpong.Show();
-                            newgame();
-                        }
+                                pgpong.Show();
+                                newgame();
+                            }
+                        }));
                     }));
-                }));
-                t.Start();
-            };
-            newModule.EnslavedModule += (o, e) =>
-            {
-                if(!newModule.Enslaved)
+                    t.Start();
+                };
+                newModule.EnslavedModule += (o, e) =>
                 {
-                    var pc = AllEnemyComputers[rand.Next(0, AllEnemyComputers.Count)];
-                    if(!pc.Enslaved)
+                    if (!newModule.Enslaved)
                     {
-                        WriteLine($"[{newModule.Hostname}] Successfully enslaved {pc.Hostname}");
-                        pc.Enslaved = true;
+                        var pc = AllEnemyComputers[rand.Next(0, AllEnemyComputers.Count)];
+                        if (!pc.Enslaved)
+                        {
+                            WriteLine($"[{newModule.Hostname}] Successfully enslaved {pc.Hostname}");
+                            pc.Enslaved = true;
+                        }
+
                     }
-                    
-                }
-            };
+                };
+            }
             newModule.OnDestruction += (object s, EventArgs a) =>
             {
                 if (this.SelectedPlayerComputer == newModule)
@@ -515,7 +518,7 @@ namespace ShiftOS
             lbcompromised.Location = new Point(location, y);
             lbcompromised.Show();
             c.Flash(lbcompromised);
-
+            transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.SetHealth, $"{c.Hostname} {c.HP}");
         }
 
 
@@ -529,6 +532,8 @@ namespace ShiftOS
             lbcompromised.Location = new Point(location, y);
             lbcompromised.Show();
             c.Flash(lbcompromised);
+            transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.SetHealth, $"{c.Hostname} {c.HP}");
+
         }
 
         private void btnaddmodule_Click(object sender, EventArgs e)
@@ -1094,7 +1099,6 @@ namespace ShiftOS
             Audio.Play("hackerbattle_ambient");
 
             Hacking.RepairTimer.Stop(); //Don't want the player to be able to repair dead modules during a battle!
-            this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
             LoadPlayerScreen();
             if (InOnlineBattle)
@@ -1114,7 +1118,7 @@ namespace ShiftOS
             AllEnemyComputers = new List<Computer>();
             VisualizeEnemyNetwork();
             tmrenemyhealthdetect.Start();
-            ThisEnemyPC.Enemy = true;
+            ThisEnemyPC.Enemy = !InOnlineBattle;
         }
 
         private void VisualizeEnemyNetwork()
@@ -1137,10 +1141,13 @@ namespace ShiftOS
 
         public void Enemy_System_Attacking(object s, EventArgs a)
         {
-            int i = new Random().Next(AllPlayerComputers.Count);
-            var pc = AllPlayerComputers[i];
-            var se = (Computer)s;
-            pc.LaunchAttack(se.GetProperType());
+            if (!InOnlineBattle)
+            {
+                int i = new Random().Next(AllPlayerComputers.Count);
+                var pc = AllPlayerComputers[i];
+                var se = (Computer)s;
+                pc.LaunchAttack(se.GetProperType());
+            }
         }
 
         public Computer SelectedEnemyComputer = null;
@@ -1292,6 +1299,7 @@ namespace ShiftOS
                         WormToPlayer();
                 };
             }
+            newModule.Enemy = !InOnlineBattle;
         }
 
         public void Enemy_Firewall_Deflect(Computer fwall)
@@ -1563,6 +1571,16 @@ namespace ShiftOS
             receiver.ModulePlaced += Receiver_ModulePlaced;
             receiver.ModuleUpgraded += Receiver_ModuleUpgraded;
             receiver.ModuleRemoved += Receiver_ModuleRemoved;
+            receiver.ModuleDisabled += (o, e) =>
+            {
+                foreach(var c in AllEnemyComputers)
+                {
+                    if(c.Hostname == e.hostName)
+                    {
+                        c.Disable();
+                    }
+                }
+            };
         }
 
         private void Receiver_ModuleRemoved(object sender, Online.Hacking.Events.ModuleRemoved e)
@@ -1605,15 +1623,7 @@ namespace ShiftOS
                 if (m.Hostname == e.host_name)
                     mod = m;
             }
-            int health_amount = mod.HP - e.health;
-            if(health_amount > 0)
-            {
-                mod.Repair(health_amount);
-            }
-            else if(health_amount < 0)
-            {
-                mod.LaunchAttack(AttackType.Virus, -health_amount);
-            }
+            mod.HP = e.health;
         }
 
         #endregion

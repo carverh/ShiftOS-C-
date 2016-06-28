@@ -61,7 +61,7 @@ namespace ShiftOS
                     this.Invalidate();
                 }
                 else {
-                    throw new ArgumentOutOfRangeException("The value must be between the minimum and maximum values.");
+                    
                 }
             }
         }
