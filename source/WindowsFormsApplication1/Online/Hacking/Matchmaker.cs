@@ -1,4 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿/* ShiftOS Online Hacker Battles - Matchmaker
+ * 
+ * These classes deal with keeping things in line on the client-side of things.
+ * They deal with CSP (Client-Side Prediction), sending and receiving messages to
+ * and from the ShiftOS server, as well as making sure that when you join or leave a
+ * lobby, the server and other clients actually KNOW you did.
+ * 
+ * I wouldn't mess with this unless you really, really understand what you're doing,
+ * as in most cases, modification to the server is required as well (in the case of
+ * adding new commands). I'd leave modification to the system creator (Michael VanOverbeek) who
+ * actually wrote this. He's the guy who knows all about how the server works. Wait... why am
+ * I talking in third person?
+ */
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +24,35 @@ namespace ShiftOS.Online.Hacking
 {
     public class Matchmaker
     {
+        //All available lobbies.
         public static List<ServerInfo> Servers = null;
+        
+        //All players in the lobby.
         public static List<Network> Players = null;
 
+        //Some useful info about the lobby in which the player is.
+        //Also contains server IP to be sent to Package_Grabber.SendMessage().
         public static ServerInfo SelectedServer = null;
-        public static Network SelectedNetwork = null;
-        public static NetListener SelectedNetworkListener = null;
-        public static NetTransmitter SelectedNetworkTransmitter = null;
 
+        //Enemy network information (name, codepoints, etc)
+        public static Network SelectedNetwork = null;
+
+        //There's only one transmitter because generally the player
+        //won't be interacting with the enemy playfield enough to
+        //warrent a request to the server.
+        public static NetListener SelectedNetworkListener = null; //Listen for updates from the opponent.
+        public static NetTransmitter SelectedNetworkTransmitter = null; //Send messages to the server for enemy updates on opponent clients.
+        public static NetListener PlayerListener = null; //For receiving non-CSP updates from the server.
+        public static NetTransmitter SecondaryTransmitter = null; //For sending CSP-created update requests to the opponent (enemy health damage, etc)
+
+        //Timer that'll run during matchmaking.
         public static Timer MakerTimer = null;
 
+        /// <summary>
+        /// This either starts matchmaking or grabs server info. Try it out I guess.
+        /// 
+        /// Fires: Matchmaker.Initiated
+        /// </summary>
         public static void Initiate()
         {
             MakerTimer = new Timer();
@@ -53,6 +86,12 @@ namespace ShiftOS.Online.Hacking
             }
         }
 
+        /// <summary>
+        /// Matchmake in the supplied lobby.
+        /// 
+        /// Fires: MorePlayersFound upon player leave/join.
+        /// </summary>
+        /// <param name="si">The server to matchmake in.</param>
         public static void Matchmake(ServerInfo si)
         {
             SelectedServer = si;
@@ -88,8 +127,12 @@ namespace ShiftOS.Online.Hacking
                     {
                         SelectedNetwork = Players[index];
                         MakerTimer.Stop();
+                        PlayerListener = new NetListener(si, SelectedNetwork);
+                        SecondaryTransmitter = new NetTransmitter(si, API.CurrentSave.MyOnlineNetwork);
                         SelectedNetworkListener = new NetListener(si, API.CurrentSave.MyOnlineNetwork);
                         SelectedNetworkTransmitter = new NetTransmitter(si, SelectedNetwork);
+                        var h = new HackUI(SelectedNetworkTransmitter, SelectedNetworkListener, PlayerListener, SecondaryTransmitter);
+                        h.Show();
                         Package_Grabber.SendMessage(SelectedServer.IPAddress, $"leave_lobby {JsonConvert.SerializeObject(API.CurrentSave.MyOnlineNetwork)}");
                     }
                     else
@@ -106,14 +149,42 @@ namespace ShiftOS.Online.Hacking
         }
 
 
-
+        /// <summary>
+        /// Fired when Initiate() finishes.
+        /// </summary>
         public static event EventHandler Initiated;
+
+        /// <summary>
+        /// Fired when someone enters/exits a lobby that we are in.
+        /// </summary>
         public static event EventHandler MorePlayersFound;
+
+        /// <summary>
+        /// Helper method to allow me to invoke some code on the ShiftOS desktop thread (for UI access)
+        /// </summary>
+        /// <param name="method">The code to invoke (use a lambda expression or just pump a void through.)</param>
         public static void invoke(Action method)
         {
             API.CurrentSession.Invoke(method);
         }
 
+        internal static void DestroySession()
+        {
+            Servers.Clear();
+            Players.Clear();
+            ClearEvents();
+            SelectedNetwork = null;
+            SelectedNetworkTransmitter = null;
+            SelectedNetworkListener = null;
+            PlayerListener = null;
+            //Good to go, I guess.
+        }
+
+        public static void ClearEvents()
+        {
+            Initiated = null;
+            MorePlayersFound = null;
+        }
     }
 
     public class NetListener
@@ -181,6 +252,11 @@ namespace ShiftOS.Online.Hacking
                                         ModuleUpgraded?.Invoke(this, new Events.ModuleUpgraded { hostname = hostnametoupgrade, grade = newgrade });
                                     });
                                     break;
+                                case "finish":
+                                    string json = data.Command.Remove(0, 7);
+                                    var winner = JsonConvert.DeserializeObject<Network>(json);
+                                    Won?.Invoke(this, new Events.Won(winner));
+                                    break;
                                 case "disable":
                                     invoke(() =>
                                     {
@@ -205,6 +281,7 @@ namespace ShiftOS.Online.Hacking
         public event EventHandler<Events.ModuleRemoved> ModuleRemoved;
         public event EventHandler<Events.ModuleUpgraded> ModuleUpgraded;
         public event EventHandler<Events.Disabled> ModuleDisabled;
+        public event EventHandler<Events.Won> Won;
     }
 
     public class NetTransmitter
@@ -216,8 +293,6 @@ namespace ShiftOS.Online.Hacking
         {
             EnemyIdent = enemy;
             serverInfo = si;
-            var h = new HackUI(this, Matchmaker.SelectedNetworkListener);
-            h.Show();
             //HackUI will handle everything else to do with our network.
         }
 
@@ -241,6 +316,10 @@ namespace ShiftOS.Online.Hacking
                     string healthsetstr = value as string;
                     Package_Grabber.SendMessage(serverInfo.IPAddress, $"set_health {healthsetstr}", EnemyIdent);
                     break;
+                case Messages.FinishBattle:
+                    string json = JsonConvert.SerializeObject(value as Network);
+                    Package_Grabber.SendMessage(serverInfo.IPAddress, $"finish {json}");
+                    break;
                 case Messages.Disabled:
                     string hnamestr = value as string;
                     Package_Grabber.SendMessage(serverInfo.IPAddress, $"disable {hnamestr}", EnemyIdent);
@@ -255,6 +334,7 @@ namespace ShiftOS.Online.Hacking
             RemoveModule,
             SetHealth,
             Disabled,
+            FinishBattle,
         }
     }
 
@@ -269,6 +349,16 @@ namespace ShiftOS.Online.Hacking
         public class Disabled : EventArgs
         {
             public string hostName { get; set; }
+        }
+
+        public class Won : EventArgs
+        {
+            public Network Winner { get; private set; }
+
+            public Won(Network winner)
+            {
+                Winner = winner;
+            }
         }
 
         public class ModulePlaced : EventArgs

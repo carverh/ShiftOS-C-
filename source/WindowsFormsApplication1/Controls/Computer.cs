@@ -168,6 +168,16 @@ namespace ShiftOS
 
         public string Hostname { get; set; }
 
+        internal void throw_repaired()
+        {
+            OnRepair?.Invoke(this, new EventArgs());
+        }
+
+        internal void throw_damaged()
+        {
+            HP_Decreased?.Invoke(this, new EventArgs());
+        }
+
         public event EventHandler HP_Decreased;
         
         public void Deteriorate(int amount)
