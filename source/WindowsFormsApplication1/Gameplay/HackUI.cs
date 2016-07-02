@@ -1168,7 +1168,7 @@ namespace ShiftOS
             tmrvisualizer.Start();
         }
 
-        #region ENEMY
+            #region ENEMY
         private EnemyHacker ThisEnemyHacker { get; set; }
         public List<Computer> AllEnemyComputers = null;
         public Computer ThisEnemyPC { get; set; }

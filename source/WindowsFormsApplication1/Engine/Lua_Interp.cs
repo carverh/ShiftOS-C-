@@ -111,6 +111,13 @@ namespace ShiftOS
         /// </summary>
         public void RegisterCore()
         {
+            mod.httpget = new Func<string, string>((url) =>
+            {
+                WebRequest request = WebRequest.Create(url);
+                Stream requestStream = request.GetResponse().GetResponseStream();
+                StreamReader requestRead = new StreamReader(requestStream);
+                return requestRead.ReadToEnd();
+            });
             //Shifter Extension API
             mod.shifter_add_category = new Action<string>((name) =>
             {
