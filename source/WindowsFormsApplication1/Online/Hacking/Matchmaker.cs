@@ -140,7 +140,7 @@ namespace ShiftOS.Online.Hacking
                         index += 1;
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                 }
             };

@@ -223,6 +223,7 @@ namespace ShiftOS
                 pgright.Hide();
                 this.Size = new Size(this.Width - pgleft.Width - pgright.Width, this.Height - pgbottom.Height);
             }
+            API.CurrentSession.InvokeWindowOp("brdr_redraw", this.ParentForm);
         }
 
         private void closebutton_Click(object sender, EventArgs e)
@@ -405,7 +406,7 @@ namespace ShiftOS
                 pnlicon.Image = this.AppIcon;
                 //Replace with the correct icon for the program.
             }
-
+            API.CurrentSession.InvokeWindowOp("tbar_redraw", this.ParentForm);
         }
 
         public void rollupanddown()
@@ -446,6 +447,7 @@ namespace ShiftOS
                 }
                 lbtitletext.ForeColor = API.CurrentSkin.titletextcolour;
             }
+            API.CurrentSession.InvokeWindowOp("tbar_redraw", this.ParentForm);
         }
 
         // ERROR: Handles clauses are not supported in C#
@@ -649,7 +651,7 @@ namespace ShiftOS
             pgbottomrcorner.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.bottomrightcornerlayout;
             pgbottomlcorner.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.bottomleftcornerlayout;
 
-
+            API.CurrentSession.InvokeWindowOp("redraw", this.ParentForm);
         }
 
         // ERROR: Handles clauses are not supported in C#
@@ -660,6 +662,7 @@ namespace ShiftOS
                 e.Cancel = true;
                 WindowComposition.CloseForm(this.ParentForm, pbtn, API.CurrentSkin.WindowCloseAnimation);
             }
+            API.CurrentSession.InvokeWindowOp("close", this.ParentForm);
         }
     }
     #endregion

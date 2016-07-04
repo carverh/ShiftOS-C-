@@ -111,6 +111,128 @@ namespace ShiftOS
         /// </summary>
         public void RegisterCore()
         {
+            //Desktop environment
+            mod.on_unity_check += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnUnityCheck += () =>
+                {
+                    mod(func + "()");
+                };
+            });
+            mod.on_desktop_reset += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnDesktopReload += () =>
+                {
+                    mod(func + "()");
+                };
+            });
+            mod.on_clock_skin += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnClockSkin += () =>
+                {
+                    mod(func + "()");
+                };
+            });
+            mod.on_window_open += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.WindowOpened += (win) =>
+                {
+                    mod.win = win;
+                    mod(func + "(win)");
+                };
+            });
+            mod.on_window_close += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.WindowClosed += (win) =>
+                {
+                    mod.win = win;
+                    mod(func + "(win)");
+                };
+            });
+            mod.on_window_titlebar_redraw += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.TitlebarReset += (win) =>
+                {
+                    mod.win = win;
+                    mod(func + "(win)");
+                };
+            });
+            mod.on_window_border_redraw += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.BorderReset += (win) =>
+                {
+                    mod.win = win;
+                    mod(func + "(win)");
+                };
+            });
+            mod.on_window_skin += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.WindowSkinReset += (win) =>
+                {
+                    mod.win = win;
+                    mod(func + "(win)");
+                };
+            });
+            mod.get_border = new Func<Form, WindowBorder>((Form win) =>
+            {
+                WindowBorder b = null;
+                foreach(Control c in win.Controls)
+                {
+                    if ((string)c.Tag == "api_brdr")
+                        b = (WindowBorder)c;
+                }
+                return b;
+            });
+
+            mod.on_app_launcher_populate += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnAppLauncherPopulate += (items) =>
+                {
+                    mod.al_items = items;
+                    mod(func + "(clr_to_table(al_items))");
+                };
+            });
+            mod.on_panelbutton_populate += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnPanelButtonPopulate += (items) =>
+                {
+                    mod.pb_items = items;
+                    mod(func + "(clr_to_table(pb_items))");
+                };
+            });
+            mod.intercept_ctrlt += new Action<string>((func) =>
+            {
+                API.CurrentSession.AllowCtrlTIntercept();
+                API.CurrentSession.CtrlTPressed += () =>
+                {
+                    mod(func + "()");
+                };
+            });
+            mod.stop_intercept_ctrlt += new Action(() =>
+            {
+                API.CurrentSession.DisableCtrlTIntercept();
+                
+            });
+
+            mod.on_desktopicon_populate += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.DesktopIconsPopulated += (items) =>
+                {
+                    mod.dl_items = items;
+                    mod(func + "(clr_to_table(dl_items))");
+                };
+            });
+
+
+            mod(@"function clr_to_table(clrlist)
+  local t = {}
+  local it = clrlist:GetEnumerator()
+  while it:MoveNext() do
+    t[#t+1] = it.Current
+  end
+  return t
+end");
+
             mod.httpget = new Func<string, string>((url) =>
             {
                 WebRequest request = WebRequest.Create(url);
@@ -533,7 +655,7 @@ namespace ShiftOS
                     }
                 };
             });
-            mod.gen_font = new Func<string, int, Font>((style, size) => {
+            mod.font = new Func<string, int, Font>((style, size) => {
                 return new Font(style, size);
             });
 
@@ -817,9 +939,9 @@ namespace ShiftOS
             API.CreateFileSkimmerSession(fi, File_Skimmer.FileSkimmerMode.Open);
             API.FileSkimmerSession.FormClosing += (object s, FormClosingEventArgs a) =>
             {
-                mod($"{fu}({API.GetFSResult()})");
+                mod($"{fu}(\"{API.GetFSResult().Replace(Paths.SaveRoot, "").Replace("\\", "/")}\")");
             };
-        }
+        } //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
         /// Prompt user to save a file.
@@ -831,7 +953,7 @@ namespace ShiftOS
             API.CreateFileSkimmerSession(fi, File_Skimmer.FileSkimmerMode.Save);
             API.FileSkimmerSession.FormClosing += (object s, FormClosingEventArgs a) =>
             {
-                mod($"{fu}({API.GetFSResult()})");
+                mod($"{fu}(\"{API.GetFSResult().Replace(Paths.SaveRoot, "").Replace("\\", "/")}\")");
             };
         }
 
@@ -933,6 +1055,12 @@ namespace ShiftOS
             var ctrl = new Control();
             switch(type.ToLower())
             {
+                case "luatextbox":
+                    var stxt = new SyntaxRichTextBox();
+                    stxt.Text = text;
+                    stxt.SetLanguage(SyntaxSettings.Language.Lua);
+                    ctrl = stxt;
+                    break;
                 case "button":
                     var btn = new Button();
                     btn.FlatStyle = FlatStyle.Flat;

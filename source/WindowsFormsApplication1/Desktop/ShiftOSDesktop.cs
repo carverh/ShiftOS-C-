@@ -23,6 +23,71 @@ namespace ShiftOS
             InitializeComponent();
         }
 
+        //Event handler with no arguments.
+        public delegate void EmptyEventHandler();
+
+        //Event handler that passes a List<T>
+        public delegate void ListEventHandler<T>(List<T> lst);
+
+        //Window draw event handler.
+        public delegate void WindowDrawEventHandler(Form win);
+
+        //Lua events.
+        public event EmptyEventHandler OnDesktopReload;
+        public event ListEventHandler<ApplauncherItem> OnAppLauncherPopulate;
+        public event ListEventHandler<PanelButton> OnPanelButtonPopulate;
+        public event EmptyEventHandler OnClockSkin;
+        public event EmptyEventHandler CtrlTPressed;
+        public event EmptyEventHandler OnUnityCheck;
+        public event WindowDrawEventHandler WindowOpened;
+        public event WindowDrawEventHandler WindowClosed;
+        public event WindowDrawEventHandler WindowSkinReset;
+        public event WindowDrawEventHandler TitlebarReset;
+        public event WindowDrawEventHandler BorderReset;
+        public event ListEventHandler<DesktopIcon> DesktopIconsPopulated;
+
+        public void InvokeWindowOp(string operation, Form win)
+        {
+            switch(operation)
+            {
+                case "open":
+                    WindowOpened?.Invoke(win);
+                    break;
+                case "close":
+                    WindowClosed?.Invoke(win);
+                    break;
+                case "tbar_redraw":
+                    TitlebarReset?.Invoke(win);
+                    break;
+                case "brdr_redraw":
+                    BorderReset?.Invoke(win);
+                    break;
+                case "redraw":
+                    WindowSkinReset?.Invoke(win);
+                    break;
+            }
+        }
+
+        public void AllowCtrlTIntercept()
+        {
+            _resetCtrlTEvent();
+            CtrlTLuaIntercept = true;
+        }
+
+        public void DisableCtrlTIntercept()
+        {
+            _resetCtrlTEvent();
+            CtrlTLuaIntercept = false;
+        }
+
+
+        private void _resetCtrlTEvent()
+        {
+            CtrlTPressed = null;
+        }
+
+        private bool CtrlTLuaIntercept = false;
+
         public bool UnityEnabled = false;
 
         public ToolStripMenuItem AppLauncher { get { return this.ApplicationsToolStripMenuItem; } }
@@ -80,6 +145,22 @@ namespace ShiftOS
             };
         }
 
+        
+
+        public void InvokeCTRLT()
+        {
+            if (CtrlTLuaIntercept == true)
+            {
+                CtrlTPressed?.Invoke();
+            }
+            else
+            {
+                //Show terminal on CTRL+T
+
+                API.CreateForm(new Terminal(), API.CurrentSave.TerminalName, Properties.Resources.iconTerminal);
+            }
+        }
+
         private void ShiftOSDesktop_Load(object sender, EventArgs e)
         {
             Viruses.CheckForInfected();
@@ -90,9 +171,7 @@ namespace ShiftOS
             {
                 if (ea.KeyCode == Keys.T && ea.Control)
                 {
-                    //Show terminal on CTRL+T
-
-                    API.CreateForm(new Terminal(), API.CurrentSave.TerminalName, Properties.Resources.iconTerminal);
+                    InvokeCTRLT();
                 }
                 else if (ea.KeyCode == Keys.D && ea.Control)
                 {
@@ -269,6 +348,7 @@ namespace ShiftOS
                     }
                 }
             }
+            OnDesktopReload?.Invoke();
         }
 
         public void SetupWidgets()
@@ -459,7 +539,7 @@ namespace ShiftOS
                     };
                     flicons.Controls.Add(dl);
                 }
-                
+                DesktopIconsPopulated?.Invoke(DesktopIconManager.Icons);
             }
 
         }
@@ -734,6 +814,7 @@ namespace ShiftOS
             else {
                 ApplicationsToolStripMenuItem.Visible = false;
             }
+            OnAppLauncherPopulate?.Invoke(API.AppLauncherItems);
         }
 
         public void SetupGNOME2Elements()
@@ -836,7 +917,7 @@ namespace ShiftOS
             else {
                 timepanel.Hide();
             }
-
+            OnClockSkin?.Invoke();
         }
 
         public void CheckUnity()
@@ -864,6 +945,7 @@ namespace ShiftOS
                 this.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.desktopbackgroundlayout;
 
             }
+            OnUnityCheck?.Invoke();
         }
 
         public void CheckForChristmas()
@@ -935,6 +1017,7 @@ namespace ShiftOS
                 }
                 pnlpanelbuttonholder.Padding = new Padding(API.CurrentSkin.panelbuttoninitialgap, 0, 0, 0);
             }
+            OnPanelButtonPopulate?.Invoke(API.PanelButtons);
         }
 
         public void setuppanelbuttonicons(ref PictureBox tbicon, Image image)

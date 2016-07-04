@@ -103,6 +103,9 @@
     <Compile Include="Apps\Artpad.Designer.cs">
       <DependentUpon>Artpad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SyntaxHighlighter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Engine\AudioResourceClient.cs" />
     <Compile Include="Apps\BitnoteConverter.cs">
       <SubType>Form</SubType>

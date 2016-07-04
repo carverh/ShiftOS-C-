@@ -1063,7 +1063,7 @@ namespace ShiftOS
                         {
                             if (e.KeyCode == Keys.T && e.Control && formToCreate.Name != "Terminal")
                             {
-                                CreateForm(new Terminal(), CurrentSave.TerminalName, Properties.Resources.iconTerminal);
+                                CurrentSession.InvokeCTRLT();
                             }
                             if (formToCreate.Name != "Terminal" || Upgrades["windowedterminal"] == true)
                             {
@@ -1111,6 +1111,7 @@ namespace ShiftOS
                         }
                     }));
                     WindowComposition.SafeToAddControls = true;
+                    API.CurrentSession.Invoke(new Action(() => { CurrentSession.InvokeWindowOp("open", formToCreate); }));
                 };
                 bw.RunWorkerAsync();
             }

@@ -1561,7 +1561,7 @@
         public System.Windows.Forms.ImageList imgshiftnetapps;
         private System.Windows.Forms.Label lbldebug;
         private System.Windows.Forms.Label lblog;
-        private System.Windows.Forms.FlowLayoutPanel flicons;
+        public System.Windows.Forms.FlowLayoutPanel flicons;
         private System.Windows.Forms.ToolStripMenuItem scriptToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cmbfactions;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
