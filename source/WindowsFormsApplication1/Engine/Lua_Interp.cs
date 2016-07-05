@@ -642,6 +642,7 @@ end");
                     }
                 };
             });
+            mod.open_File = mod.fileskimmer_open;
             mod.fileskimmer_save += new Action<string, string>((filters, func) =>
             {
                 API.CreateFileSkimmerSession(filters, File_Skimmer.FileSkimmerMode.Save);
@@ -655,6 +656,7 @@ end");
                     }
                 };
             });
+            mod.save_File = mod.fileskimmer_save;
             mod.font = new Func<string, int, Font>((style, size) => {
                 return new Font(style, size);
             });

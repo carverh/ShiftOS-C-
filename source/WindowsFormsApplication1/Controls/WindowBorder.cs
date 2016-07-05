@@ -14,6 +14,113 @@ namespace ShiftOS
     {
         public Timer updater = new Timer();
 
+        private List<BorderWidget> _widgets = new List<BorderWidget>();
+
+        //Lua Methods
+
+        public void RegisterWidget(string ident, Control ctrl)
+        {
+            _widgets.Add(new BorderWidget { Identifier = ident, Control = ctrl });
+            resettitlebar();
+        }
+
+        public Control GetWidget(string ident)
+        {
+            Control ctrl = null;
+            foreach(var widget in _widgets)
+            {
+                if(widget.Identifier == ident)
+                {
+                    ctrl = widget.Control;
+                }
+            }
+            if (ctrl == null)
+                throw new Exception($"The identifier {ident} was not found.");
+            return ctrl;
+        }
+
+        public void RemoveWidget(string ident)
+        {
+            BorderWidget ctrl = null;
+            foreach (var widget in _widgets)
+            {
+                if (widget.Identifier == ident)
+                {
+                    ctrl = widget;
+                }
+            }
+            if (ctrl == null)
+                throw new Exception($"The identifier {ident} was not found.");
+            var wControl = ctrl.Control;
+            wControl.Parent.Controls.Remove(wControl);
+            wControl.Hide();
+            _widgets.Remove(ctrl);
+            wControl.Dispose();
+        }
+
+
+        public Panel GetTitlebar()
+        {
+            return titlebar;
+        }
+
+        public Panel GetBorder(string side)
+        {
+            switch(side)
+            {
+                case "left":
+                    return pgleft;
+                case "right":
+                    return pgright;
+                case "bottom":
+                    return pgbottom;
+                default:
+                    return null;
+            }
+        }
+
+        public Panel GetCloseButton() { return closebutton; }
+        public Panel GetRollupButton() { return this.rollupbutton; }
+        public Panel GetMinimizeButton() { return minimizebutton; }
+
+        private bool _closeEnabled = true;
+        private bool _minimizeEnabled = true;
+        private bool _rollupEnabled = true;
+
+        public bool CloseEnabled { get { return _closeEnabled; } set { _closeEnabled = value;  resettitlebar(); } }
+        public bool MinimizeEnabled { get { return _minimizeEnabled; } set { _minimizeEnabled = value; resettitlebar(); } }
+        public bool RollupEnabled { get { return _rollupEnabled; } set { _rollupEnabled = value; resettitlebar(); } }
+
+
+        public Panel GetCorner(string position, string side)
+        {
+            switch(position)
+            {
+                case "top":
+                    switch(side)
+                    {
+                        case "left":
+                            return pgtoplcorner;
+                        case "right":
+                            return pgtoprcorner;
+                        default:
+                            return null;
+                    }
+                case "bottom":
+                    switch(side)
+                    {
+                        case "left":
+                            return pgbottomlcorner;
+                        case "right":
+                            return pgbottomlcorner;
+                        default:
+                            return null;
+                    }
+                default:
+                    return null;
+            }
+        }
+
         public WindowBorder(string aname, Image aicon)
         {
             AppName = aname;
@@ -115,6 +222,7 @@ namespace ShiftOS
             }*/
             ParentForm.Tag = ParentForm.Location;
             WindowComposition.WindowsEverywhere(this.ParentForm);
+            ParentForm.Text = this.AppName;
         }
 
         private PanelButton pbtn = null;
@@ -344,6 +452,14 @@ namespace ShiftOS
                 closebutton.Show();
             }
 
+            if (_closeEnabled == false)
+                closebutton.Hide();
+            if (_rollupEnabled == false)
+                rollupbutton.Hide();
+            if (_minimizeEnabled == false)
+                minimizebutton.Hide();
+
+
             if (API.Upgrades["rollupbutton"] == false)
             {
                 rollupbutton.Hide();
@@ -447,6 +563,12 @@ namespace ShiftOS
                 }
                 lbtitletext.ForeColor = API.CurrentSkin.titletextcolour;
             }
+            if (_closeEnabled == false)
+                closebutton.Hide();
+            if (_rollupEnabled == false)
+                rollupbutton.Hide();
+            if (_minimizeEnabled == false)
+                minimizebutton.Hide();
             API.CurrentSession.InvokeWindowOp("tbar_redraw", this.ParentForm);
         }
 
@@ -667,5 +789,10 @@ namespace ShiftOS
     }
     #endregion
 
+    public class BorderWidget
+    {
+        public string Identifier { get; set; }
+        public Control Control { get; set; }
+    }
 }
 

@@ -76,7 +76,7 @@ namespace ShiftOS
             switch (lang)
             {
                 case SyntaxSettings.Language.Lua:
-                    var kw = new List<string>() { "function", "local", "return", "if", "else", "elseif", "while", "true", "do", "next", "end", "for", "pairs", "in", "{", "}", "false" };
+                    var kw = new List<string>() { "function", "local", "return", "if", "else", "elseif", "while", "true", "do", "next", "end", "for", "pairs", "in", "{", "}", "false", "=", "+", "-", "/", "*", "..", "," };
                     Settings.Keywords.Clear();
                     foreach (var k in kw)
                     {
