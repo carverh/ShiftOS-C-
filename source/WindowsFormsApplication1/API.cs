@@ -474,6 +474,33 @@ namespace ShiftOS
                 }
             }
 
+            public static string Encrypt_old(string plainText)
+            {
+                byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+                using (PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null))
+                {
+                    byte[] keyBytes = password.GetBytes(keysize / 8);
+                    using (RijndaelManaged symmetricKey = new RijndaelManaged())
+                    {
+                        symmetricKey.Mode = CipherMode.CBC;
+                        using (ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes))
+                        {
+                            using (MemoryStream memoryStream = new MemoryStream())
+                            {
+                                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
+                                {
+                                    cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+                                    cryptoStream.FlushFinalBlock();
+                                    byte[] cipherTextBytes = memoryStream.ToArray();
+                                    return Convert.ToBase64String(cipherTextBytes);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
             /// <summary>
             /// Decrypts an encrypted string.
             /// </summary>

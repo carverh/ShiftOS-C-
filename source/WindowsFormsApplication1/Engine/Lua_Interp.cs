@@ -399,8 +399,8 @@ end");
             mod.get_codepoints = new Func<int>(() => GetCP());
             mod.buy_upgrade = new Func<string, bool>((id) => BuyUPG(id));
             mod.time = new Func<string>(() => API.GetTime());
-            mod.encrypt = new Func<string, string>((raw) => API.Encryption.Encrypt(raw));
-            mod.decrypt = new Func<string, string>((raw) => API.Encryption.Decrypt(raw));
+            mod.encrypt = new Func<string, string>((raw) => API.Encryption.Encrypt_old(raw));
+            mod.decrypt = new Func<string, string>((raw) => API.Encryption.Decrypt_old(raw));
             mod.fread = new Func<string, string>((filepath) => SafeFileRead(filepath));
             mod.terminal = new Action<string>((command) =>
             {
