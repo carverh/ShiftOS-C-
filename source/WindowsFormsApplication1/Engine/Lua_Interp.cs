@@ -137,16 +137,24 @@ namespace ShiftOS
             {
                 desktop.WindowOpened += (win) =>
                 {
-                    mod.win = win;
-                    mod(func + "(win)");
+                    mod(func + $"(\"{API.OpenGUIDs[win]}\")");
                 };
+            });
+            mod.get_window = new Func<string, Form>((guid) =>
+            {
+                Form frm = null;
+                foreach(var kv in API.OpenGUIDs)
+                {
+                    if (kv.Value == guid)
+                        frm = kv.Key;
+                }
+                return frm;
             });
             mod.on_window_close += new Action<ShiftOSDesktop, string>((desktop, func) =>
             {
                 desktop.WindowClosed += (win) =>
                 {
-                    mod.win = win;
-                    mod(func + "(win)");
+                    mod(func + $"(\"{API.OpenGUIDs[win]}\")");
                 };
             });
             mod.on_window_titlebar_redraw += new Action<ShiftOSDesktop, string>((desktop, func) =>
@@ -342,6 +350,25 @@ end");
             mod.json_serialize = new Func<object, string>((objectToSerialize) => Newtonsoft.Json.JsonConvert.SerializeObject(objectToSerialize));
             mod.json_unserialize = new Func<string, object>((json_string) => Newtonsoft.Json.JsonConvert.DeserializeObject(json_string));
             mod.open_image = new Func<string, Image>((filename) => OpenImage(filename));
+            mod.list_add = new Action<Control, string>((lst, itm) =>
+            {
+                if(lst is ListBox)
+                {
+                    var box = lst as ListBox;
+                    box.Items.Add(itm);
+                }
+            });
+            mod.list_get_selected = new Func<Control, string>((lst) =>
+            {
+                if(lst is ListBox)
+                {
+                    return (lst as ListBox).SelectedItem?.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            });
             mod.get_skin = new Func<Skinning.Skin>(() =>
             {
                 return API.CurrentSkin;
@@ -618,16 +645,9 @@ end");
             mod.toggle_unity = new Action(() => API.CurrentSession.SetUnityMode());
             mod.lua = new Func<string, string>((luacode) =>
             {
-                var li = new LuaInterpreter();
-                try
-                {
-                    li.mod(luacode);
-                    return "success";
-                }
-                catch (Exception ex)
-                {
-                    return ex.Message;
-                }
+                mod(luacode);
+                return "success";
+                
             });
             mod.fileskimmer_open += new Action<string, string>((filters, func) =>
             {
@@ -1062,6 +1082,10 @@ end");
                     stxt.Text = text;
                     stxt.SetLanguage(SyntaxSettings.Language.Lua);
                     ctrl = stxt;
+                    break;
+                case "list":
+                    var lst = new ListBox();
+                    ctrl = lst;
                     break;
                 case "button":
                     var btn = new Button();

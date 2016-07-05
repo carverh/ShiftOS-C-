@@ -785,6 +785,7 @@ namespace ShiftOS
                 WindowComposition.CloseForm(this.ParentForm, pbtn, API.CurrentSkin.WindowCloseAnimation);
             }
             API.CurrentSession.InvokeWindowOp("close", this.ParentForm);
+            API.OpenGUIDs.Remove(this.ParentForm);
         }
     }
     #endregion

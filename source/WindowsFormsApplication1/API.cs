@@ -82,7 +82,8 @@ namespace ShiftOS
 
     public class API
     {
-
+        public static Dictionary<Form, string> OpenGUIDs = new Dictionary<Form, string>();
+        
         /// <summary>
         /// Settings file.
         /// </summary>
@@ -1188,6 +1189,7 @@ namespace ShiftOS
                         }
                     }));
                     WindowComposition.SafeToAddControls = true;
+                    API.OpenGUIDs.Add(formToCreate, Guid.NewGuid().ToString());
                     API.CurrentSession.Invoke(new Action(() => { CurrentSession.InvokeWindowOp("open", formToCreate); }));
                 };
                 bw.RunWorkerAsync();
