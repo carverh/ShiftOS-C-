@@ -54,17 +54,6 @@ namespace ShiftOS
             poolThread.Start();
             //Start the Windows Forms backend
             Paths.RegisterPaths(); //Sets ShiftOS path variables based on the current OS.
-            if (File.Exists(Paths.SystemDir + "settings.json"))
-            {
-                API.LoadedSettings = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(Paths.SystemDir + "settings.json"));
-            }
-            else
-            {
-                API.LoadedSettings = new Settings();
-                API.LoadedSettings.MusicVolume = 50;
-                File.WriteAllText(Paths.SystemDir + "settings.json", JsonConvert.SerializeObject(API.LoadedSettings));
-            }
-            Audio.LoadAudioData();
             SaveSystem.Utilities.CheckForOlderSaves(); //Backs up C:\ShiftOS on Windows systems if it exists and doesn't contain a _engineInfo.txt file telling ShiftOS what engine created it.
             //If there isn't a save folder at the directory specified by ShiftOS.Paths.SaveRoot, create a new save.
             //If not, load that save.
@@ -76,6 +65,17 @@ namespace ShiftOS
             {
                 SaveSystem.Utilities.NewGame();
             }
+            if (File.Exists(Paths.SystemDir + "settings.json"))
+            {
+                API.LoadedSettings = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(Paths.SystemDir + "settings.json"));
+            }
+            else
+            {
+                API.LoadedSettings = new Settings();
+                API.LoadedSettings.MusicVolume = 50;
+                File.WriteAllText(Paths.SystemDir + "settings.json", JsonConvert.SerializeObject(API.LoadedSettings));
+            }
+            Audio.LoadAudioData();
             //Load ShiftOS skin
             Skinning.Utilities.loadskin();
             SaveSystem.ShiftoriumRegistry.UpdateShiftorium();
