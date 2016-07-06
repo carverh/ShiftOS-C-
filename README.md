@@ -1,5 +1,7 @@
 # ShiftOS
 
+[![Join the chat at https://gitter.im/MichaelTheShifter/ShiftOS-C-](https://badges.gitter.im/MichaelTheShifter/ShiftOS-C-.svg)](https://gitter.im/MichaelTheShifter/ShiftOS-C-?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Welcome to the official C# rewrite of the original ShiftOS 0.0.9. It is led by Michael VanOverbeek and developed by the community.
 
 ShiftOS C# is licensed under the GNU General Public License 3.0. Before making any changes, I cannot stress this enough - PLEASE read the license document found in the root of the project.
