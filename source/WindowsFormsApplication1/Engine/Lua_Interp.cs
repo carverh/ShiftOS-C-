@@ -186,12 +186,12 @@ namespace ShiftOS
                 WindowBorder b = null;
                 foreach(Control c in win.Controls)
                 {
-                    if ((string)c.Tag == "api_brdr")
-                        b = (WindowBorder)c;
+                    if (c is WindowBorder)
+                        b = c as WindowBorder;
                 }
                 return b;
             });
-
+            mod.def_update = new Action(() => API.UpdateWindows());
             mod.on_app_launcher_populate += new Action<ShiftOSDesktop, string>((desktop, func) =>
             {
                 desktop.OnAppLauncherPopulate += (items) =>
