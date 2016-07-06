@@ -119,6 +119,30 @@ namespace ShiftOS
                     mod(func + "()");
                 };
             });
+            mod.on_unity_set += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnUnityToggle += () =>
+                {
+                    mod(func + "()");
+                };
+            });
+            mod.on_desktop_panel_draw += new Action<ShiftOSDesktop, string>((desktop, func) =>
+            {
+                desktop.OnDesktopPanelDraw += (c) =>
+                {
+                    mod(func + $"(get_panel_from_guid(\"{c}\"))");
+                };
+            });
+            mod.get_panel_from_guid = new Func<string, Control>((guid) =>
+            {
+                foreach(var kv in API.DEF_PanelGUIDs)
+                {
+                    if (kv.Key == guid)
+                        return kv.Value;
+                }
+                return null;
+            });
+
             mod.on_desktop_reset += new Action<ShiftOSDesktop, string>((desktop, func) =>
             {
                 desktop.OnDesktopReload += () =>

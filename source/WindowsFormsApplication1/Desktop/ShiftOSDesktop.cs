@@ -32,6 +32,9 @@ namespace ShiftOS
         //Window draw event handler.
         public delegate void WindowDrawEventHandler(Form win);
 
+        //Event handler for passing a single control (e.g, a desktop panel) to the Lua API.
+        public delegate void ControlDrawEventHandler(string ControlGUID);
+
         //Lua events.
         public event EmptyEventHandler OnDesktopReload;
         public event ListEventHandler<ApplauncherItem> OnAppLauncherPopulate;
@@ -45,6 +48,8 @@ namespace ShiftOS
         public event WindowDrawEventHandler TitlebarReset;
         public event WindowDrawEventHandler BorderReset;
         public event ListEventHandler<DesktopIcon> DesktopIconsPopulated;
+        public event EmptyEventHandler OnUnityToggle;
+        public event ControlDrawEventHandler OnDesktopPanelDraw;
 
         public void InvokeWindowOp(string operation, Form win)
         {
@@ -104,7 +109,9 @@ namespace ShiftOS
             {
                 UnityEnabled = true;
             }
+            OnUnityToggle?.Invoke(); //We want this to be invoked BEFORE the desktop reset in case the user wants to do things with the desktop during reset.
             SetupDesktop();
+            
         }
 
         public void SetUnityMode(bool value)
@@ -596,7 +603,7 @@ namespace ShiftOS
         public void SetupPanels(List<Skinning.DesktopPanel> lst)
         {
             DesktopPanels = new List<Panel>();
-
+            API.DEF_PanelGUIDs.Clear();
             foreach (var dp in lst)
             {
                 Panel pnl = new Panel();
@@ -699,6 +706,9 @@ namespace ShiftOS
                     pnl.Hide();
                     this.Controls.Remove(pnl);
                 }
+                string guid = Guid.NewGuid().ToString();
+                API.DEF_PanelGUIDs.Add(guid, pnl);
+                OnDesktopPanelDraw?.Invoke(guid);
             }
 
         }

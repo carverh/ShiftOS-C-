@@ -83,7 +83,9 @@ namespace ShiftOS
     public class API
     {
         public static Dictionary<Form, string> OpenGUIDs = new Dictionary<Form, string>();
-        
+        public static Dictionary<string, Control> DEF_PanelGUIDs = new Dictionary<string, Control>();
+
+
         /// <summary>
         /// Settings file.
         /// </summary>
