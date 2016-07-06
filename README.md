@@ -1,6 +1,6 @@
 # ShiftOS
 
-[![Join the chat at https://gitter.im/MichaelTheShifter/ShiftOS-C-](https://badges.gitter.im/MichaelTheShifter/ShiftOS-C-.svg)](https://gitter.im/MichaelTheShifter/ShiftOS-C-?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/MichaelTheShifter/ShiftOS-C-](https://badges.gitter.im/MichaelTheShifter/ShiftOS-C-.svg)](https://gitter.im/MichaelTheShifter/ShiftOS-C-?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build status](https://ci.appveyor.com/api/projects/status/w40gyl8c2x2wy5su/branch/master?svg=true)](https://ci.appveyor.com/project/MichaelTheShifter/shiftos-c/branch/master)
 
 Welcome to the official C# rewrite of the original ShiftOS 0.0.9. It is led by Michael VanOverbeek and developed by the community.
 
