@@ -156,7 +156,7 @@ namespace ShiftOS
                 {
                     mod(func + $"(\"{API.OpenGUIDs[win]}\")");
                 };
-            });
+            }); 
             mod.on_window_titlebar_redraw += new Action<ShiftOSDesktop, string>((desktop, func) =>
             {
                 desktop.TitlebarReset += (win) =>
