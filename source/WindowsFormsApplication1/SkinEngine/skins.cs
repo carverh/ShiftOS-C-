@@ -10,6 +10,7 @@ using System.Drawing.Imaging;
 
 namespace Skinning
 {
+    [Obsolete("ShiftOS is moving to the new ShiftUI framework which has a built-in skinning engine. This Skin class is mostly un-needed now.")]
     public class Skin {
         //Widget Positions
         public string ALPosition = "Top";
@@ -561,29 +562,21 @@ namespace Skinning
         /// </summary>
         public static void loadskin()
         {
-            if(Directory.Exists(Paths.LoadedSkin))
+            if (Directory.Exists(Paths.LoadedSkin))
             {
-                try {
-                    string rawData = File.ReadAllText(Paths.LoadedSkin + "data.json");
-                    loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
-                    if (File.Exists(Paths.LoadedSkin + "panels.json"))
-                    {
-                        string panels = File.ReadAllText(Paths.LoadedSkin + "panels.json");
-                        loadedSkin.DesktopPanels = JsonConvert.DeserializeObject<List<DesktopPanel>>(panels);
-                        LoadPanels();
-                    }
-                    loadimages();
-                    LoadEmbeddedNamePack();
-                }
-                catch
+                string rawData = File.ReadAllText(Paths.LoadedSkin + "data.json");
+                loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
+                if (File.Exists(Paths.LoadedSkin + "panels.json"))
                 {
-                    //No skin to load.
-                    loadedSkin = new Skin();
-                    loadedskin_images = new Images();
-                    saveskin();
-
+                    string panels = File.ReadAllText(Paths.LoadedSkin + "panels.json");
+                    loadedSkin.DesktopPanels = JsonConvert.DeserializeObject<List<DesktopPanel>>(panels);
+                    LoadPanels();
                 }
-            } else
+                loadimages();
+                LoadEmbeddedNamePack();
+
+            }
+            else
             {
                 loadedSkin = new Skin();
                 loadedskin_images = new Images();

@@ -51,7 +51,7 @@ namespace ShiftOS
         public void SetLanguage(SyntaxSettings.Language lang)
         {
             Color white = Color.Black;
-            Color keyword = Color.Red;
+            Color keyword = Color.Orange;
             Color integer = Color.LightGreen;
             Color comment = Color.DarkGray;
             Color str = Color.Orange;
@@ -76,7 +76,7 @@ namespace ShiftOS
             switch (lang)
             {
                 case SyntaxSettings.Language.Lua:
-                    var kw = new List<string>() { "function", "local", "return", "if", "else", "elseif", "while", "true", "do", "next", "end", "for", "pairs", "in", "{", "}", "false", "=", "+", "-", "/", "*", "..", "," };
+                    var kw = new List<string>() { "function", "then", "local", "return", "if", "else", "elseif", "while", "true", "do", "next", "end", "for", "pairs", "in", "{", "}", "false", "=", "+", "-", "/", "*", "..", "," };
                     Settings.Keywords.Clear();
                     foreach (var k in kw)
                     {
