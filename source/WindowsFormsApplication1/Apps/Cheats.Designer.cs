@@ -32,7 +32,6 @@
             this.progressDisplay = new System.Windows.Forms.ProgressBar();
             this.LogBox = new System.Windows.Forms.TextBox();
             this.AddMoney = new System.Windows.Forms.Button();
-            this.Online = new System.Windows.Forms.Button();
             this.AddMoneyQty = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -78,17 +77,6 @@
             this.AddMoney.UseVisualStyleBackColor = true;
             this.AddMoney.Click += new System.EventHandler(this.AddMoney_Click);
             // 
-            // Online
-            // 
-            this.Online.Enabled = false;
-            this.Online.Location = new System.Drawing.Point(12, 213);
-            this.Online.Name = "Online";
-            this.Online.Size = new System.Drawing.Size(152, 23);
-            this.Online.TabIndex = 4;
-            this.Online.Text = "Win Online";
-            this.Online.UseVisualStyleBackColor = true;
-            this.Online.Click += new System.EventHandler(this.button2_Click);
-            // 
             // AddMoneyQty
             // 
             this.AddMoneyQty.Location = new System.Drawing.Point(30, 96);
@@ -112,7 +100,6 @@
             this.ClientSize = new System.Drawing.Size(524, 386);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddMoneyQty);
-            this.Controls.Add(this.Online);
             this.Controls.Add(this.AddMoney);
             this.Controls.Add(this.LogBox);
             this.Controls.Add(this.progressDisplay);
@@ -132,7 +119,6 @@
         private System.Windows.Forms.ProgressBar progressDisplay;
         private System.Windows.Forms.TextBox LogBox;
         private System.Windows.Forms.Button AddMoney;
-        private System.Windows.Forms.Button Online;
         private System.Windows.Forms.TextBox AddMoneyQty;
         private System.Windows.Forms.Label label1;
     }
