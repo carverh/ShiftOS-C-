@@ -109,6 +109,9 @@
     <Compile Include="Controls\SyntaxHighlighter.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\WinFormsHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Engine\AudioResourceClient.cs" />
     <Compile Include="Apps\BitnoteConverter.cs">
       <SubType>Form</SubType>

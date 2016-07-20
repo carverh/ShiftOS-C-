@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C56E34D0-4749-4A73-9469-BCCD063569CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ShiftUI</RootNamespace>
+    <AssemblyName>ShiftUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="Accessibility" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoDevelop.NUnit, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.Gettext, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="Microsoft.Build.Utilities.v12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="create-keyboards">
+      <HintPath>..\..\..\mono\mcs\class\System.Windows.Forms\resources\create-keyboards.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Design\Behavior\Adorner.cs" />
+    <Compile Include="Design\Behavior\Behavior.cs" />
+    <Compile Include="Design\Behavior\BehaviorDragDropEventArgs.cs" />
+    <Compile Include="Design\Behavior\BehaviorDragDropEventHandler.cs" />
+    <Compile Include="Design\Behavior\BehaviorService.cs" />
+    <Compile Include="Design\Behavior\BehaviorServiceAdornerCollection.cs" />
+    <Compile Include="Design\Behavior\BehaviorServiceAdornerCollectionEnumerator.cs" />
+    <Compile Include="Design\Behavior\ComponentGlyph.cs" />
+    <Compile Include="Design\Behavior\ControlBodyGlyph.cs" />
+    <Compile Include="Design\Behavior\Glyph.cs" />
+    <Compile Include="Design\Behavior\GlyphCollection.cs" />
+    <Compile Include="Design\Behavior\GlyphSelectionType.cs" />
+    <Compile Include="Design\Behavior\SnapLine.cs" />
+    <Compile Include="Design\Behavior\SnapLinePriority.cs" />
+    <Compile Include="Design\Behavior\SnapLineType.cs" />
+    <Compile Include="Design\ComponentDesigner.cs" />
+    <Compile Include="Design\ComponentTray.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\ControlDataObject.cs" />
+    <Compile Include="Design\ControlDesigner.cs" />
+    <Compile Include="Design\DefaultMenuCommands.cs" />
+    <Compile Include="Design\DocumentDesigner.cs" />
+    <Compile Include="Design\FormDocumentDesigner.cs" />
+    <Compile Include="Design\IMenuEditorService.cs" />
+    <Compile Include="Design\IMessageReceiver.cs" />
+    <Compile Include="Design\IUISelectionService.cs" />
+    <Compile Include="Design\Native.cs" />
+    <Compile Include="Design\ParentControlDesigner.cs" />
+    <Compile Include="Design\ScrollableControlDesigner.cs" />
+    <Compile Include="Design\SelectionFrame.cs" />
+    <Compile Include="Design\SelectionRules.cs" />
+    <Compile Include="Design\UISelectionService.cs" />
+    <Compile Include="Design\WndProcRouter.cs" />
+    <Compile Include="Dialogs\StringArrayDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\GridItem.cs" />
+    <Compile Include="Internal\GridItemType.cs" />
+    <Compile Include="Internal\PropertySort.cs" />
+    <Compile Include="Internal\PropertyTabChangedEventArgs.cs" />
+    <Compile Include="Internal\PropertyTabChangedEventHandler.cs" />
+    <Compile Include="Internal\PropertyValueChangedEventArgs.cs" />
+    <Compile Include="Internal\PropertyValueChangedEventHandler.cs" />
+    <Compile Include="Internal\SelectedGridItemChangedEventArgs.cs" />
+    <Compile Include="Internal\SelectedGridItemChangedEventHandler.cs" />
+    <Compile Include="Internal\ToolBarAppearance.cs" />
+    <Compile Include="Internal\ToolBarButtonStyle.cs" />
+    <Compile Include="Internal\ToolBarTextAlign.cs" />
+    <Compile Include="Internal\XplatUICosmos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Internal\X11Atoms.cs" />
+    <Compile Include="Internal\X11Display.cs" />
+    <Compile Include="Internal\X11Exception.cs" />
+    <Compile Include="Internal\X11Hwnd.cs" />
+    <Compile Include="Internal\X11RootHwnd.cs" />
+    <Compile Include="Internal\X11ThreadQueue.cs" />
+    <Compile Include="Internal\Xlib.cs" />
+    <Compile Include="Internal\X11Clipboard.cs" />
+    <Compile Include="Internal\X11DesktopColors.cs" />
+    <Compile Include="Internal\X11Dnd.cs" />
+    <Compile Include="Internal\X11Keyboard.cs" />
+    <Compile Include="Internal\X11Structs.cs" />
+    <Compile Include="Internal\XEventQueue.cs" />
+    <Compile Include="Internal\XplatUI.cs" />
+    <Compile Include="Internal\XplatUICarbon.cs" />
+    <Compile Include="Internal\XplatUIDriver.cs" />
+    <Compile Include="Internal\XplatUIStructs.cs" />
+    <Compile Include="Internal\XplatUIWin32.cs" />
+    <Compile Include="Internal\XplatUIX11.cs" />
+    <Compile Include="Internal\Hwnd.cs" />
+    <Compile Include="Internal\ApplicationHandler.cs" />
+    <Compile Include="Internal\ControlHandler.cs" />
+    <Compile Include="Internal\Cursor.cs" />
+    <Compile Include="Internal\Dnd.cs" />
+    <Compile Include="Internal\Enums.cs" />
+    <Compile Include="Internal\EventHandler.cs" />
+    <Compile Include="Internal\EventHandlerBase.cs" />
+    <Compile Include="Internal\HIObjectHandler.cs" />
+    <Compile Include="Internal\IEventHandler.cs" />
+    <Compile Include="Internal\KeyboardHandler.cs" />
+    <Compile Include="Internal\MouseHandler.cs" />
+    <Compile Include="Internal\Pasteboard.cs" />
+    <Compile Include="Internal\Structs.cs" />
+    <Compile Include="Internal\WindowHandler.cs" />
+    <Compile Include="Enums\MouseButtons.cs" />
+    <Compile Include="Internal\ToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\ShiftOS.cs" />
+    <Compile Include="Theming\ThemeElementsMemphis.cs" />
+    <Compile Include="Theming\ThemeSkinnable.cs" />
+    <Compile Include="Widget.cs" />
+    <Compile Include="Internal\IWin32Window.cs" />
+    <Compile Include="Internal\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\ToolTipIcon.cs" />
+    <Compile Include="Internal\IBindableComponent.cs" />
+    <Compile Include="Internal\IBounds.cs" />
+    <Compile Include="Internal\IButtonControl.cs" />
+    <Compile Include="Internal\ICommandExecutor.cs" />
+    <Compile Include="Internal\IComponentEditorPageSite.cs" />
+    <Compile Include="Internal\IContainerControl.cs" />
+    <Compile Include="Internal\ICurrencyManagerProvider.cs" />
+    <Compile Include="Internal\IDataGridColumnStyleEditingNotificationService.cs" />
+    <Compile Include="Internal\IDataObject.cs" />
+    <Compile Include="Internal\IDropTarget.cs" />
+    <Compile Include="Internal\IFeatureSupport.cs" />
+    <Compile Include="Internal\IFileReaderService.cs" />
+    <Compile Include="Internal\IKeyFilter.cs" />
+    <Compile Include="Internal\Padding.cs" />
+    <Compile Include="Enums\AccessibleEvents.cs" />
+    <Compile Include="Enums\AccessibleNavigation.cs" />
+    <Compile Include="Enums\AccessibleObject.cs" />
+    <Compile Include="Enums\AccessibleRole.cs" />
+    <Compile Include="Enums\AccessibleSelection.cs" />
+    <Compile Include="Enums\AccessibleStates.cs" />
+    <Compile Include="Enums\AmbientProperties.cs" />
+    <Compile Include="Enums\AnchorStyles.cs" />
+    <Compile Include="Enums\Appearance.cs" />
+    <Compile Include="Enums\ImageLayout.cs" />
+    <Compile Include="Internal\ControlBindingsCollection.cs" />
+    <Compile Include="Enums\AutoScaleMode.cs" />
+    <Compile Include="Enums\AutoSizeMode.cs" />
+    <Compile Include="Internal\NativeWindow.cs" />
+    <Compile Include="Internal\ContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\BindingContext.cs" />
+    <Compile Include="Internal\Message.cs" />
+    <Compile Include="Internal\IWindowTarget.cs" />
+    <Compile Include="Internal\ArrangedElementCollection.cs" />
+    <Compile Include="Internal\DefaultLayout.cs" />
+    <Compile Include="Internal\FlowLayout.cs" />
+    <Compile Include="Internal\LayoutEngine.cs" />
+    <Compile Include="Internal\TableLayout.cs" />
+    <Compile Include="Internal\TableLayoutSettingsTypeConverter.cs" />
+    <Compile Include="Internal\BindingsCollection.cs" />
+    <Compile Include="ToolStrip\ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripArrowRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripArrowRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripContentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripContentPanelRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripContentPanelRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripControlHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripDropDownClosedEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownClosedEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownCloseReason.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownClosingEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownClosingEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownDirection.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripDropDownItemAccessibleObject.cs" />
+    <Compile Include="ToolStrip\ToolStripDropDownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripGripDisplayStyle.cs" />
+    <Compile Include="ToolStrip\ToolStripGripRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripGripRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripGripStyle.cs" />
+    <Compile Include="ToolStrip\ToolStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripItemAlignment.cs" />
+    <Compile Include="ToolStrip\ToolStripItemClickedEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripItemClickedEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripItemCollection.cs" />
+    <Compile Include="ToolStrip\ToolStripItemDisplayStyle.cs" />
+    <Compile Include="ToolStrip\ToolStripItemEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripItemEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripItemEventType.cs" />
+    <Compile Include="ToolStrip\ToolStripItemImageRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripItemImageRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripItemImageScaling.cs" />
+    <Compile Include="ToolStrip\ToolStripItemOverflow.cs" />
+    <Compile Include="ToolStrip\ToolStripItemPlacement.cs" />
+    <Compile Include="ToolStrip\ToolStripItemRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripItemRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripItemTextRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripItemTextRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripLayoutStyle.cs" />
+    <Compile Include="ToolStrip\ToolStripManager.cs" />
+    <Compile Include="ToolStrip\ToolStripManagerRenderMode.cs" />
+    <Compile Include="ToolStrip\ToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripOverflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripOverflowButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripPanelRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripPanelRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripPanelRow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripProfessionalRenderer.cs" />
+    <Compile Include="ToolStrip\ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripRenderer.cs" />
+    <Compile Include="ToolStrip\ToolStripRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripRenderMode.cs" />
+    <Compile Include="ToolStrip\ToolStripSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripSeparatorRenderEventArgs.cs" />
+    <Compile Include="ToolStrip\ToolStripSeparatorRenderEventHandler.cs" />
+    <Compile Include="ToolStrip\ToolStripSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripSplitStackLayout.cs" />
+    <Compile Include="ToolStrip\ToolStripStatusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripStatusLabelBorderSides.cs" />
+    <Compile Include="ToolStrip\ToolStripSystemRenderer.cs" />
+    <Compile Include="ToolStrip\ToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStrip\ToolStripTextDirection.cs" />
+    <Compile Include="Enums\CheckState.cs" />
+    <Compile Include="Design\ComponentEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ComponentEditorPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\EventsTab.cs" />
+    <Compile Include="Design\IUIService.cs" />
+    <Compile Include="Design\IWindowsFormsEditorService.cs" />
+    <Compile Include="Design\PropertyTab.cs" />
+    <Compile Include="Design\ToolStripItemDesignerAvailability.cs" />
+    <Compile Include="Design\ToolStripItemDesignerAvailabilityAttribute.cs" />
+    <Compile Include="Design\WindowsFormsComponentEditor.cs" />
+    <Compile Include="Theming\ThemeElements.cs" />
+    <Compile Include="Theming\ThemeElementsNice.cs" />
+    <Compile Include="Theming\Nice\TabControlPainter.cs" />
+    <Compile Include="Internal\BaseCollection.cs" />
+    <Compile Include="ScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\CategoryGridEntry.cs" />
+    <Compile Include="Widgets\CollectionEditor.cs" />
+    <Compile Include="Widgets\GridEntry.cs" />
+    <Compile Include="Widgets\GridItemCollection.cs" />
+    <Compile Include="Widgets\ImplicitHScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ImplicitVScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\HScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\IRootGridEntry.cs" />
+    <Compile Include="Widgets\PropertiesTab.cs" />
+    <Compile Include="Widgets\PropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\PropertyGridCommands.cs" />
+    <Compile Include="Widgets\PropertyGridTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\PropertyGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\RootGridEntry.cs" />
+    <Compile Include="Widgets\UserWidget.cs">
+      <SubType>UserWidget</SubType>
+    </Compile>
+    <Compile Include="Widgets\VScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\ImageIndexConverter.cs" />
+    <Compile Include="Internal\ImageKeyConverter.cs" />
+    <Compile Include="Internal\ImageList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\ImageListConverter.cs" />
+    <Compile Include="Internal\ImageListStreamer.cs" />
+    <Compile Include="Internal\IToolStripData.cs" />
+    <Compile Include="Widgets\SizeGrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\SizeGripStyle.cs" />
+    <Compile Include="Enums\ArrowDirection.cs" />
+    <Compile Include="Widgets\ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\Orientation.cs" />
+    <Compile Include="Widgets\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\TextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormClosedEventArgs.cs" />
+    <Compile Include="Form\FormClosedEventHandler.cs" />
+    <Compile Include="Form\FormClosingEventArgs.cs" />
+    <Compile Include="Form\FormClosingEventHandler.cs" />
+    <Compile Include="Form\FormCollection.cs" />
+    <Compile Include="Form\FormStartPosition.cs" />
+    <Compile Include="Form\FormWindowManager.cs" />
+    <Compile Include="Form\FormWindowState.cs" />
+    <Compile Include="Theming\ThemeElementsDefault.cs" />
+    <Compile Include="Theming\Default\ButtonPainter.cs" />
+    <Compile Include="Theming\Default\CheckBoxPainter.cs" />
+    <Compile Include="Theming\Default\LabelPainter.cs" />
+    <Compile Include="Theming\Default\LinkLabelPainter.cs" />
+    <Compile Include="Theming\Default\RadioButtonPainter.cs" />
+    <Compile Include="Theming\Default\TabControlPainter.cs" />
+    <Compile Include="Theming\Default\ToolStripPainter.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\BackgroundType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\BooleanProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\BorderType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\CheckBoxState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ColorProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ComboBoxState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ContentAlignment.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\EdgeEffects.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\EdgeStyle.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\Edges.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\EnumProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\FilenameProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\FillType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\FontProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\GlyphFontSizingType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\GlyphType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\GroupBoxState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\GtkPlus.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\HitTestCode.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\HitTestOptions.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\HorizontalAlign.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\IVisualStyles.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\IconEffect.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ImageOrientation.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ImageSelectType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\IntegerProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\MarginProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\OffsetType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\PointProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\PushButtonState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\RadioButtonState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ScrollBarArrowButtonState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ScrollBarSizeBoxState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ScrollBarState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\SizingType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\StringProperty.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TabItemState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TextBoxState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TextMetrics.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TextMetricsCharacterSet.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TextMetricsPitchAndFamilyValues.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TextShadowType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ThemeSizeType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\ToolBarState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TrackBarThumbState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\TrueSizeScalingType.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\UXTheme.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VerticalAlignment.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStyleElement.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStyleInformation.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStyleRenderer.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStyleState.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStylesEngine.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStylesGtkPlus.cs" />
+    <Compile Include="System.Windows.Forms.VisualStyles\VisualStylesNative.cs" />
+    <Compile Include="Internal\InternalWindowManager.cs" />
+    <Compile Include="Internal\Clipboard.cs" />
+    <Compile Include="Internal\AsyncMethodData.cs" />
+    <Compile Include="Internal\AsyncMethodResult.cs" />
+    <Compile Include="Internal\PaintEventArgs.cs" />
+    <Compile Include="Internal\PaintEventHandler.cs" />
+    <Compile Include="Enums\DragAction.cs" />
+    <Compile Include="Enums\DragDropEffects.cs" />
+    <Compile Include="Enums\Keys.cs" />
+    <Compile Include="Enums\FrameStyle.cs" />
+    <Compile Include="Enums\FormBorderStyle.cs" />
+    <Compile Include="Menu\Menu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuAPI.cs" />
+    <Compile Include="Menu\MenuGlyph.cs" />
+    <Compile Include="Menu\MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuMerge.cs" />
+    <Compile Include="Menu\MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\CreateParams.cs" />
+    <Compile Include="Enums\LeftRightAlignment.cs" />
+    <Compile Include="Enums\PowerLineStatus.cs" />
+    <Compile Include="Enums\PowerState.cs" />
+    <Compile Include="Enums\PowerStatus.cs" />
+    <Compile Include="Internal\Screen.cs" />
+    <Compile Include="Widgets\NotifyIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\Cursors.cs" />
+    <Compile Include="Cursor.cs" />
+    <Compile Include="Mouse\DragEventArgs.cs" />
+    <Compile Include="Mouse\DragEventHandler.cs" />
+    <Compile Include="Keyboard\KeyboardLayouts.cs" />
+    <Compile Include="Keyboard\KeyEventArgs.cs" />
+    <Compile Include="Keyboard\KeyEventHandler.cs" />
+    <Compile Include="Keyboard\KeyPressEventArgs.cs" />
+    <Compile Include="Keyboard\KeyPressEventHandler.cs" />
+    <Compile Include="Internal\DataObject.cs" />
+    <Compile Include="Internal\PopupEventArgs.cs" />
+    <Compile Include="Internal\PopupEventHandler.cs" />
+    <Compile Include="Internal\ControlEventArgs.cs" />
+    <Compile Include="Internal\ControlEventHandler.cs" />
+    <Compile Include="Internal\DrawToolTipEventArgs.cs" />
+    <Compile Include="Internal\DrawToolTipEventHandler.cs" />
+    <Compile Include="Mouse\MouseEventArgs.cs" />
+    <Compile Include="Mouse\MouseEventHandler.cs" />
+    <Compile Include="Enums\DataSourceUpdateMode.cs" />
+    <Compile Include="Enums\Border3DStyle.cs" />
+    <Compile Include="Enums\BorderStyle.cs" />
+    <Compile Include="Internal\PreProcessControlState.cs" />
+    <Compile Include="Enums\ImeMode.cs" />
+    <Compile Include="Enums\ControlStyles.cs" />
+    <Compile Include="Enums\DockStyle.cs" />
+    <Compile Include="Enums\RightToLeft.cs" />
+    <Compile Include="Events\GiveFeedbackEventArgs.cs" />
+    <Compile Include="Events\GiveFeedbackEventHandler.cs" />
+    <Compile Include="Events\QueryAccessibilityHelpEventArgs.cs" />
+    <Compile Include="Events\QueryAccessibilityHelpEventHandler.cs" />
+    <Compile Include="Events\QueryContinueDragEventArgs.cs" />
+    <Compile Include="Events\QueryContinueDragEventHandler.cs" />
+    <Compile Include="Internal\GetChildAtPointSkip.cs" />
+    <Compile Include="Internal\BoundsSpecified.cs" />
+    <Compile Include="Enums\HorizontalAlignment.cs" />
+    <Compile Include="Events\UICues.cs" />
+    <Compile Include="Events\UICuesEventArgs.cs" />
+    <Compile Include="Events\UICuesEventHandler.cs" />
+    <Compile Include="Events\HelpEventArgs.cs" />
+    <Compile Include="Events\HelpEventHandler.cs" />
+    <Compile Include="Events\InvalidateEventArgs.cs" />
+    <Compile Include="Events\InvalidateEventHandler.cs" />
+    <Compile Include="Events\LayoutEventArgs.cs" />
+    <Compile Include="Events\LayoutEventHandler.cs" />
+    <Compile Include="Events\PreviewKeyDownEventArgs.cs" />
+    <Compile Include="Events\PreviewKeyDownEventHandler.cs" />
+    <Compile Include="Enums\DialogResult.cs" />
+    <Compile Include="Internal\CurrencyManager.cs" />
+    <Compile Include="Internal\BindingManagerBase.cs" />
+    <Compile Include="Events\BindingManagerDataErrorEventArgs.cs" />
+    <Compile Include="Events\BindingManagerDataErrorEventHandler.cs" />
+    <Compile Include="Internal\Binding.cs" />
+    <Compile Include="Internal\HScrollProperties.cs" />
+    <Compile Include="Internal\VScrollProperties.cs" />
+    <Compile Include="Internal\ScrollProperties.cs" />
+    <Compile Include="Events\ScrollEventArgs.cs" />
+    <Compile Include="Events\ScrollEventHandler.cs" />
+    <Compile Include="Events\ScrollEventType.cs" />
+    <Compile Include="Internal\LayoutSettings.cs" />
+    <Compile Include="Internal\FlowLayoutSettings.cs" />
+    <Compile Include="Widgets\TableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\TableLayoutSettings.cs" />
+    <Compile Include="Enums\MergeAction.cs" />
+    <Compile Include="Enums\TextImageRelation.cs" />
+    <Compile Include="Internal\AutoCompleteSource.cs" />
+    <Compile Include="Internal\AutoCompleteStringCollection.cs" />
+    <Compile Include="Enums\AutoCompleteMode.cs" />
+    <Compile Include="Enums\ComboBoxStyle.cs" />
+    <Compile Include="Enums\FlatButtonAppearance.cs" />
+    <Compile Include="Enums\FlatStyle.cs" />
+    <Compile Include="Internal\BindingMemberInfo.cs" />
+    <Compile Include="Events\ListControlConvertEventArgs.cs" />
+    <Compile Include="Events\ListControlConvertEventHandler.cs" />
+    <Compile Include="Events\ConvertEventArgs.cs" />
+    <Compile Include="Events\ConvertEventHandler.cs" />
+    <Compile Include="Events\ItemChangedEventArgs.cs" />
+    <Compile Include="Events\ItemChangedEventHandler.cs" />
+    <Compile Include="Enums\DrawMode.cs" />
+    <Compile Include="Enums\ButtonState.cs" />
+    <Compile Include="Events\DrawItemEventArgs.cs" />
+    <Compile Include="Events\DrawItemEventHandler.cs" />
+    <Compile Include="Events\MeasureItemEventArgs.cs" />
+    <Compile Include="Events\MeasureItemEventHandler.cs" />
+    <Compile Include="Enums\CharacterCasing.cs" />
+    <Compile Include="Internal\RichTextBoxScrollBars.cs" />
+    <Compile Include="Internal\TextControl.cs" />
+    <Compile Include="RTF\Charcode.cs" />
+    <Compile Include="RTF\Charset.cs" />
+    <Compile Include="RTF\CharsetFlags.cs" />
+    <Compile Include="RTF\CharsetType.cs" />
+    <Compile Include="RTF\ClassDelegate.cs" />
+    <Compile Include="RTF\Color.cs" />
+    <Compile Include="RTF\DestinationDelegate.cs" />
+    <Compile Include="RTF\Font.cs" />
+    <Compile Include="RTF\KeysInit.cs" />
+    <Compile Include="RTF\KeyStruct.cs" />
+    <Compile Include="RTF\Major.cs" />
+    <Compile Include="RTF\Minor.cs" />
+    <Compile Include="RTF\Picture.cs" />
+    <Compile Include="RTF\RTF.cs" />
+    <Compile Include="RTF\RTFException.cs" />
+    <Compile Include="RTF\StandardCharCode.cs" />
+    <Compile Include="RTF\StandardCharName.cs" />
+    <Compile Include="RTF\Style.cs" />
+    <Compile Include="RTF\StyleElement.cs" />
+    <Compile Include="RTF\StyleType.cs" />
+    <Compile Include="RTF\test.cs" />
+    <Compile Include="RTF\TextMap.cs" />
+    <Compile Include="RTF\TokenClass.cs" />
+    <Compile Include="Internal\LineTag.cs" />
+    <Compile Include="Enums\DataFormats.cs" />
+    <Compile Include="Enums\ScrollBars.cs" />
+    <Compile Include="Enums\ValidationConstraints.cs" />
+    <Compile Include="Enums\AutoValidate.cs" />
+    <Compile Include="Internal\TextFormatFlags.cs" />
+    <Compile Include="Link\LinkArea.cs" />
+    <Compile Include="Link\LinkBehavior.cs" />
+    <Compile Include="Link\LinkClickedEventArgs.cs" />
+    <Compile Include="Link\LinkClickedEventHandler.cs" />
+    <Compile Include="Link\LinkConverter.cs" />
+    <Compile Include="Link\LinkLabelLinkClickedEventArgs.cs" />
+    <Compile Include="Link\LinkLabelLinkClickedEventHandler.cs" />
+    <Compile Include="Link\LinkState.cs" />
+    <Compile Include="Widgets\LinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\ProfessionalColorTable.cs" />
+    <Compile Include="Widgets\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\ProgressBarStyle.cs" />
+    <Compile Include="Internal\MdiClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\MdiControlStrip.cs" />
+    <Compile Include="Internal\MdiLayout.cs" />
+    <Compile Include="Internal\MdiWindowManager.cs" />
+    <Compile Include="Internal\MainMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Application.cs" />
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="Enums\CloseReason.cs" />
+    <Compile Include="Events\InputLanguageChangedEventArgs.cs" />
+    <Compile Include="Events\InputLanguageChangedEventHandler.cs" />
+    <Compile Include="Events\InputLanguageChangingEventArgs.cs" />
+    <Compile Include="Events\InputLanguageChangingEventHandler.cs" />
+    <Compile Include="Keyboard\InputLanguage.cs" />
+    <Compile Include="Keyboard\InputLanguageCollection.cs" />
+    <Compile Include="Events\TreeViewEventArgs.cs" />
+    <Compile Include="Events\TreeViewEventHandler.cs" />
+    <Compile Include="Enums\MessageBoxButtons.cs" />
+    <Compile Include="Theming\ThemeEngine.cs" />
+    <Compile Include="Internal\Theme.cs" />
+    <Compile Include="Widgets\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\TabAlignment.cs" />
+    <Compile Include="Enums\TabAppearance.cs" />
+    <Compile Include="Enums\TabDrawMode.cs" />
+    <Compile Include="Enums\TabSizeMode.cs" />
+    <Compile Include="Widgets\TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ScrollButton.cs" />
+    <Compile Include="Enums\ColorDepth.cs" />
+    <Compile Include="Widgets\CaptionButton.cs" />
+    <Compile Include="Enums\TextDataFormat.cs" />
+    <Compile Include="Enums\Shortcut.cs" />
+    <Compile Include="Enums\DrawItemState.cs" />
+    <Compile Include="Enums\BatteryChargeStatus.cs" />
+    <Compile Include="Events\BindingCompleteEventArgs.cs" />
+    <Compile Include="Events\BindingCompleteEventHandler.cs" />
+    <Compile Include="Enums\BindingCompleteState.cs" />
+    <Compile Include="Enums\ControlUpdateMode.cs" />
+    <Compile Include="Internal\BindingCompleteContext.cs" />
+    <Compile Include="Enums\ScrollOrientation.cs" />
+    <Compile Include="Enums\FlowDirection.cs" />
+    <Compile Include="Events\TableLayoutCellPaintEventArgs.cs" />
+    <Compile Include="Events\TableLayoutCellPaintEventHandler.cs" />
+    <Compile Include="Events\TableLayoutColumnStyleCollection.cs" />
+    <Compile Include="Events\TableLayoutControlCollection.cs" />
+    <Compile Include="Events\TableLayoutPanelCellBorderStyle.cs" />
+    <Compile Include="Events\TableLayoutPanelCellPosition.cs" />
+    <Compile Include="Events\TableLayoutPanelGrowStyle.cs" />
+    <Compile Include="Events\TableLayoutRowStyleCollection.cs" />
+    <Compile Include="Events\TableLayoutStyle.cs" />
+    <Compile Include="Events\TableLayoutStyleCollection.cs" />
+    <Compile Include="Internal\ButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\Line.cs" />
+    <Compile Include="Internal\RichTextBoxFinds.cs" />
+    <Compile Include="Internal\IMessageFilter.cs" />
+    <Compile Include="Enums\UnhandledExceptionMode.cs" />
+    <Compile Include="Enums\TreeViewAction.cs" />
+    <Compile Include="Widgets\TreeNode.cs" />
+    <Compile Include="Enums\ArrangeDirection.cs" />
+    <Compile Include="Enums\ArrangeStartingPosition.cs" />
+    <Compile Include="Widgets\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\CheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\DateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ListViewItem.cs" />
+    <Compile Include="ListView\ListViewAlignment.cs" />
+    <Compile Include="ListView\ListViewGroup.cs" />
+    <Compile Include="ListView\ListViewGroupCollection.cs" />
+    <Compile Include="ListView\ListViewHitTestInfo.cs" />
+    <Compile Include="ListView\ListViewHitTestLocations.cs" />
+    <Compile Include="ListView\ListViewInsertionMark.cs" />
+    <Compile Include="ListView\ListViewItemConverter.cs" />
+    <Compile Include="ListView\ListViewItemMouseHoverEventArgs.cs" />
+    <Compile Include="ListView\ListViewItemMouseHoverEventHandler.cs" />
+    <Compile Include="ListView\ListViewItemSelectionChangedEventArgs.cs" />
+    <Compile Include="ListView\ListViewItemSelectionChangedEventHandler.cs" />
+    <Compile Include="ListView\ListViewItemStates.cs" />
+    <Compile Include="ListView\ListViewVirtualItemsSelectionRangeChangedEventArgs.cs" />
+    <Compile Include="ListView\ListViewVirtualItemsSelectionRangeChangedEventHandler.cs" />
+    <Compile Include="ListView\ColumnClickEventArgs.cs" />
+    <Compile Include="ListView\ColumnClickEventHandler.cs" />
+    <Compile Include="ListView\ColumnHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\ColumnHeaderAutoResizeStyle.cs" />
+    <Compile Include="ListView\ColumnHeaderConverter.cs" />
+    <Compile Include="ListView\ColumnHeaderStyle.cs" />
+    <Compile Include="ListView\ColumnReorderedEventArgs.cs" />
+    <Compile Include="ListView\ColumnReorderedEventHandler.cs" />
+    <Compile Include="ListView\ColumnStyle.cs" />
+    <Compile Include="ListView\ColumnWidthChangedEventArgs.cs" />
+    <Compile Include="ListView\ColumnWidthChangedEventHandler.cs" />
+    <Compile Include="ListView\ColumnWidthChangingEventArgs.cs" />
+    <Compile Include="ListView\ColumnWidthChangingEventHandler.cs" />
+    <Compile Include="Widgets\PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\PictureBoxSizeMode.cs" />
+    <Compile Include="Widgets\MonthCalendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\Day.cs" />
+    <Compile Include="Widgets\RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\StatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\ButtonBorderStyle.cs" />
+    <Compile Include="Enums\Border3DSide.cs" />
+    <Compile Include="Events\TabControlCancelEventArgs.cs" />
+    <Compile Include="Events\TabControlCancelEventHandler.cs" />
+    <Compile Include="Events\TabControlEventArgs.cs" />
+    <Compile Include="Events\TabControlEventHandler.cs" />
+    <Compile Include="Enums\RowStyle.cs" />
+    <Compile Include="Enums\TabControlAction.cs" />
+    <Compile Include="Enums\SizeType.cs" />
+    <Compile Include="Internal\TreeNodeCollection.cs" />
+    <Compile Include="Internal\OwnerDrawPropertyBag.cs" />
+    <Compile Include="Enums\SelectionMode.cs" />
+    <Compile Include="Events\ItemCheckedEventArgs.cs" />
+    <Compile Include="Events\ItemCheckedEventHandler.cs" />
+    <Compile Include="Events\ItemCheckEventArgs.cs" />
+    <Compile Include="Events\ItemCheckEventHandler.cs" />
+    <Compile Include="Enums\DateTimePickerFormat.cs" />
+    <Compile Include="Events\DateBoldEventArgs.cs" />
+    <Compile Include="Events\DateBoldEventHandler.cs" />
+    <Compile Include="Events\DateRangeEventArgs.cs" />
+    <Compile Include="Events\DateRangeEventHandler.cs" />
+    <Compile Include="Enums\ItemActivation.cs" />
+    <Compile Include="Enums\View.cs" />
+    <Compile Include="Enums\SortOrder.cs" />
+    <Compile Include="Events\LabelEditEventArgs.cs" />
+    <Compile Include="Events\LabelEditEventHandler.cs" />
+    <Compile Include="Events\DrawListViewColumnHeaderEventArgs.cs" />
+    <Compile Include="Events\DrawListViewColumnHeaderEventHandler.cs" />
+    <Compile Include="Events\DrawListViewItemEventArgs.cs" />
+    <Compile Include="Events\DrawListViewItemEventHandler.cs" />
+    <Compile Include="Events\DrawListViewSubItemEventArgs.cs" />
+    <Compile Include="Events\DrawListViewSubItemEventHandler.cs" />
+    <Compile Include="Events\ItemDragEventArgs.cs" />
+    <Compile Include="Events\ItemDragEventHandler.cs" />
+    <Compile Include="Events\CacheVirtualItemsEventArgs.cs" />
+    <Compile Include="Events\CacheVirtualItemsEventHandler.cs" />
+    <Compile Include="Events\RetrieveVirtualItemEventArgs.cs" />
+    <Compile Include="Events\RetrieveVirtualItemEventHandler.cs" />
+    <Compile Include="Events\SearchForVirtualItemEventArgs.cs" />
+    <Compile Include="Events\SearchForVirtualItemEventHandler.cs" />
+    <Compile Include="Enums\SearchDirectionHint.cs" />
+    <Compile Include="Enums\ItemBoundsPortion.cs" />
+    <Compile Include="Enums\SelectionRange.cs" />
+    <Compile Include="Widgets\StatusBarPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Events\StatusBarDrawItemEventArgs.cs" />
+    <Compile Include="Events\StatusBarDrawItemEventHandler.cs" />
+    <Compile Include="Events\StatusBarPanelClickEventArgs.cs" />
+    <Compile Include="Events\StatusBarPanelClickEventHandler.cs" />
+    <Compile Include="Enums\TickStyle.cs" />
+    <Compile Include="Events\NodeLabelEditEventArgs.cs" />
+    <Compile Include="Events\NodeLabelEditEventHandler.cs" />
+    <Compile Include="Widgets\LabelEditTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\FixedSizeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\TreeViewDrawMode.cs" />
+    <Compile Include="Internal\TreeViewHitTestInfo.cs" />
+    <Compile Include="Events\TreeNodeMouseClickEventArgs.cs" />
+    <Compile Include="Events\TreeNodeMouseClickEventHandler.cs" />
+    <Compile Include="Events\TreeNodeMouseHoverEventArgs.cs" />
+    <Compile Include="Events\TreeNodeMouseHoverEventHandler.cs" />
+    <Compile Include="Events\DrawTreeNodeEventArgs.cs" />
+    <Compile Include="Events\DrawTreeNodeEventHandler.cs" />
+    <Compile Include="Events\TreeViewCancelEventArgs.cs" />
+    <Compile Include="Events\TreeViewCancelEventHandler.cs" />
+    <Compile Include="Enums\StatusBarPanelAutoSize.cs" />
+    <Compile Include="Enums\StatusBarPanelBorderStyle.cs" />
+    <Compile Include="Enums\StatusBarPanelStyle.cs" />
+    <Compile Include="Enums\TreeViewHitTestLocations.cs" />
+    <Compile Include="Enums\TreeNodeStates.cs" />
+    <Compile Include="MonoTODOAttribute.cs" />
+    <Compile Include="Internal\ControlPaint.cs" />
+    <Compile Include="Internal\ToolWindowManager.cs" />
+    <Compile Include="Internal\XplatUIX11-new.cs" />
+    <Compile Include="Internal\SystemInformation.cs" />
+    <Compile Include="Internal\SystemParameter.cs" />
+    <Compile Include="Internal\BootMode.cs" />
+    <Compile Include="Enums\ScreenOrientation.cs" />
+    <Compile Include="Internal\Win32DnD.cs" />
+    <Compile Include="Internal\DebugHelper.cs" />
+    <Compile Include="Internal\Consts.cs" />
+    <Compile Include="Internal\WindowsFormsSynchronizationContext.cs" />
+    <Compile Include="Internal\MethodInvoker.cs" />
+    <Compile Include="Internal\MWFCategoryAttribute.cs" />
+    <Compile Include="Internal\MWFDescriptionAttribute.cs" />
+    <Compile Include="Internal\PaddingConverter.cs" />
+    <Compile Include="Internal\RelatedCurrencyManager.cs" />
+    <Compile Include="Internal\RelatedPropertyManager.cs" />
+    <Compile Include="Internal\PropertyManager.cs" />
+    <Compile Include="Widgets\FlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\DockingAttribute.cs" />
+    <Compile Include="Internal\DockingBehavior.cs" />
+    <Compile Include="Internal\OpacityConverter.cs" />
+    <Compile Include="Internal\RelatedImageListAttribute.cs" />
+    <Compile Include="Internal\TextRenderer.cs" />
+    <Compile Include="Internal\KeysConverter.cs" />
+    <Compile Include="Theming\ThemeElementsVisualStyles.cs" />
+    <Compile Include="Theming\VisualStyles\CheckBoxPainter.cs" />
+    <Compile Include="Theming\VisualStyles\RadioButtonPainter.cs" />
+    <Compile Include="Theming\VisualStyles\TabControlPainter.cs" />
+    <Compile Include="Theming\VisualStyles\ToolStripPainter.cs" />
+    <Compile Include="Design\Consts.cs" />
+    <Compile Include="Widgets\RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\RichTextBoxLanguageOptions.cs" />
+    <Compile Include="Enums\RichTextBoxStreamType.cs" />
+    <Compile Include="Enums\RichTextBoxSelectionTypes.cs" />
+    <Compile Include="Events\ContentsResizedEventArgs.cs" />
+    <Compile Include="Events\ContentsResizedEventHandler.cs" />
+    <Compile Include="Theming\ThemeWin32Classic.cs" />
+    <Compile Include="Internal\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Events\SplitterCancelEventArgs.cs" />
+    <Compile Include="Events\SplitterCancelEventHandler.cs" />
+    <Compile Include="Events\SplitterEventArgs.cs" />
+    <Compile Include="Events\SplitterEventHandler.cs" />
+    <Compile Include="Internal\CursorConverter.cs" />
+    <Compile Include="Internal\ListBindingHelper.cs" />
+    <Compile Include="Internal\ListBindingConverter.cs" />
+    <Compile Include="Internal\TextBoxTextRenderer.cs" />
+    <Compile Include="Dialogs\ThreadExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enums\PreProcessControlState.cs" />
+    <Compile Include="Internal\TreeNodeConverter.cs" />
+    <Compile Include="Internal\TreeViewImageIndexConverter.cs" />
+    <Compile Include="Internal\TreeViewImageKeyConverter.cs" />
+    <Compile Include="Internal\OpenTreeNodeEnumerator.cs" />
+    <Compile Include="Internal\SelectionRangeConverter.cs" />
+    <Compile Include="Internal\CheckBoxRenderer.cs" />
+    <Compile Include="Internal\RadioButtonRenderer.cs" />
+    <Compile Include="Theming\ThemeVisualStyles.cs" />
+    <Compile Include="Internal\ButtonRenderer.cs" />
+    <Compile Include="Internal\GroupBoxRenderer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Internal\MONO-NOTES" />
+    <None Include="Internal\MONO-TODO" />
+    <None Include="Internal\SUI_NOTES.txt" />
+    <None Include="Theming\Nice\.gitattributes" />
+    <None Include="Theming\Default\.gitattributes" />
+    <None Include="RTF\README" />
+    <None Include="RTF\rtf.csproj" />
+    <None Include="RTF\rtf.csproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplitterWE.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="keyboards.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\keyboard_table.bin" />
+    <EmbeddedResource Include="Resources\scan_table.bin" />
+    <EmbeddedResource Include="Resources\vkey_table.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplitterNS.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NWSE.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NESW.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DnDNo.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DnDMove.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DnDLink.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DnDCopy.cur" />
+  </ItemGroup>
+</Project>
