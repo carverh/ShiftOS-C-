@@ -102,13 +102,7 @@ namespace ShiftOS
             get { return _MaxValue; }
             set
             {
-                if (value > this.MinValue)
-                {
-                    _MaxValue = value;
-                }
-                else {
-                    throw new ArgumentOutOfRangeException("The maximum value must be more than the minimum value.");
-                }
+                _MaxValue = value;
             }
         }
 

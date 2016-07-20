@@ -2973,7 +2973,7 @@ namespace ShiftUI
             // border is drawn directly in the Paint method
             if (details && control.HeaderStyle != ColumnHeaderStyle.None)
             {
-                dc.FillRectangle(SystemBrushes.Control,
+                dc.FillRectangle(new SolidBrush(Application.CurrentSkin.ListViewBackground),
                           0, 0, control.TotalWidth, control.Font.Height + 5);
                 if (control.Columns.Count > 0)
                 {
@@ -6923,67 +6923,64 @@ namespace ShiftUI
         private void CPDrawButtonInternal(Graphics dc, Rectangle rectangle, ButtonState state, Pen DarkPen, Pen NormalPen, Pen LightPen)
         {
             // sadly enough, the rectangle gets always filled with a hatchbrush
-            dc.FillRectangle(ResPool.GetHatchBrush(HatchStyle.Percent50,
-                                 Color.FromArgb(Clamp(ColorControl.R + 3, 0, 255),
-                                         ColorControl.G, ColorControl.B),
-                                 ColorControl),
+            dc.FillRectangle(new SolidBrush(Application.CurrentSkin.ButtonBackColor),
                       rectangle.X + 1, rectangle.Y + 1, rectangle.Width - 2, rectangle.Height - 2);
 
             if ((state & ButtonState.All) == ButtonState.All || ((state & ButtonState.Checked) == ButtonState.Checked && (state & ButtonState.Flat) == ButtonState.Flat))
             {
-                dc.FillRectangle(ResPool.GetHatchBrush(HatchStyle.Percent50, ColorControlLight, ColorControl), rectangle.X + 2, rectangle.Y + 2, rectangle.Width - 4, rectangle.Height - 4);
+                dc.FillRectangle(new SolidBrush(Application.CurrentSkin.ButtonBackColor_Checked), rectangle.X + 2, rectangle.Y + 2, rectangle.Width - 4, rectangle.Height - 4);
 
-                dc.DrawRectangle(SystemPens.ControlDark, rectangle.X, rectangle.Y, rectangle.Width - 1, rectangle.Height - 1);
+                dc.DrawRectangle(new Pen(new SolidBrush(Application.CurrentSkin.ButtonBorderColor), Application.CurrentSkin.ButtonBorderWidth), rectangle.X, rectangle.Y, rectangle.Width - 1, rectangle.Height - 1);
             }
             else
             if ((state & ButtonState.Flat) == ButtonState.Flat)
             {
-                dc.DrawRectangle(SystemPens.ControlDark, rectangle.X, rectangle.Y, rectangle.Width - 1, rectangle.Height - 1);
+                dc.DrawRectangle(new Pen(new SolidBrush(Application.CurrentSkin.ButtonBorderColor), Application.CurrentSkin.ButtonBorderWidth), rectangle.X, rectangle.Y, rectangle.Width - 1, rectangle.Height - 1);
             }
             else
             if ((state & ButtonState.Checked) == ButtonState.Checked)
             {
-                dc.FillRectangle(ResPool.GetHatchBrush(HatchStyle.Percent50, ColorControlLight, ColorControl), rectangle.X + 2, rectangle.Y + 2, rectangle.Width - 4, rectangle.Height - 4);
+                dc.FillRectangle(new SolidBrush(Application.CurrentSkin.ButtonBackColor_Checked), rectangle.X + 2, rectangle.Y + 2, rectangle.Width - 4, rectangle.Height - 4);
 
-                Pen pen = DarkPen;
+                Pen pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DTopLeftInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Y, rectangle.X, rectangle.Bottom - 2);
                 dc.DrawLine(pen, rectangle.X + 1, rectangle.Y, rectangle.Right - 2, rectangle.Y);
 
-                pen = NormalPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRight));
                 dc.DrawLine(pen, rectangle.X + 1, rectangle.Y + 1, rectangle.X + 1, rectangle.Bottom - 3);
                 dc.DrawLine(pen, rectangle.X + 2, rectangle.Y + 1, rectangle.Right - 3, rectangle.Y + 1);
 
-                pen = LightPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRightInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Bottom - 1, rectangle.Right - 2, rectangle.Bottom - 1);
                 dc.DrawLine(pen, rectangle.Right - 1, rectangle.Y, rectangle.Right - 1, rectangle.Bottom - 1);
             }
             else
             if (((state & ButtonState.Pushed) == ButtonState.Pushed) && ((state & ButtonState.Normal) == ButtonState.Normal))
             {
-                Pen pen = DarkPen;
+                Pen pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DTopLeftInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Y, rectangle.X, rectangle.Bottom - 2);
                 dc.DrawLine(pen, rectangle.X + 1, rectangle.Y, rectangle.Right - 2, rectangle.Y);
 
-                pen = NormalPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRight));
                 dc.DrawLine(pen, rectangle.X + 1, rectangle.Y + 1, rectangle.X + 1, rectangle.Bottom - 3);
                 dc.DrawLine(pen, rectangle.X + 2, rectangle.Y + 1, rectangle.Right - 3, rectangle.Y + 1);
 
-                pen = LightPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRightInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Bottom - 1, rectangle.Right - 2, rectangle.Bottom - 1);
                 dc.DrawLine(pen, rectangle.Right - 1, rectangle.Y, rectangle.Right - 1, rectangle.Bottom - 1);
             }
             else
             if (((state & ButtonState.Inactive) == ButtonState.Inactive) || ((state & ButtonState.Normal) == ButtonState.Normal))
             {
-                Pen pen = LightPen;
+                Pen pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DTopLeftInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Y, rectangle.Right - 2, rectangle.Y);
                 dc.DrawLine(pen, rectangle.X, rectangle.Y, rectangle.X, rectangle.Bottom - 2);
 
-                pen = NormalPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRight));
                 dc.DrawLine(pen, rectangle.X + 1, rectangle.Bottom - 2, rectangle.Right - 2, rectangle.Bottom - 2);
                 dc.DrawLine(pen, rectangle.Right - 2, rectangle.Y + 1, rectangle.Right - 2, rectangle.Bottom - 3);
 
-                pen = DarkPen;
+                pen = new Pen(new SolidBrush(Application.CurrentSkin.Border3DBottomRightInner));
                 dc.DrawLine(pen, rectangle.X, rectangle.Bottom - 1, rectangle.Right - 1, rectangle.Bottom - 1);
                 dc.DrawLine(pen, rectangle.Right - 1, rectangle.Y, rectangle.Right - 1, rectangle.Bottom - 2);
             }

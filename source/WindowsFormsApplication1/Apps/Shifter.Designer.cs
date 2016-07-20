@@ -443,7 +443,6 @@ namespace ShiftOS
             this.pnlshifterintro.SuspendLayout();
             this.pnldesktopoptions.SuspendLayout();
             this.pnldesktoppaneloptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).BeginInit();
             this.pnlapplauncheroptions.SuspendLayout();
             this.pnldesktopintro.SuspendLayout();
             this.pnlpanelbuttonsoptions.SuspendLayout();
@@ -453,7 +452,6 @@ namespace ShiftOS
             this.predesktoppanel.SuspendLayout();
             this.prepnlpanelbuttonholder.SuspendLayout();
             this.prepnlpanelbutton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pretbicon)).BeginInit();
             this.pretimepanel.SuspendLayout();
             this.preapplaunchermenuholder.SuspendLayout();
             this.predesktopappmenu.SuspendLayout();
@@ -472,7 +470,6 @@ namespace ShiftOS
             this.prepgleft.SuspendLayout();
             this.prepgright.SuspendLayout();
             this.pretitlebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prepnlicon)).BeginInit();
             this.pnlreset.SuspendLayout();
             this.pgcontents.SuspendLayout();
             this.pnldesktopcomposition.SuspendLayout();
@@ -5123,7 +5120,7 @@ namespace ShiftOS
             this.pnldesktopoptions.ResumeLayout(false);
             this.pnldesktoppaneloptions.ResumeLayout(false);
             this.pnldesktoppaneloptions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.txtdesktoppanelheight)).EndInit();
             this.pnlapplauncheroptions.ResumeLayout(false);
             this.pnlapplauncheroptions.PerformLayout();
             this.pnldesktopintro.ResumeLayout(false);
@@ -5139,7 +5136,7 @@ namespace ShiftOS
             this.prepnlpanelbuttonholder.ResumeLayout(false);
             this.prepnlpanelbutton.ResumeLayout(false);
             this.prepnlpanelbutton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pretbicon)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pretbicon)).EndInit();
             this.pretimepanel.ResumeLayout(false);
             this.pretimepanel.PerformLayout();
             this.preapplaunchermenuholder.ResumeLayout(false);
@@ -5169,7 +5166,7 @@ namespace ShiftOS
             this.prepgright.ResumeLayout(false);
             this.pretitlebar.ResumeLayout(false);
             this.pretitlebar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prepnlicon)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.prepnlicon)).EndInit();
             this.pnlreset.ResumeLayout(false);
             this.pgcontents.ResumeLayout(false);
             this.pgcontents.PerformLayout();

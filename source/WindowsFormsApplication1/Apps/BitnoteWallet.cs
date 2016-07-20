@@ -22,14 +22,17 @@ namespace ShiftOS
         public BitnoteWallet()
         {
             InitializeComponent();
-            Clients = new List<BitnoteClient>();
-            foreach(var c in Package_Grabber.clients)
+            if (API.ShouldLoadEngine)
             {
-                if(c.Value.IsConnected)
+                Clients = new List<BitnoteClient>();
+                foreach (var c in Package_Grabber.clients)
                 {
-                    var client = new BitnoteClient(c.Key);
-                    client.GetBank();
-                    Clients.Add(client);
+                    if (c.Value.IsConnected)
+                    {
+                        var client = new BitnoteClient(c.Key);
+                        client.GetBank();
+                        Clients.Add(client);
+                    }
                 }
             }
         }

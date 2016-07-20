@@ -1466,9 +1466,7 @@ end");
         /// <returns>The converted widget.</returns>
         public static Widget ToWidget(this System.Windows.Forms.Control ctrl)
         {
-            string json = JsonConvert.SerializeObject(ctrl);
-            json = json.Replace("Control", "Widget");
-            return JsonConvert.DeserializeObject<Widget>(json);
+            return new Controls.WinFormsHost(ctrl);
         }
     }
 }

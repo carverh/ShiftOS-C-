@@ -14,6 +14,7 @@ namespace ShiftUI.ShiftOS
         public Color ButtonBorderColor = Color.Black;
         public Color ButtonBackColor = Color.White;
         public Color ButtonBackColor_Pressed = Color.Gray;
+        public Color ButtonBackColor_Checked = Color.Black;
         #endregion
 
         #region Global
@@ -53,6 +54,10 @@ namespace ShiftUI.ShiftOS
         public Color ProgressBar_BackgroundColor = Color.Gray;
         public Color ProgressBar_BlockColor = Color.Black;
 
+        #endregion
+
+        #region ListView
+        public Color ListViewBackground = Color.White;
         #endregion
 
         // No reason to have ShiftOS deal with window borders itself

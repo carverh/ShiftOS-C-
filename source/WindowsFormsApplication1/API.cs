@@ -1926,6 +1926,7 @@ namespace ShiftOS
         public static Color[] yellowmemory = new Color[16];
         public static Color[] pinkmemory = new Color[16];
         internal static Dictionary<string, Dictionary<string, object>> LuaShifterRegistry = null;
+        public static bool ShouldLoadEngine = true;
 
         #endregion
     }

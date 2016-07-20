@@ -12,24 +12,24 @@ using Newtonsoft.Json;
 
 namespace ShiftOS
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Extract all dependencies before starting the engine.
             ExtractDependencies();
-            var poolThread = new Thread(new ThreadStart(new Action(() => {
+            var poolThread = new Thread(new ThreadStart(new Action(() =>
+            {
                 try
                 {
-                    //Download ShiftOS server startup-pool
-                    string pool = new WebClient().DownloadString("http://playshiftos.ml/server/startup_pool");
+                        //Download ShiftOS server startup-pool
+                        string pool = new WebClient().DownloadString("http://playshiftos.ml/server/startup_pool");
                     string[] splitter = pool.Split(';');
                     foreach (string address in splitter)
                     {
@@ -55,13 +55,14 @@ namespace ShiftOS
             //Start the Windows Forms backend
             Paths.RegisterPaths(); //Sets ShiftOS path variables based on the current OS.
             SaveSystem.Utilities.CheckForOlderSaves(); //Backs up C:\ShiftOS on Windows systems if it exists and doesn't contain a _engineInfo.txt file telling ShiftOS what engine created it.
-            //If there isn't a save folder at the directory specified by ShiftOS.Paths.SaveRoot, create a new save.
-            //If not, load that save.
+                                                       //If there isn't a save folder at the directory specified by ShiftOS.Paths.SaveRoot, create a new save.
+                                                       //If not, load that save.
             if (Directory.Exists(Paths.SaveRoot))
             {
                 API.Log("Loading ShiftOS save...");
                 SaveSystem.Utilities.loadGame();
-            } else
+            }
+            else
             {
                 SaveSystem.Utilities.NewGame();
             }
@@ -80,44 +81,48 @@ namespace ShiftOS
             Skinning.Utilities.loadskin();
             SaveSystem.ShiftoriumRegistry.UpdateShiftorium();
             //Lua bootscreen.
-            if(File.Exists(Paths.SaveRoot + "BOOT"))
+            if (File.Exists(Paths.SaveRoot + "BOOT"))
             {
                 string lua = File.ReadAllText(Paths.SaveRoot + "BOOT");
                 var l = new LuaInterpreter();
                 l.mod(lua);
             }
             //Start recieving calls from the Modding API...
-            Application.Run(new ShiftOSDesktop());
-            //By now, the API receiver has been loaded,
-            //and the desktop is shown. So, let's check
-            //for auto-start mods.
-            if(Directory.Exists(Paths.AutoStart))
+            if (!args.Contains("nodisplay"))
             {
-                foreach(string file in Directory.GetFiles(Paths.AutoStart))
+                Application.Run(new ShiftOSDesktop());
+                //By now, the API receiver has been loaded,
+                //and the desktop is shown. So, let's check
+                //for auto-start mods.
+                if (Directory.Exists(Paths.AutoStart))
                 {
-                    var inf = new FileInfo(file);
-                    switch(inf.Extension)
+                    foreach (string file in Directory.GetFiles(Paths.AutoStart))
                     {
-                        case ".saa":
-                            if (API.Upgrades["shiftnet"] == true)
-                            {
-                                API.Log("Starting start-up mod \"" + inf.FullName + "\"...");
-                                API.LaunchMod(inf.FullName);
-                            }
-                            break;
-                        case ".trm":
-                            var t = new Terminal();
-                            t.runterminalfile(inf.FullName);
-                            API.Log("Started terminal file \"" + inf.FullName + "\"...");
-                            break;
-                    }                }
+                        var inf = new FileInfo(file);
+                        switch (inf.Extension)
+                        {
+                            case ".saa":
+                                if (API.Upgrades["shiftnet"] == true)
+                                {
+                                    API.Log("Starting start-up mod \"" + inf.FullName + "\"...");
+                                    API.LaunchMod(inf.FullName);
+                                }
+                                break;
+                            case ".trm":
+                                var t = new Terminal();
+                                t.runterminalfile(inf.FullName);
+                                API.Log("Started terminal file \"" + inf.FullName + "\"...");
+                                break;
+                        }
+                    }
+                }
             }
             //Now, for some ShiftOS launcher integration.
             try
             {
-                if(args[0] != null)
+                if (args[0] != null)
                 {
-                    if(args[0] != "")
+                    if (args[0] != "")
                     {
                         API.CurrentSave.username = args[0];
                         //Username set.
@@ -130,6 +135,7 @@ namespace ShiftOS
             }
 
         }
+
         static void ExtractDependencies()
         {
             //Wow. This'll make it easy for people...
