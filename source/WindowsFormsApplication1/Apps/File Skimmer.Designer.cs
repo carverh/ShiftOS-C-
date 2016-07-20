@@ -192,6 +192,7 @@
             // imgtypes
             // 
             this.imgtypes.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgtypes.ImageSize = new System.Drawing.Size(48, 48);
             //this.imgtypes.Images.SetKeyName(0, "application");
             //this.imgtypes.Images.SetKeyName(1, "package");
             //this.imgtypes.Images.SetKeyName(2, "none");

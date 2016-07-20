@@ -7935,7 +7935,7 @@ namespace ShiftUI
 
         public override void CPDrawVisualStyleBorder(Graphics graphics, Rectangle bounds)
         {
-            graphics.DrawRectangle(SystemPens.ControlDarkDark, bounds);
+            graphics.DrawRectangle(new System.Drawing.Pen(new SolidBrush(Application.CurrentSkin.VisualStyleBorderColor), Application.CurrentSkin.VisualStyleBorderWidth), bounds);
         }
 
         private static void DrawBorderInternal(Graphics graphics, int startX, int startY, int endX, int endY,

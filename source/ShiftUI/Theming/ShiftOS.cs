@@ -18,6 +18,8 @@ namespace ShiftUI.ShiftOS
 
         #region Global
         public string DefaultFont = "Microsoft Sans Serif";
+        public Color VisualStyleBorderColor = Color.Black;
+        public int VisualStyleBorderWidth = 2;
         public int DefaultFontSize = 9;
         public FontStyle DefaultFontStyle = FontStyle.Regular;
         public Color WindowBackColor = Color.Gray;

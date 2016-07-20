@@ -1089,6 +1089,7 @@ namespace ShiftOS
             brdr.Dock = DockStyle.Fill;
             formToCreate.Body.BorderStyle = BorderStyle.None;
             brdr.setupall();
+            formToCreate.FormBorderStyle = FormBorderStyle.None;
         }
 
         /// <summary>
