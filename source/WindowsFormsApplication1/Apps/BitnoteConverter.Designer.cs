@@ -60,7 +60,7 @@
             // btnconvert
             // 
             this.btnconvert.Dock = ShiftUI.DockStyle.Bottom;
-            this.btnconvert.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnconvert.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnconvert.Location = new System.Drawing.Point(0, 76);
             this.btnconvert.Name = "btnconvert";
             this.btnconvert.Size = new System.Drawing.Size(229, 23);

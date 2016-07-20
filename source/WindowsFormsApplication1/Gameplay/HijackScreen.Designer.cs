@@ -75,7 +75,7 @@ namespace ShiftOS
             // 
             // btnskip
             // 
-            this.btnskip.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnskip.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnskip.ForeColor = System.Drawing.Color.White;
             this.btnskip.Location = new System.Drawing.Point(566, 422);
             this.btnskip.Name = "btnskip";

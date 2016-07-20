@@ -78,7 +78,7 @@
             this.btnclose.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnclose.AutoSize = true;
             this.btnclose.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnclose.Location = new System.Drawing.Point(843, 418);
             this.btnclose.Name = "btnclose";

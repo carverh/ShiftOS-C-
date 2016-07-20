@@ -166,7 +166,7 @@ namespace Shiftorium
             // btnbuy
             // 
             this.btnbuy.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnbuy.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbuy.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuy.ForeColor = System.Drawing.Color.Black;
             this.btnbuy.Location = new System.Drawing.Point(160, 362);
@@ -227,7 +227,7 @@ namespace Shiftorium
             // 
             // btnback
             // 
-            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnback.Location = new System.Drawing.Point(22, 72);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(36, 23);
@@ -239,7 +239,7 @@ namespace Shiftorium
             // btnforward
             // 
             this.btnforward.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
-            this.btnforward.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnforward.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnforward.Location = new System.Drawing.Point(289, 72);
             this.btnforward.Name = "btnforward";
             this.btnforward.Size = new System.Drawing.Size(36, 23);
@@ -267,7 +267,7 @@ namespace Shiftorium
             | ShiftUI.AnchorStyles.Left) 
             | ShiftUI.AnchorStyles.Right)));
             this.btnhack.AutoSize = true;
-            this.btnhack.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnhack.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnhack.Location = new System.Drawing.Point(143, 218);
             this.btnhack.Name = "btnhack";
             this.btnhack.Size = new System.Drawing.Size(68, 25);

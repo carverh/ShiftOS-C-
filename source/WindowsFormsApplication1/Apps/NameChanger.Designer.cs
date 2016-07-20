@@ -75,7 +75,7 @@
             // 
             // btnapply
             // 
-            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapply.ForeColor = System.Drawing.Color.White;
             this.btnapply.Location = new System.Drawing.Point(3, 3);
             this.btnapply.Name = "btnapply";
@@ -87,7 +87,7 @@
             // 
             // btnload
             // 
-            this.btnload.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnload.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnload.ForeColor = System.Drawing.Color.White;
             this.btnload.Location = new System.Drawing.Point(84, 3);
             this.btnload.Name = "btnload";
@@ -99,7 +99,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsave.ForeColor = System.Drawing.Color.White;
             this.btnsave.Location = new System.Drawing.Point(165, 3);
             this.btnsave.Name = "btnsave";

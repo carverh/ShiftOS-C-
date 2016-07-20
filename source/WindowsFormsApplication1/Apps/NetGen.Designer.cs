@@ -125,7 +125,7 @@
             this.btndelete.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndelete.AutoSize = true;
             this.btndelete.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndelete.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndelete.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndelete.Location = new System.Drawing.Point(106, 254);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(59, 23);
@@ -156,7 +156,7 @@
             this.btncloseinfo.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btncloseinfo.AutoSize = true;
             this.btncloseinfo.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btncloseinfo.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncloseinfo.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncloseinfo.Location = new System.Drawing.Point(327, 254);
             this.btncloseinfo.Name = "btncloseinfo";
             this.btncloseinfo.Size = new System.Drawing.Size(52, 23);
@@ -178,7 +178,7 @@
             // 
             this.btnaddmodule.AutoSize = true;
             this.btnaddmodule.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnaddmodule.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnaddmodule.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnaddmodule.Location = new System.Drawing.Point(3, 3);
             this.btnaddmodule.Name = "btnaddmodule";
             this.btnaddmodule.Size = new System.Drawing.Size(87, 23);
@@ -255,7 +255,7 @@
             // 
             this.cmbbuyable.BackColor = System.Drawing.Color.Black;
             this.cmbbuyable.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cmbbuyable.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cmbbuyable.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cmbbuyable.ForeColor = System.Drawing.Color.White;
             this.cmbbuyable.FormattingEnabled = true;
             this.cmbbuyable.Location = new System.Drawing.Point(12, 38);
@@ -278,7 +278,7 @@
             this.btndonebuying.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndonebuying.AutoSize = true;
             this.btndonebuying.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndonebuying.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndonebuying.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndonebuying.Location = new System.Drawing.Point(341, 273);
             this.btndonebuying.Name = "btndonebuying";
             this.btndonebuying.Size = new System.Drawing.Size(38, 23);
@@ -318,7 +318,7 @@
             // 
             this.cbdifficulty.BackColor = System.Drawing.Color.Black;
             this.cbdifficulty.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cbdifficulty.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbdifficulty.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbdifficulty.ForeColor = System.Drawing.Color.Green;
             this.cbdifficulty.FormattingEnabled = true;
             this.cbdifficulty.Items.AddRange(new object[] {
@@ -423,7 +423,7 @@
             // 
             this.btnnext.AutoSize = true;
             this.btnnext.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnnext.Location = new System.Drawing.Point(846, 3);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(45, 23);
@@ -436,7 +436,7 @@
             // 
             this.btnback.AutoSize = true;
             this.btnback.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnback.Location = new System.Drawing.Point(795, 3);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(45, 23);
@@ -481,7 +481,7 @@
             this.btnloadfromtemplate.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnloadfromtemplate.AutoSize = true;
             this.btnloadfromtemplate.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnloadfromtemplate.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnloadfromtemplate.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnloadfromtemplate.Location = new System.Drawing.Point(683, 47);
             this.btnloadfromtemplate.Name = "btnloadfromtemplate";
             this.btnloadfromtemplate.Size = new System.Drawing.Size(199, 23);
@@ -517,7 +517,7 @@
             // 
             this.cbnets.BackColor = System.Drawing.Color.Black;
             this.cbnets.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cbnets.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbnets.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbnets.ForeColor = System.Drawing.Color.White;
             this.cbnets.FormattingEnabled = true;
             this.cbnets.Location = new System.Drawing.Point(12, 38);
@@ -539,7 +539,7 @@
             this.btnrecreate.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnrecreate.AutoSize = true;
             this.btnrecreate.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnrecreate.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnrecreate.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnrecreate.Location = new System.Drawing.Point(334, 273);
             this.btnrecreate.Name = "btnrecreate";
             this.btnrecreate.Size = new System.Drawing.Size(45, 23);

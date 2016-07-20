@@ -211,7 +211,7 @@
             this.btnnext.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.btnnext.AutoSize = true;
             this.btnnext.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnnext.Location = new System.Drawing.Point(294, 161);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(66, 23);
@@ -289,7 +289,7 @@
             // 
             this.cmbbuyable.BackColor = System.Drawing.Color.Black;
             this.cmbbuyable.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cmbbuyable.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cmbbuyable.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cmbbuyable.ForeColor = System.Drawing.Color.White;
             this.cmbbuyable.FormattingEnabled = true;
             this.cmbbuyable.Location = new System.Drawing.Point(12, 38);
@@ -312,7 +312,7 @@
             this.btndonebuying.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndonebuying.AutoSize = true;
             this.btndonebuying.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndonebuying.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndonebuying.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndonebuying.Location = new System.Drawing.Point(341, 273);
             this.btndonebuying.Name = "btndonebuying";
             this.btndonebuying.Size = new System.Drawing.Size(38, 23);
@@ -340,7 +340,7 @@
             this.btnbuy.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnbuy.AutoSize = true;
             this.btnbuy.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnbuy.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbuy.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbuy.Location = new System.Drawing.Point(199, 254);
             this.btnbuy.Name = "btnbuy";
             this.btnbuy.Size = new System.Drawing.Size(122, 23);
@@ -361,7 +361,7 @@
             // 
             this.cmbmodules.BackColor = System.Drawing.Color.Black;
             this.cmbmodules.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cmbmodules.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cmbmodules.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cmbmodules.ForeColor = System.Drawing.Color.White;
             this.cmbmodules.FormattingEnabled = true;
             this.cmbmodules.Location = new System.Drawing.Point(12, 38);
@@ -383,7 +383,7 @@
             this.button1.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.button1.AutoSize = true;
             this.button1.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.button1.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button1.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button1.Location = new System.Drawing.Point(327, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 23);
@@ -420,7 +420,7 @@
             this.btnpoweroff.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnpoweroff.AutoSize = true;
             this.btnpoweroff.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnpoweroff.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpoweroff.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpoweroff.Location = new System.Drawing.Point(85, 254);
             this.btnpoweroff.Name = "btnpoweroff";
             this.btnpoweroff.Size = new System.Drawing.Size(80, 23);
@@ -434,7 +434,7 @@
             this.btnupgrade.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnupgrade.AutoSize = true;
             this.btnupgrade.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnupgrade.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnupgrade.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnupgrade.Location = new System.Drawing.Point(171, 254);
             this.btnupgrade.Name = "btnupgrade";
             this.btnupgrade.Size = new System.Drawing.Size(150, 23);
@@ -465,7 +465,7 @@
             this.btncloseinfo.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btncloseinfo.AutoSize = true;
             this.btncloseinfo.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btncloseinfo.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncloseinfo.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncloseinfo.Location = new System.Drawing.Point(327, 254);
             this.btncloseinfo.Name = "btncloseinfo";
             this.btncloseinfo.Size = new System.Drawing.Size(52, 23);
@@ -490,7 +490,7 @@
             // 
             this.btnaddmodule.AutoSize = true;
             this.btnaddmodule.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnaddmodule.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnaddmodule.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnaddmodule.Location = new System.Drawing.Point(3, 3);
             this.btnaddmodule.Name = "btnaddmodule";
             this.btnaddmodule.Size = new System.Drawing.Size(87, 23);
@@ -512,7 +512,7 @@
             // 
             this.btntogglemusic.AutoSize = true;
             this.btntogglemusic.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btntogglemusic.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntogglemusic.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntogglemusic.Location = new System.Drawing.Point(229, 3);
             this.btntogglemusic.Name = "btntogglemusic";
             this.btntogglemusic.Size = new System.Drawing.Size(101, 23);

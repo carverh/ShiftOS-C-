@@ -134,7 +134,7 @@
             // btnrequest
             // 
             this.btnrequest.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnrequest.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnrequest.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnrequest.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnrequest.Location = new System.Drawing.Point(799, 385);
             this.btnrequest.Name = "btnrequest";
@@ -218,7 +218,7 @@
             this.btndonecustomizing.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndonecustomizing.AutoSize = true;
             this.btndonecustomizing.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndonecustomizing.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndonecustomizing.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndonecustomizing.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btndonecustomizing.Location = new System.Drawing.Point(824, 385);
             this.btndonecustomizing.Name = "btndonecustomizing";
@@ -232,7 +232,7 @@
             // 
             this.btnsaa.AutoSize = true;
             this.btnsaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsaa.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnsaa.Location = new System.Drawing.Point(99, 318);
             this.btnsaa.Name = "btnsaa";
@@ -274,7 +274,7 @@
             // 
             this.cbsell.Appearance = ShiftUI.Appearance.Button;
             this.cbsell.AutoSize = true;
-            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbsell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.cbsell.Location = new System.Drawing.Point(97, 263);
             this.cbsell.Name = "cbsell";
@@ -355,7 +355,7 @@
             // btnedit
             // 
             this.btnedit.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnedit.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnedit.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnedit.Location = new System.Drawing.Point(239, 377);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(75, 23);
@@ -367,7 +367,7 @@
             // btnupload
             // 
             this.btnupload.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnupload.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnupload.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnupload.Location = new System.Drawing.Point(320, 377);
             this.btnupload.Name = "btnupload";
             this.btnupload.Size = new System.Drawing.Size(75, 23);
@@ -379,7 +379,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsave.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsave.Location = new System.Drawing.Point(799, 390);
             this.btnsave.Name = "btnsave";
@@ -596,7 +596,7 @@
             // 
             // btndownload
             // 
-            this.btndownload.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndownload.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndownload.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btndownload.Location = new System.Drawing.Point(112, 13);
             this.btndownload.Name = "btndownload";
@@ -684,7 +684,7 @@
             // 
             // btnlounge
             // 
-            this.btnlounge.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnlounge.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnlounge.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnlounge.Location = new System.Drawing.Point(377, 14);
             this.btnlounge.Name = "btnlounge";
@@ -706,7 +706,7 @@
             // 
             // btngetkey
             // 
-            this.btngetkey.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btngetkey.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btngetkey.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btngetkey.Location = new System.Drawing.Point(296, 14);
             this.btngetkey.Name = "btngetkey";
@@ -736,7 +736,7 @@
             // 
             // btnskins
             // 
-            this.btnskins.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnskins.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnskins.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnskins.Location = new System.Drawing.Point(86, 4);
             this.btnskins.Name = "btnskins";
@@ -748,7 +748,7 @@
             // 
             // btnapps
             // 
-            this.btnapps.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapps.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapps.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnapps.Location = new System.Drawing.Point(4, 4);
             this.btnapps.Name = "btnapps";

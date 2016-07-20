@@ -94,7 +94,7 @@ namespace ShiftOS
             // btnsave
             // 
             this.btnsave.BackColor = System.Drawing.Color.White;
-            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.Image = global::ShiftOS.Properties.Resources.saveicon;
             this.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,7 +109,7 @@ namespace ShiftOS
             // btnopen
             // 
             this.btnopen.BackColor = System.Drawing.Color.White;
-            this.btnopen.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnopen.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnopen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnopen.Image = global::ShiftOS.Properties.Resources.openicon;
             this.btnopen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +124,7 @@ namespace ShiftOS
             // btnnew
             // 
             this.btnnew.BackColor = System.Drawing.Color.White;
-            this.btnnew.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnnew.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnew.Location = new System.Drawing.Point(4, 4);

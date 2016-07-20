@@ -75,7 +75,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom)));
-            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsave.Location = new System.Drawing.Point(3, 3);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 35);
@@ -87,7 +87,7 @@
             // button1
             // 
             this.button1.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom)));
-            this.button1.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button1.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button1.Location = new System.Drawing.Point(84, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 35);
@@ -99,7 +99,7 @@
             // button2
             // 
             this.button2.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom)));
-            this.button2.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button2.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button2.Location = new System.Drawing.Point(165, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 35);

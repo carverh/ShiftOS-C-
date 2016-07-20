@@ -55,7 +55,7 @@
             // btndone
             // 
             this.btndone.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btndone.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndone.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndone.Location = new System.Drawing.Point(273, 343);
             this.btndone.Name = "btndone";
             this.btndone.Size = new System.Drawing.Size(75, 23);

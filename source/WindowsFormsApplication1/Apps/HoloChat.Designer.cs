@@ -95,7 +95,7 @@
             // 
             // btnconnect
             // 
-            this.btnconnect.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnconnect.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnconnect.Location = new System.Drawing.Point(272, 3);
             this.btnconnect.Name = "btnconnect";
             this.btnconnect.Size = new System.Drawing.Size(75, 33);
@@ -106,7 +106,7 @@
             // 
             // btnrefresh
             // 
-            this.btnrefresh.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnrefresh.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnrefresh.Location = new System.Drawing.Point(191, 3);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(75, 33);

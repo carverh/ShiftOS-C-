@@ -97,7 +97,7 @@
             // 
             this.btnjoinlobby.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.btnjoinlobby.Enabled = false;
-            this.btnjoinlobby.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnjoinlobby.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnjoinlobby.Location = new System.Drawing.Point(306, 415);
             this.btnjoinlobby.Name = "btnjoinlobby";
             this.btnjoinlobby.Size = new System.Drawing.Size(84, 23);
@@ -142,7 +142,7 @@
             // button1
             // 
             this.button1.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.button1.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button1.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button1.Location = new System.Drawing.Point(549, 465);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
@@ -164,7 +164,7 @@
             // btnscreen
             // 
             this.btnscreen.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnscreen.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnscreen.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnscreen.Location = new System.Drawing.Point(332, 465);
             this.btnscreen.Name = "btnscreen";
             this.btnscreen.Size = new System.Drawing.Size(84, 23);
@@ -226,7 +226,7 @@
             // btntier
             // 
             this.btntier.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btntier.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntier.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntier.Location = new System.Drawing.Point(47, 465);
             this.btntier.Name = "btntier";
             this.btntier.Size = new System.Drawing.Size(75, 23);
@@ -257,7 +257,7 @@
             // btnstartbattle
             // 
             this.btnstartbattle.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnstartbattle.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstartbattle.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstartbattle.Location = new System.Drawing.Point(638, 465);
             this.btnstartbattle.Name = "btnstartbattle";
             this.btnstartbattle.Size = new System.Drawing.Size(75, 23);

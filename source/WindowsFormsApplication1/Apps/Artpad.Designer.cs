@@ -355,7 +355,7 @@
             // 
             // btncancel
             // 
-            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.Location = new System.Drawing.Point(7, 66);
             this.btncancel.Name = "btncancel";
@@ -367,7 +367,7 @@
             // 
             // btncreate
             // 
-            this.btncreate.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncreate.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncreate.Location = new System.Drawing.Point(114, 66);
             this.btncreate.Name = "btncreate";
@@ -502,7 +502,7 @@
             // 
             // btnchangesizecancel
             // 
-            this.btnchangesizecancel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnchangesizecancel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnchangesizecancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnchangesizecancel.Location = new System.Drawing.Point(7, 66);
             this.btnchangesizecancel.Name = "btnchangesizecancel";
@@ -513,7 +513,7 @@
             // 
             // btnsetsize
             // 
-            this.btnsetsize.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsetsize.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsetsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsetsize.Location = new System.Drawing.Point(133, 66);
             this.btnsetsize.Name = "btnsetsize";
@@ -2088,7 +2088,7 @@
             // btnovalfillonoff
             // 
             this.btnovalfillonoff.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnovalfillonoff.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnovalfillonoff.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnovalfillonoff.Location = new System.Drawing.Point(150, 64);
             this.btnovalfillonoff.Name = "btnovalfillonoff";
             this.btnovalfillonoff.Size = new System.Drawing.Size(56, 28);
@@ -2177,7 +2177,7 @@
             // 
             this.btneracersquare.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadsquarerubberselected;
             this.btneracersquare.FlatAppearance.BorderSize = 0;
-            this.btneracersquare.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btneracersquare.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btneracersquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneracersquare.Location = new System.Drawing.Point(75, 21);
             this.btneracersquare.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2192,7 +2192,7 @@
             // 
             this.btneracercircle.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadcirclerubber;
             this.btneracercircle.FlatAppearance.BorderSize = 0;
-            this.btneracercircle.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btneracercircle.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btneracercircle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneracercircle.Location = new System.Drawing.Point(9, 21);
             this.btneracercircle.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2328,7 +2328,7 @@
             this.btnpaintsquareshape.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadsquarerubber;
             this.btnpaintsquareshape.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.btnpaintsquareshape.FlatAppearance.BorderSize = 0;
-            this.btnpaintsquareshape.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpaintsquareshape.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpaintsquareshape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpaintsquareshape.Location = new System.Drawing.Point(69, 27);
             this.btnpaintsquareshape.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2344,7 +2344,7 @@
             this.btnpaintcircleshape.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadcirclerubberselected;
             this.btnpaintcircleshape.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.btnpaintcircleshape.FlatAppearance.BorderSize = 0;
-            this.btnpaintcircleshape.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpaintcircleshape.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpaintcircleshape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpaintcircleshape.Location = new System.Drawing.Point(16, 27);
             this.btnpaintcircleshape.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2427,7 +2427,7 @@
             // 
             // combofontstyle
             // 
-            this.combofontstyle.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.combofontstyle.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.combofontstyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combofontstyle.FormattingEnabled = true;
             this.combofontstyle.Items.AddRange(new object[] {
@@ -2456,7 +2456,7 @@
             // 
             // combodrawtextfont
             // 
-            this.combodrawtextfont.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.combodrawtextfont.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.combodrawtextfont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combodrawtextfont.FormattingEnabled = true;
             this.combodrawtextfont.Location = new System.Drawing.Point(64, 68);
@@ -2533,7 +2533,7 @@
             // 
             // btnpixelsettersetpixel
             // 
-            this.btnpixelsettersetpixel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpixelsettersetpixel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpixelsettersetpixel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpixelsettersetpixel.Location = new System.Drawing.Point(215, 34);
             this.btnpixelsettersetpixel.Name = "btnpixelsettersetpixel";
@@ -2609,7 +2609,7 @@
             // 
             // btnzoomout
             // 
-            this.btnzoomout.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnzoomout.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnzoomout.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnzoomout.Location = new System.Drawing.Point(16, 33);
             this.btnzoomout.Name = "btnzoomout";
@@ -2621,7 +2621,7 @@
             // 
             // btnzoomin
             // 
-            this.btnzoomin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnzoomin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnzoomin.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnzoomin.Location = new System.Drawing.Point(313, 33);
             this.btnzoomin.Name = "btnzoomin";
@@ -2709,7 +2709,7 @@
             // btnsquarefillonoff
             // 
             this.btnsquarefillonoff.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnsquarefillonoff.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsquarefillonoff.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsquarefillonoff.Location = new System.Drawing.Point(150, 64);
             this.btnsquarefillonoff.Name = "btnsquarefillonoff";
             this.btnsquarefillonoff.Size = new System.Drawing.Size(56, 28);
@@ -2793,7 +2793,7 @@
             // 
             // btnpixelplacermovementmode
             // 
-            this.btnpixelplacermovementmode.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpixelplacermovementmode.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpixelplacermovementmode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpixelplacermovementmode.Location = new System.Drawing.Point(312, 26);
             this.btnpixelplacermovementmode.Name = "btnpixelplacermovementmode";
@@ -2827,7 +2827,7 @@
             // 
             // btnpencilsize3
             // 
-            this.btnpencilsize3.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpencilsize3.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpencilsize3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpencilsize3.Location = new System.Drawing.Point(298, 30);
             this.btnpencilsize3.Name = "btnpencilsize3";
@@ -2839,7 +2839,7 @@
             // 
             // btnpencilsize2
             // 
-            this.btnpencilsize2.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpencilsize2.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpencilsize2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpencilsize2.Location = new System.Drawing.Point(165, 30);
             this.btnpencilsize2.Name = "btnpencilsize2";
@@ -2851,7 +2851,7 @@
             // 
             // btnpencilsize1
             // 
-            this.btnpencilsize1.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpencilsize1.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpencilsize1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpencilsize1.Location = new System.Drawing.Point(30, 30);
             this.btnpencilsize1.Name = "btnpencilsize1";
@@ -2947,7 +2947,7 @@
             // btnpixelsetter
             // 
             this.btnpixelsetter.FlatAppearance.BorderSize = 0;
-            this.btnpixelsetter.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpixelsetter.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpixelsetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpixelsetter.Location = new System.Drawing.Point(6, 6);
             this.btnpixelsetter.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2961,7 +2961,7 @@
             // 
             this.btnpixelplacer.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadpixelplacer;
             this.btnpixelplacer.FlatAppearance.BorderSize = 0;
-            this.btnpixelplacer.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpixelplacer.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpixelplacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpixelplacer.Location = new System.Drawing.Point(62, 6);
             this.btnpixelplacer.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2975,7 +2975,7 @@
             // 
             this.btnpencil.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadpencil;
             this.btnpencil.FlatAppearance.BorderSize = 0;
-            this.btnpencil.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpencil.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpencil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpencil.Location = new System.Drawing.Point(6, 62);
             this.btnpencil.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -2990,7 +2990,7 @@
             // 
             this.btnfloodfill.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadfloodfill;
             this.btnfloodfill.FlatAppearance.BorderSize = 0;
-            this.btnfloodfill.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnfloodfill.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnfloodfill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfloodfill.Location = new System.Drawing.Point(62, 62);
             this.btnfloodfill.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3004,7 +3004,7 @@
             // 
             this.btnoval.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadOval;
             this.btnoval.FlatAppearance.BorderSize = 0;
-            this.btnoval.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnoval.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnoval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnoval.Location = new System.Drawing.Point(6, 118);
             this.btnoval.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3019,7 +3019,7 @@
             // 
             this.btnsquare.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadRectangle;
             this.btnsquare.FlatAppearance.BorderSize = 0;
-            this.btnsquare.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsquare.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsquare.Location = new System.Drawing.Point(62, 118);
             this.btnsquare.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3034,7 +3034,7 @@
             // 
             this.btnlinetool.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadlinetool;
             this.btnlinetool.FlatAppearance.BorderSize = 0;
-            this.btnlinetool.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnlinetool.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnlinetool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlinetool.Location = new System.Drawing.Point(6, 174);
             this.btnlinetool.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3049,7 +3049,7 @@
             // 
             this.btnpaintbrush.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadpaintbrush;
             this.btnpaintbrush.FlatAppearance.BorderSize = 0;
-            this.btnpaintbrush.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpaintbrush.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpaintbrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpaintbrush.Location = new System.Drawing.Point(62, 174);
             this.btnpaintbrush.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3064,7 +3064,7 @@
             // 
             this.btntexttool.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadtexttool;
             this.btntexttool.FlatAppearance.BorderSize = 0;
-            this.btntexttool.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntexttool.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntexttool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntexttool.Location = new System.Drawing.Point(6, 230);
             this.btntexttool.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3079,7 +3079,7 @@
             // 
             this.btneracer.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPaderacer;
             this.btneracer.FlatAppearance.BorderSize = 0;
-            this.btneracer.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btneracer.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btneracer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneracer.Location = new System.Drawing.Point(62, 230);
             this.btneracer.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3094,7 +3094,7 @@
             // 
             this.btnnew.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadnew;
             this.btnnew.FlatAppearance.BorderSize = 0;
-            this.btnnew.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnnew.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnew.Location = new System.Drawing.Point(6, 286);
             this.btnnew.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3109,7 +3109,7 @@
             // 
             this.btnmagnify.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadmagnify;
             this.btnmagnify.FlatAppearance.BorderSize = 0;
-            this.btnmagnify.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmagnify.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmagnify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmagnify.Location = new System.Drawing.Point(62, 286);
             this.btnmagnify.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3124,7 +3124,7 @@
             // 
             this.btnopen.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadopen;
             this.btnopen.FlatAppearance.BorderSize = 0;
-            this.btnopen.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnopen.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnopen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnopen.Location = new System.Drawing.Point(6, 342);
             this.btnopen.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3139,7 +3139,7 @@
             // 
             this.btnsave.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadsave;
             this.btnsave.FlatAppearance.BorderSize = 0;
-            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.Location = new System.Drawing.Point(62, 342);
             this.btnsave.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3154,7 +3154,7 @@
             // 
             this.btnundo.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadundo;
             this.btnundo.FlatAppearance.BorderSize = 0;
-            this.btnundo.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnundo.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnundo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnundo.Location = new System.Drawing.Point(6, 398);
             this.btnundo.Margin = new ShiftUI.Padding(6, 6, 0, 0);
@@ -3169,7 +3169,7 @@
             // 
             this.btnredo.BackgroundImage = global::ShiftOS.Properties.Resources.ArtPadredo;
             this.btnredo.FlatAppearance.BorderSize = 0;
-            this.btnredo.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnredo.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnredo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnredo.Location = new System.Drawing.Point(62, 398);
             this.btnredo.Margin = new ShiftUI.Padding(6, 6, 0, 0);

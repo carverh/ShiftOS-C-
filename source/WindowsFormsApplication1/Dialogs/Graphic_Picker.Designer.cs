@@ -90,7 +90,7 @@ namespace ShiftOS
             // btncancel
             // 
             this.btncancel.Anchor = ShiftUI.AnchorStyles.Bottom;
-            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncancel.Location = new System.Drawing.Point(21, 546);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(109, 32);
@@ -102,7 +102,7 @@ namespace ShiftOS
             // btnreset
             // 
             this.btnreset.Anchor = ShiftUI.AnchorStyles.Bottom;
-            this.btnreset.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnreset.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnreset.Location = new System.Drawing.Point(136, 546);
             this.btnreset.Name = "btnreset";
             this.btnreset.Size = new System.Drawing.Size(109, 32);
@@ -114,7 +114,7 @@ namespace ShiftOS
             // btnapply
             // 
             this.btnapply.Anchor = ShiftUI.AnchorStyles.Bottom;
-            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapply.Location = new System.Drawing.Point(251, 546);
             this.btnapply.Name = "btnapply";
             this.btnapply.Size = new System.Drawing.Size(118, 32);
@@ -135,7 +135,7 @@ namespace ShiftOS
             // 
             // btnmousedownbrowse
             // 
-            this.btnmousedownbrowse.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmousedownbrowse.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmousedownbrowse.Location = new System.Drawing.Point(295, 411);
             this.btnmousedownbrowse.Name = "btnmousedownbrowse";
             this.btnmousedownbrowse.Size = new System.Drawing.Size(73, 60);
@@ -179,7 +179,7 @@ namespace ShiftOS
             // 
             // btnmouseoverbrowse
             // 
-            this.btnmouseoverbrowse.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmouseoverbrowse.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmouseoverbrowse.Location = new System.Drawing.Point(295, 336);
             this.btnmouseoverbrowse.Name = "btnmouseoverbrowse";
             this.btnmouseoverbrowse.Size = new System.Drawing.Size(73, 60);
@@ -233,7 +233,7 @@ namespace ShiftOS
             // 
             // btnidlebrowse
             // 
-            this.btnidlebrowse.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnidlebrowse.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnidlebrowse.Location = new System.Drawing.Point(295, 260);
             this.btnidlebrowse.Name = "btnidlebrowse";
             this.btnidlebrowse.Size = new System.Drawing.Size(73, 60);
@@ -271,7 +271,7 @@ namespace ShiftOS
             this.btnzoom.BackgroundImage = global::ShiftOS.Properties.Resources.zoombutton;
             this.btnzoom.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnzoom.FlatAppearance.BorderSize = 0;
-            this.btnzoom.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnzoom.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnzoom.Location = new System.Drawing.Point(286, 144);
             this.btnzoom.Name = "btnzoom";
             this.btnzoom.Size = new System.Drawing.Size(82, 65);
@@ -284,7 +284,7 @@ namespace ShiftOS
             this.btnstretch.BackgroundImage = global::ShiftOS.Properties.Resources.stretchbutton;
             this.btnstretch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnstretch.FlatAppearance.BorderSize = 0;
-            this.btnstretch.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstretch.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstretch.Location = new System.Drawing.Point(197, 144);
             this.btnstretch.Name = "btnstretch";
             this.btnstretch.Size = new System.Drawing.Size(82, 65);
@@ -297,7 +297,7 @@ namespace ShiftOS
             this.btncentre.BackgroundImage = global::ShiftOS.Properties.Resources.centrebutton;
             this.btncentre.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btncentre.FlatAppearance.BorderSize = 0;
-            this.btncentre.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncentre.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncentre.Location = new System.Drawing.Point(108, 144);
             this.btncentre.Name = "btncentre";
             this.btncentre.Size = new System.Drawing.Size(82, 65);
@@ -310,7 +310,7 @@ namespace ShiftOS
             this.btntile.BackgroundImage = global::ShiftOS.Properties.Resources.tilebutton;
             this.btntile.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btntile.FlatAppearance.BorderSize = 0;
-            this.btntile.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntile.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntile.Location = new System.Drawing.Point(19, 144);
             this.btntile.Name = "btntile";
             this.btntile.Size = new System.Drawing.Size(82, 65);

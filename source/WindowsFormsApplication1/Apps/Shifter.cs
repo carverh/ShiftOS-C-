@@ -3021,7 +3021,7 @@ You can add options in the Lua interpreter using the shifter_add_category(string
                 {
                     var b = new Button();
                     b.Text = kv.Key;
-                    b.FlatStyle = FlatStyle.Flat;
+                    b.FlatStyle = FlatStyle.Standard;
                     b.AutoSize = true;
                     b.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                     flmorebuttons.Widgets.Add(b);

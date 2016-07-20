@@ -127,7 +127,7 @@ namespace ShiftOS
             // btnapplyskin
             // 
             this.btnapplyskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnapplyskin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapplyskin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapplyskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapplyskin.Location = new System.Drawing.Point(352, 418);
             this.btnapplyskin.Name = "btnapplyskin";
@@ -140,7 +140,7 @@ namespace ShiftOS
             // btnsaveskin
             // 
             this.btnsaveskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
-            this.btnsaveskin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsaveskin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsaveskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsaveskin.Location = new System.Drawing.Point(239, 418);
             this.btnsaveskin.Name = "btnsaveskin";
@@ -153,7 +153,7 @@ namespace ShiftOS
             // btnloadskin
             // 
             this.btnloadskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnloadskin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnloadskin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnloadskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnloadskin.Location = new System.Drawing.Point(126, 418);
             this.btnloadskin.Name = "btnloadskin";
@@ -178,7 +178,7 @@ namespace ShiftOS
             // btnclose
             // 
             this.btnclose.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.Location = new System.Drawing.Point(13, 418);
             this.btnclose.Name = "btnclose";
@@ -554,7 +554,7 @@ namespace ShiftOS
             // btnapplypackskin
             // 
             this.btnapplypackskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnapplypackskin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapplypackskin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapplypackskin.Location = new System.Drawing.Point(379, 418);
             this.btnapplypackskin.Name = "btnapplypackskin";
             this.btnapplypackskin.Size = new System.Drawing.Size(94, 41);
@@ -584,7 +584,7 @@ namespace ShiftOS
             // btnbrowse
             // 
             this.btnbrowse.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
-            this.btnbrowse.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbrowse.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbrowse.Location = new System.Drawing.Point(389, 138);
             this.btnbrowse.Name = "btnbrowse";
             this.btnbrowse.Size = new System.Drawing.Size(75, 23);
@@ -606,7 +606,7 @@ namespace ShiftOS
             // btnbacktoskinloader
             // 
             this.btnbacktoskinloader.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnbacktoskinloader.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbacktoskinloader.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbacktoskinloader.Location = new System.Drawing.Point(3, 418);
             this.btnbacktoskinloader.Name = "btnbacktoskinloader";
             this.btnbacktoskinloader.Size = new System.Drawing.Size(94, 41);

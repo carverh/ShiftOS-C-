@@ -63,7 +63,7 @@
             // 
             this.btnstart.AutoSize = true;
             this.btnstart.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstart.Location = new System.Drawing.Point(435, 3);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(80, 23);

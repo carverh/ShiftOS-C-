@@ -155,7 +155,7 @@ namespace ShiftOS
             // 
             // btnplayon
             // 
-            this.btnplayon.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnplayon.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnplayon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplayon.Location = new System.Drawing.Point(32, 162);
             this.btnplayon.Name = "btnplayon";
@@ -177,7 +177,7 @@ namespace ShiftOS
             // 
             // btncashout
             // 
-            this.btncashout.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncashout.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncashout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncashout.Location = new System.Drawing.Point(32, 73);
             this.btncashout.Name = "btncashout";
@@ -231,7 +231,7 @@ namespace ShiftOS
             // 
             // btnlosetryagain
             // 
-            this.btnlosetryagain.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnlosetryagain.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnlosetryagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlosetryagain.Location = new System.Drawing.Point(155, 176);
             this.btnlosetryagain.Name = "btnlosetryagain";
@@ -281,7 +281,7 @@ namespace ShiftOS
             // 
             // btnstartgame
             // 
-            this.btnstartgame.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstartgame.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstartgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstartgame.Location = new System.Drawing.Point(186, 273);
             this.btnstartgame.Name = "btnstartgame";
@@ -320,7 +320,7 @@ namespace ShiftOS
             // 
             // btnplayagain
             // 
-            this.btnplayagain.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnplayagain.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnplayagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplayagain.Location = new System.Drawing.Point(5, 194);
             this.btnplayagain.Name = "btnplayagain";

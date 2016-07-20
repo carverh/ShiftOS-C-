@@ -56,7 +56,7 @@ namespace ShiftOS
             // 
             this.btngo.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.btngo.DialogResult = ShiftUI.DialogResult.Cancel;
-            this.btngo.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btngo.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btngo.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btngo.ForeColor = System.Drawing.Color.White;
             this.btngo.Location = new System.Drawing.Point(731, 9);
@@ -70,7 +70,7 @@ namespace ShiftOS
             // btnhome
             // 
             this.btnhome.DialogResult = ShiftUI.DialogResult.Cancel;
-            this.btnhome.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnhome.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnhome.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnhome.ForeColor = System.Drawing.Color.White;
             this.btnhome.Location = new System.Drawing.Point(4, 12);

@@ -65,7 +65,7 @@
             // btnsend
             // 
             this.btnsend.BackgroundImageLayout = ShiftUI.ImageLayout.None;
-            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsend.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsend.Location = new System.Drawing.Point(3, 3);
             this.btnsend.Name = "btnsend";
@@ -77,7 +77,7 @@
             // 
             // btnsync
             // 
-            this.btnsync.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsync.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsync.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsync.Location = new System.Drawing.Point(84, 3);
             this.btnsync.Name = "btnsync";

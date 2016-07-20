@@ -91,7 +91,7 @@
             // btnstart
             // 
             this.btnstart.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
-            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstart.Location = new System.Drawing.Point(697, 119);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(60, 23);

@@ -12,11 +12,13 @@ namespace Skinning
 {
     public class Skin : ShiftUI.ShiftOS.Skin
     {
-        //ShiftUI inherits: Anything marked with 'public new' is inherited
-        //from ShiftUI.ShiftOS.Skin, and is marked this way to provide a
-        //default value that JSON.NET can deserialize but also have
-        //ShiftUI see it.
-
+        public Skin()
+        {
+            //We need to set our base skin settings here because the 'new' keyword
+            //hides the variable from ShiftUI.
+            base.ButtonBackColor_Pressed = this.ButtonBackColor_Pressed;
+            base.ProgressBar_BackgroundColor = this.ProgressBar_BackgroundColor;
+        }
         
 
         public new Color ButtonBackColor_Pressed = Color.Black;

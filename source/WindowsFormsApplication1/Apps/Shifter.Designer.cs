@@ -519,7 +519,7 @@ namespace ShiftOS
             // btnapply
             // 
             this.btnapply.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapply.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapply.Location = new System.Drawing.Point(7, 286);
             this.btnapply.Name = "btnapply";
@@ -551,7 +551,7 @@ namespace ShiftOS
             // 
             this.btnmore.BackColor = System.Drawing.Color.White;
             this.btnmore.Dock = ShiftUI.DockStyle.Top;
-            this.btnmore.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmore.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmore.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmore.Location = new System.Drawing.Point(0, 174);
             this.btnmore.Name = "btnmore";
@@ -566,7 +566,7 @@ namespace ShiftOS
             // 
             this.btnreset.BackColor = System.Drawing.Color.White;
             this.btnreset.Dock = ShiftUI.DockStyle.Top;
-            this.btnreset.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnreset.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnreset.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreset.Location = new System.Drawing.Point(0, 145);
             this.btnreset.Name = "btnreset";
@@ -581,7 +581,7 @@ namespace ShiftOS
             // 
             this.btnwindowcomposition.BackColor = System.Drawing.Color.White;
             this.btnwindowcomposition.Dock = ShiftUI.DockStyle.Top;
-            this.btnwindowcomposition.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnwindowcomposition.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnwindowcomposition.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnwindowcomposition.Location = new System.Drawing.Point(0, 116);
             this.btnwindowcomposition.Name = "btnwindowcomposition";
@@ -597,7 +597,7 @@ namespace ShiftOS
             // 
             this.btndesktopicons.BackColor = System.Drawing.Color.White;
             this.btndesktopicons.Dock = ShiftUI.DockStyle.Top;
-            this.btndesktopicons.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndesktopicons.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndesktopicons.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktopicons.Location = new System.Drawing.Point(0, 87);
             this.btndesktopicons.Name = "btndesktopicons";
@@ -612,7 +612,7 @@ namespace ShiftOS
             // 
             this.btnmenus.BackColor = System.Drawing.Color.White;
             this.btnmenus.Dock = ShiftUI.DockStyle.Top;
-            this.btnmenus.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmenus.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmenus.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmenus.Location = new System.Drawing.Point(0, 58);
             this.btnmenus.Name = "btnmenus";
@@ -628,7 +628,7 @@ namespace ShiftOS
             // 
             this.btnwindows.BackColor = System.Drawing.Color.White;
             this.btnwindows.Dock = ShiftUI.DockStyle.Top;
-            this.btnwindows.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnwindows.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnwindows.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnwindows.Location = new System.Drawing.Point(0, 29);
             this.btnwindows.Name = "btnwindows";
@@ -643,7 +643,7 @@ namespace ShiftOS
             // 
             this.btndesktop.BackColor = System.Drawing.Color.White;
             this.btndesktop.Dock = ShiftUI.DockStyle.Top;
-            this.btndesktop.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndesktop.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndesktop.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktop.Location = new System.Drawing.Point(0, 0);
             this.btndesktop.Name = "btndesktop";
@@ -753,7 +753,7 @@ namespace ShiftOS
             // btnpanelbuttons
             // 
             this.btnpanelbuttons.BackColor = System.Drawing.Color.White;
-            this.btnpanelbuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpanelbuttons.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpanelbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpanelbuttons.Location = new System.Drawing.Point(193, 101);
             this.btnpanelbuttons.Name = "btnpanelbuttons";
@@ -1959,7 +1959,7 @@ namespace ShiftOS
             // btndesktopitself
             // 
             this.btndesktopitself.BackColor = System.Drawing.Color.White;
-            this.btndesktopitself.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndesktopitself.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndesktopitself.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktopitself.Location = new System.Drawing.Point(4, 105);
             this.btndesktopitself.Name = "btndesktopitself";
@@ -1972,7 +1972,7 @@ namespace ShiftOS
             // btnpanelclock
             // 
             this.btnpanelclock.BackColor = System.Drawing.Color.White;
-            this.btnpanelclock.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnpanelclock.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnpanelclock.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpanelclock.Location = new System.Drawing.Point(4, 70);
             this.btnpanelclock.Name = "btnpanelclock";
@@ -1985,7 +1985,7 @@ namespace ShiftOS
             // btnapplauncher
             // 
             this.btnapplauncher.BackColor = System.Drawing.Color.White;
-            this.btnapplauncher.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnapplauncher.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnapplauncher.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapplauncher.Location = new System.Drawing.Point(4, 35);
             this.btnapplauncher.Name = "btnapplauncher";
@@ -1998,7 +1998,7 @@ namespace ShiftOS
             // btndesktoppanel
             // 
             this.btndesktoppanel.BackColor = System.Drawing.Color.White;
-            this.btndesktoppanel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndesktoppanel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndesktoppanel.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktoppanel.Location = new System.Drawing.Point(4, 0);
             this.btndesktoppanel.Name = "btndesktoppanel";
@@ -2786,7 +2786,7 @@ namespace ShiftOS
             this.cboxtitlebarcorners.AutoSize = true;
             this.cboxtitlebarcorners.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cboxtitlebarcorners.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.cboxtitlebarcorners.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cboxtitlebarcorners.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cboxtitlebarcorners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cboxtitlebarcorners.Location = new System.Drawing.Point(166, 4);
             this.cboxtitlebarcorners.Name = "cboxtitlebarcorners";
@@ -2879,7 +2879,7 @@ namespace ShiftOS
             this.cbindividualbordercolours.AutoSize = true;
             this.cbindividualbordercolours.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cbindividualbordercolours.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.cbindividualbordercolours.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbindividualbordercolours.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbindividualbordercolours.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cbindividualbordercolours.Location = new System.Drawing.Point(161, 4);
             this.cbindividualbordercolours.Name = "cbindividualbordercolours";
@@ -3265,7 +3265,7 @@ namespace ShiftOS
             // btnborders
             // 
             this.btnborders.BackColor = System.Drawing.Color.White;
-            this.btnborders.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnborders.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnborders.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnborders.Location = new System.Drawing.Point(4, 105);
             this.btnborders.Name = "btnborders";
@@ -3279,7 +3279,7 @@ namespace ShiftOS
             // btnbuttons
             // 
             this.btnbuttons.BackColor = System.Drawing.Color.White;
-            this.btnbuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbuttons.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuttons.Location = new System.Drawing.Point(4, 70);
             this.btnbuttons.Name = "btnbuttons";
@@ -3293,7 +3293,7 @@ namespace ShiftOS
             // btntitletext
             // 
             this.btntitletext.BackColor = System.Drawing.Color.White;
-            this.btntitletext.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntitletext.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntitletext.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntitletext.Location = new System.Drawing.Point(4, 35);
             this.btntitletext.Name = "btntitletext";
@@ -3307,7 +3307,7 @@ namespace ShiftOS
             // btntitlebar
             // 
             this.btntitlebar.BackColor = System.Drawing.Color.White;
-            this.btntitlebar.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btntitlebar.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btntitlebar.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntitlebar.Location = new System.Drawing.Point(4, 0);
             this.btntitlebar.Name = "btntitlebar";
@@ -3494,7 +3494,7 @@ namespace ShiftOS
             // 
             // btnresetallsettings
             // 
-            this.btnresetallsettings.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnresetallsettings.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnresetallsettings.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnresetallsettings.Location = new System.Drawing.Point(101, 145);
             this.btnresetallsettings.Name = "btnresetallsettings";
@@ -4218,7 +4218,7 @@ namespace ShiftOS
             // btnfancydragging
             // 
             this.btnfancydragging.BackColor = System.Drawing.Color.White;
-            this.btnfancydragging.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnfancydragging.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnfancydragging.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfancydragging.Location = new System.Drawing.Point(4, 35);
             this.btnfancydragging.Name = "btnfancydragging";
@@ -4231,7 +4231,7 @@ namespace ShiftOS
             // btnfancywindows
             // 
             this.btnfancywindows.BackColor = System.Drawing.Color.White;
-            this.btnfancywindows.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnfancywindows.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnfancywindows.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfancywindows.Location = new System.Drawing.Point(4, 0);
             this.btnfancywindows.Name = "btnfancywindows";
@@ -4293,7 +4293,7 @@ namespace ShiftOS
             // 
             // btnmorebuttons
             // 
-            this.btnmorebuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmorebuttons.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmorebuttons.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.btnmorebuttons.Location = new System.Drawing.Point(216, 195);
             this.btnmorebuttons.Name = "btnmorebuttons";
@@ -4481,7 +4481,7 @@ namespace ShiftOS
             // btnback
             // 
             this.btnback.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
-            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnback.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.btnback.Location = new System.Drawing.Point(6, 184);
             this.btnback.Name = "btnback";
@@ -5013,7 +5013,7 @@ namespace ShiftOS
             // btnmisc
             // 
             this.btnmisc.BackColor = System.Drawing.Color.White;
-            this.btnmisc.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnmisc.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnmisc.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmisc.Location = new System.Drawing.Point(4, 105);
             this.btnmisc.Name = "btnmisc";
@@ -5025,7 +5025,7 @@ namespace ShiftOS
             // btnadvanced
             // 
             this.btnadvanced.BackColor = System.Drawing.Color.White;
-            this.btnadvanced.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnadvanced.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnadvanced.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadvanced.Location = new System.Drawing.Point(4, 70);
             this.btnadvanced.Name = "btnadvanced";
@@ -5038,7 +5038,7 @@ namespace ShiftOS
             // btndropdown
             // 
             this.btndropdown.BackColor = System.Drawing.Color.White;
-            this.btndropdown.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndropdown.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndropdown.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndropdown.Location = new System.Drawing.Point(4, 35);
             this.btndropdown.Name = "btndropdown";
@@ -5051,7 +5051,7 @@ namespace ShiftOS
             // btnbasic
             // 
             this.btnbasic.BackColor = System.Drawing.Color.White;
-            this.btnbasic.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbasic.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbasic.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbasic.Location = new System.Drawing.Point(4, 0);
             this.btnbasic.Name = "btnbasic";

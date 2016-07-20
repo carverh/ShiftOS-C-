@@ -48,7 +48,7 @@
             // btnselect
             // 
             this.btnselect.Dock = ShiftUI.DockStyle.Fill;
-            this.btnselect.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnselect.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnselect.Location = new System.Drawing.Point(186, 0);
             this.btnselect.Name = "btnselect";
             this.btnselect.Size = new System.Drawing.Size(40, 33);

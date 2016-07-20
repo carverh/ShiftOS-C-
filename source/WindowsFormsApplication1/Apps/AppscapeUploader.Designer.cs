@@ -140,7 +140,7 @@
             // 
             this.cbsell.Appearance = ShiftUI.Appearance.Button;
             this.cbsell.AutoSize = true;
-            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbsell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.cbsell.Location = new System.Drawing.Point(98, 235);
             this.cbsell.Name = "cbsell";
@@ -206,7 +206,7 @@
             this.btncompilesaa.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.btncompilesaa.AutoSize = true;
             this.btncompilesaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btncompilesaa.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncompilesaa.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncompilesaa.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btncompilesaa.Location = new System.Drawing.Point(4, 282);
             this.btncompilesaa.Name = "btncompilesaa";
@@ -220,7 +220,7 @@
             // 
             this.btnscreenshot.AutoSize = true;
             this.btnscreenshot.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnscreenshot.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnscreenshot.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnscreenshot.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnscreenshot.Location = new System.Drawing.Point(12, 76);
             this.btnscreenshot.Name = "btnscreenshot";
@@ -234,7 +234,7 @@
             // 
             this.btnicon.AutoSize = true;
             this.btnicon.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnicon.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnicon.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnicon.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnicon.Location = new System.Drawing.Point(12, 44);
             this.btnicon.Name = "btnicon";
@@ -248,7 +248,7 @@
             // 
             this.btnsaa.AutoSize = true;
             this.btnsaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsaa.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsaa.Location = new System.Drawing.Point(12, 9);
             this.btnsaa.Name = "btnsaa";
@@ -318,7 +318,7 @@
             // 
             this.btndone.AutoSize = true;
             this.btndone.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndone.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndone.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndone.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btndone.Location = new System.Drawing.Point(660, 3);
             this.btndone.Name = "btndone";
@@ -332,7 +332,7 @@
             // 
             this.btnnext.AutoSize = true;
             this.btnnext.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnnext.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnnext.Location = new System.Drawing.Point(612, 3);
             this.btnnext.Name = "btnnext";
@@ -346,7 +346,7 @@
             // 
             this.btnback.AutoSize = true;
             this.btnback.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnback.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnback.Location = new System.Drawing.Point(564, 3);
             this.btnback.Name = "btnback";
@@ -360,7 +360,7 @@
             // 
             this.btncancel.AutoSize = true;
             this.btncancel.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btncancel.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btncancel.Location = new System.Drawing.Point(508, 3);
             this.btncancel.Name = "btncancel";

@@ -70,7 +70,7 @@ namespace ShiftOS
             // 
             this.btnok.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
             | ShiftUI.AnchorStyles.Right)));
-            this.btnok.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnok.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnok.ForeColor = System.Drawing.Color.Black;
             this.btnok.Location = new System.Drawing.Point(134, 118);
@@ -128,7 +128,7 @@ namespace ShiftOS
             // 
             // btnno
             // 
-            this.btnno.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnno.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnno.ForeColor = System.Drawing.Color.Black;
             this.btnno.Location = new System.Drawing.Point(142, 2);
@@ -142,7 +142,7 @@ namespace ShiftOS
             // 
             // btnyes
             // 
-            this.btnyes.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnyes.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnyes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnyes.ForeColor = System.Drawing.Color.Black;
             this.btnyes.Location = new System.Drawing.Point(29, 2);

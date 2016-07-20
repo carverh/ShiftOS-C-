@@ -86,7 +86,7 @@
             // 
             this.btndone.AutoSize = true;
             this.btndone.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btndone.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btndone.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btndone.Location = new System.Drawing.Point(649, 3);
             this.btndone.Name = "btndone";
             this.btndone.Size = new System.Drawing.Size(45, 25);
@@ -99,7 +99,7 @@
             // 
             this.btnadd.AutoSize = true;
             this.btnadd.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnadd.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnadd.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnadd.Location = new System.Drawing.Point(605, 3);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(38, 25);
@@ -111,7 +111,7 @@
             // cbpanel
             // 
             this.cbpanel.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
-            this.cbpanel.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.cbpanel.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.cbpanel.FormattingEnabled = true;
             this.cbpanel.Location = new System.Drawing.Point(478, 3);
             this.cbpanel.Name = "cbpanel";
@@ -205,7 +205,7 @@
             // 
             this.btninstallwidgets.AutoSize = true;
             this.btninstallwidgets.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btninstallwidgets.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btninstallwidgets.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btninstallwidgets.Location = new System.Drawing.Point(152, 3);
             this.btninstallwidgets.Name = "btninstallwidgets";
             this.btninstallwidgets.Size = new System.Drawing.Size(88, 25);

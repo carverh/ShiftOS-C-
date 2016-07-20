@@ -130,7 +130,7 @@
             // 
             this.btnbegin.AutoSize = true;
             this.btnbegin.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.btnbegin.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnbegin.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnbegin.Location = new System.Drawing.Point(3, 3);
             this.btnbegin.Name = "btnbegin";
             this.btnbegin.Size = new System.Drawing.Size(62, 32);
@@ -246,7 +246,7 @@
             this.button1.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.button1.AutoSize = true;
             this.button1.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.button1.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button1.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button1.Location = new System.Drawing.Point(1233, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 25);
@@ -260,7 +260,7 @@
             this.button2.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.button2.AutoSize = true;
             this.button2.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.button2.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button2.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button2.Location = new System.Drawing.Point(1210, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 25);
@@ -283,7 +283,7 @@
             // 
             this.button3.AutoSize = true;
             this.button3.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
-            this.button3.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.button3.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.button3.Location = new System.Drawing.Point(3, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 32);

@@ -124,7 +124,7 @@ namespace ShiftOS
             if(c is Button)
             {
                 var b = c as Button;
-                b.FlatStyle = FlatStyle.Flat;
+                b.FlatStyle = FlatStyle.Standard;
             }
             if(c is Panel || c is FlowLayoutPanel)
             {

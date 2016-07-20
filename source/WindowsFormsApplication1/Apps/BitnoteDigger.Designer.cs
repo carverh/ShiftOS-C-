@@ -82,7 +82,7 @@ namespace ShiftOS
             // btnsend
             // 
             this.btnsend.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnsend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsend.Location = new System.Drawing.Point(472, 181);
             this.btnsend.Name = "btnsend";
@@ -216,7 +216,7 @@ namespace ShiftOS
             // 
             // btnturbomode
             // 
-            this.btnturbomode.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnturbomode.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnturbomode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnturbomode.Location = new System.Drawing.Point(6, 188);
             this.btnturbomode.Name = "btnturbomode";
@@ -228,7 +228,7 @@ namespace ShiftOS
             // 
             // btnstop
             // 
-            this.btnstop.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstop.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstop.Location = new System.Drawing.Point(101, 156);
             this.btnstop.Name = "btnstop";
@@ -240,7 +240,7 @@ namespace ShiftOS
             // 
             // btnstart
             // 
-            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstart.Location = new System.Drawing.Point(6, 156);
             this.btnstart.Name = "btnstart";
@@ -282,7 +282,7 @@ namespace ShiftOS
             // 
             // btnupgrade
             // 
-            this.btnupgrade.FlatStyle = ShiftUI.FlatStyle.Flat;
+            this.btnupgrade.FlatStyle = ShiftUI.FlatStyle.Standard;
             this.btnupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupgrade.Location = new System.Drawing.Point(6, 223);
             this.btnupgrade.Name = "btnupgrade";

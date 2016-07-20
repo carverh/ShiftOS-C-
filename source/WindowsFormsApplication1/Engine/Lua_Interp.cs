@@ -1113,7 +1113,7 @@ end");
                     break;
                 case "button":
                     var btn = new Button();
-                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatStyle = FlatStyle.Standard;
                     if(darkmode)
                     {
                         //Set dark button
@@ -1451,6 +1451,19 @@ end");
 
     public static class Extensions
     {
+        /// <summary>
+        /// Attempts to convert a Windows Forms control to a ShiftUI widget
+        /// using JSON.NET.
+        /// 
+        /// This may fail due to architecture differences in the WinForms and
+        /// ShiftUI code.
+        /// 
+        /// Exceptions:
+        ///  - JsonSerializationException: Occurs when a control has some
+        ///  data that JSON.NET can't serialize.
+        /// </summary>
+        /// <param name="ctrl">The Windows Forms control to convert</param>
+        /// <returns>The converted widget.</returns>
         public static Widget ToWidget(this System.Windows.Forms.Control ctrl)
         {
             string json = JsonConvert.SerializeObject(ctrl);
