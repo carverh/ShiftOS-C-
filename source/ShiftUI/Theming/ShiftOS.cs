@@ -17,6 +17,7 @@ namespace ShiftUI.ShiftOS
         #endregion
 
         #region Global
+        public Color SelectionHighlight = Color.Black;
         public string DefaultFont = "Microsoft Sans Serif";
         public Color VisualStyleBorderColor = Color.Black;
         public int VisualStyleBorderWidth = 2;
@@ -34,6 +35,13 @@ namespace ShiftUI.ShiftOS
         public Color Border3DTopLeftInner = Color.LightGray;
         public Color Border3DBottomRight = Color.DarkGray;
         public Color Border3DBottomRightInner = Color.Gray;
+        #endregion
+
+        #region CheckBox
+        public Color CheckBoxCheckColor = Color.Black;
+        public Color CheckBoxBorderColor = Color.Black;
+        public Color CheckBoxBackgroundColor = Color.White;
+        public int CheckBoxBorderWidth = 2;
         #endregion
 
         #region MessageBox

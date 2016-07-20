@@ -3141,20 +3141,20 @@ namespace ShiftUI
                     int scale = Math.Max(1, rect_checkrect.Width / 12);
 
                     // set the checkbox background
-                    dc.FillRectangle(SystemBrushes.Window,
+                    dc.FillRectangle(new SolidBrush(Application.CurrentSkin.CheckBoxBackgroundColor),
                               rect_checkrect);
                     // define a rectangle inside the border area
                     Rectangle rect = new Rectangle(rect_checkrect.X + 2,
                                     rect_checkrect.Y + 2,
                                     rect_checkrect.Width - 4,
                                     rect_checkrect.Height - 4);
-                    Pen pen = ResPool.GetSizedPen(this.ColorWindowText, 2);
+                    Pen pen = new Pen(new SolidBrush(Application.CurrentSkin.CheckBoxBorderColor), Application.CurrentSkin.CheckBoxBorderWidth);
                     dc.DrawRectangle(pen, rect);
 
                     // Need to draw a check-mark
                     if (item.Checked)
                     {
-                        Pen check_pen = ResPool.GetSizedPen(this.ColorWindowText, 1);
+                        Pen check_pen = new Pen(new SolidBrush(Application.CurrentSkin.CheckBoxCheckColor), 1);
                         // adjustments to get the check-mark at the right place
                         rect.X++; rect.Y++;
                         // following logic is taken from DrawFrameControl method
@@ -3235,7 +3235,7 @@ namespace ShiftUI
             }
 
             if (item.Selected && control.Focused)
-                dc.FillRectangle(SystemBrushes.Highlight, highlight_rect);
+                dc.FillRectangle(new SolidBrush(Application.CurrentSkin.SelectionHighlight), highlight_rect);
             else if (item.Selected && !control.HideSelection)
                 dc.FillRectangle(SystemBrushes.Control, highlight_rect);
             else
