@@ -31,27 +31,27 @@ namespace ShiftOS
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KnowledgeInput));
-            this.ListBox1 = new System.Windows.Forms.ListBox();
-            this.pnlintro = new System.Windows.Forms.Panel();
-            this.pnlcategorydisplay = new System.Windows.Forms.Panel();
-            this.lblnextreward = new System.Windows.Forms.Label();
-            this.guessbox = new System.Windows.Forms.TextBox();
-            this.lblcurrentlevel = new System.Windows.Forms.Label();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.listblistedstuff = new System.Windows.Forms.ListBox();
-            this.lbltillnextlevel = new System.Windows.Forms.Label();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.btnstart = new System.Windows.Forms.Button();
-            this.lblcatedescription = new System.Windows.Forms.Label();
-            this.lblcategory = new System.Windows.Forms.Label();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.decider = new System.Windows.Forms.Timer(this.components);
-            this.Label6 = new System.Windows.Forms.Label();
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.tmrstoryline = new System.Windows.Forms.Timer(this.components);
+            this.ListBox1 = new ShiftUI.ListBox();
+            this.pnlintro = new ShiftUI.Panel();
+            this.pnlcategorydisplay = new ShiftUI.Panel();
+            this.lblnextreward = new ShiftUI.Label();
+            this.guessbox = new ShiftUI.TextBox();
+            this.lblcurrentlevel = new ShiftUI.Label();
+            this.Label5 = new ShiftUI.Label();
+            this.listblistedstuff = new ShiftUI.ListBox();
+            this.lbltillnextlevel = new ShiftUI.Label();
+            this.lbltotal = new ShiftUI.Label();
+            this.btnstart = new ShiftUI.Button();
+            this.lblcatedescription = new ShiftUI.Label();
+            this.lblcategory = new ShiftUI.Label();
+            this.Label4 = new ShiftUI.Label();
+            this.Label3 = new ShiftUI.Label();
+            this.Label2 = new ShiftUI.Label();
+            this.Label1 = new ShiftUI.Label();
+            this.decider = new ShiftUI.Timer(this.components);
+            this.Label6 = new ShiftUI.Label();
+            this.pgcontents = new ShiftUI.Panel();
+            this.tmrstoryline = new ShiftUI.Timer(this.components);
             this.pnlintro.SuspendLayout();
             this.pnlcategorydisplay.SuspendLayout();
             this.pgcontents.SuspendLayout();
@@ -59,12 +59,12 @@ namespace ShiftOS
             // 
             // ListBox1
             // 
-            this.ListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBox1.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.ListBox1.BackColor = System.Drawing.Color.White;
-            this.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ListBox1.BorderStyle = ShiftUI.BorderStyle.None;
+            this.ListBox1.DrawMode = ShiftUI.DrawMode.OwnerDrawFixed;
             this.ListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox1.ForeColor = System.Drawing.Color.Black;
             this.ListBox1.FormattingEnabled = true;
@@ -77,16 +77,16 @@ namespace ShiftOS
             this.ListBox1.Name = "ListBox1";
             this.ListBox1.Size = new System.Drawing.Size(179, 240);
             this.ListBox1.TabIndex = 0;
-            this.ListBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBox1_DrawItem);
+            this.ListBox1.DrawItem += new ShiftUI.DrawItemEventHandler(this.ListBox1_DrawItem);
             this.ListBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
             // pnlintro
             // 
-            this.pnlintro.Controls.Add(this.pnlcategorydisplay);
-            this.pnlintro.Controls.Add(this.Label4);
-            this.pnlintro.Controls.Add(this.Label3);
-            this.pnlintro.Controls.Add(this.Label2);
-            this.pnlintro.Controls.Add(this.Label1);
+            this.pnlintro.Widgets.Add(this.pnlcategorydisplay);
+            this.pnlintro.Widgets.Add(this.Label4);
+            this.pnlintro.Widgets.Add(this.Label3);
+            this.pnlintro.Widgets.Add(this.Label2);
+            this.pnlintro.Widgets.Add(this.Label1);
             this.pnlintro.Location = new System.Drawing.Point(190, 0);
             this.pnlintro.Name = "pnlintro";
             this.pnlintro.Size = new System.Drawing.Size(479, 272);
@@ -94,17 +94,17 @@ namespace ShiftOS
             // 
             // pnlcategorydisplay
             // 
-            this.pnlcategorydisplay.Controls.Add(this.lblnextreward);
-            this.pnlcategorydisplay.Controls.Add(this.guessbox);
-            this.pnlcategorydisplay.Controls.Add(this.lblcurrentlevel);
-            this.pnlcategorydisplay.Controls.Add(this.Label5);
-            this.pnlcategorydisplay.Controls.Add(this.listblistedstuff);
-            this.pnlcategorydisplay.Controls.Add(this.lbltillnextlevel);
-            this.pnlcategorydisplay.Controls.Add(this.lbltotal);
-            this.pnlcategorydisplay.Controls.Add(this.btnstart);
-            this.pnlcategorydisplay.Controls.Add(this.lblcatedescription);
-            this.pnlcategorydisplay.Controls.Add(this.lblcategory);
-            this.pnlcategorydisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlcategorydisplay.Widgets.Add(this.lblnextreward);
+            this.pnlcategorydisplay.Widgets.Add(this.guessbox);
+            this.pnlcategorydisplay.Widgets.Add(this.lblcurrentlevel);
+            this.pnlcategorydisplay.Widgets.Add(this.Label5);
+            this.pnlcategorydisplay.Widgets.Add(this.listblistedstuff);
+            this.pnlcategorydisplay.Widgets.Add(this.lbltillnextlevel);
+            this.pnlcategorydisplay.Widgets.Add(this.lbltotal);
+            this.pnlcategorydisplay.Widgets.Add(this.btnstart);
+            this.pnlcategorydisplay.Widgets.Add(this.lblcatedescription);
+            this.pnlcategorydisplay.Widgets.Add(this.lblcategory);
+            this.pnlcategorydisplay.Dock = ShiftUI.DockStyle.Fill;
             this.pnlcategorydisplay.ForeColor = System.Drawing.Color.Black;
             this.pnlcategorydisplay.Location = new System.Drawing.Point(0, 0);
             this.pnlcategorydisplay.Name = "pnlcategorydisplay";
@@ -125,7 +125,7 @@ namespace ShiftOS
             // guessbox
             // 
             this.guessbox.BackColor = System.Drawing.Color.White;
-            this.guessbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.guessbox.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.guessbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessbox.ForeColor = System.Drawing.Color.Black;
             this.guessbox.Location = new System.Drawing.Point(11, 147);
@@ -134,9 +134,9 @@ namespace ShiftOS
             this.guessbox.Size = new System.Drawing.Size(297, 45);
             this.guessbox.TabIndex = 9;
             this.guessbox.Text = "Enter Guess Here";
-            this.guessbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guessbox.TextAlign = ShiftUI.HorizontalAlignment.Center;
             this.guessbox.Click += new System.EventHandler(this.guessbox_click);
-            this.guessbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guessbox_keydown);
+            this.guessbox.KeyDown += new ShiftUI.KeyEventHandler(this.guessbox_keydown);
             // 
             // lblcurrentlevel
             // 
@@ -161,8 +161,8 @@ namespace ShiftOS
             // listblistedstuff
             // 
             this.listblistedstuff.BackColor = System.Drawing.Color.Black;
-            this.listblistedstuff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listblistedstuff.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listblistedstuff.BorderStyle = ShiftUI.BorderStyle.None;
+            this.listblistedstuff.DrawMode = ShiftUI.DrawMode.OwnerDrawFixed;
             this.listblistedstuff.ForeColor = System.Drawing.Color.White;
             this.listblistedstuff.FormattingEnabled = true;
             this.listblistedstuff.Location = new System.Drawing.Point(340, 41);
@@ -170,7 +170,7 @@ namespace ShiftOS
             this.listblistedstuff.ScrollAlwaysVisible = true;
             this.listblistedstuff.Size = new System.Drawing.Size(129, 221);
             this.listblistedstuff.TabIndex = 6;
-            this.listblistedstuff.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listblistedstuff_DrawItem);
+            this.listblistedstuff.DrawItem += new ShiftUI.DrawItemEventHandler(this.listblistedstuff_DrawItem);
             // 
             // lbltillnextlevel
             // 
@@ -194,7 +194,7 @@ namespace ShiftOS
             // 
             // btnstart
             // 
-            this.btnstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstart.Location = new System.Drawing.Point(11, 198);
             this.btnstart.Name = "btnstart";
@@ -284,10 +284,10 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.pnlintro);
-            this.pgcontents.Controls.Add(this.Label6);
-            this.pgcontents.Controls.Add(this.ListBox1);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.pnlintro);
+            this.pgcontents.Widgets.Add(this.Label6);
+            this.pgcontents.Widgets.Add(this.ListBox1);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(673, 304);
@@ -301,11 +301,11 @@ namespace ShiftOS
             // 
             this.AcceptButton = this.btnstart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(673, 304);
-            this.Controls.Add(this.pgcontents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.pgcontents);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "KnowledgeInput";
             this.Text = "Knowledge_Input";
@@ -320,26 +320,26 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.ListBox ListBox1;
-        internal System.Windows.Forms.Panel pnlintro;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Panel pnlcategorydisplay;
-        internal System.Windows.Forms.Label lblcategory;
-        internal System.Windows.Forms.Button btnstart;
-        internal System.Windows.Forms.Label lblcatedescription;
-        internal System.Windows.Forms.Label lbltillnextlevel;
-        internal System.Windows.Forms.Label lbltotal;
-        internal System.Windows.Forms.ListBox listblistedstuff;
-        internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.TextBox guessbox;
-        internal System.Windows.Forms.Label lblcurrentlevel;
-        internal System.Windows.Forms.Timer decider;
-        internal System.Windows.Forms.Label lblnextreward;
-        internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Timer tmrstoryline;
+        internal ShiftUI.ListBox ListBox1;
+        internal ShiftUI.Panel pnlintro;
+        internal ShiftUI.Label Label4;
+        internal ShiftUI.Label Label3;
+        internal ShiftUI.Label Label2;
+        internal ShiftUI.Label Label1;
+        internal ShiftUI.Panel pnlcategorydisplay;
+        internal ShiftUI.Label lblcategory;
+        internal ShiftUI.Button btnstart;
+        internal ShiftUI.Label lblcatedescription;
+        internal ShiftUI.Label lbltillnextlevel;
+        internal ShiftUI.Label lbltotal;
+        internal ShiftUI.ListBox listblistedstuff;
+        internal ShiftUI.Label Label5;
+        internal ShiftUI.TextBox guessbox;
+        internal ShiftUI.Label lblcurrentlevel;
+        internal ShiftUI.Timer decider;
+        internal ShiftUI.Label lblnextreward;
+        internal ShiftUI.Label Label6;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Timer tmrstoryline;
     }
 }

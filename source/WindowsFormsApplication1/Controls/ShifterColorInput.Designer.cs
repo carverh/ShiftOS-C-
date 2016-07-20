@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlmainbuttoncolour = new System.Windows.Forms.Panel();
-            this.lblabel = new System.Windows.Forms.Label();
+            this.pnlmainbuttoncolour = new ShiftUI.Panel();
+            this.lblabel = new ShiftUI.Label();
             this.SuspendLayout();
             // 
             // pnlmainbuttoncolour
             // 
-            this.pnlmainbuttoncolour.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlmainbuttoncolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmainbuttoncolour.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlmainbuttoncolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmainbuttoncolour.Location = new System.Drawing.Point(128, 3);
             this.pnlmainbuttoncolour.MaximumSize = new System.Drawing.Size(41, 20);
             this.pnlmainbuttoncolour.Name = "pnlmainbuttoncolour";
@@ -45,9 +45,9 @@
             // 
             // lblabel
             // 
-            this.lblabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblabel.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lblabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblabel.Location = new System.Drawing.Point(3, 6);
             this.lblabel.Name = "lblabel";
@@ -59,9 +59,9 @@
             // ShifterColorInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlmainbuttoncolour);
-            this.Controls.Add(this.lblabel);
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.Widgets.Add(this.pnlmainbuttoncolour);
+            this.Widgets.Add(this.lblabel);
             this.Name = "ShifterColorInput";
             this.Size = new System.Drawing.Size(173, 28);
             this.ResumeLayout(false);
@@ -70,8 +70,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlmainbuttoncolour;
-        private System.Windows.Forms.Label lblabel;
+        private ShiftUI.Panel pnlmainbuttoncolour;
+        private ShiftUI.Label lblabel;
 
     }
 }

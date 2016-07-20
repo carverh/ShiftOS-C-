@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbtitle = new System.Windows.Forms.Label();
-            this.pnlmain = new System.Windows.Forms.Panel();
-            this.Page0 = new System.Windows.Forms.Panel();
-            this.txtprice = new System.Windows.Forms.TextBox();
-            this.lbprice = new System.Windows.Forms.Label();
-            this.lbaddress = new System.Windows.Forms.Label();
-            this.cbsell = new System.Windows.Forms.CheckBox();
-            this.txtpackagedescription = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtpackagename = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Page1 = new System.Windows.Forms.Panel();
-            this.btncompilesaa = new System.Windows.Forms.Button();
-            this.btnscreenshot = new System.Windows.Forms.Button();
-            this.btnicon = new System.Windows.Forms.Button();
-            this.btnsaa = new System.Windows.Forms.Button();
-            this.Page2 = new System.Windows.Forms.Panel();
-            this.txtconfirm = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbldescription = new System.Windows.Forms.Label();
-            this.pnlactions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btndone = new System.Windows.Forms.Button();
-            this.btnnext = new System.Windows.Forms.Button();
-            this.btnback = new System.Windows.Forms.Button();
-            this.btncancel = new System.Windows.Forms.Button();
+            this.lbtitle = new ShiftUI.Label();
+            this.pnlmain = new ShiftUI.Panel();
+            this.Page0 = new ShiftUI.Panel();
+            this.txtprice = new ShiftUI.TextBox();
+            this.lbprice = new ShiftUI.Label();
+            this.lbaddress = new ShiftUI.Label();
+            this.cbsell = new ShiftUI.CheckBox();
+            this.txtpackagedescription = new ShiftUI.TextBox();
+            this.label2 = new ShiftUI.Label();
+            this.txtpackagename = new ShiftUI.TextBox();
+            this.label1 = new ShiftUI.Label();
+            this.Page1 = new ShiftUI.Panel();
+            this.btncompilesaa = new ShiftUI.Button();
+            this.btnscreenshot = new ShiftUI.Button();
+            this.btnicon = new ShiftUI.Button();
+            this.btnsaa = new ShiftUI.Button();
+            this.Page2 = new ShiftUI.Panel();
+            this.txtconfirm = new ShiftUI.TextBox();
+            this.label3 = new ShiftUI.Label();
+            this.lbldescription = new ShiftUI.Label();
+            this.pnlactions = new ShiftUI.FlowLayoutPanel();
+            this.btndone = new ShiftUI.Button();
+            this.btnnext = new ShiftUI.Button();
+            this.btnback = new ShiftUI.Button();
+            this.btncancel = new ShiftUI.Button();
             this.pnlmain.SuspendLayout();
             this.Page0.SuspendLayout();
             this.Page1.SuspendLayout();
@@ -63,12 +63,12 @@
             // lbtitle
             // 
             this.lbtitle.BackColor = System.Drawing.Color.Gray;
-            this.lbtitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbtitle.Dock = ShiftUI.DockStyle.Top;
             this.lbtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lbtitle.ForeColor = System.Drawing.Color.White;
             this.lbtitle.Location = new System.Drawing.Point(0, 0);
             this.lbtitle.Name = "lbtitle";
-            this.lbtitle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.lbtitle.Padding = new ShiftUI.Padding(15, 0, 0, 0);
             this.lbtitle.Size = new System.Drawing.Size(711, 49);
             this.lbtitle.TabIndex = 0;
             this.lbtitle.Text = "Welcome!";
@@ -77,13 +77,13 @@
             // pnlmain
             // 
             this.pnlmain.BackColor = System.Drawing.Color.Gray;
-            this.pnlmain.Controls.Add(this.Page0);
-            this.pnlmain.Controls.Add(this.Page1);
-            this.pnlmain.Controls.Add(this.Page2);
-            this.pnlmain.Controls.Add(this.lbldescription);
-            this.pnlmain.Controls.Add(this.pnlactions);
-            this.pnlmain.Controls.Add(this.lbtitle);
-            this.pnlmain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlmain.Widgets.Add(this.Page0);
+            this.pnlmain.Widgets.Add(this.Page1);
+            this.pnlmain.Widgets.Add(this.Page2);
+            this.pnlmain.Widgets.Add(this.lbldescription);
+            this.pnlmain.Widgets.Add(this.pnlactions);
+            this.pnlmain.Widgets.Add(this.lbtitle);
+            this.pnlmain.Dock = ShiftUI.DockStyle.Fill;
             this.pnlmain.Location = new System.Drawing.Point(0, 0);
             this.pnlmain.Name = "pnlmain";
             this.pnlmain.Size = new System.Drawing.Size(711, 485);
@@ -91,15 +91,15 @@
             // 
             // Page0
             // 
-            this.Page0.Controls.Add(this.txtprice);
-            this.Page0.Controls.Add(this.lbprice);
-            this.Page0.Controls.Add(this.lbaddress);
-            this.Page0.Controls.Add(this.cbsell);
-            this.Page0.Controls.Add(this.txtpackagedescription);
-            this.Page0.Controls.Add(this.label2);
-            this.Page0.Controls.Add(this.txtpackagename);
-            this.Page0.Controls.Add(this.label1);
-            this.Page0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Page0.Widgets.Add(this.txtprice);
+            this.Page0.Widgets.Add(this.lbprice);
+            this.Page0.Widgets.Add(this.lbaddress);
+            this.Page0.Widgets.Add(this.cbsell);
+            this.Page0.Widgets.Add(this.txtpackagedescription);
+            this.Page0.Widgets.Add(this.label2);
+            this.Page0.Widgets.Add(this.txtpackagename);
+            this.Page0.Widgets.Add(this.label1);
+            this.Page0.Dock = ShiftUI.DockStyle.Fill;
             this.Page0.Location = new System.Drawing.Point(0, 135);
             this.Page0.Name = "Page0";
             this.Page0.Size = new System.Drawing.Size(711, 314);
@@ -138,9 +138,9 @@
             // 
             // cbsell
             // 
-            this.cbsell.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbsell.Appearance = ShiftUI.Appearance.Button;
             this.cbsell.AutoSize = true;
-            this.cbsell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cbsell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.cbsell.Location = new System.Drawing.Point(98, 235);
             this.cbsell.Name = "cbsell";
@@ -152,8 +152,8 @@
             // 
             // txtpackagedescription
             // 
-            this.txtpackagedescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtpackagedescription.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtpackagedescription.Location = new System.Drawing.Point(100, 44);
             this.txtpackagedescription.Multiline = true;
             this.txtpackagedescription.Name = "txtpackagedescription";
@@ -191,11 +191,11 @@
             // 
             // Page1
             // 
-            this.Page1.Controls.Add(this.btncompilesaa);
-            this.Page1.Controls.Add(this.btnscreenshot);
-            this.Page1.Controls.Add(this.btnicon);
-            this.Page1.Controls.Add(this.btnsaa);
-            this.Page1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Page1.Widgets.Add(this.btncompilesaa);
+            this.Page1.Widgets.Add(this.btnscreenshot);
+            this.Page1.Widgets.Add(this.btnicon);
+            this.Page1.Widgets.Add(this.btnsaa);
+            this.Page1.Dock = ShiftUI.DockStyle.Fill;
             this.Page1.Location = new System.Drawing.Point(0, 135);
             this.Page1.Name = "Page1";
             this.Page1.Size = new System.Drawing.Size(711, 314);
@@ -203,10 +203,10 @@
             // 
             // btncompilesaa
             // 
-            this.btncompilesaa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btncompilesaa.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.btncompilesaa.AutoSize = true;
-            this.btncompilesaa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncompilesaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncompilesaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btncompilesaa.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btncompilesaa.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btncompilesaa.Location = new System.Drawing.Point(4, 282);
             this.btncompilesaa.Name = "btncompilesaa";
@@ -219,8 +219,8 @@
             // btnscreenshot
             // 
             this.btnscreenshot.AutoSize = true;
-            this.btnscreenshot.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnscreenshot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnscreenshot.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnscreenshot.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnscreenshot.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnscreenshot.Location = new System.Drawing.Point(12, 76);
             this.btnscreenshot.Name = "btnscreenshot";
@@ -233,8 +233,8 @@
             // btnicon
             // 
             this.btnicon.AutoSize = true;
-            this.btnicon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnicon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnicon.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnicon.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnicon.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnicon.Location = new System.Drawing.Point(12, 44);
             this.btnicon.Name = "btnicon";
@@ -247,8 +247,8 @@
             // btnsaa
             // 
             this.btnsaa.AutoSize = true;
-            this.btnsaa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsaa.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsaa.Location = new System.Drawing.Point(12, 9);
             this.btnsaa.Name = "btnsaa";
@@ -260,9 +260,9 @@
             // 
             // Page2
             // 
-            this.Page2.Controls.Add(this.txtconfirm);
-            this.Page2.Controls.Add(this.label3);
-            this.Page2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Page2.Widgets.Add(this.txtconfirm);
+            this.Page2.Widgets.Add(this.label3);
+            this.Page2.Dock = ShiftUI.DockStyle.Fill;
             this.Page2.Location = new System.Drawing.Point(0, 135);
             this.Page2.Name = "Page2";
             this.Page2.Size = new System.Drawing.Size(711, 314);
@@ -270,9 +270,9 @@
             // 
             // txtconfirm
             // 
-            this.txtconfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtconfirm.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtconfirm.Location = new System.Drawing.Point(19, 49);
             this.txtconfirm.Multiline = true;
             this.txtconfirm.Name = "txtconfirm";
@@ -290,24 +290,24 @@
             // 
             // lbldescription
             // 
-            this.lbldescription.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbldescription.Dock = ShiftUI.DockStyle.Top;
             this.lbldescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbldescription.ForeColor = System.Drawing.Color.White;
             this.lbldescription.Location = new System.Drawing.Point(0, 49);
             this.lbldescription.Name = "lbldescription";
-            this.lbldescription.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.lbldescription.Padding = new ShiftUI.Padding(15, 0, 0, 0);
             this.lbldescription.Size = new System.Drawing.Size(711, 86);
             this.lbldescription.TabIndex = 2;
             this.lbldescription.Text = "label1";
             // 
             // pnlactions
             // 
-            this.pnlactions.Controls.Add(this.btndone);
-            this.pnlactions.Controls.Add(this.btnnext);
-            this.pnlactions.Controls.Add(this.btnback);
-            this.pnlactions.Controls.Add(this.btncancel);
-            this.pnlactions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlactions.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlactions.Widgets.Add(this.btndone);
+            this.pnlactions.Widgets.Add(this.btnnext);
+            this.pnlactions.Widgets.Add(this.btnback);
+            this.pnlactions.Widgets.Add(this.btncancel);
+            this.pnlactions.Dock = ShiftUI.DockStyle.Bottom;
+            this.pnlactions.FlowDirection = ShiftUI.FlowDirection.RightToLeft;
             this.pnlactions.ForeColor = System.Drawing.Color.White;
             this.pnlactions.Location = new System.Drawing.Point(0, 449);
             this.pnlactions.Name = "pnlactions";
@@ -317,8 +317,8 @@
             // btndone
             // 
             this.btndone.AutoSize = true;
-            this.btndone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndone.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btndone.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndone.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btndone.Location = new System.Drawing.Point(660, 3);
             this.btndone.Name = "btndone";
@@ -331,8 +331,8 @@
             // btnnext
             // 
             this.btnnext.AutoSize = true;
-            this.btnnext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnnext.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnnext.Location = new System.Drawing.Point(612, 3);
             this.btnnext.Name = "btnnext";
@@ -345,8 +345,8 @@
             // btnback
             // 
             this.btnback.AutoSize = true;
-            this.btnback.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnback.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnback.Location = new System.Drawing.Point(564, 3);
             this.btnback.Name = "btnback";
@@ -359,8 +359,8 @@
             // btncancel
             // 
             this.btncancel.AutoSize = true;
-            this.btncancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btncancel.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btncancel.Location = new System.Drawing.Point(508, 3);
             this.btncancel.Name = "btncancel";
@@ -373,9 +373,9 @@
             // AppscapeUploader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 485);
-            this.Controls.Add(this.pnlmain);
+            this.Widgets.Add(this.pnlmain);
             this.Name = "AppscapeUploader";
             this.Text = "AppscapeUploader";
             this.Load += new System.EventHandler(this.AppscapeUploader_Load);
@@ -394,30 +394,30 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbtitle;
-        private System.Windows.Forms.Panel pnlmain;
-        private System.Windows.Forms.FlowLayoutPanel pnlactions;
-        private System.Windows.Forms.Button btndone;
-        private System.Windows.Forms.Button btnnext;
-        private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.Button btncancel;
-        private System.Windows.Forms.Label lbldescription;
-        private System.Windows.Forms.Panel Page0;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtpackagedescription;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtpackagename;
-        private System.Windows.Forms.Panel Page1;
-        private System.Windows.Forms.Button btnsaa;
-        private System.Windows.Forms.Button btnscreenshot;
-        private System.Windows.Forms.Button btnicon;
-        private System.Windows.Forms.Panel Page2;
-        private System.Windows.Forms.TextBox txtconfirm;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btncompilesaa;
-        private System.Windows.Forms.TextBox txtprice;
-        private System.Windows.Forms.Label lbprice;
-        private System.Windows.Forms.Label lbaddress;
-        private System.Windows.Forms.CheckBox cbsell;
+        private ShiftUI.Label lbtitle;
+        private ShiftUI.Panel pnlmain;
+        private ShiftUI.FlowLayoutPanel pnlactions;
+        private ShiftUI.Button btndone;
+        private ShiftUI.Button btnnext;
+        private ShiftUI.Button btnback;
+        private ShiftUI.Button btncancel;
+        private ShiftUI.Label lbldescription;
+        private ShiftUI.Panel Page0;
+        private ShiftUI.Label label1;
+        private ShiftUI.TextBox txtpackagedescription;
+        private ShiftUI.Label label2;
+        private ShiftUI.TextBox txtpackagename;
+        private ShiftUI.Panel Page1;
+        private ShiftUI.Button btnsaa;
+        private ShiftUI.Button btnscreenshot;
+        private ShiftUI.Button btnicon;
+        private ShiftUI.Panel Page2;
+        private ShiftUI.TextBox txtconfirm;
+        private ShiftUI.Label label3;
+        private ShiftUI.Button btncompilesaa;
+        private ShiftUI.TextBox txtprice;
+        private ShiftUI.Label lbprice;
+        private ShiftUI.Label lbaddress;
+        private ShiftUI.CheckBox cbsell;
     }
 }

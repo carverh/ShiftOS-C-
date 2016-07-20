@@ -27,7 +27,7 @@
             // ProgressBarEX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.Name = "ProgressBarEX";
             this.Size = new System.Drawing.Size(340, 32);
             this.ResumeLayout(false);

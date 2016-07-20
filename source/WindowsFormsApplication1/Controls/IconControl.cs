@@ -6,21 +6,21 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using System.Drawing.Imaging;
 using Newtonsoft.Json;
 using System.IO;
 
 namespace ShiftOS
 {
-    public partial class IconControl : UserControl
+    public partial class IconWidget : UserWidget
     {
-        public IconControl()
+        public IconWidget()
         {
             InitializeComponent();
         }
 
-        private void IconControl_Load(object sender, EventArgs e)
+        private void IconWidget_Load(object sender, EventArgs e)
         {
             pblarge.Top = (this.Height - pblarge.Height) / 2;
         }

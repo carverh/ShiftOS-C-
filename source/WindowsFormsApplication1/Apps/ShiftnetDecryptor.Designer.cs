@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtstatus = new System.Windows.Forms.RichTextBox();
-            this.txtaddress = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnstart = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tmrdecrypt = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new ShiftUI.Label();
+            this.txtstatus = new ShiftUI.RichTextBox();
+            this.txtaddress = new ShiftUI.TextBox();
+            this.label2 = new ShiftUI.Label();
+            this.btnstart = new ShiftUI.Button();
+            this.panel1 = new ShiftUI.Panel();
+            this.tmrdecrypt = new ShiftUI.Timer(this.components);
             this.pgstatus = new ShiftOS.ProgressBarEX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
@@ -54,11 +54,11 @@
             // 
             // txtstatus
             // 
-            this.txtstatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtstatus.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtstatus.BackColor = System.Drawing.Color.Black;
-            this.txtstatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatus.BorderStyle = ShiftUI.BorderStyle.None;
             this.txtstatus.ForeColor = System.Drawing.Color.White;
             this.txtstatus.Location = new System.Drawing.Point(17, 151);
             this.txtstatus.Name = "txtstatus";
@@ -69,10 +69,10 @@
             // 
             // txtaddress
             // 
-            this.txtaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtaddress.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtaddress.BackColor = System.Drawing.Color.Gray;
-            this.txtaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtaddress.BorderStyle = ShiftUI.BorderStyle.None;
             this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtaddress.Location = new System.Drawing.Point(100, 121);
             this.txtaddress.Name = "txtaddress";
@@ -90,8 +90,8 @@
             // 
             // btnstart
             // 
-            this.btnstart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstart.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnstart.Location = new System.Drawing.Point(697, 119);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(60, 23);
@@ -103,13 +103,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnstart);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtaddress);
-            this.panel1.Controls.Add(this.txtstatus);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pgstatus);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.btnstart);
+            this.panel1.Widgets.Add(this.label2);
+            this.panel1.Widgets.Add(this.txtaddress);
+            this.panel1.Widgets.Add(this.txtstatus);
+            this.panel1.Widgets.Add(this.label1);
+            this.panel1.Widgets.Add(this.pgstatus);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 443);
@@ -121,8 +121,8 @@
             // 
             // pgstatus
             // 
-            this.pgstatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgstatus.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pgstatus.BackColor = System.Drawing.Color.Black;
             this.pgstatus.BlockSeparation = 3;
             this.pgstatus.BlockWidth = 5;
@@ -144,9 +144,9 @@
             // 
             this.AcceptButton = this.btnstart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 443);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "ShiftnetDecryptor";
             this.Text = "ShiftnetDecryptor";
             this.Load += new System.EventHandler(this.ShiftnetDecryptor_Load);
@@ -159,12 +159,12 @@
         #endregion
 
         private ProgressBarEX pgstatus;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox txtstatus;
-        private System.Windows.Forms.TextBox txtaddress;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnstart;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Timer tmrdecrypt;
+        private ShiftUI.Label label1;
+        private ShiftUI.RichTextBox txtstatus;
+        private ShiftUI.TextBox txtaddress;
+        private ShiftUI.Label label2;
+        private ShiftUI.Button btnstart;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.Timer tmrdecrypt;
     }
 }

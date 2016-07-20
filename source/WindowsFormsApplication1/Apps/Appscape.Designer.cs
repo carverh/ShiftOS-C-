@@ -30,68 +30,68 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appscape));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlchoosenetwork = new System.Windows.Forms.Panel();
-            this.btnrequest = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lvnets = new System.Windows.Forms.ListView();
-            this.clhostnameheader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnlpackageeditor = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btndonecustomizing = new System.Windows.Forms.Button();
-            this.btnsaa = new System.Windows.Forms.Button();
-            this.txtprice = new System.Windows.Forms.TextBox();
-            this.lbprice = new System.Windows.Forms.Label();
-            this.lbaddress = new System.Windows.Forms.Label();
-            this.cbsell = new System.Windows.Forms.CheckBox();
-            this.txtpackagedescription = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtpackagename = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pnllounge = new System.Windows.Forms.Panel();
-            this.btnedit = new System.Windows.Forms.Button();
-            this.btnupload = new System.Windows.Forms.Button();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.txtbitnoteaddress = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtbio = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtmoddername = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbmybio = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbmyname = new System.Windows.Forms.Label();
-            this.lvmypackages = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnlpackageinfo = new System.Windows.Forms.Panel();
-            this.pnlauthordetails = new System.Windows.Forms.Panel();
-            this.lbauthordescription = new System.Windows.Forms.Label();
-            this.lbauthorname = new System.Windows.Forms.Label();
-            this.pbappicon = new System.Windows.Forms.PictureBox();
-            this.pbappscreenshot = new System.Windows.Forms.PictureBox();
-            this.pnldownload = new System.Windows.Forms.Panel();
-            this.lbdownloadpath = new System.Windows.Forms.Label();
-            this.btndownload = new System.Windows.Forms.Button();
-            this.lbpkgdescription = new System.Windows.Forms.Label();
-            this.lbpkgname = new System.Windows.Forms.Label();
-            this.pnllist = new System.Windows.Forms.Panel();
-            this.lvpackages = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnlsearch = new System.Windows.Forms.Panel();
-            this.btnlounge = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btngetkey = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtsearch = new System.Windows.Forms.TextBox();
-            this.btnskins = new System.Windows.Forms.Button();
-            this.btnapps = new System.Windows.Forms.Button();
-            this.imgpackageicons = new System.Windows.Forms.ImageList(this.components);
+            this.panel3 = new ShiftUI.Panel();
+            this.pnlchoosenetwork = new ShiftUI.Panel();
+            this.btnrequest = new ShiftUI.Button();
+            this.label14 = new ShiftUI.Label();
+            this.label13 = new ShiftUI.Label();
+            this.lvnets = new ShiftUI.ListView();
+            this.clhostnameheader = ((ShiftUI.ColumnHeader)(new ShiftUI.ColumnHeader()));
+            this.pnlpackageeditor = new ShiftUI.Panel();
+            this.label12 = new ShiftUI.Label();
+            this.btndonecustomizing = new ShiftUI.Button();
+            this.btnsaa = new ShiftUI.Button();
+            this.txtprice = new ShiftUI.TextBox();
+            this.lbprice = new ShiftUI.Label();
+            this.lbaddress = new ShiftUI.Label();
+            this.cbsell = new ShiftUI.CheckBox();
+            this.txtpackagedescription = new ShiftUI.TextBox();
+            this.label10 = new ShiftUI.Label();
+            this.txtpackagename = new ShiftUI.TextBox();
+            this.label11 = new ShiftUI.Label();
+            this.label9 = new ShiftUI.Label();
+            this.pnllounge = new ShiftUI.Panel();
+            this.btnedit = new ShiftUI.Button();
+            this.btnupload = new ShiftUI.Button();
+            this.btnsave = new ShiftUI.Button();
+            this.txtbitnoteaddress = new ShiftUI.TextBox();
+            this.label8 = new ShiftUI.Label();
+            this.txtbio = new ShiftUI.TextBox();
+            this.label7 = new ShiftUI.Label();
+            this.txtmoddername = new ShiftUI.TextBox();
+            this.label6 = new ShiftUI.Label();
+            this.label5 = new ShiftUI.Label();
+            this.label4 = new ShiftUI.Label();
+            this.lbmybio = new ShiftUI.Label();
+            this.label3 = new ShiftUI.Label();
+            this.lbmyname = new ShiftUI.Label();
+            this.lvmypackages = new ShiftUI.ListView();
+            this.columnHeader4 = ((ShiftUI.ColumnHeader)(new ShiftUI.ColumnHeader()));
+            this.pnlpackageinfo = new ShiftUI.Panel();
+            this.pnlauthordetails = new ShiftUI.Panel();
+            this.lbauthordescription = new ShiftUI.Label();
+            this.lbauthorname = new ShiftUI.Label();
+            this.pbappicon = new ShiftUI.PictureBox();
+            this.pbappscreenshot = new ShiftUI.PictureBox();
+            this.pnldownload = new ShiftUI.Panel();
+            this.lbdownloadpath = new ShiftUI.Label();
+            this.btndownload = new ShiftUI.Button();
+            this.lbpkgdescription = new ShiftUI.Label();
+            this.lbpkgname = new ShiftUI.Label();
+            this.pnllist = new ShiftUI.Panel();
+            this.lvpackages = new ShiftUI.ListView();
+            this.columnHeader1 = ((ShiftUI.ColumnHeader)(new ShiftUI.ColumnHeader()));
+            this.columnHeader2 = ((ShiftUI.ColumnHeader)(new ShiftUI.ColumnHeader()));
+            this.columnHeader3 = ((ShiftUI.ColumnHeader)(new ShiftUI.ColumnHeader()));
+            this.pnlsearch = new ShiftUI.Panel();
+            this.btnlounge = new ShiftUI.Button();
+            this.label2 = new ShiftUI.Label();
+            this.btngetkey = new ShiftUI.Button();
+            this.label1 = new ShiftUI.Label();
+            this.txtsearch = new ShiftUI.TextBox();
+            this.btnskins = new ShiftUI.Button();
+            this.btnapps = new ShiftUI.Button();
+            this.imgpackageicons = new ShiftUI.ImageList(this.components);
             this.panel3.SuspendLayout();
             this.pnlchoosenetwork.SuspendLayout();
             this.pnlpackageeditor.SuspendLayout();
@@ -107,13 +107,13 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pnlchoosenetwork);
-            this.panel3.Controls.Add(this.pnlpackageeditor);
-            this.panel3.Controls.Add(this.pnllounge);
-            this.panel3.Controls.Add(this.pnlpackageinfo);
-            this.panel3.Controls.Add(this.pnllist);
-            this.panel3.Controls.Add(this.pnlsearch);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Widgets.Add(this.pnlchoosenetwork);
+            this.panel3.Widgets.Add(this.pnlpackageeditor);
+            this.panel3.Widgets.Add(this.pnllounge);
+            this.panel3.Widgets.Add(this.pnlpackageinfo);
+            this.panel3.Widgets.Add(this.pnllist);
+            this.panel3.Widgets.Add(this.pnlsearch);
+            this.panel3.Dock = ShiftUI.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(886, 469);
@@ -121,11 +121,11 @@
             // 
             // pnlchoosenetwork
             // 
-            this.pnlchoosenetwork.Controls.Add(this.lvnets);
-            this.pnlchoosenetwork.Controls.Add(this.btnrequest);
-            this.pnlchoosenetwork.Controls.Add(this.label14);
-            this.pnlchoosenetwork.Controls.Add(this.label13);
-            this.pnlchoosenetwork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlchoosenetwork.Widgets.Add(this.lvnets);
+            this.pnlchoosenetwork.Widgets.Add(this.btnrequest);
+            this.pnlchoosenetwork.Widgets.Add(this.label14);
+            this.pnlchoosenetwork.Widgets.Add(this.label13);
+            this.pnlchoosenetwork.Dock = ShiftUI.DockStyle.Fill;
             this.pnlchoosenetwork.Location = new System.Drawing.Point(0, 47);
             this.pnlchoosenetwork.Name = "pnlchoosenetwork";
             this.pnlchoosenetwork.Size = new System.Drawing.Size(886, 422);
@@ -133,8 +133,8 @@
             // 
             // btnrequest
             // 
-            this.btnrequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnrequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrequest.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btnrequest.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnrequest.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnrequest.Location = new System.Drawing.Point(799, 385);
             this.btnrequest.Name = "btnrequest";
@@ -146,8 +146,8 @@
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label14.Location = new System.Drawing.Point(17, 31);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(857, 30);
@@ -166,19 +166,19 @@
             // 
             // lvnets
             // 
-            this.lvnets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvnets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvnets.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.lvnets.Columns.AddRange(new ShiftUI.ColumnHeader[] {
             this.clhostnameheader});
             this.lvnets.FullRowSelect = true;
-            this.lvnets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvnets.HeaderStyle = ShiftUI.ColumnHeaderStyle.Nonclickable;
             this.lvnets.Location = new System.Drawing.Point(12, 64);
             this.lvnets.Name = "lvnets";
             this.lvnets.Size = new System.Drawing.Size(868, 307);
             this.lvnets.TabIndex = 0;
             this.lvnets.UseCompatibleStateImageBehavior = false;
-            this.lvnets.View = System.Windows.Forms.View.Details;
+            this.lvnets.View = ShiftUI.View.Details;
             // 
             // clhostnameheader
             // 
@@ -186,19 +186,19 @@
             // 
             // pnlpackageeditor
             // 
-            this.pnlpackageeditor.Controls.Add(this.label12);
-            this.pnlpackageeditor.Controls.Add(this.btndonecustomizing);
-            this.pnlpackageeditor.Controls.Add(this.btnsaa);
-            this.pnlpackageeditor.Controls.Add(this.txtprice);
-            this.pnlpackageeditor.Controls.Add(this.lbprice);
-            this.pnlpackageeditor.Controls.Add(this.lbaddress);
-            this.pnlpackageeditor.Controls.Add(this.cbsell);
-            this.pnlpackageeditor.Controls.Add(this.txtpackagedescription);
-            this.pnlpackageeditor.Controls.Add(this.label10);
-            this.pnlpackageeditor.Controls.Add(this.txtpackagename);
-            this.pnlpackageeditor.Controls.Add(this.label11);
-            this.pnlpackageeditor.Controls.Add(this.label9);
-            this.pnlpackageeditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlpackageeditor.Widgets.Add(this.label12);
+            this.pnlpackageeditor.Widgets.Add(this.btndonecustomizing);
+            this.pnlpackageeditor.Widgets.Add(this.btnsaa);
+            this.pnlpackageeditor.Widgets.Add(this.txtprice);
+            this.pnlpackageeditor.Widgets.Add(this.lbprice);
+            this.pnlpackageeditor.Widgets.Add(this.lbaddress);
+            this.pnlpackageeditor.Widgets.Add(this.cbsell);
+            this.pnlpackageeditor.Widgets.Add(this.txtpackagedescription);
+            this.pnlpackageeditor.Widgets.Add(this.label10);
+            this.pnlpackageeditor.Widgets.Add(this.txtpackagename);
+            this.pnlpackageeditor.Widgets.Add(this.label11);
+            this.pnlpackageeditor.Widgets.Add(this.label9);
+            this.pnlpackageeditor.Dock = ShiftUI.DockStyle.Fill;
             this.pnlpackageeditor.Location = new System.Drawing.Point(0, 47);
             this.pnlpackageeditor.Name = "pnlpackageeditor";
             this.pnlpackageeditor.Size = new System.Drawing.Size(886, 422);
@@ -215,10 +215,10 @@
             // 
             // btndonecustomizing
             // 
-            this.btndonecustomizing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndonecustomizing.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndonecustomizing.AutoSize = true;
-            this.btndonecustomizing.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndonecustomizing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndonecustomizing.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btndonecustomizing.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndonecustomizing.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btndonecustomizing.Location = new System.Drawing.Point(824, 385);
             this.btndonecustomizing.Name = "btndonecustomizing";
@@ -231,8 +231,8 @@
             // btnsaa
             // 
             this.btnsaa.AutoSize = true;
-            this.btnsaa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsaa.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnsaa.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsaa.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnsaa.Location = new System.Drawing.Point(99, 318);
             this.btnsaa.Name = "btnsaa";
@@ -272,9 +272,9 @@
             // 
             // cbsell
             // 
-            this.cbsell.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbsell.Appearance = ShiftUI.Appearance.Button;
             this.cbsell.AutoSize = true;
-            this.cbsell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbsell.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cbsell.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.cbsell.Location = new System.Drawing.Point(97, 263);
             this.cbsell.Name = "cbsell";
@@ -286,8 +286,8 @@
             // 
             // txtpackagedescription
             // 
-            this.txtpackagedescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtpackagedescription.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtpackagedescription.Location = new System.Drawing.Point(99, 72);
             this.txtpackagedescription.Multiline = true;
             this.txtpackagedescription.Name = "txtpackagedescription";
@@ -331,22 +331,22 @@
             // 
             // pnllounge
             // 
-            this.pnllounge.Controls.Add(this.btnedit);
-            this.pnllounge.Controls.Add(this.btnupload);
-            this.pnllounge.Controls.Add(this.btnsave);
-            this.pnllounge.Controls.Add(this.txtbitnoteaddress);
-            this.pnllounge.Controls.Add(this.label8);
-            this.pnllounge.Controls.Add(this.txtbio);
-            this.pnllounge.Controls.Add(this.label7);
-            this.pnllounge.Controls.Add(this.txtmoddername);
-            this.pnllounge.Controls.Add(this.label6);
-            this.pnllounge.Controls.Add(this.label5);
-            this.pnllounge.Controls.Add(this.label4);
-            this.pnllounge.Controls.Add(this.lbmybio);
-            this.pnllounge.Controls.Add(this.label3);
-            this.pnllounge.Controls.Add(this.lbmyname);
-            this.pnllounge.Controls.Add(this.lvmypackages);
-            this.pnllounge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnllounge.Widgets.Add(this.btnedit);
+            this.pnllounge.Widgets.Add(this.btnupload);
+            this.pnllounge.Widgets.Add(this.btnsave);
+            this.pnllounge.Widgets.Add(this.txtbitnoteaddress);
+            this.pnllounge.Widgets.Add(this.label8);
+            this.pnllounge.Widgets.Add(this.txtbio);
+            this.pnllounge.Widgets.Add(this.label7);
+            this.pnllounge.Widgets.Add(this.txtmoddername);
+            this.pnllounge.Widgets.Add(this.label6);
+            this.pnllounge.Widgets.Add(this.label5);
+            this.pnllounge.Widgets.Add(this.label4);
+            this.pnllounge.Widgets.Add(this.lbmybio);
+            this.pnllounge.Widgets.Add(this.label3);
+            this.pnllounge.Widgets.Add(this.lbmyname);
+            this.pnllounge.Widgets.Add(this.lvmypackages);
+            this.pnllounge.Dock = ShiftUI.DockStyle.Fill;
             this.pnllounge.Location = new System.Drawing.Point(0, 47);
             this.pnllounge.Name = "pnllounge";
             this.pnllounge.Size = new System.Drawing.Size(886, 422);
@@ -354,8 +354,8 @@
             // 
             // btnedit
             // 
-            this.btnedit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnedit.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnedit.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnedit.Location = new System.Drawing.Point(239, 377);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(75, 23);
@@ -366,8 +366,8 @@
             // 
             // btnupload
             // 
-            this.btnupload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnupload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupload.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnupload.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnupload.Location = new System.Drawing.Point(320, 377);
             this.btnupload.Name = "btnupload";
             this.btnupload.Size = new System.Drawing.Size(75, 23);
@@ -378,8 +378,8 @@
             // 
             // btnsave
             // 
-            this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsave.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btnsave.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsave.Location = new System.Drawing.Point(799, 390);
             this.btnsave.Name = "btnsave";
@@ -391,7 +391,7 @@
             // 
             // txtbitnoteaddress
             // 
-            this.txtbitnoteaddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbitnoteaddress.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.txtbitnoteaddress.Location = new System.Drawing.Point(490, 333);
             this.txtbitnoteaddress.Name = "txtbitnoteaddress";
             this.txtbitnoteaddress.Size = new System.Drawing.Size(384, 20);
@@ -400,7 +400,7 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(407, 339);
             this.label8.Name = "label8";
@@ -410,7 +410,7 @@
             // 
             // txtbio
             // 
-            this.txtbio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbio.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.txtbio.Location = new System.Drawing.Point(490, 110);
             this.txtbio.Multiline = true;
             this.txtbio.Name = "txtbio";
@@ -429,7 +429,7 @@
             // 
             // txtmoddername
             // 
-            this.txtmoddername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtmoddername.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.txtmoddername.Location = new System.Drawing.Point(490, 84);
             this.txtmoddername.Name = "txtmoddername";
             this.txtmoddername.Size = new System.Drawing.Size(384, 20);
@@ -438,7 +438,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(407, 90);
             this.label6.Name = "label6";
@@ -448,7 +448,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(404, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(378, 32);
@@ -458,7 +458,7 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.label4.Location = new System.Drawing.Point(403, 11);
@@ -469,8 +469,8 @@
             // 
             // lbmybio
             // 
-            this.lbmybio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbmybio.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
             this.lbmybio.Location = new System.Drawing.Point(17, 46);
             this.lbmybio.Name = "lbmybio";
             this.lbmybio.Size = new System.Drawing.Size(378, 110);
@@ -479,7 +479,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 156);
             this.label3.Name = "label3";
@@ -499,16 +499,16 @@
             // 
             // lvmypackages
             // 
-            this.lvmypackages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lvmypackages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvmypackages.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.lvmypackages.Columns.AddRange(new ShiftUI.ColumnHeader[] {
             this.columnHeader4});
-            this.lvmypackages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvmypackages.HeaderStyle = ShiftUI.ColumnHeaderStyle.Nonclickable;
             this.lvmypackages.Location = new System.Drawing.Point(20, 172);
             this.lvmypackages.Name = "lvmypackages";
             this.lvmypackages.Size = new System.Drawing.Size(375, 199);
             this.lvmypackages.TabIndex = 0;
             this.lvmypackages.UseCompatibleStateImageBehavior = false;
-            this.lvmypackages.View = System.Windows.Forms.View.Details;
+            this.lvmypackages.View = ShiftUI.View.Details;
             // 
             // columnHeader4
             // 
@@ -516,13 +516,13 @@
             // 
             // pnlpackageinfo
             // 
-            this.pnlpackageinfo.Controls.Add(this.pnlauthordetails);
-            this.pnlpackageinfo.Controls.Add(this.pbappicon);
-            this.pnlpackageinfo.Controls.Add(this.pbappscreenshot);
-            this.pnlpackageinfo.Controls.Add(this.pnldownload);
-            this.pnlpackageinfo.Controls.Add(this.lbpkgdescription);
-            this.pnlpackageinfo.Controls.Add(this.lbpkgname);
-            this.pnlpackageinfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlpackageinfo.Widgets.Add(this.pnlauthordetails);
+            this.pnlpackageinfo.Widgets.Add(this.pbappicon);
+            this.pnlpackageinfo.Widgets.Add(this.pbappscreenshot);
+            this.pnlpackageinfo.Widgets.Add(this.pnldownload);
+            this.pnlpackageinfo.Widgets.Add(this.lbpkgdescription);
+            this.pnlpackageinfo.Widgets.Add(this.lbpkgname);
+            this.pnlpackageinfo.Dock = ShiftUI.DockStyle.Fill;
             this.pnlpackageinfo.Location = new System.Drawing.Point(0, 47);
             this.pnlpackageinfo.Name = "pnlpackageinfo";
             this.pnlpackageinfo.Size = new System.Drawing.Size(886, 422);
@@ -530,9 +530,9 @@
             // 
             // pnlauthordetails
             // 
-            this.pnlauthordetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlauthordetails.Controls.Add(this.lbauthordescription);
-            this.pnlauthordetails.Controls.Add(this.lbauthorname);
+            this.pnlauthordetails.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.pnlauthordetails.Widgets.Add(this.lbauthordescription);
+            this.pnlauthordetails.Widgets.Add(this.lbauthorname);
             this.pnlauthordetails.Location = new System.Drawing.Point(12, 213);
             this.pnlauthordetails.Name = "pnlauthordetails";
             this.pnlauthordetails.Size = new System.Drawing.Size(468, 197);
@@ -561,25 +561,25 @@
             this.pbappicon.Location = new System.Drawing.Point(12, 11);
             this.pbappicon.Name = "pbappicon";
             this.pbappicon.Size = new System.Drawing.Size(32, 32);
-            this.pbappicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbappicon.SizeMode = ShiftUI.PictureBoxSizeMode.StretchImage;
             this.pbappicon.TabIndex = 4;
             this.pbappicon.TabStop = false;
             // 
             // pbappscreenshot
             // 
-            this.pbappscreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbappscreenshot.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.pbappscreenshot.Location = new System.Drawing.Point(500, 213);
             this.pbappscreenshot.Name = "pbappscreenshot";
             this.pbappscreenshot.Size = new System.Drawing.Size(374, 197);
-            this.pbappscreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbappscreenshot.SizeMode = ShiftUI.PictureBoxSizeMode.StretchImage;
             this.pbappscreenshot.TabIndex = 3;
             this.pbappscreenshot.TabStop = false;
             // 
             // pnldownload
             // 
-            this.pnldownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldownload.Controls.Add(this.lbdownloadpath);
-            this.pnldownload.Controls.Add(this.btndownload);
+            this.pnldownload.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
+            this.pnldownload.Widgets.Add(this.lbdownloadpath);
+            this.pnldownload.Widgets.Add(this.btndownload);
             this.pnldownload.Location = new System.Drawing.Point(646, 7);
             this.pnldownload.Name = "pnldownload";
             this.pnldownload.Size = new System.Drawing.Size(237, 97);
@@ -596,7 +596,7 @@
             // 
             // btndownload
             // 
-            this.btndownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndownload.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndownload.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btndownload.Location = new System.Drawing.Point(112, 13);
             this.btndownload.Name = "btndownload";
@@ -608,8 +608,8 @@
             // 
             // lbpkgdescription
             // 
-            this.lbpkgdescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbpkgdescription.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
             this.lbpkgdescription.Location = new System.Drawing.Point(17, 47);
             this.lbpkgdescription.Name = "lbpkgdescription";
             this.lbpkgdescription.Size = new System.Drawing.Size(347, 156);
@@ -628,8 +628,8 @@
             // 
             // pnllist
             // 
-            this.pnllist.Controls.Add(this.lvpackages);
-            this.pnllist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnllist.Widgets.Add(this.lvpackages);
+            this.pnllist.Dock = ShiftUI.DockStyle.Fill;
             this.pnllist.Location = new System.Drawing.Point(0, 47);
             this.pnllist.Name = "pnllist";
             this.pnllist.Size = new System.Drawing.Size(886, 422);
@@ -637,19 +637,19 @@
             // 
             // lvpackages
             // 
-            this.lvpackages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvpackages.Columns.AddRange(new ShiftUI.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.lvpackages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvpackages.Dock = ShiftUI.DockStyle.Fill;
             this.lvpackages.FullRowSelect = true;
-            this.lvpackages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvpackages.HeaderStyle = ShiftUI.ColumnHeaderStyle.Nonclickable;
             this.lvpackages.Location = new System.Drawing.Point(0, 0);
             this.lvpackages.Name = "lvpackages";
             this.lvpackages.Size = new System.Drawing.Size(886, 422);
             this.lvpackages.TabIndex = 0;
             this.lvpackages.UseCompatibleStateImageBehavior = false;
-            this.lvpackages.View = System.Windows.Forms.View.Details;
+            this.lvpackages.View = ShiftUI.View.Details;
             this.lvpackages.SelectedIndexChanged += new System.EventHandler(this.lvpackages_SelectedIndexChanged);
             this.lvpackages.DoubleClick += new System.EventHandler(this.lvpackages_DoubleClick);
             // 
@@ -668,14 +668,14 @@
             // pnlsearch
             // 
             this.pnlsearch.BackColor = System.Drawing.Color.Gray;
-            this.pnlsearch.Controls.Add(this.btnlounge);
-            this.pnlsearch.Controls.Add(this.label2);
-            this.pnlsearch.Controls.Add(this.btngetkey);
-            this.pnlsearch.Controls.Add(this.label1);
-            this.pnlsearch.Controls.Add(this.txtsearch);
-            this.pnlsearch.Controls.Add(this.btnskins);
-            this.pnlsearch.Controls.Add(this.btnapps);
-            this.pnlsearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlsearch.Widgets.Add(this.btnlounge);
+            this.pnlsearch.Widgets.Add(this.label2);
+            this.pnlsearch.Widgets.Add(this.btngetkey);
+            this.pnlsearch.Widgets.Add(this.label1);
+            this.pnlsearch.Widgets.Add(this.txtsearch);
+            this.pnlsearch.Widgets.Add(this.btnskins);
+            this.pnlsearch.Widgets.Add(this.btnapps);
+            this.pnlsearch.Dock = ShiftUI.DockStyle.Top;
             this.pnlsearch.ForeColor = System.Drawing.Color.White;
             this.pnlsearch.Location = new System.Drawing.Point(0, 0);
             this.pnlsearch.Name = "pnlsearch";
@@ -684,7 +684,7 @@
             // 
             // btnlounge
             // 
-            this.btnlounge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlounge.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnlounge.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnlounge.Location = new System.Drawing.Point(377, 14);
             this.btnlounge.Name = "btnlounge";
@@ -696,7 +696,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(643, 16);
             this.label2.Name = "label2";
@@ -706,7 +706,7 @@
             // 
             // btngetkey
             // 
-            this.btngetkey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngetkey.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btngetkey.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btngetkey.Location = new System.Drawing.Point(296, 14);
             this.btngetkey.Name = "btngetkey";
@@ -727,7 +727,7 @@
             // 
             // txtsearch
             // 
-            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
             this.txtsearch.Location = new System.Drawing.Point(721, 13);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(153, 20);
@@ -736,7 +736,7 @@
             // 
             // btnskins
             // 
-            this.btnskins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnskins.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnskins.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnskins.Location = new System.Drawing.Point(86, 4);
             this.btnskins.Name = "btnskins";
@@ -748,7 +748,7 @@
             // 
             // btnapps
             // 
-            this.btnapps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapps.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnapps.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.btnapps.Location = new System.Drawing.Point(4, 4);
             this.btnapps.Name = "btnapps";
@@ -760,17 +760,17 @@
             // 
             // imgpackageicons
             // 
-            this.imgpackageicons.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgpackageicons.ColorDepth = ShiftUI.ColorDepth.Depth8Bit;
             this.imgpackageicons.ImageSize = new System.Drawing.Size(16, 16);
             this.imgpackageicons.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Appscape
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(886, 469);
-            this.Controls.Add(this.panel3);
+            this.Widgets.Add(this.panel3);
             this.Name = "Appscape";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -796,67 +796,67 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ImageList imgpackageicons;
-        private System.Windows.Forms.Panel pnlsearch;
-        private System.Windows.Forms.Button btnskins;
-        private System.Windows.Forms.Button btnapps;
-        private System.Windows.Forms.Panel pnlpackageinfo;
-        private System.Windows.Forms.Label lbpkgname;
-        private System.Windows.Forms.Label lbpkgdescription;
-        private System.Windows.Forms.Panel pnldownload;
-        private System.Windows.Forms.Label lbdownloadpath;
-        private System.Windows.Forms.Button btndownload;
-        private System.Windows.Forms.Panel pnllist;
-        private System.Windows.Forms.ListView lvpackages;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.PictureBox pbappscreenshot;
-        private System.Windows.Forms.PictureBox pbappicon;
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.Button btnlounge;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btngetkey;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnllounge;
-        private System.Windows.Forms.ListView lvmypackages;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label lbmyname;
-        private System.Windows.Forms.Label lbmybio;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtbitnoteaddress;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtbio;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtmoddername;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btnupload;
-        private System.Windows.Forms.Button btnedit;
-        private System.Windows.Forms.Panel pnlpackageeditor;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtprice;
-        private System.Windows.Forms.Label lbprice;
-        private System.Windows.Forms.Label lbaddress;
-        private System.Windows.Forms.CheckBox cbsell;
-        private System.Windows.Forms.TextBox txtpackagedescription;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtpackagename;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btndonecustomizing;
-        private System.Windows.Forms.Button btnsaa;
-        private System.Windows.Forms.Panel pnlauthordetails;
-        private System.Windows.Forms.Label lbauthordescription;
-        private System.Windows.Forms.Label lbauthorname;
-        private System.Windows.Forms.Panel pnlchoosenetwork;
-        private System.Windows.Forms.Button btnrequest;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListView lvnets;
-        private System.Windows.Forms.ColumnHeader clhostnameheader;
+        private ShiftUI.Panel panel3;
+        private ShiftUI.ImageList imgpackageicons;
+        private ShiftUI.Panel pnlsearch;
+        private ShiftUI.Button btnskins;
+        private ShiftUI.Button btnapps;
+        private ShiftUI.Panel pnlpackageinfo;
+        private ShiftUI.Label lbpkgname;
+        private ShiftUI.Label lbpkgdescription;
+        private ShiftUI.Panel pnldownload;
+        private ShiftUI.Label lbdownloadpath;
+        private ShiftUI.Button btndownload;
+        private ShiftUI.Panel pnllist;
+        private ShiftUI.ListView lvpackages;
+        private ShiftUI.ColumnHeader columnHeader1;
+        private ShiftUI.ColumnHeader columnHeader2;
+        private ShiftUI.ColumnHeader columnHeader3;
+        private ShiftUI.PictureBox pbappscreenshot;
+        private ShiftUI.PictureBox pbappicon;
+        private ShiftUI.TextBox txtsearch;
+        private ShiftUI.Button btnlounge;
+        private ShiftUI.Label label2;
+        private ShiftUI.Button btngetkey;
+        private ShiftUI.Label label1;
+        private ShiftUI.Panel pnllounge;
+        private ShiftUI.ListView lvmypackages;
+        private ShiftUI.ColumnHeader columnHeader4;
+        private ShiftUI.Label lbmyname;
+        private ShiftUI.Label lbmybio;
+        private ShiftUI.Label label3;
+        private ShiftUI.TextBox txtbitnoteaddress;
+        private ShiftUI.Label label8;
+        private ShiftUI.TextBox txtbio;
+        private ShiftUI.Label label7;
+        private ShiftUI.TextBox txtmoddername;
+        private ShiftUI.Label label6;
+        private ShiftUI.Label label5;
+        private ShiftUI.Label label4;
+        private ShiftUI.Button btnsave;
+        private ShiftUI.Button btnupload;
+        private ShiftUI.Button btnedit;
+        private ShiftUI.Panel pnlpackageeditor;
+        private ShiftUI.Label label9;
+        private ShiftUI.TextBox txtprice;
+        private ShiftUI.Label lbprice;
+        private ShiftUI.Label lbaddress;
+        private ShiftUI.CheckBox cbsell;
+        private ShiftUI.TextBox txtpackagedescription;
+        private ShiftUI.Label label10;
+        private ShiftUI.TextBox txtpackagename;
+        private ShiftUI.Label label11;
+        private ShiftUI.Label label12;
+        private ShiftUI.Button btndonecustomizing;
+        private ShiftUI.Button btnsaa;
+        private ShiftUI.Panel pnlauthordetails;
+        private ShiftUI.Label lbauthordescription;
+        private ShiftUI.Label lbauthorname;
+        private ShiftUI.Panel pnlchoosenetwork;
+        private ShiftUI.Button btnrequest;
+        private ShiftUI.Label label14;
+        private ShiftUI.Label label13;
+        private ShiftUI.ListView lvnets;
+        private ShiftUI.ColumnHeader clhostnameheader;
     }
 }

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtcodepoints = new System.Windows.Forms.TextBox();
-            this.lbstatus = new System.Windows.Forms.Label();
-            this.btnconvert = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtcodepoints = new ShiftUI.TextBox();
+            this.lbstatus = new ShiftUI.Label();
+            this.btnconvert = new ShiftUI.Button();
+            this.panel1 = new ShiftUI.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtcodepoints
             // 
-            this.txtcodepoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcodepoints.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtcodepoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtcodepoints.Location = new System.Drawing.Point(28, 12);
             this.txtcodepoints.Name = "txtcodepoints";
@@ -47,8 +47,8 @@
             // 
             // lbstatus
             // 
-            this.lbstatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbstatus.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbstatus.AutoSize = true;
             this.lbstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lbstatus.Location = new System.Drawing.Point(78, 16);
@@ -59,8 +59,8 @@
             // 
             // btnconvert
             // 
-            this.btnconvert.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnconvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconvert.Dock = ShiftUI.DockStyle.Bottom;
+            this.btnconvert.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnconvert.Location = new System.Drawing.Point(0, 76);
             this.btnconvert.Name = "btnconvert";
             this.btnconvert.Size = new System.Drawing.Size(229, 23);
@@ -72,10 +72,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnconvert);
-            this.panel1.Controls.Add(this.lbstatus);
-            this.panel1.Controls.Add(this.txtcodepoints);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.btnconvert);
+            this.panel1.Widgets.Add(this.lbstatus);
+            this.panel1.Widgets.Add(this.txtcodepoints);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(229, 99);
@@ -84,9 +84,9 @@
             // BitnoteConverter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(229, 99);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "BitnoteConverter";
             this.Text = "BitnoteConverter";
             this.Load += new System.EventHandler(this.BitnoteConverter_Load);
@@ -98,9 +98,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtcodepoints;
-        private System.Windows.Forms.Label lbstatus;
-        private System.Windows.Forms.Button btnconvert;
-        private System.Windows.Forms.Panel panel1;
+        private ShiftUI.TextBox txtcodepoints;
+        private ShiftUI.Label lbstatus;
+        private ShiftUI.Button btnconvert;
+        private ShiftUI.Panel panel1;
     }
 }

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnselect = new System.Windows.Forms.Button();
+            this.label1 = new ShiftUI.Label();
+            this.btnselect = new ShiftUI.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Dock = ShiftUI.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
@@ -47,8 +47,8 @@
             // 
             // btnselect
             // 
-            this.btnselect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnselect.Dock = ShiftUI.DockStyle.Fill;
+            this.btnselect.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnselect.Location = new System.Drawing.Point(186, 0);
             this.btnselect.Name = "btnselect";
             this.btnselect.Size = new System.Drawing.Size(40, 33);
@@ -59,9 +59,9 @@
             // ImageSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnselect);
-            this.Controls.Add(this.label1);
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.Widgets.Add(this.btnselect);
+            this.Widgets.Add(this.label1);
             this.Name = "ImageSelector";
             this.Size = new System.Drawing.Size(226, 33);
             this.ResumeLayout(false);
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnselect;
+        private ShiftUI.Label label1;
+        private ShiftUI.Button btnselect;
     }
 }

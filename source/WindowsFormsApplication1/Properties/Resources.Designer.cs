@@ -1150,10 +1150,11 @@ namespace ShiftOS.Properties {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///&quot;StartURL&quot;:&quot;http://michael.playshiftos.ml/shiftos/soundtrack/&quot;,
-        ///&quot;Files&quot;:{&quot;endgame&quot;:[&quot;Tom Vanko &amp; Mark Vank - Origin&quot;], &quot;hackerbattle_ambient&quot;:[&quot;HardMix - Evolution&quot;, &quot;Lastep - NeveS&quot;, &quot;Timmo Hendriks - That Happen&quot;, &quot;Eric Rodriguez - Lion&quot;, &quot;Mark Vank &amp; Miza - Dark Generation&quot;]},
+        ///&quot;Files&quot;:{&quot;endgame&quot;:[&quot;Tom Vanko &amp; Mark Vank - Origin&quot;], &quot;hackerbattle_ambient&quot;:[&quot;HardMix - Evolution&quot;, &quot;Lastep - NeveS&quot;, &quot;Timmo Hendriks - That Happen&quot;, &quot;Mark Vank &amp; Miza - Dark Generation&quot;]},
         ///&quot;Visualizers&quot;:{
         ///		&quot;Mark Vank &amp; Miza - Dark Generation&quot;:[{&quot;R&quot;:false, &quot;G&quot;:true, &quot;B&quot;:false, &quot;type&quot;:&quot;Pulse&quot;, &quot;startTime&quot;:0, &quot;endTime&quot;:30},
-        ///											  {&quot;R&quot;:false, &quot;G&quot;:true, &quot;B&quot;:false, &quot;type&quot;:&quot;BuildUp&quot;, &quot;startTime&quot;:30, &quot;endTime&quot; [rest of string was truncated]&quot;;.
+        ///											  {&quot;R&quot;:false, &quot;G&quot;:true, &quot;B&quot;:false, &quot;type&quot;:&quot;BuildUp&quot;, &quot;startTime&quot;:30, &quot;endTime&quot;:60},
+        ///											  {&quot;R&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MusicData {
             get {

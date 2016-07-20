@@ -7,7 +7,7 @@ using ShiftOS;
 using System.IO;
 using Newtonsoft.Json;
 using System.Drawing;
-using System.Windows.Forms; //Message boxes
+using ShiftUI; //Message boxes
 namespace SaveSystem
 {
     /// <summary>
@@ -172,7 +172,7 @@ namespace SaveSystem
                 {
                     if (!File.Exists(Paths.SystemDir + "_engineInfo.txt"))
                     {
-                        MessageBox.Show("WARNING: Older ShiftOS saves are no longer supported. This save will be converted to the new format, and will not be readable by either ShiftOS-Next or the legacy ShiftOS.");
+                        MessageBox.Show("WARNING: Older ShiftOS saves are no longer supported. This save will be converted to the new format, and will not be readable by either ShiftOS-Next or the legacy ShiftOS.", "ShiftOS saves");
                         NewGame();
                     }
                 }

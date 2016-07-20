@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -240,7 +240,7 @@ namespace ShiftOS
         public void SetupFakeClient(FakeChatClient fClient)
         {
             lbtopic.Text = fClient.Topic;
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 500;
             t.Tick += (object s, EventArgs a) =>
             {
@@ -255,7 +255,7 @@ namespace ShiftOS
 
             int m = 0;
             //message buffer
-            var mb = new System.Windows.Forms.Timer();
+            var mb = new ShiftUI.Timer();
             mb.Tick += (object s, EventArgs a) =>
             {
                 string message = fClient.Messages.Keys.ElementAt(m);

@@ -1,6 +1,6 @@
 ﻿namespace ShiftOS.FinalMission
 {
-    partial class ChoiceControl
+    partial class ChoiceWidget
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbnumber = new System.Windows.Forms.Label();
-            this.lbdescription = new System.Windows.Forms.Label();
+            this.lbnumber = new ShiftUI.Label();
+            this.lbdescription = new ShiftUI.Label();
             this.SuspendLayout();
             // 
             // lbnumber
             // 
-            this.lbnumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbnumber.Dock = ShiftUI.DockStyle.Fill;
             this.lbnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.lbnumber.Location = new System.Drawing.Point(0, 0);
             this.lbnumber.Name = "lbnumber";
@@ -46,7 +46,7 @@
             // 
             // lbdescription
             // 
-            this.lbdescription.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbdescription.Dock = ShiftUI.DockStyle.Bottom;
             this.lbdescription.Location = new System.Drawing.Point(0, 75);
             this.lbdescription.Name = "lbdescription";
             this.lbdescription.Size = new System.Drawing.Size(112, 27);
@@ -55,13 +55,13 @@
             this.lbdescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbdescription.Click += new System.EventHandler(this.lbdescription_Click);
             // 
-            // ChoiceControl
+            // ChoiceWidget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbnumber);
-            this.Controls.Add(this.lbdescription);
-            this.Name = "ChoiceControl";
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.Widgets.Add(this.lbnumber);
+            this.Widgets.Add(this.lbdescription);
+            this.Name = "ChoiceWidget";
             this.Size = new System.Drawing.Size(112, 102);
             this.ResumeLayout(false);
 
@@ -69,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbnumber;
-        private System.Windows.Forms.Label lbdescription;
+        private ShiftUI.Label lbnumber;
+        private ShiftUI.Label lbdescription;
     }
 }

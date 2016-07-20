@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoloChat));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlintro = new System.Windows.Forms.Panel();
-            this.flintrobuttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnconnect = new System.Windows.Forms.Button();
-            this.btnrefresh = new System.Windows.Forms.Button();
-            this.lbrooms = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblintro = new System.Windows.Forms.Label();
-            this.lblheader = new System.Windows.Forms.Label();
-            this.txtchat = new System.Windows.Forms.RichTextBox();
-            this.txtsend = new System.Windows.Forms.TextBox();
-            this.pnlusers = new System.Windows.Forms.Panel();
-            this.lbusers = new System.Windows.Forms.ListBox();
-            this.lbtopic = new System.Windows.Forms.Label();
-            this.tmrui = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new ShiftUI.Panel();
+            this.pnlintro = new ShiftUI.Panel();
+            this.flintrobuttons = new ShiftUI.FlowLayoutPanel();
+            this.btnconnect = new ShiftUI.Button();
+            this.btnrefresh = new ShiftUI.Button();
+            this.lbrooms = new ShiftUI.ListBox();
+            this.label1 = new ShiftUI.Label();
+            this.lblintro = new ShiftUI.Label();
+            this.lblheader = new ShiftUI.Label();
+            this.txtchat = new ShiftUI.RichTextBox();
+            this.txtsend = new ShiftUI.TextBox();
+            this.pnlusers = new ShiftUI.Panel();
+            this.lbusers = new ShiftUI.ListBox();
+            this.lbtopic = new ShiftUI.Label();
+            this.tmrui = new ShiftUI.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlintro.SuspendLayout();
             this.flintrobuttons.SuspendLayout();
@@ -54,12 +54,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pnlintro);
-            this.panel1.Controls.Add(this.txtchat);
-            this.panel1.Controls.Add(this.txtsend);
-            this.panel1.Controls.Add(this.pnlusers);
-            this.panel1.Controls.Add(this.lbtopic);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.pnlintro);
+            this.panel1.Widgets.Add(this.txtchat);
+            this.panel1.Widgets.Add(this.txtsend);
+            this.panel1.Widgets.Add(this.pnlusers);
+            this.panel1.Widgets.Add(this.lbtopic);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -68,14 +68,14 @@
             // 
             // pnlintro
             // 
-            this.pnlintro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlintro.Controls.Add(this.flintrobuttons);
-            this.pnlintro.Controls.Add(this.lbrooms);
-            this.pnlintro.Controls.Add(this.label1);
-            this.pnlintro.Controls.Add(this.lblintro);
-            this.pnlintro.Controls.Add(this.lblheader);
+            this.pnlintro.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlintro.Widgets.Add(this.flintrobuttons);
+            this.pnlintro.Widgets.Add(this.lbrooms);
+            this.pnlintro.Widgets.Add(this.label1);
+            this.pnlintro.Widgets.Add(this.lblintro);
+            this.pnlintro.Widgets.Add(this.lblheader);
             this.pnlintro.Location = new System.Drawing.Point(36, 35);
             this.pnlintro.Name = "pnlintro";
             this.pnlintro.Size = new System.Drawing.Size(706, 341);
@@ -83,11 +83,11 @@
             // 
             // flintrobuttons
             // 
-            this.flintrobuttons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flintrobuttons.Controls.Add(this.btnconnect);
-            this.flintrobuttons.Controls.Add(this.btnrefresh);
-            this.flintrobuttons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flintrobuttons.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.flintrobuttons.Widgets.Add(this.btnconnect);
+            this.flintrobuttons.Widgets.Add(this.btnrefresh);
+            this.flintrobuttons.FlowDirection = ShiftUI.FlowDirection.RightToLeft;
             this.flintrobuttons.Location = new System.Drawing.Point(337, 284);
             this.flintrobuttons.Name = "flintrobuttons";
             this.flintrobuttons.Size = new System.Drawing.Size(350, 42);
@@ -95,7 +95,7 @@
             // 
             // btnconnect
             // 
-            this.btnconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconnect.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnconnect.Location = new System.Drawing.Point(272, 3);
             this.btnconnect.Name = "btnconnect";
             this.btnconnect.Size = new System.Drawing.Size(75, 33);
@@ -106,7 +106,7 @@
             // 
             // btnrefresh
             // 
-            this.btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrefresh.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnrefresh.Location = new System.Drawing.Point(191, 3);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(75, 33);
@@ -117,8 +117,8 @@
             // 
             // lbrooms
             // 
-            this.lbrooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbrooms.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbrooms.FormattingEnabled = true;
             this.lbrooms.Location = new System.Drawing.Point(337, 75);
             this.lbrooms.Name = "lbrooms";
@@ -127,8 +127,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label1.Location = new System.Drawing.Point(342, 38);
             this.label1.Name = "label1";
@@ -139,8 +139,8 @@
             // 
             // lblintro
             // 
-            this.lblintro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblintro.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
             this.lblintro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblintro.Location = new System.Drawing.Point(4, 38);
             this.lblintro.Name = "lblintro";
@@ -151,8 +151,8 @@
             // 
             // lblheader
             // 
-            this.lblheader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblheader.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lblheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblheader.Location = new System.Drawing.Point(4, 4);
             this.lblheader.Name = "lblheader";
@@ -163,7 +163,7 @@
             // 
             // txtchat
             // 
-            this.txtchat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtchat.Dock = ShiftUI.DockStyle.Fill;
             this.txtchat.Location = new System.Drawing.Point(0, 23);
             this.txtchat.Name = "txtchat";
             this.txtchat.ReadOnly = true;
@@ -174,17 +174,17 @@
             // 
             // txtsend
             // 
-            this.txtsend.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtsend.Dock = ShiftUI.DockStyle.Bottom;
             this.txtsend.Location = new System.Drawing.Point(0, 411);
             this.txtsend.Name = "txtsend";
             this.txtsend.Size = new System.Drawing.Size(641, 20);
             this.txtsend.TabIndex = 1;
-            this.txtsend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtsend_KeyDown);
+            this.txtsend.KeyDown += new ShiftUI.KeyEventHandler(this.txtsend_KeyDown);
             // 
             // pnlusers
             // 
-            this.pnlusers.Controls.Add(this.lbusers);
-            this.pnlusers.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlusers.Widgets.Add(this.lbusers);
+            this.pnlusers.Dock = ShiftUI.DockStyle.Right;
             this.pnlusers.Location = new System.Drawing.Point(641, 23);
             this.pnlusers.Name = "pnlusers";
             this.pnlusers.Size = new System.Drawing.Size(131, 408);
@@ -192,7 +192,7 @@
             // 
             // lbusers
             // 
-            this.lbusers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbusers.Dock = ShiftUI.DockStyle.Fill;
             this.lbusers.FormattingEnabled = true;
             this.lbusers.Location = new System.Drawing.Point(0, 0);
             this.lbusers.Name = "lbusers";
@@ -201,7 +201,7 @@
             // 
             // lbtopic
             // 
-            this.lbtopic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbtopic.Dock = ShiftUI.DockStyle.Top;
             this.lbtopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbtopic.Location = new System.Drawing.Point(0, 0);
             this.lbtopic.Name = "lbtopic";
@@ -217,12 +217,12 @@
             // HoloChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 431);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "HoloChat";
             this.Text = "HoloChat";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.me_Closing);
+            this.FormClosing += new ShiftUI.FormClosingEventHandler(this.me_Closing);
             this.Load += new System.EventHandler(this.HoloChat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -235,20 +235,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox txtchat;
-        private System.Windows.Forms.TextBox txtsend;
-        private System.Windows.Forms.Panel pnlusers;
-        private System.Windows.Forms.ListBox lbusers;
-        private System.Windows.Forms.Panel pnlintro;
-        private System.Windows.Forms.FlowLayoutPanel flintrobuttons;
-        private System.Windows.Forms.Button btnconnect;
-        private System.Windows.Forms.Button btnrefresh;
-        private System.Windows.Forms.ListBox lbrooms;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblintro;
-        private System.Windows.Forms.Label lblheader;
-        private System.Windows.Forms.Timer tmrui;
-        private System.Windows.Forms.Label lbtopic;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.RichTextBox txtchat;
+        private ShiftUI.TextBox txtsend;
+        private ShiftUI.Panel pnlusers;
+        private ShiftUI.ListBox lbusers;
+        private ShiftUI.Panel pnlintro;
+        private ShiftUI.FlowLayoutPanel flintrobuttons;
+        private ShiftUI.Button btnconnect;
+        private ShiftUI.Button btnrefresh;
+        private ShiftUI.ListBox lbrooms;
+        private ShiftUI.Label label1;
+        private ShiftUI.Label lblintro;
+        private ShiftUI.Label lblheader;
+        private ShiftUI.Timer tmrui;
+        private ShiftUI.Label lbtopic;
     }
 }

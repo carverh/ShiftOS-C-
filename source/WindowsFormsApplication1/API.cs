@@ -5,7 +5,7 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using System.IO.Compression;
 using System.Drawing;
 using Newtonsoft.Json;
@@ -83,7 +83,7 @@ namespace ShiftOS
     public class API
     {
         public static Dictionary<Form, string> OpenGUIDs = new Dictionary<Form, string>();
-        public static Dictionary<string, Control> DEF_PanelGUIDs = new Dictionary<string, Control>();
+        public static Dictionary<string, Widget> DEF_PanelGUIDs = new Dictionary<string, Widget>();
 
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace ShiftOS
 
         public static bool InfoboxesPlaySounds = true;
 
-        public static void SkinControl(Control c)
+        public static void SkinWidget(Widget c)
         {
             if(c is Button)
             {
@@ -128,9 +128,9 @@ namespace ShiftOS
             }
             if(c is Panel || c is FlowLayoutPanel)
             {
-                foreach(Control child in c.Controls)
+                foreach(Widget child in c.Widgets)
                 {
-                    SkinControl(child);
+                    SkinWidget(child);
                 }
             }
         }
@@ -1070,136 +1070,25 @@ namespace ShiftOS
             {
                 API.CurrentSession = new ShiftOSDesktop();
             }
-            try
+
+            formToCreate.Text = AppName;
+            formToCreate.TopMost = true;
+            formToCreate.Show();
+            var brdr = new WindowBorder(AppName, AppIcon);
+            brdr.Tag = "api_brdr";
+            formToCreate.Widgets.Add(brdr);
+            brdr.Show();
+            foreach(Widget widget in formToCreate.Body.Widgets)
             {
-                if (Upgrades["multitasking"] == false && formToCreate.Name != "infobox")
+                if(widget != brdr)
                 {
-                    CloseEverything();
+                    brdr.pgcontents.Widgets.Add(widget);
+                    widget.Show();
                 }
-                var bw = new BackgroundWorker();
-                bw.DoWork += (object sen, DoWorkEventArgs eva) =>
-                {
-                    WindowComposition.SafeToAddControls = false;
-                //bugfix: Close any terminal if WindowedTerminal isn't installed.
-                if (Upgrades["windowedterminal"] == false)
-                    {
-                        API.CurrentSession.Invoke(new Action(() =>
-                        {
-                            foreach (Form frm in OpenPrograms)
-                            {
-                                if (frm.Name.ToLower() == "terminal")
-                                {
-                                    API.CurrentSession.Invoke(new Action(() =>
-                                    {
-                                        frm.Close();
-                                    }));
-                                }
-                            }
-                        }));
-                    }
-                    WindowBorder brdr = new WindowBorder(AppName, AppIcon);
-                    brdr.Name = "api_brdr";
-                    formToCreate.Controls.Add(brdr);
-                    formToCreate.ShowInTaskbar = false;
-                    brdr.Show();
-                    formToCreate.FormBorderStyle = FormBorderStyle.None;
-                    brdr.Dock = DockStyle.Fill;
-                    BordersToUpdate.Add(brdr);
-                    List<Control> duplicates = new List<Control>();
-                    foreach (Control ctrl in formToCreate.Controls)
-                    {
-                        if (ctrl.Name != "api_brdr")
-                        {
-                            ctrl.Hide();
-                            brdr.pgcontents.Controls.Add(ctrl);
-                            duplicates.Add(ctrl);
-                        }
-                    }
-                    foreach (Control ctrl in duplicates)
-                    {
-                        try
-                        {
-                            formToCreate.Controls.Remove(ctrl);
-                            ctrl.Show();
-                            SkinControl(ctrl);
-                        }
-                        catch
-                        {
-                            API.CurrentSession.Invoke(new Action(() =>
-                            {
-                                ctrl.Show();
-                                SkinControl(ctrl);
-                            }));
-                        }
-                    }
-                    WindowComposition.ShowForm(formToCreate, CurrentSkin.WindowOpenAnimation);
-                    API.CurrentSession.Invoke(new Action(() =>
-                    {
-                        brdr.justopened = true;
-                        formToCreate.TopMost = true;
-
-                    //Open terminal on CTRL+T press on any form.
-                    formToCreate.KeyDown += (object sender, KeyEventArgs e) =>
-                        {
-                            if (e.KeyCode == Keys.T && e.Control && formToCreate.Name != "Terminal")
-                            {
-                                CurrentSession.InvokeCTRLT();
-                            }
-                            if (formToCreate.Name != "Terminal" || Upgrades["windowedterminal"] == true)
-                            {
-                            //Movable Windows
-                            if (API.Upgrades["movablewindows"] == true)
-                                {
-                                    if (e.KeyCode == Keys.A && e.Control)
-                                    {
-                                        e.Handled = true;
-                                        formToCreate.Location = new Point(formToCreate.Location.X - 30, formToCreate.Location.Y);
-                                    }
-                                    if (e.KeyCode == Keys.D && e.Control)
-                                    {
-                                        e.Handled = true;
-                                        formToCreate.Location = new Point(formToCreate.Location.X + 30, formToCreate.Location.Y);
-                                    }
-                                    if (e.KeyCode == Keys.W && e.Control)
-                                    {
-                                        e.Handled = true;
-                                        formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y - 30);
-                                    }
-                                    if (e.KeyCode == Keys.S && e.Control)
-                                    {
-                                        e.Handled = true;
-                                        formToCreate.Location = new Point(formToCreate.Location.X, formToCreate.Location.Y + 30);
-                                    }
-                                }
-                            }
-                        };
-                        formToCreate.TransparencyKey = Skinning.Utilities.globaltransparencycolour;
-                        OpenPrograms.Add(formToCreate);
-                        if (AppName == "Enemy Hacker")
-                        {
-                            API.CurrentSession.Invoke(new Action(() =>
-                            {
-                                formToCreate.Left = Screen.PrimaryScreen.Bounds.Width - formToCreate.Width;
-                            }));
-                        }
-                        else if (AppName == "You")
-                        {
-                            API.CurrentSession.Invoke(new Action(() =>
-                            {
-                                formToCreate.Left = 0;
-                            }));
-                        }
-                    }));
-                    WindowComposition.SafeToAddControls = true;
-                    API.OpenGUIDs.Add(formToCreate, Guid.NewGuid().ToString());
-                    API.CurrentSession.Invoke(new Action(() => { CurrentSession.InvokeWindowOp("open", formToCreate); }));
-                };
-                bw.RunWorkerAsync();
             }
-            catch
-            {
-
-            }
+            brdr.Dock = DockStyle.Fill;
+            formToCreate.Body.BorderStyle = BorderStyle.None;
+            brdr.setupall();
         }
 
         /// <summary>

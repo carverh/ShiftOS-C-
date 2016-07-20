@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS.FinalMission
 {
@@ -22,7 +22,7 @@ namespace ShiftOS.FinalMission
         {
             SetupList();
             StartQuestCheckThread();
-            var tmr = new System.Windows.Forms.Timer();
+            var tmr = new ShiftUI.Timer();
             tmr.Interval = 500;
             tmr.Tick += (object s, EventArgs a) =>
             {

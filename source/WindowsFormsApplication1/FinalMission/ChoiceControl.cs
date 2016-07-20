@@ -6,14 +6,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS.FinalMission
 {
     [DefaultEvent("Selected")]
-    public partial class ChoiceControl : UserControl
+    public partial class ChoiceWidget : UserWidget
     {
-        public ChoiceControl()
+        public ChoiceWidget()
         {
             InitializeComponent();
         }

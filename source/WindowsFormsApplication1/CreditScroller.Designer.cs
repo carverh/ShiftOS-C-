@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlscroll = new System.Windows.Forms.Panel();
-            this.btnclose = new System.Windows.Forms.Button();
-            this.lbcreditstext = new System.Windows.Forms.Label();
-            this.lbgametitle = new System.Windows.Forms.Label();
-            this.tmrredraw = new System.Windows.Forms.Timer(this.components);
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.lblcountdown = new System.Windows.Forms.Label();
-            this.ball = new System.Windows.Forms.Panel();
-            this.paddleHuman = new System.Windows.Forms.PictureBox();
-            this.paddleComputer = new System.Windows.Forms.Panel();
-            this.lbllevelandtime = new System.Windows.Forms.Label();
-            this.lblstatsY = new System.Windows.Forms.Label();
-            this.lblstatsX = new System.Windows.Forms.Label();
-            this.pongGameTimer = new System.Windows.Forms.Timer(this.components);
-            this.counter = new System.Windows.Forms.Timer(this.components);
-            this.tmrcountdown = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new ShiftUI.Panel();
+            this.pnlscroll = new ShiftUI.Panel();
+            this.btnclose = new ShiftUI.Button();
+            this.lbcreditstext = new ShiftUI.Label();
+            this.lbgametitle = new ShiftUI.Label();
+            this.tmrredraw = new ShiftUI.Timer(this.components);
+            this.pgcontents = new ShiftUI.Panel();
+            this.lblcountdown = new ShiftUI.Label();
+            this.ball = new ShiftUI.Panel();
+            this.paddleHuman = new ShiftUI.PictureBox();
+            this.paddleComputer = new ShiftUI.Panel();
+            this.lbllevelandtime = new ShiftUI.Label();
+            this.lblstatsY = new ShiftUI.Label();
+            this.lblstatsX = new ShiftUI.Label();
+            this.pongGameTimer = new ShiftUI.Timer(this.components);
+            this.counter = new ShiftUI.Timer(this.components);
+            this.tmrcountdown = new ShiftUI.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlscroll.SuspendLayout();
             this.pgcontents.SuspendLayout();
@@ -54,9 +54,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pnlscroll);
-            this.panel1.Controls.Add(this.lbgametitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.pnlscroll);
+            this.panel1.Widgets.Add(this.lbgametitle);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(916, 528);
@@ -64,10 +64,10 @@
             // 
             // pnlscroll
             // 
-            this.pnlscroll.Controls.Add(this.btnclose);
-            this.pnlscroll.Controls.Add(this.lbcreditstext);
-            this.pnlscroll.Controls.Add(this.pgcontents);
-            this.pnlscroll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlscroll.Widgets.Add(this.btnclose);
+            this.pnlscroll.Widgets.Add(this.lbcreditstext);
+            this.pnlscroll.Widgets.Add(this.pgcontents);
+            this.pnlscroll.Dock = ShiftUI.DockStyle.Fill;
             this.pnlscroll.Location = new System.Drawing.Point(0, 66);
             this.pnlscroll.Name = "pnlscroll";
             this.pnlscroll.Size = new System.Drawing.Size(916, 462);
@@ -75,10 +75,10 @@
             // 
             // btnclose
             // 
-            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnclose.AutoSize = true;
-            this.btnclose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnclose.Location = new System.Drawing.Point(843, 418);
             this.btnclose.Name = "btnclose";
@@ -102,7 +102,7 @@
             // 
             // lbgametitle
             // 
-            this.lbgametitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbgametitle.Dock = ShiftUI.DockStyle.Top;
             this.lbgametitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.lbgametitle.Location = new System.Drawing.Point(0, 0);
             this.lbgametitle.Name = "lbgametitle";
@@ -118,15 +118,15 @@
             // 
             // pgcontents
             // 
-            this.pgcontents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pgcontents.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.pgcontents.BackColor = System.Drawing.Color.Black;
-            this.pgcontents.Controls.Add(this.lblcountdown);
-            this.pgcontents.Controls.Add(this.ball);
-            this.pgcontents.Controls.Add(this.paddleHuman);
-            this.pgcontents.Controls.Add(this.paddleComputer);
-            this.pgcontents.Controls.Add(this.lbllevelandtime);
-            this.pgcontents.Controls.Add(this.lblstatsY);
-            this.pgcontents.Controls.Add(this.lblstatsX);
+            this.pgcontents.Widgets.Add(this.lblcountdown);
+            this.pgcontents.Widgets.Add(this.ball);
+            this.pgcontents.Widgets.Add(this.paddleHuman);
+            this.pgcontents.Widgets.Add(this.paddleComputer);
+            this.pgcontents.Widgets.Add(this.lbllevelandtime);
+            this.pgcontents.Widgets.Add(this.lblstatsY);
+            this.pgcontents.Widgets.Add(this.lblstatsX);
             this.pgcontents.ForeColor = System.Drawing.Color.Gray;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
@@ -163,8 +163,8 @@
             // 
             // paddleComputer
             // 
-            this.paddleComputer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paddleComputer.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.paddleComputer.BackColor = System.Drawing.Color.Gray;
             this.paddleComputer.Location = new System.Drawing.Point(666, 134);
             this.paddleComputer.MaximumSize = new System.Drawing.Size(20, 100);
@@ -174,7 +174,7 @@
             // 
             // lbllevelandtime
             // 
-            this.lbllevelandtime.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbllevelandtime.Dock = ShiftUI.DockStyle.Top;
             this.lbllevelandtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllevelandtime.Location = new System.Drawing.Point(0, 0);
             this.lbllevelandtime.Name = "lbllevelandtime";
@@ -185,7 +185,7 @@
             // 
             // lblstatsY
             // 
-            this.lblstatsY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblstatsY.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.lblstatsY.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatsY.Location = new System.Drawing.Point(542, 356);
             this.lblstatsY.Name = "lblstatsY";
@@ -196,7 +196,7 @@
             // 
             // lblstatsX
             // 
-            this.lblstatsX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblstatsX.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.lblstatsX.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatsX.Location = new System.Drawing.Point(3, 356);
             this.lblstatsX.Name = "lblstatsX";
@@ -223,10 +223,10 @@
             // CreditScroller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(916, 528);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "CreditScroller";
             this.Text = "CreditScroller";
@@ -242,22 +242,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlscroll;
-        private System.Windows.Forms.Label lbcreditstext;
-        private System.Windows.Forms.Label lbgametitle;
-        private System.Windows.Forms.Timer tmrredraw;
-        private System.Windows.Forms.Button btnclose;
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Label lblcountdown;
-        internal System.Windows.Forms.Panel ball;
-        internal System.Windows.Forms.PictureBox paddleHuman;
-        internal System.Windows.Forms.Panel paddleComputer;
-        internal System.Windows.Forms.Label lbllevelandtime;
-        internal System.Windows.Forms.Label lblstatsY;
-        internal System.Windows.Forms.Label lblstatsX;
-        internal System.Windows.Forms.Timer pongGameTimer;
-        internal System.Windows.Forms.Timer counter;
-        internal System.Windows.Forms.Timer tmrcountdown;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.Panel pnlscroll;
+        private ShiftUI.Label lbcreditstext;
+        private ShiftUI.Label lbgametitle;
+        private ShiftUI.Timer tmrredraw;
+        private ShiftUI.Button btnclose;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Label lblcountdown;
+        internal ShiftUI.Panel ball;
+        internal ShiftUI.PictureBox paddleHuman;
+        internal ShiftUI.Panel paddleComputer;
+        internal ShiftUI.Label lbllevelandtime;
+        internal ShiftUI.Label lblstatsY;
+        internal ShiftUI.Label lblstatsX;
+        internal ShiftUI.Timer pongGameTimer;
+        internal ShiftUI.Timer counter;
+        internal ShiftUI.Timer tmrcountdown;
     }
 }

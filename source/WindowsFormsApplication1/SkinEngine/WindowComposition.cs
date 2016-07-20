@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -13,7 +13,7 @@ namespace ShiftOS
     {
         private static bool _CanClose = true;
         public static bool ShuttingDown = false;
-        public static bool SafeToAddControls = true;
+        public static bool SafeToAddWidgets = true;
 
         public static bool CanClose
         {
@@ -57,7 +57,7 @@ namespace ShiftOS
             t.Start();
         }
 
-        public static void ScaleWidget(Control ctrl, int width, int height)
+        public static void ScaleWidget(Widget ctrl, int width, int height)
         {
             ctrl.Size = new Size(0, 0);
             var t = new Timer();

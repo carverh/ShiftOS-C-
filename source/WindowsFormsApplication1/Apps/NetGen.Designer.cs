@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetGen));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlnetdesign = new System.Windows.Forms.Panel();
-            this.pnlpcinfo = new System.Windows.Forms.Panel();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.lbpcinfo = new System.Windows.Forms.Label();
-            this.lbmoduletitle = new System.Windows.Forms.Label();
-            this.btncloseinfo = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnaddmodule = new System.Windows.Forms.Button();
-            this.pnlbuy = new System.Windows.Forms.Panel();
-            this.txthostname = new System.Windows.Forms.TextBox();
-            this.lbhostname = new System.Windows.Forms.Label();
-            this.txtgrade = new System.Windows.Forms.TextBox();
-            this.lbgrade = new System.Windows.Forms.Label();
-            this.lbmoduleinfo = new System.Windows.Forms.Label();
-            this.cmbbuyable = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btndonebuying = new System.Windows.Forms.Button();
-            this.pnlnetinf = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbdifficulty = new System.Windows.Forms.ComboBox();
-            this.txtfspeed = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtfskill = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtnetdesc = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtnetname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flbuttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnnext = new System.Windows.Forms.Button();
-            this.btnback = new System.Windows.Forms.Button();
-            this.pnlnetinfo = new System.Windows.Forms.Panel();
-            this.lbdescription = new System.Windows.Forms.Label();
-            this.lbtitle = new System.Windows.Forms.Label();
-            this.btnloadfromtemplate = new System.Windows.Forms.Button();
-            this.pnltemplates = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbnets = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnrecreate = new System.Windows.Forms.Button();
+            this.panel1 = new ShiftUI.Panel();
+            this.pnlnetdesign = new ShiftUI.Panel();
+            this.pnlpcinfo = new ShiftUI.Panel();
+            this.btndelete = new ShiftUI.Button();
+            this.lbpcinfo = new ShiftUI.Label();
+            this.lbmoduletitle = new ShiftUI.Label();
+            this.btncloseinfo = new ShiftUI.Button();
+            this.flowLayoutPanel1 = new ShiftUI.FlowLayoutPanel();
+            this.btnaddmodule = new ShiftUI.Button();
+            this.pnlbuy = new ShiftUI.Panel();
+            this.txthostname = new ShiftUI.TextBox();
+            this.lbhostname = new ShiftUI.Label();
+            this.txtgrade = new ShiftUI.TextBox();
+            this.lbgrade = new ShiftUI.Label();
+            this.lbmoduleinfo = new ShiftUI.Label();
+            this.cmbbuyable = new ShiftUI.ComboBox();
+            this.label4 = new ShiftUI.Label();
+            this.btndonebuying = new ShiftUI.Button();
+            this.pnlnetinf = new ShiftUI.Panel();
+            this.label6 = new ShiftUI.Label();
+            this.cbdifficulty = new ShiftUI.ComboBox();
+            this.txtfspeed = new ShiftUI.TextBox();
+            this.label5 = new ShiftUI.Label();
+            this.txtfskill = new ShiftUI.TextBox();
+            this.label3 = new ShiftUI.Label();
+            this.txtnetdesc = new ShiftUI.TextBox();
+            this.label2 = new ShiftUI.Label();
+            this.txtnetname = new ShiftUI.TextBox();
+            this.label1 = new ShiftUI.Label();
+            this.flbuttons = new ShiftUI.FlowLayoutPanel();
+            this.btnnext = new ShiftUI.Button();
+            this.btnback = new ShiftUI.Button();
+            this.pnlnetinfo = new ShiftUI.Panel();
+            this.lbdescription = new ShiftUI.Label();
+            this.lbtitle = new ShiftUI.Label();
+            this.btnloadfromtemplate = new ShiftUI.Button();
+            this.pnltemplates = new ShiftUI.Panel();
+            this.label9 = new ShiftUI.Label();
+            this.cbnets = new ShiftUI.ComboBox();
+            this.label10 = new ShiftUI.Label();
+            this.btnrecreate = new ShiftUI.Button();
             this.panel1.SuspendLayout();
             this.pnlnetdesign.SuspendLayout();
             this.pnlpcinfo.SuspendLayout();
@@ -83,37 +83,37 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pnltemplates);
-            this.panel1.Controls.Add(this.pnlnetdesign);
-            this.panel1.Controls.Add(this.pnlnetinf);
-            this.panel1.Controls.Add(this.flbuttons);
-            this.panel1.Controls.Add(this.pnlnetinfo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.pnltemplates);
+            this.panel1.Widgets.Add(this.pnlnetdesign);
+            this.panel1.Widgets.Add(this.pnlnetinf);
+            this.panel1.Widgets.Add(this.flbuttons);
+            this.panel1.Widgets.Add(this.pnlnetinfo);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(894, 591);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Paint += new ShiftUI.PaintEventHandler(this.panel1_Paint);
             // 
             // pnlnetdesign
             // 
-            this.pnlnetdesign.Controls.Add(this.pnlpcinfo);
-            this.pnlnetdesign.Controls.Add(this.flowLayoutPanel1);
-            this.pnlnetdesign.Controls.Add(this.pnlbuy);
-            this.pnlnetdesign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlnetdesign.Widgets.Add(this.pnlpcinfo);
+            this.pnlnetdesign.Widgets.Add(this.flowLayoutPanel1);
+            this.pnlnetdesign.Widgets.Add(this.pnlbuy);
+            this.pnlnetdesign.Dock = ShiftUI.DockStyle.Fill;
             this.pnlnetdesign.Location = new System.Drawing.Point(0, 76);
             this.pnlnetdesign.Name = "pnlnetdesign";
             this.pnlnetdesign.Size = new System.Drawing.Size(894, 484);
             this.pnlnetdesign.TabIndex = 6;
-            this.pnlnetdesign.MouseDown += new System.Windows.Forms.MouseEventHandler(this.place_module);
+            this.pnlnetdesign.MouseDown += new ShiftUI.MouseEventHandler(this.place_module);
             // 
             // pnlpcinfo
             // 
-            this.pnlpcinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlpcinfo.Controls.Add(this.btndelete);
-            this.pnlpcinfo.Controls.Add(this.lbpcinfo);
-            this.pnlpcinfo.Controls.Add(this.lbmoduletitle);
-            this.pnlpcinfo.Controls.Add(this.btncloseinfo);
+            this.pnlpcinfo.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlpcinfo.Widgets.Add(this.btndelete);
+            this.pnlpcinfo.Widgets.Add(this.lbpcinfo);
+            this.pnlpcinfo.Widgets.Add(this.lbmoduletitle);
+            this.pnlpcinfo.Widgets.Add(this.btncloseinfo);
             this.pnlpcinfo.Location = new System.Drawing.Point(43, 167);
             this.pnlpcinfo.Name = "pnlpcinfo";
             this.pnlpcinfo.Size = new System.Drawing.Size(382, 280);
@@ -122,10 +122,10 @@
             // 
             // btndelete
             // 
-            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndelete.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndelete.AutoSize = true;
-            this.btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndelete.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btndelete.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndelete.Location = new System.Drawing.Point(106, 254);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(59, 23);
@@ -153,10 +153,10 @@
             // 
             // btncloseinfo
             // 
-            this.btncloseinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncloseinfo.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btncloseinfo.AutoSize = true;
-            this.btncloseinfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncloseinfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncloseinfo.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btncloseinfo.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btncloseinfo.Location = new System.Drawing.Point(327, 254);
             this.btncloseinfo.Name = "btncloseinfo";
             this.btncloseinfo.Size = new System.Drawing.Size(52, 23);
@@ -167,8 +167,8 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnaddmodule);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Widgets.Add(this.btnaddmodule);
+            this.flowLayoutPanel1.Dock = ShiftUI.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 453);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(894, 31);
@@ -177,8 +177,8 @@
             // btnaddmodule
             // 
             this.btnaddmodule.AutoSize = true;
-            this.btnaddmodule.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnaddmodule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddmodule.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnaddmodule.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnaddmodule.Location = new System.Drawing.Point(3, 3);
             this.btnaddmodule.Name = "btnaddmodule";
             this.btnaddmodule.Size = new System.Drawing.Size(87, 23);
@@ -189,15 +189,15 @@
             // 
             // pnlbuy
             // 
-            this.pnlbuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlbuy.Controls.Add(this.txthostname);
-            this.pnlbuy.Controls.Add(this.lbhostname);
-            this.pnlbuy.Controls.Add(this.txtgrade);
-            this.pnlbuy.Controls.Add(this.lbgrade);
-            this.pnlbuy.Controls.Add(this.lbmoduleinfo);
-            this.pnlbuy.Controls.Add(this.cmbbuyable);
-            this.pnlbuy.Controls.Add(this.label4);
-            this.pnlbuy.Controls.Add(this.btndonebuying);
+            this.pnlbuy.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.pnlbuy.Widgets.Add(this.txthostname);
+            this.pnlbuy.Widgets.Add(this.lbhostname);
+            this.pnlbuy.Widgets.Add(this.txtgrade);
+            this.pnlbuy.Widgets.Add(this.lbgrade);
+            this.pnlbuy.Widgets.Add(this.lbmoduleinfo);
+            this.pnlbuy.Widgets.Add(this.cmbbuyable);
+            this.pnlbuy.Widgets.Add(this.label4);
+            this.pnlbuy.Widgets.Add(this.btndonebuying);
             this.pnlbuy.Location = new System.Drawing.Point(3, 148);
             this.pnlbuy.Name = "pnlbuy";
             this.pnlbuy.Size = new System.Drawing.Size(382, 299);
@@ -207,7 +207,7 @@
             // txthostname
             // 
             this.txthostname.BackColor = System.Drawing.Color.Black;
-            this.txthostname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txthostname.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txthostname.ForeColor = System.Drawing.Color.White;
             this.txthostname.Location = new System.Drawing.Point(186, 236);
             this.txthostname.Name = "txthostname";
@@ -226,7 +226,7 @@
             // txtgrade
             // 
             this.txtgrade.BackColor = System.Drawing.Color.Black;
-            this.txtgrade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtgrade.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtgrade.ForeColor = System.Drawing.Color.White;
             this.txtgrade.Location = new System.Drawing.Point(65, 236);
             this.txtgrade.Name = "txtgrade";
@@ -254,8 +254,8 @@
             // cmbbuyable
             // 
             this.cmbbuyable.BackColor = System.Drawing.Color.Black;
-            this.cmbbuyable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbbuyable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbbuyable.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
+            this.cmbbuyable.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cmbbuyable.ForeColor = System.Drawing.Color.White;
             this.cmbbuyable.FormattingEnabled = true;
             this.cmbbuyable.Location = new System.Drawing.Point(12, 38);
@@ -275,10 +275,10 @@
             // 
             // btndonebuying
             // 
-            this.btndonebuying.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btndonebuying.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btndonebuying.AutoSize = true;
-            this.btndonebuying.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndonebuying.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndonebuying.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btndonebuying.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndonebuying.Location = new System.Drawing.Point(341, 273);
             this.btndonebuying.Name = "btndonebuying";
             this.btndonebuying.Size = new System.Drawing.Size(38, 23);
@@ -289,17 +289,17 @@
             // 
             // pnlnetinf
             // 
-            this.pnlnetinf.Controls.Add(this.label6);
-            this.pnlnetinf.Controls.Add(this.cbdifficulty);
-            this.pnlnetinf.Controls.Add(this.txtfspeed);
-            this.pnlnetinf.Controls.Add(this.label5);
-            this.pnlnetinf.Controls.Add(this.txtfskill);
-            this.pnlnetinf.Controls.Add(this.label3);
-            this.pnlnetinf.Controls.Add(this.txtnetdesc);
-            this.pnlnetinf.Controls.Add(this.label2);
-            this.pnlnetinf.Controls.Add(this.txtnetname);
-            this.pnlnetinf.Controls.Add(this.label1);
-            this.pnlnetinf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlnetinf.Widgets.Add(this.label6);
+            this.pnlnetinf.Widgets.Add(this.cbdifficulty);
+            this.pnlnetinf.Widgets.Add(this.txtfspeed);
+            this.pnlnetinf.Widgets.Add(this.label5);
+            this.pnlnetinf.Widgets.Add(this.txtfskill);
+            this.pnlnetinf.Widgets.Add(this.label3);
+            this.pnlnetinf.Widgets.Add(this.txtnetdesc);
+            this.pnlnetinf.Widgets.Add(this.label2);
+            this.pnlnetinf.Widgets.Add(this.txtnetname);
+            this.pnlnetinf.Widgets.Add(this.label1);
+            this.pnlnetinf.Dock = ShiftUI.DockStyle.Fill;
             this.pnlnetinf.Location = new System.Drawing.Point(0, 76);
             this.pnlnetinf.Name = "pnlnetinf";
             this.pnlnetinf.Size = new System.Drawing.Size(894, 484);
@@ -317,8 +317,8 @@
             // cbdifficulty
             // 
             this.cbdifficulty.BackColor = System.Drawing.Color.Black;
-            this.cbdifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbdifficulty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbdifficulty.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
+            this.cbdifficulty.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cbdifficulty.ForeColor = System.Drawing.Color.Green;
             this.cbdifficulty.FormattingEnabled = true;
             this.cbdifficulty.Items.AddRange(new object[] {
@@ -333,7 +333,7 @@
             // txtfspeed
             // 
             this.txtfspeed.BackColor = System.Drawing.Color.Black;
-            this.txtfspeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfspeed.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtfspeed.ForeColor = System.Drawing.Color.Green;
             this.txtfspeed.Location = new System.Drawing.Point(142, 172);
             this.txtfspeed.Name = "txtfspeed";
@@ -353,7 +353,7 @@
             // txtfskill
             // 
             this.txtfskill.BackColor = System.Drawing.Color.Black;
-            this.txtfskill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfskill.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtfskill.ForeColor = System.Drawing.Color.Green;
             this.txtfskill.Location = new System.Drawing.Point(142, 146);
             this.txtfskill.Name = "txtfskill";
@@ -373,7 +373,7 @@
             // txtnetdesc
             // 
             this.txtnetdesc.BackColor = System.Drawing.Color.Black;
-            this.txtnetdesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnetdesc.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtnetdesc.ForeColor = System.Drawing.Color.Green;
             this.txtnetdesc.Location = new System.Drawing.Point(142, 80);
             this.txtnetdesc.Name = "txtnetdesc";
@@ -392,7 +392,7 @@
             // txtnetname
             // 
             this.txtnetname.BackColor = System.Drawing.Color.Black;
-            this.txtnetname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnetname.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtnetname.ForeColor = System.Drawing.Color.Green;
             this.txtnetname.Location = new System.Drawing.Point(142, 56);
             this.txtnetname.Name = "txtnetname";
@@ -410,10 +410,10 @@
             // 
             // flbuttons
             // 
-            this.flbuttons.Controls.Add(this.btnnext);
-            this.flbuttons.Controls.Add(this.btnback);
-            this.flbuttons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flbuttons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flbuttons.Widgets.Add(this.btnnext);
+            this.flbuttons.Widgets.Add(this.btnback);
+            this.flbuttons.Dock = ShiftUI.DockStyle.Bottom;
+            this.flbuttons.FlowDirection = ShiftUI.FlowDirection.RightToLeft;
             this.flbuttons.Location = new System.Drawing.Point(0, 560);
             this.flbuttons.Name = "flbuttons";
             this.flbuttons.Size = new System.Drawing.Size(894, 31);
@@ -422,8 +422,8 @@
             // btnnext
             // 
             this.btnnext.AutoSize = true;
-            this.btnnext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnext.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnnext.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnnext.Location = new System.Drawing.Point(846, 3);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(45, 23);
@@ -435,8 +435,8 @@
             // btnback
             // 
             this.btnback.AutoSize = true;
-            this.btnback.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnback.Location = new System.Drawing.Point(795, 3);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(45, 23);
@@ -447,10 +447,10 @@
             // 
             // pnlnetinfo
             // 
-            this.pnlnetinfo.Controls.Add(this.btnloadfromtemplate);
-            this.pnlnetinfo.Controls.Add(this.lbdescription);
-            this.pnlnetinfo.Controls.Add(this.lbtitle);
-            this.pnlnetinfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlnetinfo.Widgets.Add(this.btnloadfromtemplate);
+            this.pnlnetinfo.Widgets.Add(this.lbdescription);
+            this.pnlnetinfo.Widgets.Add(this.lbtitle);
+            this.pnlnetinfo.Dock = ShiftUI.DockStyle.Top;
             this.pnlnetinfo.Location = new System.Drawing.Point(0, 0);
             this.pnlnetinfo.Name = "pnlnetinfo";
             this.pnlnetinfo.Size = new System.Drawing.Size(894, 76);
@@ -458,8 +458,8 @@
             // 
             // lbdescription
             // 
-            this.lbdescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbdescription.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbdescription.Location = new System.Drawing.Point(15, 31);
             this.lbdescription.Name = "lbdescription";
             this.lbdescription.Size = new System.Drawing.Size(867, 36);
@@ -478,10 +478,10 @@
             // 
             // btnloadfromtemplate
             // 
-            this.btnloadfromtemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnloadfromtemplate.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnloadfromtemplate.AutoSize = true;
-            this.btnloadfromtemplate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnloadfromtemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnloadfromtemplate.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnloadfromtemplate.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnloadfromtemplate.Location = new System.Drawing.Point(683, 47);
             this.btnloadfromtemplate.Name = "btnloadfromtemplate";
             this.btnloadfromtemplate.Size = new System.Drawing.Size(199, 23);
@@ -493,11 +493,11 @@
             // 
             // pnltemplates
             // 
-            this.pnltemplates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnltemplates.Controls.Add(this.label9);
-            this.pnltemplates.Controls.Add(this.cbnets);
-            this.pnltemplates.Controls.Add(this.label10);
-            this.pnltemplates.Controls.Add(this.btnrecreate);
+            this.pnltemplates.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.pnltemplates.Widgets.Add(this.label9);
+            this.pnltemplates.Widgets.Add(this.cbnets);
+            this.pnltemplates.Widgets.Add(this.label10);
+            this.pnltemplates.Widgets.Add(this.btnrecreate);
             this.pnltemplates.Location = new System.Drawing.Point(256, 146);
             this.pnltemplates.Name = "pnltemplates";
             this.pnltemplates.Size = new System.Drawing.Size(382, 299);
@@ -516,8 +516,8 @@
             // cbnets
             // 
             this.cbnets.BackColor = System.Drawing.Color.Black;
-            this.cbnets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbnets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbnets.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
+            this.cbnets.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cbnets.ForeColor = System.Drawing.Color.White;
             this.cbnets.FormattingEnabled = true;
             this.cbnets.Location = new System.Drawing.Point(12, 38);
@@ -536,10 +536,10 @@
             // 
             // btnrecreate
             // 
-            this.btnrecreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrecreate.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.btnrecreate.AutoSize = true;
-            this.btnrecreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnrecreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrecreate.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.btnrecreate.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnrecreate.Location = new System.Drawing.Point(334, 273);
             this.btnrecreate.Name = "btnrecreate";
             this.btnrecreate.Size = new System.Drawing.Size(45, 23);
@@ -551,13 +551,13 @@
             // NetGen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 11F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(894, 591);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Font = new System.Drawing.Font("Lucida Console", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGreen;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.Name = "NetGen";
             this.Text = "NetGen";
             this.Load += new System.EventHandler(this.NetGen_Load);
@@ -583,46 +583,46 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flbuttons;
-        private System.Windows.Forms.TextBox txtnetname;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlnetinfo;
-        private System.Windows.Forms.Label lbdescription;
-        private System.Windows.Forms.Label lbtitle;
-        private System.Windows.Forms.TextBox txtnetdesc;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnnext;
-        private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.Panel pnlnetdesign;
-        private System.Windows.Forms.Panel pnlnetinf;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnaddmodule;
-        private System.Windows.Forms.Panel pnlbuy;
-        private System.Windows.Forms.TextBox txthostname;
-        private System.Windows.Forms.Label lbhostname;
-        private System.Windows.Forms.TextBox txtgrade;
-        private System.Windows.Forms.Label lbgrade;
-        private System.Windows.Forms.Label lbmoduleinfo;
-        private System.Windows.Forms.ComboBox cmbbuyable;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btndonebuying;
-        private System.Windows.Forms.Panel pnlpcinfo;
-        private System.Windows.Forms.Button btndelete;
-        private System.Windows.Forms.Label lbpcinfo;
-        private System.Windows.Forms.Label lbmoduletitle;
-        private System.Windows.Forms.Button btncloseinfo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbdifficulty;
-        private System.Windows.Forms.TextBox txtfspeed;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtfskill;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnloadfromtemplate;
-        private System.Windows.Forms.Panel pnltemplates;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbnets;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnrecreate;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.FlowLayoutPanel flbuttons;
+        private ShiftUI.TextBox txtnetname;
+        private ShiftUI.Label label1;
+        private ShiftUI.Panel pnlnetinfo;
+        private ShiftUI.Label lbdescription;
+        private ShiftUI.Label lbtitle;
+        private ShiftUI.TextBox txtnetdesc;
+        private ShiftUI.Label label2;
+        private ShiftUI.Button btnnext;
+        private ShiftUI.Button btnback;
+        private ShiftUI.Panel pnlnetdesign;
+        private ShiftUI.Panel pnlnetinf;
+        private ShiftUI.FlowLayoutPanel flowLayoutPanel1;
+        private ShiftUI.Button btnaddmodule;
+        private ShiftUI.Panel pnlbuy;
+        private ShiftUI.TextBox txthostname;
+        private ShiftUI.Label lbhostname;
+        private ShiftUI.TextBox txtgrade;
+        private ShiftUI.Label lbgrade;
+        private ShiftUI.Label lbmoduleinfo;
+        private ShiftUI.ComboBox cmbbuyable;
+        private ShiftUI.Label label4;
+        private ShiftUI.Button btndonebuying;
+        private ShiftUI.Panel pnlpcinfo;
+        private ShiftUI.Button btndelete;
+        private ShiftUI.Label lbpcinfo;
+        private ShiftUI.Label lbmoduletitle;
+        private ShiftUI.Button btncloseinfo;
+        private ShiftUI.Label label6;
+        private ShiftUI.ComboBox cbdifficulty;
+        private ShiftUI.TextBox txtfspeed;
+        private ShiftUI.Label label5;
+        private ShiftUI.TextBox txtfskill;
+        private ShiftUI.Label label3;
+        private ShiftUI.Button btnloadfromtemplate;
+        private ShiftUI.Panel pnltemplates;
+        private ShiftUI.Label label9;
+        private ShiftUI.ComboBox cbnets;
+        private ShiftUI.Label label10;
+        private ShiftUI.Button btnrecreate;
     }
 }

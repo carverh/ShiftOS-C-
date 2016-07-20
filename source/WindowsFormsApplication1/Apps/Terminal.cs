@@ -13,7 +13,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -37,7 +37,7 @@ namespace ShiftOS
 
         public void StartOtherPlayerStory()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -160,7 +160,7 @@ namespace ShiftOS
         {
             if(ModLogger == true)
             {
-                var tmrlog = new System.Windows.Forms.Timer();
+                var tmrlog = new ShiftUI.Timer();
                 tmrlog.Interval = 500;
                 tmrlog.Tick += (object s, EventArgs a) =>
                 {
@@ -242,16 +242,16 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void txtterm_KeyPress(object sender, System.Windows.Forms.KeyEventArgs e)
+        private void txtterm_KeyPress(object sender, ShiftUI.KeyEventArgs e)
         {
-            if(e.Control) {
+            if(e.Widget) {
                 if(API.Upgrades["zoomableterminal"] == true)
                 {
                     Zooming = true;
                 }
             }
 
-            if (e.KeyCode == Keys.T && e.Control && blockctrlt == false)
+            if (e.KeyCode == Keys.T && e.Widget && blockctrlt == false)
             {
                 this.Close();
                 e.SuppressKeyPress = true;
@@ -590,7 +590,7 @@ Password: z7fjsd3");
 
         internal void StartBridgeToMidGame()
         {
-            var t2 = new System.Windows.Forms.Timer();
+            var t2 = new ShiftUI.Timer();
             t2.Interval = 4000;
             int i2 = 0;
             t2.Tick += (object s, EventArgs e) =>
@@ -657,7 +657,7 @@ Password: z7fjsd3");
                 i2 += 1;
             };
 
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
 
@@ -815,7 +815,7 @@ Password: z7fjsd3");
 
         internal void StartAidenNirhStory()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -853,7 +853,7 @@ Password: z7fjsd3");
 
         internal void StartHacker101Story()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             
@@ -943,7 +943,7 @@ Password: z7fjsd3");
 
         internal void StartOtherPlayerSysFix()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -1051,7 +1051,7 @@ Password: z7fjsd3");
 
         internal void StartHackerBattleIntro()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -1142,7 +1142,7 @@ Password: z7fjsd3");
 
         internal void StartDevXFuriousStory()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 4000;
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -1235,7 +1235,7 @@ Password: z7fjsd3");
         /// </summary>
         public void StartShiftnetStory()
         {
-            System.Windows.Forms.Timer tmrstory = new System.Windows.Forms.Timer();
+            ShiftUI.Timer tmrstory = new ShiftUI.Timer();
             tmrstory.Interval = 10000;
             WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
             API.PlaySound(Properties.Resources.dial_up_modem_02);
@@ -2273,7 +2273,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
 
         private void StartChoice1EndStory()
         {
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             int i = 0;
             t.Interval = 4000;
             t.Tick += (object s, EventArgs a) =>
@@ -2379,7 +2379,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             WriteLine(Environment.NewLine);
             WriteLine("PANIC_ID: 750_15_4W3S0M3");
             WriteLine("PANIC_DESC: System became too unstable to function properly. In 5 seconds, your session will be resumed.");
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 1000;
             int p = 0;
             t.Tick += (object s, EventArgs a) =>
@@ -2401,7 +2401,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
 
         bool Hacking = false;
 
-        private Control objToWriteTo = null;
+        private Widget objToWriteTo = null;
         private string UpgradeToHack = null;
 
         public void StartHackingSession(string id)

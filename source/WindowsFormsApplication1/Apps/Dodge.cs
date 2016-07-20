@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -105,7 +105,7 @@ namespace ShiftOS
             return new Random().Next(0, pgcontents.Width);
         }
 
-        public void Form1_keydown(System.Object sender, System.Windows.Forms.KeyEventArgs e)
+        public void Form1_keydown(System.Object sender, ShiftUI.KeyEventArgs e)
         {
             switch (e.KeyCode)
             {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -35,15 +35,15 @@ namespace ShiftOS
             }
         }
 
-        private void RecursiveControlSetup(Control ctrl)
+        private void RecursiveWidgetSetup(Widget ctrl)
         {
             ctrl.Font = new Font(OSInfo.GetMonospaceFont(), ctrl.Font.Size);
             try
             {
                 var pnl = (Panel)ctrl;
-                foreach (Control c in pnl.Controls)
+                foreach (Widget c in pnl.Widgets)
                 {
-                    RecursiveControlSetup(c);
+                    RecursiveWidgetSetup(c);
                 }
             }
             catch 
@@ -150,7 +150,7 @@ namespace ShiftOS
 
         private void ShiftnetDecryptor_Load(object sender, EventArgs e)
         {
-            RecursiveControlSetup(panel1);
+            RecursiveWidgetSetup(panel1);
         }
     }
 }

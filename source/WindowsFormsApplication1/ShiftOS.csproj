@@ -62,6 +62,9 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ShiftUI">
+      <HintPath>..\..\..\Project-Circle\ShiftUI\bin\Debug\ShiftUI.dll</HintPath>
+    </Reference>
     <Reference Include="Svg, Version=2.1.0.28187, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
       <HintPath>..\packages\Svg.2.1.0\lib\Svg.dll</HintPath>
       <Private>True</Private>
@@ -132,13 +135,13 @@
       <DependentUpon>Color_Picker.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Computer.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\Computer.Designer.cs">
       <DependentUpon>Computer.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Connection.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
@@ -156,7 +159,7 @@
       <DependentUpon>CreditScroller.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\DesktopIcon.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\DesktopIcon.Designer.cs">
       <DependentUpon>DesktopIcon.cs</DependentUpon>
@@ -174,7 +177,7 @@
       <DependentUpon>File Skimmer.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalMission\ChoiceControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="FinalMission\ChoiceControl.Designer.cs">
       <DependentUpon>ChoiceControl.cs</DependentUpon>
@@ -230,7 +233,7 @@
       <DependentUpon>HoloChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\IconControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\IconControl.Designer.cs">
       <DependentUpon>IconControl.cs</DependentUpon>
@@ -242,7 +245,7 @@
       <DependentUpon>IconManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ImageSelector.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ImageSelector.Designer.cs">
       <DependentUpon>ImageSelector.cs</DependentUpon>
@@ -280,7 +283,7 @@
       <DependentUpon>NetGen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NetModuleStatus.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\NetModuleStatus.Designer.cs">
       <DependentUpon>NetModuleStatus.cs</DependentUpon>
@@ -292,7 +295,7 @@
       <DependentUpon>NetworkBrowser.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Notification.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\Notification.Designer.cs">
       <DependentUpon>Notification.cs</DependentUpon>
@@ -315,7 +318,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Controls\ProgressBarEX.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ProgressBarEX.Designer.cs">
       <DependentUpon>ProgressBarEX.cs</DependentUpon>
@@ -333,25 +336,25 @@
       <DependentUpon>Shifter.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ShifterColorInput.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ShifterColorInput.Designer.cs">
       <DependentUpon>ShifterColorInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ShifterGraphicInput.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ShifterGraphicInput.Designer.cs">
       <DependentUpon>ShifterGraphicInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ShifterIntInput.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ShifterIntInput.Designer.cs">
       <DependentUpon>ShifterIntInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ShifterTextInput.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\ShifterTextInput.Designer.cs">
       <DependentUpon>ShifterTextInput.cs</DependentUpon>
@@ -389,7 +392,7 @@
       <DependentUpon>WidgetManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WindowBorder.cs">
-      <SubType>UserControl</SubType>
+      <SubType>UserWidget</SubType>
     </Compile>
     <Compile Include="Controls\WindowBorder.Designer.cs">
       <DependentUpon>WindowBorder.cs</DependentUpon>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DynamicLua;
 using System.IO;
 using System.Drawing;
-using System.Windows.Forms;
+using ShiftUI;
 using Gecko;
 using System.Net;
 using System.IO.Compression;
@@ -40,7 +40,7 @@ namespace ShiftOS
             RegisterCore();
             //Parse the file contents.
             var lua = File.ReadAllText(modfile);
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             ThisDirectory = Directory.GetParent(modfile).FullName;
             t.Interval = 50;
             t.Tick += (object se, EventArgs ea) =>
@@ -81,7 +81,7 @@ namespace ShiftOS
             mod = new DynamicLua.DynamicLua();
             //Register core functions with the interpreter
             RegisterCore();
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 50;
             ThisDirectory = Paths.SaveRoot;
             t.Tick += (object se, EventArgs ea) =>
@@ -133,7 +133,7 @@ namespace ShiftOS
                     mod(func + $"(get_panel_from_guid(\"{c}\"))");
                 };
             });
-            mod.get_panel_from_guid = new Func<string, Control>((guid) =>
+            mod.get_panel_from_guid = new Func<string, Widget>((guid) =>
             {
                 foreach(var kv in API.DEF_PanelGUIDs)
                 {
@@ -208,7 +208,7 @@ namespace ShiftOS
             mod.get_border = new Func<Form, WindowBorder>((Form win) =>
             {
                 WindowBorder b = null;
-                foreach(Control c in win.Controls)
+                foreach(Widget c in win.Widgets)
                 {
                     if (c is WindowBorder)
                         b = c as WindowBorder;
@@ -374,7 +374,7 @@ end");
             mod.json_serialize = new Func<object, string>((objectToSerialize) => Newtonsoft.Json.JsonConvert.SerializeObject(objectToSerialize));
             mod.json_unserialize = new Func<string, object>((json_string) => Newtonsoft.Json.JsonConvert.DeserializeObject(json_string));
             mod.open_image = new Func<string, Image>((filename) => OpenImage(filename));
-            mod.list_add = new Action<Control, string>((lst, itm) =>
+            mod.list_add = new Action<Widget, string>((lst, itm) =>
             {
                 if(lst is ListBox)
                 {
@@ -382,7 +382,7 @@ end");
                     box.Items.Add(itm);
                 }
             });
-            mod.list_get_selected = new Func<Control, string>((lst) =>
+            mod.list_get_selected = new Func<Widget, string>((lst) =>
             {
                 if(lst is ListBox)
                 {
@@ -402,14 +402,14 @@ end");
                 return API.CurrentSkinImages;
             });
             mod.upgrades = new Func<string, bool>((id) => GetUpgrade(id));
-            mod.create_widget = new Func<string, string, int, int, int, int, bool, Control>((type, text, x, y, width, height, dark_mode) => ConstructControl(type, text, x, y, width, height, dark_mode));
+            mod.create_widget = new Func<string, string, int, int, int, int, bool, Widget>((type, text, x, y, width, height, dark_mode) => ConstructWidget(type, text, x, y, width, height, dark_mode));
             mod.screen_get_width = new Func<int>(() =>
             {
-                return System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
+                return ShiftUI.Screen.PrimaryScreen.Bounds.Width;
             });
             mod.screen_get_height = new Func<int>(() =>
             {
-                return System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
+                return ShiftUI.Screen.PrimaryScreen.Bounds.Height;
             });
             mod.create_window_borderless = new Func<int, int, int, int, Form>((x, y, width, height) => CreateForm(x, y, width, height));
 
@@ -487,7 +487,7 @@ end");
                     return null;
                 }
             });
-            mod.set_anchor = new Action<Control, string>((ctrl, anchorstyle) => SetAnchor(ctrl, anchorstyle));
+            mod.set_anchor = new Action<Widget, string>((ctrl, anchorstyle) => SetAnchor(ctrl, anchorstyle));
 
             //Standard API Functions
             mod.include = new Action<string>((filepath) => IncludeScript(filepath));
@@ -502,25 +502,25 @@ end");
             mod.update_ui = new Action(() => { API.UpdateWindows(); API.CurrentSession.SetupDesktop(); });
             mod.load_skin = new Action<string>((filepath) => Skinning.Utilities.loadsknfile(filepath));
             mod.save_to_skin_file = new Action<string>((filepath) => Skinning.Utilities.saveskintofile(filepath));
-            mod.on_click = new Action<Control, string>((ctrl, funcname) => RegClick(ctrl, funcname));
-            mod.add_widget_to_window = new Action<Form, Control>((win, ctrl) => AddCtrl(win, ctrl));
+            mod.on_click = new Action<Widget, string>((ctrl, funcname) => RegClick(ctrl, funcname));
+            mod.add_widget_to_window = new Action<Form, Widget>((win, ctrl) => AddCtrl(win, ctrl));
             mod.open_file = new Action<string, string>((filters, function) => OpenFile(filters, function));
-            mod.panel_add_widget = new Action<Control, Control>((ctrl, parent) =>
+            mod.panel_add_widget = new Action<Widget, Widget>((ctrl, parent) =>
             {
                 try {
                     var p = (Panel)parent;
-                    p.Controls.Add(ctrl);
+                    p.Widgets.Add(ctrl);
                 } catch(Exception ex)
                 {
                     Errors.Add(ex.Message);
                 }
             });
-            mod.flow_add_widget = new Action<Control, Control>((ctrl, parent) =>
+            mod.flow_add_widget = new Action<Widget, Widget>((ctrl, parent) =>
             {
                 try
                 {
                     var p = (FlowLayoutPanel)parent;
-                    p.Controls.Add(ctrl);
+                    p.Widgets.Add(ctrl);
                 }
                 catch (Exception ex)
                 {
@@ -539,13 +539,13 @@ end");
                     mod($"{function}()");
                 };
             });
-            mod.create_timer = new Func<int, System.Windows.Forms.Timer>((interval) =>
+            mod.create_timer = new Func<int, ShiftUI.Timer>((interval) =>
             {
-                var t = new System.Windows.Forms.Timer();
+                var t = new ShiftUI.Timer();
                 t.Interval = interval;
                 return t;
             });
-            mod.timer_on_tick = new Action<System.Windows.Forms.Timer, string>((tmr, func) =>
+            mod.timer_on_tick = new Action<ShiftUI.Timer, string>((tmr, func) =>
             {
                 try
                 {
@@ -559,8 +559,8 @@ end");
                     Errors.Add(ex.Message);
                 }
             });
-            mod.add_widget_to_desktop = new Action<Control>((ctrl) => AddToDesktop(ctrl));
-            mod.set_dock = new Action<Control, string>((ctrl, dstyle) =>
+            mod.add_widget_to_desktop = new Action<Widget>((ctrl) => AddToDesktop(ctrl));
+            mod.set_dock = new Action<Widget, string>((ctrl, dstyle) =>
             {
                 API.CurrentSession.Invoke(new Action(() =>
                 {
@@ -623,7 +623,7 @@ end");
             });
             mod.notify = new Action<string, string>((title, message) => API.CurrentSession.AddNotification(title, message));
             mod.download_file = new Action<string, string>((web_address, local) => DownloadFile(web_address, local));
-            mod.on_key_down = new Action<Control, string>((ctrl, action) => RegKeyDown(ctrl, action));
+            mod.on_key_down = new Action<Widget, string>((ctrl, action) => RegKeyDown(ctrl, action));
             mod.get_files = new Func<string, List<string>>((path) => GetFiles(path));
             mod.get_folders = new Func<string, List<string>>((path) => GetFolders(path));
             mod.zip = new Action<string, string>((source, destination) =>
@@ -770,9 +770,9 @@ end");
         /// <summary>
         /// Sends a keydown event to Lua when you press a key on the specified control.
         /// </summary>
-        /// <param name="ctrl">Control to assign the event to.</param>
+        /// <param name="ctrl">Widget to assign the event to.</param>
         /// <param name="action">Function to call on keydown.</param>
-        public void RegKeyDown(Control ctrl, string action)
+        public void RegKeyDown(Widget ctrl, string action)
         { /*                                                                                                                                                                                                                           */
             ctrl.KeyDown += (object s, KeyEventArgs a) =>
             {
@@ -918,7 +918,7 @@ end");
         /// </summary>
         /// <param name="ctrl">Target control</param>
         /// <param name="anchor">Anchor string (for example "top;left;bottom;right" or "top;left" or "top")</param>
-        public void SetAnchor(Control ctrl, string anchor)
+        public void SetAnchor(Widget ctrl, string anchor)
         {
             var a = AnchorStyles.None;
             var l = anchor.ToLower();
@@ -955,9 +955,9 @@ end");
         /// Add a control to the desktop.
         /// </summary>
         /// <param name="ctrl">The control to add.</param>
-        public void AddToDesktop(Control ctrl)
+        public void AddToDesktop(Widget ctrl)
         {
-            API.CurrentSession.Controls.Add(ctrl);
+            API.CurrentSession.Widgets.Add(ctrl);
         }
 
         /// <summary>
@@ -1088,17 +1088,17 @@ end");
         /// <summary>
         /// Constructs a WinForms control.
         /// </summary>
-        /// <param name="type">Control type.</param>
-        /// <param name="text">Control text.</param>
+        /// <param name="type">Widget type.</param>
+        /// <param name="text">Widget text.</param>
         /// <param name="x">X coordinate.</param>
         /// <param name="y">Y coordinate.</param>
         /// <param name="width">Width.</param>
         /// <param name="height">Height.</param>
         /// <param name="darkmode">Is it dark?</param>
         /// <returns>The control, all ShiftOS-ified for you.</returns>
-        public Control ConstructControl(string type, string text, int x, int y, int width, int height, bool darkmode)
+        public Widget ConstructWidget(string type, string text, int x, int y, int width, int height, bool darkmode)
         {
-            var ctrl = new Control();
+            var ctrl = new Widget();
             switch(type.ToLower())
             {
                 case "luatextbox":
@@ -1125,12 +1125,12 @@ end");
                         btn.BackColor = Color.White;
                         btn.ForeColor = Color.Black;
                     }
-                    ctrl = (Control)btn;
+                    ctrl = (Widget)btn;
                     break;
                 case "webview":
                     var g = new Gecko.GeckoWebBrowser();
                     g.NoDefaultContextMenu = true;
-                    ctrl = (Gecko.GeckoWebBrowser)g;
+                    ctrl = g.ToWidget();
                     //This control renders HTML, so therefore a dark theme is futile.
                     break;
                 case "menustrip":
@@ -1195,7 +1195,7 @@ end");
                     }
                     break;
                 default:
-                    ctrl = new Control();
+                    ctrl = new Widget();
                     if(darkmode)
                     {
                         ctrl.BackColor = API.CurrentSkin.titlebarcolour;
@@ -1232,24 +1232,24 @@ end");
         /// Adds a control to a window.
         /// </summary>
         /// <param name="win">Target window</param>
-        /// <param name="ctrl">Control to add.</param>
-        public void AddCtrl(Form win, Control ctrl)
+        /// <param name="ctrl">Widget to add.</param>
+        public void AddCtrl(Form win, Widget ctrl)
         {
             
             List<WindowBorder> borders = new List<WindowBorder>();
-            foreach(Control c in win.Controls)
+            foreach(Widget c in win.Widgets)
             {
                 if(c.Name == "api_brdr")
                 {
                     var b = (WindowBorder)c;
-                    b.pgcontents.Controls.Add(ctrl);
+                    b.pgcontents.Widgets.Add(ctrl);
                     ctrl.BringToFront();
                     borders.Add(b);
                 }
             }
             if(borders.Count == 0)
             {
-                win.Controls.Add(ctrl);
+                win.Widgets.Add(ctrl);
             }
             
         }
@@ -1259,7 +1259,7 @@ end");
         /// </summary>
         /// <param name="ctrl">Target control</param>
         /// <param name="funcname">Function to call.</param>
-        public void RegClick(Control ctrl, string funcname)
+        public void RegClick(Widget ctrl, string funcname)
         {
             ctrl.MouseDown += (object s, MouseEventArgs a) =>
             {
@@ -1449,5 +1449,13 @@ end");
         }
     }
 
-
+    public static class Extensions
+    {
+        public static Widget ToWidget(this System.Windows.Forms.Control ctrl)
+        {
+            string json = JsonConvert.SerializeObject(ctrl);
+            json = json.Replace("Control", "Widget");
+            return JsonConvert.DeserializeObject<Widget>(json);
+        }
+    }
 }

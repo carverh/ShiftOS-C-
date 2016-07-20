@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -288,7 +288,7 @@ namespace ShiftOS
                 newModule.Transmitter = transmitter;
                 transmitter?.send_message(Online.Hacking.NetTransmitter.Messages.PlaceModule, new Online.Hacking.Module { Grade = newModule.Grade, Hostname = newModule.Hostname, HP = newModule.HP, Type = (int)newModule.Type, X = newModule.Left, Y = newModule.Top });
             }
-            pnlyou.Controls.Add(newModule);
+            pnlyou.Widgets.Add(newModule);
             int hp = newModule.HP;
             WriteLine($"[Network] Welcome to the network, {newModule.Hostname}!");
             TotalPlayerHP += newModule.HP;
@@ -939,7 +939,7 @@ namespace ShiftOS
         private void btnpoweroff_Click(object sender, EventArgs e)
         {
             //Remove the computer from the game.
-            pnlyou.Controls.Remove(SelectedPlayerComputer);
+            pnlyou.Widgets.Remove(SelectedPlayerComputer);
             AllPlayerComputers.Remove(SelectedPlayerComputer);
             btnpoweroff.Hide();
         }
@@ -1219,7 +1219,7 @@ namespace ShiftOS
                 newModule.Top = (pnlenemy.Height - newModule.Height) / 2;
             }
             var rnd = new Random();
-            pnlenemy.Controls.Add(newModule);
+            pnlenemy.Widgets.Add(newModule);
             foreach (var pc in AllEnemyComputers)
             {
                 while (newModule.Bounds.IntersectsWith(pc.Bounds))
@@ -1827,7 +1827,7 @@ namespace ShiftOS
             }
         }
 
-        private void pongMain_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void pongMain_MouseMove(object sender, ShiftUI.MouseEventArgs e)
         {
             paddleHuman.Location = new Point(paddleHuman.Location.X, (MousePosition.Y - pgpong.Location.Y) - (paddleHuman.Height / 2));
         }
@@ -1938,7 +1938,7 @@ namespace ShiftOS
 
                 if(module_to_steal.Parent != pnlyou)
                 {
-                    module_to_steal.Parent.Controls.Remove(module_to_steal);
+                    module_to_steal.Parent.Widgets.Remove(module_to_steal);
                     module_to_steal.Dispose();
                 }
                 tmrcountdown.Stop();
@@ -1981,7 +1981,7 @@ namespace ShiftOS
 
                 if (module_to_steal.Parent != pnlenemy)
                 {
-                    module_to_steal.Parent.Controls.Remove(module_to_steal);
+                    module_to_steal.Parent.Widgets.Remove(module_to_steal);
                     module_to_steal.Dispose();
                 }
                 tmrcountdown.Stop();

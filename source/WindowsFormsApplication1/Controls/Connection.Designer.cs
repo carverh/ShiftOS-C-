@@ -33,7 +33,7 @@
             // Connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.Name = "Connection";
             this.Size = new System.Drawing.Size(150, 10);
             this.ResumeLayout(false);

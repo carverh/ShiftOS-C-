@@ -32,12 +32,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbstats = new System.Windows.Forms.Label();
+            this.lbstats = new ShiftUI.Label();
             this.SuspendLayout();
             // 
             // lbstats
             // 
-            this.lbstats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbstats.Dock = ShiftUI.DockStyle.Fill;
             this.lbstats.ForeColor = System.Drawing.Color.Black;
             this.lbstats.Location = new System.Drawing.Point(0, 0);
             this.lbstats.Name = "lbstats";
@@ -49,9 +49,9 @@
             // 
             // Computer
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lbstats);
+            this.Widgets.Add(this.lbstats);
             this.Name = "Computer";
             this.Size = new System.Drawing.Size(64, 64);
             this.Load += new System.EventHandler(this.Computer_Load);
@@ -61,6 +61,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbstats;
+        private ShiftUI.Label lbstats;
     }
 }

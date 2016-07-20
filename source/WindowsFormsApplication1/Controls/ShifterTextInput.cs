@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -50,7 +50,7 @@ namespace ShiftOS
         
     }
 
-    public class IShifterSetting : UserControl
+    public class IShifterSetting : UserWidget
     {
         public virtual string Text { get; set; }
         public virtual object Value { get; set; }

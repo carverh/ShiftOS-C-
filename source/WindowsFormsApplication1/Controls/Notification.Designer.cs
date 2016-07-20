@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbtitle = new System.Windows.Forms.Label();
-            this.lbmessage = new System.Windows.Forms.Label();
+            this.lbtitle = new ShiftUI.Label();
+            this.lbmessage = new ShiftUI.Label();
             this.SuspendLayout();
             // 
             // lbtitle
@@ -44,9 +44,9 @@
             // 
             // lbmessage
             // 
-            this.lbmessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbmessage.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbmessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbmessage.Location = new System.Drawing.Point(7, 33);
             this.lbmessage.Name = "lbmessage";
@@ -57,10 +57,10 @@
             // Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.Controls.Add(this.lbmessage);
-            this.Controls.Add(this.lbtitle);
+            this.Widgets.Add(this.lbmessage);
+            this.Widgets.Add(this.lbtitle);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Notification";
             this.Size = new System.Drawing.Size(355, 100);
@@ -72,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbtitle;
-        private System.Windows.Forms.Label lbmessage;
+        private ShiftUI.Label lbtitle;
+        private ShiftUI.Label lbmessage;
     }
 }

@@ -31,18 +31,18 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblHijack = new System.Windows.Forms.Label();
-            this.conversationtimer = new System.Windows.Forms.Timer(this.components);
-            this.textgen = new System.Windows.Forms.Timer(this.components);
-            this.lblhackwords = new System.Windows.Forms.Label();
-            this.hackeffecttimer = new System.Windows.Forms.Timer(this.components);
+            this.lblHijack = new ShiftUI.Label();
+            this.conversationtimer = new ShiftUI.Timer(this.components);
+            this.textgen = new ShiftUI.Timer(this.components);
+            this.lblhackwords = new ShiftUI.Label();
+            this.hackeffecttimer = new ShiftUI.Timer(this.components);
             this.BackgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnskip = new System.Windows.Forms.Button();
+            this.btnskip = new ShiftUI.Button();
             this.SuspendLayout();
             // 
             // lblHijack
             // 
-            this.lblHijack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHijack.Anchor = ShiftUI.AnchorStyles.None;
             this.lblHijack.AutoSize = true;
             this.lblHijack.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblHijack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,7 +60,7 @@ namespace ShiftOS
             // lblhackwords
             // 
             this.lblhackwords.AutoSize = true;
-            this.lblhackwords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblhackwords.Dock = ShiftUI.DockStyle.Fill;
             this.lblhackwords.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhackwords.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblhackwords.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +75,7 @@ namespace ShiftOS
             // 
             // btnskip
             // 
-            this.btnskip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnskip.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnskip.ForeColor = System.Drawing.Color.White;
             this.btnskip.Location = new System.Drawing.Point(566, 422);
             this.btnskip.Name = "btnskip";
@@ -89,12 +89,12 @@ namespace ShiftOS
             // HijackScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(653, 457);
-            this.Controls.Add(this.btnskip);
-            this.Controls.Add(this.lblhackwords);
-            this.Controls.Add(this.lblHijack);
+            this.Widgets.Add(this.btnskip);
+            this.Widgets.Add(this.lblhackwords);
+            this.Widgets.Add(this.lblHijack);
             this.Name = "HijackScreen";
             this.Text = "ShiftOS";
             this.TransparencyKey = System.Drawing.Color.White;
@@ -103,14 +103,14 @@ namespace ShiftOS
             this.PerformLayout();
 
         }
-        internal System.Windows.Forms.Label lblHijack;
-        internal System.Windows.Forms.Timer conversationtimer;
-        internal System.Windows.Forms.Timer textgen;
-        internal System.Windows.Forms.Label lblhackwords;
-        internal System.Windows.Forms.Timer hackeffecttimer;
+        internal ShiftUI.Label lblHijack;
+        internal ShiftUI.Timer conversationtimer;
+        internal ShiftUI.Timer textgen;
+        internal ShiftUI.Label lblhackwords;
+        internal ShiftUI.Timer hackeffecttimer;
         internal System.ComponentModel.BackgroundWorker BackgroundWorker1;
         #endregion
 
-        private System.Windows.Forms.Button btnskip;
+        private ShiftUI.Button btnskip;
     }
 }

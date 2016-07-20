@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlmain = new System.Windows.Forms.Panel();
-            this.btndone = new System.Windows.Forms.Button();
-            this.pnlbgcolor = new System.Windows.Forms.Panel();
-            this.Label40 = new System.Windows.Forms.Label();
-            this.Label36 = new System.Windows.Forms.Label();
-            this.txtheight = new System.Windows.Forms.TextBox();
+            this.pnlmain = new ShiftUI.Panel();
+            this.btndone = new ShiftUI.Button();
+            this.pnlbgcolor = new ShiftUI.Panel();
+            this.Label40 = new ShiftUI.Label();
+            this.Label36 = new ShiftUI.Label();
+            this.txtheight = new ShiftUI.TextBox();
             this.pnlmain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlmain
             // 
             this.pnlmain.BackColor = System.Drawing.Color.White;
-            this.pnlmain.Controls.Add(this.txtheight);
-            this.pnlmain.Controls.Add(this.Label36);
-            this.pnlmain.Controls.Add(this.pnlbgcolor);
-            this.pnlmain.Controls.Add(this.Label40);
-            this.pnlmain.Controls.Add(this.btndone);
-            this.pnlmain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlmain.Widgets.Add(this.txtheight);
+            this.pnlmain.Widgets.Add(this.Label36);
+            this.pnlmain.Widgets.Add(this.pnlbgcolor);
+            this.pnlmain.Widgets.Add(this.Label40);
+            this.pnlmain.Widgets.Add(this.btndone);
+            this.pnlmain.Dock = ShiftUI.DockStyle.Fill;
             this.pnlmain.ForeColor = System.Drawing.Color.Black;
             this.pnlmain.Location = new System.Drawing.Point(0, 0);
             this.pnlmain.Name = "pnlmain";
@@ -54,8 +54,8 @@
             // 
             // btndone
             // 
-            this.btndone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndone.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btndone.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndone.Location = new System.Drawing.Point(273, 343);
             this.btndone.Name = "btndone";
             this.btndone.Size = new System.Drawing.Size(75, 23);
@@ -66,12 +66,12 @@
             // 
             // pnlbgcolor
             // 
-            this.pnlbgcolor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlbgcolor.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlbgcolor.Location = new System.Drawing.Point(307, 101);
             this.pnlbgcolor.Name = "pnlbgcolor";
             this.pnlbgcolor.Size = new System.Drawing.Size(41, 20);
             this.pnlbgcolor.TabIndex = 22;
-            this.pnlbgcolor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.setbgcolor);
+            this.pnlbgcolor.MouseDown += new ShiftUI.MouseEventHandler(this.setbgcolor);
             // 
             // Label40
             // 
@@ -96,7 +96,7 @@
             // txtheight
             // 
             this.txtheight.BackColor = System.Drawing.Color.White;
-            this.txtheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtheight.ForeColor = System.Drawing.Color.Black;
             this.txtheight.Location = new System.Drawing.Point(325, 134);
@@ -108,9 +108,9 @@
             // PanelManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 378);
-            this.Controls.Add(this.pnlmain);
+            this.Widgets.Add(this.pnlmain);
             this.Name = "PanelManager";
             this.Text = "PanelManager";
             this.Load += new System.EventHandler(this.PanelManager_Load);
@@ -122,11 +122,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlmain;
-        private System.Windows.Forms.Button btndone;
-        private System.Windows.Forms.Panel pnlbgcolor;
-        private System.Windows.Forms.Label Label40;
-        private System.Windows.Forms.Label Label36;
-        private System.Windows.Forms.TextBox txtheight;
+        private ShiftUI.Panel pnlmain;
+        private ShiftUI.Button btndone;
+        private ShiftUI.Panel pnlbgcolor;
+        private ShiftUI.Label Label40;
+        private ShiftUI.Label Label36;
+        private ShiftUI.TextBox txtheight;
     }
 }

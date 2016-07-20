@@ -25,23 +25,23 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pgleft = new System.Windows.Forms.Panel();
-            this.pgbottomlcorner = new System.Windows.Forms.Panel();
-            this.pgright = new System.Windows.Forms.Panel();
-            this.pgbottomrcorner = new System.Windows.Forms.Panel();
-            this.titlebar = new System.Windows.Forms.Panel();
-            this.minimizebutton = new System.Windows.Forms.Panel();
-            this.pnlicon = new System.Windows.Forms.PictureBox();
-            this.rollupbutton = new System.Windows.Forms.Panel();
-            this.closebutton = new System.Windows.Forms.Panel();
-            this.lbtitletext = new System.Windows.Forms.Label();
-            this.pgtoplcorner = new System.Windows.Forms.Panel();
-            this.pgtoprcorner = new System.Windows.Forms.Panel();
-            this.pgbottom = new System.Windows.Forms.Panel();
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.pullbs = new System.Windows.Forms.Timer(this.components);
-            this.pullbottom = new System.Windows.Forms.Timer(this.components);
-            this.pullside = new System.Windows.Forms.Timer(this.components);
+            this.pgleft = new ShiftUI.Panel();
+            this.pgbottomlcorner = new ShiftUI.Panel();
+            this.pgright = new ShiftUI.Panel();
+            this.pgbottomrcorner = new ShiftUI.Panel();
+            this.titlebar = new ShiftUI.Panel();
+            this.minimizebutton = new ShiftUI.Panel();
+            this.pnlicon = new ShiftUI.PictureBox();
+            this.rollupbutton = new ShiftUI.Panel();
+            this.closebutton = new ShiftUI.Panel();
+            this.lbtitletext = new ShiftUI.Label();
+            this.pgtoplcorner = new ShiftUI.Panel();
+            this.pgtoprcorner = new ShiftUI.Panel();
+            this.pgbottom = new ShiftUI.Panel();
+            this.pgcontents = new ShiftUI.Panel();
+            this.pullbs = new ShiftUI.Timer(this.components);
+            this.pullbottom = new ShiftUI.Timer(this.components);
+            this.pullside = new ShiftUI.Timer(this.components);
             this.pgleft.SuspendLayout();
             this.pgright.SuspendLayout();
             this.titlebar.SuspendLayout();
@@ -51,76 +51,76 @@ namespace ShiftOS
             // pgleft
             // 
             this.pgleft.BackColor = System.Drawing.Color.Gray;
-            this.pgleft.Controls.Add(this.pgbottomlcorner);
-            this.pgleft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pgleft.Widgets.Add(this.pgbottomlcorner);
+            this.pgleft.Dock = ShiftUI.DockStyle.Left;
             this.pgleft.Location = new System.Drawing.Point(0, 30);
             this.pgleft.Name = "pgleft";
             this.pgleft.Size = new System.Drawing.Size(2, 345);
             this.pgleft.TabIndex = 16;
-            this.pgleft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Rightpull_MouseDown);
+            this.pgleft.MouseDown += new ShiftUI.MouseEventHandler(this.Rightpull_MouseDown);
             this.pgleft.MouseEnter += new System.EventHandler(this.RightCursorOn_MouseDown);
             this.pgleft.MouseLeave += new System.EventHandler(this.SizeCursoroff_MouseDown);
-            this.pgleft.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rightpull_MouseUp);
+            this.pgleft.MouseUp += new ShiftUI.MouseEventHandler(this.rightpull_MouseUp);
             // 
             // pgbottomlcorner
             // 
             this.pgbottomlcorner.BackColor = System.Drawing.Color.Red;
-            this.pgbottomlcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pgbottomlcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.pgbottomlcorner.Location = new System.Drawing.Point(0, 343);
             this.pgbottomlcorner.Name = "pgbottomlcorner";
             this.pgbottomlcorner.Size = new System.Drawing.Size(2, 2);
             this.pgbottomlcorner.TabIndex = 14;
-            this.pgbottomlcorner.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bspull_MouseDown);
+            this.pgbottomlcorner.MouseDown += new ShiftUI.MouseEventHandler(this.bspull_MouseDown);
             this.pgbottomlcorner.MouseEnter += new System.EventHandler(this.CornerCursorOn_MouseDown);
             this.pgbottomlcorner.MouseLeave += new System.EventHandler(this.SizeCursoroff_MouseDown);
-            this.pgbottomlcorner.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bspull_MouseUp);
+            this.pgbottomlcorner.MouseUp += new ShiftUI.MouseEventHandler(this.bspull_MouseUp);
             // 
             // pgright
             // 
             this.pgright.BackColor = System.Drawing.Color.Gray;
-            this.pgright.Controls.Add(this.pgbottomrcorner);
-            this.pgright.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pgright.Widgets.Add(this.pgbottomrcorner);
+            this.pgright.Dock = ShiftUI.DockStyle.Right;
             this.pgright.Location = new System.Drawing.Point(545, 30);
             this.pgright.Name = "pgright";
             this.pgright.Size = new System.Drawing.Size(2, 345);
             this.pgright.TabIndex = 17;
-            this.pgright.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Rightpull_MouseDown);
+            this.pgright.MouseDown += new ShiftUI.MouseEventHandler(this.Rightpull_MouseDown);
             this.pgright.MouseEnter += new System.EventHandler(this.RightCursorOn_MouseDown);
             this.pgright.MouseLeave += new System.EventHandler(this.SizeCursoroff_MouseDown);
-            this.pgright.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rightpull_MouseUp);
+            this.pgright.MouseUp += new ShiftUI.MouseEventHandler(this.rightpull_MouseUp);
             // 
             // pgbottomrcorner
             // 
             this.pgbottomrcorner.BackColor = System.Drawing.Color.Red;
-            this.pgbottomrcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pgbottomrcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.pgbottomrcorner.Location = new System.Drawing.Point(0, 343);
             this.pgbottomrcorner.Name = "pgbottomrcorner";
             this.pgbottomrcorner.Size = new System.Drawing.Size(2, 2);
             this.pgbottomrcorner.TabIndex = 15;
-            this.pgbottomrcorner.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bspull_MouseDown);
+            this.pgbottomrcorner.MouseDown += new ShiftUI.MouseEventHandler(this.bspull_MouseDown);
             this.pgbottomrcorner.MouseEnter += new System.EventHandler(this.CornerCursorOn_MouseDown);
             this.pgbottomrcorner.MouseLeave += new System.EventHandler(this.SizeCursoroff_MouseDown);
-            this.pgbottomrcorner.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bspull_MouseUp);
+            this.pgbottomrcorner.MouseUp += new ShiftUI.MouseEventHandler(this.bspull_MouseUp);
             // 
             // titlebar
             // 
             this.titlebar.BackColor = System.Drawing.Color.Gray;
-            this.titlebar.Controls.Add(this.minimizebutton);
-            this.titlebar.Controls.Add(this.pnlicon);
-            this.titlebar.Controls.Add(this.rollupbutton);
-            this.titlebar.Controls.Add(this.closebutton);
-            this.titlebar.Controls.Add(this.lbtitletext);
-            this.titlebar.Controls.Add(this.pgtoplcorner);
-            this.titlebar.Controls.Add(this.pgtoprcorner);
-            this.titlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlebar.Widgets.Add(this.minimizebutton);
+            this.titlebar.Widgets.Add(this.pnlicon);
+            this.titlebar.Widgets.Add(this.rollupbutton);
+            this.titlebar.Widgets.Add(this.closebutton);
+            this.titlebar.Widgets.Add(this.lbtitletext);
+            this.titlebar.Widgets.Add(this.pgtoplcorner);
+            this.titlebar.Widgets.Add(this.pgtoprcorner);
+            this.titlebar.Dock = ShiftUI.DockStyle.Top;
             this.titlebar.ForeColor = System.Drawing.Color.White;
             this.titlebar.Location = new System.Drawing.Point(0, 0);
             this.titlebar.Name = "titlebar";
             this.titlebar.Size = new System.Drawing.Size(547, 30);
             this.titlebar.TabIndex = 14;
-            this.titlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseDown);
-            this.titlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseMove);
-            this.titlebar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseUp);
+            this.titlebar.MouseDown += new ShiftUI.MouseEventHandler(this.titlebar_MouseDown);
+            this.titlebar.MouseMove += new ShiftUI.MouseEventHandler(this.titlebar_MouseMove);
+            this.titlebar.MouseUp += new ShiftUI.MouseEventHandler(this.titlebar_MouseUp);
             // 
             // minimizebutton
             // 
@@ -137,7 +137,7 @@ namespace ShiftOS
             this.pnlicon.Location = new System.Drawing.Point(8, 8);
             this.pnlicon.Name = "pnlicon";
             this.pnlicon.Size = new System.Drawing.Size(16, 16);
-            this.pnlicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pnlicon.SizeMode = ShiftUI.PictureBoxSizeMode.StretchImage;
             this.pnlicon.TabIndex = 24;
             this.pnlicon.TabStop = false;
             this.pnlicon.Visible = false;
@@ -170,14 +170,14 @@ namespace ShiftOS
             this.lbtitletext.Size = new System.Drawing.Size(77, 18);
             this.lbtitletext.TabIndex = 19;
             this.lbtitletext.Text = "Template";
-            this.lbtitletext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseDown);
-            this.lbtitletext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseMove);
-            this.lbtitletext.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseUp);
+            this.lbtitletext.MouseDown += new ShiftUI.MouseEventHandler(this.titlebar_MouseDown);
+            this.lbtitletext.MouseMove += new ShiftUI.MouseEventHandler(this.titlebar_MouseMove);
+            this.lbtitletext.MouseUp += new ShiftUI.MouseEventHandler(this.titlebar_MouseUp);
             // 
             // pgtoplcorner
             // 
             this.pgtoplcorner.BackColor = System.Drawing.Color.Red;
-            this.pgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pgtoplcorner.Dock = ShiftUI.DockStyle.Left;
             this.pgtoplcorner.Location = new System.Drawing.Point(0, 0);
             this.pgtoplcorner.Name = "pgtoplcorner";
             this.pgtoplcorner.Size = new System.Drawing.Size(2, 30);
@@ -186,7 +186,7 @@ namespace ShiftOS
             // pgtoprcorner
             // 
             this.pgtoprcorner.BackColor = System.Drawing.Color.Red;
-            this.pgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pgtoprcorner.Dock = ShiftUI.DockStyle.Right;
             this.pgtoprcorner.Location = new System.Drawing.Point(545, 0);
             this.pgtoprcorner.Name = "pgtoprcorner";
             this.pgtoprcorner.Size = new System.Drawing.Size(2, 30);
@@ -195,19 +195,19 @@ namespace ShiftOS
             // pgbottom
             // 
             this.pgbottom.BackColor = System.Drawing.Color.Gray;
-            this.pgbottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pgbottom.Dock = ShiftUI.DockStyle.Bottom;
             this.pgbottom.Location = new System.Drawing.Point(2, 373);
             this.pgbottom.Name = "pgbottom";
             this.pgbottom.Size = new System.Drawing.Size(543, 2);
             this.pgbottom.TabIndex = 18;
-            this.pgbottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottompull_MouseDown);
+            this.pgbottom.MouseDown += new ShiftUI.MouseEventHandler(this.bottompull_MouseDown);
             this.pgbottom.MouseEnter += new System.EventHandler(this.bottomCursorOn_MouseDown);
             this.pgbottom.MouseLeave += new System.EventHandler(this.SizeCursoroff_MouseDown);
-            this.pgbottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bottompull_MouseUp);
+            this.pgbottom.MouseUp += new ShiftUI.MouseEventHandler(this.bottompull_MouseUp);
             // 
             // pgcontents
             // 
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(2, 30);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(543, 343);
@@ -231,12 +231,12 @@ namespace ShiftOS
             // WindowBorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pgcontents);
-            this.Controls.Add(this.pgbottom);
-            this.Controls.Add(this.pgright);
-            this.Controls.Add(this.pgleft);
-            this.Controls.Add(this.titlebar);
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.Widgets.Add(this.pgcontents);
+            this.Widgets.Add(this.pgbottom);
+            this.Widgets.Add(this.pgright);
+            this.Widgets.Add(this.pgleft);
+            this.Widgets.Add(this.titlebar);
             this.Name = "WindowBorder";
             this.Size = new System.Drawing.Size(547, 375);
             this.Load += new System.EventHandler(this.Template_Load);
@@ -248,23 +248,23 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgleft;
-        internal System.Windows.Forms.Panel pgbottomlcorner;
-        internal System.Windows.Forms.Panel pgright;
-        internal System.Windows.Forms.Panel pgbottomrcorner;
-        internal System.Windows.Forms.Panel titlebar;
-        internal System.Windows.Forms.Panel pgtoplcorner;
-        internal System.Windows.Forms.Panel pgtoprcorner;
-        internal System.Windows.Forms.Panel pgbottom;
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Label lbtitletext;
-        internal System.Windows.Forms.Panel closebutton;
-        internal System.Windows.Forms.Panel rollupbutton;
-        internal System.Windows.Forms.PictureBox pnlicon;
-        internal System.Windows.Forms.Panel minimizebutton;
-        internal System.Windows.Forms.Timer pullbs;
-        internal System.Windows.Forms.Timer pullbottom;
-        internal System.Windows.Forms.Timer pullside;
+        internal ShiftUI.Panel pgleft;
+        internal ShiftUI.Panel pgbottomlcorner;
+        internal ShiftUI.Panel pgright;
+        internal ShiftUI.Panel pgbottomrcorner;
+        internal ShiftUI.Panel titlebar;
+        internal ShiftUI.Panel pgtoplcorner;
+        internal ShiftUI.Panel pgtoprcorner;
+        internal ShiftUI.Panel pgbottom;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Label lbtitletext;
+        internal ShiftUI.Panel closebutton;
+        internal ShiftUI.Panel rollupbutton;
+        internal ShiftUI.PictureBox pnlicon;
+        internal ShiftUI.Panel minimizebutton;
+        internal ShiftUI.Timer pullbs;
+        internal ShiftUI.Timer pullbottom;
+        internal ShiftUI.Timer pullside;
 
     }
 }

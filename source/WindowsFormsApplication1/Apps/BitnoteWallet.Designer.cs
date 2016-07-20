@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.fltopbar = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnsend = new System.Windows.Forms.Button();
-            this.btnsync = new System.Windows.Forms.Button();
-            this.sendpanel = new System.Windows.Forms.Panel();
-            this.txtamount = new System.Windows.Forms.TextBox();
-            this.txtrecipient = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnconfirmsend = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbmybitnotes = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtmyaddress = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tmrrefresh = new System.Windows.Forms.Timer(this.components);
+            this.fltopbar = new ShiftUI.FlowLayoutPanel();
+            this.btnsend = new ShiftUI.Button();
+            this.btnsync = new ShiftUI.Button();
+            this.sendpanel = new ShiftUI.Panel();
+            this.txtamount = new ShiftUI.TextBox();
+            this.txtrecipient = new ShiftUI.TextBox();
+            this.label2 = new ShiftUI.Label();
+            this.label1 = new ShiftUI.Label();
+            this.btnconfirmsend = new ShiftUI.PictureBox();
+            this.panel1 = new ShiftUI.Panel();
+            this.lbmybitnotes = new ShiftUI.Label();
+            this.label4 = new ShiftUI.Label();
+            this.txtmyaddress = new ShiftUI.TextBox();
+            this.label3 = new ShiftUI.Label();
+            this.tmrrefresh = new ShiftUI.Timer(this.components);
             this.fltopbar.SuspendLayout();
             this.sendpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnconfirmsend)).BeginInit();
@@ -53,9 +53,9 @@
             // fltopbar
             // 
             this.fltopbar.BackColor = System.Drawing.Color.Gray;
-            this.fltopbar.Controls.Add(this.btnsend);
-            this.fltopbar.Controls.Add(this.btnsync);
-            this.fltopbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fltopbar.Widgets.Add(this.btnsend);
+            this.fltopbar.Widgets.Add(this.btnsync);
+            this.fltopbar.Dock = ShiftUI.DockStyle.Top;
             this.fltopbar.ForeColor = System.Drawing.Color.White;
             this.fltopbar.Location = new System.Drawing.Point(0, 0);
             this.fltopbar.Name = "fltopbar";
@@ -64,8 +64,8 @@
             // 
             // btnsend
             // 
-            this.btnsend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnsend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsend.BackgroundImageLayout = ShiftUI.ImageLayout.None;
+            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsend.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsend.Location = new System.Drawing.Point(3, 3);
             this.btnsend.Name = "btnsend";
@@ -77,7 +77,7 @@
             // 
             // btnsync
             // 
-            this.btnsync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsync.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsync.Font = new System.Drawing.Font("Times New Roman", 8.25F);
             this.btnsync.Location = new System.Drawing.Point(84, 3);
             this.btnsync.Name = "btnsync";
@@ -89,12 +89,12 @@
             // 
             // sendpanel
             // 
-            this.sendpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendpanel.Controls.Add(this.txtamount);
-            this.sendpanel.Controls.Add(this.txtrecipient);
-            this.sendpanel.Controls.Add(this.label2);
-            this.sendpanel.Controls.Add(this.label1);
-            this.sendpanel.Controls.Add(this.btnconfirmsend);
+            this.sendpanel.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.sendpanel.Widgets.Add(this.txtamount);
+            this.sendpanel.Widgets.Add(this.txtrecipient);
+            this.sendpanel.Widgets.Add(this.label2);
+            this.sendpanel.Widgets.Add(this.label1);
+            this.sendpanel.Widgets.Add(this.btnconfirmsend);
             this.sendpanel.Location = new System.Drawing.Point(306, 143);
             this.sendpanel.Name = "sendpanel";
             this.sendpanel.Size = new System.Drawing.Size(233, 105);
@@ -141,7 +141,7 @@
             this.btnconfirmsend.Location = new System.Drawing.Point(129, 75);
             this.btnconfirmsend.Name = "btnconfirmsend";
             this.btnconfirmsend.Size = new System.Drawing.Size(101, 27);
-            this.btnconfirmsend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnconfirmsend.SizeMode = ShiftUI.PictureBoxSizeMode.AutoSize;
             this.btnconfirmsend.TabIndex = 0;
             this.btnconfirmsend.TabStop = false;
             this.btnconfirmsend.Click += new System.EventHandler(this.btnconfirmsend_Click);
@@ -149,13 +149,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbmybitnotes);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtmyaddress);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.fltopbar);
-            this.panel1.Controls.Add(this.sendpanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.lbmybitnotes);
+            this.panel1.Widgets.Add(this.label4);
+            this.panel1.Widgets.Add(this.txtmyaddress);
+            this.panel1.Widgets.Add(this.label3);
+            this.panel1.Widgets.Add(this.fltopbar);
+            this.panel1.Widgets.Add(this.sendpanel);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 260);
@@ -206,9 +206,9 @@
             // BitnoteWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 260);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "BitnoteWallet";
             this.Text = "BitnoteWallet";
             this.Load += new System.EventHandler(this.BitnoteWallet_Load);
@@ -224,20 +224,20 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel fltopbar;
-        private System.Windows.Forms.Button btnsend;
-        private System.Windows.Forms.Button btnsync;
-        private System.Windows.Forms.Panel sendpanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btnconfirmsend;
-        private System.Windows.Forms.TextBox txtamount;
-        private System.Windows.Forms.TextBox txtrecipient;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbmybitnotes;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtmyaddress;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer tmrrefresh;
+        private ShiftUI.FlowLayoutPanel fltopbar;
+        private ShiftUI.Button btnsend;
+        private ShiftUI.Button btnsync;
+        private ShiftUI.Panel sendpanel;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.PictureBox btnconfirmsend;
+        private ShiftUI.TextBox txtamount;
+        private ShiftUI.TextBox txtrecipient;
+        private ShiftUI.Label label2;
+        private ShiftUI.Label label1;
+        private ShiftUI.Label lbmybitnotes;
+        private ShiftUI.Label label4;
+        private ShiftUI.TextBox txtmyaddress;
+        private ShiftUI.Label label3;
+        private ShiftUI.Timer tmrrefresh;
     }
 }

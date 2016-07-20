@@ -8,7 +8,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -26,31 +26,31 @@ namespace ShiftOS
 
         public void GetAllIcons()
         {
-            pnlicons.Controls.Clear();
+            pnlicons.Widgets.Clear();
             pnlicons.Margin = new Padding(0);
             foreach(var kv in API.IconRegistry)
             {
-                var ctrl = new IconControl();
+                var ctrl = new IconWidget();
                 ctrl.Margin = new Padding(0);
                 ctrl.IconName = kv.Key;
                 ctrl.LargeImage = kv.Value;
-                pnlicons.Controls.Add(ctrl);
+                pnlicons.Widgets.Add(ctrl);
                 ctrl.Show();
             }
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in pnlicons.Controls)
+            foreach (Widget ctrl in pnlicons.Widgets)
             {
                 try
                 {
-                    IconControl ic = (IconControl)ctrl;
+                    IconWidget ic = (IconWidget)ctrl;
                     Skinning.Utilities.IconRegistry[ic.IconName] = ic.LargeImage;
                 }
                 catch
                 {
-                    IconControl ic = (IconControl)ctrl;
+                    IconWidget ic = (IconWidget)ctrl;
                     Skinning.Utilities.IconRegistry.Add(ic.IconName, ic.LargeImage);
                 }
             }

@@ -4,7 +4,7 @@
 // </auto-generated>
 
 using System.Drawing;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {

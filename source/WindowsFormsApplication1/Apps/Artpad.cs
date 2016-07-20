@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using System.Drawing.Text;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
@@ -247,7 +247,7 @@ namespace ShiftOS
         #region Drawing Display
 
         // ERROR: Handles clauses are not supported in C#
-        private void picdrawingdisplay_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void picdrawingdisplay_Paint(object sender, ShiftUI.PaintEventArgs e)
         {
             e.Graphics.FillRectangle(Brushes.White, 0, 0, canvaswidth * magnificationlevel, canvasheight * magnificationlevel);
             e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
@@ -353,7 +353,7 @@ namespace ShiftOS
 
 
         // ERROR: Handles clauses are not supported in C#
-        private void picdrawingdisplay_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void picdrawingdisplay_MouseDown(object sender, ShiftUI.MouseEventArgs e)
         {
             undo.undoStack.Push((Image)canvasbitmap.Clone());
             undo.redoStack.Clear();
@@ -478,7 +478,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void picdrawingdisplay_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void picdrawingdisplay_MouseMove(object sender, ShiftUI.MouseEventArgs e)
         {
             Point lastpoint;
 
@@ -621,7 +621,7 @@ namespace ShiftOS
         // ERROR: Handles clauses are not supported in C#
         private void colourpallet1_MouseClick(object sender, MouseEventArgs e)
         {
-            var s = (Control)sender;
+            var s = (Widget)sender;
             if (e.Button == MouseButtons.Left)
             {
                 drawingcolour = s.BackColor;
@@ -1265,7 +1265,7 @@ namespace ShiftOS
         // ERROR: Handles clauses are not supported in C#
         private void ChangePencilSize(object sender, EventArgs e)
         {
-            var s = (Control)sender;
+            var s = (Widget)sender;
             switch (s.Name.ToString())
             {
                 case "btnpencilsize1":
@@ -1735,13 +1735,13 @@ namespace ShiftOS
             {
                 panelstoadd = 128;
             }
-            flowcolours.Controls.Clear();
+            flowcolours.Widgets.Clear();
             for(int i = 0; i < panelstoadd; i++)
             {
                 Panel pnl = new Panel();
                 pnl.BackColor = Color.Black;
                 pnl.Size = new Size(12, 8);
-                flowcolours.Controls.Add(pnl);
+                flowcolours.Widgets.Add(pnl);
                 pnl.Margin = new Padding(1, 0, 0, 1);
                 pnl.MouseClick += new MouseEventHandler(this.colourpallet1_MouseClick);
                 pnl.Show();

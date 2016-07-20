@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -50,7 +50,7 @@ namespace ShiftOS
         }
 
         // Move the paddle according to the mouse position.
-        private void pongMain_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void pongMain_MouseMove(object sender, ShiftUI.MouseEventArgs e)
         {
             paddleHuman.Location = new Point(paddleHuman.Location.X, (MousePosition.Y - this.Location.Y) - (paddleHuman.Height / 2));
         }

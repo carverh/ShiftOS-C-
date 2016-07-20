@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -2999,8 +2999,8 @@ namespace ShiftOS
 
         public void SetupLuaUI()
         {
-            pnlluafield.Controls.Clear();
-            flmorebuttons.Controls.Clear();
+            pnlluafield.Widgets.Clear();
+            flmorebuttons.Widgets.Clear();
             if (API.LuaShifterRegistry == null)
             {
                 var l = new Label();
@@ -3012,7 +3012,7 @@ namespace ShiftOS
 There are no options to show here yet.
 
 You can add options in the Lua interpreter using the shifter_add_category(string name), shifter_add_value(string category, string name, value), and shifter_remove_category(string name) methods. Applications may also add their own values.";
-                pnlluafield.Controls.Add(l);
+                pnlluafield.Widgets.Add(l);
                 l.Show();
             }
             else
@@ -3024,7 +3024,7 @@ You can add options in the Lua interpreter using the shifter_add_category(string
                     b.FlatStyle = FlatStyle.Flat;
                     b.AutoSize = true;
                     b.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                    flmorebuttons.Controls.Add(b);
+                    flmorebuttons.Widgets.Add(b);
                     b.Show();
                     b.Click += (object s, EventArgs a) =>
                     {
@@ -3036,7 +3036,7 @@ You can add options in the Lua interpreter using the shifter_add_category(string
 
         public void SetupLuaForm(Dictionary<string, object> d)
         {
-            pnlluafield.Controls.Clear();
+            pnlluafield.Widgets.Clear();
             foreach(var kv in d)
             {
                 IShifterSetting l = new ShifterTextInput();
@@ -3056,9 +3056,9 @@ You can add options in the Lua interpreter using the shifter_add_category(string
                     else
                         i.NoDecimal = false;
                 }
-                if (pnlluafield.Controls.Count > 0)
+                if (pnlluafield.Widgets.Count > 0)
                 {
-                    var ctrl = pnlluafield.Controls[pnlluafield.Controls.Count - 1];
+                    var ctrl = pnlluafield.Widgets[pnlluafield.Widgets.Count - 1];
                     l.Location = new Point(ctrl.Left + ctrl.Width + 5, ctrl.Top);
                     if(l.Left + l.Width > pnlluafield.Width)
                     {
@@ -3071,7 +3071,7 @@ You can add options in the Lua interpreter using the shifter_add_category(string
                     l.Location = new Point(2, 2);
                 }
 
-                pnlluafield.Controls.Add(l);
+                pnlluafield.Widgets.Add(l);
                 l.Show();
                 l.Font = new Font("Microsoft Sans Serif", 9);
                 l.Text = kv.Key;

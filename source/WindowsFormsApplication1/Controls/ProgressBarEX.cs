@@ -6,11 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
-    public partial class ProgressBarEX : UserControl
+    public partial class ProgressBarEX : UserWidget
     {
         public ProgressBarEX()
         {
@@ -279,7 +279,7 @@ namespace ShiftOS
 
 #region " Drawing "
 
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        protected override void OnPaint(ShiftUI.PaintEventArgs e)
         {
             base.OnPaint(e);
             DoPaintBackground(e.Graphics);

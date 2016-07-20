@@ -6,12 +6,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using System.IO;
 
 namespace ShiftOS
 {
-    public partial class DesktopIcon : UserControl
+    public partial class DesktopIcon : UserWidget
     {
         /// <summary>
         /// User control for a desktop icon.

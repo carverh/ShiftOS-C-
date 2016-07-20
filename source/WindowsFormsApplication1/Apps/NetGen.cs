@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -51,7 +51,7 @@ namespace ShiftOS
                     {
                         foreach(var p in potentialModules)
                         {
-                            pnlnetdesign.Controls.Remove(p);
+                            pnlnetdesign.Widgets.Remove(p);
                             p.Hide();
                             
                         }
@@ -71,7 +71,7 @@ namespace ShiftOS
                     var c = network.Network[0].Deploy();
                     c.Left = (pnlnetdesign.Width - 64) / 2;
                     c.Top = (pnlnetdesign.Height - 64) / 2;
-                    pnlnetdesign.Controls.Add(c);
+                    pnlnetdesign.Widgets.Add(c);
                     c.Select += (s, a) =>
                     {
                         ShowSysInf(c);
@@ -236,7 +236,7 @@ namespace ShiftOS
                     fmod.HP = fmod.GetTotalHP();
                     var computerToPlace = fmod.Deploy();
                     computerToPlace.Location = new Point(x, y);
-                    pnlnetdesign.Controls.Add(computerToPlace);
+                    pnlnetdesign.Widgets.Add(computerToPlace);
                     potentialModules.Add(computerToPlace);
                     computerToPlace.Select += (s, a) =>
                     {
@@ -270,7 +270,7 @@ namespace ShiftOS
             if(SelectedSystem != null)
             {
                 potentialModules.Remove(SelectedSystem);
-                pnlnetdesign.Controls.Remove(SelectedSystem);
+                pnlnetdesign.Widgets.Remove(SelectedSystem);
                 SelectedSystem.Dispose();
             }
             SelectedSystem = null;

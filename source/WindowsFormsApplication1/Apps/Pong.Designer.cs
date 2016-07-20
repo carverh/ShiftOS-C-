@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -27,48 +27,48 @@ namespace ShiftOS
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pong));
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.pnlgamestats = new System.Windows.Forms.Panel();
-            this.lblnextstats = new System.Windows.Forms.Label();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.lblpreviousstats = new System.Windows.Forms.Label();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.btnplayon = new System.Windows.Forms.Button();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.btncashout = new System.Windows.Forms.Button();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.lbllevelreached = new System.Windows.Forms.Label();
-            this.pnllose = new System.Windows.Forms.Panel();
-            this.lblmissedout = new System.Windows.Forms.Label();
-            this.btnlosetryagain = new System.Windows.Forms.Button();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.pnlintro = new System.Windows.Forms.Panel();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.btnstartgame = new System.Windows.Forms.Button();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.pnlfinalstats = new System.Windows.Forms.Panel();
-            this.btnplayagain = new System.Windows.Forms.Button();
-            this.lblfinalcodepoints = new System.Windows.Forms.Label();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.lblfinalcomputerreward = new System.Windows.Forms.Label();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.lblfinallevelreward = new System.Windows.Forms.Label();
-            this.lblfinallevelreached = new System.Windows.Forms.Label();
-            this.lblfinalcodepointswithtext = new System.Windows.Forms.Label();
-            this.lblbeatai = new System.Windows.Forms.Label();
-            this.lblcountdown = new System.Windows.Forms.Label();
-            this.ball = new System.Windows.Forms.Panel();
-            this.paddleHuman = new System.Windows.Forms.PictureBox();
-            this.paddleComputer = new System.Windows.Forms.Panel();
-            this.lbllevelandtime = new System.Windows.Forms.Label();
-            this.lblstatscodepoints = new System.Windows.Forms.Label();
-            this.lblstatsY = new System.Windows.Forms.Label();
-            this.lblstatsX = new System.Windows.Forms.Label();
-            this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.counter = new System.Windows.Forms.Timer(this.components);
-            this.tmrcountdown = new System.Windows.Forms.Timer(this.components);
-            this.tmrstoryline = new System.Windows.Forms.Timer(this.components);
+            this.pgcontents = new ShiftUI.Panel();
+            this.pnlgamestats = new ShiftUI.Panel();
+            this.lblnextstats = new ShiftUI.Label();
+            this.Label7 = new ShiftUI.Label();
+            this.lblpreviousstats = new ShiftUI.Label();
+            this.Label4 = new ShiftUI.Label();
+            this.btnplayon = new ShiftUI.Button();
+            this.Label3 = new ShiftUI.Label();
+            this.btncashout = new ShiftUI.Button();
+            this.Label2 = new ShiftUI.Label();
+            this.lbllevelreached = new ShiftUI.Label();
+            this.pnllose = new ShiftUI.Panel();
+            this.lblmissedout = new ShiftUI.Label();
+            this.btnlosetryagain = new ShiftUI.Button();
+            this.Label5 = new ShiftUI.Label();
+            this.Label1 = new ShiftUI.Label();
+            this.pnlintro = new ShiftUI.Panel();
+            this.Label6 = new ShiftUI.Label();
+            this.btnstartgame = new ShiftUI.Button();
+            this.Label8 = new ShiftUI.Label();
+            this.pnlfinalstats = new ShiftUI.Panel();
+            this.btnplayagain = new ShiftUI.Button();
+            this.lblfinalcodepoints = new ShiftUI.Label();
+            this.Label11 = new ShiftUI.Label();
+            this.lblfinalcomputerreward = new ShiftUI.Label();
+            this.Label9 = new ShiftUI.Label();
+            this.lblfinallevelreward = new ShiftUI.Label();
+            this.lblfinallevelreached = new ShiftUI.Label();
+            this.lblfinalcodepointswithtext = new ShiftUI.Label();
+            this.lblbeatai = new ShiftUI.Label();
+            this.lblcountdown = new ShiftUI.Label();
+            this.ball = new ShiftUI.Panel();
+            this.paddleHuman = new ShiftUI.PictureBox();
+            this.paddleComputer = new ShiftUI.Panel();
+            this.lbllevelandtime = new ShiftUI.Label();
+            this.lblstatscodepoints = new ShiftUI.Label();
+            this.lblstatsY = new ShiftUI.Label();
+            this.lblstatsX = new ShiftUI.Label();
+            this.gameTimer = new ShiftUI.Timer(this.components);
+            this.counter = new ShiftUI.Timer(this.components);
+            this.tmrcountdown = new ShiftUI.Timer(this.components);
+            this.tmrstoryline = new ShiftUI.Timer(this.components);
             this.pgcontents.SuspendLayout();
             this.pnlgamestats.SuspendLayout();
             this.pnllose.SuspendLayout();
@@ -80,37 +80,37 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.pnlgamestats);
-            this.pgcontents.Controls.Add(this.pnllose);
-            this.pgcontents.Controls.Add(this.pnlintro);
-            this.pgcontents.Controls.Add(this.pnlfinalstats);
-            this.pgcontents.Controls.Add(this.lblbeatai);
-            this.pgcontents.Controls.Add(this.lblcountdown);
-            this.pgcontents.Controls.Add(this.ball);
-            this.pgcontents.Controls.Add(this.paddleHuman);
-            this.pgcontents.Controls.Add(this.paddleComputer);
-            this.pgcontents.Controls.Add(this.lbllevelandtime);
-            this.pgcontents.Controls.Add(this.lblstatscodepoints);
-            this.pgcontents.Controls.Add(this.lblstatsY);
-            this.pgcontents.Controls.Add(this.lblstatsX);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.pnlgamestats);
+            this.pgcontents.Widgets.Add(this.pnllose);
+            this.pgcontents.Widgets.Add(this.pnlintro);
+            this.pgcontents.Widgets.Add(this.pnlfinalstats);
+            this.pgcontents.Widgets.Add(this.lblbeatai);
+            this.pgcontents.Widgets.Add(this.lblcountdown);
+            this.pgcontents.Widgets.Add(this.ball);
+            this.pgcontents.Widgets.Add(this.paddleHuman);
+            this.pgcontents.Widgets.Add(this.paddleComputer);
+            this.pgcontents.Widgets.Add(this.lbllevelandtime);
+            this.pgcontents.Widgets.Add(this.lblstatscodepoints);
+            this.pgcontents.Widgets.Add(this.lblstatsY);
+            this.pgcontents.Widgets.Add(this.lblstatsX);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(700, 400);
             this.pgcontents.TabIndex = 20;
-            this.pgcontents.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pongMain_MouseMove);
+            this.pgcontents.MouseMove += new ShiftUI.MouseEventHandler(this.pongMain_MouseMove);
             // 
             // pnlgamestats
             // 
-            this.pnlgamestats.Controls.Add(this.lblnextstats);
-            this.pnlgamestats.Controls.Add(this.Label7);
-            this.pnlgamestats.Controls.Add(this.lblpreviousstats);
-            this.pnlgamestats.Controls.Add(this.Label4);
-            this.pnlgamestats.Controls.Add(this.btnplayon);
-            this.pnlgamestats.Controls.Add(this.Label3);
-            this.pnlgamestats.Controls.Add(this.btncashout);
-            this.pnlgamestats.Controls.Add(this.Label2);
-            this.pnlgamestats.Controls.Add(this.lbllevelreached);
+            this.pnlgamestats.Widgets.Add(this.lblnextstats);
+            this.pnlgamestats.Widgets.Add(this.Label7);
+            this.pnlgamestats.Widgets.Add(this.lblpreviousstats);
+            this.pnlgamestats.Widgets.Add(this.Label4);
+            this.pnlgamestats.Widgets.Add(this.btnplayon);
+            this.pnlgamestats.Widgets.Add(this.Label3);
+            this.pnlgamestats.Widgets.Add(this.btncashout);
+            this.pnlgamestats.Widgets.Add(this.Label2);
+            this.pnlgamestats.Widgets.Add(this.lbllevelreached);
             this.pnlgamestats.Location = new System.Drawing.Point(56, 76);
             this.pnlgamestats.Name = "pnlgamestats";
             this.pnlgamestats.Size = new System.Drawing.Size(466, 206);
@@ -155,7 +155,7 @@ namespace ShiftOS
             // 
             // btnplayon
             // 
-            this.btnplayon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnplayon.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnplayon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplayon.Location = new System.Drawing.Point(32, 162);
             this.btnplayon.Name = "btnplayon";
@@ -177,7 +177,7 @@ namespace ShiftOS
             // 
             // btncashout
             // 
-            this.btncashout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncashout.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btncashout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncashout.Location = new System.Drawing.Point(32, 73);
             this.btncashout.Name = "btncashout";
@@ -209,10 +209,10 @@ namespace ShiftOS
             // 
             // pnllose
             // 
-            this.pnllose.Controls.Add(this.lblmissedout);
-            this.pnllose.Controls.Add(this.btnlosetryagain);
-            this.pnllose.Controls.Add(this.Label5);
-            this.pnllose.Controls.Add(this.Label1);
+            this.pnllose.Widgets.Add(this.lblmissedout);
+            this.pnllose.Widgets.Add(this.btnlosetryagain);
+            this.pnllose.Widgets.Add(this.Label5);
+            this.pnllose.Widgets.Add(this.Label1);
             this.pnllose.Location = new System.Drawing.Point(209, 71);
             this.pnllose.Name = "pnllose";
             this.pnllose.Size = new System.Drawing.Size(266, 214);
@@ -231,7 +231,7 @@ namespace ShiftOS
             // 
             // btnlosetryagain
             // 
-            this.btnlosetryagain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlosetryagain.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnlosetryagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlosetryagain.Location = new System.Drawing.Point(155, 176);
             this.btnlosetryagain.Name = "btnlosetryagain";
@@ -250,7 +250,7 @@ namespace ShiftOS
             // 
             // Label1
             // 
-            this.Label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label1.Dock = ShiftUI.DockStyle.Top;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(0, 0);
             this.Label1.Name = "Label1";
@@ -261,9 +261,9 @@ namespace ShiftOS
             // 
             // pnlintro
             // 
-            this.pnlintro.Controls.Add(this.Label6);
-            this.pnlintro.Controls.Add(this.btnstartgame);
-            this.pnlintro.Controls.Add(this.Label8);
+            this.pnlintro.Widgets.Add(this.Label6);
+            this.pnlintro.Widgets.Add(this.btnstartgame);
+            this.pnlintro.Widgets.Add(this.Label8);
             this.pnlintro.Location = new System.Drawing.Point(52, 29);
             this.pnlintro.Name = "pnlintro";
             this.pnlintro.Size = new System.Drawing.Size(595, 303);
@@ -281,7 +281,7 @@ namespace ShiftOS
             // 
             // btnstartgame
             // 
-            this.btnstartgame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstartgame.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnstartgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstartgame.Location = new System.Drawing.Point(186, 273);
             this.btnstartgame.Name = "btnstartgame";
@@ -304,14 +304,14 @@ namespace ShiftOS
             // 
             // pnlfinalstats
             // 
-            this.pnlfinalstats.Controls.Add(this.btnplayagain);
-            this.pnlfinalstats.Controls.Add(this.lblfinalcodepoints);
-            this.pnlfinalstats.Controls.Add(this.Label11);
-            this.pnlfinalstats.Controls.Add(this.lblfinalcomputerreward);
-            this.pnlfinalstats.Controls.Add(this.Label9);
-            this.pnlfinalstats.Controls.Add(this.lblfinallevelreward);
-            this.pnlfinalstats.Controls.Add(this.lblfinallevelreached);
-            this.pnlfinalstats.Controls.Add(this.lblfinalcodepointswithtext);
+            this.pnlfinalstats.Widgets.Add(this.btnplayagain);
+            this.pnlfinalstats.Widgets.Add(this.lblfinalcodepoints);
+            this.pnlfinalstats.Widgets.Add(this.Label11);
+            this.pnlfinalstats.Widgets.Add(this.lblfinalcomputerreward);
+            this.pnlfinalstats.Widgets.Add(this.Label9);
+            this.pnlfinalstats.Widgets.Add(this.lblfinallevelreward);
+            this.pnlfinalstats.Widgets.Add(this.lblfinallevelreached);
+            this.pnlfinalstats.Widgets.Add(this.lblfinalcodepointswithtext);
             this.pnlfinalstats.Location = new System.Drawing.Point(172, 74);
             this.pnlfinalstats.Name = "pnlfinalstats";
             this.pnlfinalstats.Size = new System.Drawing.Size(362, 226);
@@ -320,7 +320,7 @@ namespace ShiftOS
             // 
             // btnplayagain
             // 
-            this.btnplayagain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnplayagain.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnplayagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplayagain.Location = new System.Drawing.Point(5, 194);
             this.btnplayagain.Name = "btnplayagain";
@@ -440,8 +440,8 @@ namespace ShiftOS
             // 
             // paddleComputer
             // 
-            this.paddleComputer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paddleComputer.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.paddleComputer.BackColor = System.Drawing.Color.Black;
             this.paddleComputer.Location = new System.Drawing.Point(666, 134);
             this.paddleComputer.MaximumSize = new System.Drawing.Size(20, 100);
@@ -451,7 +451,7 @@ namespace ShiftOS
             // 
             // lbllevelandtime
             // 
-            this.lbllevelandtime.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbllevelandtime.Dock = ShiftUI.DockStyle.Top;
             this.lbllevelandtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllevelandtime.Location = new System.Drawing.Point(0, 0);
             this.lbllevelandtime.Name = "lbllevelandtime";
@@ -462,8 +462,8 @@ namespace ShiftOS
             // 
             // lblstatscodepoints
             // 
-            this.lblstatscodepoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblstatscodepoints.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lblstatscodepoints.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatscodepoints.Location = new System.Drawing.Point(239, 356);
             this.lblstatscodepoints.Name = "lblstatscodepoints";
@@ -474,7 +474,7 @@ namespace ShiftOS
             // 
             // lblstatsY
             // 
-            this.lblstatsY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblstatsY.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.lblstatsY.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatsY.Location = new System.Drawing.Point(542, 356);
             this.lblstatsY.Name = "lblstatsY";
@@ -485,7 +485,7 @@ namespace ShiftOS
             // 
             // lblstatsX
             // 
-            this.lblstatsX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblstatsX.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.lblstatsX.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatsX.Location = new System.Drawing.Point(3, 356);
             this.lblstatsX.Name = "lblstatsX";
@@ -517,18 +517,18 @@ namespace ShiftOS
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 400);
-            this.Controls.Add(this.pgcontents);
+            this.Widgets.Add(this.pgcontents);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.Name = "Pong";
             this.Text = "Pong";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.me_closing);
+            this.FormClosing += new ShiftUI.FormClosingEventHandler(this.me_closing);
             this.Load += new System.EventHandler(this.Pong_Load);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pongMain_MouseMove);
+            this.MouseMove += new ShiftUI.MouseEventHandler(this.pongMain_MouseMove);
             this.pgcontents.ResumeLayout(false);
             this.pnlgamestats.ResumeLayout(false);
             this.pnlgamestats.PerformLayout();
@@ -541,48 +541,48 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Panel ball;
-        internal System.Windows.Forms.Panel paddleComputer;
-        internal System.Windows.Forms.Timer gameTimer;
-        internal System.Windows.Forms.PictureBox paddleHuman;
-        internal System.Windows.Forms.Label lbllevelandtime;
-        internal System.Windows.Forms.Label lblstatsX;
-        internal System.Windows.Forms.Timer counter;
-        internal System.Windows.Forms.Panel pnlgamestats;
-        internal System.Windows.Forms.Label lblnextstats;
-        internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.Label lblpreviousstats;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Button btnplayon;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Button btncashout;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label lbllevelreached;
-        internal System.Windows.Forms.Label lblcountdown;
-        internal System.Windows.Forms.Timer tmrcountdown;
-        internal System.Windows.Forms.Label lblbeatai;
-        internal System.Windows.Forms.Panel pnlfinalstats;
-        internal System.Windows.Forms.Button btnplayagain;
-        internal System.Windows.Forms.Label lblfinalcodepoints;
-        internal System.Windows.Forms.Label Label11;
-        internal System.Windows.Forms.Label lblfinalcomputerreward;
-        internal System.Windows.Forms.Label Label9;
-        internal System.Windows.Forms.Label lblfinallevelreward;
-        internal System.Windows.Forms.Label lblfinallevelreached;
-        internal System.Windows.Forms.Label lblfinalcodepointswithtext;
-        internal System.Windows.Forms.Panel pnllose;
-        internal System.Windows.Forms.Label lblmissedout;
-        internal System.Windows.Forms.Button btnlosetryagain;
-        internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Label lblstatscodepoints;
-        internal System.Windows.Forms.Label lblstatsY;
-        internal System.Windows.Forms.Panel pnlintro;
-        internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Button btnstartgame;
-        internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.Timer tmrstoryline;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Panel ball;
+        internal ShiftUI.Panel paddleComputer;
+        internal ShiftUI.Timer gameTimer;
+        internal ShiftUI.PictureBox paddleHuman;
+        internal ShiftUI.Label lbllevelandtime;
+        internal ShiftUI.Label lblstatsX;
+        internal ShiftUI.Timer counter;
+        internal ShiftUI.Panel pnlgamestats;
+        internal ShiftUI.Label lblnextstats;
+        internal ShiftUI.Label Label7;
+        internal ShiftUI.Label lblpreviousstats;
+        internal ShiftUI.Label Label4;
+        internal ShiftUI.Button btnplayon;
+        internal ShiftUI.Label Label3;
+        internal ShiftUI.Button btncashout;
+        internal ShiftUI.Label Label2;
+        internal ShiftUI.Label lbllevelreached;
+        internal ShiftUI.Label lblcountdown;
+        internal ShiftUI.Timer tmrcountdown;
+        internal ShiftUI.Label lblbeatai;
+        internal ShiftUI.Panel pnlfinalstats;
+        internal ShiftUI.Button btnplayagain;
+        internal ShiftUI.Label lblfinalcodepoints;
+        internal ShiftUI.Label Label11;
+        internal ShiftUI.Label lblfinalcomputerreward;
+        internal ShiftUI.Label Label9;
+        internal ShiftUI.Label lblfinallevelreward;
+        internal ShiftUI.Label lblfinallevelreached;
+        internal ShiftUI.Label lblfinalcodepointswithtext;
+        internal ShiftUI.Panel pnllose;
+        internal ShiftUI.Label lblmissedout;
+        internal ShiftUI.Button btnlosetryagain;
+        internal ShiftUI.Label Label5;
+        internal ShiftUI.Label Label1;
+        internal ShiftUI.Label lblstatscodepoints;
+        internal ShiftUI.Label lblstatsY;
+        internal ShiftUI.Panel pnlintro;
+        internal ShiftUI.Label Label6;
+        internal ShiftUI.Button btnstartgame;
+        internal ShiftUI.Label Label8;
+        internal ShiftUI.Timer tmrstoryline;
 
     }
 }

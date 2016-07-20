@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbicon = new System.Windows.Forms.PictureBox();
-            this.lbiconname = new System.Windows.Forms.Label();
+            this.pbicon = new ShiftUI.PictureBox();
+            this.lbiconname = new ShiftUI.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbicon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +38,7 @@
             this.pbicon.Location = new System.Drawing.Point(4, 4);
             this.pbicon.Name = "pbicon";
             this.pbicon.Size = new System.Drawing.Size(78, 50);
-            this.pbicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbicon.SizeMode = ShiftUI.PictureBoxSizeMode.CenterImage;
             this.pbicon.TabIndex = 0;
             this.pbicon.TabStop = false;
             this.pbicon.DoubleClick += new System.EventHandler(this.Icon_Click);
@@ -57,10 +57,10 @@
             // DesktopIcon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.lbiconname);
-            this.Controls.Add(this.pbicon);
+            this.Widgets.Add(this.lbiconname);
+            this.Widgets.Add(this.pbicon);
             this.Name = "DesktopIcon";
             this.Size = new System.Drawing.Size(85, 85);
             this.Load += new System.EventHandler(this.DesktopIcon_Load);
@@ -72,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbicon;
-        private System.Windows.Forms.Label lbiconname;
+        private ShiftUI.PictureBox pbicon;
+        private ShiftUI.Label lbiconname;
     }
 }

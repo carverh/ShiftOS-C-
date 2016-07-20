@@ -24,15 +24,15 @@ namespace ShiftOS
 
         private void InitializeComponent()
         {
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.txtuserinput = new System.Windows.Forms.TextBox();
-            this.btnok = new System.Windows.Forms.Button();
-            this.txtmessage = new System.Windows.Forms.Label();
-            this.pboximage = new System.Windows.Forms.PictureBox();
-            this.lblintructtext = new System.Windows.Forms.Label();
-            this.pnlyesno = new System.Windows.Forms.Panel();
-            this.btnno = new System.Windows.Forms.Button();
-            this.btnyes = new System.Windows.Forms.Button();
+            this.pgcontents = new ShiftUI.Panel();
+            this.txtuserinput = new ShiftUI.TextBox();
+            this.btnok = new ShiftUI.Button();
+            this.txtmessage = new ShiftUI.Label();
+            this.pboximage = new ShiftUI.PictureBox();
+            this.lblintructtext = new ShiftUI.Label();
+            this.pnlyesno = new ShiftUI.Panel();
+            this.btnno = new ShiftUI.Button();
+            this.btnyes = new ShiftUI.Button();
             this.pgcontents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboximage)).BeginInit();
             this.pnlyesno.SuspendLayout();
@@ -41,13 +41,13 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.txtuserinput);
-            this.pgcontents.Controls.Add(this.btnok);
-            this.pgcontents.Controls.Add(this.txtmessage);
-            this.pgcontents.Controls.Add(this.pboximage);
-            this.pgcontents.Controls.Add(this.lblintructtext);
-            this.pgcontents.Controls.Add(this.pnlyesno);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.txtuserinput);
+            this.pgcontents.Widgets.Add(this.btnok);
+            this.pgcontents.Widgets.Add(this.txtmessage);
+            this.pgcontents.Widgets.Add(this.pboximage);
+            this.pgcontents.Widgets.Add(this.lblintructtext);
+            this.pgcontents.Widgets.Add(this.pnlyesno);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(371, 154);
@@ -55,22 +55,22 @@ namespace ShiftOS
             // 
             // txtuserinput
             // 
-            this.txtuserinput.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtuserinput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtuserinput.Anchor = ShiftUI.AnchorStyles.Bottom;
+            this.txtuserinput.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtuserinput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuserinput.Location = new System.Drawing.Point(103, 86);
             this.txtuserinput.Multiline = true;
             this.txtuserinput.Name = "txtuserinput";
             this.txtuserinput.Size = new System.Drawing.Size(256, 23);
             this.txtuserinput.TabIndex = 8;
-            this.txtuserinput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtuserinput.TextAlign = ShiftUI.HorizontalAlignment.Center;
             this.txtuserinput.Visible = false;
             // 
             // btnok
             // 
-            this.btnok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnok.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.btnok.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnok.ForeColor = System.Drawing.Color.Black;
             this.btnok.Location = new System.Drawing.Point(134, 118);
@@ -84,8 +84,8 @@ namespace ShiftOS
             // 
             // txtmessage
             // 
-            this.txtmessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtmessage.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txtmessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmessage.Location = new System.Drawing.Point(102, 7);
             this.txtmessage.Name = "txtmessage";
@@ -104,8 +104,8 @@ namespace ShiftOS
             // 
             // lblintructtext
             // 
-            this.lblintructtext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblintructtext.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lblintructtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblintructtext.Location = new System.Drawing.Point(105, 7);
             this.lblintructtext.Name = "lblintructtext";
@@ -116,10 +116,10 @@ namespace ShiftOS
             // 
             // pnlyesno
             // 
-            this.pnlyesno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlyesno.Controls.Add(this.btnno);
-            this.pnlyesno.Controls.Add(this.btnyes);
+            this.pnlyesno.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlyesno.Widgets.Add(this.btnno);
+            this.pnlyesno.Widgets.Add(this.btnyes);
             this.pnlyesno.Location = new System.Drawing.Point(57, 115);
             this.pnlyesno.Name = "pnlyesno";
             this.pnlyesno.Size = new System.Drawing.Size(269, 33);
@@ -128,7 +128,7 @@ namespace ShiftOS
             // 
             // btnno
             // 
-            this.btnno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnno.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnno.ForeColor = System.Drawing.Color.Black;
             this.btnno.Location = new System.Drawing.Point(142, 2);
@@ -142,7 +142,7 @@ namespace ShiftOS
             // 
             // btnyes
             // 
-            this.btnyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnyes.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnyes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnyes.ForeColor = System.Drawing.Color.Black;
             this.btnyes.Location = new System.Drawing.Point(29, 2);
@@ -157,11 +157,11 @@ namespace ShiftOS
             // infobox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 154);
-            this.Controls.Add(this.pgcontents);
+            this.Widgets.Add(this.pgcontents);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "infobox";
             this.Text = "infobox";
@@ -174,14 +174,14 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Button btnok;
-        internal System.Windows.Forms.Label txtmessage;
-        internal System.Windows.Forms.PictureBox pboximage;
-        internal System.Windows.Forms.Label lblintructtext;
-        internal System.Windows.Forms.TextBox txtuserinput;
-        internal System.Windows.Forms.Panel pnlyesno;
-        internal System.Windows.Forms.Button btnno;
-        internal System.Windows.Forms.Button btnyes;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Button btnok;
+        internal ShiftUI.Label txtmessage;
+        internal ShiftUI.PictureBox pboximage;
+        internal ShiftUI.Label lblintructtext;
+        internal ShiftUI.TextBox txtuserinput;
+        internal ShiftUI.Panel pnlyesno;
+        internal ShiftUI.Button btnno;
+        internal ShiftUI.Button btnyes;
     }
 }

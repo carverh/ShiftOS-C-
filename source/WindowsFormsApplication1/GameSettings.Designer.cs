@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbgame = new System.Windows.Forms.Label();
+            this.panel1 = new ShiftUI.Panel();
+            this.label1 = new ShiftUI.Label();
+            this.lbgame = new ShiftUI.Label();
             this.pgsound = new ShiftOS.ProgressBarEX();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label2 = new ShiftUI.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pgsound);
-            this.panel1.Controls.Add(this.lbgame);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.label2);
+            this.panel1.Widgets.Add(this.pgsound);
+            this.panel1.Widgets.Add(this.lbgame);
+            this.panel1.Widgets.Add(this.label1);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(665, 432);
@@ -59,7 +59,7 @@
             // 
             // lbgame
             // 
-            this.lbgame.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbgame.Dock = ShiftUI.DockStyle.Top;
             this.lbgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lbgame.Location = new System.Drawing.Point(0, 0);
             this.lbgame.Name = "lbgame";
@@ -70,12 +70,12 @@
             // 
             // pgsound
             // 
-            this.pgsound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgsound.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pgsound.BackColor = System.Drawing.Color.White;
             this.pgsound.BlockSeparation = 3;
             this.pgsound.BlockWidth = 5;
-            this.pgsound.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pgsound.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pgsound.Color = System.Drawing.Color.Black;
             this.pgsound.ForeColor = System.Drawing.Color.Gray;
             this.pgsound.Label = "Music Volume:";
@@ -91,13 +91,13 @@
             this.pgsound.Style = ShiftOS.ProgressBarEX.ProgressBarExStyle.Continuous;
             this.pgsound.TabIndex = 2;
             this.pgsound.Value = 0;
-            this.pgsound.MouseDown += new System.Windows.Forms.MouseEventHandler(this.set_music_volume);
+            this.pgsound.MouseDown += new ShiftUI.MouseEventHandler(this.set_music_volume);
             this.pgsound.MouseLeave += new System.EventHandler(this.pgsound_MouseLeave);
-            this.pgsound.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pgsound_MouseMove);
+            this.pgsound.MouseMove += new ShiftUI.MouseEventHandler(this.pgsound_MouseMove);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Dock = ShiftUI.DockStyle.Top;
             this.label2.Location = new System.Drawing.Point(0, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(665, 13);
@@ -108,9 +108,9 @@
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 432);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "GameSettings";
             this.Text = "GameSettings";
             this.panel1.ResumeLayout(false);
@@ -121,10 +121,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private ShiftUI.Panel panel1;
         private ProgressBarEX pgsound;
-        private System.Windows.Forms.Label lbgame;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private ShiftUI.Label lbgame;
+        private ShiftUI.Label label1;
+        private ShiftUI.Label label2;
     }
 }

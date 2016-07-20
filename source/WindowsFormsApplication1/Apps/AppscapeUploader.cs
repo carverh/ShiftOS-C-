@@ -10,7 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -121,16 +121,16 @@ namespace ShiftOS
         /// Makes the specified control and ALL of it's children, grand children, great grand children, and so on, appear "dark".
         /// </summary>
         /// <param name="ctrl">The top of the hierarchy; the start of it all.</param>
-        private void RecursiveControlSetup(Control ctrl)
+        private void RecursiveWidgetSetup(Widget ctrl)
         {
             ctrl.BackColor = API.CurrentSkin.titlebarcolour;
             ctrl.ForeColor = API.CurrentSkin.titletextcolour;
             try
             {
                 var pnl = (Panel)ctrl;
-                foreach(Control c in pnl.Controls)
+                foreach(Widget c in pnl.Widgets)
                 {
-                    RecursiveControlSetup(c);
+                    RecursiveWidgetSetup(c);
                 }
             }
             catch {
@@ -143,7 +143,7 @@ namespace ShiftOS
         /// </summary>
         private void SetupUI()
         {
-            RecursiveControlSetup(pnlmain);
+            RecursiveWidgetSetup(pnlmain);
             switch (page)
             {
                 case 0:

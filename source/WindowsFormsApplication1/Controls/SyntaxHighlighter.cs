@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using System.Windows.Forms;
+using ShiftUI;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Drawing;
 
 namespace ShiftOS
 {
-    public class SyntaxRichTextBox : System.Windows.Forms.RichTextBox
+    public class SyntaxRichTextBox : ShiftUI.RichTextBox
     {
         private SyntaxSettings m_settings = new SyntaxSettings();
         private static bool m_bPaint = true;
@@ -35,7 +35,7 @@ namespace ShiftOS
         /// WndProc
         /// </summary>
         /// <param name="m"></param>
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref ShiftUI.Message m)
         {
             if (m.Msg == 0x00f)
             {

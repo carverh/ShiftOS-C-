@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -67,7 +67,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void ListBox1_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        private void ListBox1_DrawItem(object sender, ShiftUI.DrawItemEventArgs e)
         {
             e.DrawBackground();
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
@@ -84,7 +84,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void listblistedstuff_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        private void listblistedstuff_DrawItem(object sender, ShiftUI.DrawItemEventArgs e)
         {
             e.DrawBackground();
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
@@ -203,7 +203,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void guessbox_keydown(object sender, System.Windows.Forms.KeyEventArgs e)
+        private void guessbox_keydown(object sender, ShiftUI.KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

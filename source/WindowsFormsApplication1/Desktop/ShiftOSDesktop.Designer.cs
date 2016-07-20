@@ -23,154 +23,154 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.desktoppanel = new System.Windows.Forms.Panel();
-            this.pnlnotifications = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlpanelbuttonholder = new System.Windows.Forms.FlowLayoutPanel();
-            this.applaunchermenuholder = new System.Windows.Forms.Panel();
-            this.desktopappmenu = new System.Windows.Forms.MenuStrip();
-            this.ApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ArtpadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AudioplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BitnoteDiggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BitnoteWalletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CatalystToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DodgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadmanagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FileSkimmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FloodGateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.IconManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InstallerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.KnowledgeInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MazeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NameChangerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orcwriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShiftnetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShiftoriumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SkinLoaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SkinShifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SnakeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sysinfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TerminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TextPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WebBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VideoplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VirusScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unitySeperator = new System.Windows.Forms.ToolStripSeparator();
-            this.UnityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timepanel = new System.Windows.Forms.Panel();
-            this.paneltimetext = new System.Windows.Forms.Label();
-            this.tbclockicon = new System.Windows.Forms.PictureBox();
-            this.tbclocktext = new System.Windows.Forms.Label();
-            this.tbsysinfoicon = new System.Windows.Forms.PictureBox();
-            this.tbsysinfotext = new System.Windows.Forms.Label();
-            this.tbskinloadericon = new System.Windows.Forms.PictureBox();
-            this.tbskinloadertext = new System.Windows.Forms.Label();
-            this.tbfileskimmericon = new System.Windows.Forms.PictureBox();
-            this.tbfileskimmertext = new System.Windows.Forms.Label();
-            this.tbfileopenericon = new System.Windows.Forms.PictureBox();
-            this.tbfileopenertext = new System.Windows.Forms.Label();
-            this.tbinfoboxicon = new System.Windows.Forms.PictureBox();
-            this.tbinfoboxtext = new System.Windows.Forms.Label();
-            this.tbknowledgeinputicon = new System.Windows.Forms.PictureBox();
-            this.tbknowledgeinputtext = new System.Windows.Forms.Label();
-            this.tbcolourpickericon = new System.Windows.Forms.PictureBox();
-            this.tbcolourpickertext = new System.Windows.Forms.Label();
-            this.tbshiftoriumicon = new System.Windows.Forms.PictureBox();
-            this.tbshiftoriumtext = new System.Windows.Forms.Label();
-            this.tbpongicon = new System.Windows.Forms.PictureBox();
-            this.tbpongtext = new System.Windows.Forms.Label();
-            this.tbterminalicon = new System.Windows.Forms.PictureBox();
-            this.tbterminaltext = new System.Windows.Forms.Label();
-            this.tbtextpadicon = new System.Windows.Forms.PictureBox();
-            this.tbtextpadtext = new System.Windows.Forms.Label();
-            this.tbgraphicpickericon = new System.Windows.Forms.PictureBox();
-            this.tbgraphicpickertext = new System.Windows.Forms.Label();
-            this.tbartpadicon = new System.Windows.Forms.PictureBox();
-            this.tbartpadtext = new System.Windows.Forms.Label();
-            this.tbcalculatoricon = new System.Windows.Forms.PictureBox();
-            this.tbcalculatortext = new System.Windows.Forms.Label();
-            this.tbaudioplayericon = new System.Windows.Forms.PictureBox();
-            this.tbaudioplayertext = new System.Windows.Forms.Label();
-            this.tbvideoplayericon = new System.Windows.Forms.PictureBox();
-            this.tbvideoplayertext = new System.Windows.Forms.Label();
-            this.tbwebbrowsericon = new System.Windows.Forms.PictureBox();
-            this.tbwebbrowsertext = new System.Windows.Forms.Label();
-            this.tbnamechangericon = new System.Windows.Forms.PictureBox();
-            this.tbnamechangertext = new System.Windows.Forms.Label();
-            this.tbiconmanagericon = new System.Windows.Forms.PictureBox();
-            this.tbiconmanagertext = new System.Windows.Forms.Label();
-            this.tbbitnotewalleticon = new System.Windows.Forms.PictureBox();
-            this.tbbitnotewallettext = new System.Windows.Forms.Label();
-            this.tbbitnotediggericon = new System.Windows.Forms.PictureBox();
-            this.tbbitnotediggertext = new System.Windows.Forms.Label();
-            this.tbskinshiftericon = new System.Windows.Forms.PictureBox();
-            this.tbskinshiftertext = new System.Windows.Forms.Label();
-            this.tbdownloadericon = new System.Windows.Forms.PictureBox();
-            this.tbdownloadertext = new System.Windows.Forms.Label();
-            this.tbshiftneticon = new System.Windows.Forms.PictureBox();
-            this.tbshiftnettext = new System.Windows.Forms.Label();
-            this.tbdodgeicon = new System.Windows.Forms.PictureBox();
-            this.tbdodgetext = new System.Windows.Forms.Label();
-            this.tbdownloadmanagericon = new System.Windows.Forms.PictureBox();
-            this.tbdownloadmanagertext = new System.Windows.Forms.Label();
-            this.tbcatalysticon = new System.Windows.Forms.PictureBox();
-            this.lbcatalystname = new System.Windows.Forms.Label();
-            this.tbinstallericon = new System.Windows.Forms.PictureBox();
-            this.tbinstallertext = new System.Windows.Forms.Label();
-            this.tbsnakeyicon = new System.Windows.Forms.PictureBox();
-            this.tbsnakeytext = new System.Windows.Forms.Label();
-            this.tborcwriteicon = new System.Windows.Forms.PictureBox();
-            this.tborcwritetext = new System.Windows.Forms.Label();
-            this.tbfloodgateicon = new System.Windows.Forms.PictureBox();
-            this.tbfloodgatetext = new System.Windows.Forms.Label();
-            this.tbmazeicon = new System.Windows.Forms.PictureBox();
-            this.tbmazetext = new System.Windows.Forms.Label();
-            this.tbvirusscannericon = new System.Windows.Forms.PictureBox();
-            this.tbvirusscannertext = new System.Windows.Forms.Label();
-            this.tbfilesavericon = new System.Windows.Forms.PictureBox();
-            this.tbfilesavertext = new System.Windows.Forms.Label();
-            this.tbshiftericon = new System.Windows.Forms.PictureBox();
-            this.tbshiftertext = new System.Windows.Forms.Label();
-            this.pnlpanelbuttonfloatybird = new System.Windows.Forms.Panel();
-            this.tbfloatybirdicon = new System.Windows.Forms.PictureBox();
-            this.tbfloatybirdtext = new System.Windows.Forms.Label();
-            this.floatybirdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clocktick = new System.Windows.Forms.Timer(this.components);
-            this.autosave = new System.Windows.Forms.Timer(this.components);
-            this.nocheat = new System.Windows.Forms.Timer(this.components);
-            this.tmrwindowedtest = new System.Windows.Forms.Timer(this.components);
-            this.cmbdesktopoptions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ArtpadPictureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TextDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewSkin = new System.Windows.Forms.ToolStripMenuItem();
-            this.WebpageToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.ShortcutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDesktopPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.widgetManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgshiftnetapps = new System.Windows.Forms.ImageList(this.components);
-            this.lbldebug = new System.Windows.Forms.Label();
-            this.lblog = new System.Windows.Forms.Label();
-            this.flicons = new System.Windows.Forms.FlowLayoutPanel();
-            this.cmbfactions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbwidget = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.wlocmenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbdpanel = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.placeHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appLauncherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelButtonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.desktoppanel = new ShiftUI.Panel();
+            this.pnlnotifications = new ShiftUI.FlowLayoutPanel();
+            this.pnlpanelbuttonholder = new ShiftUI.FlowLayoutPanel();
+            this.applaunchermenuholder = new ShiftUI.Panel();
+            this.desktopappmenu = new ShiftUI.MenuStrip();
+            this.ApplicationsToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ArtpadToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.AudioplayerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.BitnoteDiggerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.BitnoteWalletToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.CalculatorToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.CatalystToolStripMenuItem1 = new ShiftUI.ToolStripMenuItem();
+            this.ClockToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.DodgeToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.downloadmanagerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.FileSkimmerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.FloodGateToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.IconManagerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.InstallerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.KnowledgeInputToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.MazeToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.NameChangerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.orcwriteToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.PongToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShifterToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShiftnetToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShiftoriumToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.SkinLoaderToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.SkinShifterToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.SnakeyToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.sysinfoToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.TerminalToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.TextPadToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.WebBrowserToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.VideoplayerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.VirusScannerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.unitySeperator = new ShiftUI.ToolStripSeparator();
+            this.UnityToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShutdownToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.timepanel = new ShiftUI.Panel();
+            this.paneltimetext = new ShiftUI.Label();
+            this.tbclockicon = new ShiftUI.PictureBox();
+            this.tbclocktext = new ShiftUI.Label();
+            this.tbsysinfoicon = new ShiftUI.PictureBox();
+            this.tbsysinfotext = new ShiftUI.Label();
+            this.tbskinloadericon = new ShiftUI.PictureBox();
+            this.tbskinloadertext = new ShiftUI.Label();
+            this.tbfileskimmericon = new ShiftUI.PictureBox();
+            this.tbfileskimmertext = new ShiftUI.Label();
+            this.tbfileopenericon = new ShiftUI.PictureBox();
+            this.tbfileopenertext = new ShiftUI.Label();
+            this.tbinfoboxicon = new ShiftUI.PictureBox();
+            this.tbinfoboxtext = new ShiftUI.Label();
+            this.tbknowledgeinputicon = new ShiftUI.PictureBox();
+            this.tbknowledgeinputtext = new ShiftUI.Label();
+            this.tbcolourpickericon = new ShiftUI.PictureBox();
+            this.tbcolourpickertext = new ShiftUI.Label();
+            this.tbshiftoriumicon = new ShiftUI.PictureBox();
+            this.tbshiftoriumtext = new ShiftUI.Label();
+            this.tbpongicon = new ShiftUI.PictureBox();
+            this.tbpongtext = new ShiftUI.Label();
+            this.tbterminalicon = new ShiftUI.PictureBox();
+            this.tbterminaltext = new ShiftUI.Label();
+            this.tbtextpadicon = new ShiftUI.PictureBox();
+            this.tbtextpadtext = new ShiftUI.Label();
+            this.tbgraphicpickericon = new ShiftUI.PictureBox();
+            this.tbgraphicpickertext = new ShiftUI.Label();
+            this.tbartpadicon = new ShiftUI.PictureBox();
+            this.tbartpadtext = new ShiftUI.Label();
+            this.tbcalculatoricon = new ShiftUI.PictureBox();
+            this.tbcalculatortext = new ShiftUI.Label();
+            this.tbaudioplayericon = new ShiftUI.PictureBox();
+            this.tbaudioplayertext = new ShiftUI.Label();
+            this.tbvideoplayericon = new ShiftUI.PictureBox();
+            this.tbvideoplayertext = new ShiftUI.Label();
+            this.tbwebbrowsericon = new ShiftUI.PictureBox();
+            this.tbwebbrowsertext = new ShiftUI.Label();
+            this.tbnamechangericon = new ShiftUI.PictureBox();
+            this.tbnamechangertext = new ShiftUI.Label();
+            this.tbiconmanagericon = new ShiftUI.PictureBox();
+            this.tbiconmanagertext = new ShiftUI.Label();
+            this.tbbitnotewalleticon = new ShiftUI.PictureBox();
+            this.tbbitnotewallettext = new ShiftUI.Label();
+            this.tbbitnotediggericon = new ShiftUI.PictureBox();
+            this.tbbitnotediggertext = new ShiftUI.Label();
+            this.tbskinshiftericon = new ShiftUI.PictureBox();
+            this.tbskinshiftertext = new ShiftUI.Label();
+            this.tbdownloadericon = new ShiftUI.PictureBox();
+            this.tbdownloadertext = new ShiftUI.Label();
+            this.tbshiftneticon = new ShiftUI.PictureBox();
+            this.tbshiftnettext = new ShiftUI.Label();
+            this.tbdodgeicon = new ShiftUI.PictureBox();
+            this.tbdodgetext = new ShiftUI.Label();
+            this.tbdownloadmanagericon = new ShiftUI.PictureBox();
+            this.tbdownloadmanagertext = new ShiftUI.Label();
+            this.tbcatalysticon = new ShiftUI.PictureBox();
+            this.lbcatalystname = new ShiftUI.Label();
+            this.tbinstallericon = new ShiftUI.PictureBox();
+            this.tbinstallertext = new ShiftUI.Label();
+            this.tbsnakeyicon = new ShiftUI.PictureBox();
+            this.tbsnakeytext = new ShiftUI.Label();
+            this.tborcwriteicon = new ShiftUI.PictureBox();
+            this.tborcwritetext = new ShiftUI.Label();
+            this.tbfloodgateicon = new ShiftUI.PictureBox();
+            this.tbfloodgatetext = new ShiftUI.Label();
+            this.tbmazeicon = new ShiftUI.PictureBox();
+            this.tbmazetext = new ShiftUI.Label();
+            this.tbvirusscannericon = new ShiftUI.PictureBox();
+            this.tbvirusscannertext = new ShiftUI.Label();
+            this.tbfilesavericon = new ShiftUI.PictureBox();
+            this.tbfilesavertext = new ShiftUI.Label();
+            this.tbshiftericon = new ShiftUI.PictureBox();
+            this.tbshiftertext = new ShiftUI.Label();
+            this.pnlpanelbuttonfloatybird = new ShiftUI.Panel();
+            this.tbfloatybirdicon = new ShiftUI.PictureBox();
+            this.tbfloatybirdtext = new ShiftUI.Label();
+            this.floatybirdToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.clocktick = new ShiftUI.Timer(this.components);
+            this.autosave = new ShiftUI.Timer(this.components);
+            this.nocheat = new ShiftUI.Timer(this.components);
+            this.tmrwindowedtest = new ShiftUI.Timer(this.components);
+            this.cmbdesktopoptions = new ShiftUI.ContextMenuStrip(this.components);
+            this.NewToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.FolderToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ToolStripMenuItem2 = new ShiftUI.ToolStripSeparator();
+            this.ArtpadPictureToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.TextDocumentToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.NewSkin = new ShiftUI.ToolStripMenuItem();
+            this.WebpageToolStripMenuItem = new ShiftUI.ToolStripSeparator();
+            this.ShortcutToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.scriptToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.addDesktopPanelToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.widgetManagerToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.imgshiftnetapps = new ShiftUI.ImageList(this.components);
+            this.lbldebug = new ShiftUI.Label();
+            this.lblog = new ShiftUI.Label();
+            this.flicons = new ShiftUI.FlowLayoutPanel();
+            this.cmbfactions = new ShiftUI.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.cbwidget = new ShiftUI.ContextMenuStrip(this.components);
+            this.wlocmenu = new ShiftUI.ToolStripMenuItem();
+            this.cbdpanel = new ShiftUI.ContextMenuStrip(this.components);
+            this.toolStripMenuItem3 = new ShiftUI.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.placeHereToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.appLauncherToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.panelButtonsToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.clockToolStripMenuItem1 = new ShiftUI.ToolStripMenuItem();
             this.desktoppanel.SuspendLayout();
             this.applaunchermenuholder.SuspendLayout();
             this.desktopappmenu.SuspendLayout();
@@ -222,11 +222,11 @@
             // desktoppanel
             // 
             this.desktoppanel.BackColor = System.Drawing.Color.Gray;
-            this.desktoppanel.Controls.Add(this.pnlnotifications);
-            this.desktoppanel.Controls.Add(this.pnlpanelbuttonholder);
-            this.desktoppanel.Controls.Add(this.applaunchermenuholder);
-            this.desktoppanel.Controls.Add(this.timepanel);
-            this.desktoppanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.desktoppanel.Widgets.Add(this.pnlnotifications);
+            this.desktoppanel.Widgets.Add(this.pnlpanelbuttonholder);
+            this.desktoppanel.Widgets.Add(this.applaunchermenuholder);
+            this.desktoppanel.Widgets.Add(this.timepanel);
+            this.desktoppanel.Dock = ShiftUI.DockStyle.Top;
             this.desktoppanel.Location = new System.Drawing.Point(0, 0);
             this.desktoppanel.Name = "desktoppanel";
             this.desktoppanel.Size = new System.Drawing.Size(1268, 24);
@@ -235,8 +235,8 @@
             // 
             // pnlnotifications
             // 
-            this.pnlnotifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlnotifications.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlnotifications.Dock = ShiftUI.DockStyle.Fill;
+            this.pnlnotifications.FlowDirection = ShiftUI.FlowDirection.RightToLeft;
             this.pnlnotifications.Location = new System.Drawing.Point(132, 0);
             this.pnlnotifications.Name = "pnlnotifications";
             this.pnlnotifications.Size = new System.Drawing.Size(1039, 24);
@@ -245,19 +245,19 @@
             // pnlpanelbuttonholder
             // 
             this.pnlpanelbuttonholder.AutoSize = true;
-            this.pnlpanelbuttonholder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlpanelbuttonholder.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
             this.pnlpanelbuttonholder.BackColor = System.Drawing.Color.Transparent;
-            this.pnlpanelbuttonholder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlpanelbuttonholder.Dock = ShiftUI.DockStyle.Left;
             this.pnlpanelbuttonholder.Location = new System.Drawing.Point(130, 0);
             this.pnlpanelbuttonholder.Name = "pnlpanelbuttonholder";
-            this.pnlpanelbuttonholder.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.pnlpanelbuttonholder.Padding = new ShiftUI.Padding(2, 0, 0, 0);
             this.pnlpanelbuttonholder.Size = new System.Drawing.Size(2, 24);
             this.pnlpanelbuttonholder.TabIndex = 1;
             // 
             // applaunchermenuholder
             // 
-            this.applaunchermenuholder.Controls.Add(this.desktopappmenu);
-            this.applaunchermenuholder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.applaunchermenuholder.Widgets.Add(this.desktopappmenu);
+            this.applaunchermenuholder.Dock = ShiftUI.DockStyle.Left;
             this.applaunchermenuholder.Location = new System.Drawing.Point(0, 0);
             this.applaunchermenuholder.Name = "applaunchermenuholder";
             this.applaunchermenuholder.Size = new System.Drawing.Size(130, 24);
@@ -267,14 +267,14 @@
             // 
             this.desktopappmenu.AutoSize = false;
             this.desktopappmenu.BackColor = System.Drawing.Color.Transparent;
-            this.desktopappmenu.GripMargin = new System.Windows.Forms.Padding(0);
+            this.desktopappmenu.GripMargin = new ShiftUI.Padding(0);
             this.desktopappmenu.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.desktopappmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.desktopappmenu.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.ApplicationsToolStripMenuItem});
-            this.desktopappmenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.desktopappmenu.LayoutStyle = ShiftUI.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.desktopappmenu.Location = new System.Drawing.Point(0, 0);
             this.desktopappmenu.Name = "desktopappmenu";
-            this.desktopappmenu.Padding = new System.Windows.Forms.Padding(0);
+            this.desktopappmenu.Padding = new ShiftUI.Padding(0);
             this.desktopappmenu.Size = new System.Drawing.Size(130, 24);
             this.desktopappmenu.TabIndex = 0;
             this.desktopappmenu.TabStop = true;
@@ -284,8 +284,8 @@
             // 
             this.ApplicationsToolStripMenuItem.AutoSize = false;
             this.ApplicationsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.ApplicationsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ApplicationsToolStripMenuItem.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new ShiftUI.ToolStripItem[] {
             this.ArtpadToolStripMenuItem,
             this.AudioplayerToolStripMenuItem,
             this.BitnoteDiggerToolStripMenuItem,
@@ -321,13 +321,13 @@
             this.ShutdownToolStripMenuItem});
             this.ApplicationsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplicationsToolStripMenuItem.Name = "ApplicationsToolStripMenuItem";
-            this.ApplicationsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ApplicationsToolStripMenuItem.Padding = new ShiftUI.Padding(2, 0, 2, 0);
             this.ApplicationsToolStripMenuItem.ShowShortcutKeys = false;
             this.ApplicationsToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.ApplicationsToolStripMenuItem.Text = "Applications";
-            this.ApplicationsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.ApplicationsToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ApplicationsToolStripMenuItem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ALClick);
+            this.ApplicationsToolStripMenuItem.TextDirection = ShiftUI.ToolStripTextDirection.Horizontal;
+            this.ApplicationsToolStripMenuItem.TextImageRelation = ShiftUI.TextImageRelation.TextBeforeImage;
+            this.ApplicationsToolStripMenuItem.MouseDown += new ShiftUI.MouseEventHandler(this.ALClick);
             this.ApplicationsToolStripMenuItem.MouseEnter += new System.EventHandler(this.ALHover);
             this.ApplicationsToolStripMenuItem.MouseLeave += new System.EventHandler(this.ALReset);
             // 
@@ -542,8 +542,8 @@
             // 
             // timepanel
             // 
-            this.timepanel.Controls.Add(this.paneltimetext);
-            this.timepanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.timepanel.Widgets.Add(this.paneltimetext);
+            this.timepanel.Dock = ShiftUI.DockStyle.Right;
             this.timepanel.Location = new System.Drawing.Point(1171, 0);
             this.timepanel.Name = "timepanel";
             this.timepanel.Size = new System.Drawing.Size(97, 24);
@@ -1104,8 +1104,8 @@
             // pnlpanelbuttonfloatybird
             // 
             this.pnlpanelbuttonfloatybird.BackColor = System.Drawing.Color.Black;
-            this.pnlpanelbuttonfloatybird.Controls.Add(this.tbfloatybirdicon);
-            this.pnlpanelbuttonfloatybird.Controls.Add(this.tbfloatybirdtext);
+            this.pnlpanelbuttonfloatybird.Widgets.Add(this.tbfloatybirdicon);
+            this.pnlpanelbuttonfloatybird.Widgets.Add(this.tbfloatybirdtext);
             this.pnlpanelbuttonfloatybird.Location = new System.Drawing.Point(5, 29);
             this.pnlpanelbuttonfloatybird.Name = "pnlpanelbuttonfloatybird";
             this.pnlpanelbuttonfloatybird.Size = new System.Drawing.Size(52, 20);
@@ -1115,11 +1115,11 @@
             // tbfloatybirdicon
             // 
             this.tbfloatybirdicon.BackColor = System.Drawing.Color.Transparent;
-            this.tbfloatybirdicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tbfloatybirdicon.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.tbfloatybirdicon.Location = new System.Drawing.Point(4, 2);
             this.tbfloatybirdicon.Name = "tbfloatybirdicon";
             this.tbfloatybirdicon.Size = new System.Drawing.Size(16, 16);
-            this.tbfloatybirdicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tbfloatybirdicon.SizeMode = ShiftUI.PictureBoxSizeMode.StretchImage;
             this.tbfloatybirdicon.TabIndex = 1;
             this.tbfloatybirdicon.TabStop = false;
             // 
@@ -1154,7 +1154,7 @@
             // 
             // cmbdesktopoptions
             // 
-            this.cmbdesktopoptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbdesktopoptions.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.NewToolStripMenuItem,
             this.addDesktopPanelToolStripMenuItem,
             this.widgetManagerToolStripMenuItem});
@@ -1163,7 +1163,7 @@
             // 
             // NewToolStripMenuItem
             // 
-            this.NewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewToolStripMenuItem.DropDownItems.AddRange(new ShiftUI.ToolStripItem[] {
             this.FolderToolStripMenuItem,
             this.ToolStripMenuItem2,
             this.ArtpadPictureToolStripMenuItem,
@@ -1245,7 +1245,7 @@
             // 
             // imgshiftnetapps
             // 
-            this.imgshiftnetapps.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgshiftnetapps.ColorDepth = ShiftUI.ColorDepth.Depth8Bit;
             this.imgshiftnetapps.ImageSize = new System.Drawing.Size(16, 16);
             this.imgshiftnetapps.TransparentColor = System.Drawing.Color.Transparent;
             // 
@@ -1275,8 +1275,8 @@
             // flicons
             // 
             this.flicons.BackColor = System.Drawing.Color.Transparent;
-            this.flicons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flicons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flicons.Dock = ShiftUI.DockStyle.Fill;
+            this.flicons.FlowDirection = ShiftUI.FlowDirection.TopDown;
             this.flicons.Location = new System.Drawing.Point(0, 24);
             this.flicons.Name = "flicons";
             this.flicons.Size = new System.Drawing.Size(1268, 661);
@@ -1284,7 +1284,7 @@
             // 
             // cmbfactions
             // 
-            this.cmbfactions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmbfactions.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.cmbfactions.Name = "cmbfactions";
             this.cmbfactions.Size = new System.Drawing.Size(108, 26);
@@ -1298,7 +1298,7 @@
             // 
             // cbwidget
             // 
-            this.cbwidget.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cbwidget.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.wlocmenu});
             this.cbwidget.Name = "cbwidget";
             this.cbwidget.Size = new System.Drawing.Size(121, 26);
@@ -1311,7 +1311,7 @@
             // 
             // cbdpanel
             // 
-            this.cbdpanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cbdpanel.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.toolStripMenuItem3,
             this.optionsToolStripMenuItem,
             this.placeHereToolStripMenuItem});
@@ -1334,7 +1334,7 @@
             // 
             // placeHereToolStripMenuItem
             // 
-            this.placeHereToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.placeHereToolStripMenuItem.DropDownItems.AddRange(new ShiftUI.ToolStripItem[] {
             this.appLauncherToolStripMenuItem,
             this.panelButtonsToolStripMenuItem,
             this.clockToolStripMenuItem1});
@@ -1366,13 +1366,13 @@
             // ShiftOSDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1268, 685);
-            this.Controls.Add(this.flicons);
-            this.Controls.Add(this.lblog);
-            this.Controls.Add(this.lbldebug);
-            this.Controls.Add(this.desktoppanel);
+            this.Widgets.Add(this.flicons);
+            this.Widgets.Add(this.lblog);
+            this.Widgets.Add(this.lbldebug);
+            this.Widgets.Add(this.desktoppanel);
             this.KeyPreview = true;
             this.MainMenuStrip = this.desktopappmenu;
             this.Name = "ShiftOSDesktop";
@@ -1431,153 +1431,153 @@
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.MenuStrip desktopappmenu;
-        internal System.Windows.Forms.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ShiftoriumToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ClockToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem TerminalToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripSeparator unitySeperator;
-        internal System.Windows.Forms.ToolStripMenuItem ShutdownToolStripMenuItem;
-        internal System.Windows.Forms.Label paneltimetext;
-        internal System.Windows.Forms.Timer clocktick;
-        internal System.Windows.Forms.Panel timepanel;
-        internal System.Windows.Forms.ToolStripMenuItem ShifterToolStripMenuItem;
-        internal System.Windows.Forms.Panel applaunchermenuholder;
-        internal System.Windows.Forms.ToolStripMenuItem PongToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem FileSkimmerToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem TextPadToolStripMenuItem;
-        internal System.Windows.Forms.Timer autosave;
-        internal System.Windows.Forms.ToolStripMenuItem SkinLoaderToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbtextpadicon;
-        internal System.Windows.Forms.Label tbtextpadtext;
-        internal System.Windows.Forms.PictureBox tbclockicon;
-        internal System.Windows.Forms.Label tbclocktext;
-        internal System.Windows.Forms.PictureBox tbcolourpickericon;
-        internal System.Windows.Forms.Label tbcolourpickertext;
-        internal System.Windows.Forms.PictureBox tbgraphicpickericon;
-        internal System.Windows.Forms.Label tbgraphicpickertext;
-        internal System.Windows.Forms.PictureBox tbfileopenericon;
-        internal System.Windows.Forms.Label tbfileopenertext;
-        internal System.Windows.Forms.PictureBox tbfileskimmericon;
-        internal System.Windows.Forms.Label tbfileskimmertext;
-        internal System.Windows.Forms.PictureBox tbknowledgeinputicon;
-        internal System.Windows.Forms.Label tbknowledgeinputtext;
-        internal System.Windows.Forms.PictureBox tbinfoboxicon;
-        internal System.Windows.Forms.Label tbinfoboxtext;
-        internal System.Windows.Forms.PictureBox tbpongicon;
-        internal System.Windows.Forms.Label tbpongtext;
-        internal System.Windows.Forms.PictureBox tbshiftoriumicon;
-        internal System.Windows.Forms.Label tbshiftoriumtext;
-        internal System.Windows.Forms.PictureBox tbskinloadericon;
-        internal System.Windows.Forms.Label tbskinloadertext;
-        internal System.Windows.Forms.PictureBox tbterminalicon;
-        internal System.Windows.Forms.Label tbterminaltext;
-        internal System.Windows.Forms.FlowLayoutPanel pnlpanelbuttonholder;
-        internal System.Windows.Forms.PictureBox tbartpadicon;
-        internal System.Windows.Forms.Label tbartpadtext;
-        internal System.Windows.Forms.ToolStripMenuItem ArtpadToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem CalculatorToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbcalculatoricon;
-        internal System.Windows.Forms.Label tbcalculatortext;
-        internal System.Windows.Forms.PictureBox tbaudioplayericon;
-        internal System.Windows.Forms.Label tbaudioplayertext;
-        internal System.Windows.Forms.ToolStripMenuItem AudioplayerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbwebbrowsericon;
-        internal System.Windows.Forms.Label tbwebbrowsertext;
-        internal System.Windows.Forms.ToolStripMenuItem WebBrowserToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbvideoplayericon;
-        internal System.Windows.Forms.Label tbvideoplayertext;
-        internal System.Windows.Forms.ToolStripMenuItem VideoplayerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbnamechangericon;
-        internal System.Windows.Forms.Label tbnamechangertext;
-        internal System.Windows.Forms.ToolStripMenuItem NameChangerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbiconmanagericon;
-        internal System.Windows.Forms.Label tbiconmanagertext;
-        internal System.Windows.Forms.ToolStripMenuItem IconManagerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbbitnotewalleticon;
-        internal System.Windows.Forms.Label tbbitnotewallettext;
-        internal System.Windows.Forms.PictureBox tbbitnotediggericon;
-        internal System.Windows.Forms.Label tbbitnotediggertext;
-        internal System.Windows.Forms.ToolStripMenuItem BitnoteWalletToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem BitnoteDiggerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbskinshiftericon;
-        internal System.Windows.Forms.Label tbskinshiftertext;
-        internal System.Windows.Forms.ToolStripMenuItem SkinShifterToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbshiftneticon;
-        internal System.Windows.Forms.Label tbshiftnettext;
-        internal System.Windows.Forms.PictureBox tbdownloadericon;
-        internal System.Windows.Forms.Label tbdownloadertext;
-        internal System.Windows.Forms.ToolStripMenuItem ShiftnetToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbdodgeicon;
-        internal System.Windows.Forms.Label tbdodgetext;
-        internal System.Windows.Forms.ToolStripMenuItem DodgeToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem sysinfoToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbdownloadmanagericon;
-        internal System.Windows.Forms.Label tbdownloadmanagertext;
-        internal System.Windows.Forms.PictureBox tbinstallericon;
-        internal System.Windows.Forms.Label tbinstallertext;
-        internal System.Windows.Forms.ToolStripMenuItem InstallerToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem downloadmanagerToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbsnakeyicon;
-        internal System.Windows.Forms.Label tbsnakeytext;
-        internal System.Windows.Forms.PictureBox tborcwriteicon;
-        internal System.Windows.Forms.Label tborcwritetext;
-        internal System.Windows.Forms.ToolStripMenuItem orcwriteToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbfloodgateicon;
-        internal System.Windows.Forms.Label tbfloodgatetext;
-        internal System.Windows.Forms.ToolStripMenuItem FloodGateToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem UnityToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbsysinfoicon;
-        internal System.Windows.Forms.Label tbsysinfotext;
-        internal System.Windows.Forms.ToolStripMenuItem SnakeyToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbmazeicon;
-        internal System.Windows.Forms.Label tbmazetext;
-        internal System.Windows.Forms.ToolStripMenuItem MazeToolStripMenuItem;
-        internal System.Windows.Forms.PictureBox tbvirusscannericon;
-        internal System.Windows.Forms.Label tbvirusscannertext;
-        internal System.Windows.Forms.ToolStripMenuItem VirusScannerToolStripMenuItem;
-        internal System.Windows.Forms.Timer nocheat;
-        internal System.Windows.Forms.PictureBox tbfilesavericon;
-        internal System.Windows.Forms.Label tbfilesavertext;
-        internal System.Windows.Forms.PictureBox tbshiftericon;
-        internal System.Windows.Forms.Label tbshiftertext;
-        internal System.Windows.Forms.Panel pnlpanelbuttonfloatybird;
-        internal System.Windows.Forms.PictureBox tbfloatybirdicon;
-        internal System.Windows.Forms.Label tbfloatybirdtext;
-        internal System.Windows.Forms.ToolStripMenuItem floatybirdToolStripMenuItem;
-        internal System.Windows.Forms.Timer tmrwindowedtest;
-        internal System.Windows.Forms.ContextMenuStrip cmbdesktopoptions;
-        internal System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem FolderToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem2;
-        internal System.Windows.Forms.ToolStripMenuItem ArtpadPictureToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem TextDocumentToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripSeparator WebpageToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ShortcutToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem NewSkin;
-        internal System.Windows.Forms.PictureBox tbcatalysticon;
-        internal System.Windows.Forms.Label lbcatalystname;
-        internal System.Windows.Forms.ToolStripMenuItem CatalystToolStripMenuItem1;
-        public System.Windows.Forms.ImageList imgshiftnetapps;
-        private System.Windows.Forms.Label lbldebug;
-        private System.Windows.Forms.Label lblog;
-        public System.Windows.Forms.FlowLayoutPanel flicons;
-        private System.Windows.Forms.ToolStripMenuItem scriptToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip cmbfactions;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.FlowLayoutPanel pnlnotifications;
-        public System.Windows.Forms.Panel desktoppanel;
-        public System.Windows.Forms.ToolStripMenuItem ApplicationsToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip cbwidget;
-        private System.Windows.Forms.ToolStripMenuItem wlocmenu;
-        private System.Windows.Forms.ContextMenuStrip cbdpanel;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addDesktopPanelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem placeHereToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem appLauncherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem panelButtonsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clockToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem widgetManagerToolStripMenuItem;
+        internal ShiftUI.MenuStrip desktopappmenu;
+        internal ShiftUI.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ShiftoriumToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ClockToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem TerminalToolStripMenuItem;
+        internal ShiftUI.ToolStripSeparator unitySeperator;
+        internal ShiftUI.ToolStripMenuItem ShutdownToolStripMenuItem;
+        internal ShiftUI.Label paneltimetext;
+        internal ShiftUI.Timer clocktick;
+        internal ShiftUI.Panel timepanel;
+        internal ShiftUI.ToolStripMenuItem ShifterToolStripMenuItem;
+        internal ShiftUI.Panel applaunchermenuholder;
+        internal ShiftUI.ToolStripMenuItem PongToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem FileSkimmerToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem TextPadToolStripMenuItem;
+        internal ShiftUI.Timer autosave;
+        internal ShiftUI.ToolStripMenuItem SkinLoaderToolStripMenuItem;
+        internal ShiftUI.PictureBox tbtextpadicon;
+        internal ShiftUI.Label tbtextpadtext;
+        internal ShiftUI.PictureBox tbclockicon;
+        internal ShiftUI.Label tbclocktext;
+        internal ShiftUI.PictureBox tbcolourpickericon;
+        internal ShiftUI.Label tbcolourpickertext;
+        internal ShiftUI.PictureBox tbgraphicpickericon;
+        internal ShiftUI.Label tbgraphicpickertext;
+        internal ShiftUI.PictureBox tbfileopenericon;
+        internal ShiftUI.Label tbfileopenertext;
+        internal ShiftUI.PictureBox tbfileskimmericon;
+        internal ShiftUI.Label tbfileskimmertext;
+        internal ShiftUI.PictureBox tbknowledgeinputicon;
+        internal ShiftUI.Label tbknowledgeinputtext;
+        internal ShiftUI.PictureBox tbinfoboxicon;
+        internal ShiftUI.Label tbinfoboxtext;
+        internal ShiftUI.PictureBox tbpongicon;
+        internal ShiftUI.Label tbpongtext;
+        internal ShiftUI.PictureBox tbshiftoriumicon;
+        internal ShiftUI.Label tbshiftoriumtext;
+        internal ShiftUI.PictureBox tbskinloadericon;
+        internal ShiftUI.Label tbskinloadertext;
+        internal ShiftUI.PictureBox tbterminalicon;
+        internal ShiftUI.Label tbterminaltext;
+        internal ShiftUI.FlowLayoutPanel pnlpanelbuttonholder;
+        internal ShiftUI.PictureBox tbartpadicon;
+        internal ShiftUI.Label tbartpadtext;
+        internal ShiftUI.ToolStripMenuItem ArtpadToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem CalculatorToolStripMenuItem;
+        internal ShiftUI.PictureBox tbcalculatoricon;
+        internal ShiftUI.Label tbcalculatortext;
+        internal ShiftUI.PictureBox tbaudioplayericon;
+        internal ShiftUI.Label tbaudioplayertext;
+        internal ShiftUI.ToolStripMenuItem AudioplayerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbwebbrowsericon;
+        internal ShiftUI.Label tbwebbrowsertext;
+        internal ShiftUI.ToolStripMenuItem WebBrowserToolStripMenuItem;
+        internal ShiftUI.PictureBox tbvideoplayericon;
+        internal ShiftUI.Label tbvideoplayertext;
+        internal ShiftUI.ToolStripMenuItem VideoplayerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbnamechangericon;
+        internal ShiftUI.Label tbnamechangertext;
+        internal ShiftUI.ToolStripMenuItem NameChangerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbiconmanagericon;
+        internal ShiftUI.Label tbiconmanagertext;
+        internal ShiftUI.ToolStripMenuItem IconManagerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbbitnotewalleticon;
+        internal ShiftUI.Label tbbitnotewallettext;
+        internal ShiftUI.PictureBox tbbitnotediggericon;
+        internal ShiftUI.Label tbbitnotediggertext;
+        internal ShiftUI.ToolStripMenuItem BitnoteWalletToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem BitnoteDiggerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbskinshiftericon;
+        internal ShiftUI.Label tbskinshiftertext;
+        internal ShiftUI.ToolStripMenuItem SkinShifterToolStripMenuItem;
+        internal ShiftUI.PictureBox tbshiftneticon;
+        internal ShiftUI.Label tbshiftnettext;
+        internal ShiftUI.PictureBox tbdownloadericon;
+        internal ShiftUI.Label tbdownloadertext;
+        internal ShiftUI.ToolStripMenuItem ShiftnetToolStripMenuItem;
+        internal ShiftUI.PictureBox tbdodgeicon;
+        internal ShiftUI.Label tbdodgetext;
+        internal ShiftUI.ToolStripMenuItem DodgeToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem sysinfoToolStripMenuItem;
+        internal ShiftUI.PictureBox tbdownloadmanagericon;
+        internal ShiftUI.Label tbdownloadmanagertext;
+        internal ShiftUI.PictureBox tbinstallericon;
+        internal ShiftUI.Label tbinstallertext;
+        internal ShiftUI.ToolStripMenuItem InstallerToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem downloadmanagerToolStripMenuItem;
+        internal ShiftUI.PictureBox tbsnakeyicon;
+        internal ShiftUI.Label tbsnakeytext;
+        internal ShiftUI.PictureBox tborcwriteicon;
+        internal ShiftUI.Label tborcwritetext;
+        internal ShiftUI.ToolStripMenuItem orcwriteToolStripMenuItem;
+        internal ShiftUI.PictureBox tbfloodgateicon;
+        internal ShiftUI.Label tbfloodgatetext;
+        internal ShiftUI.ToolStripMenuItem FloodGateToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem UnityToolStripMenuItem;
+        internal ShiftUI.PictureBox tbsysinfoicon;
+        internal ShiftUI.Label tbsysinfotext;
+        internal ShiftUI.ToolStripMenuItem SnakeyToolStripMenuItem;
+        internal ShiftUI.PictureBox tbmazeicon;
+        internal ShiftUI.Label tbmazetext;
+        internal ShiftUI.ToolStripMenuItem MazeToolStripMenuItem;
+        internal ShiftUI.PictureBox tbvirusscannericon;
+        internal ShiftUI.Label tbvirusscannertext;
+        internal ShiftUI.ToolStripMenuItem VirusScannerToolStripMenuItem;
+        internal ShiftUI.Timer nocheat;
+        internal ShiftUI.PictureBox tbfilesavericon;
+        internal ShiftUI.Label tbfilesavertext;
+        internal ShiftUI.PictureBox tbshiftericon;
+        internal ShiftUI.Label tbshiftertext;
+        internal ShiftUI.Panel pnlpanelbuttonfloatybird;
+        internal ShiftUI.PictureBox tbfloatybirdicon;
+        internal ShiftUI.Label tbfloatybirdtext;
+        internal ShiftUI.ToolStripMenuItem floatybirdToolStripMenuItem;
+        internal ShiftUI.Timer tmrwindowedtest;
+        internal ShiftUI.ContextMenuStrip cmbdesktopoptions;
+        internal ShiftUI.ToolStripMenuItem NewToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem FolderToolStripMenuItem;
+        internal ShiftUI.ToolStripSeparator ToolStripMenuItem2;
+        internal ShiftUI.ToolStripMenuItem ArtpadPictureToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem TextDocumentToolStripMenuItem;
+        internal ShiftUI.ToolStripSeparator WebpageToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ShortcutToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem NewSkin;
+        internal ShiftUI.PictureBox tbcatalysticon;
+        internal ShiftUI.Label lbcatalystname;
+        internal ShiftUI.ToolStripMenuItem CatalystToolStripMenuItem1;
+        public ShiftUI.ImageList imgshiftnetapps;
+        private ShiftUI.Label lbldebug;
+        private ShiftUI.Label lblog;
+        public ShiftUI.FlowLayoutPanel flicons;
+        private ShiftUI.ToolStripMenuItem scriptToolStripMenuItem;
+        private ShiftUI.ContextMenuStrip cmbfactions;
+        private ShiftUI.ToolStripMenuItem deleteToolStripMenuItem;
+        private ShiftUI.FlowLayoutPanel pnlnotifications;
+        public ShiftUI.Panel desktoppanel;
+        public ShiftUI.ToolStripMenuItem ApplicationsToolStripMenuItem;
+        private ShiftUI.ContextMenuStrip cbwidget;
+        private ShiftUI.ToolStripMenuItem wlocmenu;
+        private ShiftUI.ContextMenuStrip cbdpanel;
+        private ShiftUI.ToolStripMenuItem toolStripMenuItem3;
+        private ShiftUI.ToolStripMenuItem optionsToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem addDesktopPanelToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem placeHereToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem appLauncherToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem panelButtonsToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem clockToolStripMenuItem1;
+        private ShiftUI.ToolStripMenuItem widgetManagerToolStripMenuItem;
     }
 }

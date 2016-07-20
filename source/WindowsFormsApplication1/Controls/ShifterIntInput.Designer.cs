@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txttext = new System.Windows.Forms.TextBox();
-            this.Label51 = new System.Windows.Forms.Label();
+            this.txttext = new ShiftUI.TextBox();
+            this.Label51 = new ShiftUI.Label();
             this.SuspendLayout();
             // 
             // txttext
             // 
-            this.txttext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttext.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Right)));
             this.txttext.BackColor = System.Drawing.Color.White;
-            this.txttext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttext.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttext.ForeColor = System.Drawing.Color.Black;
             this.txttext.Location = new System.Drawing.Point(174, 3);
@@ -49,9 +49,9 @@
             // 
             // Label51
             // 
-            this.Label51.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label51.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.Label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label51.Location = new System.Drawing.Point(0, 0);
             this.Label51.Name = "Label51";
@@ -63,10 +63,10 @@
             // ShifterIntInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.txttext);
-            this.Controls.Add(this.Label51);
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.Widgets.Add(this.txttext);
+            this.Widgets.Add(this.Label51);
             this.Name = "ShifterIntInput";
             this.Size = new System.Drawing.Size(213, 29);
             this.ResumeLayout(false);
@@ -76,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txttext;
-        private System.Windows.Forms.Label Label51;
+        private ShiftUI.TextBox txttext;
+        private ShiftUI.Label Label51;
 
     }
 }

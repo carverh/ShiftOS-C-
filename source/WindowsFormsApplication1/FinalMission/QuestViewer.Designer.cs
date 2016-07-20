@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbobjectives = new System.Windows.Forms.ListBox();
+            this.lbobjectives = new ShiftUI.ListBox();
             this.SuspendLayout();
             // 
             // lbobjectives
             // 
-            this.lbobjectives.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbobjectives.Dock = ShiftUI.DockStyle.Fill;
             this.lbobjectives.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.lbobjectives.FormattingEnabled = true;
             this.lbobjectives.ItemHeight = 16;
@@ -45,9 +45,9 @@
             // QuestViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 423);
-            this.Controls.Add(this.lbobjectives);
+            this.Widgets.Add(this.lbobjectives);
             this.Name = "QuestViewer";
             this.Text = "QuestViewer";
             this.Load += new System.EventHandler(this.QuestViewer_Load);
@@ -57,6 +57,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbobjectives;
+        private ShiftUI.ListBox lbobjectives;
     }
 }

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using SaveSystem;
 using System.Threading;
 using Newtonsoft.Json;
@@ -33,7 +33,7 @@ namespace ShiftOS
         public delegate void WindowDrawEventHandler(Form win);
 
         //Event handler for passing a single control (e.g, a desktop panel) to the Lua API.
-        public delegate void ControlDrawEventHandler(string ControlGUID);
+        public delegate void WidgetDrawEventHandler(string WidgetGUID);
 
         //Lua events.
         public event EmptyEventHandler OnDesktopReload;
@@ -49,7 +49,7 @@ namespace ShiftOS
         public event WindowDrawEventHandler BorderReset;
         public event ListEventHandler<DesktopIcon> DesktopIconsPopulated;
         public event EmptyEventHandler OnUnityToggle;
-        public event ControlDrawEventHandler OnDesktopPanelDraw;
+        public event WidgetDrawEventHandler OnDesktopPanelDraw;
 
         public void InvokeWindowOp(string operation, Form win)
         {
@@ -97,7 +97,7 @@ namespace ShiftOS
 
         public ToolStripMenuItem AppLauncher { get { return this.ApplicationsToolStripMenuItem; } }
 
-        public List<Control> CurrentWidgets = null;
+        public List<Widget> CurrentWidgets = null;
 
         public void SetUnityMode()
         {
@@ -133,7 +133,7 @@ namespace ShiftOS
                 switch (FinalMission.EndGameHandler.CurrentChoice)
                 {
                     case Choice.SideWithDevX:
-                        var t = new System.Windows.Forms.Timer();
+                        var t = new ShiftUI.Timer();
                         t.Interval = 10000;
                         t.Tick += (object se, EventArgs ea) =>
                         {
@@ -176,11 +176,11 @@ namespace ShiftOS
             this.WindowState = FormWindowState.Maximized;
             this.KeyDown += (object s, KeyEventArgs ea) =>
             {
-                if (ea.KeyCode == Keys.T && ea.Control)
+                if (ea.KeyCode == Keys.T && ea.Widget)
                 {
                     InvokeCTRLT();
                 }
-                else if (ea.KeyCode == Keys.D && ea.Control)
+                else if (ea.KeyCode == Keys.D && ea.Widget)
                 {
                     if (API.DeveloperMode == true)
                     {
@@ -198,9 +198,10 @@ namespace ShiftOS
             CheckIfNew();
 
             API.CurrentSession = this;
+            this.Location = new Point(0, 0);
 
 
-            System.Windows.Forms.Timer clocktick = new System.Windows.Forms.Timer();
+            ShiftUI.Timer clocktick = new ShiftUI.Timer();
             clocktick.Interval = 2;
             clocktick.Tick += (object s, EventArgs a) =>
             {
@@ -311,7 +312,7 @@ namespace ShiftOS
         public FlowLayoutPanel PanelButtonHolder { get { return pnlpanelbuttonholder; } }
         public Panel AppLauncherPanel { get { return applaunchermenuholder; } }
         public Panel Clock { get { return timepanel; } }
-        public Control SelectedObject = null;
+        public Widget SelectedObject = null;
 
         private string SelectedIconName = null;
 
@@ -382,8 +383,8 @@ namespace ShiftOS
                     wid.Dispose();
                 }
             }
-            WidgetsToMaintain = new List<Control>();
-            Control ctrl = null;
+            WidgetsToMaintain = new List<Widget>();
+            Widget ctrl = null;
             switch(w.Type)
             {
                 case WidgetType.FreePanel:
@@ -401,7 +402,7 @@ namespace ShiftOS
             }
             if(ctrl != null)
             {
-                p.Controls.Add(ctrl);
+                p.Widgets.Add(ctrl);
                 ctrl.Show();
                 ctrl.BringToFront();
                 ctrl.Left = w.XLocation;
@@ -445,7 +446,7 @@ namespace ShiftOS
                     move.Click += (object s, EventArgs e) =>
                     {
                         ctrl.Tag = w;
-                        MovingControl = ctrl;
+                        MovingWidget = ctrl;
                     };
                     ToolStripMenuItem move_to = (ToolStripMenuItem)cb_thiswidget.Items.Add("Move to...");
                     foreach(var dp in DesktopPanels)
@@ -493,9 +494,9 @@ namespace ShiftOS
 
         }
 
-        public List<Control> WidgetsToMaintain = null;
+        public List<Widget> WidgetsToMaintain = null;
 
-        public Control MovingControl = null;
+        public Widget MovingWidget = null;
 
         public bool WidgetContains(string Name)
         {
@@ -533,7 +534,7 @@ namespace ShiftOS
             {
                 flicons.ContextMenuStrip = cmbdesktopoptions;
                 DesktopIconManager.GetIcons();
-                   flicons.Controls.Clear();
+                   flicons.Widgets.Clear();
                 foreach (DesktopIcon dl in DesktopIconManager.Icons)
                 {
                     dl.ContextMenuStrip = cmbfactions;
@@ -544,7 +545,7 @@ namespace ShiftOS
                             SelectedIconName = dl.IconName;
                         }
                     };
-                    flicons.Controls.Add(dl);
+                    flicons.Widgets.Add(dl);
                 }
                 DesktopIconsPopulated?.Invoke(DesktopIconManager.Icons);
             }
@@ -563,41 +564,27 @@ namespace ShiftOS
 
         public void SetupDesktopPanel()
         {
-            if (DesktopPanels != null)
+            if(API.Upgrades["desktoppanel"])
             {
-                foreach (var pnl in DesktopPanels)
+                desktoppanel.BackColor = API.CurrentSkin.desktoppanelcolour;
+                desktoppanel.Height = API.CurrentSkin.desktoppanelheight;
+                switch(API.CurrentSkin.desktoppanelposition)
                 {
-                    if (this.Controls.Contains(pnl))
-                    {
-                        pnl.Hide();
-                        this.Controls.Remove(pnl);
-                    }
+                    case "Top":
+                        desktoppanel.Dock = DockStyle.Top;
+                        break;
+                    case "Bottom":
+                        desktoppanel.Dock = DockStyle.Bottom;
+                        break;
                 }
-            }
-            var old_list = new List<Skinning.DesktopPanel>();
-            var dp = new Skinning.DesktopPanel();
-            dp.Position = API.CurrentSkin.desktoppanelposition;
-            dp.Height = API.CurrentSkin.desktoppanelheight;
-            dp.BackgroundColor = API.CurrentSkin.desktoppanelcolour;
-            dp.BackgroundImage = API.CurrentSkinImages.desktoppanel;
-            old_list.Add(dp);
+                desktoppanel.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.desktoppanellayout;
+                desktoppanel.BackgroundImage = API.CurrentSkinImages.desktoppanel;
 
-            if (API.CurrentSkin.DesktopPanels.Count == 0)
-            {
-                API.CurrentSkin.DesktopPanels = old_list;
-            }
-            if(API.Upgrades["advanceddesktop"])
-            {
-                SetupPanels(API.CurrentSkin.DesktopPanels);
             }
             else
             {
-                if(API.Upgrades["desktoppanel"])
-                {
-                    SetupPanels(old_list);
-                }
+                desktoppanel.Hide();
             }
-            desktopappmenu.BackgroundImageLayout = (ImageLayout)API.CurrentSkin.applauncherlayout;
         }
 
         public void SetupPanels(List<Skinning.DesktopPanel> lst)
@@ -621,31 +608,31 @@ namespace ShiftOS
                 pnl.Height = dp.Height;
                 pnl.MouseMove += (object s, MouseEventArgs a) =>
                 {
-                    if (MovingControl != null)
+                    if (MovingWidget != null)
                     {
                         var newloc = new Point(a.X + 15, 0);
                         var proper = pnl.PointToClient(newloc);
-                        MovingControl.Location = proper;
+                        MovingWidget.Location = proper;
                     }
                 };
                 pnl.MouseDown += (object s, MouseEventArgs a) =>
                 {
-                    if (MovingControl != null)
+                    if (MovingWidget != null)
                     {
                         if (a.Button == MouseButtons.Left)
                         {
-                            var w = (Skinning.DesktopWidget)MovingControl.Tag;
-                            w.XLocation = MovingControl.Left;
+                            var w = (Skinning.DesktopWidget)MovingWidget.Tag;
+                            w.XLocation = MovingWidget.Left;
                             Skinning.Utilities.saveskin();
                         }
                         else if (a.Button == MouseButtons.Left)
                         {
-                            var w = (Skinning.DesktopWidget)MovingControl.Tag;
-                            MovingControl.Left = w.XLocation;
+                            var w = (Skinning.DesktopWidget)MovingWidget.Tag;
+                            MovingWidget.Left = w.XLocation;
                             Skinning.Utilities.saveskin();
 
                         }
-                        MovingControl = null;
+                        MovingWidget = null;
                     }
                 };
                 DesktopPanels.Add(pnl);
@@ -698,13 +685,13 @@ namespace ShiftOS
                         pnl.ContextMenuStrip = null;
                     }
                     pnl.Size = new Size(desktoppanel.Size.Width, dp.Height);
-                    this.Controls.Add(pnl);
+                    this.Widgets.Add(pnl);
                     pnl.Show();
                 }
                 else
                 {
                     pnl.Hide();
-                    this.Controls.Remove(pnl);
+                    this.Widgets.Remove(pnl);
                 }
                 string guid = Guid.NewGuid().ToString();
                 API.DEF_PanelGUIDs.Add(guid, pnl);
@@ -893,7 +880,7 @@ namespace ShiftOS
                             {
                                 API.CurrentSkin.PanelButtonPosition = itm.Text;
                             }
-                            SelectedObject.Parent.Controls.Remove(SelectedObject);
+                            SelectedObject.Parent.Widgets.Remove(SelectedObject);
                             SetupDesktopPanel();
                             Skinning.Utilities.saveskin();
                         }
@@ -980,22 +967,22 @@ namespace ShiftOS
             }
         }
 
-        public void ChangePosition(Control ctrl, Panel newPanel)
+        public void ChangePosition(Widget ctrl, Panel newPanel)
         {
             try {
-                ctrl.Parent.Controls.Remove(ctrl);
-                newPanel.Controls.Add(ctrl);
+                ctrl.Parent.Widgets.Remove(ctrl);
+                newPanel.Widgets.Add(ctrl);
             }
             catch
             {
-                newPanel.Controls.Add(ctrl);
+                newPanel.Widgets.Add(ctrl);
             }
             ctrl.BringToFront();
         }
 
         public void SetupPanelButtons()
         {
-            pnlpanelbuttonholder.Controls.Clear();
+            pnlpanelbuttonholder.Widgets.Clear();
             if (API.Upgrades["panelbuttons"] == true)
             {
                 foreach (PanelButton pbtn in API.PanelButtons)
@@ -1015,7 +1002,7 @@ namespace ShiftOS
 
                     setuppanelbuttonicons(ref pb, pbtn.Icon);
 
-                    pnlpanelbuttonholder.Controls.Add(pnl);
+                    pnlpanelbuttonholder.Widgets.Add(pnl);
                     pnl.ContextMenuStrip = null;
                     pnl.Show();
                     pnl.Click += new EventHandler(this.PanelButton_Click);
@@ -1039,8 +1026,8 @@ namespace ShiftOS
 
         public void setpanelbuttonappearnce(ref Panel panelbutton, ref PictureBox icon, ref Label text)
         {
-            panelbutton.Controls.Add(text);
-            panelbutton.Controls.Add(icon);
+            panelbutton.Widgets.Add(text);
+            panelbutton.Widgets.Add(icon);
             text.Show();
             if (API.Upgrades["appicons"] == true)
             {
@@ -1075,7 +1062,7 @@ namespace ShiftOS
         {
             if (API.Upgrades["usefulpanelbuttons"])
             {
-                Control ctrl = (Control)sender;
+                Widget ctrl = (Widget)sender;
                 try
                 {
                     PanelButton pbtn = (PanelButton)ctrl.Tag;
@@ -1138,7 +1125,7 @@ namespace ShiftOS
                     n.Location = new Point(this.Width - n.Width, this.Height - n.Height - desktoppanel.Height);
                     break;
             }
-            this.Controls.Add(n);
+            this.Widgets.Add(n);
             n.Show();
             n.BringToFront();
         }

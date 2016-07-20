@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using ShiftOS.Online.Hacking;
 
 namespace ShiftOS
@@ -308,11 +308,11 @@ Those above values only matter if the leader decides to become a friend. If they
 
         public void SetupMyNet()
         {
-            flmodules.Controls.Clear();
+            flmodules.Widgets.Clear();
             foreach(var m in Hacking.MyNetwork)
             {
                 var mStatus = new NetModuleStatus(m);
-                flmodules.Controls.Add(mStatus);
+                flmodules.Widgets.Add(mStatus);
                 mStatus.Show();
             }
         }
@@ -389,7 +389,7 @@ Those above values only matter if the leader decides to become a friend. If they
             API.CurrentSave.MyOnlineNetwork.Codepoints = API.Codepoints;
             Package_Grabber.SendMessage(selected_server.IPAddress, $"join_lobby {JsonConvert.SerializeObject(API.CurrentSave.MyOnlineNetwork)}");
             Online.Hacking.Matchmaker.Matchmake(selected_server);
-            var t = new System.Windows.Forms.Timer();
+            var t = new ShiftUI.Timer();
             t.Interval = 5000;
             int sindex = 0;
             t.Tick += (o, a) =>

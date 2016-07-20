@@ -15,8 +15,8 @@
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, ShiftUI, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, ShiftUI, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
     <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -112,961 +112,961 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, ShiftUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, ShiftUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tilebuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <assembly alias="System.Windows.Forms" name="ShiftUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tilebuttonpressed" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\tilebuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconDodge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconDodge" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconDodge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rolldown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="rolldown" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\rolldown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="centrebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="centrebutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\centrebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradefileskimmerdelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradefileskimmerdelete" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradefileskimmerdelete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dial_up_modem_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="dial_up_modem_02" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\dial-up-modem-02.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="upgraderollupcommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderollupcommand" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderollupcommand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealshiftorium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealshiftorium" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealshiftorium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="crash" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\crash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crash_ofm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="crash_ofm" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\crash_ofm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeblueshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeblueshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeblueshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconTerminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconTerminal" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconTerminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconvirusscanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconvirusscanner" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconvirusscanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeautoscrollterminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeautoscrollterminal" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeautoscrollterminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadload" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeyellowshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeyellowshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeyellowshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegrayshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegrayshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegrayshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepinkcustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepinkcustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepinkcustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="downarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="downarrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\downarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeusefulpanelbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeusefulpanelbuttons" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeusefulpanelbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tilebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="tilebutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\tilebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradebrowncustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradebrowncustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradebrowncustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradewindowsanywhere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradewindowsanywhere" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradewindowsanywhere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeclock" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeskinning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeskinning" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeskinning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegreenshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegreenshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegreenshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftbuttons" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepong" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeskicarbrands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeskicarbrands" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeskicarbrands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icongraphicpicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="icongraphicpicker" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\icongraphicpicker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crash_force" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="crash_force" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\crash-force.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadtexttool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadtexttool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadtexttool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizericonpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizericonpreview" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizericonpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftpanelclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftpanelclock" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftpanelclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BeginButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BeginButton_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\BeginButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeamandpm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeamandpm" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeamandpm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skinuparrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="skinuparrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\skinuparrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="webforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="webforward" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\webforward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegray" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealtextpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealtextpad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealtextpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconFileSaver_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconFileSaver_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconFileSaver.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nextbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="nextbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\nextbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepink" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconNameChanger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconNameChanger" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconNameChanger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradebrownshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradebrownshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradebrownshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anycolourshade2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="anycolourshade2" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\anycolourshade2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadcirclerubber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadcirclerubber" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadcirclerubber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadfilltool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadfilltool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadfilltool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftoriumicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftoriumicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftoriumicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconTextPad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconTextPad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconTextPad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderemoveth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderemoveth1" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderemoveth1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Symbolinfo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Symbolinfo1" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Symbolinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconBitnoteWallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconBitnoteWallet" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconBitnoteWallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TotalBalanceUnclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TotalBalanceUnclicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\TotalBalanceUnclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepinkshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepinkshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepinkshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconShiftorium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconShiftorium" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconShiftorium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconKnowledgeInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconKnowledgeInput" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconKnowledgeInput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealclock" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetitlebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetitlebar" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetitlebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconAppscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconAppscape" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Icon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftpanelbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftpanelbuttons" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftpanelbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fileiconsaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileiconsaa" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileiconsaa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconCalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconCalculator" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconCalculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deletefile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="deletefile" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\deletefile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QuitButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="QuitButton_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\QuitButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadnew" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit16" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadsave" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademultitasking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademultitasking" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademultitasking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegraycustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegraycustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegraycustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Send" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="playbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\playbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconPong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconPong" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconPong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradewindowedterminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradewindowedterminal" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradewindowedterminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad128colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad128colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad128colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradedesktoppanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradedesktoppanel" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradedesktoppanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadsquarerubber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadsquarerubber" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadsquarerubber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pausebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pausebutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\pausebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetextpadsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetextpadsave" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetextpadsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeyellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeyellow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeyellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegreenshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegreenshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegreenshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infobox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="infobox" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\infobox.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="test" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizerlinuxmintskinpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizerlinuxmintskinpreview" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizerlinuxmintskinpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconWebBrowser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconWebBrowser" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconWebBrowser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetextpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetextpad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetextpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeblue" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadRectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadRectangle" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadRectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealfileskimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealfileskimmer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealfileskimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zoombutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="zoombutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\zoombutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftdesktop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftdesktop" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftdesktop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="openicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\openicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="updatecustomcolourpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="updatecustomcolourpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\updatecustomcolourpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeapplaunchershutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeapplaunchershutdown" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeapplaunchershutdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad64colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad64colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad64colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anycolourshade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="anycolourshade" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\anycolourshade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradesysinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradesysinfo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradesysinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegreencustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegreencustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegreencustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="player_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\player.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stopbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="stopbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\stopbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetitletext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetitletext" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetitletext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ReceiveClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ReceiveClicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ReceiveClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademinuteaccuracytime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademinuteaccuracytime" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademinuteaccuracytime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealpong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealpong" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealpong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit4" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeclosebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeclosebutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeclosebutton.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadsquarerubberselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadsquarerubberselected" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadsquarerubberselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeorangecustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeorangecustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeorangecustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadlinetool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadlinetool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadlinetool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetextpadopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetextpadopen" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetextpadopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadopen" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftapplauncher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftapplauncher" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftapplauncher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftericon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealshifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealshifter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealshifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderedcustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderedcustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderedcustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeorange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeorange" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeorange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizersliderleftarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizersliderleftarrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizersliderleftarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconVideoPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconVideoPlayer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconVideoPlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadrectangletool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadrectangletool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadrectangletool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconIconManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconIconManager" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconIconManager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademinimizecommand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademinimizecommand" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademinimizecommand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anycolourshade3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="anycolourshade3" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\anycolourshade3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshifttitletext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshifttitletext" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshifttitletext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rollup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="rollup" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\rollup.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fileiconsetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileiconsetup" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileiconsaa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradedesktoppanelclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradedesktoppanelclock" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradedesktoppanelclock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizernamechangerpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizernamechangerpreview" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizernamechangerpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradehoursssincemidnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradehoursssincemidnight" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradehoursssincemidnight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadlinetool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadlinetool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadlinetool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_3beepvirus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_3beepvirus" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\3beepvirus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="upgradeartpadpixelplacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixelplacer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixelplacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadmagnify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadmagnify" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadmagnify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconShiftnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconShiftnet" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconShiftnet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconAudioPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconAudioPlayer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconAudioPlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradefileskimmernew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradefileskimmernew" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradefileskimmernew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="centrebuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="centrebuttonpressed" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\centrebuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadnew" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="christmaseasteregg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="christmaseasteregg" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\christmaseasteregg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadredo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadredo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadredo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="installericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="installericon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\installericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderesize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderesize" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderesize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderedshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderedshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderedshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradefileskimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradefileskimmer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradefileskimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeknowledgeinput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeknowledgeinput" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeknowledgeinput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeknowledgeinputicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeknowledgeinputicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeknowledgeinputicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderemoveth4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderemoveth4" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderemoveth4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconshutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconshutdown" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconshutdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPaderacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPaderacer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPaderacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconSkinShifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconSkinShifter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconSkinShifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skinfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="skinfile" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\skinfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fileskimmericon_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileskimmericon_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileskimmericon.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zoombuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="zoombuttonpressed" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\zoombuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradedraggablewindows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradedraggablewindows" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradedraggablewindows.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradecolourpickericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradecolourpickericon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradecolourpickericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetextpadicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetextpadicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetextpadicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeinfoboxicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeinfoboxicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeinfoboxicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepanelbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepanelbuttons" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepanelbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconInfoBox_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconInfoBox_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconInfoBox.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegrayshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegrayshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegrayshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad8colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad8colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad8colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizerskinshifterscreenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizerskinshifterscreenshot" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizerskinshifterscreenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeblueshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeblueshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeblueshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconDownloader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconDownloader" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconDownloader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_mid2_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_mid2_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\object_mid2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fileicondirectory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileicondirectory" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileicondirectory.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dodge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="dodge" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\dodge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpaintbrushtool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpaintbrushtool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpaintbrushtool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_small2_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_small2_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\object_small2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TotalBalanceClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TotalBalanceClicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\TotalBalanceClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad32colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad32colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad32colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderollupbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderollupbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderollupbutton.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademinimizebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademinimizebutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademinimizebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftitems" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftitems" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftitems.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconBitnoteDigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconBitnoteDigger" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconBitnoteDigger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconmaze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconmaze" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconmaze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="webback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="webback" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\webback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconunitytoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconunitytoggle" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconunitytoggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit4096" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit4096" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit4096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_large_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_large_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\object_large.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anycolourshade4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="anycolourshade4" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\anycolourshade4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconSkinLoader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconSkinLoader" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconSkinLoader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uparrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="uparrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\uparrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradefileskimmericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradefileskimmericon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradefileskimmericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadsave" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeterminalicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeterminalicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeterminalicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit64" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadOval" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadOval" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadOval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadtexttool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadtexttool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadtexttool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="transactionsUnclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="transactionsUnclicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\transactionsUnclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradecustomusername" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradecustomusername" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradecustomusername.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadovaltool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadovaltool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadovaltool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconFileOpener_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconFileOpener_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconFileOpener.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadundo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadpixelplacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadpixelplacer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadpixelplacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="newfolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="newfolder" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\newfolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fileiconnone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileiconnone" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileiconnone.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Receive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Receive" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Receive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeyellowcustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeyellowcustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeyellowcustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadcirclerubberselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadcirclerubberselected" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadcirclerubberselected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshutdownicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshutdownicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshutdownicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderemoveth2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderemoveth2" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderemoveth2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="transactionsClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="transactionsClicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\transactionsClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradewindowborders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradewindowborders" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradewindowborders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradesplitsecondaccuracy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradesplitsecondaccuracy" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradesplitsecondaccuracy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealunitymode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealunitymode" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealunitymode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="snakeyback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="snakeyback" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\snakeyback.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradegreen" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfloodgate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconfloodgate" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconfloodgate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeyellowshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeyellowshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeyellowshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gray_Shades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Gray_Shades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Gray Shades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshifter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconFileSkimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconFileSkimmer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconFileSkimmer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradesgameconsoles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradesgameconsoles" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradesgameconsoles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepurpleshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepurpleshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepurpleshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeterminalscrollbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeterminalscrollbar" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeterminalscrollbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="textpad_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="textpad_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\textpad.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizerindustrialskinpreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizerindustrialskinpreview" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizerindustrialskinpreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SendClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="SendClicked" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\SendClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixelplacermovementmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixelplacermovementmode" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixelplacermovementmode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_small_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_small_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\object_small.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeosname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeosname" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeosname.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skindownarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="skindownarrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\skindownarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadpaintbrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadpaintbrush" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadpaintbrush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadlimitlesspixels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadlimitlesspixels" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadlimitlesspixels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeadvancedshifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeadvancedshifter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeadvancedshifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradebluecustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradebluecustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradebluecustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshifttitlebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshifttitlebar" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshifttitlebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit256" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradekiaddons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradekiaddons" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradekiaddons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradetrm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetrm" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetrm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DSC01042" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DSC01042" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\DSC01042.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconorcwrite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconorcwrite" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconorcwrite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeorangeshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeorangeshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeorangeshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit16384" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit16384" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit16384.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradebrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradebrown" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradebrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loadbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="loadbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\loadbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Symbolinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Symbolinfo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Symbolinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="christmas_skin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="christmas_skin" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\christmas_skin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stretchbuttonpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="stretchbuttonpressed" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\stretchbuttonpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pixelsetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pixelsetter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\pixelsetter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crash_cheat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="crash_cheat" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\crash-cheat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="webhome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="webhome" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\webhome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="typesound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="typesound" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\typesound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="upgradetextpadnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradetextpadnew" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradetextpadnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradekielements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradekielements" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradekielements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradealartpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradealartpad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradealartpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jumperplayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="jumperplayer" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\jumperplayer.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stretchbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="stretchbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\stretchbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademinutesssincemidnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademinutesssincemidnight" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademinutesssincemidnight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="object_mid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="object_mid_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\object_mid.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeunitymode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeunitymode" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeunitymode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadpencil" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadpencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit1024" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgrademoveablewindows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgrademoveablewindows" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgrademoveablewindows.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BeginButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BeginButton1" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\BeginButton.Image1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpenciltool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpenciltool" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpenciltool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="saveicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\saveicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeclockicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeclockicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeclockicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeapplaunchermenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeapplaunchermenu" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeapplaunchermenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconArtpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconArtpad" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconArtpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepurplecustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepurplecustom" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepurplecustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradered" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradesecondssincemidnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradesecondssincemidnight" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradesecondssincemidnight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeorangeshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeorangeshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeorangeshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArtPadfloodfill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArtPadfloodfill" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\ArtPadfloodfill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradevirusscanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradevirusscanner" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradevirusscanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit8" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shiftomizersliderrightarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shiftomizersliderrightarrow" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\shiftomizersliderrightarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="writesound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="writesound" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\writesound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="upgradebrownshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradebrownshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradebrownshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deletefolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="deletefolder" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\deletefolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="previousbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="previousbutton" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\previousbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad16colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad16colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad16colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderedshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderedshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderedshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadundo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftdesktoppanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftdesktoppanel" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftdesktoppanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpaderaser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpaderaser" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpaderaser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeiconunitymode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeiconunitymode" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeiconunitymode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconShifter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconShifter" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconShifter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgraderemoveth3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgraderemoveth3" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgraderemoveth3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadredo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadredo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadredo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpad4colorpallets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpad4colorpallets" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpad4colorpallets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconClock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconClock" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconClock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepongicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepongicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepongicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeshiftborders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeshiftborders" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeshiftborders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floodgateicn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="floodgateicn" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\floodgateicn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="downloadmanagericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="downloadmanagericon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\downloadmanagericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconSysinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconSysinfo" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconSysinfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconSnakey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconSnakey" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconSnakey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fileicondoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="fileicondoc" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\fileiconnone1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepurpleshadeset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepurpleshadeset" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepurpleshadeset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradeartpadpixellimit65536" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradeartpadpixellimit65536" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradeartpadpixellimit65536.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="newicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="newicon" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\newicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepurple" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upgradepinkshades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upgradepinkshades" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\upgradepinkshades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PicBonus_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PicBonus_Image" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\PicBonus.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notify_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="notify_generic" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\notify_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DecompiledCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DecompiledCode" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\DecompiledCode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="NoIconFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NoIconFound" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\NoIconFound.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Choice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Choice1" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Choice1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Choice2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Choice2" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Choice2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Choice3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Choice3" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Choice3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="You_Passed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="You_Passed" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\You_Passed.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="DevX_Firewall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DevX_Firewall" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\DevX_Primary.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="DevX_PrimaryNet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DevX_PrimaryNet" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\DevX_PrimaryNet.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="DevX_Secondary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DevX_Secondary" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\DevX_Secondary.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Hacker_AustinWalker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Hacker_AustinWalker" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Hacker_AustinWalker.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Hacker_DanaRoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Hacker_DanaRoss" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Hacker_DanaRoss.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Hacker_JonathanRivard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Hacker_JonathanRivard" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Hacker_JonathanRivard.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="MidGame_Holochat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="MidGame_Holochat" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\MidGame_Holochat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="NetBrowser_Enemies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NetBrowser_Enemies" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\NetBrowser_Enemies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="iconColourPicker_fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconColourPicker_fw" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\iconColourPicker.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AustinWalkerCompletionStory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="AustinWalkerCompletionStory" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\AustinWalkerCompletionStory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="MusicData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="MusicData" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\MusicData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Credits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Credits" type="System.Resources.ResXFileRef, ShiftUI">
     <value>..\Resources\Credits.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

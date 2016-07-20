@@ -31,24 +31,24 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtterm = new System.Windows.Forms.TextBox();
-            this.tmrfirstrun = new System.Windows.Forms.Timer(this.components);
-            this.tmrshutdown = new System.Windows.Forms.Timer(this.components);
-            this.pullbs = new System.Windows.Forms.Timer(this.components);
-            this.pullbottom = new System.Windows.Forms.Timer(this.components);
-            this.pullside = new System.Windows.Forms.Timer(this.components);
-            this.tmrstorylineupdate = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tmrsetfont = new System.Windows.Forms.Timer(this.components);
+            this.txtterm = new ShiftUI.TextBox();
+            this.tmrfirstrun = new ShiftUI.Timer(this.components);
+            this.tmrshutdown = new ShiftUI.Timer(this.components);
+            this.pullbs = new ShiftUI.Timer(this.components);
+            this.pullbottom = new ShiftUI.Timer(this.components);
+            this.pullside = new ShiftUI.Timer(this.components);
+            this.tmrstorylineupdate = new ShiftUI.Timer(this.components);
+            this.panel2 = new ShiftUI.Panel();
+            this.tmrsetfont = new ShiftUI.Timer(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtterm
             // 
             this.txtterm.BackColor = System.Drawing.Color.Black;
-            this.txtterm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtterm.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtterm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtterm.BorderStyle = ShiftUI.BorderStyle.None;
+            this.txtterm.Cursor = ShiftUI.Cursors.IBeam;
+            this.txtterm.Dock = ShiftUI.DockStyle.Fill;
             this.txtterm.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtterm.ForeColor = System.Drawing.Color.White;
             this.txtterm.Location = new System.Drawing.Point(0, 0);
@@ -56,8 +56,8 @@ namespace ShiftOS
             this.txtterm.Name = "txtterm";
             this.txtterm.Size = new System.Drawing.Size(650, 396);
             this.txtterm.TabIndex = 0;
-            this.txtterm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ScrollDeactivate);
-            this.txtterm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScrollTerm);
+            this.txtterm.KeyUp += new ShiftUI.KeyEventHandler(this.ScrollDeactivate);
+            this.txtterm.MouseMove += new ShiftUI.MouseEventHandler(this.ScrollTerm);
             // 
             // tmrfirstrun
             // 
@@ -81,8 +81,8 @@ namespace ShiftOS
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtterm);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Widgets.Add(this.txtterm);
+            this.panel2.Dock = ShiftUI.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(650, 396);
@@ -95,11 +95,11 @@ namespace ShiftOS
             // Terminal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(650, 396);
-            this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.panel2);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "Terminal";
@@ -111,16 +111,16 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.TextBox txtterm;
-        internal System.Windows.Forms.Timer tmrfirstrun;
-        internal System.Windows.Forms.Timer tmrshutdown;
-        internal System.Windows.Forms.Timer pullbs;
-        internal System.Windows.Forms.Timer pullbottom;
-        internal System.Windows.Forms.Timer pullside;
-        internal System.Windows.Forms.Timer tmrstorylineupdate;
+        internal ShiftUI.TextBox txtterm;
+        internal ShiftUI.Timer tmrfirstrun;
+        internal ShiftUI.Timer tmrshutdown;
+        internal ShiftUI.Timer pullbs;
+        internal ShiftUI.Timer pullbottom;
+        internal ShiftUI.Timer pullside;
+        internal ShiftUI.Timer tmrstorylineupdate;
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Timer tmrsetfont;
+        private ShiftUI.Panel panel2;
+        private ShiftUI.Timer tmrsetfont;
     }
 }

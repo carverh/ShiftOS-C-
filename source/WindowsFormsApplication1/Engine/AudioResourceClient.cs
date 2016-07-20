@@ -9,7 +9,7 @@ using NAudio.Wave;
 using System.Threading;
 using Newtonsoft.Json;
 using AxWMPLib;
-using System.Windows.Forms;
+using ShiftUI;
 using WMPLib;
 
 namespace ShiftOS
@@ -119,7 +119,7 @@ namespace ShiftOS
             {
                 if (o == (int)WMPPlayState.wmppsMediaEnded)
                 {
-                    var t = new System.Windows.Forms.Timer();
+                    var t = new ShiftUI.Timer();
                     t.Interval = 1000;
                     t.Tick += (object s, EventArgs a) =>
                     {

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -29,51 +29,51 @@ namespace ShiftOS
             setupboughtcolours();
             loadmemory();
 
-            foreach (Control ctrl in pnlanycolours.Controls)
+            foreach (Widget ctrl in pnlanycolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionany);
             }
-            foreach (Control ctrl in pnlgraycolours.Controls)
+            foreach (Widget ctrl in pnlgraycolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctiongray);
             }
 
-            foreach (Control ctrl in pnlredcolours.Controls)
+            foreach (Widget ctrl in pnlredcolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionred);
             }
 
-            foreach (Control ctrl in pnlgreencolours.Controls)
+            foreach (Widget ctrl in pnlgreencolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctiongreen);
             }
 
-            foreach (Control ctrl in pnlbluecolours.Controls)
+            foreach (Widget ctrl in pnlbluecolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionblue);
             }
 
-            foreach (Control ctrl in pnlorangecolours.Controls)
+            foreach (Widget ctrl in pnlorangecolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionorange);
             }
 
-            foreach (Control ctrl in pnlyellowcolours.Controls)
+            foreach (Widget ctrl in pnlyellowcolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionyellow);
             }
 
-            foreach (Control ctrl in pnlbrowncolours.Controls)
+            foreach (Widget ctrl in pnlbrowncolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionbrown);
             }
 
-            foreach (Control ctrl in pnlpurplecolours.Controls)
+            foreach (Widget ctrl in pnlpurplecolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionpurple);
             }
 
-            foreach (Control ctrl in pnlpinkcolours.Controls)
+            foreach (Widget ctrl in pnlpinkcolours.Widgets)
             {
                 ctrl.MouseDown += new MouseEventHandler(this.colourselctionpink);
             }

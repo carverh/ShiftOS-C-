@@ -25,28 +25,28 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.btnsend = new System.Windows.Forms.Button();
-            this.txtsendaddress = new System.Windows.Forms.TextBox();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.lbltotalbitcoinsmined = new System.Windows.Forms.Label();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.turbomodespeed = new System.Windows.Forms.Label();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.lbldiggerstatsspeed = new System.Windows.Forms.Label();
-            this.lbldiggerstatsgrade = new System.Windows.Forms.Label();
-            this.lbldiggerstatsname = new System.Windows.Forms.Label();
-            this.btnturbomode = new System.Windows.Forms.Button();
-            this.btnstop = new System.Windows.Forms.Button();
-            this.btnstart = new System.Windows.Forms.Button();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.tmrcalcbitnotesmined = new System.Windows.Forms.Timer(this.components);
-            this.tmrturbomode = new System.Windows.Forms.Timer(this.components);
-            this.btnupgrade = new System.Windows.Forms.Button();
+            this.pgcontents = new ShiftUI.Panel();
+            this.Label10 = new ShiftUI.Label();
+            this.btnsend = new ShiftUI.Button();
+            this.txtsendaddress = new ShiftUI.TextBox();
+            this.Label7 = new ShiftUI.Label();
+            this.lbltotalbitcoinsmined = new ShiftUI.Label();
+            this.Panel1 = new ShiftUI.Panel();
+            this.Label6 = new ShiftUI.Label();
+            this.Label8 = new ShiftUI.Label();
+            this.turbomodespeed = new ShiftUI.Label();
+            this.Label5 = new ShiftUI.Label();
+            this.lbldiggerstatsspeed = new ShiftUI.Label();
+            this.lbldiggerstatsgrade = new ShiftUI.Label();
+            this.lbldiggerstatsname = new ShiftUI.Label();
+            this.btnturbomode = new ShiftUI.Button();
+            this.btnstop = new ShiftUI.Button();
+            this.btnstart = new ShiftUI.Button();
+            this.PictureBox1 = new ShiftUI.PictureBox();
+            this.Label1 = new ShiftUI.Label();
+            this.tmrcalcbitnotesmined = new ShiftUI.Timer(this.components);
+            this.tmrturbomode = new ShiftUI.Timer(this.components);
+            this.btnupgrade = new ShiftUI.Button();
             this.pgcontents.SuspendLayout();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
@@ -55,14 +55,14 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.Label10);
-            this.pgcontents.Controls.Add(this.btnsend);
-            this.pgcontents.Controls.Add(this.txtsendaddress);
-            this.pgcontents.Controls.Add(this.Label7);
-            this.pgcontents.Controls.Add(this.lbltotalbitcoinsmined);
-            this.pgcontents.Controls.Add(this.Panel1);
-            this.pgcontents.Controls.Add(this.Label1);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.Label10);
+            this.pgcontents.Widgets.Add(this.btnsend);
+            this.pgcontents.Widgets.Add(this.txtsendaddress);
+            this.pgcontents.Widgets.Add(this.Label7);
+            this.pgcontents.Widgets.Add(this.lbltotalbitcoinsmined);
+            this.pgcontents.Widgets.Add(this.Panel1);
+            this.pgcontents.Widgets.Add(this.Label1);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(560, 297);
@@ -82,7 +82,7 @@ namespace ShiftOS
             // btnsend
             // 
             this.btnsend.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnsend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsend.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsend.Location = new System.Drawing.Point(472, 181);
             this.btnsend.Name = "btnsend";
@@ -95,14 +95,14 @@ namespace ShiftOS
             // txtsendaddress
             // 
             this.txtsendaddress.BackColor = System.Drawing.Color.White;
-            this.txtsendaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtsendaddress.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtsendaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsendaddress.Location = new System.Drawing.Point(205, 155);
             this.txtsendaddress.Multiline = true;
             this.txtsendaddress.Name = "txtsendaddress";
             this.txtsendaddress.Size = new System.Drawing.Size(340, 21);
             this.txtsendaddress.TabIndex = 4;
-            this.txtsendaddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtsendaddress.TextAlign = ShiftUI.HorizontalAlignment.Center;
             // 
             // Label7
             // 
@@ -126,19 +126,19 @@ namespace ShiftOS
             // 
             // Panel1
             // 
-            this.Panel1.Controls.Add(this.btnupgrade);
-            this.Panel1.Controls.Add(this.Label6);
-            this.Panel1.Controls.Add(this.Label8);
-            this.Panel1.Controls.Add(this.turbomodespeed);
-            this.Panel1.Controls.Add(this.Label5);
-            this.Panel1.Controls.Add(this.lbldiggerstatsspeed);
-            this.Panel1.Controls.Add(this.lbldiggerstatsgrade);
-            this.Panel1.Controls.Add(this.lbldiggerstatsname);
-            this.Panel1.Controls.Add(this.btnturbomode);
-            this.Panel1.Controls.Add(this.btnstop);
-            this.Panel1.Controls.Add(this.btnstart);
-            this.Panel1.Controls.Add(this.PictureBox1);
-            this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Panel1.Widgets.Add(this.btnupgrade);
+            this.Panel1.Widgets.Add(this.Label6);
+            this.Panel1.Widgets.Add(this.Label8);
+            this.Panel1.Widgets.Add(this.turbomodespeed);
+            this.Panel1.Widgets.Add(this.Label5);
+            this.Panel1.Widgets.Add(this.lbldiggerstatsspeed);
+            this.Panel1.Widgets.Add(this.lbldiggerstatsgrade);
+            this.Panel1.Widgets.Add(this.lbldiggerstatsname);
+            this.Panel1.Widgets.Add(this.btnturbomode);
+            this.Panel1.Widgets.Add(this.btnstop);
+            this.Panel1.Widgets.Add(this.btnstart);
+            this.Panel1.Widgets.Add(this.PictureBox1);
+            this.Panel1.Dock = ShiftUI.DockStyle.Left;
             this.Panel1.Location = new System.Drawing.Point(0, 0);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(199, 297);
@@ -216,7 +216,7 @@ namespace ShiftOS
             // 
             // btnturbomode
             // 
-            this.btnturbomode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnturbomode.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnturbomode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnturbomode.Location = new System.Drawing.Point(6, 188);
             this.btnturbomode.Name = "btnturbomode";
@@ -228,7 +228,7 @@ namespace ShiftOS
             // 
             // btnstop
             // 
-            this.btnstop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstop.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnstop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstop.Location = new System.Drawing.Point(101, 156);
             this.btnstop.Name = "btnstop";
@@ -240,7 +240,7 @@ namespace ShiftOS
             // 
             // btnstart
             // 
-            this.btnstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstart.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstart.Location = new System.Drawing.Point(6, 156);
             this.btnstart.Name = "btnstart";
@@ -253,7 +253,7 @@ namespace ShiftOS
             // PictureBox1
             // 
             this.PictureBox1.BackColor = System.Drawing.Color.Black;
-            this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PictureBox1.Dock = ShiftUI.DockStyle.Right;
             this.PictureBox1.Location = new System.Drawing.Point(198, 0);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(1, 297);
@@ -282,7 +282,7 @@ namespace ShiftOS
             // 
             // btnupgrade
             // 
-            this.btnupgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupgrade.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnupgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupgrade.Location = new System.Drawing.Point(6, 223);
             this.btnupgrade.Name = "btnupgrade";
@@ -295,10 +295,10 @@ namespace ShiftOS
             // BitnoteDigger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 297);
-            this.Controls.Add(this.pgcontents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.pgcontents);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.Name = "BitnoteDigger";
             this.Text = "Bitnote_Digger";
             this.TopMost = true;
@@ -311,27 +311,27 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.PictureBox PictureBox1;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Label lbltotalbitcoinsmined;
-        internal System.Windows.Forms.Button btnturbomode;
-        internal System.Windows.Forms.Button btnstop;
-        internal System.Windows.Forms.Button btnstart;
-        internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.Label turbomodespeed;
-        internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.Label lbldiggerstatsspeed;
-        internal System.Windows.Forms.Label lbldiggerstatsgrade;
-        internal System.Windows.Forms.Label lbldiggerstatsname;
-        internal System.Windows.Forms.Label Label10;
-        internal System.Windows.Forms.Button btnsend;
-        internal System.Windows.Forms.TextBox txtsendaddress;
-        internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.Timer tmrcalcbitnotesmined;
-        internal System.Windows.Forms.Timer tmrturbomode;
-        internal System.Windows.Forms.Button btnupgrade;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Panel Panel1;
+        internal ShiftUI.PictureBox PictureBox1;
+        internal ShiftUI.Label Label1;
+        internal ShiftUI.Label lbltotalbitcoinsmined;
+        internal ShiftUI.Button btnturbomode;
+        internal ShiftUI.Button btnstop;
+        internal ShiftUI.Button btnstart;
+        internal ShiftUI.Label Label6;
+        internal ShiftUI.Label Label8;
+        internal ShiftUI.Label turbomodespeed;
+        internal ShiftUI.Label Label5;
+        internal ShiftUI.Label lbldiggerstatsspeed;
+        internal ShiftUI.Label lbldiggerstatsgrade;
+        internal ShiftUI.Label lbldiggerstatsname;
+        internal ShiftUI.Label Label10;
+        internal ShiftUI.Button btnsend;
+        internal ShiftUI.TextBox txtsendaddress;
+        internal ShiftUI.Label Label7;
+        internal ShiftUI.Timer tmrcalcbitnotesmined;
+        internal ShiftUI.Timer tmrturbomode;
+        internal ShiftUI.Button btnupgrade;
     }
 }

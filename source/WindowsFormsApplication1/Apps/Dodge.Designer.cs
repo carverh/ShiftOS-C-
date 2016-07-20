@@ -25,19 +25,19 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.player = new System.Windows.Forms.PictureBox();
-            this.QuitButton = new System.Windows.Forms.PictureBox();
-            this.BeginButton = new System.Windows.Forms.PictureBox();
-            this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.object_small2 = new System.Windows.Forms.PictureBox();
-            this.object_mid2 = new System.Windows.Forms.PictureBox();
-            this.object_large = new System.Windows.Forms.PictureBox();
-            this.object_small = new System.Windows.Forms.PictureBox();
-            this.object_mid = new System.Windows.Forms.PictureBox();
-            this.scorelabel = new System.Windows.Forms.Label();
-            this.PicBonus = new System.Windows.Forms.PictureBox();
-            this.clock = new System.Windows.Forms.Timer(this.components);
+            this.pgcontents = new ShiftUI.Panel();
+            this.player = new ShiftUI.PictureBox();
+            this.QuitButton = new ShiftUI.PictureBox();
+            this.BeginButton = new ShiftUI.PictureBox();
+            this.DescriptionLabel = new ShiftUI.Label();
+            this.object_small2 = new ShiftUI.PictureBox();
+            this.object_mid2 = new ShiftUI.PictureBox();
+            this.object_large = new ShiftUI.PictureBox();
+            this.object_small = new ShiftUI.PictureBox();
+            this.object_mid = new ShiftUI.PictureBox();
+            this.scorelabel = new ShiftUI.Label();
+            this.PicBonus = new ShiftUI.PictureBox();
+            this.clock = new ShiftUI.Timer(this.components);
             this.pgcontents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuitButton)).BeginInit();
@@ -53,18 +53,18 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.player);
-            this.pgcontents.Controls.Add(this.QuitButton);
-            this.pgcontents.Controls.Add(this.BeginButton);
-            this.pgcontents.Controls.Add(this.DescriptionLabel);
-            this.pgcontents.Controls.Add(this.object_small2);
-            this.pgcontents.Controls.Add(this.object_mid2);
-            this.pgcontents.Controls.Add(this.object_large);
-            this.pgcontents.Controls.Add(this.object_small);
-            this.pgcontents.Controls.Add(this.object_mid);
-            this.pgcontents.Controls.Add(this.scorelabel);
-            this.pgcontents.Controls.Add(this.PicBonus);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.player);
+            this.pgcontents.Widgets.Add(this.QuitButton);
+            this.pgcontents.Widgets.Add(this.BeginButton);
+            this.pgcontents.Widgets.Add(this.DescriptionLabel);
+            this.pgcontents.Widgets.Add(this.object_small2);
+            this.pgcontents.Widgets.Add(this.object_mid2);
+            this.pgcontents.Widgets.Add(this.object_large);
+            this.pgcontents.Widgets.Add(this.object_small);
+            this.pgcontents.Widgets.Add(this.object_mid);
+            this.pgcontents.Widgets.Add(this.scorelabel);
+            this.pgcontents.Widgets.Add(this.PicBonus);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(418, 478);
@@ -72,7 +72,7 @@ namespace ShiftOS
             // 
             // player
             // 
-            this.player.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.player.Anchor = ShiftUI.AnchorStyles.Bottom;
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::ShiftOS.Properties.Resources.player_Image;
             this.player.Location = new System.Drawing.Point(192, 445);
@@ -83,7 +83,7 @@ namespace ShiftOS
             // 
             // QuitButton
             // 
-            this.QuitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuitButton.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
             this.QuitButton.Image = global::ShiftOS.Properties.Resources.QuitButton_Image;
             this.QuitButton.InitialImage = global::ShiftOS.Properties.Resources.QuitButton_Image;
             this.QuitButton.Location = new System.Drawing.Point(216, 424);
@@ -95,7 +95,7 @@ namespace ShiftOS
             // 
             // BeginButton
             // 
-            this.BeginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BeginButton.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.BeginButton.Image = global::ShiftOS.Properties.Resources.BeginButton1;
             this.BeginButton.InitialImage = global::ShiftOS.Properties.Resources.BeginButton_Image;
             this.BeginButton.Location = new System.Drawing.Point(3, 424);
@@ -188,17 +188,17 @@ namespace ShiftOS
             // Dodge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 478);
-            this.Controls.Add(this.pgcontents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.pgcontents);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Dodge";
             this.Text = "Dodge";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_keydown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+            this.KeyDown += new ShiftUI.KeyEventHandler(this.Form1_keydown);
+            this.KeyUp += new ShiftUI.KeyEventHandler(this.Form1_KeyUp);
             this.pgcontents.ResumeLayout(false);
             this.pgcontents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -213,18 +213,18 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.PictureBox player;
-        internal System.Windows.Forms.PictureBox QuitButton;
-        internal System.Windows.Forms.PictureBox BeginButton;
-        internal System.Windows.Forms.Label DescriptionLabel;
-        internal System.Windows.Forms.PictureBox object_small2;
-        internal System.Windows.Forms.PictureBox object_mid2;
-        internal System.Windows.Forms.PictureBox object_large;
-        internal System.Windows.Forms.PictureBox object_small;
-        internal System.Windows.Forms.PictureBox object_mid;
-        internal System.Windows.Forms.Label scorelabel;
-        internal System.Windows.Forms.Timer clock;
-        internal System.Windows.Forms.PictureBox PicBonus;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.PictureBox player;
+        internal ShiftUI.PictureBox QuitButton;
+        internal ShiftUI.PictureBox BeginButton;
+        internal ShiftUI.Label DescriptionLabel;
+        internal ShiftUI.PictureBox object_small2;
+        internal ShiftUI.PictureBox object_mid2;
+        internal ShiftUI.PictureBox object_large;
+        internal ShiftUI.PictureBox object_small;
+        internal ShiftUI.PictureBox object_mid;
+        internal ShiftUI.Label scorelabel;
+        internal ShiftUI.Timer clock;
+        internal ShiftUI.PictureBox PicBonus;
     }
 }

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using System.Net;
 
 namespace ShiftOS
@@ -26,17 +26,18 @@ namespace ShiftOS
         public void InitialSetup()
         {
             pnlcontrols.BackColor = API.CurrentSkin.titlebarcolour;
-            wbshiftnet.DocumentText = WebLayer.VisitSite("shiftnet://main");
+            wbshiftnet.Document.TextContent = WebLayer.VisitSite("shiftnet://main");
             txtaddress.Text = WebLayer.LastUrl;
         }
 
-        private void LinkInterceptor(object sender, WebBrowserNavigatingEventArgs e)
+        private void LinkInterceptor(object sender, Gecko.Events.GeckoNavigatingEventArgs e)
         {
-            var url = e.Url.OriginalString;
+            
+            var url = e.Uri.OriginalString;
             if (url != "about:blank")
             {
                 var surl = url.Replace("http://", "shiftnet://");
-                wbshiftnet.DocumentText = WebLayer.VisitSite(surl);
+                wbshiftnet.Document.TextContent = WebLayer.VisitSite(surl);
                 txtaddress.Text = WebLayer.LastUrl;
             }
         }
@@ -45,19 +46,19 @@ namespace ShiftOS
         {
             if (txtaddress.Text.ToLower().StartsWith("shiftnet://"))
             {
-                wbshiftnet.DocumentText = WebLayer.VisitSite(txtaddress.Text);
+                wbshiftnet.Document.TextContent = WebLayer.VisitSite(txtaddress.Text);
                 txtaddress.Text = WebLayer.LastUrl;
             }
             else
             {
-                wbshiftnet.DocumentText = WebLayer.VisitSite("shiftnet://not_found");
+                wbshiftnet.Document.TextContent = WebLayer.VisitSite("shiftnet://not_found");
                 txtaddress.Text = WebLayer.LastUrl;
             }
         }
 
         private void btnhome_Click(object sender, EventArgs e)
         {
-            wbshiftnet.DocumentText = WebLayer.VisitSite("shiftnet://main");
+            wbshiftnet.Document.TextContent = WebLayer.VisitSite("shiftnet://main");
             txtaddress.Text = WebLayer.LastUrl;
         }
     }

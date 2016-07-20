@@ -25,57 +25,57 @@ namespace ShiftOS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkinLoader));
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnapplyskin = new System.Windows.Forms.Button();
-            this.btnsaveskin = new System.Windows.Forms.Button();
-            this.btnloadskin = new System.Windows.Forms.Button();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.btnclose = new System.Windows.Forms.Button();
-            this.pnldesktoppreview = new System.Windows.Forms.Panel();
-            this.predesktoppanel = new System.Windows.Forms.Panel();
-            this.prepnlpanelbuttonholder = new System.Windows.Forms.FlowLayoutPanel();
-            this.prepnlpanelbutton = new System.Windows.Forms.Panel();
-            this.pretbicon = new System.Windows.Forms.PictureBox();
-            this.pretbctext = new System.Windows.Forms.Label();
-            this.pretimepanel = new System.Windows.Forms.Panel();
-            this.prepaneltimetext = new System.Windows.Forms.Label();
-            this.preapplaunchermenuholder = new System.Windows.Forms.Panel();
-            this.predesktopappmenu = new System.Windows.Forms.MenuStrip();
-            this.ApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.KnowledgeInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShiftoriumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TerminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ShutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.pnlwindowpreview = new System.Windows.Forms.Panel();
-            this.prepgcontent = new System.Windows.Forms.Panel();
-            this.prepgbottom = new System.Windows.Forms.Panel();
-            this.prepgleft = new System.Windows.Forms.Panel();
-            this.prepgbottomlcorner = new System.Windows.Forms.Panel();
-            this.prepgright = new System.Windows.Forms.Panel();
-            this.prepgbottomrcorner = new System.Windows.Forms.Panel();
-            this.pretitlebar = new System.Windows.Forms.Panel();
-            this.preminimizebutton = new System.Windows.Forms.Panel();
-            this.prepnlicon = new System.Windows.Forms.PictureBox();
-            this.prerollupbutton = new System.Windows.Forms.Panel();
-            this.preclosebutton = new System.Windows.Forms.Panel();
-            this.pretitletext = new System.Windows.Forms.Label();
-            this.prepgtoplcorner = new System.Windows.Forms.Panel();
-            this.prepgtoprcorner = new System.Windows.Forms.Panel();
-            this.pnlskinpacks = new System.Windows.Forms.Panel();
-            this.btnapplypackskin = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbpackfiles = new System.Windows.Forms.ComboBox();
-            this.btnbrowse = new System.Windows.Forms.Button();
-            this.txtpackpath = new System.Windows.Forms.TextBox();
-            this.btnbacktoskinloader = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pgcontents = new ShiftUI.Panel();
+            this.label3 = new ShiftUI.Label();
+            this.btnapplyskin = new ShiftUI.Button();
+            this.btnsaveskin = new ShiftUI.Button();
+            this.btnloadskin = new ShiftUI.Button();
+            this.Label2 = new ShiftUI.Label();
+            this.btnclose = new ShiftUI.Button();
+            this.pnldesktoppreview = new ShiftUI.Panel();
+            this.predesktoppanel = new ShiftUI.Panel();
+            this.prepnlpanelbuttonholder = new ShiftUI.FlowLayoutPanel();
+            this.prepnlpanelbutton = new ShiftUI.Panel();
+            this.pretbicon = new ShiftUI.PictureBox();
+            this.pretbctext = new ShiftUI.Label();
+            this.pretimepanel = new ShiftUI.Panel();
+            this.prepaneltimetext = new ShiftUI.Label();
+            this.preapplaunchermenuholder = new ShiftUI.Panel();
+            this.predesktopappmenu = new ShiftUI.MenuStrip();
+            this.ApplicationsToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.KnowledgeInputToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShiftoriumToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ClockToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.TerminalToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShifterToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ToolStripSeparator1 = new ShiftUI.ToolStripSeparator();
+            this.ShutdownToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.Label1 = new ShiftUI.Label();
+            this.pnlwindowpreview = new ShiftUI.Panel();
+            this.prepgcontent = new ShiftUI.Panel();
+            this.prepgbottom = new ShiftUI.Panel();
+            this.prepgleft = new ShiftUI.Panel();
+            this.prepgbottomlcorner = new ShiftUI.Panel();
+            this.prepgright = new ShiftUI.Panel();
+            this.prepgbottomrcorner = new ShiftUI.Panel();
+            this.pretitlebar = new ShiftUI.Panel();
+            this.preminimizebutton = new ShiftUI.Panel();
+            this.prepnlicon = new ShiftUI.PictureBox();
+            this.prerollupbutton = new ShiftUI.Panel();
+            this.preclosebutton = new ShiftUI.Panel();
+            this.pretitletext = new ShiftUI.Label();
+            this.prepgtoplcorner = new ShiftUI.Panel();
+            this.prepgtoprcorner = new ShiftUI.Panel();
+            this.pnlskinpacks = new ShiftUI.Panel();
+            this.btnapplypackskin = new ShiftUI.Button();
+            this.label6 = new ShiftUI.Label();
+            this.cbpackfiles = new ShiftUI.ComboBox();
+            this.btnbrowse = new ShiftUI.Button();
+            this.txtpackpath = new ShiftUI.TextBox();
+            this.btnbacktoskinloader = new ShiftUI.Button();
+            this.label5 = new ShiftUI.Label();
+            this.label4 = new ShiftUI.Label();
+            this.panel1 = new ShiftUI.Panel();
             this.pgcontents.SuspendLayout();
             this.pnldesktoppreview.SuspendLayout();
             this.predesktoppanel.SuspendLayout();
@@ -97,16 +97,16 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.label3);
-            this.pgcontents.Controls.Add(this.btnapplyskin);
-            this.pgcontents.Controls.Add(this.btnsaveskin);
-            this.pgcontents.Controls.Add(this.btnloadskin);
-            this.pgcontents.Controls.Add(this.Label2);
-            this.pgcontents.Controls.Add(this.btnclose);
-            this.pgcontents.Controls.Add(this.pnldesktoppreview);
-            this.pgcontents.Controls.Add(this.Label1);
-            this.pgcontents.Controls.Add(this.pnlwindowpreview);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.label3);
+            this.pgcontents.Widgets.Add(this.btnapplyskin);
+            this.pgcontents.Widgets.Add(this.btnsaveskin);
+            this.pgcontents.Widgets.Add(this.btnloadskin);
+            this.pgcontents.Widgets.Add(this.Label2);
+            this.pgcontents.Widgets.Add(this.btnclose);
+            this.pgcontents.Widgets.Add(this.pnldesktoppreview);
+            this.pgcontents.Widgets.Add(this.Label1);
+            this.pgcontents.Widgets.Add(this.pnlwindowpreview);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(476, 462);
@@ -114,8 +114,8 @@ namespace ShiftOS
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label3.Location = new System.Drawing.Point(10, 384);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(454, 31);
@@ -126,8 +126,8 @@ namespace ShiftOS
             // 
             // btnapplyskin
             // 
-            this.btnapplyskin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnapplyskin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapplyskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btnapplyskin.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnapplyskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapplyskin.Location = new System.Drawing.Point(352, 418);
             this.btnapplyskin.Name = "btnapplyskin";
@@ -139,8 +139,8 @@ namespace ShiftOS
             // 
             // btnsaveskin
             // 
-            this.btnsaveskin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsaveskin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsaveskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btnsaveskin.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnsaveskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsaveskin.Location = new System.Drawing.Point(239, 418);
             this.btnsaveskin.Name = "btnsaveskin";
@@ -152,8 +152,8 @@ namespace ShiftOS
             // 
             // btnloadskin
             // 
-            this.btnloadskin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnloadskin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnloadskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnloadskin.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnloadskin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnloadskin.Location = new System.Drawing.Point(126, 418);
             this.btnloadskin.Name = "btnloadskin";
@@ -165,8 +165,8 @@ namespace ShiftOS
             // 
             // Label2
             // 
-            this.Label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label2.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(4, 200);
             this.Label2.Name = "Label2";
@@ -177,8 +177,8 @@ namespace ShiftOS
             // 
             // btnclose
             // 
-            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnclose.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.Location = new System.Drawing.Point(13, 418);
             this.btnclose.Name = "btnclose";
@@ -190,10 +190,10 @@ namespace ShiftOS
             // 
             // pnldesktoppreview
             // 
-            this.pnldesktoppreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktoppreview.Controls.Add(this.predesktoppanel);
+            this.pnldesktoppreview.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnldesktoppreview.Widgets.Add(this.predesktoppanel);
             this.pnldesktoppreview.Location = new System.Drawing.Point(13, 233);
             this.pnldesktoppreview.Name = "pnldesktoppreview";
             this.pnldesktoppreview.Size = new System.Drawing.Size(448, 148);
@@ -202,10 +202,10 @@ namespace ShiftOS
             // predesktoppanel
             // 
             this.predesktoppanel.BackColor = System.Drawing.Color.Gray;
-            this.predesktoppanel.Controls.Add(this.prepnlpanelbuttonholder);
-            this.predesktoppanel.Controls.Add(this.pretimepanel);
-            this.predesktoppanel.Controls.Add(this.preapplaunchermenuholder);
-            this.predesktoppanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.predesktoppanel.Widgets.Add(this.prepnlpanelbuttonholder);
+            this.predesktoppanel.Widgets.Add(this.pretimepanel);
+            this.predesktoppanel.Widgets.Add(this.preapplaunchermenuholder);
+            this.predesktoppanel.Dock = ShiftUI.DockStyle.Top;
             this.predesktoppanel.Location = new System.Drawing.Point(0, 0);
             this.predesktoppanel.Name = "predesktoppanel";
             this.predesktoppanel.Size = new System.Drawing.Size(448, 25);
@@ -214,19 +214,19 @@ namespace ShiftOS
             // prepnlpanelbuttonholder
             // 
             this.prepnlpanelbuttonholder.BackColor = System.Drawing.Color.Transparent;
-            this.prepnlpanelbuttonholder.Controls.Add(this.prepnlpanelbutton);
-            this.prepnlpanelbuttonholder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prepnlpanelbuttonholder.Widgets.Add(this.prepnlpanelbutton);
+            this.prepnlpanelbuttonholder.Dock = ShiftUI.DockStyle.Fill;
             this.prepnlpanelbuttonholder.Location = new System.Drawing.Point(116, 0);
             this.prepnlpanelbuttonholder.Name = "prepnlpanelbuttonholder";
-            this.prepnlpanelbuttonholder.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.prepnlpanelbuttonholder.Padding = new ShiftUI.Padding(2, 0, 0, 0);
             this.prepnlpanelbuttonholder.Size = new System.Drawing.Size(235, 25);
             this.prepnlpanelbuttonholder.TabIndex = 7;
             // 
             // prepnlpanelbutton
             // 
             this.prepnlpanelbutton.BackColor = System.Drawing.Color.Black;
-            this.prepnlpanelbutton.Controls.Add(this.pretbicon);
-            this.prepnlpanelbutton.Controls.Add(this.pretbctext);
+            this.prepnlpanelbutton.Widgets.Add(this.pretbicon);
+            this.prepnlpanelbutton.Widgets.Add(this.pretbctext);
             this.prepnlpanelbutton.Location = new System.Drawing.Point(5, 3);
             this.prepnlpanelbutton.Name = "prepnlpanelbutton";
             this.prepnlpanelbutton.Size = new System.Drawing.Size(126, 20);
@@ -236,7 +236,7 @@ namespace ShiftOS
             // pretbicon
             // 
             this.pretbicon.BackColor = System.Drawing.Color.Transparent;
-            this.pretbicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pretbicon.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.pretbicon.Image = global::ShiftOS.Properties.Resources.iconShifter;
             this.pretbicon.Location = new System.Drawing.Point(4, 2);
             this.pretbicon.Name = "pretbicon";
@@ -258,8 +258,8 @@ namespace ShiftOS
             // 
             // pretimepanel
             // 
-            this.pretimepanel.Controls.Add(this.prepaneltimetext);
-            this.pretimepanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pretimepanel.Widgets.Add(this.prepaneltimetext);
+            this.pretimepanel.Dock = ShiftUI.DockStyle.Right;
             this.pretimepanel.Location = new System.Drawing.Point(351, 0);
             this.pretimepanel.Name = "pretimepanel";
             this.pretimepanel.Size = new System.Drawing.Size(97, 25);
@@ -279,8 +279,8 @@ namespace ShiftOS
             // 
             // preapplaunchermenuholder
             // 
-            this.preapplaunchermenuholder.Controls.Add(this.predesktopappmenu);
-            this.preapplaunchermenuholder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.preapplaunchermenuholder.Widgets.Add(this.predesktopappmenu);
+            this.preapplaunchermenuholder.Dock = ShiftUI.DockStyle.Left;
             this.preapplaunchermenuholder.Location = new System.Drawing.Point(0, 0);
             this.preapplaunchermenuholder.Name = "preapplaunchermenuholder";
             this.preapplaunchermenuholder.Size = new System.Drawing.Size(116, 25);
@@ -289,12 +289,12 @@ namespace ShiftOS
             // predesktopappmenu
             // 
             this.predesktopappmenu.AutoSize = false;
-            this.predesktopappmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.predesktopappmenu.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.ApplicationsToolStripMenuItem});
-            this.predesktopappmenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.predesktopappmenu.LayoutStyle = ShiftUI.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.predesktopappmenu.Location = new System.Drawing.Point(0, 0);
             this.predesktopappmenu.Name = "predesktopappmenu";
-            this.predesktopappmenu.Padding = new System.Windows.Forms.Padding(0);
+            this.predesktopappmenu.Padding = new ShiftUI.Padding(0);
             this.predesktopappmenu.Size = new System.Drawing.Size(116, 24);
             this.predesktopappmenu.TabIndex = 0;
             this.predesktopappmenu.Text = "MenuStrip1";
@@ -302,7 +302,7 @@ namespace ShiftOS
             // ApplicationsToolStripMenuItem
             // 
             this.ApplicationsToolStripMenuItem.AutoSize = false;
-            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new ShiftUI.ToolStripItem[] {
             this.KnowledgeInputToolStripMenuItem,
             this.ShiftoriumToolStripMenuItem,
             this.ClockToolStripMenuItem,
@@ -312,12 +312,12 @@ namespace ShiftOS
             this.ShutdownToolStripMenuItem});
             this.ApplicationsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplicationsToolStripMenuItem.Name = "ApplicationsToolStripMenuItem";
-            this.ApplicationsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ApplicationsToolStripMenuItem.Padding = new ShiftUI.Padding(2, 0, 2, 0);
             this.ApplicationsToolStripMenuItem.ShowShortcutKeys = false;
             this.ApplicationsToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.ApplicationsToolStripMenuItem.Text = "Applications";
-            this.ApplicationsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.ApplicationsToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ApplicationsToolStripMenuItem.TextDirection = ShiftUI.ToolStripTextDirection.Horizontal;
+            this.ApplicationsToolStripMenuItem.TextImageRelation = ShiftUI.TextImageRelation.TextBeforeImage;
             // 
             // KnowledgeInputToolStripMenuItem
             // 
@@ -374,8 +374,8 @@ namespace ShiftOS
             // 
             // Label1
             // 
-            this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label1.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(4, 6);
             this.Label1.Name = "Label1";
@@ -386,13 +386,13 @@ namespace ShiftOS
             // 
             // pnlwindowpreview
             // 
-            this.pnlwindowpreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlwindowpreview.Controls.Add(this.prepgcontent);
-            this.pnlwindowpreview.Controls.Add(this.prepgbottom);
-            this.pnlwindowpreview.Controls.Add(this.prepgleft);
-            this.pnlwindowpreview.Controls.Add(this.prepgright);
-            this.pnlwindowpreview.Controls.Add(this.pretitlebar);
+            this.pnlwindowpreview.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlwindowpreview.Widgets.Add(this.prepgcontent);
+            this.pnlwindowpreview.Widgets.Add(this.prepgbottom);
+            this.pnlwindowpreview.Widgets.Add(this.prepgleft);
+            this.pnlwindowpreview.Widgets.Add(this.prepgright);
+            this.pnlwindowpreview.Widgets.Add(this.pretitlebar);
             this.pnlwindowpreview.Location = new System.Drawing.Point(13, 39);
             this.pnlwindowpreview.Name = "pnlwindowpreview";
             this.pnlwindowpreview.Size = new System.Drawing.Size(448, 148);
@@ -400,7 +400,7 @@ namespace ShiftOS
             // 
             // prepgcontent
             // 
-            this.prepgcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prepgcontent.Dock = ShiftUI.DockStyle.Fill;
             this.prepgcontent.Location = new System.Drawing.Point(2, 30);
             this.prepgcontent.Name = "prepgcontent";
             this.prepgcontent.Size = new System.Drawing.Size(444, 116);
@@ -409,7 +409,7 @@ namespace ShiftOS
             // prepgbottom
             // 
             this.prepgbottom.BackColor = System.Drawing.Color.Gray;
-            this.prepgbottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottom.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottom.Location = new System.Drawing.Point(2, 146);
             this.prepgbottom.Name = "prepgbottom";
             this.prepgbottom.Size = new System.Drawing.Size(444, 2);
@@ -418,8 +418,8 @@ namespace ShiftOS
             // prepgleft
             // 
             this.prepgleft.BackColor = System.Drawing.Color.Gray;
-            this.prepgleft.Controls.Add(this.prepgbottomlcorner);
-            this.prepgleft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.prepgleft.Widgets.Add(this.prepgbottomlcorner);
+            this.prepgleft.Dock = ShiftUI.DockStyle.Left;
             this.prepgleft.Location = new System.Drawing.Point(0, 30);
             this.prepgleft.Name = "prepgleft";
             this.prepgleft.Size = new System.Drawing.Size(2, 118);
@@ -428,7 +428,7 @@ namespace ShiftOS
             // prepgbottomlcorner
             // 
             this.prepgbottomlcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgbottomlcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottomlcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottomlcorner.Location = new System.Drawing.Point(0, 116);
             this.prepgbottomlcorner.Name = "prepgbottomlcorner";
             this.prepgbottomlcorner.Size = new System.Drawing.Size(2, 2);
@@ -437,8 +437,8 @@ namespace ShiftOS
             // prepgright
             // 
             this.prepgright.BackColor = System.Drawing.Color.Gray;
-            this.prepgright.Controls.Add(this.prepgbottomrcorner);
-            this.prepgright.Dock = System.Windows.Forms.DockStyle.Right;
+            this.prepgright.Widgets.Add(this.prepgbottomrcorner);
+            this.prepgright.Dock = ShiftUI.DockStyle.Right;
             this.prepgright.Location = new System.Drawing.Point(446, 30);
             this.prepgright.Name = "prepgright";
             this.prepgright.Size = new System.Drawing.Size(2, 118);
@@ -447,7 +447,7 @@ namespace ShiftOS
             // prepgbottomrcorner
             // 
             this.prepgbottomrcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgbottomrcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottomrcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottomrcorner.Location = new System.Drawing.Point(0, 116);
             this.prepgbottomrcorner.Name = "prepgbottomrcorner";
             this.prepgbottomrcorner.Size = new System.Drawing.Size(2, 2);
@@ -456,14 +456,14 @@ namespace ShiftOS
             // pretitlebar
             // 
             this.pretitlebar.BackColor = System.Drawing.Color.Gray;
-            this.pretitlebar.Controls.Add(this.preminimizebutton);
-            this.pretitlebar.Controls.Add(this.prepnlicon);
-            this.pretitlebar.Controls.Add(this.prerollupbutton);
-            this.pretitlebar.Controls.Add(this.preclosebutton);
-            this.pretitlebar.Controls.Add(this.pretitletext);
-            this.pretitlebar.Controls.Add(this.prepgtoplcorner);
-            this.pretitlebar.Controls.Add(this.prepgtoprcorner);
-            this.pretitlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pretitlebar.Widgets.Add(this.preminimizebutton);
+            this.pretitlebar.Widgets.Add(this.prepnlicon);
+            this.pretitlebar.Widgets.Add(this.prerollupbutton);
+            this.pretitlebar.Widgets.Add(this.preclosebutton);
+            this.pretitlebar.Widgets.Add(this.pretitletext);
+            this.pretitlebar.Widgets.Add(this.prepgtoplcorner);
+            this.pretitlebar.Widgets.Add(this.prepgtoprcorner);
+            this.pretitlebar.Dock = ShiftUI.DockStyle.Top;
             this.pretitlebar.ForeColor = System.Drawing.Color.White;
             this.pretitlebar.Location = new System.Drawing.Point(0, 0);
             this.pretitlebar.Name = "pretitlebar";
@@ -519,7 +519,7 @@ namespace ShiftOS
             // prepgtoplcorner
             // 
             this.prepgtoplcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left;
+            this.prepgtoplcorner.Dock = ShiftUI.DockStyle.Left;
             this.prepgtoplcorner.Location = new System.Drawing.Point(0, 0);
             this.prepgtoplcorner.Name = "prepgtoplcorner";
             this.prepgtoplcorner.Size = new System.Drawing.Size(2, 30);
@@ -528,7 +528,7 @@ namespace ShiftOS
             // prepgtoprcorner
             // 
             this.prepgtoprcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right;
+            this.prepgtoprcorner.Dock = ShiftUI.DockStyle.Right;
             this.prepgtoprcorner.Location = new System.Drawing.Point(446, 0);
             this.prepgtoprcorner.Name = "prepgtoprcorner";
             this.prepgtoprcorner.Size = new System.Drawing.Size(2, 30);
@@ -537,15 +537,15 @@ namespace ShiftOS
             // pnlskinpacks
             // 
             this.pnlskinpacks.BackColor = System.Drawing.Color.White;
-            this.pnlskinpacks.Controls.Add(this.btnapplypackskin);
-            this.pnlskinpacks.Controls.Add(this.label6);
-            this.pnlskinpacks.Controls.Add(this.cbpackfiles);
-            this.pnlskinpacks.Controls.Add(this.btnbrowse);
-            this.pnlskinpacks.Controls.Add(this.txtpackpath);
-            this.pnlskinpacks.Controls.Add(this.btnbacktoskinloader);
-            this.pnlskinpacks.Controls.Add(this.label5);
-            this.pnlskinpacks.Controls.Add(this.label4);
-            this.pnlskinpacks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlskinpacks.Widgets.Add(this.btnapplypackskin);
+            this.pnlskinpacks.Widgets.Add(this.label6);
+            this.pnlskinpacks.Widgets.Add(this.cbpackfiles);
+            this.pnlskinpacks.Widgets.Add(this.btnbrowse);
+            this.pnlskinpacks.Widgets.Add(this.txtpackpath);
+            this.pnlskinpacks.Widgets.Add(this.btnbacktoskinloader);
+            this.pnlskinpacks.Widgets.Add(this.label5);
+            this.pnlskinpacks.Widgets.Add(this.label4);
+            this.pnlskinpacks.Dock = ShiftUI.DockStyle.Fill;
             this.pnlskinpacks.Location = new System.Drawing.Point(0, 0);
             this.pnlskinpacks.Name = "pnlskinpacks";
             this.pnlskinpacks.Size = new System.Drawing.Size(476, 462);
@@ -553,8 +553,8 @@ namespace ShiftOS
             // 
             // btnapplypackskin
             // 
-            this.btnapplypackskin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnapplypackskin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapplypackskin.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnapplypackskin.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnapplypackskin.Location = new System.Drawing.Point(379, 418);
             this.btnapplypackskin.Name = "btnapplypackskin";
             this.btnapplypackskin.Size = new System.Drawing.Size(94, 41);
@@ -583,8 +583,8 @@ namespace ShiftOS
             // 
             // btnbrowse
             // 
-            this.btnbrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnbrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbrowse.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
+            this.btnbrowse.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnbrowse.Location = new System.Drawing.Point(389, 138);
             this.btnbrowse.Name = "btnbrowse";
             this.btnbrowse.Size = new System.Drawing.Size(75, 23);
@@ -595,9 +595,9 @@ namespace ShiftOS
             // 
             // txtpackpath
             // 
-            this.txtpackpath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtpackpath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpackpath.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.txtpackpath.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpackpath.Location = new System.Drawing.Point(13, 141);
             this.txtpackpath.Name = "txtpackpath";
             this.txtpackpath.Size = new System.Drawing.Size(370, 20);
@@ -605,8 +605,8 @@ namespace ShiftOS
             // 
             // btnbacktoskinloader
             // 
-            this.btnbacktoskinloader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnbacktoskinloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbacktoskinloader.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnbacktoskinloader.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnbacktoskinloader.Location = new System.Drawing.Point(3, 418);
             this.btnbacktoskinloader.Name = "btnbacktoskinloader";
             this.btnbacktoskinloader.Size = new System.Drawing.Size(94, 41);
@@ -617,8 +617,8 @@ namespace ShiftOS
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(5, 28);
             this.label5.Name = "label5";
@@ -629,8 +629,8 @@ namespace ShiftOS
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label4.Location = new System.Drawing.Point(3, 6);
             this.label4.Name = "label4";
@@ -641,9 +641,9 @@ namespace ShiftOS
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pgcontents);
-            this.panel1.Controls.Add(this.pnlskinpacks);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.pgcontents);
+            this.panel1.Widgets.Add(this.pnlskinpacks);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(476, 462);
@@ -652,10 +652,10 @@ namespace ShiftOS
             // SkinLoader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 462);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.panel1);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.Name = "SkinLoader";
             this.Text = "Skin_Loader";
             this.TopMost = true;
@@ -684,56 +684,56 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Panel pnlwindowpreview;
-        internal System.Windows.Forms.Panel prepgcontent;
-        internal System.Windows.Forms.Panel prepgbottom;
-        internal System.Windows.Forms.Panel prepgleft;
-        internal System.Windows.Forms.Panel prepgbottomlcorner;
-        internal System.Windows.Forms.Panel prepgright;
-        internal System.Windows.Forms.Panel prepgbottomrcorner;
-        internal System.Windows.Forms.Panel pretitlebar;
-        internal System.Windows.Forms.PictureBox prepnlicon;
-        internal System.Windows.Forms.Panel prerollupbutton;
-        internal System.Windows.Forms.Panel preclosebutton;
-        internal System.Windows.Forms.Label pretitletext;
-        internal System.Windows.Forms.Panel prepgtoplcorner;
-        internal System.Windows.Forms.Panel prepgtoprcorner;
-        internal System.Windows.Forms.Button btnapplyskin;
-        internal System.Windows.Forms.Button btnsaveskin;
-        internal System.Windows.Forms.Button btnloadskin;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Button btnclose;
-        internal System.Windows.Forms.Panel pnldesktoppreview;
-        internal System.Windows.Forms.Panel predesktoppanel;
-        internal System.Windows.Forms.Panel pretimepanel;
-        internal System.Windows.Forms.Label prepaneltimetext;
-        internal System.Windows.Forms.Panel preapplaunchermenuholder;
-        internal System.Windows.Forms.MenuStrip predesktopappmenu;
-        internal System.Windows.Forms.ToolStripMenuItem ApplicationsToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ShiftoriumToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ClockToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem TerminalToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripMenuItem ShifterToolStripMenuItem;
-        internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
-        internal System.Windows.Forms.ToolStripMenuItem ShutdownToolStripMenuItem;
-        internal System.Windows.Forms.Panel preminimizebutton;
-        internal System.Windows.Forms.FlowLayoutPanel prepnlpanelbuttonholder;
-        internal System.Windows.Forms.Panel prepnlpanelbutton;
-        internal System.Windows.Forms.PictureBox pretbicon;
-        internal System.Windows.Forms.Label pretbctext;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel pnlskinpacks;
-        private System.Windows.Forms.Button btnbacktoskinloader;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnbrowse;
-        private System.Windows.Forms.TextBox txtpackpath;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbpackfiles;
-        private System.Windows.Forms.Button btnapplypackskin;
-        private System.Windows.Forms.Panel panel1;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.Label Label1;
+        internal ShiftUI.Panel pnlwindowpreview;
+        internal ShiftUI.Panel prepgcontent;
+        internal ShiftUI.Panel prepgbottom;
+        internal ShiftUI.Panel prepgleft;
+        internal ShiftUI.Panel prepgbottomlcorner;
+        internal ShiftUI.Panel prepgright;
+        internal ShiftUI.Panel prepgbottomrcorner;
+        internal ShiftUI.Panel pretitlebar;
+        internal ShiftUI.PictureBox prepnlicon;
+        internal ShiftUI.Panel prerollupbutton;
+        internal ShiftUI.Panel preclosebutton;
+        internal ShiftUI.Label pretitletext;
+        internal ShiftUI.Panel prepgtoplcorner;
+        internal ShiftUI.Panel prepgtoprcorner;
+        internal ShiftUI.Button btnapplyskin;
+        internal ShiftUI.Button btnsaveskin;
+        internal ShiftUI.Button btnloadskin;
+        internal ShiftUI.Label Label2;
+        internal ShiftUI.Button btnclose;
+        internal ShiftUI.Panel pnldesktoppreview;
+        internal ShiftUI.Panel predesktoppanel;
+        internal ShiftUI.Panel pretimepanel;
+        internal ShiftUI.Label prepaneltimetext;
+        internal ShiftUI.Panel preapplaunchermenuholder;
+        internal ShiftUI.MenuStrip predesktopappmenu;
+        internal ShiftUI.ToolStripMenuItem ApplicationsToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ShiftoriumToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ClockToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem TerminalToolStripMenuItem;
+        internal ShiftUI.ToolStripMenuItem ShifterToolStripMenuItem;
+        internal ShiftUI.ToolStripSeparator ToolStripSeparator1;
+        internal ShiftUI.ToolStripMenuItem ShutdownToolStripMenuItem;
+        internal ShiftUI.Panel preminimizebutton;
+        internal ShiftUI.FlowLayoutPanel prepnlpanelbuttonholder;
+        internal ShiftUI.Panel prepnlpanelbutton;
+        internal ShiftUI.PictureBox pretbicon;
+        internal ShiftUI.Label pretbctext;
+        private ShiftUI.Label label3;
+        private ShiftUI.Panel pnlskinpacks;
+        private ShiftUI.Button btnbacktoskinloader;
+        private ShiftUI.Label label5;
+        private ShiftUI.Label label4;
+        private ShiftUI.Button btnbrowse;
+        private ShiftUI.TextBox txtpackpath;
+        private ShiftUI.Label label6;
+        private ShiftUI.ComboBox cbpackfiles;
+        private ShiftUI.Button btnapplypackskin;
+        private ShiftUI.Panel panel1;
     }
 }

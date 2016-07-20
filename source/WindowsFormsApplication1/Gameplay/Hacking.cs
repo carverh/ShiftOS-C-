@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -154,7 +154,7 @@ namespace ShiftOS
                     break;
             }
 
-            f.Controls.Add(l);
+            f.Widgets.Add(l);
             l.Show();
             l.TextAlign = ContentAlignment.MiddleCenter;
             f.Height = 25;
@@ -245,7 +245,7 @@ namespace ShiftOS
                         break;
                 }
 
-                f.Controls.Add(l);
+                f.Widgets.Add(l);
                 l.Show();
                 l.TextAlign = ContentAlignment.MiddleCenter;
                 f.Height = 25;

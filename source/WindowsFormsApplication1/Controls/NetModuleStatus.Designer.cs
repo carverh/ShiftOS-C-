@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbinfo = new System.Windows.Forms.Label();
+            this.lbinfo = new ShiftUI.Label();
             this.pghealth = new ShiftOS.ProgressBarEX();
             this.SuspendLayout();
             // 
             // lbinfo
             // 
-            this.lbinfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbinfo.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
             this.lbinfo.Location = new System.Drawing.Point(4, 4);
             this.lbinfo.Name = "lbinfo";
             this.lbinfo.Size = new System.Drawing.Size(102, 22);
@@ -44,9 +44,9 @@
             // 
             // pghealth
             // 
-            this.pghealth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pghealth.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pghealth.BackColor = System.Drawing.Color.Black;
             this.pghealth.BlockSeparation = 3;
             this.pghealth.BlockWidth = 5;
@@ -67,9 +67,9 @@
             // NetModuleStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbinfo);
-            this.Controls.Add(this.pghealth);
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
+            this.Widgets.Add(this.lbinfo);
+            this.Widgets.Add(this.pghealth);
             this.Name = "NetModuleStatus";
             this.Size = new System.Drawing.Size(352, 26);
             this.ResumeLayout(false);
@@ -79,6 +79,6 @@
         #endregion
 
         private ProgressBarEX pghealth;
-        private System.Windows.Forms.Label lbinfo;
+        private ShiftUI.Label lbinfo;
     }
 }

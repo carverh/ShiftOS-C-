@@ -6,11 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
-    public partial class Notification : UserControl
+    public partial class Notification : UserWidget
     {
         public Notification(string title, string text)
         {

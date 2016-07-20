@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
@@ -17,8 +17,7 @@ namespace ShiftOS
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
-                components.Dispose();
+            {                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -27,420 +26,419 @@ namespace ShiftOS
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shifter));
-            this.ColorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.clocktick = new System.Windows.Forms.Timer(this.components);
-            this.customizationtime = new System.Windows.Forms.Timer(this.components);
-            this.timerearned = new System.Windows.Forms.Timer(this.components);
-            this.Label1 = new System.Windows.Forms.Label();
-            this.btnapply = new System.Windows.Forms.Button();
-            this.catholder = new System.Windows.Forms.Panel();
-            this.btnmore = new System.Windows.Forms.Button();
-            this.btnreset = new System.Windows.Forms.Button();
-            this.btnwindowcomposition = new System.Windows.Forms.Button();
-            this.btndesktopicons = new System.Windows.Forms.Button();
-            this.btnmenus = new System.Windows.Forms.Button();
-            this.btnwindows = new System.Windows.Forms.Button();
-            this.btndesktop = new System.Windows.Forms.Button();
-            this.pnlshifterintro = new System.Windows.Forms.Panel();
-            this.Label66 = new System.Windows.Forms.Label();
-            this.Label65 = new System.Windows.Forms.Label();
-            this.Label64 = new System.Windows.Forms.Label();
-            this.Label63 = new System.Windows.Forms.Label();
-            this.pnldesktopoptions = new System.Windows.Forms.Panel();
-            this.pnldesktoppaneloptions = new System.Windows.Forms.Panel();
-            this.btnpanelbuttons = new System.Windows.Forms.Button();
-            this.lbwarning = new System.Windows.Forms.Label();
-            this.combodesktoppanelposition = new System.Windows.Forms.ComboBox();
-            this.lbposition = new System.Windows.Forms.Label();
-            this.Label47 = new System.Windows.Forms.Label();
-            this.txtdesktoppanelheight = new System.Windows.Forms.NumericUpDown();
-            this.lbheight = new System.Windows.Forms.Label();
-            this.pnldesktoppanelcolour = new System.Windows.Forms.Panel();
-            this.lbpanelcolor = new System.Windows.Forms.Label();
-            this.pnlapplauncheroptions = new System.Windows.Forms.Panel();
-            this.pnlalhover = new System.Windows.Forms.Panel();
-            this.label119 = new System.Windows.Forms.Label();
-            this.Label71 = new System.Windows.Forms.Label();
-            this.txtapplauncherwidth = new System.Windows.Forms.TextBox();
-            this.Label72 = new System.Windows.Forms.Label();
-            this.txtappbuttonlabel = new System.Windows.Forms.TextBox();
-            this.Label51 = new System.Windows.Forms.Label();
-            this.Label50 = new System.Windows.Forms.Label();
-            this.pnlmaintextcolour = new System.Windows.Forms.Panel();
-            this.comboappbuttontextstyle = new System.Windows.Forms.ComboBox();
-            this.comboappbuttontextfont = new System.Windows.Forms.ComboBox();
-            this.Label37 = new System.Windows.Forms.Label();
-            this.Label38 = new System.Windows.Forms.Label();
-            this.txtappbuttontextsize = new System.Windows.Forms.TextBox();
-            this.Label39 = new System.Windows.Forms.Label();
-            this.Label40 = new System.Windows.Forms.Label();
-            this.pnlmainbuttonactivated = new System.Windows.Forms.Panel();
-            this.Label28 = new System.Windows.Forms.Label();
-            this.Label35 = new System.Windows.Forms.Label();
-            this.txtapplicationsbuttonheight = new System.Windows.Forms.TextBox();
-            this.Label36 = new System.Windows.Forms.Label();
-            this.pnlmainbuttoncolour = new System.Windows.Forms.Panel();
-            this.Label43 = new System.Windows.Forms.Label();
-            this.pnldesktopintro = new System.Windows.Forms.Panel();
-            this.Label69 = new System.Windows.Forms.Label();
-            this.Label70 = new System.Windows.Forms.Label();
-            this.pnlpanelbuttonsoptions = new System.Windows.Forms.Panel();
-            this.pnlpanelbuttontextcolour = new System.Windows.Forms.Panel();
-            this.Label101 = new System.Windows.Forms.Label();
-            this.txtpanelbuttontexttop = new System.Windows.Forms.TextBox();
-            this.Label104 = new System.Windows.Forms.Label();
-            this.txtpanelbuttontextside = new System.Windows.Forms.TextBox();
-            this.Label106 = new System.Windows.Forms.Label();
-            this.Label93 = new System.Windows.Forms.Label();
-            this.txtpanelbuttontop = new System.Windows.Forms.TextBox();
-            this.Label94 = new System.Windows.Forms.Label();
-            this.txtpanelbuttoninitalgap = new System.Windows.Forms.TextBox();
-            this.Label108 = new System.Windows.Forms.Label();
-            this.txtpanelbuttonicontop = new System.Windows.Forms.TextBox();
-            this.Label110 = new System.Windows.Forms.Label();
-            this.txtpanelbuttoniconside = new System.Windows.Forms.TextBox();
-            this.Label112 = new System.Windows.Forms.Label();
-            this.txtpanelbuttoniconsize = new System.Windows.Forms.TextBox();
-            this.Label105 = new System.Windows.Forms.Label();
-            this.cbpanelbuttontextstyle = new System.Windows.Forms.ComboBox();
-            this.cbpanelbuttonfont = new System.Windows.Forms.ComboBox();
-            this.Label100 = new System.Windows.Forms.Label();
-            this.txtpaneltextbuttonsize = new System.Windows.Forms.TextBox();
-            this.Label102 = new System.Windows.Forms.Label();
-            this.Label103 = new System.Windows.Forms.Label();
-            this.Label98 = new System.Windows.Forms.Label();
-            this.txtpanelbuttongap = new System.Windows.Forms.TextBox();
-            this.Label99 = new System.Windows.Forms.Label();
-            this.Label96 = new System.Windows.Forms.Label();
-            this.txtpanelbuttonheight = new System.Windows.Forms.TextBox();
-            this.Label97 = new System.Windows.Forms.Label();
-            this.Label92 = new System.Windows.Forms.Label();
-            this.txtpanelbuttonwidth = new System.Windows.Forms.TextBox();
-            this.Label91 = new System.Windows.Forms.Label();
-            this.pnlpanelbuttoncolour = new System.Windows.Forms.Panel();
-            this.Label95 = new System.Windows.Forms.Label();
-            this.pnldesktopbackgroundoptions = new System.Windows.Forms.Panel();
-            this.pnldesktopcolour = new System.Windows.Forms.Panel();
-            this.Label45 = new System.Windows.Forms.Label();
-            this.pnlpanelclockoptions = new System.Windows.Forms.Panel();
-            this.pnlclockbackgroundcolour = new System.Windows.Forms.Panel();
-            this.Label44 = new System.Windows.Forms.Label();
-            this.comboclocktextstyle = new System.Windows.Forms.ComboBox();
-            this.comboclocktextfont = new System.Windows.Forms.ComboBox();
-            this.Label26 = new System.Windows.Forms.Label();
-            this.Label29 = new System.Windows.Forms.Label();
-            this.txtclocktextfromtop = new System.Windows.Forms.TextBox();
-            this.Label30 = new System.Windows.Forms.Label();
-            this.Label31 = new System.Windows.Forms.Label();
-            this.txtclocktextsize = new System.Windows.Forms.TextBox();
-            this.Label32 = new System.Windows.Forms.Label();
-            this.Label33 = new System.Windows.Forms.Label();
-            this.pnlpanelclocktextcolour = new System.Windows.Forms.Panel();
-            this.Label34 = new System.Windows.Forms.Label();
-            this.pnldesktoppreview = new System.Windows.Forms.Panel();
-            this.predesktoppanel = new System.Windows.Forms.Panel();
-            this.prepnlpanelbuttonholder = new System.Windows.Forms.FlowLayoutPanel();
-            this.prepnlpanelbutton = new System.Windows.Forms.Panel();
-            this.pretbicon = new System.Windows.Forms.PictureBox();
-            this.pretbctext = new System.Windows.Forms.Label();
-            this.pretimepanel = new System.Windows.Forms.Panel();
-            this.prepaneltimetext = new System.Windows.Forms.Label();
-            this.preapplaunchermenuholder = new System.Windows.Forms.Panel();
-            this.predesktopappmenu = new System.Windows.Forms.MenuStrip();
-            this.ApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.KnowledgeInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShiftoriumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TerminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShifterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ShutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Panel10 = new System.Windows.Forms.Panel();
-            this.btndesktopitself = new System.Windows.Forms.Button();
-            this.btnpanelclock = new System.Windows.Forms.Button();
-            this.btnapplauncher = new System.Windows.Forms.Button();
-            this.btndesktoppanel = new System.Windows.Forms.Button();
-            this.txtpanelbuttoniconheight = new System.Windows.Forms.TextBox();
-            this.pnlwindowsoptions = new System.Windows.Forms.Panel();
-            this.pnlwindowsintro = new System.Windows.Forms.Panel();
-            this.Label68 = new System.Windows.Forms.Label();
-            this.Label67 = new System.Windows.Forms.Label();
-            this.pnlbuttonoptions = new System.Windows.Forms.Panel();
-            this.pnlclosebuttonoptions = new System.Windows.Forms.Panel();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.pnlclosebuttoncolour = new System.Windows.Forms.Panel();
-            this.txtclosebuttonfromside = new System.Windows.Forms.TextBox();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label12 = new System.Windows.Forms.Label();
-            this.txtclosebuttonheight = new System.Windows.Forms.TextBox();
-            this.Label13 = new System.Windows.Forms.Label();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.txtclosebuttonfromtop = new System.Windows.Forms.TextBox();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.Label14 = new System.Windows.Forms.Label();
-            this.txtclosebuttonwidth = new System.Windows.Forms.TextBox();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.pnlrollupbuttonoptions = new System.Windows.Forms.Panel();
-            this.Label54 = new System.Windows.Forms.Label();
-            this.Label55 = new System.Windows.Forms.Label();
-            this.pnlrollupbuttoncolour = new System.Windows.Forms.Panel();
-            this.txtrollupbuttonside = new System.Windows.Forms.TextBox();
-            this.Label56 = new System.Windows.Forms.Label();
-            this.Label57 = new System.Windows.Forms.Label();
-            this.txtrollupbuttonheight = new System.Windows.Forms.TextBox();
-            this.Label58 = new System.Windows.Forms.Label();
-            this.Label59 = new System.Windows.Forms.Label();
-            this.txtrollupbuttontop = new System.Windows.Forms.TextBox();
-            this.Label60 = new System.Windows.Forms.Label();
-            this.Label61 = new System.Windows.Forms.Label();
-            this.txtrollupbuttonwidth = new System.Windows.Forms.TextBox();
-            this.Label62 = new System.Windows.Forms.Label();
-            this.pnlminimizebuttonoptions = new System.Windows.Forms.Panel();
-            this.Label82 = new System.Windows.Forms.Label();
-            this.Label83 = new System.Windows.Forms.Label();
-            this.pnlminimizebuttoncolour = new System.Windows.Forms.Panel();
-            this.txtminimizebuttonside = new System.Windows.Forms.TextBox();
-            this.Label84 = new System.Windows.Forms.Label();
-            this.Label85 = new System.Windows.Forms.Label();
-            this.txtminimizebuttonheight = new System.Windows.Forms.TextBox();
-            this.Label86 = new System.Windows.Forms.Label();
-            this.Label87 = new System.Windows.Forms.Label();
-            this.txtminimizebuttontop = new System.Windows.Forms.TextBox();
-            this.Label88 = new System.Windows.Forms.Label();
-            this.Label89 = new System.Windows.Forms.Label();
-            this.txtminimizebuttonwidth = new System.Windows.Forms.TextBox();
-            this.Label90 = new System.Windows.Forms.Label();
-            this.combobuttonoption = new System.Windows.Forms.ComboBox();
-            this.Label52 = new System.Windows.Forms.Label();
-            this.pnltitlebaroptions = new System.Windows.Forms.Panel();
-            this.Label80 = new System.Windows.Forms.Label();
-            this.txticonfromtop = new System.Windows.Forms.TextBox();
-            this.Label81 = new System.Windows.Forms.Label();
-            this.Label78 = new System.Windows.Forms.Label();
-            this.txticonfromside = new System.Windows.Forms.TextBox();
-            this.Label79 = new System.Windows.Forms.Label();
-            this.lbcornerwidthpx = new System.Windows.Forms.Label();
-            this.txttitlebarcornerwidth = new System.Windows.Forms.TextBox();
-            this.lbcornerwidth = new System.Windows.Forms.Label();
-            this.pnltitlebarrightcornercolour = new System.Windows.Forms.Panel();
-            this.pnltitlebarleftcornercolour = new System.Windows.Forms.Panel();
-            this.lbrightcornercolor = new System.Windows.Forms.Label();
-            this.lbleftcornercolor = new System.Windows.Forms.Label();
-            this.cboxtitlebarcorners = new System.Windows.Forms.CheckBox();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.txttitlebarheight = new System.Windows.Forms.TextBox();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.pnltitlebarcolour = new System.Windows.Forms.Panel();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.pnlborderoptions = new System.Windows.Forms.Panel();
-            this.cbindividualbordercolours = new System.Windows.Forms.CheckBox();
-            this.pnlborderbottomrightcolour = new System.Windows.Forms.Panel();
-            this.lbbright = new System.Windows.Forms.Label();
-            this.pnlborderbottomcolour = new System.Windows.Forms.Panel();
-            this.lbbottom = new System.Windows.Forms.Label();
-            this.pnlborderbottomleftcolour = new System.Windows.Forms.Panel();
-            this.lbbleft = new System.Windows.Forms.Label();
-            this.pnlborderrightcolour = new System.Windows.Forms.Panel();
-            this.lbright = new System.Windows.Forms.Label();
-            this.pnlborderleftcolour = new System.Windows.Forms.Panel();
-            this.lbleft = new System.Windows.Forms.Label();
-            this.Label15 = new System.Windows.Forms.Label();
-            this.pnlbordercolour = new System.Windows.Forms.Panel();
-            this.txtbordersize = new System.Windows.Forms.TextBox();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label16 = new System.Windows.Forms.Label();
-            this.pnltitletextoptions = new System.Windows.Forms.Panel();
-            this.combotitletextposition = new System.Windows.Forms.ComboBox();
-            this.Label53 = new System.Windows.Forms.Label();
-            this.combotitletextstyle = new System.Windows.Forms.ComboBox();
-            this.combotitletextfont = new System.Windows.Forms.ComboBox();
-            this.Label23 = new System.Windows.Forms.Label();
-            this.Label17 = new System.Windows.Forms.Label();
-            this.txttitletextside = new System.Windows.Forms.TextBox();
-            this.Label18 = new System.Windows.Forms.Label();
-            this.Label19 = new System.Windows.Forms.Label();
-            this.txttitletexttop = new System.Windows.Forms.TextBox();
-            this.Label20 = new System.Windows.Forms.Label();
-            this.Label21 = new System.Windows.Forms.Label();
-            this.txttitletextsize = new System.Windows.Forms.TextBox();
-            this.Label22 = new System.Windows.Forms.Label();
-            this.Label24 = new System.Windows.Forms.Label();
-            this.pnltitletextcolour = new System.Windows.Forms.Panel();
-            this.Label25 = new System.Windows.Forms.Label();
-            this.pnlwindowsobjects = new System.Windows.Forms.Panel();
-            this.btnborders = new System.Windows.Forms.Button();
-            this.btnbuttons = new System.Windows.Forms.Button();
-            this.btntitletext = new System.Windows.Forms.Button();
-            this.btntitlebar = new System.Windows.Forms.Button();
-            this.pnlwindowpreview = new System.Windows.Forms.Panel();
-            this.prepgcontent = new System.Windows.Forms.Panel();
-            this.prepgbottom = new System.Windows.Forms.Panel();
-            this.prepgleft = new System.Windows.Forms.Panel();
-            this.prepgbottomlcorner = new System.Windows.Forms.Panel();
-            this.prepgright = new System.Windows.Forms.Panel();
-            this.prepgbottomrcorner = new System.Windows.Forms.Panel();
-            this.pretitlebar = new System.Windows.Forms.Panel();
-            this.preminimizebutton = new System.Windows.Forms.Panel();
-            this.prepnlicon = new System.Windows.Forms.PictureBox();
-            this.prerollupbutton = new System.Windows.Forms.Panel();
-            this.preclosebutton = new System.Windows.Forms.Panel();
-            this.pretitletext = new System.Windows.Forms.Label();
-            this.prepgtoplcorner = new System.Windows.Forms.Panel();
-            this.prepgtoprcorner = new System.Windows.Forms.Panel();
-            this.pnlreset = new System.Windows.Forms.Panel();
-            this.Label113 = new System.Windows.Forms.Label();
-            this.btnresetallsettings = new System.Windows.Forms.Button();
-            this.Label109 = new System.Windows.Forms.Label();
-            this.Label111 = new System.Windows.Forms.Label();
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.pnldesktopcomposition = new System.Windows.Forms.Panel();
-            this.pnlfancywindows = new System.Windows.Forms.Panel();
-            this.txtwinfadedec = new System.Windows.Forms.TextBox();
-            this.label150 = new System.Windows.Forms.Label();
-            this.txtwinfadespeed = new System.Windows.Forms.TextBox();
-            this.label151 = new System.Windows.Forms.Label();
-            this.cbdrageffect = new System.Windows.Forms.ComboBox();
-            this.label141 = new System.Windows.Forms.Label();
-            this.cbcloseanim = new System.Windows.Forms.ComboBox();
-            this.label128 = new System.Windows.Forms.Label();
-            this.cbopenanim = new System.Windows.Forms.ComboBox();
-            this.label127 = new System.Windows.Forms.Label();
-            this.label149 = new System.Windows.Forms.Label();
-            this.pnlfancydragging = new System.Windows.Forms.Panel();
-            this.txtshakeminoffset = new System.Windows.Forms.TextBox();
-            this.label148 = new System.Windows.Forms.Label();
-            this.txtshakemax = new System.Windows.Forms.TextBox();
-            this.label146 = new System.Windows.Forms.Label();
-            this.txtdragopacitydec = new System.Windows.Forms.TextBox();
-            this.label144 = new System.Windows.Forms.Label();
-            this.txtdragfadedec = new System.Windows.Forms.TextBox();
-            this.label143 = new System.Windows.Forms.Label();
-            this.txtfadespeed = new System.Windows.Forms.TextBox();
-            this.label155 = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.pnlfancyintro = new System.Windows.Forms.Panel();
-            this.label174 = new System.Windows.Forms.Label();
-            this.label175 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label157 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label158 = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.label159 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.label160 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label161 = new System.Windows.Forms.Label();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.label162 = new System.Windows.Forms.Label();
-            this.label163 = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.label164 = new System.Windows.Forms.Label();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.label165 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.label166 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.label167 = new System.Windows.Forms.Label();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.label168 = new System.Windows.Forms.Label();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.label169 = new System.Windows.Forms.Label();
-            this.panel32 = new System.Windows.Forms.Panel();
-            this.label170 = new System.Windows.Forms.Label();
-            this.panel33 = new System.Windows.Forms.Panel();
-            this.label171 = new System.Windows.Forms.Label();
-            this.panel34 = new System.Windows.Forms.Panel();
-            this.label172 = new System.Windows.Forms.Label();
-            this.label173 = new System.Windows.Forms.Label();
-            this.panel36 = new System.Windows.Forms.Panel();
-            this.btnfancydragging = new System.Windows.Forms.Button();
-            this.btnfancywindows = new System.Windows.Forms.Button();
-            this.label176 = new System.Windows.Forms.Label();
-            this.pnlmenus = new System.Windows.Forms.Panel();
-            this.pnladvanced = new System.Windows.Forms.Panel();
-            this.btnmorebuttons = new System.Windows.Forms.Button();
-            this.pnlbuttonchecked = new System.Windows.Forms.Panel();
-            this.label136 = new System.Windows.Forms.Label();
-            this.pnlitemselectedend = new System.Windows.Forms.Panel();
-            this.label129 = new System.Windows.Forms.Label();
-            this.pnlbuttonpressed = new System.Windows.Forms.Panel();
-            this.label130 = new System.Windows.Forms.Label();
-            this.pnlitemselectedbegin = new System.Windows.Forms.Panel();
-            this.label131 = new System.Windows.Forms.Label();
-            this.pnlitemselected = new System.Windows.Forms.Panel();
-            this.label132 = new System.Windows.Forms.Label();
-            this.pnlbuttonselected = new System.Windows.Forms.Panel();
-            this.label133 = new System.Windows.Forms.Label();
-            this.pnlcheckbg = new System.Windows.Forms.Panel();
-            this.label134 = new System.Windows.Forms.Label();
-            this.label135 = new System.Windows.Forms.Label();
-            this.pnlmore = new System.Windows.Forms.Panel();
-            this.pnlpressedbegin = new System.Windows.Forms.Panel();
-            this.btnback = new System.Windows.Forms.Button();
-            this.label138 = new System.Windows.Forms.Label();
-            this.pnlselectedbegin = new System.Windows.Forms.Panel();
-            this.pnlpressedend = new System.Windows.Forms.Panel();
-            this.label137 = new System.Windows.Forms.Label();
-            this.label139 = new System.Windows.Forms.Label();
-            this.pnlselectedend = new System.Windows.Forms.Panel();
-            this.pnlpressedmiddle = new System.Windows.Forms.Panel();
-            this.label140 = new System.Windows.Forms.Label();
-            this.label142 = new System.Windows.Forms.Label();
-            this.pnlselectedmiddle = new System.Windows.Forms.Panel();
-            this.label145 = new System.Windows.Forms.Label();
-            this.label147 = new System.Windows.Forms.Label();
-            this.pnldropdown = new System.Windows.Forms.Panel();
-            this.pnlddborder = new System.Windows.Forms.Panel();
-            this.label117 = new System.Windows.Forms.Label();
-            this.pnlmarginend = new System.Windows.Forms.Panel();
-            this.label120 = new System.Windows.Forms.Label();
-            this.pnlmarginmiddle = new System.Windows.Forms.Panel();
-            this.label121 = new System.Windows.Forms.Label();
-            this.pnlmarginbegin = new System.Windows.Forms.Panel();
-            this.label122 = new System.Windows.Forms.Label();
-            this.pnlhcolor = new System.Windows.Forms.Panel();
-            this.label123 = new System.Windows.Forms.Label();
-            this.pnlhborder = new System.Windows.Forms.Panel();
-            this.label125 = new System.Windows.Forms.Label();
-            this.label126 = new System.Windows.Forms.Label();
-            this.pnlbasic = new System.Windows.Forms.Panel();
-            this.pnlmenutextcolor = new System.Windows.Forms.Panel();
-            this.label118 = new System.Windows.Forms.Label();
-            this.pnldropdownbg = new System.Windows.Forms.Panel();
-            this.label115 = new System.Windows.Forms.Label();
-            this.pnlstatusend = new System.Windows.Forms.Panel();
-            this.label114 = new System.Windows.Forms.Label();
-            this.pnlstatusbegin = new System.Windows.Forms.Panel();
-            this.label107 = new System.Windows.Forms.Label();
-            this.pnltoolbarend = new System.Windows.Forms.Panel();
-            this.label77 = new System.Windows.Forms.Label();
-            this.pnltoolbarmiddle = new System.Windows.Forms.Panel();
-            this.label76 = new System.Windows.Forms.Label();
-            this.pnltoolbarbegin = new System.Windows.Forms.Panel();
-            this.label75 = new System.Windows.Forms.Label();
-            this.pnlmenubarend = new System.Windows.Forms.Panel();
-            this.label73 = new System.Windows.Forms.Label();
-            this.pnlmenubarbegin = new System.Windows.Forms.Panel();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.pnlmenusintro = new System.Windows.Forms.Panel();
-            this.label116 = new System.Windows.Forms.Label();
-            this.label124 = new System.Windows.Forms.Label();
-            this.pnlmenucategories = new System.Windows.Forms.Panel();
-            this.btnmisc = new System.Windows.Forms.Button();
-            this.btnadvanced = new System.Windows.Forms.Button();
-            this.btndropdown = new System.Windows.Forms.Button();
-            this.btnbasic = new System.Windows.Forms.Button();
-            this.label74 = new System.Windows.Forms.Label();
-            this.tmrfix = new System.Windows.Forms.Timer(this.components);
-            this.tmrdelay = new System.Windows.Forms.Timer(this.components);
-            this.pnlluaoptions = new System.Windows.Forms.Panel();
-            this.flmorebuttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlluafield = new System.Windows.Forms.Panel();
+            this.clocktick = new ShiftUI.Timer(this.components);
+            this.customizationtime = new ShiftUI.Timer(this.components);
+            this.timerearned = new ShiftUI.Timer(this.components);
+            this.Label1 = new ShiftUI.Label();
+            this.btnapply = new ShiftUI.Button();
+            this.catholder = new ShiftUI.Panel();
+            this.btnmore = new ShiftUI.Button();
+            this.btnreset = new ShiftUI.Button();
+            this.btnwindowcomposition = new ShiftUI.Button();
+            this.btndesktopicons = new ShiftUI.Button();
+            this.btnmenus = new ShiftUI.Button();
+            this.btnwindows = new ShiftUI.Button();
+            this.btndesktop = new ShiftUI.Button();
+            this.pnlshifterintro = new ShiftUI.Panel();
+            this.Label66 = new ShiftUI.Label();
+            this.Label65 = new ShiftUI.Label();
+            this.Label64 = new ShiftUI.Label();
+            this.Label63 = new ShiftUI.Label();
+            this.pnldesktopoptions = new ShiftUI.Panel();
+            this.pnldesktoppaneloptions = new ShiftUI.Panel();
+            this.btnpanelbuttons = new ShiftUI.Button();
+            this.lbwarning = new ShiftUI.Label();
+            this.combodesktoppanelposition = new ShiftUI.ComboBox();
+            this.lbposition = new ShiftUI.Label();
+            this.Label47 = new ShiftUI.Label();
+            this.txtdesktoppanelheight = new ShiftUI.TextBox();
+            this.lbheight = new ShiftUI.Label();
+            this.pnldesktoppanelcolour = new ShiftUI.Panel();
+            this.lbpanelcolor = new ShiftUI.Label();
+            this.pnlapplauncheroptions = new ShiftUI.Panel();
+            this.pnlalhover = new ShiftUI.Panel();
+            this.label119 = new ShiftUI.Label();
+            this.Label71 = new ShiftUI.Label();
+            this.txtapplauncherwidth = new ShiftUI.TextBox();
+            this.Label72 = new ShiftUI.Label();
+            this.txtappbuttonlabel = new ShiftUI.TextBox();
+            this.Label51 = new ShiftUI.Label();
+            this.Label50 = new ShiftUI.Label();
+            this.pnlmaintextcolour = new ShiftUI.Panel();
+            this.comboappbuttontextstyle = new ShiftUI.ComboBox();
+            this.comboappbuttontextfont = new ShiftUI.ComboBox();
+            this.Label37 = new ShiftUI.Label();
+            this.Label38 = new ShiftUI.Label();
+            this.txtappbuttontextsize = new ShiftUI.TextBox();
+            this.Label39 = new ShiftUI.Label();
+            this.Label40 = new ShiftUI.Label();
+            this.pnlmainbuttonactivated = new ShiftUI.Panel();
+            this.Label28 = new ShiftUI.Label();
+            this.Label35 = new ShiftUI.Label();
+            this.txtapplicationsbuttonheight = new ShiftUI.TextBox();
+            this.Label36 = new ShiftUI.Label();
+            this.pnlmainbuttoncolour = new ShiftUI.Panel();
+            this.Label43 = new ShiftUI.Label();
+            this.pnldesktopintro = new ShiftUI.Panel();
+            this.Label69 = new ShiftUI.Label();
+            this.Label70 = new ShiftUI.Label();
+            this.pnlpanelbuttonsoptions = new ShiftUI.Panel();
+            this.pnlpanelbuttontextcolour = new ShiftUI.Panel();
+            this.Label101 = new ShiftUI.Label();
+            this.txtpanelbuttontexttop = new ShiftUI.TextBox();
+            this.Label104 = new ShiftUI.Label();
+            this.txtpanelbuttontextside = new ShiftUI.TextBox();
+            this.Label106 = new ShiftUI.Label();
+            this.Label93 = new ShiftUI.Label();
+            this.txtpanelbuttontop = new ShiftUI.TextBox();
+            this.Label94 = new ShiftUI.Label();
+            this.txtpanelbuttoninitalgap = new ShiftUI.TextBox();
+            this.Label108 = new ShiftUI.Label();
+            this.txtpanelbuttonicontop = new ShiftUI.TextBox();
+            this.Label110 = new ShiftUI.Label();
+            this.txtpanelbuttoniconside = new ShiftUI.TextBox();
+            this.Label112 = new ShiftUI.Label();
+            this.txtpanelbuttoniconsize = new ShiftUI.TextBox();
+            this.Label105 = new ShiftUI.Label();
+            this.cbpanelbuttontextstyle = new ShiftUI.ComboBox();
+            this.cbpanelbuttonfont = new ShiftUI.ComboBox();
+            this.Label100 = new ShiftUI.Label();
+            this.txtpaneltextbuttonsize = new ShiftUI.TextBox();
+            this.Label102 = new ShiftUI.Label();
+            this.Label103 = new ShiftUI.Label();
+            this.Label98 = new ShiftUI.Label();
+            this.txtpanelbuttongap = new ShiftUI.TextBox();
+            this.Label99 = new ShiftUI.Label();
+            this.Label96 = new ShiftUI.Label();
+            this.txtpanelbuttonheight = new ShiftUI.TextBox();
+            this.Label97 = new ShiftUI.Label();
+            this.Label92 = new ShiftUI.Label();
+            this.txtpanelbuttonwidth = new ShiftUI.TextBox();
+            this.Label91 = new ShiftUI.Label();
+            this.pnlpanelbuttoncolour = new ShiftUI.Panel();
+            this.Label95 = new ShiftUI.Label();
+            this.pnldesktopbackgroundoptions = new ShiftUI.Panel();
+            this.pnldesktopcolour = new ShiftUI.Panel();
+            this.Label45 = new ShiftUI.Label();
+            this.pnlpanelclockoptions = new ShiftUI.Panel();
+            this.pnlclockbackgroundcolour = new ShiftUI.Panel();
+            this.Label44 = new ShiftUI.Label();
+            this.comboclocktextstyle = new ShiftUI.ComboBox();
+            this.comboclocktextfont = new ShiftUI.ComboBox();
+            this.Label26 = new ShiftUI.Label();
+            this.Label29 = new ShiftUI.Label();
+            this.txtclocktextfromtop = new ShiftUI.TextBox();
+            this.Label30 = new ShiftUI.Label();
+            this.Label31 = new ShiftUI.Label();
+            this.txtclocktextsize = new ShiftUI.TextBox();
+            this.Label32 = new ShiftUI.Label();
+            this.Label33 = new ShiftUI.Label();
+            this.pnlpanelclocktextcolour = new ShiftUI.Panel();
+            this.Label34 = new ShiftUI.Label();
+            this.pnldesktoppreview = new ShiftUI.Panel();
+            this.predesktoppanel = new ShiftUI.Panel();
+            this.prepnlpanelbuttonholder = new ShiftUI.FlowLayoutPanel();
+            this.prepnlpanelbutton = new ShiftUI.Panel();
+            this.pretbicon = new ShiftUI.PictureBox();
+            this.pretbctext = new ShiftUI.Label();
+            this.pretimepanel = new ShiftUI.Panel();
+            this.prepaneltimetext = new ShiftUI.Label();
+            this.preapplaunchermenuholder = new ShiftUI.Panel();
+            this.predesktopappmenu = new ShiftUI.MenuStrip();
+            this.ApplicationsToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.KnowledgeInputToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShiftoriumToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ClockToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.TerminalToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ShifterToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.ToolStripSeparator1 = new ShiftUI.ToolStripSeparator();
+            this.ShutdownToolStripMenuItem = new ShiftUI.ToolStripMenuItem();
+            this.Panel10 = new ShiftUI.Panel();
+            this.btndesktopitself = new ShiftUI.Button();
+            this.btnpanelclock = new ShiftUI.Button();
+            this.btnapplauncher = new ShiftUI.Button();
+            this.btndesktoppanel = new ShiftUI.Button();
+            this.txtpanelbuttoniconheight = new ShiftUI.TextBox();
+            this.pnlwindowsoptions = new ShiftUI.Panel();
+            this.pnlwindowsintro = new ShiftUI.Panel();
+            this.Label68 = new ShiftUI.Label();
+            this.Label67 = new ShiftUI.Label();
+            this.pnlbuttonoptions = new ShiftUI.Panel();
+            this.pnlclosebuttonoptions = new ShiftUI.Panel();
+            this.Label8 = new ShiftUI.Label();
+            this.Label11 = new ShiftUI.Label();
+            this.pnlclosebuttoncolour = new ShiftUI.Panel();
+            this.txtclosebuttonfromside = new ShiftUI.TextBox();
+            this.Label7 = new ShiftUI.Label();
+            this.Label12 = new ShiftUI.Label();
+            this.txtclosebuttonheight = new ShiftUI.TextBox();
+            this.Label13 = new ShiftUI.Label();
+            this.Label6 = new ShiftUI.Label();
+            this.txtclosebuttonfromtop = new ShiftUI.TextBox();
+            this.Label10 = new ShiftUI.Label();
+            this.Label14 = new ShiftUI.Label();
+            this.txtclosebuttonwidth = new ShiftUI.TextBox();
+            this.Label9 = new ShiftUI.Label();
+            this.pnlrollupbuttonoptions = new ShiftUI.Panel();
+            this.Label54 = new ShiftUI.Label();
+            this.Label55 = new ShiftUI.Label();
+            this.pnlrollupbuttoncolour = new ShiftUI.Panel();
+            this.txtrollupbuttonside = new ShiftUI.TextBox();
+            this.Label56 = new ShiftUI.Label();
+            this.Label57 = new ShiftUI.Label();
+            this.txtrollupbuttonheight = new ShiftUI.TextBox();
+            this.Label58 = new ShiftUI.Label();
+            this.Label59 = new ShiftUI.Label();
+            this.txtrollupbuttontop = new ShiftUI.TextBox();
+            this.Label60 = new ShiftUI.Label();
+            this.Label61 = new ShiftUI.Label();
+            this.txtrollupbuttonwidth = new ShiftUI.TextBox();
+            this.Label62 = new ShiftUI.Label();
+            this.pnlminimizebuttonoptions = new ShiftUI.Panel();
+            this.Label82 = new ShiftUI.Label();
+            this.Label83 = new ShiftUI.Label();
+            this.pnlminimizebuttoncolour = new ShiftUI.Panel();
+            this.txtminimizebuttonside = new ShiftUI.TextBox();
+            this.Label84 = new ShiftUI.Label();
+            this.Label85 = new ShiftUI.Label();
+            this.txtminimizebuttonheight = new ShiftUI.TextBox();
+            this.Label86 = new ShiftUI.Label();
+            this.Label87 = new ShiftUI.Label();
+            this.txtminimizebuttontop = new ShiftUI.TextBox();
+            this.Label88 = new ShiftUI.Label();
+            this.Label89 = new ShiftUI.Label();
+            this.txtminimizebuttonwidth = new ShiftUI.TextBox();
+            this.Label90 = new ShiftUI.Label();
+            this.combobuttonoption = new ShiftUI.ComboBox();
+            this.Label52 = new ShiftUI.Label();
+            this.pnltitlebaroptions = new ShiftUI.Panel();
+            this.Label80 = new ShiftUI.Label();
+            this.txticonfromtop = new ShiftUI.TextBox();
+            this.Label81 = new ShiftUI.Label();
+            this.Label78 = new ShiftUI.Label();
+            this.txticonfromside = new ShiftUI.TextBox();
+            this.Label79 = new ShiftUI.Label();
+            this.lbcornerwidthpx = new ShiftUI.Label();
+            this.txttitlebarcornerwidth = new ShiftUI.TextBox();
+            this.lbcornerwidth = new ShiftUI.Label();
+            this.pnltitlebarrightcornercolour = new ShiftUI.Panel();
+            this.pnltitlebarleftcornercolour = new ShiftUI.Panel();
+            this.lbrightcornercolor = new ShiftUI.Label();
+            this.lbleftcornercolor = new ShiftUI.Label();
+            this.cboxtitlebarcorners = new ShiftUI.CheckBox();
+            this.Label5 = new ShiftUI.Label();
+            this.txttitlebarheight = new ShiftUI.TextBox();
+            this.Label4 = new ShiftUI.Label();
+            this.pnltitlebarcolour = new ShiftUI.Panel();
+            this.Label2 = new ShiftUI.Label();
+            this.pnlborderoptions = new ShiftUI.Panel();
+            this.cbindividualbordercolours = new ShiftUI.CheckBox();
+            this.pnlborderbottomrightcolour = new ShiftUI.Panel();
+            this.lbbright = new ShiftUI.Label();
+            this.pnlborderbottomcolour = new ShiftUI.Panel();
+            this.lbbottom = new ShiftUI.Label();
+            this.pnlborderbottomleftcolour = new ShiftUI.Panel();
+            this.lbbleft = new ShiftUI.Label();
+            this.pnlborderrightcolour = new ShiftUI.Panel();
+            this.lbright = new ShiftUI.Label();
+            this.pnlborderleftcolour = new ShiftUI.Panel();
+            this.lbleft = new ShiftUI.Label();
+            this.Label15 = new ShiftUI.Label();
+            this.pnlbordercolour = new ShiftUI.Panel();
+            this.txtbordersize = new ShiftUI.TextBox();
+            this.Label3 = new ShiftUI.Label();
+            this.Label16 = new ShiftUI.Label();
+            this.pnltitletextoptions = new ShiftUI.Panel();
+            this.combotitletextposition = new ShiftUI.ComboBox();
+            this.Label53 = new ShiftUI.Label();
+            this.combotitletextstyle = new ShiftUI.ComboBox();
+            this.combotitletextfont = new ShiftUI.ComboBox();
+            this.Label23 = new ShiftUI.Label();
+            this.Label17 = new ShiftUI.Label();
+            this.txttitletextside = new ShiftUI.TextBox();
+            this.Label18 = new ShiftUI.Label();
+            this.Label19 = new ShiftUI.Label();
+            this.txttitletexttop = new ShiftUI.TextBox();
+            this.Label20 = new ShiftUI.Label();
+            this.Label21 = new ShiftUI.Label();
+            this.txttitletextsize = new ShiftUI.TextBox();
+            this.Label22 = new ShiftUI.Label();
+            this.Label24 = new ShiftUI.Label();
+            this.pnltitletextcolour = new ShiftUI.Panel();
+            this.Label25 = new ShiftUI.Label();
+            this.pnlwindowsobjects = new ShiftUI.Panel();
+            this.btnborders = new ShiftUI.Button();
+            this.btnbuttons = new ShiftUI.Button();
+            this.btntitletext = new ShiftUI.Button();
+            this.btntitlebar = new ShiftUI.Button();
+            this.pnlwindowpreview = new ShiftUI.Panel();
+            this.prepgcontent = new ShiftUI.Panel();
+            this.prepgbottom = new ShiftUI.Panel();
+            this.prepgleft = new ShiftUI.Panel();
+            this.prepgbottomlcorner = new ShiftUI.Panel();
+            this.prepgright = new ShiftUI.Panel();
+            this.prepgbottomrcorner = new ShiftUI.Panel();
+            this.pretitlebar = new ShiftUI.Panel();
+            this.preminimizebutton = new ShiftUI.Panel();
+            this.prepnlicon = new ShiftUI.PictureBox();
+            this.prerollupbutton = new ShiftUI.Panel();
+            this.preclosebutton = new ShiftUI.Panel();
+            this.pretitletext = new ShiftUI.Label();
+            this.prepgtoplcorner = new ShiftUI.Panel();
+            this.prepgtoprcorner = new ShiftUI.Panel();
+            this.pnlreset = new ShiftUI.Panel();
+            this.Label113 = new ShiftUI.Label();
+            this.btnresetallsettings = new ShiftUI.Button();
+            this.Label109 = new ShiftUI.Label();
+            this.Label111 = new ShiftUI.Label();
+            this.pgcontents = new ShiftUI.Panel();
+            this.pnldesktopcomposition = new ShiftUI.Panel();
+            this.pnlfancywindows = new ShiftUI.Panel();
+            this.txtwinfadedec = new ShiftUI.TextBox();
+            this.label150 = new ShiftUI.Label();
+            this.txtwinfadespeed = new ShiftUI.TextBox();
+            this.label151 = new ShiftUI.Label();
+            this.cbdrageffect = new ShiftUI.ComboBox();
+            this.label141 = new ShiftUI.Label();
+            this.cbcloseanim = new ShiftUI.ComboBox();
+            this.label128 = new ShiftUI.Label();
+            this.cbopenanim = new ShiftUI.ComboBox();
+            this.label127 = new ShiftUI.Label();
+            this.label149 = new ShiftUI.Label();
+            this.pnlfancydragging = new ShiftUI.Panel();
+            this.txtshakeminoffset = new ShiftUI.TextBox();
+            this.label148 = new ShiftUI.Label();
+            this.txtshakemax = new ShiftUI.TextBox();
+            this.label146 = new ShiftUI.Label();
+            this.txtdragopacitydec = new ShiftUI.TextBox();
+            this.label144 = new ShiftUI.Label();
+            this.txtdragfadedec = new ShiftUI.TextBox();
+            this.label143 = new ShiftUI.Label();
+            this.txtfadespeed = new ShiftUI.TextBox();
+            this.label155 = new ShiftUI.Label();
+            this.label156 = new ShiftUI.Label();
+            this.pnlfancyintro = new ShiftUI.Panel();
+            this.label174 = new ShiftUI.Label();
+            this.label175 = new ShiftUI.Label();
+            this.panel18 = new ShiftUI.Panel();
+            this.panel19 = new ShiftUI.Panel();
+            this.label157 = new ShiftUI.Label();
+            this.panel20 = new ShiftUI.Panel();
+            this.label158 = new ShiftUI.Label();
+            this.panel21 = new ShiftUI.Panel();
+            this.label159 = new ShiftUI.Label();
+            this.panel22 = new ShiftUI.Panel();
+            this.label160 = new ShiftUI.Label();
+            this.panel23 = new ShiftUI.Panel();
+            this.label161 = new ShiftUI.Label();
+            this.panel24 = new ShiftUI.Panel();
+            this.label162 = new ShiftUI.Label();
+            this.label163 = new ShiftUI.Label();
+            this.panel25 = new ShiftUI.Panel();
+            this.panel26 = new ShiftUI.Panel();
+            this.label164 = new ShiftUI.Label();
+            this.panel27 = new ShiftUI.Panel();
+            this.label165 = new ShiftUI.Label();
+            this.panel28 = new ShiftUI.Panel();
+            this.label166 = new ShiftUI.Label();
+            this.panel29 = new ShiftUI.Panel();
+            this.label167 = new ShiftUI.Label();
+            this.panel30 = new ShiftUI.Panel();
+            this.label168 = new ShiftUI.Label();
+            this.panel31 = new ShiftUI.Panel();
+            this.label169 = new ShiftUI.Label();
+            this.panel32 = new ShiftUI.Panel();
+            this.label170 = new ShiftUI.Label();
+            this.panel33 = new ShiftUI.Panel();
+            this.label171 = new ShiftUI.Label();
+            this.panel34 = new ShiftUI.Panel();
+            this.label172 = new ShiftUI.Label();
+            this.label173 = new ShiftUI.Label();
+            this.panel36 = new ShiftUI.Panel();
+            this.btnfancydragging = new ShiftUI.Button();
+            this.btnfancywindows = new ShiftUI.Button();
+            this.label176 = new ShiftUI.Label();
+            this.pnlmenus = new ShiftUI.Panel();
+            this.pnladvanced = new ShiftUI.Panel();
+            this.btnmorebuttons = new ShiftUI.Button();
+            this.pnlbuttonchecked = new ShiftUI.Panel();
+            this.label136 = new ShiftUI.Label();
+            this.pnlitemselectedend = new ShiftUI.Panel();
+            this.label129 = new ShiftUI.Label();
+            this.pnlbuttonpressed = new ShiftUI.Panel();
+            this.label130 = new ShiftUI.Label();
+            this.pnlitemselectedbegin = new ShiftUI.Panel();
+            this.label131 = new ShiftUI.Label();
+            this.pnlitemselected = new ShiftUI.Panel();
+            this.label132 = new ShiftUI.Label();
+            this.pnlbuttonselected = new ShiftUI.Panel();
+            this.label133 = new ShiftUI.Label();
+            this.pnlcheckbg = new ShiftUI.Panel();
+            this.label134 = new ShiftUI.Label();
+            this.label135 = new ShiftUI.Label();
+            this.pnlmore = new ShiftUI.Panel();
+            this.pnlpressedbegin = new ShiftUI.Panel();
+            this.btnback = new ShiftUI.Button();
+            this.label138 = new ShiftUI.Label();
+            this.pnlselectedbegin = new ShiftUI.Panel();
+            this.pnlpressedend = new ShiftUI.Panel();
+            this.label137 = new ShiftUI.Label();
+            this.label139 = new ShiftUI.Label();
+            this.pnlselectedend = new ShiftUI.Panel();
+            this.pnlpressedmiddle = new ShiftUI.Panel();
+            this.label140 = new ShiftUI.Label();
+            this.label142 = new ShiftUI.Label();
+            this.pnlselectedmiddle = new ShiftUI.Panel();
+            this.label145 = new ShiftUI.Label();
+            this.label147 = new ShiftUI.Label();
+            this.pnldropdown = new ShiftUI.Panel();
+            this.pnlddborder = new ShiftUI.Panel();
+            this.label117 = new ShiftUI.Label();
+            this.pnlmarginend = new ShiftUI.Panel();
+            this.label120 = new ShiftUI.Label();
+            this.pnlmarginmiddle = new ShiftUI.Panel();
+            this.label121 = new ShiftUI.Label();
+            this.pnlmarginbegin = new ShiftUI.Panel();
+            this.label122 = new ShiftUI.Label();
+            this.pnlhcolor = new ShiftUI.Panel();
+            this.label123 = new ShiftUI.Label();
+            this.pnlhborder = new ShiftUI.Panel();
+            this.label125 = new ShiftUI.Label();
+            this.label126 = new ShiftUI.Label();
+            this.pnlbasic = new ShiftUI.Panel();
+            this.pnlmenutextcolor = new ShiftUI.Panel();
+            this.label118 = new ShiftUI.Label();
+            this.pnldropdownbg = new ShiftUI.Panel();
+            this.label115 = new ShiftUI.Label();
+            this.pnlstatusend = new ShiftUI.Panel();
+            this.label114 = new ShiftUI.Label();
+            this.pnlstatusbegin = new ShiftUI.Panel();
+            this.label107 = new ShiftUI.Label();
+            this.pnltoolbarend = new ShiftUI.Panel();
+            this.label77 = new ShiftUI.Label();
+            this.pnltoolbarmiddle = new ShiftUI.Panel();
+            this.label76 = new ShiftUI.Label();
+            this.pnltoolbarbegin = new ShiftUI.Panel();
+            this.label75 = new ShiftUI.Label();
+            this.pnlmenubarend = new ShiftUI.Panel();
+            this.label73 = new ShiftUI.Label();
+            this.pnlmenubarbegin = new ShiftUI.Panel();
+            this.label42 = new ShiftUI.Label();
+            this.label41 = new ShiftUI.Label();
+            this.pnlmenusintro = new ShiftUI.Panel();
+            this.label116 = new ShiftUI.Label();
+            this.label124 = new ShiftUI.Label();
+            this.pnlmenucategories = new ShiftUI.Panel();
+            this.btnmisc = new ShiftUI.Button();
+            this.btnadvanced = new ShiftUI.Button();
+            this.btndropdown = new ShiftUI.Button();
+            this.btnbasic = new ShiftUI.Button();
+            this.label74 = new ShiftUI.Label();
+            this.tmrfix = new ShiftUI.Timer(this.components);
+            this.tmrdelay = new ShiftUI.Timer(this.components);
+            this.pnlluaoptions = new ShiftUI.Panel();
+            this.flmorebuttons = new ShiftUI.FlowLayoutPanel();
+            this.pnlluafield = new ShiftUI.Panel();
             this.catholder.SuspendLayout();
             this.pnlshifterintro.SuspendLayout();
             this.pnldesktopoptions.SuspendLayout();
@@ -520,8 +518,8 @@ namespace ShiftOS
             // 
             // btnapply
             // 
-            this.btnapply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnapply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapply.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnapply.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnapply.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapply.Location = new System.Drawing.Point(7, 286);
             this.btnapply.Name = "btnapply";
@@ -534,16 +532,16 @@ namespace ShiftOS
             // 
             // catholder
             // 
-            this.catholder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.catholder.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
             this.catholder.BackColor = System.Drawing.Color.White;
-            this.catholder.Controls.Add(this.btnmore);
-            this.catholder.Controls.Add(this.btnreset);
-            this.catholder.Controls.Add(this.btnwindowcomposition);
-            this.catholder.Controls.Add(this.btndesktopicons);
-            this.catholder.Controls.Add(this.btnmenus);
-            this.catholder.Controls.Add(this.btnwindows);
-            this.catholder.Controls.Add(this.btndesktop);
+            this.catholder.Widgets.Add(this.btnmore);
+            this.catholder.Widgets.Add(this.btnreset);
+            this.catholder.Widgets.Add(this.btnwindowcomposition);
+            this.catholder.Widgets.Add(this.btndesktopicons);
+            this.catholder.Widgets.Add(this.btnmenus);
+            this.catholder.Widgets.Add(this.btnwindows);
+            this.catholder.Widgets.Add(this.btndesktop);
             this.catholder.Location = new System.Drawing.Point(7, 9);
             this.catholder.Name = "catholder";
             this.catholder.Size = new System.Drawing.Size(119, 271);
@@ -552,8 +550,8 @@ namespace ShiftOS
             // btnmore
             // 
             this.btnmore.BackColor = System.Drawing.Color.White;
-            this.btnmore.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnmore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmore.Dock = ShiftUI.DockStyle.Top;
+            this.btnmore.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnmore.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmore.Location = new System.Drawing.Point(0, 174);
             this.btnmore.Name = "btnmore";
@@ -567,8 +565,8 @@ namespace ShiftOS
             // btnreset
             // 
             this.btnreset.BackColor = System.Drawing.Color.White;
-            this.btnreset.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreset.Dock = ShiftUI.DockStyle.Top;
+            this.btnreset.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnreset.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreset.Location = new System.Drawing.Point(0, 145);
             this.btnreset.Name = "btnreset";
@@ -582,8 +580,8 @@ namespace ShiftOS
             // btnwindowcomposition
             // 
             this.btnwindowcomposition.BackColor = System.Drawing.Color.White;
-            this.btnwindowcomposition.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnwindowcomposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnwindowcomposition.Dock = ShiftUI.DockStyle.Top;
+            this.btnwindowcomposition.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnwindowcomposition.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnwindowcomposition.Location = new System.Drawing.Point(0, 116);
             this.btnwindowcomposition.Name = "btnwindowcomposition";
@@ -598,8 +596,8 @@ namespace ShiftOS
             // btndesktopicons
             // 
             this.btndesktopicons.BackColor = System.Drawing.Color.White;
-            this.btndesktopicons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btndesktopicons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndesktopicons.Dock = ShiftUI.DockStyle.Top;
+            this.btndesktopicons.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndesktopicons.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktopicons.Location = new System.Drawing.Point(0, 87);
             this.btndesktopicons.Name = "btndesktopicons";
@@ -613,8 +611,8 @@ namespace ShiftOS
             // btnmenus
             // 
             this.btnmenus.BackColor = System.Drawing.Color.White;
-            this.btnmenus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnmenus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmenus.Dock = ShiftUI.DockStyle.Top;
+            this.btnmenus.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnmenus.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmenus.Location = new System.Drawing.Point(0, 58);
             this.btnmenus.Name = "btnmenus";
@@ -629,8 +627,8 @@ namespace ShiftOS
             // btnwindows
             // 
             this.btnwindows.BackColor = System.Drawing.Color.White;
-            this.btnwindows.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnwindows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnwindows.Dock = ShiftUI.DockStyle.Top;
+            this.btnwindows.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnwindows.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnwindows.Location = new System.Drawing.Point(0, 29);
             this.btnwindows.Name = "btnwindows";
@@ -644,8 +642,8 @@ namespace ShiftOS
             // btndesktop
             // 
             this.btndesktop.BackColor = System.Drawing.Color.White;
-            this.btndesktop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btndesktop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndesktop.Dock = ShiftUI.DockStyle.Top;
+            this.btndesktop.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndesktop.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktop.Location = new System.Drawing.Point(0, 0);
             this.btndesktop.Name = "btndesktop";
@@ -658,14 +656,14 @@ namespace ShiftOS
             // 
             // pnlshifterintro
             // 
-            this.pnlshifterintro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlshifterintro.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnlshifterintro.BackColor = System.Drawing.Color.White;
-            this.pnlshifterintro.Controls.Add(this.Label66);
-            this.pnlshifterintro.Controls.Add(this.Label65);
-            this.pnlshifterintro.Controls.Add(this.Label64);
-            this.pnlshifterintro.Controls.Add(this.Label63);
+            this.pnlshifterintro.Widgets.Add(this.Label66);
+            this.pnlshifterintro.Widgets.Add(this.Label65);
+            this.pnlshifterintro.Widgets.Add(this.Label64);
+            this.pnlshifterintro.Widgets.Add(this.Label63);
             this.pnlshifterintro.Location = new System.Drawing.Point(134, 9);
             this.pnlshifterintro.Name = "pnlshifterintro";
             this.pnlshifterintro.Size = new System.Drawing.Size(457, 306);
@@ -716,18 +714,18 @@ namespace ShiftOS
             // 
             // pnldesktopoptions
             // 
-            this.pnldesktopoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnldesktopoptions.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnldesktopoptions.BackColor = System.Drawing.Color.White;
-            this.pnldesktopoptions.Controls.Add(this.pnlapplauncheroptions);
-            this.pnldesktopoptions.Controls.Add(this.pnldesktoppaneloptions);
-            this.pnldesktopoptions.Controls.Add(this.pnldesktopintro);
-            this.pnldesktopoptions.Controls.Add(this.pnlpanelbuttonsoptions);
-            this.pnldesktopoptions.Controls.Add(this.pnldesktopbackgroundoptions);
-            this.pnldesktopoptions.Controls.Add(this.pnlpanelclockoptions);
-            this.pnldesktopoptions.Controls.Add(this.pnldesktoppreview);
-            this.pnldesktopoptions.Controls.Add(this.Panel10);
+            this.pnldesktopoptions.Widgets.Add(this.pnlapplauncheroptions);
+            this.pnldesktopoptions.Widgets.Add(this.pnldesktoppaneloptions);
+            this.pnldesktopoptions.Widgets.Add(this.pnldesktopintro);
+            this.pnldesktopoptions.Widgets.Add(this.pnlpanelbuttonsoptions);
+            this.pnldesktopoptions.Widgets.Add(this.pnldesktopbackgroundoptions);
+            this.pnldesktopoptions.Widgets.Add(this.pnlpanelclockoptions);
+            this.pnldesktopoptions.Widgets.Add(this.pnldesktoppreview);
+            this.pnldesktopoptions.Widgets.Add(this.Panel10);
             this.pnldesktopoptions.Location = new System.Drawing.Point(134, 9);
             this.pnldesktopoptions.Name = "pnldesktopoptions";
             this.pnldesktopoptions.Size = new System.Drawing.Size(457, 306);
@@ -736,16 +734,16 @@ namespace ShiftOS
             // 
             // pnldesktoppaneloptions
             // 
-            this.pnldesktoppaneloptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktoppaneloptions.Controls.Add(this.btnpanelbuttons);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbwarning);
-            this.pnldesktoppaneloptions.Controls.Add(this.combodesktoppanelposition);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbposition);
-            this.pnldesktoppaneloptions.Controls.Add(this.Label47);
-            this.pnldesktoppaneloptions.Controls.Add(this.txtdesktoppanelheight);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbheight);
-            this.pnldesktoppaneloptions.Controls.Add(this.pnldesktoppanelcolour);
-            this.pnldesktoppaneloptions.Controls.Add(this.lbpanelcolor);
+            this.pnldesktoppaneloptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnldesktoppaneloptions.Widgets.Add(this.btnpanelbuttons);
+            this.pnldesktoppaneloptions.Widgets.Add(this.lbwarning);
+            this.pnldesktoppaneloptions.Widgets.Add(this.combodesktoppanelposition);
+            this.pnldesktoppaneloptions.Widgets.Add(this.lbposition);
+            this.pnldesktoppaneloptions.Widgets.Add(this.Label47);
+            this.pnldesktoppaneloptions.Widgets.Add(this.txtdesktoppanelheight);
+            this.pnldesktoppaneloptions.Widgets.Add(this.lbheight);
+            this.pnldesktoppaneloptions.Widgets.Add(this.pnldesktoppanelcolour);
+            this.pnldesktoppaneloptions.Widgets.Add(this.lbpanelcolor);
             this.pnldesktoppaneloptions.Location = new System.Drawing.Point(135, 159);
             this.pnldesktoppaneloptions.Name = "pnldesktoppaneloptions";
             this.pnldesktoppaneloptions.Size = new System.Drawing.Size(317, 140);
@@ -755,7 +753,7 @@ namespace ShiftOS
             // btnpanelbuttons
             // 
             this.btnpanelbuttons.BackColor = System.Drawing.Color.White;
-            this.btnpanelbuttons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpanelbuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnpanelbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpanelbuttons.Location = new System.Drawing.Point(193, 101);
             this.btnpanelbuttons.Name = "btnpanelbuttons";
@@ -811,14 +809,14 @@ namespace ShiftOS
             // txtdesktoppanelheight
             // 
             this.txtdesktoppanelheight.BackColor = System.Drawing.Color.White;
-            this.txtdesktoppanelheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdesktoppanelheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtdesktoppanelheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdesktoppanelheight.ForeColor = System.Drawing.Color.Black;
             this.txtdesktoppanelheight.Location = new System.Drawing.Point(189, 5);
             this.txtdesktoppanelheight.Name = "txtdesktoppanelheight";
             this.txtdesktoppanelheight.Size = new System.Drawing.Size(37, 22);
             this.txtdesktoppanelheight.TabIndex = 4;
-            this.txtdesktoppanelheight.ValueChanged += new System.EventHandler(this.txtdesktoppanelheight_ValueChanged);
+            this.txtdesktoppanelheight.TextChanged += new System.EventHandler(this.txtdesktoppanelheight_ValueChanged);
             // 
             // lbheight
             // 
@@ -836,7 +834,7 @@ namespace ShiftOS
             this.pnldesktoppanelcolour.Name = "pnldesktoppanelcolour";
             this.pnldesktoppanelcolour.Size = new System.Drawing.Size(41, 20);
             this.pnldesktoppanelcolour.TabIndex = 1;
-            this.pnldesktoppanelcolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeDesktopPanelColor);
+            this.pnldesktoppanelcolour.MouseDown += new ShiftUI.MouseEventHandler(this.ChangeDesktopPanelColor);
             // 
             // lbpanelcolor
             // 
@@ -850,30 +848,30 @@ namespace ShiftOS
             // 
             // pnlapplauncheroptions
             // 
-            this.pnlapplauncheroptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlapplauncheroptions.Controls.Add(this.pnlalhover);
-            this.pnlapplauncheroptions.Controls.Add(this.label119);
-            this.pnlapplauncheroptions.Controls.Add(this.Label71);
-            this.pnlapplauncheroptions.Controls.Add(this.txtapplauncherwidth);
-            this.pnlapplauncheroptions.Controls.Add(this.Label72);
-            this.pnlapplauncheroptions.Controls.Add(this.txtappbuttonlabel);
-            this.pnlapplauncheroptions.Controls.Add(this.Label51);
-            this.pnlapplauncheroptions.Controls.Add(this.Label50);
-            this.pnlapplauncheroptions.Controls.Add(this.pnlmaintextcolour);
-            this.pnlapplauncheroptions.Controls.Add(this.comboappbuttontextstyle);
-            this.pnlapplauncheroptions.Controls.Add(this.comboappbuttontextfont);
-            this.pnlapplauncheroptions.Controls.Add(this.Label37);
-            this.pnlapplauncheroptions.Controls.Add(this.Label38);
-            this.pnlapplauncheroptions.Controls.Add(this.txtappbuttontextsize);
-            this.pnlapplauncheroptions.Controls.Add(this.Label39);
-            this.pnlapplauncheroptions.Controls.Add(this.Label40);
-            this.pnlapplauncheroptions.Controls.Add(this.pnlmainbuttonactivated);
-            this.pnlapplauncheroptions.Controls.Add(this.Label28);
-            this.pnlapplauncheroptions.Controls.Add(this.Label35);
-            this.pnlapplauncheroptions.Controls.Add(this.txtapplicationsbuttonheight);
-            this.pnlapplauncheroptions.Controls.Add(this.Label36);
-            this.pnlapplauncheroptions.Controls.Add(this.pnlmainbuttoncolour);
-            this.pnlapplauncheroptions.Controls.Add(this.Label43);
+            this.pnlapplauncheroptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlapplauncheroptions.Widgets.Add(this.pnlalhover);
+            this.pnlapplauncheroptions.Widgets.Add(this.label119);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label71);
+            this.pnlapplauncheroptions.Widgets.Add(this.txtapplauncherwidth);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label72);
+            this.pnlapplauncheroptions.Widgets.Add(this.txtappbuttonlabel);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label51);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label50);
+            this.pnlapplauncheroptions.Widgets.Add(this.pnlmaintextcolour);
+            this.pnlapplauncheroptions.Widgets.Add(this.comboappbuttontextstyle);
+            this.pnlapplauncheroptions.Widgets.Add(this.comboappbuttontextfont);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label37);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label38);
+            this.pnlapplauncheroptions.Widgets.Add(this.txtappbuttontextsize);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label39);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label40);
+            this.pnlapplauncheroptions.Widgets.Add(this.pnlmainbuttonactivated);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label28);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label35);
+            this.pnlapplauncheroptions.Widgets.Add(this.txtapplicationsbuttonheight);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label36);
+            this.pnlapplauncheroptions.Widgets.Add(this.pnlmainbuttoncolour);
+            this.pnlapplauncheroptions.Widgets.Add(this.Label43);
             this.pnlapplauncheroptions.Location = new System.Drawing.Point(135, 159);
             this.pnlapplauncheroptions.Name = "pnlapplauncheroptions";
             this.pnlapplauncheroptions.Size = new System.Drawing.Size(317, 140);
@@ -882,12 +880,12 @@ namespace ShiftOS
             // 
             // pnlalhover
             // 
-            this.pnlalhover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlalhover.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlalhover.Location = new System.Drawing.Point(90, 29);
             this.pnlalhover.Name = "pnlalhover";
             this.pnlalhover.Size = new System.Drawing.Size(41, 20);
             this.pnlalhover.TabIndex = 3;
-            this.pnlalhover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetALHoverColor);
+            this.pnlalhover.MouseDown += new ShiftUI.MouseEventHandler(this.SetALHoverColor);
             // 
             // label119
             // 
@@ -912,7 +910,7 @@ namespace ShiftOS
             // txtapplauncherwidth
             // 
             this.txtapplauncherwidth.BackColor = System.Drawing.Color.White;
-            this.txtapplauncherwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtapplauncherwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtapplauncherwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtapplauncherwidth.ForeColor = System.Drawing.Color.Black;
             this.txtapplauncherwidth.Location = new System.Drawing.Point(148, 101);
@@ -934,7 +932,7 @@ namespace ShiftOS
             // txtappbuttonlabel
             // 
             this.txtappbuttonlabel.BackColor = System.Drawing.Color.White;
-            this.txtappbuttonlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtappbuttonlabel.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtappbuttonlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtappbuttonlabel.ForeColor = System.Drawing.Color.Black;
             this.txtappbuttonlabel.Location = new System.Drawing.Point(53, 76);
@@ -965,12 +963,12 @@ namespace ShiftOS
             // 
             // pnlmaintextcolour
             // 
-            this.pnlmaintextcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmaintextcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmaintextcolour.Location = new System.Drawing.Point(155, 51);
             this.pnlmaintextcolour.Name = "pnlmaintextcolour";
             this.pnlmaintextcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlmaintextcolour.TabIndex = 19;
-            this.pnlmaintextcolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetAppLauncherTextColor);
+            this.pnlmaintextcolour.MouseDown += new ShiftUI.MouseEventHandler(this.SetAppLauncherTextColor);
             // 
             // comboappbuttontextstyle
             // 
@@ -1021,7 +1019,7 @@ namespace ShiftOS
             // txtappbuttontextsize
             // 
             this.txtappbuttontextsize.BackColor = System.Drawing.Color.White;
-            this.txtappbuttontextsize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtappbuttontextsize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtappbuttontextsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtappbuttontextsize.ForeColor = System.Drawing.Color.Black;
             this.txtappbuttontextsize.Location = new System.Drawing.Point(51, 50);
@@ -1052,12 +1050,12 @@ namespace ShiftOS
             // 
             // pnlmainbuttonactivated
             // 
-            this.pnlmainbuttonactivated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmainbuttonactivated.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmainbuttonactivated.Location = new System.Drawing.Point(267, 6);
             this.pnlmainbuttonactivated.Name = "pnlmainbuttonactivated";
             this.pnlmainbuttonactivated.Size = new System.Drawing.Size(41, 20);
             this.pnlmainbuttonactivated.TabIndex = 16;
-            this.pnlmainbuttonactivated.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetALButtonClickedColor);
+            this.pnlmainbuttonactivated.MouseClick += new ShiftUI.MouseEventHandler(this.SetALButtonClickedColor);
             // 
             // Label28
             // 
@@ -1082,7 +1080,7 @@ namespace ShiftOS
             // txtapplicationsbuttonheight
             // 
             this.txtapplicationsbuttonheight.BackColor = System.Drawing.Color.White;
-            this.txtapplicationsbuttonheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtapplicationsbuttonheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtapplicationsbuttonheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtapplicationsbuttonheight.ForeColor = System.Drawing.Color.Black;
             this.txtapplicationsbuttonheight.Location = new System.Drawing.Point(53, 101);
@@ -1103,12 +1101,12 @@ namespace ShiftOS
             // 
             // pnlmainbuttoncolour
             // 
-            this.pnlmainbuttoncolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmainbuttoncolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmainbuttoncolour.Location = new System.Drawing.Point(128, 4);
             this.pnlmainbuttoncolour.Name = "pnlmainbuttoncolour";
             this.pnlmainbuttoncolour.Size = new System.Drawing.Size(41, 20);
             this.pnlmainbuttoncolour.TabIndex = 1;
-            this.pnlmainbuttoncolour.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetALButtonColor);
+            this.pnlmainbuttoncolour.MouseDown += new ShiftUI.MouseEventHandler(this.SetALButtonColor);
             // 
             // Label43
             // 
@@ -1122,9 +1120,9 @@ namespace ShiftOS
             // 
             // pnldesktopintro
             // 
-            this.pnldesktopintro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktopintro.Controls.Add(this.Label69);
-            this.pnldesktopintro.Controls.Add(this.Label70);
+            this.pnldesktopintro.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnldesktopintro.Widgets.Add(this.Label69);
+            this.pnldesktopintro.Widgets.Add(this.Label70);
             this.pnldesktopintro.Location = new System.Drawing.Point(135, 159);
             this.pnldesktopintro.Name = "pnldesktopintro";
             this.pnldesktopintro.Size = new System.Drawing.Size(317, 140);
@@ -1153,41 +1151,41 @@ namespace ShiftOS
             // 
             // pnlpanelbuttonsoptions
             // 
-            this.pnlpanelbuttonsoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlpanelbuttonsoptions.Controls.Add(this.pnlpanelbuttontextcolour);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label101);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttontexttop);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label104);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttontextside);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label106);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label93);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttontop);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label94);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttoninitalgap);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label108);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttonicontop);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label110);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttoniconside);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label112);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttoniconsize);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label105);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.cbpanelbuttontextstyle);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.cbpanelbuttonfont);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label100);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpaneltextbuttonsize);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label102);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label103);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label98);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttongap);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label99);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label96);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttonheight);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label97);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label92);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.txtpanelbuttonwidth);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label91);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.pnlpanelbuttoncolour);
-            this.pnlpanelbuttonsoptions.Controls.Add(this.Label95);
+            this.pnlpanelbuttonsoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.pnlpanelbuttontextcolour);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label101);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttontexttop);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label104);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttontextside);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label106);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label93);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttontop);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label94);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttoninitalgap);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label108);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttonicontop);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label110);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttoniconside);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label112);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttoniconsize);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label105);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.cbpanelbuttontextstyle);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.cbpanelbuttonfont);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label100);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpaneltextbuttonsize);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label102);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label103);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label98);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttongap);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label99);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label96);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttonheight);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label97);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label92);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.txtpanelbuttonwidth);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label91);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.pnlpanelbuttoncolour);
+            this.pnlpanelbuttonsoptions.Widgets.Add(this.Label95);
             this.pnlpanelbuttonsoptions.Location = new System.Drawing.Point(135, 159);
             this.pnlpanelbuttonsoptions.Name = "pnlpanelbuttonsoptions";
             this.pnlpanelbuttonsoptions.Size = new System.Drawing.Size(317, 140);
@@ -1196,12 +1194,12 @@ namespace ShiftOS
             // 
             // pnlpanelbuttontextcolour
             // 
-            this.pnlpanelbuttontextcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpanelbuttontextcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpanelbuttontextcolour.Location = new System.Drawing.Point(270, 57);
             this.pnlpanelbuttontextcolour.Name = "pnlpanelbuttontextcolour";
             this.pnlpanelbuttontextcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlpanelbuttontextcolour.TabIndex = 50;
-            this.pnlpanelbuttontextcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetPanelButtonTextColor);
+            this.pnlpanelbuttontextcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetPanelButtonTextColor);
             // 
             // Label101
             // 
@@ -1216,7 +1214,7 @@ namespace ShiftOS
             // txtpanelbuttontexttop
             // 
             this.txtpanelbuttontexttop.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttontexttop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttontexttop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttontexttop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttontexttop.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttontexttop.Location = new System.Drawing.Point(225, 82);
@@ -1238,7 +1236,7 @@ namespace ShiftOS
             // txtpanelbuttontextside
             // 
             this.txtpanelbuttontextside.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttontextside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttontextside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttontextside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttontextside.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttontextside.Location = new System.Drawing.Point(165, 82);
@@ -1270,7 +1268,7 @@ namespace ShiftOS
             // txtpanelbuttontop
             // 
             this.txtpanelbuttontop.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttontop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttontop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttontop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttontop.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttontop.Location = new System.Drawing.Point(268, 5);
@@ -1292,7 +1290,7 @@ namespace ShiftOS
             // txtpanelbuttoninitalgap
             // 
             this.txtpanelbuttoninitalgap.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttoninitalgap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttoninitalgap.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttoninitalgap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttoninitalgap.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttoninitalgap.Location = new System.Drawing.Point(207, 5);
@@ -1314,7 +1312,7 @@ namespace ShiftOS
             // txtpanelbuttonicontop
             // 
             this.txtpanelbuttonicontop.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttonicontop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttonicontop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttonicontop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttonicontop.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttonicontop.Location = new System.Drawing.Point(287, 108);
@@ -1336,7 +1334,7 @@ namespace ShiftOS
             // txtpanelbuttoniconside
             // 
             this.txtpanelbuttoniconside.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttoniconside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttoniconside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttoniconside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttoniconside.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttoniconside.Location = new System.Drawing.Point(180, 108);
@@ -1358,7 +1356,7 @@ namespace ShiftOS
             // txtpanelbuttoniconsize
             // 
             this.txtpanelbuttoniconsize.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttoniconsize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttoniconsize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttoniconsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttoniconsize.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttoniconsize.Location = new System.Drawing.Point(70, 108);
@@ -1416,7 +1414,7 @@ namespace ShiftOS
             // txtpaneltextbuttonsize
             // 
             this.txtpaneltextbuttonsize.BackColor = System.Drawing.Color.White;
-            this.txtpaneltextbuttonsize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpaneltextbuttonsize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpaneltextbuttonsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpaneltextbuttonsize.ForeColor = System.Drawing.Color.Black;
             this.txtpaneltextbuttonsize.Location = new System.Drawing.Point(287, 82);
@@ -1459,7 +1457,7 @@ namespace ShiftOS
             // txtpanelbuttongap
             // 
             this.txtpanelbuttongap.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttongap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttongap.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttongap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttongap.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttongap.Location = new System.Drawing.Point(268, 31);
@@ -1491,7 +1489,7 @@ namespace ShiftOS
             // txtpanelbuttonheight
             // 
             this.txtpanelbuttonheight.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttonheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttonheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttonheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttonheight.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttonheight.Location = new System.Drawing.Point(185, 32);
@@ -1523,7 +1521,7 @@ namespace ShiftOS
             // txtpanelbuttonwidth
             // 
             this.txtpanelbuttonwidth.BackColor = System.Drawing.Color.White;
-            this.txtpanelbuttonwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpanelbuttonwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtpanelbuttonwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpanelbuttonwidth.ForeColor = System.Drawing.Color.Black;
             this.txtpanelbuttonwidth.Location = new System.Drawing.Point(88, 31);
@@ -1544,12 +1542,12 @@ namespace ShiftOS
             // 
             // pnlpanelbuttoncolour
             // 
-            this.pnlpanelbuttoncolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpanelbuttoncolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpanelbuttoncolour.Location = new System.Drawing.Point(94, 5);
             this.pnlpanelbuttoncolour.Name = "pnlpanelbuttoncolour";
             this.pnlpanelbuttoncolour.Size = new System.Drawing.Size(41, 20);
             this.pnlpanelbuttoncolour.TabIndex = 1;
-            this.pnlpanelbuttoncolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetPanelButtonColor);
+            this.pnlpanelbuttoncolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetPanelButtonColor);
             // 
             // Label95
             // 
@@ -1563,9 +1561,9 @@ namespace ShiftOS
             // 
             // pnldesktopbackgroundoptions
             // 
-            this.pnldesktopbackgroundoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktopbackgroundoptions.Controls.Add(this.pnldesktopcolour);
-            this.pnldesktopbackgroundoptions.Controls.Add(this.Label45);
+            this.pnldesktopbackgroundoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnldesktopbackgroundoptions.Widgets.Add(this.pnldesktopcolour);
+            this.pnldesktopbackgroundoptions.Widgets.Add(this.Label45);
             this.pnldesktopbackgroundoptions.Location = new System.Drawing.Point(135, 159);
             this.pnldesktopbackgroundoptions.Name = "pnldesktopbackgroundoptions";
             this.pnldesktopbackgroundoptions.Size = new System.Drawing.Size(317, 140);
@@ -1574,13 +1572,13 @@ namespace ShiftOS
             // 
             // pnldesktopcolour
             // 
-            this.pnldesktopcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnldesktopcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnldesktopcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnldesktopcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnldesktopcolour.Location = new System.Drawing.Point(112, 5);
             this.pnldesktopcolour.Name = "pnldesktopcolour";
             this.pnldesktopcolour.Size = new System.Drawing.Size(41, 20);
             this.pnldesktopcolour.TabIndex = 3;
-            this.pnldesktopcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ChangeDesktopBackground);
+            this.pnldesktopcolour.MouseClick += new ShiftUI.MouseEventHandler(this.ChangeDesktopBackground);
             // 
             // Label45
             // 
@@ -1594,21 +1592,21 @@ namespace ShiftOS
             // 
             // pnlpanelclockoptions
             // 
-            this.pnlpanelclockoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlpanelclockoptions.Controls.Add(this.pnlclockbackgroundcolour);
-            this.pnlpanelclockoptions.Controls.Add(this.Label44);
-            this.pnlpanelclockoptions.Controls.Add(this.comboclocktextstyle);
-            this.pnlpanelclockoptions.Controls.Add(this.comboclocktextfont);
-            this.pnlpanelclockoptions.Controls.Add(this.Label26);
-            this.pnlpanelclockoptions.Controls.Add(this.Label29);
-            this.pnlpanelclockoptions.Controls.Add(this.txtclocktextfromtop);
-            this.pnlpanelclockoptions.Controls.Add(this.Label30);
-            this.pnlpanelclockoptions.Controls.Add(this.Label31);
-            this.pnlpanelclockoptions.Controls.Add(this.txtclocktextsize);
-            this.pnlpanelclockoptions.Controls.Add(this.Label32);
-            this.pnlpanelclockoptions.Controls.Add(this.Label33);
-            this.pnlpanelclockoptions.Controls.Add(this.pnlpanelclocktextcolour);
-            this.pnlpanelclockoptions.Controls.Add(this.Label34);
+            this.pnlpanelclockoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlpanelclockoptions.Widgets.Add(this.pnlclockbackgroundcolour);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label44);
+            this.pnlpanelclockoptions.Widgets.Add(this.comboclocktextstyle);
+            this.pnlpanelclockoptions.Widgets.Add(this.comboclocktextfont);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label26);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label29);
+            this.pnlpanelclockoptions.Widgets.Add(this.txtclocktextfromtop);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label30);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label31);
+            this.pnlpanelclockoptions.Widgets.Add(this.txtclocktextsize);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label32);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label33);
+            this.pnlpanelclockoptions.Widgets.Add(this.pnlpanelclocktextcolour);
+            this.pnlpanelclockoptions.Widgets.Add(this.Label34);
             this.pnlpanelclockoptions.Location = new System.Drawing.Point(135, 159);
             this.pnlpanelclockoptions.Name = "pnlpanelclockoptions";
             this.pnlpanelclockoptions.Size = new System.Drawing.Size(317, 140);
@@ -1617,12 +1615,12 @@ namespace ShiftOS
             // 
             // pnlclockbackgroundcolour
             // 
-            this.pnlclockbackgroundcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlclockbackgroundcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlclockbackgroundcolour.Location = new System.Drawing.Point(261, 5);
             this.pnlclockbackgroundcolour.Name = "pnlclockbackgroundcolour";
             this.pnlclockbackgroundcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlclockbackgroundcolour.TabIndex = 20;
-            this.pnlclockbackgroundcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetClockBG);
+            this.pnlclockbackgroundcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetClockBG);
             // 
             // Label44
             // 
@@ -1683,7 +1681,7 @@ namespace ShiftOS
             // txtclocktextfromtop
             // 
             this.txtclocktextfromtop.BackColor = System.Drawing.Color.White;
-            this.txtclocktextfromtop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclocktextfromtop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclocktextfromtop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclocktextfromtop.ForeColor = System.Drawing.Color.Black;
             this.txtclocktextfromtop.Location = new System.Drawing.Point(139, 80);
@@ -1715,7 +1713,7 @@ namespace ShiftOS
             // txtclocktextsize
             // 
             this.txtclocktextsize.BackColor = System.Drawing.Color.White;
-            this.txtclocktextsize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclocktextsize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclocktextsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclocktextsize.ForeColor = System.Drawing.Color.Black;
             this.txtclocktextsize.Location = new System.Drawing.Point(114, 55);
@@ -1746,12 +1744,12 @@ namespace ShiftOS
             // 
             // pnlpanelclocktextcolour
             // 
-            this.pnlpanelclocktextcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpanelclocktextcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpanelclocktextcolour.Location = new System.Drawing.Point(121, 5);
             this.pnlpanelclocktextcolour.Name = "pnlpanelclocktextcolour";
             this.pnlpanelclocktextcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlpanelclocktextcolour.TabIndex = 1;
-            this.pnlpanelclocktextcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetClockTextColor);
+            this.pnlpanelclocktextcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetClockTextColor);
             // 
             // Label34
             // 
@@ -1765,10 +1763,10 @@ namespace ShiftOS
             // 
             // pnldesktoppreview
             // 
-            this.pnldesktoppreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnldesktoppreview.Controls.Add(this.predesktoppanel);
+            this.pnldesktoppreview.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnldesktoppreview.Widgets.Add(this.predesktoppanel);
             this.pnldesktoppreview.Location = new System.Drawing.Point(5, 3);
             this.pnldesktoppreview.Name = "pnldesktoppreview";
             this.pnldesktoppreview.Size = new System.Drawing.Size(448, 148);
@@ -1777,10 +1775,10 @@ namespace ShiftOS
             // predesktoppanel
             // 
             this.predesktoppanel.BackColor = System.Drawing.Color.Gray;
-            this.predesktoppanel.Controls.Add(this.prepnlpanelbuttonholder);
-            this.predesktoppanel.Controls.Add(this.pretimepanel);
-            this.predesktoppanel.Controls.Add(this.preapplaunchermenuholder);
-            this.predesktoppanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.predesktoppanel.Widgets.Add(this.prepnlpanelbuttonholder);
+            this.predesktoppanel.Widgets.Add(this.pretimepanel);
+            this.predesktoppanel.Widgets.Add(this.preapplaunchermenuholder);
+            this.predesktoppanel.Dock = ShiftUI.DockStyle.Top;
             this.predesktoppanel.Location = new System.Drawing.Point(0, 0);
             this.predesktoppanel.Name = "predesktoppanel";
             this.predesktoppanel.Size = new System.Drawing.Size(448, 25);
@@ -1789,19 +1787,19 @@ namespace ShiftOS
             // prepnlpanelbuttonholder
             // 
             this.prepnlpanelbuttonholder.BackColor = System.Drawing.Color.Transparent;
-            this.prepnlpanelbuttonholder.Controls.Add(this.prepnlpanelbutton);
-            this.prepnlpanelbuttonholder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prepnlpanelbuttonholder.Widgets.Add(this.prepnlpanelbutton);
+            this.prepnlpanelbuttonholder.Dock = ShiftUI.DockStyle.Fill;
             this.prepnlpanelbuttonholder.Location = new System.Drawing.Point(116, 0);
             this.prepnlpanelbuttonholder.Name = "prepnlpanelbuttonholder";
-            this.prepnlpanelbuttonholder.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.prepnlpanelbuttonholder.Padding = new ShiftUI.Padding(2, 0, 0, 0);
             this.prepnlpanelbuttonholder.Size = new System.Drawing.Size(235, 25);
             this.prepnlpanelbuttonholder.TabIndex = 6;
             // 
             // prepnlpanelbutton
             // 
             this.prepnlpanelbutton.BackColor = System.Drawing.Color.Black;
-            this.prepnlpanelbutton.Controls.Add(this.pretbicon);
-            this.prepnlpanelbutton.Controls.Add(this.pretbctext);
+            this.prepnlpanelbutton.Widgets.Add(this.pretbicon);
+            this.prepnlpanelbutton.Widgets.Add(this.pretbctext);
             this.prepnlpanelbutton.Location = new System.Drawing.Point(5, 3);
             this.prepnlpanelbutton.Name = "prepnlpanelbutton";
             this.prepnlpanelbutton.Size = new System.Drawing.Size(126, 20);
@@ -1811,7 +1809,7 @@ namespace ShiftOS
             // pretbicon
             // 
             this.pretbicon.BackColor = System.Drawing.Color.Transparent;
-            this.pretbicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pretbicon.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.pretbicon.Location = new System.Drawing.Point(4, 2);
             this.pretbicon.Name = "pretbicon";
             this.pretbicon.Size = new System.Drawing.Size(16, 16);
@@ -1832,8 +1830,8 @@ namespace ShiftOS
             // 
             // pretimepanel
             // 
-            this.pretimepanel.Controls.Add(this.prepaneltimetext);
-            this.pretimepanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pretimepanel.Widgets.Add(this.prepaneltimetext);
+            this.pretimepanel.Dock = ShiftUI.DockStyle.Right;
             this.pretimepanel.Location = new System.Drawing.Point(351, 0);
             this.pretimepanel.Name = "pretimepanel";
             this.pretimepanel.Size = new System.Drawing.Size(97, 25);
@@ -1853,8 +1851,8 @@ namespace ShiftOS
             // 
             // preapplaunchermenuholder
             // 
-            this.preapplaunchermenuholder.Controls.Add(this.predesktopappmenu);
-            this.preapplaunchermenuholder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.preapplaunchermenuholder.Widgets.Add(this.predesktopappmenu);
+            this.preapplaunchermenuholder.Dock = ShiftUI.DockStyle.Left;
             this.preapplaunchermenuholder.Location = new System.Drawing.Point(0, 0);
             this.preapplaunchermenuholder.Name = "preapplaunchermenuholder";
             this.preapplaunchermenuholder.Size = new System.Drawing.Size(116, 25);
@@ -1863,12 +1861,12 @@ namespace ShiftOS
             // predesktopappmenu
             // 
             this.predesktopappmenu.AutoSize = false;
-            this.predesktopappmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.predesktopappmenu.Items.AddRange(new ShiftUI.ToolStripItem[] {
             this.ApplicationsToolStripMenuItem});
-            this.predesktopappmenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.predesktopappmenu.LayoutStyle = ShiftUI.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.predesktopappmenu.Location = new System.Drawing.Point(0, 0);
             this.predesktopappmenu.Name = "predesktopappmenu";
-            this.predesktopappmenu.Padding = new System.Windows.Forms.Padding(0);
+            this.predesktopappmenu.Padding = new ShiftUI.Padding(0);
             this.predesktopappmenu.Size = new System.Drawing.Size(116, 24);
             this.predesktopappmenu.TabIndex = 0;
             this.predesktopappmenu.Text = "MenuStrip1";
@@ -1876,7 +1874,7 @@ namespace ShiftOS
             // ApplicationsToolStripMenuItem
             // 
             this.ApplicationsToolStripMenuItem.AutoSize = false;
-            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ApplicationsToolStripMenuItem.DropDownItems.AddRange(new ShiftUI.ToolStripItem[] {
             this.KnowledgeInputToolStripMenuItem,
             this.ShiftoriumToolStripMenuItem,
             this.ClockToolStripMenuItem,
@@ -1886,12 +1884,12 @@ namespace ShiftOS
             this.ShutdownToolStripMenuItem});
             this.ApplicationsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplicationsToolStripMenuItem.Name = "ApplicationsToolStripMenuItem";
-            this.ApplicationsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ApplicationsToolStripMenuItem.Padding = new ShiftUI.Padding(2, 0, 2, 0);
             this.ApplicationsToolStripMenuItem.ShowShortcutKeys = false;
             this.ApplicationsToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.ApplicationsToolStripMenuItem.Text = "Applications";
-            this.ApplicationsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.ApplicationsToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ApplicationsToolStripMenuItem.TextDirection = ShiftUI.ToolStripTextDirection.Horizontal;
+            this.ApplicationsToolStripMenuItem.TextImageRelation = ShiftUI.TextImageRelation.TextBeforeImage;
             // 
             // KnowledgeInputToolStripMenuItem
             // 
@@ -1948,11 +1946,11 @@ namespace ShiftOS
             // 
             // Panel10
             // 
-            this.Panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Panel10.Controls.Add(this.btndesktopitself);
-            this.Panel10.Controls.Add(this.btnpanelclock);
-            this.Panel10.Controls.Add(this.btnapplauncher);
-            this.Panel10.Controls.Add(this.btndesktoppanel);
+            this.Panel10.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.Panel10.Widgets.Add(this.btndesktopitself);
+            this.Panel10.Widgets.Add(this.btnpanelclock);
+            this.Panel10.Widgets.Add(this.btnapplauncher);
+            this.Panel10.Widgets.Add(this.btndesktoppanel);
             this.Panel10.Location = new System.Drawing.Point(1, 168);
             this.Panel10.Name = "Panel10";
             this.Panel10.Size = new System.Drawing.Size(128, 135);
@@ -1961,7 +1959,7 @@ namespace ShiftOS
             // btndesktopitself
             // 
             this.btndesktopitself.BackColor = System.Drawing.Color.White;
-            this.btndesktopitself.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndesktopitself.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndesktopitself.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktopitself.Location = new System.Drawing.Point(4, 105);
             this.btndesktopitself.Name = "btndesktopitself";
@@ -1974,7 +1972,7 @@ namespace ShiftOS
             // btnpanelclock
             // 
             this.btnpanelclock.BackColor = System.Drawing.Color.White;
-            this.btnpanelclock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpanelclock.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnpanelclock.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpanelclock.Location = new System.Drawing.Point(4, 70);
             this.btnpanelclock.Name = "btnpanelclock";
@@ -1987,7 +1985,7 @@ namespace ShiftOS
             // btnapplauncher
             // 
             this.btnapplauncher.BackColor = System.Drawing.Color.White;
-            this.btnapplauncher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnapplauncher.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnapplauncher.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnapplauncher.Location = new System.Drawing.Point(4, 35);
             this.btnapplauncher.Name = "btnapplauncher";
@@ -2000,7 +1998,7 @@ namespace ShiftOS
             // btndesktoppanel
             // 
             this.btndesktoppanel.BackColor = System.Drawing.Color.White;
-            this.btndesktoppanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndesktoppanel.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndesktoppanel.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndesktoppanel.Location = new System.Drawing.Point(4, 0);
             this.btndesktoppanel.Name = "btndesktoppanel";
@@ -2019,17 +2017,17 @@ namespace ShiftOS
             // 
             // pnlwindowsoptions
             // 
-            this.pnlwindowsoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlwindowsoptions.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnlwindowsoptions.BackColor = System.Drawing.Color.White;
-            this.pnlwindowsoptions.Controls.Add(this.pnlwindowsintro);
-            this.pnlwindowsoptions.Controls.Add(this.pnlbuttonoptions);
-            this.pnlwindowsoptions.Controls.Add(this.pnltitlebaroptions);
-            this.pnlwindowsoptions.Controls.Add(this.pnlborderoptions);
-            this.pnlwindowsoptions.Controls.Add(this.pnltitletextoptions);
-            this.pnlwindowsoptions.Controls.Add(this.pnlwindowsobjects);
-            this.pnlwindowsoptions.Controls.Add(this.pnlwindowpreview);
+            this.pnlwindowsoptions.Widgets.Add(this.pnlwindowsintro);
+            this.pnlwindowsoptions.Widgets.Add(this.pnlbuttonoptions);
+            this.pnlwindowsoptions.Widgets.Add(this.pnltitlebaroptions);
+            this.pnlwindowsoptions.Widgets.Add(this.pnlborderoptions);
+            this.pnlwindowsoptions.Widgets.Add(this.pnltitletextoptions);
+            this.pnlwindowsoptions.Widgets.Add(this.pnlwindowsobjects);
+            this.pnlwindowsoptions.Widgets.Add(this.pnlwindowpreview);
             this.pnlwindowsoptions.Location = new System.Drawing.Point(134, 9);
             this.pnlwindowsoptions.Name = "pnlwindowsoptions";
             this.pnlwindowsoptions.Size = new System.Drawing.Size(457, 306);
@@ -2037,9 +2035,9 @@ namespace ShiftOS
             // 
             // pnlwindowsintro
             // 
-            this.pnlwindowsintro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlwindowsintro.Controls.Add(this.Label68);
-            this.pnlwindowsintro.Controls.Add(this.Label67);
+            this.pnlwindowsintro.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlwindowsintro.Widgets.Add(this.Label68);
+            this.pnlwindowsintro.Widgets.Add(this.Label67);
             this.pnlwindowsintro.Location = new System.Drawing.Point(135, 159);
             this.pnlwindowsintro.Name = "pnlwindowsintro";
             this.pnlwindowsintro.Size = new System.Drawing.Size(325, 139);
@@ -2069,12 +2067,12 @@ namespace ShiftOS
             // 
             // pnlbuttonoptions
             // 
-            this.pnlbuttonoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlbuttonoptions.Controls.Add(this.pnlclosebuttonoptions);
-            this.pnlbuttonoptions.Controls.Add(this.pnlrollupbuttonoptions);
-            this.pnlbuttonoptions.Controls.Add(this.pnlminimizebuttonoptions);
-            this.pnlbuttonoptions.Controls.Add(this.combobuttonoption);
-            this.pnlbuttonoptions.Controls.Add(this.Label52);
+            this.pnlbuttonoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlbuttonoptions.Widgets.Add(this.pnlclosebuttonoptions);
+            this.pnlbuttonoptions.Widgets.Add(this.pnlrollupbuttonoptions);
+            this.pnlbuttonoptions.Widgets.Add(this.pnlminimizebuttonoptions);
+            this.pnlbuttonoptions.Widgets.Add(this.combobuttonoption);
+            this.pnlbuttonoptions.Widgets.Add(this.Label52);
             this.pnlbuttonoptions.Location = new System.Drawing.Point(135, 159);
             this.pnlbuttonoptions.Name = "pnlbuttonoptions";
             this.pnlbuttonoptions.Size = new System.Drawing.Size(325, 139);
@@ -2083,22 +2081,22 @@ namespace ShiftOS
             // 
             // pnlclosebuttonoptions
             // 
-            this.pnlclosebuttonoptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlclosebuttonoptions.Controls.Add(this.Label8);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label11);
-            this.pnlclosebuttonoptions.Controls.Add(this.pnlclosebuttoncolour);
-            this.pnlclosebuttonoptions.Controls.Add(this.txtclosebuttonfromside);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label7);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label12);
-            this.pnlclosebuttonoptions.Controls.Add(this.txtclosebuttonheight);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label13);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label6);
-            this.pnlclosebuttonoptions.Controls.Add(this.txtclosebuttonfromtop);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label10);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label14);
-            this.pnlclosebuttonoptions.Controls.Add(this.txtclosebuttonwidth);
-            this.pnlclosebuttonoptions.Controls.Add(this.Label9);
+            this.pnlclosebuttonoptions.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label8);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label11);
+            this.pnlclosebuttonoptions.Widgets.Add(this.pnlclosebuttoncolour);
+            this.pnlclosebuttonoptions.Widgets.Add(this.txtclosebuttonfromside);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label7);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label12);
+            this.pnlclosebuttonoptions.Widgets.Add(this.txtclosebuttonheight);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label13);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label6);
+            this.pnlclosebuttonoptions.Widgets.Add(this.txtclosebuttonfromtop);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label10);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label14);
+            this.pnlclosebuttonoptions.Widgets.Add(this.txtclosebuttonwidth);
+            this.pnlclosebuttonoptions.Widgets.Add(this.Label9);
             this.pnlclosebuttonoptions.Location = new System.Drawing.Point(4, 29);
             this.pnlclosebuttonoptions.Name = "pnlclosebuttonoptions";
             this.pnlclosebuttonoptions.Size = new System.Drawing.Size(311, 105);
@@ -2127,17 +2125,17 @@ namespace ShiftOS
             // 
             // pnlclosebuttoncolour
             // 
-            this.pnlclosebuttoncolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlclosebuttoncolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
             this.pnlclosebuttoncolour.Location = new System.Drawing.Point(132, 4);
             this.pnlclosebuttoncolour.Name = "pnlclosebuttoncolour";
             this.pnlclosebuttoncolour.Size = new System.Drawing.Size(41, 20);
             this.pnlclosebuttoncolour.TabIndex = 1;
-            this.pnlclosebuttoncolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetcloseColor);
+            this.pnlclosebuttoncolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetcloseColor);
             // 
             // txtclosebuttonfromside
             // 
             this.txtclosebuttonfromside.BackColor = System.Drawing.Color.White;
-            this.txtclosebuttonfromside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclosebuttonfromside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclosebuttonfromside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclosebuttonfromside.ForeColor = System.Drawing.Color.Black;
             this.txtclosebuttonfromside.Location = new System.Drawing.Point(153, 80);
@@ -2169,7 +2167,7 @@ namespace ShiftOS
             // txtclosebuttonheight
             // 
             this.txtclosebuttonheight.BackColor = System.Drawing.Color.White;
-            this.txtclosebuttonheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclosebuttonheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclosebuttonheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclosebuttonheight.ForeColor = System.Drawing.Color.Black;
             this.txtclosebuttonheight.Location = new System.Drawing.Point(132, 30);
@@ -2201,7 +2199,7 @@ namespace ShiftOS
             // txtclosebuttonfromtop
             // 
             this.txtclosebuttonfromtop.BackColor = System.Drawing.Color.White;
-            this.txtclosebuttonfromtop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclosebuttonfromtop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclosebuttonfromtop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclosebuttonfromtop.ForeColor = System.Drawing.Color.Black;
             this.txtclosebuttonfromtop.Location = new System.Drawing.Point(153, 55);
@@ -2233,7 +2231,7 @@ namespace ShiftOS
             // txtclosebuttonwidth
             // 
             this.txtclosebuttonwidth.BackColor = System.Drawing.Color.White;
-            this.txtclosebuttonwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtclosebuttonwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtclosebuttonwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclosebuttonwidth.ForeColor = System.Drawing.Color.Black;
             this.txtclosebuttonwidth.Location = new System.Drawing.Point(234, 30);
@@ -2254,22 +2252,22 @@ namespace ShiftOS
             // 
             // pnlrollupbuttonoptions
             // 
-            this.pnlrollupbuttonoptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label54);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label55);
-            this.pnlrollupbuttonoptions.Controls.Add(this.pnlrollupbuttoncolour);
-            this.pnlrollupbuttonoptions.Controls.Add(this.txtrollupbuttonside);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label56);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label57);
-            this.pnlrollupbuttonoptions.Controls.Add(this.txtrollupbuttonheight);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label58);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label59);
-            this.pnlrollupbuttonoptions.Controls.Add(this.txtrollupbuttontop);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label60);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label61);
-            this.pnlrollupbuttonoptions.Controls.Add(this.txtrollupbuttonwidth);
-            this.pnlrollupbuttonoptions.Controls.Add(this.Label62);
+            this.pnlrollupbuttonoptions.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label54);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label55);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.pnlrollupbuttoncolour);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.txtrollupbuttonside);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label56);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label57);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.txtrollupbuttonheight);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label58);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label59);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.txtrollupbuttontop);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label60);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label61);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.txtrollupbuttonwidth);
+            this.pnlrollupbuttonoptions.Widgets.Add(this.Label62);
             this.pnlrollupbuttonoptions.Location = new System.Drawing.Point(4, 29);
             this.pnlrollupbuttonoptions.Name = "pnlrollupbuttonoptions";
             this.pnlrollupbuttonoptions.Size = new System.Drawing.Size(311, 105);
@@ -2298,18 +2296,18 @@ namespace ShiftOS
             // 
             // pnlrollupbuttoncolour
             // 
-            this.pnlrollupbuttoncolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlrollupbuttoncolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlrollupbuttoncolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlrollupbuttoncolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlrollupbuttoncolour.Location = new System.Drawing.Point(143, 4);
             this.pnlrollupbuttoncolour.Name = "pnlrollupbuttoncolour";
             this.pnlrollupbuttoncolour.Size = new System.Drawing.Size(41, 20);
             this.pnlrollupbuttoncolour.TabIndex = 1;
-            this.pnlrollupbuttoncolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetrollupColor);
+            this.pnlrollupbuttoncolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetrollupColor);
             // 
             // txtrollupbuttonside
             // 
             this.txtrollupbuttonside.BackColor = System.Drawing.Color.White;
-            this.txtrollupbuttonside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtrollupbuttonside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtrollupbuttonside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollupbuttonside.ForeColor = System.Drawing.Color.Black;
             this.txtrollupbuttonside.Location = new System.Drawing.Point(164, 80);
@@ -2341,7 +2339,7 @@ namespace ShiftOS
             // txtrollupbuttonheight
             // 
             this.txtrollupbuttonheight.BackColor = System.Drawing.Color.White;
-            this.txtrollupbuttonheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtrollupbuttonheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtrollupbuttonheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollupbuttonheight.ForeColor = System.Drawing.Color.Black;
             this.txtrollupbuttonheight.Location = new System.Drawing.Point(143, 30);
@@ -2373,7 +2371,7 @@ namespace ShiftOS
             // txtrollupbuttontop
             // 
             this.txtrollupbuttontop.BackColor = System.Drawing.Color.White;
-            this.txtrollupbuttontop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtrollupbuttontop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtrollupbuttontop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollupbuttontop.ForeColor = System.Drawing.Color.Black;
             this.txtrollupbuttontop.Location = new System.Drawing.Point(164, 55);
@@ -2405,7 +2403,7 @@ namespace ShiftOS
             // txtrollupbuttonwidth
             // 
             this.txtrollupbuttonwidth.BackColor = System.Drawing.Color.White;
-            this.txtrollupbuttonwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtrollupbuttonwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtrollupbuttonwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollupbuttonwidth.ForeColor = System.Drawing.Color.Black;
             this.txtrollupbuttonwidth.Location = new System.Drawing.Point(245, 30);
@@ -2426,22 +2424,22 @@ namespace ShiftOS
             // 
             // pnlminimizebuttonoptions
             // 
-            this.pnlminimizebuttonoptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label82);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label83);
-            this.pnlminimizebuttonoptions.Controls.Add(this.pnlminimizebuttoncolour);
-            this.pnlminimizebuttonoptions.Controls.Add(this.txtminimizebuttonside);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label84);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label85);
-            this.pnlminimizebuttonoptions.Controls.Add(this.txtminimizebuttonheight);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label86);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label87);
-            this.pnlminimizebuttonoptions.Controls.Add(this.txtminimizebuttontop);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label88);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label89);
-            this.pnlminimizebuttonoptions.Controls.Add(this.txtminimizebuttonwidth);
-            this.pnlminimizebuttonoptions.Controls.Add(this.Label90);
+            this.pnlminimizebuttonoptions.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label82);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label83);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.pnlminimizebuttoncolour);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.txtminimizebuttonside);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label84);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label85);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.txtminimizebuttonheight);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label86);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label87);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.txtminimizebuttontop);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label88);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label89);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.txtminimizebuttonwidth);
+            this.pnlminimizebuttonoptions.Widgets.Add(this.Label90);
             this.pnlminimizebuttonoptions.Location = new System.Drawing.Point(4, 29);
             this.pnlminimizebuttonoptions.Name = "pnlminimizebuttonoptions";
             this.pnlminimizebuttonoptions.Size = new System.Drawing.Size(311, 105);
@@ -2470,18 +2468,18 @@ namespace ShiftOS
             // 
             // pnlminimizebuttoncolour
             // 
-            this.pnlminimizebuttoncolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlminimizebuttoncolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlminimizebuttoncolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlminimizebuttoncolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlminimizebuttoncolour.Location = new System.Drawing.Point(149, 4);
             this.pnlminimizebuttoncolour.Name = "pnlminimizebuttoncolour";
             this.pnlminimizebuttoncolour.Size = new System.Drawing.Size(41, 20);
             this.pnlminimizebuttoncolour.TabIndex = 1;
-            this.pnlminimizebuttoncolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetMinimizeColor);
+            this.pnlminimizebuttoncolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetMinimizeColor);
             // 
             // txtminimizebuttonside
             // 
             this.txtminimizebuttonside.BackColor = System.Drawing.Color.White;
-            this.txtminimizebuttonside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtminimizebuttonside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtminimizebuttonside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtminimizebuttonside.ForeColor = System.Drawing.Color.Black;
             this.txtminimizebuttonside.Location = new System.Drawing.Point(172, 80);
@@ -2513,7 +2511,7 @@ namespace ShiftOS
             // txtminimizebuttonheight
             // 
             this.txtminimizebuttonheight.BackColor = System.Drawing.Color.White;
-            this.txtminimizebuttonheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtminimizebuttonheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtminimizebuttonheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtminimizebuttonheight.ForeColor = System.Drawing.Color.Black;
             this.txtminimizebuttonheight.Location = new System.Drawing.Point(150, 30);
@@ -2545,7 +2543,7 @@ namespace ShiftOS
             // txtminimizebuttontop
             // 
             this.txtminimizebuttontop.BackColor = System.Drawing.Color.White;
-            this.txtminimizebuttontop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtminimizebuttontop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtminimizebuttontop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtminimizebuttontop.ForeColor = System.Drawing.Color.Black;
             this.txtminimizebuttontop.Location = new System.Drawing.Point(172, 55);
@@ -2577,7 +2575,7 @@ namespace ShiftOS
             // txtminimizebuttonwidth
             // 
             this.txtminimizebuttonwidth.BackColor = System.Drawing.Color.White;
-            this.txtminimizebuttonwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtminimizebuttonwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtminimizebuttonwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtminimizebuttonwidth.ForeColor = System.Drawing.Color.Black;
             this.txtminimizebuttonwidth.Location = new System.Drawing.Point(247, 30);
@@ -2621,26 +2619,26 @@ namespace ShiftOS
             // 
             // pnltitlebaroptions
             // 
-            this.pnltitlebaroptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnltitlebaroptions.Controls.Add(this.Label80);
-            this.pnltitlebaroptions.Controls.Add(this.txticonfromtop);
-            this.pnltitlebaroptions.Controls.Add(this.Label81);
-            this.pnltitlebaroptions.Controls.Add(this.Label78);
-            this.pnltitlebaroptions.Controls.Add(this.txticonfromside);
-            this.pnltitlebaroptions.Controls.Add(this.Label79);
-            this.pnltitlebaroptions.Controls.Add(this.lbcornerwidthpx);
-            this.pnltitlebaroptions.Controls.Add(this.txttitlebarcornerwidth);
-            this.pnltitlebaroptions.Controls.Add(this.lbcornerwidth);
-            this.pnltitlebaroptions.Controls.Add(this.pnltitlebarrightcornercolour);
-            this.pnltitlebaroptions.Controls.Add(this.pnltitlebarleftcornercolour);
-            this.pnltitlebaroptions.Controls.Add(this.lbrightcornercolor);
-            this.pnltitlebaroptions.Controls.Add(this.lbleftcornercolor);
-            this.pnltitlebaroptions.Controls.Add(this.cboxtitlebarcorners);
-            this.pnltitlebaroptions.Controls.Add(this.Label5);
-            this.pnltitlebaroptions.Controls.Add(this.txttitlebarheight);
-            this.pnltitlebaroptions.Controls.Add(this.Label4);
-            this.pnltitlebaroptions.Controls.Add(this.pnltitlebarcolour);
-            this.pnltitlebaroptions.Controls.Add(this.Label2);
+            this.pnltitlebaroptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnltitlebaroptions.Widgets.Add(this.Label80);
+            this.pnltitlebaroptions.Widgets.Add(this.txticonfromtop);
+            this.pnltitlebaroptions.Widgets.Add(this.Label81);
+            this.pnltitlebaroptions.Widgets.Add(this.Label78);
+            this.pnltitlebaroptions.Widgets.Add(this.txticonfromside);
+            this.pnltitlebaroptions.Widgets.Add(this.Label79);
+            this.pnltitlebaroptions.Widgets.Add(this.lbcornerwidthpx);
+            this.pnltitlebaroptions.Widgets.Add(this.txttitlebarcornerwidth);
+            this.pnltitlebaroptions.Widgets.Add(this.lbcornerwidth);
+            this.pnltitlebaroptions.Widgets.Add(this.pnltitlebarrightcornercolour);
+            this.pnltitlebaroptions.Widgets.Add(this.pnltitlebarleftcornercolour);
+            this.pnltitlebaroptions.Widgets.Add(this.lbrightcornercolor);
+            this.pnltitlebaroptions.Widgets.Add(this.lbleftcornercolor);
+            this.pnltitlebaroptions.Widgets.Add(this.cboxtitlebarcorners);
+            this.pnltitlebaroptions.Widgets.Add(this.Label5);
+            this.pnltitlebaroptions.Widgets.Add(this.txttitlebarheight);
+            this.pnltitlebaroptions.Widgets.Add(this.Label4);
+            this.pnltitlebaroptions.Widgets.Add(this.pnltitlebarcolour);
+            this.pnltitlebaroptions.Widgets.Add(this.Label2);
             this.pnltitlebaroptions.Location = new System.Drawing.Point(135, 159);
             this.pnltitlebaroptions.Name = "pnltitlebaroptions";
             this.pnltitlebaroptions.Size = new System.Drawing.Size(325, 139);
@@ -2660,7 +2658,7 @@ namespace ShiftOS
             // txticonfromtop
             // 
             this.txticonfromtop.BackColor = System.Drawing.Color.White;
-            this.txticonfromtop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txticonfromtop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txticonfromtop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txticonfromtop.ForeColor = System.Drawing.Color.Black;
             this.txticonfromtop.Location = new System.Drawing.Point(253, 103);
@@ -2692,7 +2690,7 @@ namespace ShiftOS
             // txticonfromside
             // 
             this.txticonfromside.BackColor = System.Drawing.Color.White;
-            this.txticonfromside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txticonfromside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txticonfromside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txticonfromside.ForeColor = System.Drawing.Color.Black;
             this.txticonfromside.Location = new System.Drawing.Point(104, 103);
@@ -2724,7 +2722,7 @@ namespace ShiftOS
             // txttitlebarcornerwidth
             // 
             this.txttitlebarcornerwidth.BackColor = System.Drawing.Color.White;
-            this.txttitlebarcornerwidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttitlebarcornerwidth.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttitlebarcornerwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttitlebarcornerwidth.ForeColor = System.Drawing.Color.Black;
             this.txttitlebarcornerwidth.Location = new System.Drawing.Point(253, 30);
@@ -2745,23 +2743,23 @@ namespace ShiftOS
             // 
             // pnltitlebarrightcornercolour
             // 
-            this.pnltitlebarrightcornercolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnltitlebarrightcornercolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltitlebarrightcornercolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnltitlebarrightcornercolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltitlebarrightcornercolour.Location = new System.Drawing.Point(136, 80);
             this.pnltitlebarrightcornercolour.Name = "pnltitlebarrightcornercolour";
             this.pnltitlebarrightcornercolour.Size = new System.Drawing.Size(41, 20);
             this.pnltitlebarrightcornercolour.TabIndex = 10;
-            this.pnltitlebarrightcornercolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetRightCornerColor);
+            this.pnltitlebarrightcornercolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetRightCornerColor);
             // 
             // pnltitlebarleftcornercolour
             // 
-            this.pnltitlebarleftcornercolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnltitlebarleftcornercolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltitlebarleftcornercolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnltitlebarleftcornercolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltitlebarleftcornercolour.Location = new System.Drawing.Point(126, 56);
             this.pnltitlebarleftcornercolour.Name = "pnltitlebarleftcornercolour";
             this.pnltitlebarleftcornercolour.Size = new System.Drawing.Size(41, 20);
             this.pnltitlebarleftcornercolour.TabIndex = 8;
-            this.pnltitlebarleftcornercolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetLeftCornerColor);
+            this.pnltitlebarleftcornercolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetLeftCornerColor);
             // 
             // lbrightcornercolor
             // 
@@ -2788,7 +2786,7 @@ namespace ShiftOS
             this.cboxtitlebarcorners.AutoSize = true;
             this.cboxtitlebarcorners.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cboxtitlebarcorners.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.cboxtitlebarcorners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboxtitlebarcorners.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cboxtitlebarcorners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cboxtitlebarcorners.Location = new System.Drawing.Point(166, 4);
             this.cboxtitlebarcorners.Name = "cboxtitlebarcorners";
@@ -2811,7 +2809,7 @@ namespace ShiftOS
             // txttitlebarheight
             // 
             this.txttitlebarheight.BackColor = System.Drawing.Color.White;
-            this.txttitlebarheight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttitlebarheight.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttitlebarheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttitlebarheight.ForeColor = System.Drawing.Color.Black;
             this.txttitlebarheight.Location = new System.Drawing.Point(112, 30);
@@ -2832,13 +2830,13 @@ namespace ShiftOS
             // 
             // pnltitlebarcolour
             // 
-            this.pnltitlebarcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnltitlebarcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltitlebarcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnltitlebarcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltitlebarcolour.Location = new System.Drawing.Point(112, 5);
             this.pnltitlebarcolour.Name = "pnltitlebarcolour";
             this.pnltitlebarcolour.Size = new System.Drawing.Size(41, 20);
             this.pnltitlebarcolour.TabIndex = 1;
-            this.pnltitlebarcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetTitlebarColor);
+            this.pnltitlebarcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetTitlebarColor);
             // 
             // Label2
             // 
@@ -2852,26 +2850,26 @@ namespace ShiftOS
             // 
             // pnlborderoptions
             // 
-            this.pnlborderoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlborderoptions.Controls.Add(this.cbindividualbordercolours);
-            this.pnlborderoptions.Controls.Add(this.pnlborderbottomrightcolour);
-            this.pnlborderoptions.Controls.Add(this.lbbright);
-            this.pnlborderoptions.Controls.Add(this.pnlborderbottomcolour);
-            this.pnlborderoptions.Controls.Add(this.lbbottom);
-            this.pnlborderoptions.Controls.Add(this.pnlborderbottomleftcolour);
-            this.pnlborderoptions.Controls.Add(this.lbbleft);
-            this.pnlborderoptions.Controls.Add(this.pnlborderrightcolour);
-            this.pnlborderoptions.Controls.Add(this.lbright);
-            this.pnlborderoptions.Controls.Add(this.pnlborderleftcolour);
-            this.pnlborderoptions.Controls.Add(this.lbleft);
-            this.pnlborderoptions.Controls.Add(this.Label15);
-            this.pnlborderoptions.Controls.Add(this.pnlbordercolour);
-            this.pnlborderoptions.Controls.Add(this.txtbordersize);
-            this.pnlborderoptions.Controls.Add(this.Label3);
-            this.pnlborderoptions.Controls.Add(this.Label16);
+            this.pnlborderoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnlborderoptions.Widgets.Add(this.cbindividualbordercolours);
+            this.pnlborderoptions.Widgets.Add(this.pnlborderbottomrightcolour);
+            this.pnlborderoptions.Widgets.Add(this.lbbright);
+            this.pnlborderoptions.Widgets.Add(this.pnlborderbottomcolour);
+            this.pnlborderoptions.Widgets.Add(this.lbbottom);
+            this.pnlborderoptions.Widgets.Add(this.pnlborderbottomleftcolour);
+            this.pnlborderoptions.Widgets.Add(this.lbbleft);
+            this.pnlborderoptions.Widgets.Add(this.pnlborderrightcolour);
+            this.pnlborderoptions.Widgets.Add(this.lbright);
+            this.pnlborderoptions.Widgets.Add(this.pnlborderleftcolour);
+            this.pnlborderoptions.Widgets.Add(this.lbleft);
+            this.pnlborderoptions.Widgets.Add(this.Label15);
+            this.pnlborderoptions.Widgets.Add(this.pnlbordercolour);
+            this.pnlborderoptions.Widgets.Add(this.txtbordersize);
+            this.pnlborderoptions.Widgets.Add(this.Label3);
+            this.pnlborderoptions.Widgets.Add(this.Label16);
             this.pnlborderoptions.Location = new System.Drawing.Point(135, 159);
             this.pnlborderoptions.Name = "pnlborderoptions";
-            this.pnlborderoptions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pnlborderoptions.RightToLeft = ShiftUI.RightToLeft.Yes;
             this.pnlborderoptions.Size = new System.Drawing.Size(325, 139);
             this.pnlborderoptions.TabIndex = 10;
             this.pnlborderoptions.Visible = false;
@@ -2881,7 +2879,7 @@ namespace ShiftOS
             this.cbindividualbordercolours.AutoSize = true;
             this.cbindividualbordercolours.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cbindividualbordercolours.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.cbindividualbordercolours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbindividualbordercolours.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.cbindividualbordercolours.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cbindividualbordercolours.Location = new System.Drawing.Point(161, 4);
             this.cbindividualbordercolours.Name = "cbindividualbordercolours";
@@ -2893,13 +2891,13 @@ namespace ShiftOS
             // 
             // pnlborderbottomrightcolour
             // 
-            this.pnlborderbottomrightcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlborderbottomrightcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlborderbottomrightcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlborderbottomrightcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlborderbottomrightcolour.Location = new System.Drawing.Point(132, 101);
             this.pnlborderbottomrightcolour.Name = "pnlborderbottomrightcolour";
             this.pnlborderbottomrightcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlborderbottomrightcolour.TabIndex = 27;
-            this.pnlborderbottomrightcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetBottomRBorderColor);
+            this.pnlborderbottomrightcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetBottomRBorderColor);
             // 
             // lbbright
             // 
@@ -2913,13 +2911,13 @@ namespace ShiftOS
             // 
             // pnlborderbottomcolour
             // 
-            this.pnlborderbottomcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlborderbottomcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlborderbottomcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlborderbottomcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlborderbottomcolour.Location = new System.Drawing.Point(263, 31);
             this.pnlborderbottomcolour.Name = "pnlborderbottomcolour";
             this.pnlborderbottomcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlborderbottomcolour.TabIndex = 25;
-            this.pnlborderbottomcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetBottomBorderColor);
+            this.pnlborderbottomcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetBottomBorderColor);
             // 
             // lbbottom
             // 
@@ -2933,13 +2931,13 @@ namespace ShiftOS
             // 
             // pnlborderbottomleftcolour
             // 
-            this.pnlborderbottomleftcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlborderbottomleftcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlborderbottomleftcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlborderbottomleftcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlborderbottomleftcolour.Location = new System.Drawing.Point(124, 78);
             this.pnlborderbottomleftcolour.Name = "pnlborderbottomleftcolour";
             this.pnlborderbottomleftcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlborderbottomleftcolour.TabIndex = 23;
-            this.pnlborderbottomleftcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetBottomLColor);
+            this.pnlborderbottomleftcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetBottomLColor);
             // 
             // lbbleft
             // 
@@ -2953,13 +2951,13 @@ namespace ShiftOS
             // 
             // pnlborderrightcolour
             // 
-            this.pnlborderrightcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlborderrightcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlborderrightcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlborderrightcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlborderrightcolour.Location = new System.Drawing.Point(263, 54);
             this.pnlborderrightcolour.Name = "pnlborderrightcolour";
             this.pnlborderrightcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlborderrightcolour.TabIndex = 21;
-            this.pnlborderrightcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetRightBorderColor);
+            this.pnlborderrightcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetRightBorderColor);
             // 
             // lbright
             // 
@@ -2973,13 +2971,13 @@ namespace ShiftOS
             // 
             // pnlborderleftcolour
             // 
-            this.pnlborderleftcolour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlborderleftcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlborderleftcolour.BackgroundImageLayout = ShiftUI.ImageLayout.Stretch;
+            this.pnlborderleftcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlborderleftcolour.Location = new System.Drawing.Point(102, 54);
             this.pnlborderleftcolour.Name = "pnlborderleftcolour";
             this.pnlborderleftcolour.Size = new System.Drawing.Size(41, 20);
             this.pnlborderleftcolour.TabIndex = 19;
-            this.pnlborderleftcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetLeftBorderColor);
+            this.pnlborderleftcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetLeftBorderColor);
             // 
             // lbleft
             // 
@@ -3003,17 +3001,17 @@ namespace ShiftOS
             // 
             // pnlbordercolour
             // 
-            this.pnlbordercolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlbordercolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlbordercolour.Location = new System.Drawing.Point(102, 5);
             this.pnlbordercolour.Name = "pnlbordercolour";
             this.pnlbordercolour.Size = new System.Drawing.Size(41, 20);
             this.pnlbordercolour.TabIndex = 3;
-            this.pnlbordercolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetMainBorderColor);
+            this.pnlbordercolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetMainBorderColor);
             // 
             // txtbordersize
             // 
             this.txtbordersize.BackColor = System.Drawing.Color.White;
-            this.txtbordersize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbordersize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtbordersize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbordersize.ForeColor = System.Drawing.Color.Black;
             this.txtbordersize.Location = new System.Drawing.Point(102, 29);
@@ -3044,24 +3042,24 @@ namespace ShiftOS
             // 
             // pnltitletextoptions
             // 
-            this.pnltitletextoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnltitletextoptions.Controls.Add(this.combotitletextposition);
-            this.pnltitletextoptions.Controls.Add(this.Label53);
-            this.pnltitletextoptions.Controls.Add(this.combotitletextstyle);
-            this.pnltitletextoptions.Controls.Add(this.combotitletextfont);
-            this.pnltitletextoptions.Controls.Add(this.Label23);
-            this.pnltitletextoptions.Controls.Add(this.Label17);
-            this.pnltitletextoptions.Controls.Add(this.txttitletextside);
-            this.pnltitletextoptions.Controls.Add(this.Label18);
-            this.pnltitletextoptions.Controls.Add(this.Label19);
-            this.pnltitletextoptions.Controls.Add(this.txttitletexttop);
-            this.pnltitletextoptions.Controls.Add(this.Label20);
-            this.pnltitletextoptions.Controls.Add(this.Label21);
-            this.pnltitletextoptions.Controls.Add(this.txttitletextsize);
-            this.pnltitletextoptions.Controls.Add(this.Label22);
-            this.pnltitletextoptions.Controls.Add(this.Label24);
-            this.pnltitletextoptions.Controls.Add(this.pnltitletextcolour);
-            this.pnltitletextoptions.Controls.Add(this.Label25);
+            this.pnltitletextoptions.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.pnltitletextoptions.Widgets.Add(this.combotitletextposition);
+            this.pnltitletextoptions.Widgets.Add(this.Label53);
+            this.pnltitletextoptions.Widgets.Add(this.combotitletextstyle);
+            this.pnltitletextoptions.Widgets.Add(this.combotitletextfont);
+            this.pnltitletextoptions.Widgets.Add(this.Label23);
+            this.pnltitletextoptions.Widgets.Add(this.Label17);
+            this.pnltitletextoptions.Widgets.Add(this.txttitletextside);
+            this.pnltitletextoptions.Widgets.Add(this.Label18);
+            this.pnltitletextoptions.Widgets.Add(this.Label19);
+            this.pnltitletextoptions.Widgets.Add(this.txttitletexttop);
+            this.pnltitletextoptions.Widgets.Add(this.Label20);
+            this.pnltitletextoptions.Widgets.Add(this.Label21);
+            this.pnltitletextoptions.Widgets.Add(this.txttitletextsize);
+            this.pnltitletextoptions.Widgets.Add(this.Label22);
+            this.pnltitletextoptions.Widgets.Add(this.Label24);
+            this.pnltitletextoptions.Widgets.Add(this.pnltitletextcolour);
+            this.pnltitletextoptions.Widgets.Add(this.Label25);
             this.pnltitletextoptions.Location = new System.Drawing.Point(135, 159);
             this.pnltitletextoptions.Name = "pnltitletextoptions";
             this.pnltitletextoptions.Size = new System.Drawing.Size(325, 139);
@@ -3140,7 +3138,7 @@ namespace ShiftOS
             // txttitletextside
             // 
             this.txttitletextside.BackColor = System.Drawing.Color.White;
-            this.txttitletextside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttitletextside.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttitletextside.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttitletextside.ForeColor = System.Drawing.Color.Black;
             this.txttitletextside.Location = new System.Drawing.Point(135, 105);
@@ -3172,7 +3170,7 @@ namespace ShiftOS
             // txttitletexttop
             // 
             this.txttitletexttop.BackColor = System.Drawing.Color.White;
-            this.txttitletexttop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttitletexttop.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttitletexttop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttitletexttop.ForeColor = System.Drawing.Color.Black;
             this.txttitletexttop.Location = new System.Drawing.Point(135, 80);
@@ -3204,7 +3202,7 @@ namespace ShiftOS
             // txttitletextsize
             // 
             this.txttitletextsize.BackColor = System.Drawing.Color.White;
-            this.txttitletextsize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttitletextsize.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txttitletextsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttitletextsize.ForeColor = System.Drawing.Color.Black;
             this.txttitletextsize.Location = new System.Drawing.Point(100, 55);
@@ -3235,12 +3233,12 @@ namespace ShiftOS
             // 
             // pnltitletextcolour
             // 
-            this.pnltitletextcolour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltitletextcolour.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltitletextcolour.Location = new System.Drawing.Point(114, 5);
             this.pnltitletextcolour.Name = "pnltitletextcolour";
             this.pnltitletextcolour.Size = new System.Drawing.Size(41, 20);
             this.pnltitletextcolour.TabIndex = 1;
-            this.pnltitletextcolour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SetTitleTextColor);
+            this.pnltitletextcolour.MouseClick += new ShiftUI.MouseEventHandler(this.SetTitleTextColor);
             // 
             // Label25
             // 
@@ -3254,11 +3252,11 @@ namespace ShiftOS
             // 
             // pnlwindowsobjects
             // 
-            this.pnlwindowsobjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlwindowsobjects.Controls.Add(this.btnborders);
-            this.pnlwindowsobjects.Controls.Add(this.btnbuttons);
-            this.pnlwindowsobjects.Controls.Add(this.btntitletext);
-            this.pnlwindowsobjects.Controls.Add(this.btntitlebar);
+            this.pnlwindowsobjects.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.pnlwindowsobjects.Widgets.Add(this.btnborders);
+            this.pnlwindowsobjects.Widgets.Add(this.btnbuttons);
+            this.pnlwindowsobjects.Widgets.Add(this.btntitletext);
+            this.pnlwindowsobjects.Widgets.Add(this.btntitlebar);
             this.pnlwindowsobjects.Location = new System.Drawing.Point(1, 159);
             this.pnlwindowsobjects.Name = "pnlwindowsobjects";
             this.pnlwindowsobjects.Size = new System.Drawing.Size(128, 135);
@@ -3267,7 +3265,7 @@ namespace ShiftOS
             // btnborders
             // 
             this.btnborders.BackColor = System.Drawing.Color.White;
-            this.btnborders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnborders.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnborders.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnborders.Location = new System.Drawing.Point(4, 105);
             this.btnborders.Name = "btnborders";
@@ -3281,7 +3279,7 @@ namespace ShiftOS
             // btnbuttons
             // 
             this.btnbuttons.BackColor = System.Drawing.Color.White;
-            this.btnbuttons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnbuttons.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuttons.Location = new System.Drawing.Point(4, 70);
             this.btnbuttons.Name = "btnbuttons";
@@ -3295,7 +3293,7 @@ namespace ShiftOS
             // btntitletext
             // 
             this.btntitletext.BackColor = System.Drawing.Color.White;
-            this.btntitletext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntitletext.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btntitletext.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntitletext.Location = new System.Drawing.Point(4, 35);
             this.btntitletext.Name = "btntitletext";
@@ -3309,7 +3307,7 @@ namespace ShiftOS
             // btntitlebar
             // 
             this.btntitlebar.BackColor = System.Drawing.Color.White;
-            this.btntitlebar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntitlebar.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btntitlebar.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntitlebar.Location = new System.Drawing.Point(4, 0);
             this.btntitlebar.Name = "btntitlebar";
@@ -3322,14 +3320,14 @@ namespace ShiftOS
             // 
             // pnlwindowpreview
             // 
-            this.pnlwindowpreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlwindowpreview.Controls.Add(this.prepgcontent);
-            this.pnlwindowpreview.Controls.Add(this.prepgbottom);
-            this.pnlwindowpreview.Controls.Add(this.prepgleft);
-            this.pnlwindowpreview.Controls.Add(this.prepgright);
-            this.pnlwindowpreview.Controls.Add(this.pretitlebar);
+            this.pnlwindowpreview.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlwindowpreview.Widgets.Add(this.prepgcontent);
+            this.pnlwindowpreview.Widgets.Add(this.prepgbottom);
+            this.pnlwindowpreview.Widgets.Add(this.prepgleft);
+            this.pnlwindowpreview.Widgets.Add(this.prepgright);
+            this.pnlwindowpreview.Widgets.Add(this.pretitlebar);
             this.pnlwindowpreview.Location = new System.Drawing.Point(5, 3);
             this.pnlwindowpreview.Name = "pnlwindowpreview";
             this.pnlwindowpreview.Size = new System.Drawing.Size(448, 148);
@@ -3337,7 +3335,7 @@ namespace ShiftOS
             // 
             // prepgcontent
             // 
-            this.prepgcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prepgcontent.Dock = ShiftUI.DockStyle.Fill;
             this.prepgcontent.Location = new System.Drawing.Point(2, 30);
             this.prepgcontent.Name = "prepgcontent";
             this.prepgcontent.Size = new System.Drawing.Size(444, 116);
@@ -3346,7 +3344,7 @@ namespace ShiftOS
             // prepgbottom
             // 
             this.prepgbottom.BackColor = System.Drawing.Color.Gray;
-            this.prepgbottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottom.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottom.Location = new System.Drawing.Point(2, 146);
             this.prepgbottom.Name = "prepgbottom";
             this.prepgbottom.Size = new System.Drawing.Size(444, 2);
@@ -3355,8 +3353,8 @@ namespace ShiftOS
             // prepgleft
             // 
             this.prepgleft.BackColor = System.Drawing.Color.Gray;
-            this.prepgleft.Controls.Add(this.prepgbottomlcorner);
-            this.prepgleft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.prepgleft.Widgets.Add(this.prepgbottomlcorner);
+            this.prepgleft.Dock = ShiftUI.DockStyle.Left;
             this.prepgleft.Location = new System.Drawing.Point(0, 30);
             this.prepgleft.Name = "prepgleft";
             this.prepgleft.Size = new System.Drawing.Size(2, 118);
@@ -3365,7 +3363,7 @@ namespace ShiftOS
             // prepgbottomlcorner
             // 
             this.prepgbottomlcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgbottomlcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottomlcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottomlcorner.Location = new System.Drawing.Point(0, 116);
             this.prepgbottomlcorner.Name = "prepgbottomlcorner";
             this.prepgbottomlcorner.Size = new System.Drawing.Size(2, 2);
@@ -3374,8 +3372,8 @@ namespace ShiftOS
             // prepgright
             // 
             this.prepgright.BackColor = System.Drawing.Color.Gray;
-            this.prepgright.Controls.Add(this.prepgbottomrcorner);
-            this.prepgright.Dock = System.Windows.Forms.DockStyle.Right;
+            this.prepgright.Widgets.Add(this.prepgbottomrcorner);
+            this.prepgright.Dock = ShiftUI.DockStyle.Right;
             this.prepgright.Location = new System.Drawing.Point(446, 30);
             this.prepgright.Name = "prepgright";
             this.prepgright.Size = new System.Drawing.Size(2, 118);
@@ -3384,7 +3382,7 @@ namespace ShiftOS
             // prepgbottomrcorner
             // 
             this.prepgbottomrcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgbottomrcorner.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prepgbottomrcorner.Dock = ShiftUI.DockStyle.Bottom;
             this.prepgbottomrcorner.Location = new System.Drawing.Point(0, 116);
             this.prepgbottomrcorner.Name = "prepgbottomrcorner";
             this.prepgbottomrcorner.Size = new System.Drawing.Size(2, 2);
@@ -3393,14 +3391,14 @@ namespace ShiftOS
             // pretitlebar
             // 
             this.pretitlebar.BackColor = System.Drawing.Color.Gray;
-            this.pretitlebar.Controls.Add(this.preminimizebutton);
-            this.pretitlebar.Controls.Add(this.prepnlicon);
-            this.pretitlebar.Controls.Add(this.prerollupbutton);
-            this.pretitlebar.Controls.Add(this.preclosebutton);
-            this.pretitlebar.Controls.Add(this.pretitletext);
-            this.pretitlebar.Controls.Add(this.prepgtoplcorner);
-            this.pretitlebar.Controls.Add(this.prepgtoprcorner);
-            this.pretitlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pretitlebar.Widgets.Add(this.preminimizebutton);
+            this.pretitlebar.Widgets.Add(this.prepnlicon);
+            this.pretitlebar.Widgets.Add(this.prerollupbutton);
+            this.pretitlebar.Widgets.Add(this.preclosebutton);
+            this.pretitlebar.Widgets.Add(this.pretitletext);
+            this.pretitlebar.Widgets.Add(this.prepgtoplcorner);
+            this.pretitlebar.Widgets.Add(this.prepgtoprcorner);
+            this.pretitlebar.Dock = ShiftUI.DockStyle.Top;
             this.pretitlebar.ForeColor = System.Drawing.Color.White;
             this.pretitlebar.Location = new System.Drawing.Point(0, 0);
             this.pretitlebar.Name = "pretitlebar";
@@ -3455,7 +3453,7 @@ namespace ShiftOS
             // prepgtoplcorner
             // 
             this.prepgtoplcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left;
+            this.prepgtoplcorner.Dock = ShiftUI.DockStyle.Left;
             this.prepgtoplcorner.Location = new System.Drawing.Point(0, 0);
             this.prepgtoplcorner.Name = "prepgtoplcorner";
             this.prepgtoplcorner.Size = new System.Drawing.Size(2, 30);
@@ -3464,7 +3462,7 @@ namespace ShiftOS
             // prepgtoprcorner
             // 
             this.prepgtoprcorner.BackColor = System.Drawing.Color.Red;
-            this.prepgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right;
+            this.prepgtoprcorner.Dock = ShiftUI.DockStyle.Right;
             this.prepgtoprcorner.Location = new System.Drawing.Point(446, 0);
             this.prepgtoprcorner.Name = "prepgtoprcorner";
             this.prepgtoprcorner.Size = new System.Drawing.Size(2, 30);
@@ -3472,13 +3470,13 @@ namespace ShiftOS
             // 
             // pnlreset
             // 
-            this.pnlreset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlreset.Controls.Add(this.Label113);
-            this.pnlreset.Controls.Add(this.btnresetallsettings);
-            this.pnlreset.Controls.Add(this.Label109);
-            this.pnlreset.Controls.Add(this.Label111);
+            this.pnlreset.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.pnlreset.Widgets.Add(this.Label113);
+            this.pnlreset.Widgets.Add(this.btnresetallsettings);
+            this.pnlreset.Widgets.Add(this.Label109);
+            this.pnlreset.Widgets.Add(this.Label111);
             this.pnlreset.Location = new System.Drawing.Point(134, 9);
             this.pnlreset.Name = "pnlreset";
             this.pnlreset.Size = new System.Drawing.Size(457, 306);
@@ -3496,7 +3494,7 @@ namespace ShiftOS
             // 
             // btnresetallsettings
             // 
-            this.btnresetallsettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnresetallsettings.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnresetallsettings.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnresetallsettings.Location = new System.Drawing.Point(101, 145);
             this.btnresetallsettings.Name = "btnresetallsettings";
@@ -3531,17 +3529,17 @@ namespace ShiftOS
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.pnldesktopoptions);
-            this.pgcontents.Controls.Add(this.pnlluaoptions);
-            this.pgcontents.Controls.Add(this.pnldesktopcomposition);
-            this.pgcontents.Controls.Add(this.pnlreset);
-            this.pgcontents.Controls.Add(this.pnlwindowsoptions);
-            this.pgcontents.Controls.Add(this.pnlmenus);
-            this.pgcontents.Controls.Add(this.pnlshifterintro);
-            this.pgcontents.Controls.Add(this.catholder);
-            this.pgcontents.Controls.Add(this.btnapply);
-            this.pgcontents.Controls.Add(this.Label1);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.pnldesktopoptions);
+            this.pgcontents.Widgets.Add(this.pnlluaoptions);
+            this.pgcontents.Widgets.Add(this.pnldesktopcomposition);
+            this.pgcontents.Widgets.Add(this.pnlreset);
+            this.pgcontents.Widgets.Add(this.pnlwindowsoptions);
+            this.pgcontents.Widgets.Add(this.pnlmenus);
+            this.pgcontents.Widgets.Add(this.pnlshifterintro);
+            this.pgcontents.Widgets.Add(this.catholder);
+            this.pgcontents.Widgets.Add(this.btnapply);
+            this.pgcontents.Widgets.Add(this.Label1);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(600, 323);
@@ -3549,17 +3547,17 @@ namespace ShiftOS
             // 
             // pnldesktopcomposition
             // 
-            this.pnldesktopcomposition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnldesktopcomposition.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnldesktopcomposition.BackColor = System.Drawing.Color.White;
-            this.pnldesktopcomposition.Controls.Add(this.pnlfancywindows);
-            this.pnldesktopcomposition.Controls.Add(this.pnlfancydragging);
-            this.pnldesktopcomposition.Controls.Add(this.pnlfancyintro);
-            this.pnldesktopcomposition.Controls.Add(this.panel18);
-            this.pnldesktopcomposition.Controls.Add(this.panel25);
-            this.pnldesktopcomposition.Controls.Add(this.panel36);
-            this.pnldesktopcomposition.Controls.Add(this.label176);
+            this.pnldesktopcomposition.Widgets.Add(this.pnlfancywindows);
+            this.pnldesktopcomposition.Widgets.Add(this.pnlfancydragging);
+            this.pnldesktopcomposition.Widgets.Add(this.pnlfancyintro);
+            this.pnldesktopcomposition.Widgets.Add(this.panel18);
+            this.pnldesktopcomposition.Widgets.Add(this.panel25);
+            this.pnldesktopcomposition.Widgets.Add(this.panel36);
+            this.pnldesktopcomposition.Widgets.Add(this.label176);
             this.pnldesktopcomposition.Location = new System.Drawing.Point(134, 9);
             this.pnldesktopcomposition.Name = "pnldesktopcomposition";
             this.pnldesktopcomposition.Size = new System.Drawing.Size(457, 306);
@@ -3567,17 +3565,17 @@ namespace ShiftOS
             // 
             // pnlfancywindows
             // 
-            this.pnlfancywindows.Controls.Add(this.txtwinfadedec);
-            this.pnlfancywindows.Controls.Add(this.label150);
-            this.pnlfancywindows.Controls.Add(this.txtwinfadespeed);
-            this.pnlfancywindows.Controls.Add(this.label151);
-            this.pnlfancywindows.Controls.Add(this.cbdrageffect);
-            this.pnlfancywindows.Controls.Add(this.label141);
-            this.pnlfancywindows.Controls.Add(this.cbcloseanim);
-            this.pnlfancywindows.Controls.Add(this.label128);
-            this.pnlfancywindows.Controls.Add(this.cbopenanim);
-            this.pnlfancywindows.Controls.Add(this.label127);
-            this.pnlfancywindows.Controls.Add(this.label149);
+            this.pnlfancywindows.Widgets.Add(this.txtwinfadedec);
+            this.pnlfancywindows.Widgets.Add(this.label150);
+            this.pnlfancywindows.Widgets.Add(this.txtwinfadespeed);
+            this.pnlfancywindows.Widgets.Add(this.label151);
+            this.pnlfancywindows.Widgets.Add(this.cbdrageffect);
+            this.pnlfancywindows.Widgets.Add(this.label141);
+            this.pnlfancywindows.Widgets.Add(this.cbcloseanim);
+            this.pnlfancywindows.Widgets.Add(this.label128);
+            this.pnlfancywindows.Widgets.Add(this.cbopenanim);
+            this.pnlfancywindows.Widgets.Add(this.label127);
+            this.pnlfancywindows.Widgets.Add(this.label149);
             this.pnlfancywindows.Location = new System.Drawing.Point(139, 43);
             this.pnlfancywindows.Name = "pnlfancywindows";
             this.pnlfancywindows.Size = new System.Drawing.Size(311, 256);
@@ -3585,7 +3583,7 @@ namespace ShiftOS
             // 
             // txtwinfadedec
             // 
-            this.txtwinfadedec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtwinfadedec.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtwinfadedec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtwinfadedec.Location = new System.Drawing.Point(225, 189);
             this.txtwinfadedec.Name = "txtwinfadedec";
@@ -3605,7 +3603,7 @@ namespace ShiftOS
             // 
             // txtwinfadespeed
             // 
-            this.txtwinfadespeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtwinfadespeed.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtwinfadespeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtwinfadespeed.Location = new System.Drawing.Point(109, 185);
             this.txtwinfadespeed.Name = "txtwinfadespeed";
@@ -3625,9 +3623,9 @@ namespace ShiftOS
             // 
             // cbdrageffect
             // 
-            this.cbdrageffect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbdrageffect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbdrageffect.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.cbdrageffect.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
             this.cbdrageffect.FormattingEnabled = true;
             this.cbdrageffect.Location = new System.Drawing.Point(6, 153);
             this.cbdrageffect.Name = "cbdrageffect";
@@ -3647,9 +3645,9 @@ namespace ShiftOS
             // 
             // cbcloseanim
             // 
-            this.cbcloseanim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcloseanim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcloseanim.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.cbcloseanim.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
             this.cbcloseanim.FormattingEnabled = true;
             this.cbcloseanim.Location = new System.Drawing.Point(8, 102);
             this.cbcloseanim.Name = "cbcloseanim";
@@ -3669,9 +3667,9 @@ namespace ShiftOS
             // 
             // cbopenanim
             // 
-            this.cbopenanim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbopenanim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbopenanim.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.cbopenanim.DropDownStyle = ShiftUI.ComboBoxStyle.DropDownList;
             this.cbopenanim.FormattingEnabled = true;
             this.cbopenanim.Location = new System.Drawing.Point(9, 50);
             this.cbopenanim.Name = "cbopenanim";
@@ -3691,8 +3689,8 @@ namespace ShiftOS
             // 
             // label149
             // 
-            this.label149.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label149.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label149.Location = new System.Drawing.Point(6, 0);
             this.label149.Name = "label149";
@@ -3703,17 +3701,17 @@ namespace ShiftOS
             // 
             // pnlfancydragging
             // 
-            this.pnlfancydragging.Controls.Add(this.txtshakeminoffset);
-            this.pnlfancydragging.Controls.Add(this.label148);
-            this.pnlfancydragging.Controls.Add(this.txtshakemax);
-            this.pnlfancydragging.Controls.Add(this.label146);
-            this.pnlfancydragging.Controls.Add(this.txtdragopacitydec);
-            this.pnlfancydragging.Controls.Add(this.label144);
-            this.pnlfancydragging.Controls.Add(this.txtdragfadedec);
-            this.pnlfancydragging.Controls.Add(this.label143);
-            this.pnlfancydragging.Controls.Add(this.txtfadespeed);
-            this.pnlfancydragging.Controls.Add(this.label155);
-            this.pnlfancydragging.Controls.Add(this.label156);
+            this.pnlfancydragging.Widgets.Add(this.txtshakeminoffset);
+            this.pnlfancydragging.Widgets.Add(this.label148);
+            this.pnlfancydragging.Widgets.Add(this.txtshakemax);
+            this.pnlfancydragging.Widgets.Add(this.label146);
+            this.pnlfancydragging.Widgets.Add(this.txtdragopacitydec);
+            this.pnlfancydragging.Widgets.Add(this.label144);
+            this.pnlfancydragging.Widgets.Add(this.txtdragfadedec);
+            this.pnlfancydragging.Widgets.Add(this.label143);
+            this.pnlfancydragging.Widgets.Add(this.txtfadespeed);
+            this.pnlfancydragging.Widgets.Add(this.label155);
+            this.pnlfancydragging.Widgets.Add(this.label156);
             this.pnlfancydragging.Location = new System.Drawing.Point(139, 43);
             this.pnlfancydragging.Name = "pnlfancydragging";
             this.pnlfancydragging.Size = new System.Drawing.Size(311, 256);
@@ -3721,7 +3719,7 @@ namespace ShiftOS
             // 
             // txtshakeminoffset
             // 
-            this.txtshakeminoffset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtshakeminoffset.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtshakeminoffset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtshakeminoffset.Location = new System.Drawing.Point(167, 189);
             this.txtshakeminoffset.Name = "txtshakeminoffset";
@@ -3741,7 +3739,7 @@ namespace ShiftOS
             // 
             // txtshakemax
             // 
-            this.txtshakemax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtshakemax.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtshakemax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtshakemax.Location = new System.Drawing.Point(167, 159);
             this.txtshakemax.Name = "txtshakemax";
@@ -3761,7 +3759,7 @@ namespace ShiftOS
             // 
             // txtdragopacitydec
             // 
-            this.txtdragopacitydec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdragopacitydec.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtdragopacitydec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtdragopacitydec.Location = new System.Drawing.Point(104, 116);
             this.txtdragopacitydec.Name = "txtdragopacitydec";
@@ -3781,7 +3779,7 @@ namespace ShiftOS
             // 
             // txtdragfadedec
             // 
-            this.txtdragfadedec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdragfadedec.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtdragfadedec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtdragfadedec.Location = new System.Drawing.Point(89, 88);
             this.txtdragfadedec.Name = "txtdragfadedec";
@@ -3801,7 +3799,7 @@ namespace ShiftOS
             // 
             // txtfadespeed
             // 
-            this.txtfadespeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtfadespeed.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.txtfadespeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtfadespeed.Location = new System.Drawing.Point(114, 54);
             this.txtfadespeed.Name = "txtfadespeed";
@@ -3821,8 +3819,8 @@ namespace ShiftOS
             // 
             // label156
             // 
-            this.label156.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label156.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label156.Location = new System.Drawing.Point(6, 0);
             this.label156.Name = "label156";
@@ -3833,8 +3831,8 @@ namespace ShiftOS
             // 
             // pnlfancyintro
             // 
-            this.pnlfancyintro.Controls.Add(this.label174);
-            this.pnlfancyintro.Controls.Add(this.label175);
+            this.pnlfancyintro.Widgets.Add(this.label174);
+            this.pnlfancyintro.Widgets.Add(this.label175);
             this.pnlfancyintro.Location = new System.Drawing.Point(139, 43);
             this.pnlfancyintro.Name = "pnlfancyintro";
             this.pnlfancyintro.Size = new System.Drawing.Size(311, 256);
@@ -3842,8 +3840,8 @@ namespace ShiftOS
             // 
             // label174
             // 
-            this.label174.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label174.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label174.BackColor = System.Drawing.Color.Transparent;
             this.label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label174.Location = new System.Drawing.Point(6, 29);
@@ -3856,8 +3854,8 @@ namespace ShiftOS
             // 
             // label175
             // 
-            this.label175.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label175.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label175.Location = new System.Drawing.Point(6, 0);
             this.label175.Name = "label175";
@@ -3868,19 +3866,19 @@ namespace ShiftOS
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Controls.Add(this.label157);
-            this.panel18.Controls.Add(this.panel20);
-            this.panel18.Controls.Add(this.label158);
-            this.panel18.Controls.Add(this.panel21);
-            this.panel18.Controls.Add(this.label159);
-            this.panel18.Controls.Add(this.panel22);
-            this.panel18.Controls.Add(this.label160);
-            this.panel18.Controls.Add(this.panel23);
-            this.panel18.Controls.Add(this.label161);
-            this.panel18.Controls.Add(this.panel24);
-            this.panel18.Controls.Add(this.label162);
-            this.panel18.Controls.Add(this.label163);
+            this.panel18.Widgets.Add(this.panel19);
+            this.panel18.Widgets.Add(this.label157);
+            this.panel18.Widgets.Add(this.panel20);
+            this.panel18.Widgets.Add(this.label158);
+            this.panel18.Widgets.Add(this.panel21);
+            this.panel18.Widgets.Add(this.label159);
+            this.panel18.Widgets.Add(this.panel22);
+            this.panel18.Widgets.Add(this.label160);
+            this.panel18.Widgets.Add(this.panel23);
+            this.panel18.Widgets.Add(this.label161);
+            this.panel18.Widgets.Add(this.panel24);
+            this.panel18.Widgets.Add(this.label162);
+            this.panel18.Widgets.Add(this.label163);
             this.panel18.Location = new System.Drawing.Point(139, 43);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(311, 256);
@@ -3888,7 +3886,7 @@ namespace ShiftOS
             // 
             // panel19
             // 
-            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel19.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel19.Location = new System.Drawing.Point(216, 80);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(41, 20);
@@ -3906,7 +3904,7 @@ namespace ShiftOS
             // 
             // panel20
             // 
-            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel20.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel20.Location = new System.Drawing.Point(224, 55);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(41, 20);
@@ -3924,7 +3922,7 @@ namespace ShiftOS
             // 
             // panel21
             // 
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel21.Location = new System.Drawing.Point(117, 80);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(41, 20);
@@ -3942,7 +3940,7 @@ namespace ShiftOS
             // 
             // panel22
             // 
-            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel22.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel22.Location = new System.Drawing.Point(101, 55);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(41, 20);
@@ -3960,7 +3958,7 @@ namespace ShiftOS
             // 
             // panel23
             // 
-            this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel23.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel23.Location = new System.Drawing.Point(249, 29);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(41, 20);
@@ -3978,7 +3976,7 @@ namespace ShiftOS
             // 
             // panel24
             // 
-            this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel24.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel24.Location = new System.Drawing.Point(115, 29);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(41, 20);
@@ -3996,8 +3994,8 @@ namespace ShiftOS
             // 
             // label163
             // 
-            this.label163.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label163.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label163.Location = new System.Drawing.Point(6, 0);
             this.label163.Name = "label163";
@@ -4008,25 +4006,25 @@ namespace ShiftOS
             // 
             // panel25
             // 
-            this.panel25.Controls.Add(this.panel26);
-            this.panel25.Controls.Add(this.label164);
-            this.panel25.Controls.Add(this.panel27);
-            this.panel25.Controls.Add(this.label165);
-            this.panel25.Controls.Add(this.panel28);
-            this.panel25.Controls.Add(this.label166);
-            this.panel25.Controls.Add(this.panel29);
-            this.panel25.Controls.Add(this.label167);
-            this.panel25.Controls.Add(this.panel30);
-            this.panel25.Controls.Add(this.label168);
-            this.panel25.Controls.Add(this.panel31);
-            this.panel25.Controls.Add(this.label169);
-            this.panel25.Controls.Add(this.panel32);
-            this.panel25.Controls.Add(this.label170);
-            this.panel25.Controls.Add(this.panel33);
-            this.panel25.Controls.Add(this.label171);
-            this.panel25.Controls.Add(this.panel34);
-            this.panel25.Controls.Add(this.label172);
-            this.panel25.Controls.Add(this.label173);
+            this.panel25.Widgets.Add(this.panel26);
+            this.panel25.Widgets.Add(this.label164);
+            this.panel25.Widgets.Add(this.panel27);
+            this.panel25.Widgets.Add(this.label165);
+            this.panel25.Widgets.Add(this.panel28);
+            this.panel25.Widgets.Add(this.label166);
+            this.panel25.Widgets.Add(this.panel29);
+            this.panel25.Widgets.Add(this.label167);
+            this.panel25.Widgets.Add(this.panel30);
+            this.panel25.Widgets.Add(this.label168);
+            this.panel25.Widgets.Add(this.panel31);
+            this.panel25.Widgets.Add(this.label169);
+            this.panel25.Widgets.Add(this.panel32);
+            this.panel25.Widgets.Add(this.label170);
+            this.panel25.Widgets.Add(this.panel33);
+            this.panel25.Widgets.Add(this.label171);
+            this.panel25.Widgets.Add(this.panel34);
+            this.panel25.Widgets.Add(this.label172);
+            this.panel25.Widgets.Add(this.label173);
             this.panel25.Location = new System.Drawing.Point(139, 43);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(311, 256);
@@ -4034,7 +4032,7 @@ namespace ShiftOS
             // 
             // panel26
             // 
-            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel26.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel26.Location = new System.Drawing.Point(85, 129);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(41, 20);
@@ -4052,7 +4050,7 @@ namespace ShiftOS
             // 
             // panel27
             // 
-            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel27.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel27.Location = new System.Drawing.Point(228, 104);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(41, 20);
@@ -4070,7 +4068,7 @@ namespace ShiftOS
             // 
             // panel28
             // 
-            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel28.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel28.Location = new System.Drawing.Point(84, 104);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(41, 20);
@@ -4088,7 +4086,7 @@ namespace ShiftOS
             // 
             // panel29
             // 
-            this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel29.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel29.Location = new System.Drawing.Point(254, 81);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(41, 20);
@@ -4106,7 +4104,7 @@ namespace ShiftOS
             // 
             // panel30
             // 
-            this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel30.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel30.Location = new System.Drawing.Point(254, 55);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(41, 20);
@@ -4124,7 +4122,7 @@ namespace ShiftOS
             // 
             // panel31
             // 
-            this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel31.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel31.Location = new System.Drawing.Point(117, 80);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(41, 20);
@@ -4142,7 +4140,7 @@ namespace ShiftOS
             // 
             // panel32
             // 
-            this.panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel32.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel32.Location = new System.Drawing.Point(117, 55);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(41, 20);
@@ -4160,7 +4158,7 @@ namespace ShiftOS
             // 
             // panel33
             // 
-            this.panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel33.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel33.Location = new System.Drawing.Point(249, 29);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(41, 20);
@@ -4178,7 +4176,7 @@ namespace ShiftOS
             // 
             // panel34
             // 
-            this.panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel34.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.panel34.Location = new System.Drawing.Point(115, 29);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(41, 20);
@@ -4196,8 +4194,8 @@ namespace ShiftOS
             // 
             // label173
             // 
-            this.label173.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label173.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label173.Location = new System.Drawing.Point(6, 0);
             this.label173.Name = "label173";
@@ -4208,10 +4206,10 @@ namespace ShiftOS
             // 
             // panel36
             // 
-            this.panel36.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel36.Controls.Add(this.btnfancydragging);
-            this.panel36.Controls.Add(this.btnfancywindows);
+            this.panel36.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
+            this.panel36.Widgets.Add(this.btnfancydragging);
+            this.panel36.Widgets.Add(this.btnfancywindows);
             this.panel36.Location = new System.Drawing.Point(6, 42);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(128, 257);
@@ -4220,7 +4218,7 @@ namespace ShiftOS
             // btnfancydragging
             // 
             this.btnfancydragging.BackColor = System.Drawing.Color.White;
-            this.btnfancydragging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfancydragging.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnfancydragging.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfancydragging.Location = new System.Drawing.Point(4, 35);
             this.btnfancydragging.Name = "btnfancydragging";
@@ -4233,7 +4231,7 @@ namespace ShiftOS
             // btnfancywindows
             // 
             this.btnfancywindows.BackColor = System.Drawing.Color.White;
-            this.btnfancywindows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfancywindows.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnfancywindows.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfancywindows.Location = new System.Drawing.Point(4, 0);
             this.btnfancywindows.Name = "btnfancywindows";
@@ -4254,17 +4252,17 @@ namespace ShiftOS
             // 
             // pnlmenus
             // 
-            this.pnlmenus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlmenus.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnlmenus.BackColor = System.Drawing.Color.White;
-            this.pnlmenus.Controls.Add(this.pnladvanced);
-            this.pnlmenus.Controls.Add(this.pnlmore);
-            this.pnlmenus.Controls.Add(this.pnldropdown);
-            this.pnlmenus.Controls.Add(this.pnlbasic);
-            this.pnlmenus.Controls.Add(this.pnlmenusintro);
-            this.pnlmenus.Controls.Add(this.pnlmenucategories);
-            this.pnlmenus.Controls.Add(this.label74);
+            this.pnlmenus.Widgets.Add(this.pnladvanced);
+            this.pnlmenus.Widgets.Add(this.pnlmore);
+            this.pnlmenus.Widgets.Add(this.pnldropdown);
+            this.pnlmenus.Widgets.Add(this.pnlbasic);
+            this.pnlmenus.Widgets.Add(this.pnlmenusintro);
+            this.pnlmenus.Widgets.Add(this.pnlmenucategories);
+            this.pnlmenus.Widgets.Add(this.label74);
             this.pnlmenus.Location = new System.Drawing.Point(134, 9);
             this.pnlmenus.Name = "pnlmenus";
             this.pnlmenus.Size = new System.Drawing.Size(457, 306);
@@ -4272,22 +4270,22 @@ namespace ShiftOS
             // 
             // pnladvanced
             // 
-            this.pnladvanced.Controls.Add(this.btnmorebuttons);
-            this.pnladvanced.Controls.Add(this.pnlbuttonchecked);
-            this.pnladvanced.Controls.Add(this.label136);
-            this.pnladvanced.Controls.Add(this.pnlitemselectedend);
-            this.pnladvanced.Controls.Add(this.label129);
-            this.pnladvanced.Controls.Add(this.pnlbuttonpressed);
-            this.pnladvanced.Controls.Add(this.label130);
-            this.pnladvanced.Controls.Add(this.pnlitemselectedbegin);
-            this.pnladvanced.Controls.Add(this.label131);
-            this.pnladvanced.Controls.Add(this.pnlitemselected);
-            this.pnladvanced.Controls.Add(this.label132);
-            this.pnladvanced.Controls.Add(this.pnlbuttonselected);
-            this.pnladvanced.Controls.Add(this.label133);
-            this.pnladvanced.Controls.Add(this.pnlcheckbg);
-            this.pnladvanced.Controls.Add(this.label134);
-            this.pnladvanced.Controls.Add(this.label135);
+            this.pnladvanced.Widgets.Add(this.btnmorebuttons);
+            this.pnladvanced.Widgets.Add(this.pnlbuttonchecked);
+            this.pnladvanced.Widgets.Add(this.label136);
+            this.pnladvanced.Widgets.Add(this.pnlitemselectedend);
+            this.pnladvanced.Widgets.Add(this.label129);
+            this.pnladvanced.Widgets.Add(this.pnlbuttonpressed);
+            this.pnladvanced.Widgets.Add(this.label130);
+            this.pnladvanced.Widgets.Add(this.pnlitemselectedbegin);
+            this.pnladvanced.Widgets.Add(this.label131);
+            this.pnladvanced.Widgets.Add(this.pnlitemselected);
+            this.pnladvanced.Widgets.Add(this.label132);
+            this.pnladvanced.Widgets.Add(this.pnlbuttonselected);
+            this.pnladvanced.Widgets.Add(this.label133);
+            this.pnladvanced.Widgets.Add(this.pnlcheckbg);
+            this.pnladvanced.Widgets.Add(this.label134);
+            this.pnladvanced.Widgets.Add(this.label135);
             this.pnladvanced.Location = new System.Drawing.Point(139, 43);
             this.pnladvanced.Name = "pnladvanced";
             this.pnladvanced.Size = new System.Drawing.Size(311, 256);
@@ -4295,7 +4293,7 @@ namespace ShiftOS
             // 
             // btnmorebuttons
             // 
-            this.btnmorebuttons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmorebuttons.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnmorebuttons.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.btnmorebuttons.Location = new System.Drawing.Point(216, 195);
             this.btnmorebuttons.Name = "btnmorebuttons";
@@ -4307,12 +4305,12 @@ namespace ShiftOS
             // 
             // pnlbuttonchecked
             // 
-            this.pnlbuttonchecked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlbuttonchecked.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlbuttonchecked.Location = new System.Drawing.Point(115, 153);
             this.pnlbuttonchecked.Name = "pnlbuttonchecked";
             this.pnlbuttonchecked.Size = new System.Drawing.Size(41, 20);
             this.pnlbuttonchecked.TabIndex = 11;
-            this.pnlbuttonchecked.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetButtonCheckBG);
+            this.pnlbuttonchecked.MouseDown += new ShiftUI.MouseEventHandler(this.SetButtonCheckBG);
             // 
             // label136
             // 
@@ -4326,12 +4324,12 @@ namespace ShiftOS
             // 
             // pnlitemselectedend
             // 
-            this.pnlitemselectedend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlitemselectedend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlitemselectedend.Location = new System.Drawing.Point(134, 83);
             this.pnlitemselectedend.Name = "pnlitemselectedend";
             this.pnlitemselectedend.Size = new System.Drawing.Size(41, 20);
             this.pnlitemselectedend.TabIndex = 11;
-            this.pnlitemselectedend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetItemSelectedEnd);
+            this.pnlitemselectedend.MouseDown += new ShiftUI.MouseEventHandler(this.SetItemSelectedEnd);
             // 
             // label129
             // 
@@ -4345,12 +4343,12 @@ namespace ShiftOS
             // 
             // pnlbuttonpressed
             // 
-            this.pnlbuttonpressed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlbuttonpressed.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlbuttonpressed.Location = new System.Drawing.Point(117, 207);
             this.pnlbuttonpressed.Name = "pnlbuttonpressed";
             this.pnlbuttonpressed.Size = new System.Drawing.Size(41, 20);
             this.pnlbuttonpressed.TabIndex = 9;
-            this.pnlbuttonpressed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetButtonPressedBG);
+            this.pnlbuttonpressed.MouseDown += new ShiftUI.MouseEventHandler(this.SetButtonPressedBG);
             // 
             // label130
             // 
@@ -4364,12 +4362,12 @@ namespace ShiftOS
             // 
             // pnlitemselectedbegin
             // 
-            this.pnlitemselectedbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlitemselectedbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlitemselectedbegin.Location = new System.Drawing.Point(143, 56);
             this.pnlitemselectedbegin.Name = "pnlitemselectedbegin";
             this.pnlitemselectedbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlitemselectedbegin.TabIndex = 7;
-            this.pnlitemselectedbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetItemSelectedBegin);
+            this.pnlitemselectedbegin.MouseDown += new ShiftUI.MouseEventHandler(this.SetItemSelectedBegin);
             // 
             // label131
             // 
@@ -4383,12 +4381,12 @@ namespace ShiftOS
             // 
             // pnlitemselected
             // 
-            this.pnlitemselected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlitemselected.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlitemselected.Location = new System.Drawing.Point(240, 29);
             this.pnlitemselected.Name = "pnlitemselected";
             this.pnlitemselected.Size = new System.Drawing.Size(41, 20);
             this.pnlitemselected.TabIndex = 5;
-            this.pnlitemselected.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetItemSelected);
+            this.pnlitemselected.MouseDown += new ShiftUI.MouseEventHandler(this.SetItemSelected);
             // 
             // label132
             // 
@@ -4402,12 +4400,12 @@ namespace ShiftOS
             // 
             // pnlbuttonselected
             // 
-            this.pnlbuttonselected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlbuttonselected.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlbuttonselected.Location = new System.Drawing.Point(110, 181);
             this.pnlbuttonselected.Name = "pnlbuttonselected";
             this.pnlbuttonselected.Size = new System.Drawing.Size(41, 20);
             this.pnlbuttonselected.TabIndex = 5;
-            this.pnlbuttonselected.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetButtonSelectedBG);
+            this.pnlbuttonselected.MouseDown += new ShiftUI.MouseEventHandler(this.SetButtonSelectedBG);
             // 
             // label133
             // 
@@ -4421,12 +4419,12 @@ namespace ShiftOS
             // 
             // pnlcheckbg
             // 
-            this.pnlcheckbg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlcheckbg.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlcheckbg.Location = new System.Drawing.Point(79, 29);
             this.pnlcheckbg.Name = "pnlcheckbg";
             this.pnlcheckbg.Size = new System.Drawing.Size(41, 20);
             this.pnlcheckbg.TabIndex = 3;
-            this.pnlcheckbg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetCheckBG);
+            this.pnlcheckbg.MouseDown += new ShiftUI.MouseEventHandler(this.SetCheckBG);
             // 
             // label134
             // 
@@ -4440,8 +4438,8 @@ namespace ShiftOS
             // 
             // label135
             // 
-            this.label135.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label135.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label135.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label135.Location = new System.Drawing.Point(6, 0);
             this.label135.Name = "label135";
@@ -4452,20 +4450,20 @@ namespace ShiftOS
             // 
             // pnlmore
             // 
-            this.pnlmore.Controls.Add(this.pnlpressedbegin);
-            this.pnlmore.Controls.Add(this.btnback);
-            this.pnlmore.Controls.Add(this.label138);
-            this.pnlmore.Controls.Add(this.pnlselectedbegin);
-            this.pnlmore.Controls.Add(this.pnlpressedend);
-            this.pnlmore.Controls.Add(this.label137);
-            this.pnlmore.Controls.Add(this.label139);
-            this.pnlmore.Controls.Add(this.pnlselectedend);
-            this.pnlmore.Controls.Add(this.pnlpressedmiddle);
-            this.pnlmore.Controls.Add(this.label140);
-            this.pnlmore.Controls.Add(this.label142);
-            this.pnlmore.Controls.Add(this.pnlselectedmiddle);
-            this.pnlmore.Controls.Add(this.label145);
-            this.pnlmore.Controls.Add(this.label147);
+            this.pnlmore.Widgets.Add(this.pnlpressedbegin);
+            this.pnlmore.Widgets.Add(this.btnback);
+            this.pnlmore.Widgets.Add(this.label138);
+            this.pnlmore.Widgets.Add(this.pnlselectedbegin);
+            this.pnlmore.Widgets.Add(this.pnlpressedend);
+            this.pnlmore.Widgets.Add(this.label137);
+            this.pnlmore.Widgets.Add(this.label139);
+            this.pnlmore.Widgets.Add(this.pnlselectedend);
+            this.pnlmore.Widgets.Add(this.pnlpressedmiddle);
+            this.pnlmore.Widgets.Add(this.label140);
+            this.pnlmore.Widgets.Add(this.label142);
+            this.pnlmore.Widgets.Add(this.pnlselectedmiddle);
+            this.pnlmore.Widgets.Add(this.label145);
+            this.pnlmore.Widgets.Add(this.label147);
             this.pnlmore.Location = new System.Drawing.Point(139, 43);
             this.pnlmore.Name = "pnlmore";
             this.pnlmore.Size = new System.Drawing.Size(311, 256);
@@ -4473,17 +4471,17 @@ namespace ShiftOS
             // 
             // pnlpressedbegin
             // 
-            this.pnlpressedbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpressedbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpressedbegin.Location = new System.Drawing.Point(170, 107);
             this.pnlpressedbegin.Name = "pnlpressedbegin";
             this.pnlpressedbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlpressedbegin.TabIndex = 17;
-            this.pnlpressedbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetPressedBegin);
+            this.pnlpressedbegin.MouseDown += new ShiftUI.MouseEventHandler(this.SetPressedBegin);
             // 
             // btnback
             // 
-            this.btnback.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnback.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.btnback.Location = new System.Drawing.Point(6, 184);
             this.btnback.Name = "btnback";
@@ -4505,21 +4503,21 @@ namespace ShiftOS
             // 
             // pnlselectedbegin
             // 
-            this.pnlselectedbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlselectedbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlselectedbegin.Location = new System.Drawing.Point(169, 29);
             this.pnlselectedbegin.Name = "pnlselectedbegin";
             this.pnlselectedbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlselectedbegin.TabIndex = 11;
-            this.pnlselectedbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetSelectedBegin);
+            this.pnlselectedbegin.MouseDown += new ShiftUI.MouseEventHandler(this.SetSelectedBegin);
             // 
             // pnlpressedend
             // 
-            this.pnlpressedend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpressedend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpressedend.Location = new System.Drawing.Point(162, 159);
             this.pnlpressedend.Name = "pnlpressedend";
             this.pnlpressedend.Size = new System.Drawing.Size(41, 20);
             this.pnlpressedend.TabIndex = 15;
-            this.pnlpressedend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetPressedEnd);
+            this.pnlpressedend.MouseDown += new ShiftUI.MouseEventHandler(this.SetPressedEnd);
             // 
             // label137
             // 
@@ -4543,21 +4541,21 @@ namespace ShiftOS
             // 
             // pnlselectedend
             // 
-            this.pnlselectedend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlselectedend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlselectedend.Location = new System.Drawing.Point(161, 81);
             this.pnlselectedend.Name = "pnlselectedend";
             this.pnlselectedend.Size = new System.Drawing.Size(41, 20);
             this.pnlselectedend.TabIndex = 9;
-            this.pnlselectedend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetSelectedEnd);
+            this.pnlselectedend.MouseDown += new ShiftUI.MouseEventHandler(this.SetSelectedEnd);
             // 
             // pnlpressedmiddle
             // 
-            this.pnlpressedmiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlpressedmiddle.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlpressedmiddle.Location = new System.Drawing.Point(179, 134);
             this.pnlpressedmiddle.Name = "pnlpressedmiddle";
             this.pnlpressedmiddle.Size = new System.Drawing.Size(41, 20);
             this.pnlpressedmiddle.TabIndex = 13;
-            this.pnlpressedmiddle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetPressedMiddle);
+            this.pnlpressedmiddle.MouseDown += new ShiftUI.MouseEventHandler(this.SetPressedMiddle);
             // 
             // label140
             // 
@@ -4581,12 +4579,12 @@ namespace ShiftOS
             // 
             // pnlselectedmiddle
             // 
-            this.pnlselectedmiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlselectedmiddle.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlselectedmiddle.Location = new System.Drawing.Point(182, 56);
             this.pnlselectedmiddle.Name = "pnlselectedmiddle";
             this.pnlselectedmiddle.Size = new System.Drawing.Size(41, 20);
             this.pnlselectedmiddle.TabIndex = 5;
-            this.pnlselectedmiddle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetSelectedMiddle);
+            this.pnlselectedmiddle.MouseDown += new ShiftUI.MouseEventHandler(this.SetSelectedMiddle);
             // 
             // label145
             // 
@@ -4600,8 +4598,8 @@ namespace ShiftOS
             // 
             // label147
             // 
-            this.label147.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label147.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label147.Location = new System.Drawing.Point(6, 0);
             this.label147.Name = "label147";
@@ -4612,19 +4610,19 @@ namespace ShiftOS
             // 
             // pnldropdown
             // 
-            this.pnldropdown.Controls.Add(this.pnlddborder);
-            this.pnldropdown.Controls.Add(this.label117);
-            this.pnldropdown.Controls.Add(this.pnlmarginend);
-            this.pnldropdown.Controls.Add(this.label120);
-            this.pnldropdown.Controls.Add(this.pnlmarginmiddle);
-            this.pnldropdown.Controls.Add(this.label121);
-            this.pnldropdown.Controls.Add(this.pnlmarginbegin);
-            this.pnldropdown.Controls.Add(this.label122);
-            this.pnldropdown.Controls.Add(this.pnlhcolor);
-            this.pnldropdown.Controls.Add(this.label123);
-            this.pnldropdown.Controls.Add(this.pnlhborder);
-            this.pnldropdown.Controls.Add(this.label125);
-            this.pnldropdown.Controls.Add(this.label126);
+            this.pnldropdown.Widgets.Add(this.pnlddborder);
+            this.pnldropdown.Widgets.Add(this.label117);
+            this.pnldropdown.Widgets.Add(this.pnlmarginend);
+            this.pnldropdown.Widgets.Add(this.label120);
+            this.pnldropdown.Widgets.Add(this.pnlmarginmiddle);
+            this.pnldropdown.Widgets.Add(this.label121);
+            this.pnldropdown.Widgets.Add(this.pnlmarginbegin);
+            this.pnldropdown.Widgets.Add(this.label122);
+            this.pnldropdown.Widgets.Add(this.pnlhcolor);
+            this.pnldropdown.Widgets.Add(this.label123);
+            this.pnldropdown.Widgets.Add(this.pnlhborder);
+            this.pnldropdown.Widgets.Add(this.label125);
+            this.pnldropdown.Widgets.Add(this.label126);
             this.pnldropdown.Location = new System.Drawing.Point(139, 43);
             this.pnldropdown.Name = "pnldropdown";
             this.pnldropdown.Size = new System.Drawing.Size(311, 256);
@@ -4632,12 +4630,12 @@ namespace ShiftOS
             // 
             // pnlddborder
             // 
-            this.pnlddborder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlddborder.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlddborder.Location = new System.Drawing.Point(216, 80);
             this.pnlddborder.Name = "pnlddborder";
             this.pnlddborder.Size = new System.Drawing.Size(41, 20);
             this.pnlddborder.TabIndex = 11;
-            this.pnlddborder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBorder);
+            this.pnlddborder.MouseDown += new ShiftUI.MouseEventHandler(this.MenuBorder);
             // 
             // label117
             // 
@@ -4651,12 +4649,12 @@ namespace ShiftOS
             // 
             // pnlmarginend
             // 
-            this.pnlmarginend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmarginend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmarginend.Location = new System.Drawing.Point(224, 55);
             this.pnlmarginend.Name = "pnlmarginend";
             this.pnlmarginend.Size = new System.Drawing.Size(41, 20);
             this.pnlmarginend.TabIndex = 9;
-            this.pnlmarginend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MarginEnd);
+            this.pnlmarginend.MouseDown += new ShiftUI.MouseEventHandler(this.MarginEnd);
             // 
             // label120
             // 
@@ -4670,12 +4668,12 @@ namespace ShiftOS
             // 
             // pnlmarginmiddle
             // 
-            this.pnlmarginmiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmarginmiddle.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmarginmiddle.Location = new System.Drawing.Point(117, 80);
             this.pnlmarginmiddle.Name = "pnlmarginmiddle";
             this.pnlmarginmiddle.Size = new System.Drawing.Size(41, 20);
             this.pnlmarginmiddle.TabIndex = 7;
-            this.pnlmarginmiddle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MarginMiddle);
+            this.pnlmarginmiddle.MouseDown += new ShiftUI.MouseEventHandler(this.MarginMiddle);
             // 
             // label121
             // 
@@ -4689,12 +4687,12 @@ namespace ShiftOS
             // 
             // pnlmarginbegin
             // 
-            this.pnlmarginbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmarginbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmarginbegin.Location = new System.Drawing.Point(101, 55);
             this.pnlmarginbegin.Name = "pnlmarginbegin";
             this.pnlmarginbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlmarginbegin.TabIndex = 5;
-            this.pnlmarginbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MarginBegin);
+            this.pnlmarginbegin.MouseDown += new ShiftUI.MouseEventHandler(this.MarginBegin);
             // 
             // label122
             // 
@@ -4708,12 +4706,12 @@ namespace ShiftOS
             // 
             // pnlhcolor
             // 
-            this.pnlhcolor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlhcolor.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlhcolor.Location = new System.Drawing.Point(249, 29);
             this.pnlhcolor.Name = "pnlhcolor";
             this.pnlhcolor.Size = new System.Drawing.Size(41, 20);
             this.pnlhcolor.TabIndex = 5;
-            this.pnlhcolor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HighlightColor);
+            this.pnlhcolor.MouseDown += new ShiftUI.MouseEventHandler(this.HighlightColor);
             // 
             // label123
             // 
@@ -4727,12 +4725,12 @@ namespace ShiftOS
             // 
             // pnlhborder
             // 
-            this.pnlhborder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlhborder.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlhborder.Location = new System.Drawing.Point(115, 29);
             this.pnlhborder.Name = "pnlhborder";
             this.pnlhborder.Size = new System.Drawing.Size(41, 20);
             this.pnlhborder.TabIndex = 3;
-            this.pnlhborder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HighlightBorder);
+            this.pnlhborder.MouseDown += new ShiftUI.MouseEventHandler(this.HighlightBorder);
             // 
             // label125
             // 
@@ -4746,8 +4744,8 @@ namespace ShiftOS
             // 
             // label126
             // 
-            this.label126.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label126.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label126.Location = new System.Drawing.Point(6, 0);
             this.label126.Name = "label126";
@@ -4758,25 +4756,25 @@ namespace ShiftOS
             // 
             // pnlbasic
             // 
-            this.pnlbasic.Controls.Add(this.pnlmenutextcolor);
-            this.pnlbasic.Controls.Add(this.label118);
-            this.pnlbasic.Controls.Add(this.pnldropdownbg);
-            this.pnlbasic.Controls.Add(this.label115);
-            this.pnlbasic.Controls.Add(this.pnlstatusend);
-            this.pnlbasic.Controls.Add(this.label114);
-            this.pnlbasic.Controls.Add(this.pnlstatusbegin);
-            this.pnlbasic.Controls.Add(this.label107);
-            this.pnlbasic.Controls.Add(this.pnltoolbarend);
-            this.pnlbasic.Controls.Add(this.label77);
-            this.pnlbasic.Controls.Add(this.pnltoolbarmiddle);
-            this.pnlbasic.Controls.Add(this.label76);
-            this.pnlbasic.Controls.Add(this.pnltoolbarbegin);
-            this.pnlbasic.Controls.Add(this.label75);
-            this.pnlbasic.Controls.Add(this.pnlmenubarend);
-            this.pnlbasic.Controls.Add(this.label73);
-            this.pnlbasic.Controls.Add(this.pnlmenubarbegin);
-            this.pnlbasic.Controls.Add(this.label42);
-            this.pnlbasic.Controls.Add(this.label41);
+            this.pnlbasic.Widgets.Add(this.pnlmenutextcolor);
+            this.pnlbasic.Widgets.Add(this.label118);
+            this.pnlbasic.Widgets.Add(this.pnldropdownbg);
+            this.pnlbasic.Widgets.Add(this.label115);
+            this.pnlbasic.Widgets.Add(this.pnlstatusend);
+            this.pnlbasic.Widgets.Add(this.label114);
+            this.pnlbasic.Widgets.Add(this.pnlstatusbegin);
+            this.pnlbasic.Widgets.Add(this.label107);
+            this.pnlbasic.Widgets.Add(this.pnltoolbarend);
+            this.pnlbasic.Widgets.Add(this.label77);
+            this.pnlbasic.Widgets.Add(this.pnltoolbarmiddle);
+            this.pnlbasic.Widgets.Add(this.label76);
+            this.pnlbasic.Widgets.Add(this.pnltoolbarbegin);
+            this.pnlbasic.Widgets.Add(this.label75);
+            this.pnlbasic.Widgets.Add(this.pnlmenubarend);
+            this.pnlbasic.Widgets.Add(this.label73);
+            this.pnlbasic.Widgets.Add(this.pnlmenubarbegin);
+            this.pnlbasic.Widgets.Add(this.label42);
+            this.pnlbasic.Widgets.Add(this.label41);
             this.pnlbasic.Location = new System.Drawing.Point(139, 43);
             this.pnlbasic.Name = "pnlbasic";
             this.pnlbasic.Size = new System.Drawing.Size(311, 256);
@@ -4784,12 +4782,12 @@ namespace ShiftOS
             // 
             // pnlmenutextcolor
             // 
-            this.pnlmenutextcolor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmenutextcolor.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmenutextcolor.Location = new System.Drawing.Point(85, 129);
             this.pnlmenutextcolor.Name = "pnlmenutextcolor";
             this.pnlmenutextcolor.Size = new System.Drawing.Size(41, 20);
             this.pnlmenutextcolor.TabIndex = 17;
-            this.pnlmenutextcolor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SetMenuTextColor);
+            this.pnlmenutextcolor.MouseDown += new ShiftUI.MouseEventHandler(this.SetMenuTextColor);
             // 
             // label118
             // 
@@ -4803,12 +4801,12 @@ namespace ShiftOS
             // 
             // pnldropdownbg
             // 
-            this.pnldropdownbg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnldropdownbg.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnldropdownbg.Location = new System.Drawing.Point(228, 104);
             this.pnldropdownbg.Name = "pnldropdownbg";
             this.pnldropdownbg.Size = new System.Drawing.Size(41, 20);
             this.pnldropdownbg.TabIndex = 15;
-            this.pnldropdownbg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DropDownBG);
+            this.pnldropdownbg.MouseDown += new ShiftUI.MouseEventHandler(this.DropDownBG);
             // 
             // label115
             // 
@@ -4822,12 +4820,12 @@ namespace ShiftOS
             // 
             // pnlstatusend
             // 
-            this.pnlstatusend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlstatusend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlstatusend.Location = new System.Drawing.Point(84, 104);
             this.pnlstatusend.Name = "pnlstatusend";
             this.pnlstatusend.Size = new System.Drawing.Size(41, 20);
             this.pnlstatusend.TabIndex = 13;
-            this.pnlstatusend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StatusEnd);
+            this.pnlstatusend.MouseDown += new ShiftUI.MouseEventHandler(this.StatusEnd);
             // 
             // label114
             // 
@@ -4841,12 +4839,12 @@ namespace ShiftOS
             // 
             // pnlstatusbegin
             // 
-            this.pnlstatusbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlstatusbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlstatusbegin.Location = new System.Drawing.Point(254, 81);
             this.pnlstatusbegin.Name = "pnlstatusbegin";
             this.pnlstatusbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlstatusbegin.TabIndex = 11;
-            this.pnlstatusbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StatusBegin);
+            this.pnlstatusbegin.MouseDown += new ShiftUI.MouseEventHandler(this.StatusBegin);
             // 
             // label107
             // 
@@ -4860,12 +4858,12 @@ namespace ShiftOS
             // 
             // pnltoolbarend
             // 
-            this.pnltoolbarend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltoolbarend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltoolbarend.Location = new System.Drawing.Point(254, 55);
             this.pnltoolbarend.Name = "pnltoolbarend";
             this.pnltoolbarend.Size = new System.Drawing.Size(41, 20);
             this.pnltoolbarend.TabIndex = 9;
-            this.pnltoolbarend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBarEnd);
+            this.pnltoolbarend.MouseDown += new ShiftUI.MouseEventHandler(this.ToolBarEnd);
             // 
             // label77
             // 
@@ -4879,12 +4877,12 @@ namespace ShiftOS
             // 
             // pnltoolbarmiddle
             // 
-            this.pnltoolbarmiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltoolbarmiddle.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltoolbarmiddle.Location = new System.Drawing.Point(117, 80);
             this.pnltoolbarmiddle.Name = "pnltoolbarmiddle";
             this.pnltoolbarmiddle.Size = new System.Drawing.Size(41, 20);
             this.pnltoolbarmiddle.TabIndex = 7;
-            this.pnltoolbarmiddle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBarMiddle);
+            this.pnltoolbarmiddle.MouseDown += new ShiftUI.MouseEventHandler(this.ToolBarMiddle);
             // 
             // label76
             // 
@@ -4898,12 +4896,12 @@ namespace ShiftOS
             // 
             // pnltoolbarbegin
             // 
-            this.pnltoolbarbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnltoolbarbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnltoolbarbegin.Location = new System.Drawing.Point(117, 55);
             this.pnltoolbarbegin.Name = "pnltoolbarbegin";
             this.pnltoolbarbegin.Size = new System.Drawing.Size(41, 20);
             this.pnltoolbarbegin.TabIndex = 5;
-            this.pnltoolbarbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBarBegin);
+            this.pnltoolbarbegin.MouseDown += new ShiftUI.MouseEventHandler(this.ToolBarBegin);
             // 
             // label75
             // 
@@ -4917,12 +4915,12 @@ namespace ShiftOS
             // 
             // pnlmenubarend
             // 
-            this.pnlmenubarend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmenubarend.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmenubarend.Location = new System.Drawing.Point(249, 29);
             this.pnlmenubarend.Name = "pnlmenubarend";
             this.pnlmenubarend.Size = new System.Drawing.Size(41, 20);
             this.pnlmenubarend.TabIndex = 5;
-            this.pnlmenubarend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuEnd);
+            this.pnlmenubarend.MouseDown += new ShiftUI.MouseEventHandler(this.MenuEnd);
             // 
             // label73
             // 
@@ -4936,12 +4934,12 @@ namespace ShiftOS
             // 
             // pnlmenubarbegin
             // 
-            this.pnlmenubarbegin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlmenubarbegin.BorderStyle = ShiftUI.BorderStyle.FixedSingle;
             this.pnlmenubarbegin.Location = new System.Drawing.Point(115, 29);
             this.pnlmenubarbegin.Name = "pnlmenubarbegin";
             this.pnlmenubarbegin.Size = new System.Drawing.Size(41, 20);
             this.pnlmenubarbegin.TabIndex = 3;
-            this.pnlmenubarbegin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBegin);
+            this.pnlmenubarbegin.MouseDown += new ShiftUI.MouseEventHandler(this.MenuBegin);
             // 
             // label42
             // 
@@ -4955,8 +4953,8 @@ namespace ShiftOS
             // 
             // label41
             // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label41.Location = new System.Drawing.Point(6, 0);
             this.label41.Name = "label41";
@@ -4967,8 +4965,8 @@ namespace ShiftOS
             // 
             // pnlmenusintro
             // 
-            this.pnlmenusintro.Controls.Add(this.label116);
-            this.pnlmenusintro.Controls.Add(this.label124);
+            this.pnlmenusintro.Widgets.Add(this.label116);
+            this.pnlmenusintro.Widgets.Add(this.label124);
             this.pnlmenusintro.Location = new System.Drawing.Point(139, 43);
             this.pnlmenusintro.Name = "pnlmenusintro";
             this.pnlmenusintro.Size = new System.Drawing.Size(311, 256);
@@ -4976,8 +4974,8 @@ namespace ShiftOS
             // 
             // label116
             // 
-            this.label116.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label116.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label116.BackColor = System.Drawing.Color.Transparent;
             this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label116.Location = new System.Drawing.Point(6, 29);
@@ -4989,8 +4987,8 @@ namespace ShiftOS
             // 
             // label124
             // 
-            this.label124.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label124.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label124.Location = new System.Drawing.Point(6, 0);
             this.label124.Name = "label124";
@@ -5001,12 +4999,12 @@ namespace ShiftOS
             // 
             // pnlmenucategories
             // 
-            this.pnlmenucategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlmenucategories.Controls.Add(this.btnmisc);
-            this.pnlmenucategories.Controls.Add(this.btnadvanced);
-            this.pnlmenucategories.Controls.Add(this.btndropdown);
-            this.pnlmenucategories.Controls.Add(this.btnbasic);
+            this.pnlmenucategories.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left)));
+            this.pnlmenucategories.Widgets.Add(this.btnmisc);
+            this.pnlmenucategories.Widgets.Add(this.btnadvanced);
+            this.pnlmenucategories.Widgets.Add(this.btndropdown);
+            this.pnlmenucategories.Widgets.Add(this.btnbasic);
             this.pnlmenucategories.Location = new System.Drawing.Point(6, 42);
             this.pnlmenucategories.Name = "pnlmenucategories";
             this.pnlmenucategories.Size = new System.Drawing.Size(128, 257);
@@ -5015,7 +5013,7 @@ namespace ShiftOS
             // btnmisc
             // 
             this.btnmisc.BackColor = System.Drawing.Color.White;
-            this.btnmisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmisc.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnmisc.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmisc.Location = new System.Drawing.Point(4, 105);
             this.btnmisc.Name = "btnmisc";
@@ -5027,7 +5025,7 @@ namespace ShiftOS
             // btnadvanced
             // 
             this.btnadvanced.BackColor = System.Drawing.Color.White;
-            this.btnadvanced.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadvanced.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnadvanced.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadvanced.Location = new System.Drawing.Point(4, 70);
             this.btnadvanced.Name = "btnadvanced";
@@ -5040,7 +5038,7 @@ namespace ShiftOS
             // btndropdown
             // 
             this.btndropdown.BackColor = System.Drawing.Color.White;
-            this.btndropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndropdown.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btndropdown.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndropdown.Location = new System.Drawing.Point(4, 35);
             this.btndropdown.Name = "btndropdown";
@@ -5053,7 +5051,7 @@ namespace ShiftOS
             // btnbasic
             // 
             this.btnbasic.BackColor = System.Drawing.Color.White;
-            this.btnbasic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbasic.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnbasic.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbasic.Location = new System.Drawing.Point(4, 0);
             this.btnbasic.Name = "btnbasic";
@@ -5078,12 +5076,12 @@ namespace ShiftOS
             // 
             // pnlluaoptions
             // 
-            this.pnlluaoptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlluaoptions.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.pnlluaoptions.BackColor = System.Drawing.Color.White;
-            this.pnlluaoptions.Controls.Add(this.pnlluafield);
-            this.pnlluaoptions.Controls.Add(this.flmorebuttons);
+            this.pnlluaoptions.Widgets.Add(this.pnlluafield);
+            this.pnlluaoptions.Widgets.Add(this.flmorebuttons);
             this.pnlluaoptions.Location = new System.Drawing.Point(139, 9);
             this.pnlluaoptions.Name = "pnlluaoptions";
             this.pnlluaoptions.Size = new System.Drawing.Size(457, 306);
@@ -5093,8 +5091,8 @@ namespace ShiftOS
             // flmorebuttons
             // 
             this.flmorebuttons.AutoSize = true;
-            this.flmorebuttons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flmorebuttons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flmorebuttons.AutoSizeMode = ShiftUI.AutoSizeMode.GrowAndShrink;
+            this.flmorebuttons.Dock = ShiftUI.DockStyle.Top;
             this.flmorebuttons.Location = new System.Drawing.Point(0, 0);
             this.flmorebuttons.Name = "flmorebuttons";
             this.flmorebuttons.Size = new System.Drawing.Size(457, 0);
@@ -5102,7 +5100,7 @@ namespace ShiftOS
             // 
             // pnlluafield
             // 
-            this.pnlluafield.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlluafield.Dock = ShiftUI.DockStyle.Fill;
             this.pnlluafield.Location = new System.Drawing.Point(0, 0);
             this.pnlluafield.Name = "pnlluafield";
             this.pnlluafield.Size = new System.Drawing.Size(457, 306);
@@ -5111,10 +5109,10 @@ namespace ShiftOS
             // Shifter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 323);
-            this.Controls.Add(this.pgcontents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.pgcontents);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.Name = "Shifter";
             this.Text = "Shifter";
             this.TopMost = true;
@@ -5202,270 +5200,269 @@ namespace ShiftOS
             this.ResumeLayout(false);
 
         }
-        private System.Windows.Forms.ColorDialog ColorDialog1;
-        private System.Windows.Forms.Timer clocktick;
-        private System.Windows.Forms.Timer customizationtime;
-        private System.Windows.Forms.Timer timerearned;
-        private System.Windows.Forms.Label Label1;
-        private System.Windows.Forms.Button btnapply;
-        private System.Windows.Forms.Panel catholder;
-        private System.Windows.Forms.Button btnreset;
-        private System.Windows.Forms.Button btnmenus;
-        private System.Windows.Forms.Button btnwindows;
-        private System.Windows.Forms.Button btndesktop;
-        private System.Windows.Forms.Panel pnlshifterintro;
-        private System.Windows.Forms.Label Label66;
-        private System.Windows.Forms.Label Label65;
-        private System.Windows.Forms.Label Label64;
-        private System.Windows.Forms.Label Label63;
-        private System.Windows.Forms.Panel pnldesktopoptions;
-        private System.Windows.Forms.Panel pnlpanelbuttonsoptions;
-        private System.Windows.Forms.Panel pnlpanelbuttontextcolour;
-        private System.Windows.Forms.Label Label101;
-        private System.Windows.Forms.TextBox txtpanelbuttontexttop;
-        private System.Windows.Forms.Label Label104;
-        private System.Windows.Forms.TextBox txtpanelbuttontextside;
-        private System.Windows.Forms.Label Label106;
-        private System.Windows.Forms.Label Label93;
-        private System.Windows.Forms.TextBox txtpanelbuttontop;
-        private System.Windows.Forms.Label Label94;
-        private System.Windows.Forms.TextBox txtpanelbuttoninitalgap;
-        private System.Windows.Forms.Label Label108;
-        private System.Windows.Forms.TextBox txtpanelbuttonicontop;
-        private System.Windows.Forms.Label Label110;
-        private System.Windows.Forms.TextBox txtpanelbuttoniconside;
-        private System.Windows.Forms.Label Label112;
-        private System.Windows.Forms.TextBox txtpanelbuttoniconsize;
-        private System.Windows.Forms.TextBox txtpanelbuttoniconheight;
-        private System.Windows.Forms.Label Label105;
-        private System.Windows.Forms.ComboBox cbpanelbuttontextstyle;
-        private System.Windows.Forms.ComboBox cbpanelbuttonfont;
-        private System.Windows.Forms.Label Label100;
-        private System.Windows.Forms.TextBox txtpaneltextbuttonsize;
-        private System.Windows.Forms.Label Label102;
-        private System.Windows.Forms.Label Label103;
-        private System.Windows.Forms.Label Label98;
-        private System.Windows.Forms.TextBox txtpanelbuttongap;
-        private System.Windows.Forms.Label Label99;
-        private System.Windows.Forms.Label Label96;
-        private System.Windows.Forms.TextBox txtpanelbuttonheight;
-        private System.Windows.Forms.Label Label97;
-        private System.Windows.Forms.Label Label92;
-        private System.Windows.Forms.TextBox txtpanelbuttonwidth;
-        private System.Windows.Forms.Label Label91;
-        private System.Windows.Forms.Panel pnlpanelbuttoncolour;
-        private System.Windows.Forms.Label Label95;
-        private System.Windows.Forms.Panel pnldesktoppaneloptions;
-        private System.Windows.Forms.Button btnpanelbuttons;
-        private System.Windows.Forms.Label lbwarning;
-        private System.Windows.Forms.ComboBox combodesktoppanelposition;
-        private System.Windows.Forms.Label lbposition;
-        private System.Windows.Forms.Label Label47;
-        private System.Windows.Forms.NumericUpDown txtdesktoppanelheight;
-        private System.Windows.Forms.Label lbheight;
-        private System.Windows.Forms.Panel pnldesktoppanelcolour;
-        private System.Windows.Forms.Label lbpanelcolor;
-        private System.Windows.Forms.Panel pnlapplauncheroptions;
-        private System.Windows.Forms.Label Label71;
-        private System.Windows.Forms.TextBox txtapplauncherwidth;
-        private System.Windows.Forms.Label Label72;
-        private System.Windows.Forms.TextBox txtappbuttonlabel;
-        private System.Windows.Forms.Label Label51;
-        private System.Windows.Forms.Label Label50;
-        private System.Windows.Forms.Panel pnlmaintextcolour;
-        private System.Windows.Forms.ComboBox comboappbuttontextstyle;
-        private System.Windows.Forms.ComboBox comboappbuttontextfont;
-        private System.Windows.Forms.Label Label37;
-        private System.Windows.Forms.Label Label38;
-        private System.Windows.Forms.TextBox txtappbuttontextsize;
-        private System.Windows.Forms.Label Label39;
-        private System.Windows.Forms.Label Label40;
-        private System.Windows.Forms.Panel pnlmainbuttonactivated;
-        private System.Windows.Forms.Label Label28;
-        private System.Windows.Forms.Label Label35;
-        private System.Windows.Forms.TextBox txtapplicationsbuttonheight;
-        private System.Windows.Forms.Label Label36;
-        private System.Windows.Forms.Panel pnlmainbuttoncolour;
-        private System.Windows.Forms.Label Label43;
-        private System.Windows.Forms.Panel pnldesktopintro;
-        private System.Windows.Forms.Label Label69;
-        private System.Windows.Forms.Label Label70;
-        private System.Windows.Forms.Panel pnlpanelclockoptions;
-        private System.Windows.Forms.Panel pnlclockbackgroundcolour;
-        private System.Windows.Forms.Label Label44;
-        private System.Windows.Forms.ComboBox comboclocktextstyle;
-        private System.Windows.Forms.ComboBox comboclocktextfont;
-        private System.Windows.Forms.Label Label26;
-        private System.Windows.Forms.Label Label29;
-        private System.Windows.Forms.TextBox txtclocktextfromtop;
-        private System.Windows.Forms.Label Label30;
-        private System.Windows.Forms.Label Label31;
-        private System.Windows.Forms.TextBox txtclocktextsize;
-        private System.Windows.Forms.Label Label32;
-        private System.Windows.Forms.Label Label33;
-        private System.Windows.Forms.Panel pnlpanelclocktextcolour;
-        private System.Windows.Forms.Label Label34;
-        private System.Windows.Forms.Panel pnldesktopbackgroundoptions;
-        private System.Windows.Forms.Panel pnldesktopcolour;
-        private System.Windows.Forms.Label Label45;
-        private System.Windows.Forms.Panel Panel10;
-        private System.Windows.Forms.Button btndesktopitself;
-        private System.Windows.Forms.Button btnpanelclock;
-        private System.Windows.Forms.Button btnapplauncher;
-        private System.Windows.Forms.Button btndesktoppanel;
-        private System.Windows.Forms.Panel pnldesktoppreview;
-        private System.Windows.Forms.Panel predesktoppanel;
-        private System.Windows.Forms.FlowLayoutPanel prepnlpanelbuttonholder;
-        private System.Windows.Forms.Panel prepnlpanelbutton;
-        private System.Windows.Forms.PictureBox pretbicon;
-        private System.Windows.Forms.Label pretbctext;
-        private System.Windows.Forms.Panel pretimepanel;
-        private System.Windows.Forms.Label prepaneltimetext;
-        private System.Windows.Forms.Panel preapplaunchermenuholder;
-        private System.Windows.Forms.MenuStrip predesktopappmenu;
-        private System.Windows.Forms.ToolStripMenuItem ApplicationsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ShiftoriumToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ClockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem TerminalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ShifterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem ShutdownToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlwindowsoptions;
-        private System.Windows.Forms.Panel pnlbuttonoptions;
-        private System.Windows.Forms.Panel pnlminimizebuttonoptions;
-        private System.Windows.Forms.Label Label82;
-        private System.Windows.Forms.Label Label83;
-        private System.Windows.Forms.Panel pnlminimizebuttoncolour;
-        private System.Windows.Forms.TextBox txtminimizebuttonside;
-        private System.Windows.Forms.Label Label84;
-        private System.Windows.Forms.Label Label85;
-        private System.Windows.Forms.TextBox txtminimizebuttonheight;
-        private System.Windows.Forms.Label Label86;
-        private System.Windows.Forms.Label Label87;
-        private System.Windows.Forms.TextBox txtminimizebuttontop;
-        private System.Windows.Forms.Label Label88;
-        private System.Windows.Forms.Label Label89;
-        private System.Windows.Forms.TextBox txtminimizebuttonwidth;
-        private System.Windows.Forms.Label Label90;
-        private System.Windows.Forms.Panel pnlrollupbuttonoptions;
-        private System.Windows.Forms.Label Label54;
-        private System.Windows.Forms.Label Label55;
-        private System.Windows.Forms.Panel pnlrollupbuttoncolour;
-        private System.Windows.Forms.TextBox txtrollupbuttonside;
-        private System.Windows.Forms.Label Label56;
-        private System.Windows.Forms.Label Label57;
-        private System.Windows.Forms.TextBox txtrollupbuttonheight;
-        private System.Windows.Forms.Label Label58;
-        private System.Windows.Forms.Label Label59;
-        private System.Windows.Forms.TextBox txtrollupbuttontop;
-        private System.Windows.Forms.Label Label60;
-        private System.Windows.Forms.Label Label61;
-        private System.Windows.Forms.TextBox txtrollupbuttonwidth;
-        private System.Windows.Forms.Label Label62;
-        private System.Windows.Forms.ComboBox combobuttonoption;
-        private System.Windows.Forms.Label Label52;
-        private System.Windows.Forms.Panel pnlclosebuttonoptions;
-        private System.Windows.Forms.Label Label8;
-        private System.Windows.Forms.Label Label11;
-        private System.Windows.Forms.Panel pnlclosebuttoncolour;
-        private System.Windows.Forms.TextBox txtclosebuttonfromside;
-        private System.Windows.Forms.Label Label7;
-        private System.Windows.Forms.Label Label12;
-        private System.Windows.Forms.TextBox txtclosebuttonheight;
-        private System.Windows.Forms.Label Label13;
-        private System.Windows.Forms.Label Label6;
-        private System.Windows.Forms.TextBox txtclosebuttonfromtop;
-        private System.Windows.Forms.Label Label10;
-        private System.Windows.Forms.Label Label14;
-        private System.Windows.Forms.TextBox txtclosebuttonwidth;
-        private System.Windows.Forms.Label Label9;
-        private System.Windows.Forms.Panel pnltitlebaroptions;
-        private System.Windows.Forms.Label Label80;
-        private System.Windows.Forms.TextBox txticonfromtop;
-        private System.Windows.Forms.Label Label81;
-        private System.Windows.Forms.Label Label78;
-        private System.Windows.Forms.TextBox txticonfromside;
-        private System.Windows.Forms.Label Label79;
-        private System.Windows.Forms.Label lbcornerwidthpx;
-        private System.Windows.Forms.TextBox txttitlebarcornerwidth;
-        private System.Windows.Forms.Label lbcornerwidth;
-        private System.Windows.Forms.Panel pnltitlebarrightcornercolour;
-        private System.Windows.Forms.Panel pnltitlebarleftcornercolour;
-        private System.Windows.Forms.Label lbrightcornercolor;
-        private System.Windows.Forms.Label lbleftcornercolor;
-        private System.Windows.Forms.CheckBox cboxtitlebarcorners;
-        private System.Windows.Forms.Label Label5;
-        private System.Windows.Forms.TextBox txttitlebarheight;
-        private System.Windows.Forms.Label Label4;
-        private System.Windows.Forms.Panel pnltitlebarcolour;
-        private System.Windows.Forms.Label Label2;
-        private System.Windows.Forms.Panel pnlborderoptions;
-        private System.Windows.Forms.CheckBox cbindividualbordercolours;
-        private System.Windows.Forms.Panel pnlborderbottomrightcolour;
-        private System.Windows.Forms.Label lbbright;
-        private System.Windows.Forms.Panel pnlborderbottomcolour;
-        private System.Windows.Forms.Label lbbottom;
-        private System.Windows.Forms.Panel pnlborderbottomleftcolour;
-        private System.Windows.Forms.Label lbbleft;
-        private System.Windows.Forms.Panel pnlborderrightcolour;
-        private System.Windows.Forms.Label lbright;
-        private System.Windows.Forms.Panel pnlborderleftcolour;
-        private System.Windows.Forms.Label lbleft;
-        private System.Windows.Forms.Label Label15;
-        private System.Windows.Forms.Panel pnlbordercolour;
-        private System.Windows.Forms.TextBox txtbordersize;
-        private System.Windows.Forms.Label Label3;
-        private System.Windows.Forms.Label Label16;
-        private System.Windows.Forms.Panel pnltitletextoptions;
-        private System.Windows.Forms.ComboBox combotitletextposition;
-        private System.Windows.Forms.Label Label53;
-        private System.Windows.Forms.ComboBox combotitletextstyle;
-        private System.Windows.Forms.ComboBox combotitletextfont;
-        private System.Windows.Forms.Label Label23;
-        private System.Windows.Forms.Label Label17;
-        private System.Windows.Forms.TextBox txttitletextside;
-        private System.Windows.Forms.Label Label18;
-        private System.Windows.Forms.Label Label19;
-        private System.Windows.Forms.TextBox txttitletexttop;
-        private System.Windows.Forms.Label Label20;
-        private System.Windows.Forms.Label Label21;
-        private System.Windows.Forms.TextBox txttitletextsize;
-        private System.Windows.Forms.Label Label22;
-        private System.Windows.Forms.Label Label24;
-        private System.Windows.Forms.Panel pnltitletextcolour;
-        private System.Windows.Forms.Label Label25;
-        private System.Windows.Forms.Panel pnlwindowsintro;
-        private System.Windows.Forms.Label Label68;
-        private System.Windows.Forms.Label Label67;
-        private System.Windows.Forms.Panel pnlwindowsobjects;
-        private System.Windows.Forms.Button btnborders;
-        private System.Windows.Forms.Button btnbuttons;
-        private System.Windows.Forms.Button btntitletext;
-        private System.Windows.Forms.Button btntitlebar;
-        private System.Windows.Forms.Panel pnlwindowpreview;
-        private System.Windows.Forms.Panel prepgcontent;
-        private System.Windows.Forms.Panel prepgbottom;
-        private System.Windows.Forms.Panel prepgleft;
-        private System.Windows.Forms.Panel prepgbottomlcorner;
-        private System.Windows.Forms.Panel prepgright;
-        private System.Windows.Forms.Panel prepgbottomrcorner;
-        private System.Windows.Forms.Panel pretitlebar;
-        private System.Windows.Forms.Panel preminimizebutton;
-        private System.Windows.Forms.PictureBox prepnlicon;
-        private System.Windows.Forms.Panel prerollupbutton;
-        private System.Windows.Forms.Panel preclosebutton;
-        private System.Windows.Forms.Label pretitletext;
-        private System.Windows.Forms.Panel prepgtoplcorner;
-        private System.Windows.Forms.Panel prepgtoprcorner;
-        private System.Windows.Forms.Panel pnlreset;
-        private System.Windows.Forms.Label Label113;
-        private System.Windows.Forms.Button btnresetallsettings;
-        private System.Windows.Forms.Label Label109;
-        private System.Windows.Forms.Label Label111;
-        private System.Windows.Forms.Panel pgcontents;
-        private System.Windows.Forms.Timer tmrfix;
-        private System.Windows.Forms.Timer tmrdelay;
+        private ShiftUI.Timer clocktick;
+        private ShiftUI.Timer customizationtime;
+        private ShiftUI.Timer timerearned;
+        private ShiftUI.Label Label1;
+        private ShiftUI.Button btnapply;
+        private ShiftUI.Panel catholder;
+        private ShiftUI.Button btnreset;
+        private ShiftUI.Button btnmenus;
+        private ShiftUI.Button btnwindows;
+        private ShiftUI.Button btndesktop;
+        private ShiftUI.Panel pnlshifterintro;
+        private ShiftUI.Label Label66;
+        private ShiftUI.Label Label65;
+        private ShiftUI.Label Label64;
+        private ShiftUI.Label Label63;
+        private ShiftUI.Panel pnldesktopoptions;
+        private ShiftUI.Panel pnlpanelbuttonsoptions;
+        private ShiftUI.Panel pnlpanelbuttontextcolour;
+        private ShiftUI.Label Label101;
+        private ShiftUI.TextBox txtpanelbuttontexttop;
+        private ShiftUI.Label Label104;
+        private ShiftUI.TextBox txtpanelbuttontextside;
+        private ShiftUI.Label Label106;
+        private ShiftUI.Label Label93;
+        private ShiftUI.TextBox txtpanelbuttontop;
+        private ShiftUI.Label Label94;
+        private ShiftUI.TextBox txtpanelbuttoninitalgap;
+        private ShiftUI.Label Label108;
+        private ShiftUI.TextBox txtpanelbuttonicontop;
+        private ShiftUI.Label Label110;
+        private ShiftUI.TextBox txtpanelbuttoniconside;
+        private ShiftUI.Label Label112;
+        private ShiftUI.TextBox txtpanelbuttoniconsize;
+        private ShiftUI.TextBox txtpanelbuttoniconheight;
+        private ShiftUI.Label Label105;
+        private ShiftUI.ComboBox cbpanelbuttontextstyle;
+        private ShiftUI.ComboBox cbpanelbuttonfont;
+        private ShiftUI.Label Label100;
+        private ShiftUI.TextBox txtpaneltextbuttonsize;
+        private ShiftUI.Label Label102;
+        private ShiftUI.Label Label103;
+        private ShiftUI.Label Label98;
+        private ShiftUI.TextBox txtpanelbuttongap;
+        private ShiftUI.Label Label99;
+        private ShiftUI.Label Label96;
+        private ShiftUI.TextBox txtpanelbuttonheight;
+        private ShiftUI.Label Label97;
+        private ShiftUI.Label Label92;
+        private ShiftUI.TextBox txtpanelbuttonwidth;
+        private ShiftUI.Label Label91;
+        private ShiftUI.Panel pnlpanelbuttoncolour;
+        private ShiftUI.Label Label95;
+        private ShiftUI.Panel pnldesktoppaneloptions;
+        private ShiftUI.Button btnpanelbuttons;
+        private ShiftUI.Label lbwarning;
+        private ShiftUI.ComboBox combodesktoppanelposition;
+        private ShiftUI.Label lbposition;
+        private ShiftUI.Label Label47;
+        private ShiftUI.TextBox txtdesktoppanelheight;
+        private ShiftUI.Label lbheight;
+        private ShiftUI.Panel pnldesktoppanelcolour;
+        private ShiftUI.Label lbpanelcolor;
+        private ShiftUI.Panel pnlapplauncheroptions;
+        private ShiftUI.Label Label71;
+        private ShiftUI.TextBox txtapplauncherwidth;
+        private ShiftUI.Label Label72;
+        private ShiftUI.TextBox txtappbuttonlabel;
+        private ShiftUI.Label Label51;
+        private ShiftUI.Label Label50;
+        private ShiftUI.Panel pnlmaintextcolour;
+        private ShiftUI.ComboBox comboappbuttontextstyle;
+        private ShiftUI.ComboBox comboappbuttontextfont;
+        private ShiftUI.Label Label37;
+        private ShiftUI.Label Label38;
+        private ShiftUI.TextBox txtappbuttontextsize;
+        private ShiftUI.Label Label39;
+        private ShiftUI.Label Label40;
+        private ShiftUI.Panel pnlmainbuttonactivated;
+        private ShiftUI.Label Label28;
+        private ShiftUI.Label Label35;
+        private ShiftUI.TextBox txtapplicationsbuttonheight;
+        private ShiftUI.Label Label36;
+        private ShiftUI.Panel pnlmainbuttoncolour;
+        private ShiftUI.Label Label43;
+        private ShiftUI.Panel pnldesktopintro;
+        private ShiftUI.Label Label69;
+        private ShiftUI.Label Label70;
+        private ShiftUI.Panel pnlpanelclockoptions;
+        private ShiftUI.Panel pnlclockbackgroundcolour;
+        private ShiftUI.Label Label44;
+        private ShiftUI.ComboBox comboclocktextstyle;
+        private ShiftUI.ComboBox comboclocktextfont;
+        private ShiftUI.Label Label26;
+        private ShiftUI.Label Label29;
+        private ShiftUI.TextBox txtclocktextfromtop;
+        private ShiftUI.Label Label30;
+        private ShiftUI.Label Label31;
+        private ShiftUI.TextBox txtclocktextsize;
+        private ShiftUI.Label Label32;
+        private ShiftUI.Label Label33;
+        private ShiftUI.Panel pnlpanelclocktextcolour;
+        private ShiftUI.Label Label34;
+        private ShiftUI.Panel pnldesktopbackgroundoptions;
+        private ShiftUI.Panel pnldesktopcolour;
+        private ShiftUI.Label Label45;
+        private ShiftUI.Panel Panel10;
+        private ShiftUI.Button btndesktopitself;
+        private ShiftUI.Button btnpanelclock;
+        private ShiftUI.Button btnapplauncher;
+        private ShiftUI.Button btndesktoppanel;
+        private ShiftUI.Panel pnldesktoppreview;
+        private ShiftUI.Panel predesktoppanel;
+        private ShiftUI.FlowLayoutPanel prepnlpanelbuttonholder;
+        private ShiftUI.Panel prepnlpanelbutton;
+        private ShiftUI.PictureBox pretbicon;
+        private ShiftUI.Label pretbctext;
+        private ShiftUI.Panel pretimepanel;
+        private ShiftUI.Label prepaneltimetext;
+        private ShiftUI.Panel preapplaunchermenuholder;
+        private ShiftUI.MenuStrip predesktopappmenu;
+        private ShiftUI.ToolStripMenuItem ApplicationsToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem KnowledgeInputToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem ShiftoriumToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem ClockToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem TerminalToolStripMenuItem;
+        private ShiftUI.ToolStripMenuItem ShifterToolStripMenuItem;
+        private ShiftUI.ToolStripSeparator ToolStripSeparator1;
+        private ShiftUI.ToolStripMenuItem ShutdownToolStripMenuItem;
+        private ShiftUI.Panel pnlwindowsoptions;
+        private ShiftUI.Panel pnlbuttonoptions;
+        private ShiftUI.Panel pnlminimizebuttonoptions;
+        private ShiftUI.Label Label82;
+        private ShiftUI.Label Label83;
+        private ShiftUI.Panel pnlminimizebuttoncolour;
+        private ShiftUI.TextBox txtminimizebuttonside;
+        private ShiftUI.Label Label84;
+        private ShiftUI.Label Label85;
+        private ShiftUI.TextBox txtminimizebuttonheight;
+        private ShiftUI.Label Label86;
+        private ShiftUI.Label Label87;
+        private ShiftUI.TextBox txtminimizebuttontop;
+        private ShiftUI.Label Label88;
+        private ShiftUI.Label Label89;
+        private ShiftUI.TextBox txtminimizebuttonwidth;
+        private ShiftUI.Label Label90;
+        private ShiftUI.Panel pnlrollupbuttonoptions;
+        private ShiftUI.Label Label54;
+        private ShiftUI.Label Label55;
+        private ShiftUI.Panel pnlrollupbuttoncolour;
+        private ShiftUI.TextBox txtrollupbuttonside;
+        private ShiftUI.Label Label56;
+        private ShiftUI.Label Label57;
+        private ShiftUI.TextBox txtrollupbuttonheight;
+        private ShiftUI.Label Label58;
+        private ShiftUI.Label Label59;
+        private ShiftUI.TextBox txtrollupbuttontop;
+        private ShiftUI.Label Label60;
+        private ShiftUI.Label Label61;
+        private ShiftUI.TextBox txtrollupbuttonwidth;
+        private ShiftUI.Label Label62;
+        private ShiftUI.ComboBox combobuttonoption;
+        private ShiftUI.Label Label52;
+        private ShiftUI.Panel pnlclosebuttonoptions;
+        private ShiftUI.Label Label8;
+        private ShiftUI.Label Label11;
+        private ShiftUI.Panel pnlclosebuttoncolour;
+        private ShiftUI.TextBox txtclosebuttonfromside;
+        private ShiftUI.Label Label7;
+        private ShiftUI.Label Label12;
+        private ShiftUI.TextBox txtclosebuttonheight;
+        private ShiftUI.Label Label13;
+        private ShiftUI.Label Label6;
+        private ShiftUI.TextBox txtclosebuttonfromtop;
+        private ShiftUI.Label Label10;
+        private ShiftUI.Label Label14;
+        private ShiftUI.TextBox txtclosebuttonwidth;
+        private ShiftUI.Label Label9;
+        private ShiftUI.Panel pnltitlebaroptions;
+        private ShiftUI.Label Label80;
+        private ShiftUI.TextBox txticonfromtop;
+        private ShiftUI.Label Label81;
+        private ShiftUI.Label Label78;
+        private ShiftUI.TextBox txticonfromside;
+        private ShiftUI.Label Label79;
+        private ShiftUI.Label lbcornerwidthpx;
+        private ShiftUI.TextBox txttitlebarcornerwidth;
+        private ShiftUI.Label lbcornerwidth;
+        private ShiftUI.Panel pnltitlebarrightcornercolour;
+        private ShiftUI.Panel pnltitlebarleftcornercolour;
+        private ShiftUI.Label lbrightcornercolor;
+        private ShiftUI.Label lbleftcornercolor;
+        private ShiftUI.CheckBox cboxtitlebarcorners;
+        private ShiftUI.Label Label5;
+        private ShiftUI.TextBox txttitlebarheight;
+        private ShiftUI.Label Label4;
+        private ShiftUI.Panel pnltitlebarcolour;
+        private ShiftUI.Label Label2;
+        private ShiftUI.Panel pnlborderoptions;
+        private ShiftUI.CheckBox cbindividualbordercolours;
+        private ShiftUI.Panel pnlborderbottomrightcolour;
+        private ShiftUI.Label lbbright;
+        private ShiftUI.Panel pnlborderbottomcolour;
+        private ShiftUI.Label lbbottom;
+        private ShiftUI.Panel pnlborderbottomleftcolour;
+        private ShiftUI.Label lbbleft;
+        private ShiftUI.Panel pnlborderrightcolour;
+        private ShiftUI.Label lbright;
+        private ShiftUI.Panel pnlborderleftcolour;
+        private ShiftUI.Label lbleft;
+        private ShiftUI.Label Label15;
+        private ShiftUI.Panel pnlbordercolour;
+        private ShiftUI.TextBox txtbordersize;
+        private ShiftUI.Label Label3;
+        private ShiftUI.Label Label16;
+        private ShiftUI.Panel pnltitletextoptions;
+        private ShiftUI.ComboBox combotitletextposition;
+        private ShiftUI.Label Label53;
+        private ShiftUI.ComboBox combotitletextstyle;
+        private ShiftUI.ComboBox combotitletextfont;
+        private ShiftUI.Label Label23;
+        private ShiftUI.Label Label17;
+        private ShiftUI.TextBox txttitletextside;
+        private ShiftUI.Label Label18;
+        private ShiftUI.Label Label19;
+        private ShiftUI.TextBox txttitletexttop;
+        private ShiftUI.Label Label20;
+        private ShiftUI.Label Label21;
+        private ShiftUI.TextBox txttitletextsize;
+        private ShiftUI.Label Label22;
+        private ShiftUI.Label Label24;
+        private ShiftUI.Panel pnltitletextcolour;
+        private ShiftUI.Label Label25;
+        private ShiftUI.Panel pnlwindowsintro;
+        private ShiftUI.Label Label68;
+        private ShiftUI.Label Label67;
+        private ShiftUI.Panel pnlwindowsobjects;
+        private ShiftUI.Button btnborders;
+        private ShiftUI.Button btnbuttons;
+        private ShiftUI.Button btntitletext;
+        private ShiftUI.Button btntitlebar;
+        private ShiftUI.Panel pnlwindowpreview;
+        private ShiftUI.Panel prepgcontent;
+        private ShiftUI.Panel prepgbottom;
+        private ShiftUI.Panel prepgleft;
+        private ShiftUI.Panel prepgbottomlcorner;
+        private ShiftUI.Panel prepgright;
+        private ShiftUI.Panel prepgbottomrcorner;
+        private ShiftUI.Panel pretitlebar;
+        private ShiftUI.Panel preminimizebutton;
+        private ShiftUI.PictureBox prepnlicon;
+        private ShiftUI.Panel prerollupbutton;
+        private ShiftUI.Panel preclosebutton;
+        private ShiftUI.Label pretitletext;
+        private ShiftUI.Panel prepgtoplcorner;
+        private ShiftUI.Panel prepgtoprcorner;
+        private ShiftUI.Panel pnlreset;
+        private ShiftUI.Label Label113;
+        private ShiftUI.Button btnresetallsettings;
+        private ShiftUI.Label Label109;
+        private ShiftUI.Label Label111;
+        private ShiftUI.Panel pgcontents;
+        private ShiftUI.Timer tmrfix;
+        private ShiftUI.Timer tmrdelay;
         private Panel pnlmenus;
         private Label label74;
         private Panel pnlmenucategories;

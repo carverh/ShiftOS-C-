@@ -6,11 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 
 namespace ShiftOS
 {
-    public partial class WindowBorder : UserControl
+    public partial class WindowBorder : UserWidget
     {
         public Timer updater = new Timer();
 
@@ -18,20 +18,20 @@ namespace ShiftOS
 
         //Lua Methods
 
-        public void RegisterWidget(string ident, Control ctrl)
+        public void RegisterWidget(string ident, Widget ctrl)
         {
-            _widgets.Add(new BorderWidget { Identifier = ident, Control = ctrl });
+            _widgets.Add(new BorderWidget { Identifier = ident, Widget = ctrl });
             resettitlebar();
         }
 
-        public Control GetWidget(string ident)
+        public Widget GetWidget(string ident)
         {
-            Control ctrl = null;
+            Widget ctrl = null;
             foreach(var widget in _widgets)
             {
                 if(widget.Identifier == ident)
                 {
-                    ctrl = widget.Control;
+                    ctrl = widget.Widget;
                 }
             }
             if (ctrl == null)
@@ -51,11 +51,11 @@ namespace ShiftOS
             }
             if (ctrl == null)
                 throw new Exception($"The identifier {ident} was not found.");
-            var wControl = ctrl.Control;
-            wControl.Parent.Controls.Remove(wControl);
-            wControl.Hide();
+            var wWidget = ctrl.Widget;
+            wWidget.Parent.Widgets.Remove(wWidget);
+            wWidget.Hide();
             _widgets.Remove(ctrl);
-            wControl.Dispose();
+            wWidget.Dispose();
         }
 
 
@@ -596,7 +596,7 @@ namespace ShiftOS
 
         //delete this for non-resizable windows
         // ERROR: Handles clauses are not supported in C#
-        private void Rightpull_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Rightpull_MouseDown(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -641,7 +641,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void rightpull_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void rightpull_MouseUp(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -650,7 +650,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void bottompull_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void bottompull_MouseDown(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -659,7 +659,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void bottompull_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void bottompull_MouseUp(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -668,7 +668,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void bspull_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void bspull_MouseDown(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -677,7 +677,7 @@ namespace ShiftOS
         }
 
         // ERROR: Handles clauses are not supported in C#
-        private void bspull_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void bspull_MouseUp(object sender, ShiftUI.MouseEventArgs e)
         {
             if (API.Upgrades["resizablewindows"] == true)
             {
@@ -793,7 +793,7 @@ namespace ShiftOS
     public class BorderWidget
     {
         public string Identifier { get; set; }
-        public Control Control { get; set; }
+        public Widget Widget { get; set; }
     }
 }
 

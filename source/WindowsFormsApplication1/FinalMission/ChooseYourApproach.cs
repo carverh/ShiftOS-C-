@@ -9,7 +9,7 @@ using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ShiftUI;
 using NAudio;
 using NAudio.Wave;
 
@@ -47,7 +47,7 @@ namespace ShiftOS.FinalMission
 
         private void cc_sidewithdevx_Selected(object sender, EventArgs e)
         {
-            var cc = (ChoiceControl)sender;
+            var cc = (ChoiceWidget)sender;
             choice = cc.Number;
             SetupUI();
         }

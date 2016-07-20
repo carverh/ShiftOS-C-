@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbconnections = new System.Windows.Forms.ListBox();
-            this.flbuttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.btnconnect = new System.Windows.Forms.Button();
-            this.btndisconnect = new System.Windows.Forms.Button();
+            this.panel1 = new ShiftUI.Panel();
+            this.lbconnections = new ShiftUI.ListBox();
+            this.flbuttons = new ShiftUI.FlowLayoutPanel();
+            this.btnadd = new ShiftUI.Button();
+            this.btnconnect = new ShiftUI.Button();
+            this.btndisconnect = new ShiftUI.Button();
             this.panel1.SuspendLayout();
             this.flbuttons.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.flbuttons);
-            this.panel1.Controls.Add(this.lbconnections);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Widgets.Add(this.flbuttons);
+            this.panel1.Widgets.Add(this.lbconnections);
+            this.panel1.Dock = ShiftUI.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(684, 531);
@@ -50,9 +50,9 @@
             // 
             // lbconnections
             // 
-            this.lbconnections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbconnections.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbconnections.FormattingEnabled = true;
             this.lbconnections.Location = new System.Drawing.Point(13, 13);
             this.lbconnections.Name = "lbconnections";
@@ -62,11 +62,11 @@
             // 
             // flbuttons
             // 
-            this.flbuttons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flbuttons.Controls.Add(this.btnadd);
-            this.flbuttons.Controls.Add(this.btnconnect);
-            this.flbuttons.Controls.Add(this.btndisconnect);
+            this.flbuttons.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
+            this.flbuttons.Widgets.Add(this.btnadd);
+            this.flbuttons.Widgets.Add(this.btnconnect);
+            this.flbuttons.Widgets.Add(this.btndisconnect);
             this.flbuttons.Location = new System.Drawing.Point(13, 489);
             this.flbuttons.Name = "flbuttons";
             this.flbuttons.Size = new System.Drawing.Size(659, 30);
@@ -105,9 +105,9 @@
             // ConnectionManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 531);
-            this.Controls.Add(this.panel1);
+            this.Widgets.Add(this.panel1);
             this.Name = "ConnectionManager";
             this.Text = "ConnectionManager";
             this.Load += new System.EventHandler(this.ConnectionManager_Load);
@@ -119,11 +119,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flbuttons;
-        private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button btnconnect;
-        private System.Windows.Forms.Button btndisconnect;
-        private System.Windows.Forms.ListBox lbconnections;
+        private ShiftUI.Panel panel1;
+        private ShiftUI.FlowLayoutPanel flbuttons;
+        private ShiftUI.Button btnadd;
+        private ShiftUI.Button btnconnect;
+        private ShiftUI.Button btndisconnect;
+        private ShiftUI.ListBox lbconnections;
     }
 }

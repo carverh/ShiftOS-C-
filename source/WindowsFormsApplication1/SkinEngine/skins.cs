@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System;
 using ShiftOS;
 using System.IO.Compression;
-using System.Windows.Forms;
+using ShiftUI;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 
@@ -568,9 +568,16 @@ namespace Skinning
                 loadedSkin = JsonConvert.DeserializeObject<Skin>(rawData);
                 if (File.Exists(Paths.LoadedSkin + "panels.json"))
                 {
-                    string panels = File.ReadAllText(Paths.LoadedSkin + "panels.json");
-                    loadedSkin.DesktopPanels = JsonConvert.DeserializeObject<List<DesktopPanel>>(panels);
-                    LoadPanels();
+                    try
+                    {
+                        string panels = File.ReadAllText(Paths.LoadedSkin + "panels.json");
+                        loadedSkin.DesktopPanels = JsonConvert.DeserializeObject<List<DesktopPanel>>(panels);
+                        LoadPanels();
+                    }
+                    catch
+                    {
+
+                    }
                 }
                 loadimages();
                 LoadEmbeddedNamePack();

@@ -26,25 +26,25 @@ namespace Shiftorium
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frontend));
-            this.pgcontents = new System.Windows.Forms.Panel();
-            this.lbcodepoints = new System.Windows.Forms.Label();
-            this.lbupgrades = new System.Windows.Forms.ListView();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.pnlinfo = new System.Windows.Forms.Panel();
-            this.pnlintro = new System.Windows.Forms.Panel();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.btnbuy = new System.Windows.Forms.Button();
-            this.lbprice = new System.Windows.Forms.Label();
-            this.picpreview = new System.Windows.Forms.PictureBox();
-            this.lbudescription = new System.Windows.Forms.Label();
-            this.lbupgradename = new System.Windows.Forms.Label();
-            this.tmrcodepointsupdate = new System.Windows.Forms.Timer(this.components);
-            this.btnback = new System.Windows.Forms.Button();
-            this.btnforward = new System.Windows.Forms.Button();
-            this.lbcategory = new System.Windows.Forms.Label();
-            this.btnhack = new System.Windows.Forms.Button();
+            this.pgcontents = new ShiftUI.Panel();
+            this.lbcodepoints = new ShiftUI.Label();
+            this.lbupgrades = new ShiftUI.ListView();
+            this.Label1 = new ShiftUI.Label();
+            this.pnlinfo = new ShiftUI.Panel();
+            this.pnlintro = new ShiftUI.Panel();
+            this.Label4 = new ShiftUI.Label();
+            this.Label2 = new ShiftUI.Label();
+            this.Label5 = new ShiftUI.Label();
+            this.btnbuy = new ShiftUI.Button();
+            this.lbprice = new ShiftUI.Label();
+            this.picpreview = new ShiftUI.PictureBox();
+            this.lbudescription = new ShiftUI.Label();
+            this.lbupgradename = new ShiftUI.Label();
+            this.tmrcodepointsupdate = new ShiftUI.Timer(this.components);
+            this.btnback = new ShiftUI.Button();
+            this.btnforward = new ShiftUI.Button();
+            this.lbcategory = new ShiftUI.Label();
+            this.btnhack = new ShiftUI.Button();
             this.pgcontents.SuspendLayout();
             this.pnlinfo.SuspendLayout();
             this.pnlintro.SuspendLayout();
@@ -54,15 +54,15 @@ namespace Shiftorium
             // pgcontents
             // 
             this.pgcontents.BackColor = System.Drawing.Color.White;
-            this.pgcontents.Controls.Add(this.btnhack);
-            this.pgcontents.Controls.Add(this.lbcategory);
-            this.pgcontents.Controls.Add(this.btnforward);
-            this.pgcontents.Controls.Add(this.btnback);
-            this.pgcontents.Controls.Add(this.lbcodepoints);
-            this.pgcontents.Controls.Add(this.lbupgrades);
-            this.pgcontents.Controls.Add(this.Label1);
-            this.pgcontents.Controls.Add(this.pnlinfo);
-            this.pgcontents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgcontents.Widgets.Add(this.btnhack);
+            this.pgcontents.Widgets.Add(this.lbcategory);
+            this.pgcontents.Widgets.Add(this.btnforward);
+            this.pgcontents.Widgets.Add(this.btnback);
+            this.pgcontents.Widgets.Add(this.lbcodepoints);
+            this.pgcontents.Widgets.Add(this.lbupgrades);
+            this.pgcontents.Widgets.Add(this.Label1);
+            this.pgcontents.Widgets.Add(this.pnlinfo);
+            this.pgcontents.Dock = ShiftUI.DockStyle.Fill;
             this.pgcontents.Location = new System.Drawing.Point(0, 0);
             this.pgcontents.Name = "pgcontents";
             this.pgcontents.Size = new System.Drawing.Size(701, 462);
@@ -83,7 +83,7 @@ namespace Shiftorium
             // lbupgrades
             // 
             this.lbupgrades.BackColor = System.Drawing.Color.White;
-            this.lbupgrades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbupgrades.BorderStyle = ShiftUI.BorderStyle.None;
             this.lbupgrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbupgrades.ForeColor = System.Drawing.Color.Black;
             this.lbupgrades.Location = new System.Drawing.Point(21, 101);
@@ -92,7 +92,7 @@ namespace Shiftorium
             this.lbupgrades.Size = new System.Drawing.Size(304, 254);
             this.lbupgrades.TabIndex = 0;
             this.lbupgrades.UseCompatibleStateImageBehavior = false;
-            this.lbupgrades.View = System.Windows.Forms.View.Details;
+            this.lbupgrades.View = ShiftUI.View.Details;
             this.lbupgrades.SelectedIndexChanged += new System.EventHandler(this.lbupgrades_SelectedIndexChanged);
             // 
             // Label1
@@ -108,13 +108,13 @@ namespace Shiftorium
             // 
             // pnlinfo
             // 
-            this.pnlinfo.Controls.Add(this.pnlintro);
-            this.pnlinfo.Controls.Add(this.btnbuy);
-            this.pnlinfo.Controls.Add(this.lbprice);
-            this.pnlinfo.Controls.Add(this.picpreview);
-            this.pnlinfo.Controls.Add(this.lbudescription);
-            this.pnlinfo.Controls.Add(this.lbupgradename);
-            this.pnlinfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlinfo.Widgets.Add(this.pnlintro);
+            this.pnlinfo.Widgets.Add(this.btnbuy);
+            this.pnlinfo.Widgets.Add(this.lbprice);
+            this.pnlinfo.Widgets.Add(this.picpreview);
+            this.pnlinfo.Widgets.Add(this.lbudescription);
+            this.pnlinfo.Widgets.Add(this.lbupgradename);
+            this.pnlinfo.Dock = ShiftUI.DockStyle.Right;
             this.pnlinfo.Location = new System.Drawing.Point(332, 0);
             this.pnlinfo.Name = "pnlinfo";
             this.pnlinfo.Size = new System.Drawing.Size(369, 462);
@@ -122,10 +122,10 @@ namespace Shiftorium
             // 
             // pnlintro
             // 
-            this.pnlintro.Controls.Add(this.Label4);
-            this.pnlintro.Controls.Add(this.Label2);
-            this.pnlintro.Controls.Add(this.Label5);
-            this.pnlintro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlintro.Widgets.Add(this.Label4);
+            this.pnlintro.Widgets.Add(this.Label2);
+            this.pnlintro.Widgets.Add(this.Label5);
+            this.pnlintro.Dock = ShiftUI.DockStyle.Fill;
             this.pnlintro.Location = new System.Drawing.Point(0, 0);
             this.pnlintro.Name = "pnlintro";
             this.pnlintro.Size = new System.Drawing.Size(369, 462);
@@ -165,8 +165,8 @@ namespace Shiftorium
             // 
             // btnbuy
             // 
-            this.btnbuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnbuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuy.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Right)));
+            this.btnbuy.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnbuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuy.ForeColor = System.Drawing.Color.Black;
             this.btnbuy.Location = new System.Drawing.Point(160, 362);
@@ -179,7 +179,7 @@ namespace Shiftorium
             // 
             // lbprice
             // 
-            this.lbprice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbprice.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Bottom | ShiftUI.AnchorStyles.Left)));
             this.lbprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbprice.ForeColor = System.Drawing.Color.Black;
             this.lbprice.Location = new System.Drawing.Point(15, 362);
@@ -227,7 +227,7 @@ namespace Shiftorium
             // 
             // btnback
             // 
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnback.Location = new System.Drawing.Point(22, 72);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(36, 23);
@@ -238,8 +238,8 @@ namespace Shiftorium
             // 
             // btnforward
             // 
-            this.btnforward.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnforward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnforward.Anchor = ((ShiftUI.AnchorStyles)((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Right)));
+            this.btnforward.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnforward.Location = new System.Drawing.Point(289, 72);
             this.btnforward.Name = "btnforward";
             this.btnforward.Size = new System.Drawing.Size(36, 23);
@@ -250,8 +250,8 @@ namespace Shiftorium
             // 
             // lbcategory
             // 
-            this.lbcategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbcategory.Anchor = ((ShiftUI.AnchorStyles)(((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.lbcategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lbcategory.ForeColor = System.Drawing.Color.Black;
             this.lbcategory.Location = new System.Drawing.Point(64, 72);
@@ -263,11 +263,11 @@ namespace Shiftorium
             // 
             // btnhack
             // 
-            this.btnhack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnhack.Anchor = ((ShiftUI.AnchorStyles)((((ShiftUI.AnchorStyles.Top | ShiftUI.AnchorStyles.Bottom) 
+            | ShiftUI.AnchorStyles.Left) 
+            | ShiftUI.AnchorStyles.Right)));
             this.btnhack.AutoSize = true;
-            this.btnhack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhack.FlatStyle = ShiftUI.FlatStyle.Flat;
             this.btnhack.Location = new System.Drawing.Point(143, 218);
             this.btnhack.Name = "btnhack";
             this.btnhack.Size = new System.Drawing.Size(68, 25);
@@ -280,11 +280,11 @@ namespace Shiftorium
             // Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = ShiftUI.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(701, 462);
-            this.Controls.Add(this.pgcontents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Widgets.Add(this.pgcontents);
+            this.FormBorderStyle = ShiftUI.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "Frontend";
             this.Text = "Shiftorium";
@@ -299,24 +299,24 @@ namespace Shiftorium
             this.ResumeLayout(false);
 
         }
-        internal System.Windows.Forms.Panel pgcontents;
-        internal System.Windows.Forms.ListView lbupgrades;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Panel pnlinfo;
-        internal System.Windows.Forms.Label lbcodepoints;
-        internal System.Windows.Forms.Button btnbuy;
-        internal System.Windows.Forms.Label lbprice;
-        internal System.Windows.Forms.PictureBox picpreview;
-        internal System.Windows.Forms.Label lbudescription;
-        internal System.Windows.Forms.Label lbupgradename;
-        internal System.Windows.Forms.Panel pnlintro;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.Timer tmrcodepointsupdate;
-        internal System.Windows.Forms.Label lbcategory;
-        private System.Windows.Forms.Button btnforward;
-        private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.Button btnhack;
+        internal ShiftUI.Panel pgcontents;
+        internal ShiftUI.ListView lbupgrades;
+        internal ShiftUI.Label Label1;
+        internal ShiftUI.Panel pnlinfo;
+        internal ShiftUI.Label lbcodepoints;
+        internal ShiftUI.Button btnbuy;
+        internal ShiftUI.Label lbprice;
+        internal ShiftUI.PictureBox picpreview;
+        internal ShiftUI.Label lbudescription;
+        internal ShiftUI.Label lbupgradename;
+        internal ShiftUI.Panel pnlintro;
+        internal ShiftUI.Label Label4;
+        internal ShiftUI.Label Label2;
+        internal ShiftUI.Label Label5;
+        internal ShiftUI.Timer tmrcodepointsupdate;
+        internal ShiftUI.Label lbcategory;
+        private ShiftUI.Button btnforward;
+        private ShiftUI.Button btnback;
+        private ShiftUI.Button btnhack;
     }
 }
