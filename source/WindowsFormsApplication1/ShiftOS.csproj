@@ -103,6 +103,12 @@
     <Compile Include="Apps\Artpad.Designer.cs">
       <DependentUpon>Artpad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apps\Cheats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apps\Cheats.Designer.cs">
+      <DependentUpon>Cheats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SyntaxHighlighter.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\BitnoteWallet.resx">
       <DependentUpon>BitnoteWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\Cheats.resx">
+      <DependentUpon>Cheats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Color_Picker.resx">
       <DependentUpon>Color_Picker.cs</DependentUpon>

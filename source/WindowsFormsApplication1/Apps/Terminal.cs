@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -1626,6 +1627,20 @@ Password: z7fjsd3");
                         }
                         API.UpdateWindows();
                         API.CurrentSession.SetupDesktop();
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "cheat":
+                    if (API.DeveloperMode)
+                    {
+                        WriteLine("Opening...");
+                        
+                        //Apps.Cheats chts = new Apps.Cheats();
+                        //chts.Show();
+                        API.CreateForm(new Apps.Cheats(), "Cheats", API.GetIcon("Terminal"));
                     }
                     else
                     {
