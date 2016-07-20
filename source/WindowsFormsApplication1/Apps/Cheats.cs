@@ -62,9 +62,6 @@ namespace ShiftOS.Apps
             ShiftOS.API.AddCodepoints(qty);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Package_Grabber.SendMessage(Matchmaker.SelectedServer.IPAddress, );
-        }
+
     }
 }
