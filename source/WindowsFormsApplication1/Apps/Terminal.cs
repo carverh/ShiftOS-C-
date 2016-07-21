@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-
+using ShiftOS.FinalMission;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -746,6 +746,9 @@ namespace ShiftOS
                     break;
                 case "timedistorter":
                     cmd_histacom_timedistorter(args);
+                    break;
+                case "about":
+                    cmd_about(args);
                     break;
                 default:
                     cmd_default(args);
@@ -2038,33 +2041,41 @@ Password: z7fjsd3");
 
         public void cmd_cd(String[] args)
         {
-            if (API.Upgrades["fileskimmer"])
+            try
             {
-                if (args[1] == "..")
+                if (API.Upgrades["fileskimmer"])
                 {
-                    if (GetPath(current_dir) != "/")
+                    if (args[1] == "..")
                     {
-                        current_dir = GetParent(current_dir);
-                        SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                        if (GetPath(current_dir) != "/")
+                        {
+                            current_dir = GetParent(current_dir);
+                            SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                        }
+                        else
+                        {
+                            WriteLine("cd: Can't go up past the root.");
+                        }
                     }
                     else
                     {
-                        WriteLine("cd: Can't go up past the root.");
+                        string newdir = current_dir + OSInfo.DirectorySeparator;
+                        foreach (var dir in Directory.GetDirectories(current_dir))
+                        {
+                            if (new DirectoryInfo(dir).Name.ToLower() == args[1])
+                                newdir = dir;
+                        }
+                        current_dir = newdir;
+                        SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
                     }
-                }
-                else
-                {
-                    string newdir = current_dir + OSInfo.DirectorySeparator;
-                    foreach (var dir in Directory.GetDirectories(current_dir))
-                    {
-                        if (new DirectoryInfo(dir).Name.ToLower() == args[1])
-                            newdir = dir;
-                    }
-                    current_dir = newdir;
-                    SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
                 }
             }
+            catch (Exception e)
+            {
+                WriteLine("cd: " + e);
+            }
         }
+
 
         public void cmd_upg(String[] args)
         {
@@ -2890,6 +2901,9 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                             API.DeveloperMode = false;
                             WriteLine("Turned off developer mode. Use the passcode to turn it back on.");
                             break;
+                        case "end":
+                            EndGameHandler.StartGoodEnding();
+                            break;
                         default:
                             WriteLine("Invalid argument: " + args[1] + ". Debug can only debug the following: 'shiftnet-story'.");
                             break;
@@ -2994,6 +3008,15 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// About Box, Created By Carver Harrison
+        /// </summary>
+        /// <param name="args">String[] args</param>
+        public void cmd_about(String[] args)
+        {
+            API.CreateInfoboxSession("About ShiftOS", "ShiftOS Version " + ProductVersion + "\n Copyright 2014-2016 ShiftOS Dev Team \n Type 'credits' in Terminal to Show Credits", infobox.InfoboxMode.Info);
         }
 
         // HISTACOM REFERENCES, DO NOT REMOVE, CRUCIAL FOR SECRET STORY ARC

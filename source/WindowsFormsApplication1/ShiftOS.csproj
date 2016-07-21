@@ -85,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API.cs" />
+    <Compile Include="Apps\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apps\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apps\Appscape.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +407,9 @@
       <DependentUpon>WindowBorder.cs</DependentUpon>
     </Compile>
     <Compile Include="SkinEngine\WindowComposition.cs" />
+    <EmbeddedResource Include="Apps\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apps\Appscape.resx">
       <DependentUpon>Appscape.cs</DependentUpon>
     </EmbeddedResource>

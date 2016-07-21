@@ -258,7 +258,7 @@ namespace ShiftOS.FinalMission
                             mguide.ButtonText = "End DevX";
                             mguide.OnButtonClick = new Action(() =>
                             {
-                                //code to run to start uninstall of ShiftOS.
+                                StartGoodEnding();
                             });
                             objPrompt = "Firewall, check. Primary server, check. Secondary server, CHECK. Telemetry server, CHECK. Now it's time to disable DevX himself. After all, he IS just code.";
                             break;
@@ -271,5 +271,13 @@ namespace ShiftOS.FinalMission
             }
         }
         #endregion
+
+        public static void StartGoodEnding()
+        {
+            var room = new FakeChatClient();
+            room.OtherCharacters = new List<string>();
+            room.OtherCharacters.Add("TheHiddenHacker");
+            room.Messages.Add("TheHiddenHacker", "After All This Time...");
+        }
     }
 }
