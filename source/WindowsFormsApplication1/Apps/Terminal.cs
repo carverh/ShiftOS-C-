@@ -1378,8 +1378,15 @@ Password: z7fjsd3");
 
         public string GetParent(string path)
         {
-            var d = new DirectoryInfo(path);
-            return d.Parent.FullName;
+            if (new DirectoryInfo(path).Parent.FullName.Contains("ShiftOS"))
+            {
+                var d = new DirectoryInfo(path);
+                return d.Parent.FullName;
+            }
+            else
+            {
+                return path;
+            }
         }
 
         public void DoCommand()

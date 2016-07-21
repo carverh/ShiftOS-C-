@@ -373,62 +373,71 @@ namespace ShiftOS
             {
                 StartHack(cid, GetRandomHack());
             }
-            else {
-                var h = Tools[cid];
-                switch(h.Name)
+            else
+            {
+                if (Tools.Count <= cid)
                 {
-                    case "Destabilizer Attack":
-                        var t = new Timer();
-                        t.Interval = 1000 / h.Effectiveness;
-                        var rnd = new Random();
-                        t.Tick += (object s, EventArgs a) =>
-                        {
-                            int r = rnd.Next(0, 100);
-                            if(r == 90)
+                    API.CreateInfoboxSession("Failed!", "No Hacking Tools Avalible!", infobox.InfoboxMode.Info);
+                    return;
+                }
+                else
+                {
+                    HackTool h = Tools[cid];
+                    switch (h.Name)
+                    {
+                        case "Destabilizer Attack":
+                            var t = new Timer();
+                            t.Interval = 1000 / h.Effectiveness;
+                            var rnd = new Random();
+                            t.Tick += (object s, EventArgs a) =>
                             {
-                                t.Stop();
-                                API.CreateInfoboxSession("Hack complete.", "The hack has been completed.", infobox.InfoboxMode.Info);
-                                GiveUpgrade(upgrade);
-                                                    }
-                            else
-                            {
-                                int p = rnd.Next(0, 10);
-                                switch(p)
+                                int r = rnd.Next(0, 100);
+                                if (r == 90)
                                 {
-                                    case 1:
-                                        API.OpenProgram("shiftorium");
-                                        break;
-                                    case 2:
-                                        API.OpenProgram("ki");
-                                        break;
-                                    case 3:
-                                        API.CreateInfoboxSession(API.Encryption.Encrypt("Praise Lord Michael"), API.Encryption.Encrypt("You will bow down to me."), infobox.InfoboxMode.Info);
-                                        break;
-                                    case 4:
-                                        API.PlaySound(Properties.Resources._3beepvirus);
-                                        break;
-                                    case 5:
-                                        API.CurrentSession.BackColor = Color.White;
-                                        break;
-                                    case 6:
-                                        API.CurrentSession.BackColor = Color.Black;
-                                        break;
-                                    case 7:
-                                        API.PlaySound(Properties.Resources.dial_up_modem_02);
-                                        break;
-                                    case 8:
-                                        API.PlaySound(Properties.Resources.writesound);
-                                        break;
-                                    case 9:
-                                        API.PlaySound(Properties.Resources.typesound);
-                                        break;
+                                    t.Stop();
+                                    API.CreateInfoboxSession("Hack complete.", "The hack has been completed.", infobox.InfoboxMode.Info);
+                                    GiveUpgrade(upgrade);
                                 }
-                            }
-                        };
-                        t.Start();
+                                else
+                                {
+                                    int p = rnd.Next(0, 10);
+                                    switch (p)
+                                    {
+                                        case 1:
+                                            API.OpenProgram("shiftorium");
+                                            break;
+                                        case 2:
+                                            API.OpenProgram("ki");
+                                            break;
+                                        case 3:
+                                            API.CreateInfoboxSession(API.Encryption.Encrypt("Praise Lord Michael"), API.Encryption.Encrypt("You will bow down to me."), infobox.InfoboxMode.Info);
+                                            break;
+                                        case 4:
+                                            API.PlaySound(Properties.Resources._3beepvirus);
+                                            break;
+                                        case 5:
+                                            API.CurrentSession.BackColor = Color.White;
+                                            break;
+                                        case 6:
+                                            API.CurrentSession.BackColor = Color.Black;
+                                            break;
+                                        case 7:
+                                            API.PlaySound(Properties.Resources.dial_up_modem_02);
+                                            break;
+                                        case 8:
+                                            API.PlaySound(Properties.Resources.writesound);
+                                            break;
+                                        case 9:
+                                            API.PlaySound(Properties.Resources.typesound);
+                                            break;
+                                    }
+                                }
+                            };
+                            t.Start();
 
-                        
-                        break;
+
+                            break;
+                    }
                 }
             }
         }

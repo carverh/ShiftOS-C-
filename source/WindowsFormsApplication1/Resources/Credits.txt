@@ -1,18 +1,11 @@
 ShiftOS #VER#
 
+== Developers ==
+Philip Adams
+Michael VanOverbeek
+Carver (www.harri.cf)
 
-
-A game by Michael VanOverbeek
-
-
-
-
-
-
-
-
-
- == External Libraries / Dependencies == 
+== External Libraries / Dependencies == 
 
   JSON.NET - Version 8.0.2
   By James Newton-King
