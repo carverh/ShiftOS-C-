@@ -1463,6 +1463,152 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             }
         }
 
+        public void cmd_05tray(String[] args)
+        {
+            if (API.DeveloperMode == true)
+            {
+                API.AddCodepoints(500);
+                WriteLine("You've been granted 500 Codepoints.");
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_debug(String[] args)
+        {
+            if (API.DeveloperMode == true)
+            {
+                try
+                {
+                    switch (args[1].ToLower())
+                    {
+                        case "shiftnet-story":
+                            WriteLine("Debugging Shiftnet Story...");
+                            StartShiftnetStory();
+                            break;
+                        case "devmode":
+                            API.DeveloperMode = false;
+                            WriteLine("Turned off developer mode. Use the passcode to turn it back on.");
+                            break;
+                        default:
+                            WriteLine("Invalid argument: " + args[1] + ". Debug can only debug the following: 'shiftnet-story'.");
+                            break;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    WriteLine("debug: " + ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+                    switch (args[1].ToLower())
+                    {
+                        case "developers123":
+                            WriteLine("Turned Developer Mode on!");
+                            API.DeveloperMode = true;
+                            break;
+                        default:
+                            WriteLine("debug: lp0 is on fire");  // Keeps Cheaters from Flooding The Fourms With "The Debug Mode Doesn't Work"
+                            break;
+                    }
+                }
+                catch
+                {
+                    WriteLine("debug: lp0 is on fire");  // Keeps Cheaters from Flooding The Fourms With "The Debug Mode Doesn't Work"
+                }
+            }
+        }
+
+        public void cmd_echo(String[] args)
+        {
+            if (command.Contains("echo "))
+            {
+                WriteLine(command.Replace("echo ", ""));
+            }
+            else
+            {
+                WriteLine("echo: Insufficient Parameters.");
+            }
+        }
+
+        public void cmd_default(String[] args)
+        {
+            if (API.OpenProgram(args[0]) == false)
+            {
+                if (API.Upgrades["trmfiles"] == false)
+                {
+                    bool done = false;
+                    foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                    {
+                        if (kv.Key == command)
+                        {
+                            command = kv.Value;
+                            done = true;
+                            DoCommand();
+                        }
+
+                    }
+                    if (done == false)
+                    {
+                        wrongcommand();
+                    }
+                }
+                else
+                {
+                    var f = command.Replace("\\", "/");
+                    if (f.StartsWith("/"))
+                    {
+                        var withoutslash = f.Remove(0, 1);
+                        var dirsep = OSInfo.DirectorySeparator;
+                        var proper = $"{Paths.SaveRoot}{dirsep}{withoutslash.Replace("/", dirsep)}";
+                        if (File.Exists(proper))
+                        {
+                            runterminalfile(proper);
+                        }
+                        else
+                        {
+                            wrongcommand();
+                        }
+                    }
+                    else
+                    {
+                        bool done = false;
+                        foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                        {
+                            if (kv.Key == command)
+                            {
+                                command = kv.Value;
+                                done = true;
+                                DoCommand();
+                            }
+
+                        }
+                        if (done == false)
+                        {
+                            wrongcommand();
+                        }
+                    }
+                }
+            }
+        }
+
+        // HISTACOM REFERENCES, DO NOT REMOVE, CRUCIAL FOR SECRET STORY ARC
+        public void cmd_histacom_year(String[] args)
+        {
+            WriteLine("Year: 2002");
+        }
+
+        public void cmd_histacom_timedistorter(String[] args)
+        {
+            WriteLine("Install 'timedistorter' by going to shiftnet://12padams");
+        }
+
         public void DoCommand()
         {
             API.LastRanCommand = command;
@@ -1573,134 +1719,22 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                     cmd_close(args);
                     break;
                 case "05tray":
-                    cmd_05tray
-
+                    cmd_05tray(args);
                     break;
                 case "debug":
-                    if (API.DeveloperMode == true)
-                    {
-                        try
-                        {
-                            switch (args[1].ToLower())
-                            {
-                                case "shiftnet-story":
-                                    WriteLine("Debugging Shiftnet Story...");
-                                    StartShiftnetStory();
-                                    break;
-                                case "devmode":
-                                    API.DeveloperMode = false;
-                                    WriteLine("Turned off developer mode. Use the passcode to turn it back on.");
-                                    break;
-                                default:
-                                    WriteLine("Invalid argument: " + args[1] + ". Debug can only debug the following: 'shiftnet-story'.");
-                                    break;
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            WriteLine("debug: " + ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            switch (args[1].ToLower())
-                            {
-                                case "developers123":
-                                    WriteLine("Turned Developer Mode on!");
-                                    API.DeveloperMode = true;
-                                    break;
-                                default:
-                                    wrongcommand();
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-                            wrongcommand(); //Debug command pretends to be an invalid command if an exception is thrown.
-                        }
-                    }
+                    cmd_debug(args);
                     break;
                 case "echo":
-                    if (command.Contains("echo "))
-                    {
-                        WriteLine(command.Replace("echo ", ""));
-                    }
-                    else
-                    {
-                        WriteLine("echo: Insufficient Parameters.");
-                    }
-                    break;
-                case "syncsave":
-                    WriteLine("Command removed.");
+                    cmd_echo(args);
                     break;
                 case "year":
-                    WriteLine("Year: 2002");  // Histacom Reference
+                    cmd_histacom_year(args);
                     break;
                 case "timedistorter":
-                    WriteLine("Install 'timedistorter' by going to shiftnet://12padams");  // Histacom Reference
+                    cmd_histacom_timedistorter(args);
                     break;
-
                 default:
-                    if (API.OpenProgram(args[0]) == false)
-                    {
-                        if (API.Upgrades["trmfiles"] == false)
-                        {
-                            bool done = false;
-                            foreach (KeyValuePair<string, string> kv in API.CommandAliases)
-                            {
-                                if (kv.Key == command)
-                                {
-                                    command = kv.Value;
-                                    done = true;
-                                    DoCommand();
-                                }
-
-                            }
-                            if (done == false)
-                            {
-                                wrongcommand();
-                            }
-                        }
-                        else
-                        {
-                            var f = command.Replace("\\", "/");
-                            if (f.StartsWith("/"))
-                            {
-                                var withoutslash = f.Remove(0, 1);
-                                var dirsep = OSInfo.DirectorySeparator;
-                                var proper = $"{Paths.SaveRoot}{dirsep}{withoutslash.Replace("/", dirsep)}";
-                                if (File.Exists(proper))
-                                {
-                                    runterminalfile(proper);
-                                }
-                                else
-                                {
-                                    wrongcommand();
-                                }
-                            }
-                            else
-                            {
-                                bool done = false;
-                                foreach (KeyValuePair<string, string> kv in API.CommandAliases)
-                                {
-                                    if (kv.Key == command)
-                                    {
-                                        command = kv.Value;
-                                        done = true;
-                                        DoCommand();
-                                    }
-
-                                }
-                                if (done == false)
-                                {
-                                    wrongcommand();
-                                }
-                            }
-                        }
-                    }
+                    cmd_default(args);
                     break;
             }
         }
