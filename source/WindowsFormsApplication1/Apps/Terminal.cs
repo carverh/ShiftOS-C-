@@ -623,517 +623,739 @@ namespace ShiftOS
             }
         }
 
-        public void DoCommand()
+        public void cmd_dir(String[] args)
         {
-            API.LastRanCommand = command;
-            string[] args = command.ToLower().Split(' ');
-            switch (args[0])
+            if (API.Upgrades["fileskimmer"])
             {
-                case "ls":
-                case "dir":
-                    if (API.Upgrades["fileskimmer"])
-                    {
-                        foreach (var d in Directory.GetDirectories(current_dir))
-                        {
-                            WriteLine($"[DIR] {new DirectoryInfo(d).Name}");
-                        }
-                        foreach (var d in Directory.GetFiles(current_dir))
-                        {
-                            WriteLine($"{new FileInfo(d).Name}");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "cd":
-                    if (API.Upgrades["fileskimmer"])
-                    {
-                        if (args[1] == "..")
-                        {
-                            if (GetPath(current_dir) != "/")
-                            {
-                                current_dir = GetParent(current_dir);
-                                SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
-                            }
-                            else
-                            {
-                                WriteLine("cd: Can't go up past the root.");
-                            }
-                        }
-                        else
-                        {
-                            string newdir = current_dir + OSInfo.DirectorySeparator;
-                            foreach (var dir in Directory.GetDirectories(current_dir))
-                            {
-                                if (new DirectoryInfo(dir).Name.ToLower() == args[1])
-                                    newdir = dir;
-                            }
-                            current_dir = newdir;
-                            SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
-                        }
-                    }
-                    break;
-                case "upg":
-                    if (API.DeveloperMode)
-                    {
-                        try
-                        {
-                            switch (args[1])
-                            {
-                                case "get":
-                                    WriteLine(API.Upgrades[args[2]].ToString());
-                                    break;
-                            }
-                        }
-                        catch
-                        {
+                foreach (var d in Directory.GetDirectories(current_dir))
+                {
+                    WriteLine($"[DIR] {new DirectoryInfo(d).Name}");
+                }
+                foreach (var d in Directory.GetFiles(current_dir))
+                {
+                    WriteLine($"{new FileInfo(d).Name}");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
 
-                        }
+        public void cmd_cd(String[] args)
+        {
+            if (API.Upgrades["fileskimmer"])
+            {
+                if (args[1] == "..")
+                {
+                    if (GetPath(current_dir) != "/")
+                    {
+                        current_dir = GetParent(current_dir);
+                        SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
                     }
                     else
                     {
-                        wrongcommand();
+                        WriteLine("cd: Can't go up past the root.");
                     }
-                    break;
-                case "endgame_test":
-                    if (API.DeveloperMode)
+                }
+                else
+                {
+                    string newdir = current_dir + OSInfo.DirectorySeparator;
+                    foreach (var dir in Directory.GetDirectories(current_dir))
                     {
-                        try
-                        {
-                            switch (args[1])
-                            {
-                                case "choice_screen":
-                                    var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
-                                    cscreen.WindowState = FormWindowState.Maximized;
-                                    //cscreen.TopMost = true;
-                                    cscreen.Show();
-                                    break;
-                                case "limitedmode":
-                                    API.LimitedMode = !API.LimitedMode;
-                                    WriteLine($"Limited mode set to {API.LimitedMode}.");
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("Invalid arguments.");
-                        }
+                        if (new DirectoryInfo(dir).Name.ToLower() == args[1])
+                            newdir = dir;
                     }
-                    else
+                    current_dir = newdir;
+                    SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                }
+            }
+        }
+
+        public void cmd_upg(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                try
+                {
+                    switch (args[1])
                     {
-                        wrongcommand();
+                        case "get":
+                            WriteLine(API.Upgrades[args[2]].ToString());
+                            break;
                     }
-                    break;
-                case "htutorial":
-                    ShiftOS.Hacking.StartBattleTutorial();
-                    break;
-                case "fake_buy":
-                    if (API.DeveloperMode)
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_endgame_test(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                try
+                {
+                    switch (args[1])
                     {
-                        try
-                        {
-                            if (API.Upgrades.ContainsKey(args[1]))
-                            {
-                                API.Upgrades[args[1]] = true;
-                                WriteLine($"Bought upgrade {args[1]}.");
-                                API.CurrentSession.SetupAppLauncher();
-                                API.UpdateWindows();
-                                SaveSystem.Utilities.saveGame();
-                            }
-                            else
-                            {
-                                WriteLine("Upgrade not found.");
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("fake_buy: Bad arguments.");
-                        }
+                        case "choice_screen":
+                            var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
+                            cscreen.WindowState = FormWindowState.Maximized;
+                            //cscreen.TopMost = true;
+                            cscreen.Show();
+                            break;
+                        case "limitedmode":
+                            API.LimitedMode = !API.LimitedMode;
+                            WriteLine($"Limited mode set to {API.LimitedMode}.");
+                            break;
                     }
-                    else
+                }
+                catch
+                {
+                    WriteLine("Invalid arguments.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_htutorial(String[] args)
+        {
+            ShiftOS.Hacking.StartBattleTutorial();
+        }
+
+        public void cmd_fake_buy(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                try
+                {
+                    if (API.Upgrades.ContainsKey(args[1]))
                     {
-                        wrongcommand();
-                    }
-                    break;
-                case "connections":
-                    try
-                    {
-                        switch (args[1])
-                        {
-                            case "list":
-                                foreach (var client in Package_Grabber.clients)
-                                {
-                                    WriteLine($"Hostname: {client.Key}, Port: {client.Value.RemotePort}, Online: {client.Value.IsConnected}");
-                                }
-                                break;
-                            case "gui":
-                                API.CreateForm(new ConnectionManager(), "Connections", API.GetIcon("Connections"));
-                                break;
-                            case "drop":
-                                foreach (var client in Package_Grabber.clients)
-                                {
-                                    Package_Grabber.Disconnect(client.Key);
-                                }
-                                break;
-                            case "add":
-                                string host = args[2];
-                                int port = 0;
-                                int.TryParse(args[3], out port);
-                                if (!Package_Grabber.clients.ContainsKey(host))
-                                {
-                                    Package_Grabber.ConnectToServer(host, port);
-                                    WriteLine("Connection to host established successfully.");
-                                }
-                                else
-                                {
-                                    var c = Package_Grabber.clients[host];
-                                    if (c.IsConnected == false)
-                                    {
-                                        c.Connect(host, port);
-                                        WriteLine("Re-established connection with host.");
-                                    }
-                                    else
-                                    {
-                                        WriteLine("This host has been connected to already.");
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("connections: Missing arguments.");
-                    }
-                    break;
-                case "story":
-                    if (API.DeveloperMode == true && API.Upgrades["shiftnet"])
-                    {
-                        try
-                        {
-                            switch (args[1])
-                            {
-                                case "aidennirh":
-                                    StartAidenNirhStory();
-                                    break;
-                                case "devxfurious":
-                                    StartDevXFuriousStory();
-                                    break;
-                                case "battletut":
-                                    StartHackerBattleIntro();
-                                    break;
-                                case "otherplayer":
-                                    StartDevXFuriousStory();
-                                    break;
-                                case "hacker101":
-                                    StartHacker101Story();
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("Missing arguments.");
-                        }
-                    }
-                    else { wrongcommand(); }
-                    break;
-                case "make":
-                    try
-                    {
-                        string path = command.Replace("make ", "");
-                        string realpath = $"{Paths.SaveRoot}{path.Replace("/", OSInfo.DirectorySeparator)}";
-                        if (File.Exists(realpath + OSInfo.DirectorySeparator + "main.lua"))
-                        {
-                            WriteLine("Compiling to " + path + ".saa");
-                            ZipFile.CreateFromDirectory(realpath, realpath + ".saa");
-                        }
-                        else
-                        {
-                            WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("make: Invalid arguments.");
-                    }
-                    break;
-                case "devupg":
-                    if (API.DeveloperMode)
-                    {
-                        WriteLine("Upgrading your system...");
-                        foreach (var upg in Shiftorium.Utilities.GetAvailable())
-                        {
-                            API.Upgrades[upg.id] = true;
-                            WriteLine("Installed upgrade \"" + upg.Name + "\"...");
-                        }
+                        API.Upgrades[args[1]] = true;
+                        WriteLine($"Bought upgrade {args[1]}.");
+                        API.CurrentSession.SetupAppLauncher();
                         API.UpdateWindows();
-                        API.CurrentSession.SetupDesktop();
+                        SaveSystem.Utilities.saveGame();
                     }
                     else
                     {
-                        wrongcommand();
+                        WriteLine("Upgrade not found.");
                     }
-                    break;
-                case "cheat":
-                    if (API.DeveloperMode)
-                    {
-                        WriteLine("Opening...");
+                }
+                catch
+                {
+                    WriteLine("fake_buy: Bad arguments.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
 
-                        //Apps.Cheats chts = new Apps.Cheats();
-                        //chts.Show();
-                        API.CreateForm(new Apps.Cheats(), "Cheats", API.GetIcon("Terminal"));
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "netgen":
-                    WriteLine("Starting netgen...");
-                    API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
-                    break;
-                case "lua":
-                    if (API.DeveloperMode == true)
-                    {
-                        try
+        public void cmd_connections(String[] args)
+        {
+            try
+            {
+                switch (args[1])
+                {
+                    case "list":
+                        foreach (var client in Package_Grabber.clients)
                         {
-                            string f = args[1];
-                            WriteLine(f);
-                            f = command.Remove(0, 4);
-                            WriteLine(f);
-                            string real = $"{Paths.SaveRoot}{f.Replace("/", OSInfo.DirectorySeparator)}";
-                            WriteLine(real);
-                            if (File.Exists(real))
-                            {
-                                WriteLine("Running Lua script at " + f + ".");
-                                var l = new LuaInterpreter(real);
-                            }
-                            else
-                            {
-                                WriteLine("Lua script file not found.");
-                            }
+                            WriteLine($"Hostname: {client.Key}, Port: {client.Value.RemotePort}, Online: {client.Value.IsConnected}");
                         }
-                        catch
+                        break;
+                    case "gui":
+                        API.CreateForm(new ConnectionManager(), "Connections", API.GetIcon("Connections"));
+                        break;
+                    case "drop":
+                        foreach (var client in Package_Grabber.clients)
                         {
-                            this.LuaMode = true;
-                            this.Interpreter = new LuaInterpreter();
-                            this.Interpreter.mod.print = new Action<string>((text) => WriteLine(text));
-                            this.Interpreter.mod.exit = new Action(() =>
-                            {
-                                this.LuaMode = false;
-                                this.Interpreter = null;
-                                WriteLine($"{API.CurrentSave.username}@{API.CurrentSave.osname} $> ");
-                            });
-                            WriteLine("ShiftOS Lua Interpreter - v1.0");
-                            WriteLine("Created by Michael VanOverbeek");
-                            WriteLine(Environment.NewLine + "How to use: Simply type some Lua code and watch it come to life. Code can be executed on one line, and unlike most interpreters, you can access code from one line in another.");
-                            WriteLine(Environment.NewLine + "When you're done, simply press the Enter key to execute the code." + Environment.NewLine);
+                            Package_Grabber.Disconnect(client.Key);
                         }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "hack":
-                    if (API.Upgrades["hacking"] == true)
-                    {
-                        StartHackingSession("random");
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "virusscanner":
-                case "vscan":
-                    if (API.Upgrades["virusscanner"] == true)
-                    {
-                        WriteLine("Scanning for infected files...");
-                        var goodList = new Dictionary<string, string>();
-                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                        break;
+                    case "add":
+                        string host = args[2];
+                        int port = 0;
+                        int.TryParse(args[3], out port);
+                        if (!Package_Grabber.clients.ContainsKey(host))
                         {
-                            if (kv.Value.Contains(";"))
-                            {
-                                foreach (string file in kv.Value.Split(';'))
-                                {
-                                    if (goodList.ContainsKey(file))
-                                    {
-                                        goodList[file] += ", " + kv.Key;
-                                    }
-                                    else
-                                    {
-                                        goodList.Add(file, kv.Key);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                if (goodList.ContainsKey(kv.Value))
-                                {
-                                    goodList[kv.Value] += ", " + kv.Key;
-                                }
-                                else
-                                {
-                                    goodList.Add(kv.Value, kv.Key);
-                                }
-                            }
-                        }
-                        WriteLine("Scan complete.");
-                        if (goodList.Count > 0)
-                        {
-                            foreach (KeyValuePair<string, string> kv in goodList)
-                            {
-                                WriteLine("File " + kv.Key + " is infected with " + kv.Value + ". Disinfecting...");
-                                Viruses.DisInfect(kv.Key);
-                            }
-                            WriteLine("Disinfection complete.");
+                            Package_Grabber.ConnectToServer(host, port);
+                            WriteLine("Connection to host established successfully.");
                         }
                         else
                         {
-                            WriteLine("No infections found. You are safe.");
+                            var c = Package_Grabber.clients[host];
+                            if (c.IsConnected == false)
+                            {
+                                c.Connect(host, port);
+                                WriteLine("Re-established connection with host.");
+                            }
+                            else
+                            {
+                                WriteLine("This host has been connected to already.");
+                            }
                         }
-                    }
-                    break;
-                case "infections":
-                    if (API.DeveloperMode == true)
+                        break;
+                }
+            }
+            catch
+            {
+                WriteLine("connections: Missing arguments.");
+            }
+        }
+
+        public void cmd_story(String[] args)
+        {
+            if (API.DeveloperMode == true && API.Upgrades["shiftnet"])
+            {
+                try
+                {
+                    switch (args[1])
                     {
-                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                        case "aidennirh":
+                            StartAidenNirhStory();
+                            break;
+                        case "devxfurious":
+                            StartDevXFuriousStory();
+                            break;
+                        case "battletut":
+                            StartHackerBattleIntro();
+                            break;
+                        case "otherplayer":
+                            StartDevXFuriousStory();
+                            break;
+                        case "hacker101":
+                            StartHacker101Story();
+                            break;
+                    }
+                }
+                catch
+                {
+                    WriteLine("Missing arguments.");
+                }
+            }
+            else { wrongcommand(); }
+        }
+
+        public void cmd_make(String[] args)
+        {
+            try
+            {
+                string path = command.Replace("make ", "");
+                string realpath = $"{Paths.SaveRoot}{path.Replace("/", OSInfo.DirectorySeparator)}";
+                if (File.Exists(realpath + OSInfo.DirectorySeparator + "main.lua"))
+                {
+                    WriteLine("Compiling to " + path + ".saa");
+                    ZipFile.CreateFromDirectory(realpath, realpath + ".saa");
+                }
+                else
+                {
+                    WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
+                }
+            }
+            catch
+            {
+                WriteLine("make: Invalid arguments.");
+            }
+        }
+
+        public void cmd_devupg(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                WriteLine("Upgrading your system...");
+                foreach (var upg in Shiftorium.Utilities.GetAvailable())
+                {
+                    API.Upgrades[upg.id] = true;
+                    WriteLine("Installed upgrade \"" + upg.Name + "\"...");
+                }
+                API.UpdateWindows();
+                API.CurrentSession.SetupDesktop();
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_cheat(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                WriteLine("Opening...");
+
+                //Apps.Cheats chts = new Apps.Cheats();
+                //chts.Show();
+                API.CreateForm(new Apps.Cheats(), "Cheats", API.GetIcon("Terminal"));
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_netgen(String[] args)
+        {
+            WriteLine("Starting netgen...");
+            API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
+        }
+
+        public void cmd_lua(String[] args)
+        {
+            if (API.DeveloperMode == true)
+            {
+                try
+                {
+                    string f = args[1];
+                    WriteLine(f);
+                    f = command.Remove(0, 4);
+                    WriteLine(f);
+                    string real = $"{Paths.SaveRoot}{f.Replace("/", OSInfo.DirectorySeparator)}";
+                    WriteLine(real);
+                    if (File.Exists(real))
+                    {
+                        WriteLine("Running Lua script at " + f + ".");
+                        var l = new LuaInterpreter(real);
+                    }
+                    else
+                    {
+                        WriteLine("Lua script file not found.");
+                    }
+                }
+                catch
+                {
+                    this.LuaMode = true;
+                    this.Interpreter = new LuaInterpreter();
+                    this.Interpreter.mod.print = new Action<string>((text) => WriteLine(text));
+                    this.Interpreter.mod.exit = new Action(() =>
+                    {
+                        this.LuaMode = false;
+                        this.Interpreter = null;
+                        WriteLine($"{API.CurrentSave.username}@{API.CurrentSave.osname} $> ");
+                    });
+                    WriteLine("ShiftOS Lua Interpreter - v1.0");
+                    WriteLine("Created by Michael VanOverbeek");
+                    WriteLine(Environment.NewLine + "How to use: Simply type some Lua code and watch it come to life. Code can be executed on one line, and unlike most interpreters, you can access code from one line in another.");
+                    WriteLine(Environment.NewLine + "When you're done, simply press the Enter key to execute the code." + Environment.NewLine);
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_hack(String[] args)
+        {
+            if (API.Upgrades["hacking"] == true)
+            {
+                StartHackingSession("random");
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_vscan(String[] args)
+        {
+            if (API.Upgrades["virusscanner"] == true)
+            {
+                WriteLine("Scanning for infected files...");
+                var goodList = new Dictionary<string, string>();
+                foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                {
+                    if (kv.Value.Contains(";"))
+                    {
+                        foreach (string file in kv.Value.Split(';'))
                         {
-                            WriteLine(kv.Key + " @ " + kv.Value);
+                            if (goodList.ContainsKey(file))
+                            {
+                                goodList[file] += ", " + kv.Key;
+                            }
+                            else
+                            {
+                                goodList.Add(file, kv.Key);
+                            }
                         }
                     }
                     else
                     {
-                        wrongcommand();
+                        if (goodList.ContainsKey(kv.Value))
+                        {
+                            goodList[kv.Value] += ", " + kv.Key;
+                        }
+                        else
+                        {
+                            goodList.Add(kv.Value, kv.Key);
+                        }
                     }
-                    break;
-                case "binarywater":
-                    if (API.DeveloperMode)
+                }
+                WriteLine("Scan complete.");
+                if (goodList.Count > 0)
+                {
+                    foreach (KeyValuePair<string, string> kv in goodList)
                     {
-                        ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
-                        WriteLine("Philip Adams is now in the list of hirable hackers.");
-                        WriteLine("\" I Don't Think This is Canon \" -Carver");
+                        WriteLine("File " + kv.Key + " is infected with " + kv.Value + ". Disinfecting...");
+                        Viruses.DisInfect(kv.Key);
                     }
-                    else
-                    {
-                        WriteLine("I see you went in the ShiftOS source code... ummm yeah... this isn't a developer mode release so I can't just give you a full-skilled hacker even if you beg.");
-                    }
-                    break;
-                case "color":
+                    WriteLine("Disinfection complete.");
+                }
+                else
+                {
+                    WriteLine("No infections found. You are safe.");
+                }
+            }
+        }
+
+        public void cmd_infections(String[] args)
+        {
+            if (API.DeveloperMode == true)
+            {
+                foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                {
+                    WriteLine(kv.Key + " @ " + kv.Value);
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_binarywater(String[] args)
+        {
+            if (API.DeveloperMode)
+            {
+                ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
+                WriteLine("Philip Adams is now in the list of hirable hackers.");
+                WriteLine("\" I Don't Think This is Canon \" -Carver");
+            }
+            else
+            {
+                WriteLine("I see you went in the ShiftOS source code... ummm yeah... this isn't a developer mode release so I can't just give you a full-skilled hacker even if you beg.");
+            }
+        }
+
+        public void cmd_color(String[] args)
+        {
+            try
+            {
+                if (API.Upgrades["setterminalcolors"] == true)
+                {
+
+                    Color bcol = SetColor(args[1]);
+                    Color tcol = SetColor(args[2]);
+                    API.CurrentSkin.TerminalTextColor = tcol;
+                    API.CurrentSkin.TerminalBackColor = bcol;
+
+                }
+            }
+            catch (Exception)
+            {
+                WriteLine("color: Missing arguments.");
+            }
+        }
+
+        public void cmd_encrypt(String[] args)
+        {
+            if (API.DeveloperMode == true)
+            {
+                string messageToEncrypt = command.Replace("encrypt ", "");
+                string encryptedMessage = API.Encryption.Encrypt(messageToEncrypt);
+                WriteLine("Encrypted Message: " + encryptedMessage);
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_font(String[] args)
+        {
+            if (API.Upgrades["setterminalfont"] == true)
+            {
+                var fname = command.Replace("font ", "");
+                if (GetFonts().Contains(fname))
+                {
+                    API.CurrentSkin.TerminalFontStyle = fname;
+                }
+                else
+                {
+                    WriteLine("font: Unrecognized font name \"" + fname + "\". Note: Font names are case sensitive.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_colorlist(String[] args)
+        {
+            if (API.Upgrades["setterminalcolors"] == true)
+            {
+                foreach (string itm in GetColorList())
+                {
+                    WriteLine(itm);
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_spkg(String[] args)
+        {
+            if (!API.LimitedMode)
+            {
+                if (API.Upgrades["shiftnet"] == true)
+                {
                     try
                     {
-                        if (API.Upgrades["setterminalcolors"] == true)
+                        switch (args[1].ToLower())
                         {
-
-                            Color bcol = SetColor(args[1]);
-                            Color tcol = SetColor(args[2]);
-                            API.CurrentSkin.TerminalTextColor = tcol;
-                            API.CurrentSkin.TerminalBackColor = bcol;
-
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        WriteLine("color: Missing arguments.");
-                    }
-                    break;
-                case "encrypt":
-                    if (API.DeveloperMode == true)
-                    {
-                        string messageToEncrypt = command.Replace("encrypt ", "");
-                        string encryptedMessage = API.Encryption.Encrypt(messageToEncrypt);
-                        WriteLine("Encrypted Message: " + encryptedMessage);
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "font":
-                    if (API.Upgrades["setterminalfont"] == true)
-                    {
-                        var fname = command.Replace("font ", "");
-                        if (GetFonts().Contains(fname))
-                        {
-                            API.CurrentSkin.TerminalFontStyle = fname;
-                        }
-                        else
-                        {
-                            WriteLine("font: Unrecognized font name \"" + fname + "\". Note: Font names are case sensitive.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "colorlist":
-                    if (API.Upgrades["setterminalcolors"] == true)
-                    {
-                        foreach (string itm in GetColorList())
-                        {
-                            WriteLine(itm);
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "spkg":
-                    if (!API.LimitedMode)
-                    {
-                        if (API.Upgrades["shiftnet"] == true)
-                        {
-                            try
-                            {
-                                switch (args[1].ToLower())
+                            case "install":
+                                if (args[2] != null && args[2] != "")
                                 {
-                                    case "install":
-                                        if (args[2] != null && args[2] != "")
+                                    string pkgname = args[2].ToLower().Replace(".pkg", "");
+                                    if (Package_Grabber.GetPackage(pkgname) == true)
+                                    {
+                                        WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
+                                        string r = Package_Grabber.ExtractPackage();
+                                        if (r == "fail")
                                         {
-                                            string pkgname = args[2].ToLower().Replace(".pkg", "");
-                                            if (Package_Grabber.GetPackage(pkgname) == true)
+                                            WriteLine("[FATAL] Could not install package.");
+                                            WriteLine("spkg: Killed.");
+                                        }
+                                        else
+                                        {
+                                            WriteLine("Extracted " + pkgname + " to " + r + "...");
+                                            var res2 = Package_Grabber.InstallPackage(r + "\\");
+                                            if (res2 != "success")
                                             {
-                                                WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
-                                                string r = Package_Grabber.ExtractPackage();
-                                                if (r == "fail")
-                                                {
-                                                    WriteLine("[FATAL] Could not install package.");
-                                                    WriteLine("spkg: Killed.");
-                                                }
-                                                else
-                                                {
-                                                    WriteLine("Extracted " + pkgname + " to " + r + "...");
-                                                    var res2 = Package_Grabber.InstallPackage(r + "\\");
-                                                    if (res2 != "success")
-                                                    {
-                                                        WriteLine("[FATAL] Could not install package. " + res2);
-                                                        WriteLine("spkg: Killed.");
-                                                    }
-                                                    else
-                                                    {
-                                                        WriteLine("[DONE] Package installed.");
-                                                    }
-                                                }
+                                                WriteLine("[FATAL] Could not install package. " + res2);
+                                                WriteLine("spkg: Killed.");
                                             }
                                             else
                                             {
-                                                WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                                WriteLine("[DONE] Package installed.");
                                             }
                                         }
-                                        break;
-                                    default:
-                                        WriteLine("spkg: Invalid argument: " + args[1]);
-                                        break;
+                                    }
+                                    else
+                                    {
+                                        WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                    }
                                 }
-                            }
-                            catch (Exception ex)
+                                break;
+                            default:
+                                WriteLine("spkg: Invalid argument: " + args[1]);
+                                break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        WriteLine("spkg: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    wrongcommand();
+                }
+            }
+            else
+            {
+                try
+                {
+                    if (args[2] == "god_utils")
+                    {
+                        if (FinalMission.EndGameHandler.GodModeInstallEnabled == true)
+                        {
+                            var t = new Thread(new ThreadStart(new Action(() =>
                             {
-                                WriteLine("spkg: " + ex.Message);
-                            }
+                                WriteLine("Downloading package 'god_utils'... Please wait.");
+                                Thread.Sleep(10000);
+                                WriteLine("Download complete.");
+                                Thread.Sleep(100);
+                                WriteLine("Beginning installation.");
+                                Thread.Sleep(1000);
+                                WriteLine(@" == GOD MODE ==
+
+God Mode gives you FULL control of ShiftOS. You can add/remove Codepoints, buy or unbuy Shiftorium upgrades, and can do whatever you want.
+
+Installing core applications...");
+                                Thread.Sleep(250);
+                                WriteLine("Installing subpackage 'json_edit'...");
+                                Thread.Sleep(250);
+                                WriteLine("Installing subpackage 'upgrade_mod'...");
+                                Thread.Sleep(100);
+                                WriteLine("Installing subpackage 'hijacker'...");
+                                Thread.Sleep(500);
+                                WriteLine(@" == HIJACKER by DevX ==
+
+HIJACKER is a utility that allows you to hijack any system and install ShiftOS on it during a hacker battle.");
+                                Thread.Sleep(100);
+                                WriteLine("[hijacker] Injecting HIJACKER code into hbattleui.sft...");
+                                Thread.Sleep(150);
+                                WriteLine("[hijacker] Done.");
+                                this.Invoke(new Action(() =>
+                                {
+                                    StartChoice1EndStory();
+                                }));
+                            })));
+                            t.Start();
+                        }
+                        else
+                        {
+                            WriteLine("spkg: Package '" + args[2] + "' not found.");
+                        }
+                    }
+                    else
+                    {
+                        WriteLine("spkg: Package '" + args[2] + "' not found.");
+                    }
+                }
+                catch
+                {
+                    WriteLine("spkg: Missing arguments.");
+                }
+            }
+        }
+
+        public void cmd_alias(String[] args)
+        {
+            try
+            {
+                switch (args[1])
+                {
+                    case "-?":
+                    case "--help":
+                        WriteLine("Aliases Help" + Environment.NewLine);
+                        WriteLine("Alias is a command that lets you create aliases for other commands. You could make a command 'upgrade' alias 'shiftorium' if you wanted." + Environment.NewLine);
+                        WriteLine("Arguments:");
+                        WriteLine(" -h, --help: Displays this screen.");
+                        WriteLine("-a, --add <alias> <command>: Adds a new alias.");
+                        WriteLine("-d, --delete <alias>: Deletes an alias.");
+                        WriteLine("-l, --list: Shows all available aliases.");
+                        break;
+                    case "--add":
+                    case "-a":
+                        if (API.AddAlias(args[2], command.Replace("alias " + args[1] + " " + args[2] + " ", "")))
+                        {
+                            WriteLine("Alias added successfully.");
+                            API.SaveAliases();
+                        }
+                        else
+                        {
+                            WriteLine("That alias already exists.");
+                        }
+                        break;
+                    case "--delete":
+                    case "-d":
+                        if (API.RemoveAlias(args[2]) == true)
+                        {
+                            WriteLine("Alias \"" + args[2] + "\" removed successfully.");
+                            API.SaveAliases();
+                        }
+                        else
+                        {
+                            WriteLine("That alias doesn't exist.");
+                        }
+                        break;
+                    case "-l":
+                    case "--list":
+                        WriteLine("Aliases:");
+                        foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                        {
+                            WriteLine(kv.Key + " => " + kv.Value);
+                        }
+                        break;
+                    default:
+                        WriteLine("alias: Invalid argument. Try alias --help for help with the Alias command.");
+                        break;
+                }
+            }
+            catch
+            {
+                WriteLine("alias: Missing arguments. Try alias --help for help with the Alias command.");
+            }
+        }
+
+        public void cmd_username(String[] args)
+        {
+            if (API.Upgrades["customusername"] == true)
+            {
+                try
+                {
+                    API.CurrentSave.username = args[1];
+                }
+                catch
+                {
+                    WriteLine("username: Missing arguments.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_osname(String[] args)
+        {
+            if (API.Upgrades["customusername"] == true)
+            {
+                try
+                {
+                    API.CurrentSave.osname = args[1];
+                }
+                catch
+                {
+                    WriteLine("osname: Missing arguments.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_unity(String[] args)
+        {
+            if (API.Upgrades["unitymode"] == true)
+            {
+                API.CurrentSession.SetUnityMode();
+                API.CurrentSession.SetupDesktop();
+                txtterm.Focus();
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_time(String[] args)
+        {
+            if (API.Upgrades["pmandam"] == false)
+            {
+                if (API.Upgrades["hourssincemidnight"] == false)
+                {
+                    if (API.Upgrades["minutessincemidnight"] == false)
+                    {
+                        if (API.Upgrades["secondssincemidnight"] == true)
+                        {
+                            WriteLine("Since midnight, " + API.GetTime() + " seconds have passed.");
                         }
                         else
                         {
@@ -1142,281 +1364,216 @@ namespace ShiftOS
                     }
                     else
                     {
-                        try
+                        WriteLine("Since midnight, " + API.GetTime() + " minutes have passed.");
+                    }
+                }
+                else
+                {
+                    WriteLine("Since Midnight, " + API.GetTime() + " hours have passed.");
+                }
+            }
+            else
+            {
+                WriteLine("Current time: " + API.GetTime());
+            }
+        }
+
+        public void cmd_saa(String[] args)
+        {
+            if (API.Upgrades["shiftnet"])
+            {
+                var f = command.Replace("saa ", "");
+                if (f.StartsWith("/"))
+                {
+                    var withoutslash = f.Remove(0, 1);
+                    var dirsep = OSInfo.DirectorySeparator;
+                    var rightdir = $"{Paths.SaveRoot}{dirsep}{f.Replace("/", dirsep)}";
+                    if (File.Exists(rightdir))
+                    {
+                        var finf = new FileInfo(rightdir);
+                        if (finf.Extension == ".saa")
                         {
-                            if (args[2] == "god_utils")
-                            {
-                                if (FinalMission.EndGameHandler.GodModeInstallEnabled == true)
-                                {
-                                    var t = new Thread(new ThreadStart(new Action(() =>
-                                    {
-                                        WriteLine("Downloading package 'god_utils'... Please wait.");
-                                        Thread.Sleep(10000);
-                                        WriteLine("Download complete.");
-                                        Thread.Sleep(100);
-                                        WriteLine("Beginning installation.");
-                                        Thread.Sleep(1000);
-                                        WriteLine(@" == GOD MODE ==
-
-God Mode gives you FULL control of ShiftOS. You can add/remove Codepoints, buy or unbuy Shiftorium upgrades, and can do whatever you want.
-
-Installing core applications...");
-                                        Thread.Sleep(250);
-                                        WriteLine("Installing subpackage 'json_edit'...");
-                                        Thread.Sleep(250);
-                                        WriteLine("Installing subpackage 'upgrade_mod'...");
-                                        Thread.Sleep(100);
-                                        WriteLine("Installing subpackage 'hijacker'...");
-                                        Thread.Sleep(500);
-                                        WriteLine(@" == HIJACKER by DevX ==
-
-HIJACKER is a utility that allows you to hijack any system and install ShiftOS on it during a hacker battle.");
-                                        Thread.Sleep(100);
-                                        WriteLine("[hijacker] Injecting HIJACKER code into hbattleui.sft...");
-                                        Thread.Sleep(150);
-                                        WriteLine("[hijacker] Done.");
-                                        this.Invoke(new Action(() =>
-                                        {
-                                            StartChoice1EndStory();
-                                        }));
-                                    })));
-                                    t.Start();
-                                }
-                                else
-                                {
-                                    WriteLine("spkg: Package '" + args[2] + "' not found.");
-                                }
-                            }
-                            else
-                            {
-                                WriteLine("spkg: Package '" + args[2] + "' not found.");
-                            }
+                            API.LaunchMod(finf.FullName);
                         }
-                        catch
+                        else
                         {
-                            WriteLine("spkg: Missing arguments.");
+                            WriteLine("saa: Cannot launch the file '" + finf.FullName + " because it isn't a valid stand-alone app.");
                         }
                     }
+                    else
+                    {
+                        WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
+                    }
+                }
+                else
+                {
+                    WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
+                }
+            }
+            else
+            {
+                wrongcommand();
+            }
+        }
+
+        public void cmd_help(String[] args)
+        {
+            try
+            {
+                showhelp(args[1]);
+            }
+            catch
+            {
+                showhelp();
+            }
+        }
+
+        public void cmd_cp(String[] args)
+        {
+            WriteLine("You have " + API.Codepoints.ToString() + " Codepoints.");
+        }
+
+        public void cmd_shutdown(String[] args)
+        {
+            API.ShutDownShiftOS();
+        }
+
+        public void cmd_clear(String[] args)
+        {
+            txtterm.Text = "";
+        }
+
+        public void cmd_close(String[] args)
+        {
+            if (command.Contains("close "))
+            {
+                var pid = command.Replace("close ", "");
+                if (API.CloseProgram(pid) == true)
+                {
+                    WriteLine("Closed all running " + pid + "s.");
+                }
+                else
+                {
+                    WriteLine("No processes with id '" + pid + "' were found!");
+                }
+            }
+            else
+            {
+                WriteLine("Insufficient arguments.");
+            }
+        }
+
+        public void DoCommand()
+        {
+            API.LastRanCommand = command;
+            string[] args = command.ToLower().Split(' ');
+            switch (args[0])
+            {
+                case "ls":
+                case "dir":
+                    cmd_dir(args);
+                    break;
+                case "cd":
+                    cmd_cd(args);
+                    break;
+                case "upg":
+                    cmd_upg(args);
+                    break;
+                case "endgame_test":
+                    cmd_endgame_test(args);
+                    break;
+                case "htutorial":
+                    cmd_htutorial(args);
+                    break;
+                case "fake_buy":
+                    cmd_fake_buy(args);
+                    break;
+                case "connections":
+                    cmd_connections(args);
+                    break;
+                case "story":
+                    cmd_story(args);
+                    break;
+                case "make":
+                    cmd_make(args);
+                    break;
+                case "devupg":
+                    cmd_devupg(args);
+                    break;
+                case "cheat":
+                    cmd_cheat(args);
+                    break;
+                case "netgen":
+                    cmd_netgen(args);
+                    break;
+                case "lua":
+                    cmd_lua(args);
+                    break;
+                case "hack":
+                    cmd_hack(args);
+                    break;
+                case "virusscanner":
+                case "vscan":
+                case "antivirus":
+                    cmd_vscan(args);
+                    break;
+                case "infections":
+                    cmd_infections(args);
+                    break;
+                case "binarywater":
+                    cmd_binarywater(args);
+                    break;
+                case "color":
+                    cmd_color(args);
+                    break;
+                case "encrypt":
+                    cmd_encrypt(args);
+                    break;
+                case "font":
+                    cmd_font(args);
+                    break;
+                case "colorlist":
+                    cmd_colorlist(args);
+                    break;
+                case "spkg":
+                    cmd_spkg(args);
                     break;
                 case "alias":
-                    try
-                    {
-                        switch (args[1])
-                        {
-                            case "-?":
-                            case "--help":
-                                WriteLine("Aliases Help" + Environment.NewLine);
-                                WriteLine("Alias is a command that lets you create aliases for other commands. You could make a command 'upgrade' alias 'shiftorium' if you wanted." + Environment.NewLine);
-                                WriteLine("Arguments:");
-                                WriteLine(" -h, --help: Displays this screen.");
-                                WriteLine("-a, --add <alias> <command>: Adds a new alias.");
-                                WriteLine("-d, --delete <alias>: Deletes an alias.");
-                                WriteLine("-l, --list: Shows all available aliases.");
-                                break;
-                            case "--add":
-                            case "-a":
-                                if (API.AddAlias(args[2], command.Replace("alias " + args[1] + " " + args[2] + " ", "")))
-                                {
-                                    WriteLine("Alias added successfully.");
-                                    API.SaveAliases();
-                                }
-                                else
-                                {
-                                    WriteLine("That alias already exists.");
-                                }
-                                break;
-                            case "--delete":
-                            case "-d":
-                                if (API.RemoveAlias(args[2]) == true)
-                                {
-                                    WriteLine("Alias \"" + args[2] + "\" removed successfully.");
-                                    API.SaveAliases();
-                                }
-                                else
-                                {
-                                    WriteLine("That alias doesn't exist.");
-                                }
-                                break;
-                            case "-l":
-                            case "--list":
-                                WriteLine("Aliases:");
-                                foreach (KeyValuePair<string, string> kv in API.CommandAliases)
-                                {
-                                    WriteLine(kv.Key + " => " + kv.Value);
-                                }
-                                break;
-                            default:
-                                WriteLine("alias: Invalid argument. Try alias --help for help with the Alias command.");
-                                break;
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("alias: Missing arguments. Try alias --help for help with the Alias command.");
-                    }
+                    cmd_alias(args);
                     break;
                 case "username":
-                    if (API.Upgrades["customusername"] == true)
-                    {
-                        try
-                        {
-                            API.CurrentSave.username = args[1];
-                        }
-                        catch
-                        {
-                            WriteLine("username: Missing arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    cmd_username(args);
                     break;
                 case "osname":
-                    if (API.Upgrades["customusername"] == true)
-                    {
-                        try
-                        {
-                            API.CurrentSave.osname = args[1];
-                        }
-                        catch
-                        {
-                            WriteLine("osname: Missing arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    cmd_osname(args);
                     break;
-
                 case "unity":
-                    if (API.Upgrades["unitymode"] == true)
-                    {
-                        API.CurrentSession.SetUnityMode();
-                        API.CurrentSession.SetupDesktop();
-                        txtterm.Focus();
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    cmd_unity(args);
                     break;
                 case "time":
-                    if (API.Upgrades["pmandam"] == false)
-                    {
-                        if (API.Upgrades["hourssincemidnight"] == false)
-                        {
-                            if (API.Upgrades["minutessincemidnight"] == false)
-                            {
-                                if (API.Upgrades["secondssincemidnight"] == true)
-                                {
-                                    WriteLine("Since midnight, " + API.GetTime() + " seconds have passed.");
-                                }
-                                else
-                                {
-                                    wrongcommand();
-                                }
-                            }
-                            else
-                            {
-                                WriteLine("Since midnight, " + API.GetTime() + " minutes have passed.");
-                            }
-                        }
-                        else
-                        {
-                            WriteLine("Since Midnight, " + API.GetTime() + " hours have passed.");
-                        }
-                    }
-                    else
-                    {
-                        WriteLine("Current time: " + API.GetTime());
-                    }
+                    cmd_time(args);
                     break;
                 case "saa":
-                    if (API.Upgrades["shiftnet"])
-                    {
-                        var f = command.Replace("saa ", "");
-                        if (f.StartsWith("/"))
-                        {
-                            var withoutslash = f.Remove(0, 1);
-                            var dirsep = OSInfo.DirectorySeparator;
-                            var rightdir = $"{Paths.SaveRoot}{dirsep}{f.Replace("/", dirsep)}";
-                            if (File.Exists(rightdir))
-                            {
-                                var finf = new FileInfo(rightdir);
-                                if (finf.Extension == ".saa")
-                                {
-                                    API.LaunchMod(finf.FullName);
-                                }
-                                else
-                                {
-                                    WriteLine("saa: Cannot launch the file '" + finf.FullName + " because it isn't a valid stand-alone app.");
-                                }
-                            }
-                            else
-                            {
-                                WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
-                            }
-                        }
-                        else
-                        {
-                            WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    cmd_saa(args);
                     break;
                 case "help":
-                    try
-                    {
-                        showhelp(args[1]);
-                    }
-                    catch
-                    {
-                        showhelp();
-                    }
+                    cmd_help(args);
                     break;
                 case "codepoints":
                 case "cp":
-                    WriteLine("You have " + API.Codepoints.ToString() + " Codepoints.");
+                    cmd_cp(args);
                     break;
                 case "shutdown":
-                    API.ShutDownShiftOS();
+                    cmd_shutdown(args);
                     break;
                 case "clear":
-                    txtterm.Text = "";
+                    cmd_clear(args);
                     break;
                 case "close":
-                    if (command.Contains("close "))
-                    {
-                        var pid = command.Replace("close ", "");
-                        if (API.CloseProgram(pid) == true)
-                        {
-                            WriteLine("Closed all running " + pid + "s.");
-                        }
-                        else
-                        {
-                            WriteLine("No processes with id '" + pid + "' were found!");
-                        }
-                    }
-                    else
-                    {
-                        WriteLine("Insufficient arguments.");
-                    }
+                    cmd_close(args);
                     break;
                 case "05tray":
-                    if (API.DeveloperMode == true)
-                    {
-                        API.AddCodepoints(500);
-                        WriteLine("You've been granted 500 Codepoints.");
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
+                    cmd_05tray
 
                     break;
                 case "debug":
