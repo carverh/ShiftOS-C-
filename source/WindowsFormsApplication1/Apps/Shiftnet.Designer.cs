@@ -90,6 +90,7 @@
             this.txtaddress.Size = new System.Drawing.Size(640, 20);
             this.txtaddress.TabIndex = 0;
             this.txtaddress.Text = "shiftnet://main";
+            this.txtaddress.TextChanged += new System.EventHandler(this.txtaddress_TextChanged);
             // 
             // wbshiftnet
             // 

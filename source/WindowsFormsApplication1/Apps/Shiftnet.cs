@@ -60,11 +60,17 @@ namespace ShiftOS
             wbshiftnet.DocumentText = WebLayer.VisitSite("shiftnet://main");
             txtaddress.Text = WebLayer.LastUrl;
         }
+
+        private void txtaddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class WebLayer
     {
-        private static string HtmlTemplate = "<html><head><title>Shiftnet Page</title><link rel=\"stylesheet\" href=\"http://playshiftos.ml/shiftnet.css\"/></head><body>#BODY#</body></html>";
+        public static String serverurl = "http://playshiftos.ml";
+        private static string HtmlTemplate = "<html><head><title>Shiftnet Page</title><link rel=\"stylesheet\" href=\"" + serverurl + "/shiftnet.css\"/></head><body>#BODY#</body></html>";
         public static string LastUrl = null;
 
         public static string VisitSite(string url)
@@ -74,7 +80,7 @@ namespace ShiftOS
             {
                 try
                 {
-                    string content = wc.DownloadString(url.Replace("shiftnet://", "http://www.playshiftos.ml/shiftnet/www/"));
+                    string content = wc.DownloadString(url.Replace("shiftnet://", serverurl  + "/shiftnet/www/"));
                     if (content.StartsWith("<!STML>"))
                     {
                         LastUrl = url;

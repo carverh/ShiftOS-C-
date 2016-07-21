@@ -376,7 +376,8 @@ namespace ShiftOS.Properties {
         ///	&quot;You may realize that ShiftOS is quite locked down. This is to prevent anything bad from happening.&quot;:&quot;???&quot;,
         ///	&quot;However, in your Terminal, you should be able to run &apos;quests&apos; to view all the tasks we need to accomplish.&quot;:&quot;???&quot;,
         ///	&quot;You&apos;ll also see a window near the App Launcher, I will use it to talk to you as we do things.&quot;:&quot;???&quot;,
-        ///	&quot;Well. Let&apos;s get started.&quot;:&quot;???&quot;        /// [rest of string was truncated]&quot;;.
+        ///	&quot;Well. Let&apos;s get started.&quot;:&quot;???&quot;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Choice2 {
             get {

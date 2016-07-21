@@ -36,64 +36,6 @@ namespace ShiftOS
             current_dir = Paths.SaveRoot;
         }
 
-        public void StartOtherPlayerStory()
-        {
-            var t = new System.Windows.Forms.Timer();
-            t.Interval = 4000;
-            int i = 0;
-            t.Tick += (object s, EventArgs a) =>
-            {
-                switch(i)
-                {
-                    case 0:
-                        WriteLine("IP Address <hidden> is connecting as '???'...");
-                        break;
-                    case 1:
-                        WriteLine("Connection established.");
-                        break;
-                    case 2:
-                        WriteLine("???: Hi, ShiftOS user. I have something to tell you.");
-                        break;
-                    case 3:
-                        WriteLine("???: I'm not a hacker. I'm not a programmer. I am just like you.");
-                        break;
-                    case 4:
-                        WriteLine("???: I am... the Other Player.");
-                        break;
-                    case 5:
-                        WriteLine("???: I too have heard DevX's story about ShiftOS being an experimental operating system.");
-                        break;
-                    case 6:
-                        WriteLine("???: I have also met another user. We'll call him... I don't know... Robert.");
-                        break;
-                    case 7:
-                        WriteLine("???: And this Robert guy, well, he knows a lot about ShiftOS, and DevX.");
-                        break;
-                    case 8:
-                        WriteLine("???: Robert is a fake name I'm calling him. You might know him as Hacker101.");
-                        break;
-                    case 9:
-                        WriteLine("???: Anyways, He told me about you, so I figured I would help you get out of this mess.");
-                        break;
-                    case 10:
-                        WriteLine("???: He said he'll help me get my hard drive back, and get ShiftOS off my system. Once he does, I'll tell you.");
-                        break;
-                    case 11:
-                        WriteLine("???: In the meantime, I have one word for you. Survive. Do NOT let DevX get to you. Do not fall for his tricks. Just play along until I contact you.");
-                        break;
-                    case 12:
-                        WriteLine("???: I'll talk to you about this soon.");
-                        break;
-                    case 13:
-                        t.Stop();
-                        this.Close();
-                        API.Upgrades["otherplayerstory1"] = true;
-                        break;
-                }
-                i += 1;
-            };
-            t.Start();
-        }
 
         public bool ModLogger = false;
 
@@ -101,14 +43,15 @@ namespace ShiftOS
         {
             objToWriteTo = this.txtterm;
             SaveSystem.Utilities.LoadedSave.newgame = false;
-            if(API.Upgrades["windowedterminal"] == true)
+            if (API.Upgrades["windowedterminal"] == true)
             {
                 this.WindowState = FormWindowState.Normal;
-            } else
+            }
+            else
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            
+
             txtterm.KeyDown += new KeyEventHandler(txtterm_KeyPress);
             txtterm.Click += new EventHandler(txtterm_Click);
             tmrfirstrun.Tick += new EventHandler(tmrfirstrun_Tick);
@@ -137,7 +80,8 @@ namespace ShiftOS
                         if (a.Delta > 0)
                         {
                             ZoomMultiplier += 1;
-                        } else
+                        }
+                        else
                         {
                             ZoomMultiplier -= 1;
                         }
@@ -152,14 +96,14 @@ namespace ShiftOS
             ResetTerminalFont();
             StartLogCheck();
             tmrsetfont.Start();
-            
+
 
         }
-        
+
 
         private void StartLogCheck()
         {
-            if(ModLogger == true)
+            if (ModLogger == true)
             {
                 var tmrlog = new System.Windows.Forms.Timer();
                 tmrlog.Interval = 500;
@@ -245,8 +189,9 @@ namespace ShiftOS
         // ERROR: Handles clauses are not supported in C#
         private void txtterm_KeyPress(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if(e.Control) {
-                if(API.Upgrades["zoomableterminal"] == true)
+            if (e.Control)
+            {
+                if (API.Upgrades["zoomableterminal"] == true)
                 {
                     Zooming = true;
                 }
@@ -315,13 +260,14 @@ namespace ShiftOS
                             e.SuppressKeyPress = true;
                             trackpos = trackpos - 1;
                         }
-                        else {
+                        else
+                        {
                             trackpos = trackpos - 2;
                         }
                     }
                     else
                     {
-                        switch(SelectedMode)
+                        switch (SelectedMode)
                         {
                             case 1:
                                 if (SelectedCharacter > 0)
@@ -351,7 +297,8 @@ namespace ShiftOS
                         trackpos += API.LastRanCommand.Length;
                         txtterm.Select(txtterm.TextLength, 0);
                     }
-                    else {
+                    else
+                    {
                         trackpos = trackpos - 1;
                     }
                     break;
@@ -412,7 +359,7 @@ namespace ShiftOS
                     }
                     else
                     {
-                        switch(SelectedMode)
+                        switch (SelectedMode)
                         {
                             case 1:
                                 ShiftOS.Hacking.StartHack(SelectedCharacter, UpgradeToHack);
@@ -420,7 +367,7 @@ namespace ShiftOS
                                 break;
                             case 2:
                                 var c = ShiftOS.Hacking.Characters[SelectedCharacter].Cost;
-                                if(API.Codepoints >= c)
+                                if (API.Codepoints >= c)
                                 {
                                     API.RemoveCodepoints(c);
                                     ShiftOS.Hacking.StartHackWithCharacter(SelectedCharacter, UpgradeToHack);
@@ -438,10 +385,11 @@ namespace ShiftOS
                 {
                     trackpos = 0;
                     var lua = txtterm.Lines[txtterm.Lines.Length - 1];
-                    try {
+                    try
+                    {
                         Interpreter.mod(lua);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         WriteLine(ex.Message);
                     }
@@ -452,14 +400,17 @@ namespace ShiftOS
                     txtterm.Select(txtterm.TextLength, 0);
                 }
             }
-            else {
+            else
+            {
                 if (e.KeyCode == Keys.Back)
                 {
                 }
-                else {
-                    if (Viruses.InfectedWith("keyboardfucker")) {
+                else
+                {
+                    if (Viruses.InfectedWith("keyboardfucker"))
+                    {
                         var rnd = new Random();
-                        if(rnd.Next(0, 20) == 10)
+                        if (rnd.Next(0, 20) == 10)
                         {
                             e.Handled = true;
                             txtterm.Text += Viruses.KeyboardInceptor.Intercept();
@@ -470,7 +421,8 @@ namespace ShiftOS
                             trackpos += 1;
                         }
                     }
-                    else {
+                    else
+                    {
                         trackpos = trackpos + 1;
                     }
                 }
@@ -482,12 +434,14 @@ namespace ShiftOS
                 {
                     e.SuppressKeyPress = true;
                 }
-                else {
+                else
+                {
                     if (txtterm.SelectedText.Length < 1)
                     {
                         trackpos = trackpos - 1;
                     }
-                    else {
+                    else
+                    {
                         e.SuppressKeyPress = true;
                     }
                 }
@@ -501,7 +455,1644 @@ namespace ShiftOS
 
         }
 
-        internal void StartShellShock()
+        public void SetPrefix(string _prefix)
+        {
+            prefix = _prefix;
+        }
+
+
+        /// <summary>
+        /// Call after creating a Terminal to let Maureen Fenn talk
+        /// to the player about the Shiftnet and the Appscape Package Manager.
+        /// </summary>
+        public void StartShiftnetStory()
+        {
+            System.Windows.Forms.Timer tmrstory = new System.Windows.Forms.Timer();
+            tmrstory.Interval = 10000;
+            WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
+            API.PlaySound(Properties.Resources.dial_up_modem_02);
+            var t = new Thread(new ThreadStart(new Action(() =>
+            {
+                WriteLine("Maureen Fenn: Hey there, user! I have something to show you.");
+                BeepSleep(4000);
+                WriteLine("Maureen Fenn: So, there's this thing called the 'Shiftnet'");
+                BeepSleep(3750);
+                WriteLine("Maureen Fenn: Turns out, that DevX wants to keep it a secret, as such he only installed it on his and my systems.");
+                BeepSleep(4250);
+                WriteLine("Maureen Fenn: But what's the point of listening to DevX when we have people like you who like to experiment?");
+                BeepSleep(4000);
+                WriteLine("Maureen Fenn: Well, to be fair - he can destroy whatever he wants. Just like he did my company, Minimatch.");
+                BeepSleep(3000);
+                WriteLine("Maureen Fenn: But who cares! I'm going to install a few things on your system.");
+                API.Upgrades["shiftnet"] = true;
+                this.Invoke(new Action(() =>
+                {
+                    this.command = "spkg install shiftnet";
+                    this.DoCommand();
+                }));
+                WriteLine("Shiftnet installed on system...");
+                Thread.Sleep(4000);
+                WriteLine("Maureen Fenn: All done! Oh - just before I leave... go ahead and explore the Shiftnet!");
+                BeepSleep(3000);
+                WriteLine("Maureen Fenn: But, be careful. Don't venture off the main server. You never know what's elsewhere...");
+                BeepSleep(1000);
+                WriteLine("Maureen Fenn: Well, bye!");
+                this.Invoke(new Action(() =>
+                {
+                    API.CurrentSession.SetupDesktop();
+                    this.Close();
+                }));
+            })));
+            t.Start();
+        }
+
+        /// <summary>
+        /// *BEEP* ZZZZZZZZzzzzzzzzzzz.......
+        /// </summary>
+        /// <param name="time">Time to sleep.</param>
+        private void BeepSleep(int time)
+        {
+            API.PlaySound(Properties.Resources.writesound);
+            Thread.Sleep(time);
+        }
+
+        private LuaInterpreter Interpreter = null;
+        private bool blockctrlt = false;
+
+        private List<string> GetFonts()
+        {
+            var lst = new List<string>();
+            // Get the installed fonts collection.
+            InstalledFontCollection allFonts = new InstalledFontCollection();
+
+            // Get an array of the system's font familiies.
+            FontFamily[] fontFamilies = allFonts.Families;
+
+            // Display the font families.
+            foreach (FontFamily myFont in fontFamilies)
+            {
+                lst.Add(myFont.Name.ToLower());
+            }
+            //font_family
+
+            return lst;
+        }
+
+        public List<string> GetColorList()
+        {
+            var lst = new List<string>();
+            if (API.Upgrades["red"] == true)
+                lst.Add("red");
+            if (API.Upgrades["green"] == true)
+                lst.Add("green");
+            if (API.Upgrades["blue"] == true)
+                lst.Add("blue");
+            if (API.Upgrades["brown"] == true)
+                lst.Add("brown");
+            if (API.Upgrades["purple"] == true)
+                lst.Add("purple");
+            if (API.Upgrades["yellow"] == true)
+                lst.Add("yellow");
+            if (API.Upgrades["orange"] == true)
+                lst.Add("orange");
+            if (API.Upgrades["pink"] == true)
+                lst.Add("pink");
+            if (API.Upgrades["gray"] == true)
+                lst.Add("gray");
+            lst.Add("black");
+            lst.Add("white");
+            return lst;
+        }
+
+        public Color SetColor(string name)
+        {
+            Color col = Color.White;
+            switch (name)
+            {
+                case "black":
+                    col = Color.Black;
+                    break;
+                case "white":
+                    col = Color.White;
+                    break;
+                case "gray":
+                    col = Color.Gray;
+                    break;
+                case "red":
+                    col = Color.Red;
+                    break;
+                case "green":
+                    col = Color.Green;
+                    break;
+                case "blue":
+                    col = Color.Blue;
+                    break;
+                case "brown":
+                    col = Color.Brown;
+                    break;
+                case "purple":
+                    col = Color.Purple;
+                    break;
+                case "yellow":
+                    col = Color.Yellow;
+                    break;
+                case "orange":
+                    col = Color.Orange;
+                    break;
+            }
+            return col;
+        }
+
+        private bool LuaMode = false;
+
+        public string GetPath(string path)
+        {
+            return path.Replace(Paths.SaveRoot, "").Replace(OSInfo.DirectorySeparator, "/");
+        }
+
+        public string GetParent(string path)
+        {
+            if (new DirectoryInfo(path).Parent.FullName.Contains("ShiftOS"))
+            {
+                var d = new DirectoryInfo(path);
+                return d.Parent.FullName;
+            }
+            else
+            {
+                return path;
+            }
+        }
+
+        public void DoCommand()
+        {
+            API.LastRanCommand = command;
+            string[] args = command.ToLower().Split(' ');
+            switch (args[0])
+            {
+                case "ls":
+                case "dir":
+                    if (API.Upgrades["fileskimmer"])
+                    {
+                        foreach (var d in Directory.GetDirectories(current_dir))
+                        {
+                            WriteLine($"[DIR] {new DirectoryInfo(d).Name}");
+                        }
+                        foreach (var d in Directory.GetFiles(current_dir))
+                        {
+                            WriteLine($"{new FileInfo(d).Name}");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "cd":
+                    if (API.Upgrades["fileskimmer"])
+                    {
+                        if (args[1] == "..")
+                        {
+                            if (GetPath(current_dir) != "/")
+                            {
+                                current_dir = GetParent(current_dir);
+                                SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                            }
+                            else
+                            {
+                                WriteLine("cd: Can't go up past the root.");
+                            }
+                        }
+                        else
+                        {
+                            string newdir = current_dir + OSInfo.DirectorySeparator;
+                            foreach (var dir in Directory.GetDirectories(current_dir))
+                            {
+                                if (new DirectoryInfo(dir).Name.ToLower() == args[1])
+                                    newdir = dir;
+                            }
+                            current_dir = newdir;
+                            SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
+                        }
+                    }
+                    break;
+                case "upg":
+                    if (API.DeveloperMode)
+                    {
+                        try
+                        {
+                            switch (args[1])
+                            {
+                                case "get":
+                                    WriteLine(API.Upgrades[args[2]].ToString());
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "endgame_test":
+                    if (API.DeveloperMode)
+                    {
+                        try
+                        {
+                            switch (args[1])
+                            {
+                                case "choice_screen":
+                                    var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
+                                    cscreen.WindowState = FormWindowState.Maximized;
+                                    //cscreen.TopMost = true;
+                                    cscreen.Show();
+                                    break;
+                                case "limitedmode":
+                                    API.LimitedMode = !API.LimitedMode;
+                                    WriteLine($"Limited mode set to {API.LimitedMode}.");
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("Invalid arguments.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "htutorial":
+                    ShiftOS.Hacking.StartBattleTutorial();
+                    break;
+                case "fake_buy":
+                    if (API.DeveloperMode)
+                    {
+                        try
+                        {
+                            if (API.Upgrades.ContainsKey(args[1]))
+                            {
+                                API.Upgrades[args[1]] = true;
+                                WriteLine($"Bought upgrade {args[1]}.");
+                                API.CurrentSession.SetupAppLauncher();
+                                API.UpdateWindows();
+                                SaveSystem.Utilities.saveGame();
+                            }
+                            else
+                            {
+                                WriteLine("Upgrade not found.");
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("fake_buy: Bad arguments.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "connections":
+                    try
+                    {
+                        switch (args[1])
+                        {
+                            case "list":
+                                foreach (var client in Package_Grabber.clients)
+                                {
+                                    WriteLine($"Hostname: {client.Key}, Port: {client.Value.RemotePort}, Online: {client.Value.IsConnected}");
+                                }
+                                break;
+                            case "gui":
+                                API.CreateForm(new ConnectionManager(), "Connections", API.GetIcon("Connections"));
+                                break;
+                            case "drop":
+                                foreach (var client in Package_Grabber.clients)
+                                {
+                                    Package_Grabber.Disconnect(client.Key);
+                                }
+                                break;
+                            case "add":
+                                string host = args[2];
+                                int port = 0;
+                                int.TryParse(args[3], out port);
+                                if (!Package_Grabber.clients.ContainsKey(host))
+                                {
+                                    Package_Grabber.ConnectToServer(host, port);
+                                    WriteLine("Connection to host established successfully.");
+                                }
+                                else
+                                {
+                                    var c = Package_Grabber.clients[host];
+                                    if (c.IsConnected == false)
+                                    {
+                                        c.Connect(host, port);
+                                        WriteLine("Re-established connection with host.");
+                                    }
+                                    else
+                                    {
+                                        WriteLine("This host has been connected to already.");
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    catch
+                    {
+                        WriteLine("connections: Missing arguments.");
+                    }
+                    break;
+                case "story":
+                    if (API.DeveloperMode == true && API.Upgrades["shiftnet"])
+                    {
+                        try
+                        {
+                            switch (args[1])
+                            {
+                                case "aidennirh":
+                                    StartAidenNirhStory();
+                                    break;
+                                case "devxfurious":
+                                    StartDevXFuriousStory();
+                                    break;
+                                case "battletut":
+                                    StartHackerBattleIntro();
+                                    break;
+                                case "otherplayer":
+                                    StartDevXFuriousStory();
+                                    break;
+                                case "hacker101":
+                                    StartHacker101Story();
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("Missing arguments.");
+                        }
+                    }
+                    else { wrongcommand(); }
+                    break;
+                case "make":
+                    try
+                    {
+                        string path = command.Replace("make ", "");
+                        string realpath = $"{Paths.SaveRoot}{path.Replace("/", OSInfo.DirectorySeparator)}";
+                        if (File.Exists(realpath + OSInfo.DirectorySeparator + "main.lua"))
+                        {
+                            WriteLine("Compiling to " + path + ".saa");
+                            ZipFile.CreateFromDirectory(realpath, realpath + ".saa");
+                        }
+                        else
+                        {
+                            WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
+                        }
+                    }
+                    catch
+                    {
+                        WriteLine("make: Invalid arguments.");
+                    }
+                    break;
+                case "devupg":
+                    if (API.DeveloperMode)
+                    {
+                        WriteLine("Upgrading your system...");
+                        foreach (var upg in Shiftorium.Utilities.GetAvailable())
+                        {
+                            API.Upgrades[upg.id] = true;
+                            WriteLine("Installed upgrade \"" + upg.Name + "\"...");
+                        }
+                        API.UpdateWindows();
+                        API.CurrentSession.SetupDesktop();
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "cheat":
+                    if (API.DeveloperMode)
+                    {
+                        WriteLine("Opening...");
+
+                        //Apps.Cheats chts = new Apps.Cheats();
+                        //chts.Show();
+                        API.CreateForm(new Apps.Cheats(), "Cheats", API.GetIcon("Terminal"));
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "netgen":
+                    WriteLine("Starting netgen...");
+                    API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
+                    break;
+                case "lua":
+                    if (API.DeveloperMode == true)
+                    {
+                        try
+                        {
+                            string f = args[1];
+                            WriteLine(f);
+                            f = command.Remove(0, 4);
+                            WriteLine(f);
+                            string real = $"{Paths.SaveRoot}{f.Replace("/", OSInfo.DirectorySeparator)}";
+                            WriteLine(real);
+                            if (File.Exists(real))
+                            {
+                                WriteLine("Running Lua script at " + f + ".");
+                                var l = new LuaInterpreter(real);
+                            }
+                            else
+                            {
+                                WriteLine("Lua script file not found.");
+                            }
+                        }
+                        catch
+                        {
+                            this.LuaMode = true;
+                            this.Interpreter = new LuaInterpreter();
+                            this.Interpreter.mod.print = new Action<string>((text) => WriteLine(text));
+                            this.Interpreter.mod.exit = new Action(() =>
+                            {
+                                this.LuaMode = false;
+                                this.Interpreter = null;
+                                WriteLine($"{API.CurrentSave.username}@{API.CurrentSave.osname} $> ");
+                            });
+                            WriteLine("ShiftOS Lua Interpreter - v1.0");
+                            WriteLine("Created by Michael VanOverbeek");
+                            WriteLine(Environment.NewLine + "How to use: Simply type some Lua code and watch it come to life. Code can be executed on one line, and unlike most interpreters, you can access code from one line in another.");
+                            WriteLine(Environment.NewLine + "When you're done, simply press the Enter key to execute the code." + Environment.NewLine);
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "hack":
+                    if (API.Upgrades["hacking"] == true)
+                    {
+                        StartHackingSession("random");
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "virusscanner":
+                case "vscan":
+                    if (API.Upgrades["virusscanner"] == true)
+                    {
+                        WriteLine("Scanning for infected files...");
+                        var goodList = new Dictionary<string, string>();
+                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                        {
+                            if (kv.Value.Contains(";"))
+                            {
+                                foreach (string file in kv.Value.Split(';'))
+                                {
+                                    if (goodList.ContainsKey(file))
+                                    {
+                                        goodList[file] += ", " + kv.Key;
+                                    }
+                                    else
+                                    {
+                                        goodList.Add(file, kv.Key);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (goodList.ContainsKey(kv.Value))
+                                {
+                                    goodList[kv.Value] += ", " + kv.Key;
+                                }
+                                else
+                                {
+                                    goodList.Add(kv.Value, kv.Key);
+                                }
+                            }
+                        }
+                        WriteLine("Scan complete.");
+                        if (goodList.Count > 0)
+                        {
+                            foreach (KeyValuePair<string, string> kv in goodList)
+                            {
+                                WriteLine("File " + kv.Key + " is infected with " + kv.Value + ". Disinfecting...");
+                                Viruses.DisInfect(kv.Key);
+                            }
+                            WriteLine("Disinfection complete.");
+                        }
+                        else
+                        {
+                            WriteLine("No infections found. You are safe.");
+                        }
+                    }
+                    break;
+                case "infections":
+                    if (API.DeveloperMode == true)
+                    {
+                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
+                        {
+                            WriteLine(kv.Key + " @ " + kv.Value);
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "binarywater":
+                    if (API.DeveloperMode)
+                    {
+                        ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
+                        WriteLine("Philip Adams is now in the list of hirable hackers.");
+                        WriteLine("\" I Don't Think This is Canon \" -Carver");
+                    }
+                    else
+                    {
+                        WriteLine("I see you went in the ShiftOS source code... ummm yeah... this isn't a developer mode release so I can't just give you a full-skilled hacker even if you beg.");
+                    }
+                    break;
+                case "color":
+                    try
+                    {
+                        if (API.Upgrades["setterminalcolors"] == true)
+                        {
+
+                            Color bcol = SetColor(args[1]);
+                            Color tcol = SetColor(args[2]);
+                            API.CurrentSkin.TerminalTextColor = tcol;
+                            API.CurrentSkin.TerminalBackColor = bcol;
+
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        WriteLine("color: Missing arguments.");
+                    }
+                    break;
+                case "encrypt":
+                    if (API.DeveloperMode == true)
+                    {
+                        string messageToEncrypt = command.Replace("encrypt ", "");
+                        string encryptedMessage = API.Encryption.Encrypt(messageToEncrypt);
+                        WriteLine("Encrypted Message: " + encryptedMessage);
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "font":
+                    if (API.Upgrades["setterminalfont"] == true)
+                    {
+                        var fname = command.Replace("font ", "");
+                        if (GetFonts().Contains(fname))
+                        {
+                            API.CurrentSkin.TerminalFontStyle = fname;
+                        }
+                        else
+                        {
+                            WriteLine("font: Unrecognized font name \"" + fname + "\". Note: Font names are case sensitive.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "colorlist":
+                    if (API.Upgrades["setterminalcolors"] == true)
+                    {
+                        foreach (string itm in GetColorList())
+                        {
+                            WriteLine(itm);
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "spkg":
+                    if (!API.LimitedMode)
+                    {
+                        if (API.Upgrades["shiftnet"] == true)
+                        {
+                            try
+                            {
+                                switch (args[1].ToLower())
+                                {
+                                    case "install":
+                                        if (args[2] != null && args[2] != "")
+                                        {
+                                            string pkgname = args[2].ToLower().Replace(".pkg", "");
+                                            if (Package_Grabber.GetPackage(pkgname) == true)
+                                            {
+                                                WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
+                                                string r = Package_Grabber.ExtractPackage();
+                                                if (r == "fail")
+                                                {
+                                                    WriteLine("[FATAL] Could not install package.");
+                                                    WriteLine("spkg: Killed.");
+                                                }
+                                                else
+                                                {
+                                                    WriteLine("Extracted " + pkgname + " to " + r + "...");
+                                                    var res2 = Package_Grabber.InstallPackage(r + "\\");
+                                                    if (res2 != "success")
+                                                    {
+                                                        WriteLine("[FATAL] Could not install package. " + res2);
+                                                        WriteLine("spkg: Killed.");
+                                                    }
+                                                    else
+                                                    {
+                                                        WriteLine("[DONE] Package installed.");
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        WriteLine("spkg: Invalid argument: " + args[1]);
+                                        break;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                WriteLine("spkg: " + ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            wrongcommand();
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            if (args[2] == "god_utils")
+                            {
+                                if (FinalMission.EndGameHandler.GodModeInstallEnabled == true)
+                                {
+                                    var t = new Thread(new ThreadStart(new Action(() =>
+                                    {
+                                        WriteLine("Downloading package 'god_utils'... Please wait.");
+                                        Thread.Sleep(10000);
+                                        WriteLine("Download complete.");
+                                        Thread.Sleep(100);
+                                        WriteLine("Beginning installation.");
+                                        Thread.Sleep(1000);
+                                        WriteLine(@" == GOD MODE ==
+
+God Mode gives you FULL control of ShiftOS. You can add/remove Codepoints, buy or unbuy Shiftorium upgrades, and can do whatever you want.
+
+Installing core applications...");
+                                        Thread.Sleep(250);
+                                        WriteLine("Installing subpackage 'json_edit'...");
+                                        Thread.Sleep(250);
+                                        WriteLine("Installing subpackage 'upgrade_mod'...");
+                                        Thread.Sleep(100);
+                                        WriteLine("Installing subpackage 'hijacker'...");
+                                        Thread.Sleep(500);
+                                        WriteLine(@" == HIJACKER by DevX ==
+
+HIJACKER is a utility that allows you to hijack any system and install ShiftOS on it during a hacker battle.");
+                                        Thread.Sleep(100);
+                                        WriteLine("[hijacker] Injecting HIJACKER code into hbattleui.sft...");
+                                        Thread.Sleep(150);
+                                        WriteLine("[hijacker] Done.");
+                                        this.Invoke(new Action(() =>
+                                        {
+                                            StartChoice1EndStory();
+                                        }));
+                                    })));
+                                    t.Start();
+                                }
+                                else
+                                {
+                                    WriteLine("spkg: Package '" + args[2] + "' not found.");
+                                }
+                            }
+                            else
+                            {
+                                WriteLine("spkg: Package '" + args[2] + "' not found.");
+                            }
+                        }
+                        catch
+                        {
+                            WriteLine("spkg: Missing arguments.");
+                        }
+                    }
+                    break;
+                case "alias":
+                    try
+                    {
+                        switch (args[1])
+                        {
+                            case "-?":
+                            case "--help":
+                                WriteLine("Aliases Help" + Environment.NewLine);
+                                WriteLine("Alias is a command that lets you create aliases for other commands. You could make a command 'upgrade' alias 'shiftorium' if you wanted." + Environment.NewLine);
+                                WriteLine("Arguments:");
+                                WriteLine(" -h, --help: Displays this screen.");
+                                WriteLine("-a, --add <alias> <command>: Adds a new alias.");
+                                WriteLine("-d, --delete <alias>: Deletes an alias.");
+                                WriteLine("-l, --list: Shows all available aliases.");
+                                break;
+                            case "--add":
+                            case "-a":
+                                if (API.AddAlias(args[2], command.Replace("alias " + args[1] + " " + args[2] + " ", "")))
+                                {
+                                    WriteLine("Alias added successfully.");
+                                    API.SaveAliases();
+                                }
+                                else
+                                {
+                                    WriteLine("That alias already exists.");
+                                }
+                                break;
+                            case "--delete":
+                            case "-d":
+                                if (API.RemoveAlias(args[2]) == true)
+                                {
+                                    WriteLine("Alias \"" + args[2] + "\" removed successfully.");
+                                    API.SaveAliases();
+                                }
+                                else
+                                {
+                                    WriteLine("That alias doesn't exist.");
+                                }
+                                break;
+                            case "-l":
+                            case "--list":
+                                WriteLine("Aliases:");
+                                foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                                {
+                                    WriteLine(kv.Key + " => " + kv.Value);
+                                }
+                                break;
+                            default:
+                                WriteLine("alias: Invalid argument. Try alias --help for help with the Alias command.");
+                                break;
+                        }
+                    }
+                    catch
+                    {
+                        WriteLine("alias: Missing arguments. Try alias --help for help with the Alias command.");
+                    }
+                    break;
+                case "username":
+                    if (API.Upgrades["customusername"] == true)
+                    {
+                        try
+                        {
+                            API.CurrentSave.username = args[1];
+                        }
+                        catch
+                        {
+                            WriteLine("username: Missing arguments.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "osname":
+                    if (API.Upgrades["customusername"] == true)
+                    {
+                        try
+                        {
+                            API.CurrentSave.osname = args[1];
+                        }
+                        catch
+                        {
+                            WriteLine("osname: Missing arguments.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+
+                case "unity":
+                    if (API.Upgrades["unitymode"] == true)
+                    {
+                        API.CurrentSession.SetUnityMode();
+                        API.CurrentSession.SetupDesktop();
+                        txtterm.Focus();
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "time":
+                    if (API.Upgrades["pmandam"] == false)
+                    {
+                        if (API.Upgrades["hourssincemidnight"] == false)
+                        {
+                            if (API.Upgrades["minutessincemidnight"] == false)
+                            {
+                                if (API.Upgrades["secondssincemidnight"] == true)
+                                {
+                                    WriteLine("Since midnight, " + API.GetTime() + " seconds have passed.");
+                                }
+                                else
+                                {
+                                    wrongcommand();
+                                }
+                            }
+                            else
+                            {
+                                WriteLine("Since midnight, " + API.GetTime() + " minutes have passed.");
+                            }
+                        }
+                        else
+                        {
+                            WriteLine("Since Midnight, " + API.GetTime() + " hours have passed.");
+                        }
+                    }
+                    else
+                    {
+                        WriteLine("Current time: " + API.GetTime());
+                    }
+                    break;
+                case "saa":
+                    if (API.Upgrades["shiftnet"])
+                    {
+                        var f = command.Replace("saa ", "");
+                        if (f.StartsWith("/"))
+                        {
+                            var withoutslash = f.Remove(0, 1);
+                            var dirsep = OSInfo.DirectorySeparator;
+                            var rightdir = $"{Paths.SaveRoot}{dirsep}{f.Replace("/", dirsep)}";
+                            if (File.Exists(rightdir))
+                            {
+                                var finf = new FileInfo(rightdir);
+                                if (finf.Extension == ".saa")
+                                {
+                                    API.LaunchMod(finf.FullName);
+                                }
+                                else
+                                {
+                                    WriteLine("saa: Cannot launch the file '" + finf.FullName + " because it isn't a valid stand-alone app.");
+                                }
+                            }
+                            else
+                            {
+                                WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
+                            }
+                        }
+                        else
+                        {
+                            WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
+                        }
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+                    break;
+                case "help":
+                    try
+                    {
+                        showhelp(args[1]);
+                    }
+                    catch
+                    {
+                        showhelp();
+                    }
+                    break;
+                case "codepoints":
+                case "cp":
+                    WriteLine("You have " + API.Codepoints.ToString() + " Codepoints.");
+                    break;
+                case "shutdown":
+                    API.ShutDownShiftOS();
+                    break;
+                case "clear":
+                    txtterm.Text = "";
+                    break;
+                case "close":
+                    if (command.Contains("close "))
+                    {
+                        var pid = command.Replace("close ", "");
+                        if (API.CloseProgram(pid) == true)
+                        {
+                            WriteLine("Closed all running " + pid + "s.");
+                        }
+                        else
+                        {
+                            WriteLine("No processes with id '" + pid + "' were found!");
+                        }
+                    }
+                    else
+                    {
+                        WriteLine("Insufficient arguments.");
+                    }
+                    break;
+                case "05tray":
+                    if (API.DeveloperMode == true)
+                    {
+                        API.AddCodepoints(500);
+                        WriteLine("You've been granted 500 Codepoints.");
+                    }
+                    else
+                    {
+                        wrongcommand();
+                    }
+
+                    break;
+                case "debug":
+                    if (API.DeveloperMode == true)
+                    {
+                        try
+                        {
+                            switch (args[1].ToLower())
+                            {
+                                case "shiftnet-story":
+                                    WriteLine("Debugging Shiftnet Story...");
+                                    StartShiftnetStory();
+                                    break;
+                                case "devmode":
+                                    API.DeveloperMode = false;
+                                    WriteLine("Turned off developer mode. Use the passcode to turn it back on.");
+                                    break;
+                                default:
+                                    WriteLine("Invalid argument: " + args[1] + ". Debug can only debug the following: 'shiftnet-story'.");
+                                    break;
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            WriteLine("debug: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            switch (args[1].ToLower())
+                            {
+                                case "developers123":
+                                    WriteLine("Turned Developer Mode on!");
+                                    API.DeveloperMode = true;
+                                    break;
+                                default:
+                                    wrongcommand();
+                                    break;
+                            }
+                        }
+                        catch
+                        {
+                            wrongcommand(); //Debug command pretends to be an invalid command if an exception is thrown.
+                        }
+                    }
+                    break;
+                case "echo":
+                    if (command.Contains("echo "))
+                    {
+                        WriteLine(command.Replace("echo ", ""));
+                    }
+                    else
+                    {
+                        WriteLine("echo: Insufficient Parameters.");
+                    }
+                    break;
+                case "syncsave":
+                    WriteLine("Command removed.");
+                    break;
+                case "year":
+                    WriteLine("Year: 2002");  // Histacom Reference
+                    break;
+                case "timedistorter":
+                    WriteLine("Install 'timedistorter' by going to shiftnet://12padams");  // Histacom Reference
+                    break;
+
+                default:
+                    if (API.OpenProgram(args[0]) == false)
+                    {
+                        if (API.Upgrades["trmfiles"] == false)
+                        {
+                            bool done = false;
+                            foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                            {
+                                if (kv.Key == command)
+                                {
+                                    command = kv.Value;
+                                    done = true;
+                                    DoCommand();
+                                }
+
+                            }
+                            if (done == false)
+                            {
+                                wrongcommand();
+                            }
+                        }
+                        else
+                        {
+                            var f = command.Replace("\\", "/");
+                            if (f.StartsWith("/"))
+                            {
+                                var withoutslash = f.Remove(0, 1);
+                                var dirsep = OSInfo.DirectorySeparator;
+                                var proper = $"{Paths.SaveRoot}{dirsep}{withoutslash.Replace("/", dirsep)}";
+                                if (File.Exists(proper))
+                                {
+                                    runterminalfile(proper);
+                                }
+                                else
+                                {
+                                    wrongcommand();
+                                }
+                            }
+                            else
+                            {
+                                bool done = false;
+                                foreach (KeyValuePair<string, string> kv in API.CommandAliases)
+                                {
+                                    if (kv.Key == command)
+                                    {
+                                        command = kv.Value;
+                                        done = true;
+                                        DoCommand();
+                                    }
+
+                                }
+                                if (done == false)
+                                {
+                                    wrongcommand();
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void StartChoice1EndStory()
+        {
+            var t = new System.Windows.Forms.Timer();
+            int i = 0;
+            t.Interval = 4000;
+            t.Tick += (object s, EventArgs a) =>
+            {
+                switch (i)
+                {
+                    case 0:
+                        WriteLine("User '<unknown>' connected as '???'");
+                        break;
+                    case 1:
+                        WriteLine($"???: {API.Username}! What are you doing!?");
+                        break;
+                    case 2:
+                        WriteLine("???: I went onto the Hacker Alliance room earlier and DevX was on there...");
+                        break;
+                    case 3:
+                        WriteLine("???: And he told me you SIDED WITH HIM.");
+                        break;
+                    case 4:
+                        WriteLine("???: This is a HUGE mistake! Listen!");
+                        break;
+                    case 5:
+                        WriteLine("???: He's lying to you. Listen. DevX is not what you think he is.");
+                        break;
+                    case 6:
+                        WriteLine("???: He isn't a human! He's an AI! We were all played!");
+                        break;
+                    case 7:
+                        WriteLine("???: I'm telling the truth, I swear!");
+                        break;
+                    case 8:
+                        WriteLine("???: You want proof? - holochat_cmd: ERROR: Remote host closed connection.");
+                        WriteLine("But if he is an AI, who created him?");
+                        break;
+                    case 9:
+                        WriteLine("spkg: Rebooting system in 8 seconds.");
+                        break;
+                    case 11:
+                        API.Upgrades["titlebar"] = false;
+                        API.Upgrades["windowedterminal"] = false; //terminals must be fullscreen
+                        var trm = new Terminal();
+                        this.Close();
+                        API.CreateForm(trm, "Terminal", API.GetIcon("Terminal"));
+                        trm.StartReboot();
+                        break;
+                }
+                i += 1;
+            };
+            t.Start();
+        }
+
+        public void StartReboot()
+        {
+            txtterm.Text = "";
+            var t1 = new Thread(new ThreadStart(new Action(() =>
+            {
+                Thread.Sleep(500);
+                WriteLine("shift-init: Disconnecting From System Bus...");
+                Thread.Sleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    txtterm.Text = "";
+                }));
+                Thread.Sleep(1000);
+                WriteLine("Welcome to ShiftOS.");
+                Thread.Sleep(500);
+                WriteLine("Starting core...");
+                API.Upgrades["windowedterminal"] = true;
+                Thread.Sleep(450);
+                WriteLine($"Your username is {API.Username}.");
+                Thread.Sleep(100);
+                WriteLine($"You have {API.Codepoints} Codepoints.");
+                WriteLine("Loading modules...");
+                Thread.Sleep(750);
+                foreach (var upg in API.Upgrades)
+                {
+                    if (upg.Value == true)
+                    {
+                        WriteLine($"Loaded module {upg.Key}...");
+                    }
+                    Thread.Sleep(100);
+                }
+                WriteLine("Starting desktop.");
+                this.Invoke(new Action(() =>
+                {
+                    var s = new ShiftOSDesktop();
+                    s.Show();
+                    s.EndGame_AttachEvents();
+                }));
+                Thread.Sleep(1000);
+                this.Invoke(new Action(() =>
+                {
+                    FinalMission.EndGameHandler.GoToNextObjective();
+                }));
+                API.Upgrades["titlebar"] = true;
+            })));
+            t1.Start();
+        }
+
+        public void Crash()
+        {
+            txtterm.Text = "";
+            WriteLine(" *** SYSTEM PANIC *** ");
+            WriteLine(Environment.NewLine);
+            WriteLine("PANIC_ID: 750_15_4W3S0M3");
+            WriteLine("PANIC_DESC: System became too unstable to function properly. In 5 seconds, your session will be resumed.");
+            var t = new System.Windows.Forms.Timer();
+            t.Interval = 1000;
+            int p = 0;
+            t.Tick += (object s, EventArgs a) =>
+            {
+                if (p == 4)
+                {
+                    t.Stop();
+                    this.Close();
+                }
+                p += 1;
+            };
+            t.Start();
+        }
+
+        private void wrongcommand()
+        {
+            txtterm.Text = txtterm.Text + Environment.NewLine + "Command not recognized - Type 'help' for a list of commands!" + Environment.NewLine;
+        }
+
+        bool Hacking = false;
+
+        private Control objToWriteTo = null;
+        private string UpgradeToHack = null;
+
+        public void StartHackingSession(string id)
+        {
+            UpgradeToHack = id;
+            objToWriteTo = txtterm;
+            Hacking = true;
+            txtterm.ReadOnly = true;
+            WriteLine("To continue, choose which way you  ");
+            WriteLine("would like to go about this.       ");
+            WriteLine("                                   ");
+            WriteLine("1. Go it alone.                    ");
+            WriteLine("2. Hire someone.                   ");
+            WriteLine("                                   ");
+            WriteLine("Press the key that corresponds to  ");
+            WriteLine("the option you want.               ");
+
+        }
+
+        public void showhackinghelp()
+        {
+            WriteLine(" - Hacking - ");
+            WriteLine(Environment.NewLine + "Hacking allows you to gain more features and upgrades by unlocking more of the OS's capabilities.");
+            WriteLine(Environment.NewLine + "There are two ways you can execute a hack:");
+            WriteLine(" - On your own: It'll take skill, and time, but if you have the correct tools you can do it on your own.");
+            WriteLine(" - With a more competent partner: You have the option of employing a partner from a list of various hackers. The speed and success of the hack depends on their skill, and how fast they can pull it off. You will need to pay them a fee of Codepoints however. They can also grant you tools to do it on your own.");
+            WriteLine(Environment.NewLine + "Some hacks are capable of:");
+            WriteLine(" - Decreasing or increasing the price of Shiftorium Upgrades");
+            WriteLine(" - Decreasing or increasing the amount of Codepoints earned by doing various tasks.");
+            WriteLine(" - Unlocking more upgrades.");
+            WriteLine(Environment.NewLine + "To start a hack, go to a locked or empty Shiftorium category and click the \"Hack It\" button.");
+            API.Upgrades["hacking"] = true;
+        }
+
+        public void showhelp(string topic)
+        {
+            switch (topic)
+            {
+                case "hacking":
+                    showhackinghelp();
+                    break;
+                default:
+                    WriteLine("No help available for this topic. Try 'help' for general help.");
+                    break;
+            }
+        }
+
+        public void showhelp()
+        {
+            listinfo();
+            WriteLine(" ");
+            listcommands();
+            listprograms();
+        }
+
+        private void listprograms()
+        {
+            WriteLine("Programs installed: " + Environment.NewLine);
+            WriteLine(" - terminal: A command-line application that lets you run programs in ShiftOS");
+            WriteLine(" - shiftorium: An application where you can buy upgrades and new apps using codepoints.");
+            /* TEMP-REMOVED - I just can't get it to work.
+            WriteLine(" - jumper: A simple 'jump over the obstacle' game.");
+            */
+            WriteLine(" - knowledge_input: Test your knowledge, and gain some Codepoints too.");
+            if (API.Upgrades["shifter"] == true)
+                WriteLine(" - shifter: Allows you to customize ShiftOS.");
+            if (API.Upgrades["skinning"] == true)
+                WriteLine(" - skinloader: Load and save ShiftOS skins.");
+            if (API.Upgrades["pong"] == true)
+                WriteLine(" - pong: A good ole' game of Pong.");
+            if (API.Upgrades["fileskimmer"] == true)
+                WriteLine(" - fileskimmer: Browse the files on your computer.");
+            if (API.Upgrades["textpad"] == true)
+                WriteLine(" - textpad: \"Write, save, and open a text document.\" - Philip Adams");
+            if (API.Upgrades["artpad"] == true)
+                WriteLine(" - artpad: A simple, but useful drawing application.");
+            if (API.Upgrades["shiftnet"] == true)
+                WriteLine("Also, more apps can be run by opening .saa files. Apps can also be installed using spkg or by double clicking .pkg or .stp files.");
+        }
+
+        public void listcommands()
+        {
+            WriteLine(" == Commands == " + Environment.NewLine);
+            WriteLine(" - clear: Clears the screen.");
+            WriteLine(" - shutdown: Shuts down your PC.");
+            WriteLine(" - codepoints: Shows how many codepoints you have.");
+            WriteLine(" - help: Shows this screen.");
+            if (API.Upgrades["secondssincemidnight"] == true)
+            {
+                WriteLine(" - time: Shows the current time.");
+            }
+            if (API.Upgrades["unitymode"] == true)
+                WriteLine(" - unity: Toggles Unity Mode.");
+            if (API.Upgrades["customusername"] == true)
+            {
+                WriteLine(" - username <new_name>: Changes your username.");
+                WriteLine(" - osname <newname>: Changes the operating system name.");
+            }
+            if (API.Upgrades["shiftnet"] == true)
+            {
+                WriteLine(" - saa: Runs a specified .saa file.");
+                WriteLine(" - spkg: Shiftnet Package Manager (more info at shiftnet://main/spkg");
+            }
+        }
+
+        public void listinfo()
+        {
+            WriteLine(SaveSystem.Utilities.LoadedSave.osname + " - Version " + SaveSystem.Utilities.LoadedSave.ingameversion);
+            WriteLine("==========================" + Environment.NewLine);
+            WriteLine(" == Info == " + Environment.NewLine);
+            if (API.Upgrades["applaunchermenu"] == true)
+            {
+                WriteLine(" - Apps can be run using the App Launcher on the desktop.");
+            }
+            else
+            {
+                WriteLine(" - Apps can be run by typing their name in the Terminal.");
+            }
+            if (API.Upgrades["windowedterminal"] == true)
+            {
+                WriteLine(" - The Terminal runs in a window.");
+            }
+            else
+            {
+                WriteLine(" - The Terminal runs fullscreen at all times.");
+            }
+            if (API.Upgrades["titlebar"] == true)
+            {
+                WriteLine(" - Applications have a titlebar to help distinguish between other apps.");
+            }
+            if (API.Upgrades["windowborders"] == true)
+            {
+                WriteLine(" - Applications have a window border to help distinguish between other apps.");
+            }
+            if (API.Upgrades["multitasking"] == true)
+            {
+                WriteLine(" - Multiple apps can be run at the same time, and you can even run more than one of the same app!");
+            }
+            if (API.Upgrades["movablewindows"] == true)
+            {
+                WriteLine(" - Applications can be moved using CTRL+W,A,S,D.");
+            }
+            if (API.Upgrades["draggablewindows"] == true)
+            {
+                WriteLine(" - You can drag apps around the screen by dragging their titlebars.");
+            }
+            if (API.Upgrades["resizablewindows"] == true)
+            {
+                WriteLine(" - You can resize windows by dragging their borders.");
+            }
+            if (API.Upgrades["panelbuttons"] == true)
+            {
+                WriteLine($" - A list of open apps is shown at the {API.CurrentSkin.desktoppanelposition.ToLower()} of the screen.");
+            }
+            if (API.Upgrades["usefulpanelbuttons"] == true)
+            {
+                WriteLine(" - You can minimize and restore apps using the panel buttons.");
+            }
+            if (API.Upgrades["titletext"] == true)
+            {
+                WriteLine(" - Apps display their names on the titlebar.");
+            }
+            if (API.Upgrades["appicons"] == true)
+            {
+                WriteLine(" - Apps display their icons, and they are displayed in their titlebars.");
+            }
+            if (API.Upgrades["autoscrollterminal"] == true)
+            {
+                WriteLine(" - The Terminal will automatically scroll to the bottom.");
+            }
+            if (API.Upgrades["terminalscrollbar"] == true)
+            {
+                WriteLine(" - You can scroll up and down the Terminal's buffer.");
+            }
+            if (API.Upgrades["zoomableterminal"] == true)
+            {
+                WriteLine(" - You can zoom the Terminal in and out by holding CTRL and scrolling up or down.");
+            }
+        }
+
+
+        // ERROR: Handles clauses are not supported in C#
+        private void tmrfirstrun_Tick(object sender, EventArgs e)
+        {
+            switch (firstrun)
+            {
+                case 1:
+                    txtterm.Text = txtterm.Text + "Installation Successfull" + Environment.NewLine;
+                    blockctrlt = true;
+                    break;
+                case 2:
+                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connecting..." + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    API.PlaySound(Properties.Resources.dial_up_modem_02);
+                    break;
+                case 12:
+                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connected!" + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 15:
+                    txtterm.Text = txtterm.Text + "DevX: Hi, my name is DevX and you are now using an early version of my operating system \"ShiftOS\"." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 22:
+                    txtterm.Text = txtterm.Text + "DevX: Currently the terminal is open and I am using it to communicate with you remotely." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 28:
+                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is going to be the most revolutionary operating system in the world that will run on every electronic device you can think of." + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 36:
+                    txtterm.Text = txtterm.Text + "DevX: I can't tell you much about my future plans right now but if you can help me then I may tell you more in future" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 44:
+                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is barely usable in it's current state so I need you to help me evolve it using codepoints" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 50:
+                    txtterm.Text = txtterm.Text + "DevX: Once you acquire codepoints you can use them to upgrade certain components of ShiftOS or add new software" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 59:
+                    txtterm.Text = txtterm.Text + "DevX: I'll close the terminal now and send you to the blank ShiftOS desktop" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 65:
+                    txtterm.Text = txtterm.Text + "DevX: You can open and close the terminal at any time by pressing CTRL + T" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 70:
+                    txtterm.Text = txtterm.Text + "DevX: Once you are on the desktop open the terminal, type \"help\" and then press enter for a guide on using ShiftOS" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 80:
+                    txtterm.Text = txtterm.Text + "DevX: Gotta run now but I'll contact you soon to see how you are going with evolving ShiftOS for me while I... Work on something else" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 89:
+                    txtterm.Text = txtterm.Text + "DevX: Remember to always click the black desktop first and then press press CTRL + T to open the terminal otherwise the terminal won't open!" + Environment.NewLine + "User@ShiftOS $> ";
+                    API.PlaySound(Properties.Resources.writesound);
+                    break;
+                case 94:
+                    API.PlaySound(Properties.Resources.typesound);
+                    txtterm.Text = "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
+                    tmrfirstrun.Stop();
+                    this.Close();
+                    blockctrlt = false;
+                    SaveSystem.Utilities.saveGame();
+                    break;
+            }
+            firstrun = firstrun + 1;
+            txtterm.SelectionStart = txtterm.TextLength;
+        }
+
+        public void runterminalfile(string path)
+        {
+            if (File.Exists(path))
+            {
+                string[] cmds = File.ReadAllLines(path);
+                foreach (string cmd in cmds)
+                {
+                    command = cmd;
+                    DoCommand();
+                }
+            }
+        }
+
+        // ERROR: Handles clauses are not supported in C#
+        private void tmrshutdown_Tick(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        public void WriteLine(string text)
+        {
+            API.CurrentSession.Invoke(new Action(() =>
+            {
+                if (txtterm.Text.Length > 0)
+                {
+                    txtterm.Text += Environment.NewLine + text;
+                }
+                else
+                {
+                    txtterm.Text += text;
+                }
+                txtterm.Select(txtterm.TextLength, 0);
+                txtterm.ScrollToCaret();
+            }));
+        }
+        private bool Zooming = false;
+
+        private void ScrollDeactivate(object sender, KeyEventArgs e)
+        {
+            if (Zooming == true)
+            {
+                Zooming = false;
+            }
+        }
+
+        private int ZoomMultiplier = 1;
+
+        private void ResetTerminalFont()
+        {
+            string fname = "Font";
+            if (API.Upgrades["setterminalfont"] == true)
+            {
+                fname = API.CurrentSkin.TerminalFontStyle;
+            }
+            else
+            {
+                fname = OSInfo.GetMonospaceFont();
+            }
+            int fsize = 9 * ZoomMultiplier;
+            try
+            {
+                txtterm.Font = new Font(fname, fsize);
+            }
+            catch
+            {
+                txtterm.Font = new Font(fname, 9);
+            }
+        }
+
+        private void Zoom(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void ScrollTerm(object sender, MouseEventArgs e)
+        {
+            if (Zooming == true)
+            {
+
+            }
+            else
+            {
+                if (API.Upgrades["terminalscrollbar"] == true)
+                {
+                    txtterm.ScrollBars = ScrollBars.Vertical;
+                }
+            }
+        }
+
+        private void tmrsetfont_Tick(object sender, EventArgs e)
+        {
+            ResetTerminalFont();
+            if (API.Upgrades["setterminalcolors"] == true)
+            {
+                txtterm.BackColor = API.CurrentSkin.TerminalBackColor;
+                txtterm.ForeColor = API.CurrentSkin.TerminalTextColor;
+            }
+        }
+
+        public void ShowTools()
+        {
+            txtterm.Text = "";
+            try
+            {
+                var h = ShiftOS.Hacking.Tools[SelectedCharacter];
+                WriteLine(" == Attack Select ==");
+                WriteLine($"Attack: {SelectedCharacter + 1}/{ShiftOS.Hacking.Tools.Count}");
+                WriteLine($"Name: {h.Name}");
+                WriteLine($"Effectiveness: {h.Effectiveness}");
+                WriteLine($"Description: {h.Description}");
+                WriteLine(Environment.NewLine + "LEFT: Previous Attack, RIGHT: Next Attack, ENTER: Confirm");
+            }
+            catch
+            {
+                WriteLine("There are no entries to display in this list.");
+            }
+        }
+
+        private void Hack_ShowCharacters()
+        {
+            switch (SelectedMode)
+            {
+                case 1:
+                    ShiftOS.Hacking.GetCharacters();
+                    SelectedCharacter = 0;
+                    ShowTools();
+                    break;
+                case 2:
+                    ShiftOS.Hacking.GetCharacters();
+                    SelectedCharacter = 0;
+                    ShowChar();
+                    break;
+            }
+        }
+
+        private void InstallMidGameDesktop()
+        {
+            //throw new NotImplementedException();
+        }
+
+        int SelectedMode = 0;
+        int SelectedCharacter = 0;
+
+        public void ShowChar()
+        {
+            txtterm.Text = "";
+            var h = ShiftOS.Hacking.Characters[SelectedCharacter];
+            WriteLine(" == Partner Select ==");
+            WriteLine($"Partner: {SelectedCharacter + 1}/{ShiftOS.Hacking.Characters.Count}");
+            WriteLine($"Name: {h.Name}");
+            WriteLine($"Skill: {h.Skill}/100");
+            WriteLine($"Speed: {h.Speed}/100");
+            WriteLine($"Cost: {h.Cost}");
+            WriteLine($"Bio: {h.Bio}");
+            WriteLine(Environment.NewLine + "LEFT: Previous Partner, RIGHT: Next Partner, ENTER: Confirm");
+        }
+
+        public void StartShellShock()
         {
             var t = new Thread(new ThreadStart(new Action(() =>
             {
@@ -524,7 +2115,7 @@ namespace ShiftOS
                 WriteLine(@"Username: devx
 Password: z7fjsd3");
                 Thread.Sleep(100);
-                WriteLine("Authenticating with SSH server on shiftnet://devx/tracker running Arch Linux x86_64...");
+                WriteLine("Authenticating with SSH server on shiftnet://devx/tracker running Ubuntu 666...");
                 Thread.Sleep(1000);
                 WriteLine("[SSH] Access granted.");
                 Thread.Sleep(100);
@@ -535,15 +2126,15 @@ Password: z7fjsd3");
                     txtterm.Text = "";
                 }));
                 int i = 60;
-                while(i >= 1)
+                while (i >= 1)
                 {
                     Thread.Sleep(1000);
                     WriteLine($"Beginning attack on server in {i} seconds.");
                     i -= 1;
                 }
                 WriteLine("[devx@tracker ~]$ ");
-                string cmd = ":`(`)`{` `:`|`:` `&` `}`;`:"; //yep. I'm pretending to use a forkbomb on DevX's server. This'll be FUN to code. </sarcasm>
-                foreach(string c in cmd.Split('`'))
+                string cmd = ":`(`)`{` `:`|`:` `&` `}`;`:"; // <sarcasm> yep. I'm pretending to use a forkbomb on DevX's server. This'll be FUN to code. </sarcasm>
+                foreach (string c in cmd.Split('`'))
                 {
                     Thread.Sleep(100);
                     this.Invoke(new Action(() =>
@@ -559,10 +2150,10 @@ Password: z7fjsd3");
                     FinalMission.EndGameHandler.GoToNextObjective();
                 }));
                 int progress = 0;
-                while(progress <= 10000)
+                while (progress <= 10000)
                 {
                     int r = new Random().Next(0, 1);
-                    switch(r)
+                    switch (r)
                     {
                         case 0:
                             WriteLine("-bash: fork: Resource temporarily unavailable");
@@ -584,11 +2175,6 @@ Password: z7fjsd3");
             t.Start();
         }
 
-        public void SetPrefix(string _prefix)
-        {
-            prefix = _prefix;    
-        }
-
         internal void StartBridgeToMidGame()
         {
             var t2 = new System.Windows.Forms.Timer();
@@ -599,7 +2185,7 @@ Password: z7fjsd3");
                 switch (i2)
                 {
                     case 0:
-                        if(API.Upgrades["hacker101"] == true)
+                        if (API.Upgrades["hacker101"] == true)
                         {
                             WriteLine("Hacker101: Hello. We meet again. The Other Player told me about your situation.");
                         }
@@ -664,7 +2250,7 @@ Password: z7fjsd3");
 
             t.Tick += (object s, EventArgs a) =>
             {
-                
+
 
                 switch (i)
                 {
@@ -744,7 +2330,7 @@ Password: z7fjsd3");
                 }
                 i += 1;
             };
-            if(API.Upgrades["hacker101"] == true)
+            if (API.Upgrades["hacker101"] == true)
             {
                 t2.Start();
             }
@@ -753,65 +2339,7 @@ Password: z7fjsd3");
                 t.Start();
             }
 
-            
-        }
 
-        private void InstallMidGameDesktop()
-        {
-            //throw new NotImplementedException();
-        }
-
-        int SelectedMode = 0;
-        int SelectedCharacter = 0;
-
-        public void ShowChar()
-        {
-            txtterm.Text = "";
-            var h = ShiftOS.Hacking.Characters[SelectedCharacter];
-            WriteLine(" == Partner Select ==");
-            WriteLine($"Partner: {SelectedCharacter + 1}/{ShiftOS.Hacking.Characters.Count}");
-            WriteLine($"Name: {h.Name}");
-            WriteLine($"Skill: {h.Skill}/100");
-            WriteLine($"Speed: {h.Speed}/100");
-            WriteLine($"Cost: {h.Cost}");
-            WriteLine($"Bio: {h.Bio}");
-            WriteLine(Environment.NewLine + "LEFT: Previous Partner, RIGHT: Next Partner, ENTER: Confirm");
-        }
-
-        public void ShowTools()
-        {
-            txtterm.Text = "";
-            try
-            {
-                var h = ShiftOS.Hacking.Tools[SelectedCharacter];
-                WriteLine(" == Attack Select ==");
-                WriteLine($"Attack: {SelectedCharacter + 1}/{ShiftOS.Hacking.Tools.Count}");
-                WriteLine($"Name: {h.Name}");
-                WriteLine($"Effectiveness: {h.Effectiveness}");
-                WriteLine($"Description: {h.Description}");
-                WriteLine(Environment.NewLine + "LEFT: Previous Attack, RIGHT: Next Attack, ENTER: Confirm");
-            }
-            catch 
-            {
-                WriteLine("There are no entries to display in this list.");
-            }
-        }
-
-        private void Hack_ShowCharacters()
-        {
-            switch(SelectedMode)
-            {
-                case 1:
-                    ShiftOS.Hacking.GetCharacters();
-                    SelectedCharacter = 0;
-                    ShowTools();
-                    break;
-                case 2:
-                    ShiftOS.Hacking.GetCharacters();
-                    SelectedCharacter = 0;
-                    ShowChar();
-                    break;   
-            }
         }
 
         internal void StartAidenNirhStory()
@@ -821,7 +2349,7 @@ Password: z7fjsd3");
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         WriteLine("User 151.43.85.33 connecting as \"Aiden\"...");
@@ -857,10 +2385,10 @@ Password: z7fjsd3");
             var t = new System.Windows.Forms.Timer();
             t.Interval = 4000;
             int i = 0;
-            
+
             t.Tick += (object s, EventArgs a) =>
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         WriteLine("IP <hidden> connecting as Hacker101...");
@@ -949,13 +2477,13 @@ Password: z7fjsd3");
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         WriteLine("User <hidden> connected as ???.");
                         break;
                     case 1:
-                        if(API.Upgrades["otherplayerstory"] == true)
+                        if (API.Upgrades["otherplayerstory"] == true)
                         {
                             WriteLine($"???: {API.Username}! Did he find out? Oh God, I hope he can see this...");
                         }
@@ -965,7 +2493,7 @@ Password: z7fjsd3");
                         }
                         break;
                     case 2:
-                        if(API.Upgrades["otherplayerstory"] == true)
+                        if (API.Upgrades["otherplayerstory"] == true)
                         {
                             WriteLine("???: Ahh. Good. You can read this. It's me, the other player.");
                         }
@@ -998,7 +2526,7 @@ Password: z7fjsd3");
                         {
                             WriteLine("???: And, well, I think we could use this. I have a friend who's good with his hacking skills. I'll see if he can help you stop DevX dead. If he can, he will contact you next time you run a .saa.");
                         }
-                            break;
+                        break;
                     case 9:
                         WriteLine("???: Anyways, connected to your system, I can see your desktop. Looks pretty messed up, huh?");
                         break;
@@ -1027,7 +2555,7 @@ Password: z7fjsd3");
                         WriteLine("???: Go ahead and try to decrypt it. The Shiftnet Lua API is very useful.");
                         break;
                     case 16:
-                        if(API.Upgrades["otherplayerstory"] == true)
+                        if (API.Upgrades["otherplayerstory"] == true)
                         {
                             WriteLine("???: Anyways, I'm gonna go work with Hacker101, discuss those .saa uplinks, and see if we can come up with a suitable attack plan.");
                         }
@@ -1057,7 +2585,7 @@ Password: z7fjsd3");
             int i = 0;
             t.Tick += (object s, EventArgs a) =>
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         API.Upgrades["hackerbattles"] = true;
@@ -1226,1547 +2754,63 @@ Password: z7fjsd3");
             })));
             t.Start();
         }
-
-        private LuaInterpreter Interpreter = null;
-        private bool blockctrlt = false;
-
-        /// <summary>
-        /// Call after creating a Terminal to let Maureen Fenn talk
-        /// to the player about the Shiftnet and the Appscape Package Manager.
-        /// </summary>
-        public void StartShiftnetStory()
-        {
-            System.Windows.Forms.Timer tmrstory = new System.Windows.Forms.Timer();
-            tmrstory.Interval = 10000;
-            WriteLine("IP <hidden@shiftnet> connecting as 'Maureen Fenn'...");
-            API.PlaySound(Properties.Resources.dial_up_modem_02);
-            var t = new Thread(new ThreadStart(new Action(() =>
-            {
-                WriteLine("Maureen Fenn: Hey there, user! I have something to show you.");
-                BeepSleep(4000);
-                WriteLine("Maureen Fenn: So, there's this thing called the 'Shiftnet'");
-                BeepSleep(3750);
-                WriteLine("Maureen Fenn: Turns out, that DevX wants to keep it a secret, as such he only installed it on his and my systems.");
-                BeepSleep(4250);
-                WriteLine("Maureen Fenn: But what's the point of listening to DevX when we have people like you who like to experiment?");
-                BeepSleep(4000);
-                WriteLine("Maureen Fenn: Well, to be fair - he can destroy whatever he wants. Just like he did my company, Minimatch.");
-                BeepSleep(3000);
-                WriteLine("Maureen Fenn: But who cares! I'm going to install a few things on your system.");
-                API.Upgrades["shiftnet"] = true;
-                this.Invoke(new Action(() =>
-                {
-                    this.command = "spkg install shiftnet";
-                    this.DoCommand();
-                }));
-                WriteLine("Shiftnet installed on system...");
-                Thread.Sleep(4000);
-                WriteLine("Maureen Fenn: All done! Oh - just before I leave... go ahead and explore the Shiftnet!");
-                BeepSleep(3000);
-                WriteLine("Maureen Fenn: But, be careful. Don't venture off the main server. You never know what's elsewhere...");
-                BeepSleep(1000);
-                WriteLine("Maureen Fenn: Well, bye!");
-                this.Invoke(new Action(() =>
-                {
-                    API.CurrentSession.SetupDesktop();
-                    this.Close();
-                }));
-            })));
-            t.Start();
-        }
-
-        /// <summary>
-        /// *BEEP* ZZZZZZZZzzzzzzzzzzz.......
-        /// </summary>
-        /// <param name="time">Time to sleep.</param>
-        private void BeepSleep(int time)
-        {
-            API.PlaySound(Properties.Resources.writesound);
-            Thread.Sleep(time);
-        }
-
-        private List<string> GetFonts()
-        {
-            var lst = new List<string>();
-            // Get the installed fonts collection.
-            InstalledFontCollection allFonts = new InstalledFontCollection();
-
-            // Get an array of the system's font familiies.
-            FontFamily[] fontFamilies = allFonts.Families;
-
-            // Display the font families.
-            foreach (FontFamily myFont in fontFamilies)
-            {
-                lst.Add(myFont.Name.ToLower());
-            }
-            //font_family
-
-            return lst;
-        }
-
-        public List<string> GetColorList()
-        {
-            var lst = new List<string>();
-            if(API.Upgrades["red"] == true)
-                lst.Add("red");
-            if (API.Upgrades["green"] == true)
-                lst.Add("green");
-            if (API.Upgrades["blue"] == true)
-                lst.Add("blue");
-            if (API.Upgrades["brown"] == true)
-                lst.Add("brown");
-            if (API.Upgrades["purple"] == true)
-                lst.Add("purple");
-            if (API.Upgrades["yellow"] == true)
-                lst.Add("yellow");
-            if (API.Upgrades["orange"] == true)
-                lst.Add("orange");
-            if (API.Upgrades["pink"] == true)
-                lst.Add("pink");
-            if (API.Upgrades["gray"] == true)
-                lst.Add("gray");
-            lst.Add("black");
-            lst.Add("white");
-            return lst;
-        }
-
-        public Color SetColor(string name)
-        {
-            Color col = Color.White;
-            switch(name)
-            {
-                case "black":
-                    col = Color.Black;
-                    break;
-                case "white":
-                    col = Color.White;
-                    break;
-                case "gray":
-                    col = Color.Gray;
-                    break;
-                case "red":
-                    col = Color.Red;
-                    break;
-                case "green":
-                    col = Color.Green;
-                    break;
-                case "blue":
-                    col = Color.Blue;
-                    break;
-                case "brown":
-                    col = Color.Brown;
-                    break;
-                case "purple":
-                    col = Color.Purple;
-                    break;
-                case "yellow":
-                    col = Color.Yellow;
-                    break;
-                case "orange":
-                    col = Color.Orange;
-                    break;
-            }
-            return col;
-        }
-
-        private bool LuaMode = false;
-
-        public string GetPath(string path)
-        {
-            return path.Replace(Paths.SaveRoot, "").Replace(OSInfo.DirectorySeparator, "/");
-        }
-
-        public string GetParent(string path)
-        {
-            var d = new DirectoryInfo(path);
-            return d.Parent.FullName;
-        }
-
-        public void DoCommand()
-        {
-            API.LastRanCommand = command;
-            string[] args = command.ToLower().Split(' ');
-            switch (args[0])
-            {
-                case "ls":
-                case "dir":
-                    if(API.Upgrades["fileskimmer"])
-                    {
-                        foreach(var d in Directory.GetDirectories(current_dir))
-                        {
-                            WriteLine($"[DIR] {new DirectoryInfo(d).Name}");
-                        }
-                        foreach (var d in Directory.GetFiles(current_dir))
-                        {
-                            WriteLine($"{new FileInfo(d).Name}");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "cd":
-                    if (API.Upgrades["fileskimmer"])
-                    {
-                        if (args[1] == "..")
-                        {
-                            if (GetPath(current_dir) != "/")
-                            {
-                                current_dir = GetParent(current_dir);
-                                SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
-                            }
-                            else
-                            {
-                                WriteLine("cd: Can't go up past the root.");
-                            }
-                        }
-                        else
-                        {
-                            string newdir = current_dir + OSInfo.DirectorySeparator;
-                            foreach (var dir in Directory.GetDirectories(current_dir))
-                            {
-                                if (new DirectoryInfo(dir).Name.ToLower() == args[1])
-                                    newdir = dir;
-                            }
-                            current_dir = newdir;
-                            SetPrefix($"{API.Username}@{API.OSName} in {GetPath(current_dir)} $> ");
-                        }
-                    }
-                    break;
-                case "upg":
-                    if(API.DeveloperMode)
-                    {
-                        try
-                        {
-                            switch(args[1])
-                            {
-                                case "get":
-                                    WriteLine(API.Upgrades[args[2]].ToString());
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "endgame_test":
-                    if (API.DeveloperMode)
-                    {
-                        try
-                        {
-                            switch (args[1])
-                            {
-                                case "choice_screen":
-                                    var cscreen = new ShiftOS.FinalMission.ChooseYourApproach();
-                                    cscreen.WindowState = FormWindowState.Maximized;
-                                    //cscreen.TopMost = true;
-                                    cscreen.Show();
-                                    break;
-                                case "limitedmode":
-                                    API.LimitedMode = !API.LimitedMode;
-                                    WriteLine($"Limited mode set to {API.LimitedMode}.");
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("Invalid arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "htutorial":
-                    ShiftOS.Hacking.StartBattleTutorial();
-                    break;
-                case "fake_buy":
-                    if (API.DeveloperMode)
-                    {
-                        try
-                        {
-                            if (API.Upgrades.ContainsKey(args[1]))
-                            {
-                                API.Upgrades[args[1]] = true;
-                                WriteLine($"Bought upgrade {args[1]}.");
-                                API.CurrentSession.SetupAppLauncher();
-                                API.UpdateWindows();
-                                SaveSystem.Utilities.saveGame();
-                            }
-                            else
-                            {
-                                WriteLine("Upgrade not found.");
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("fake_buy: Bad arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "connections":
-                    try
-                    {
-                        switch(args[1])
-                        {
-                            case "list":
-                                foreach(var client in Package_Grabber.clients)
-                                {
-                                    WriteLine($"Hostname: {client.Key}, Port: {client.Value.RemotePort}, Online: {client.Value.IsConnected}");
-                                }
-                                break;
-                            case "gui":
-                                API.CreateForm(new ConnectionManager(), "Connections", API.GetIcon("Connections"));
-                                break;
-                            case "drop":
-                                foreach(var client in Package_Grabber.clients)
-                                {
-                                    Package_Grabber.Disconnect(client.Key);
-                                }
-                                break;
-                            case "add":
-                                string host = args[2];
-                                int port = 0;
-                                int.TryParse(args[3], out port);
-                                if (!Package_Grabber.clients.ContainsKey(host))
-                                {
-                                    Package_Grabber.ConnectToServer(host, port);
-                                    WriteLine("Connection to host established successfully.");
-                                }
-                                else
-                                {
-                                    var c = Package_Grabber.clients[host];
-                                    if (c.IsConnected == false)
-                                    {
-                                        c.Connect(host, port);
-                                        WriteLine("Re-established connection with host.");
-                                    }
-                                    else {
-                                        WriteLine("This host has been connected to already.");
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("connections: Missing arguments.");
-                    }
-                    break;
-                case "story":
-                    if(API.DeveloperMode == true && API.Upgrades["shiftnet"])
-                    {
-                        try
-                        {
-                            switch(args[1])
-                            {
-                                case "aidennirh":
-                                    StartAidenNirhStory();
-                                    break;
-                                case "devxfurious":
-                                    StartDevXFuriousStory();
-                                    break;
-                                case "battletut":
-                                    StartHackerBattleIntro();
-                                    break;
-                                case "otherplayer":
-                                    StartDevXFuriousStory();
-                                    break;
-                                case "hacker101":
-                                    StartHacker101Story();
-                                    break;
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("Missing arguments.");
-                        }
-                    }
-                    else { wrongcommand(); }
-                    break;
-                case "make":
-                    try
-                    {
-                        string path = command.Replace("make ", "");
-                        string realpath = $"{Paths.SaveRoot}{path.Replace("/", OSInfo.DirectorySeparator)}";
-                        if (File.Exists(realpath + OSInfo.DirectorySeparator + "main.lua"))
-                        {
-                            WriteLine("Compiling to " + path + ".saa");
-                            ZipFile.CreateFromDirectory(realpath, realpath + ".saa");
-                        }
-                        else
-                        {
-                            WriteLine($"make: *** No rule to make target \"{realpath}\". Stop.");
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("make: Invalid arguments.");
-                    }
-                    break;
-                case "linux":
-                    if(API.DeveloperMode)
-                    {
-                        WriteLine("Upgrading your system...");
-                        foreach(var upg in Shiftorium.Utilities.GetAvailable())
-                        {
-                            API.Upgrades[upg.id] = true;
-                            WriteLine("Installed upgrade \"" + upg.Name + "\"...");
-                        }
-                        API.UpdateWindows();
-                        API.CurrentSession.SetupDesktop();
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "cheat":
-                    if (API.DeveloperMode)
-                    {
-                        WriteLine("Opening...");
-                        
-                        //Apps.Cheats chts = new Apps.Cheats();
-                        //chts.Show();
-                        API.CreateForm(new Apps.Cheats(), "Cheats", API.GetIcon("Terminal"));
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "netgen":
-                    WriteLine("Starting netgen...");
-                    API.CreateForm(new NetGen(), "Network Generator", API.GetIcon("Terminal"));
-                    break;
-                case "lua":
-                    if(API.DeveloperMode == true)
-                    {
-                        try
-                        {
-                            string f = args[1];
-                            WriteLine(f);
-                            f = command.Remove(0, 4);
-                            WriteLine(f);
-                            string real = $"{Paths.SaveRoot}{f.Replace("/", OSInfo.DirectorySeparator)}";
-                            WriteLine(real);
-                            if (File.Exists(real))
-                            {
-                                WriteLine("Running Lua script at " + f + ".");
-                                var l = new LuaInterpreter(real);
-                            }
-                            else
-                            {
-                                WriteLine("Lua script file not found.");
-                            }
-                        }
-                        catch 
-                        {
-                            this.LuaMode = true;
-                            this.Interpreter = new LuaInterpreter();
-                            this.Interpreter.mod.print = new Action<string>((text) => WriteLine(text));
-                            this.Interpreter.mod.exit = new Action(() =>
-                            {
-                                this.LuaMode = false;
-                                this.Interpreter = null;
-                                WriteLine($"{API.CurrentSave.username}@{API.CurrentSave.osname} $> ");
-                            });
-                            WriteLine("ShiftOS Lua Interpreter - v1.0");
-                            WriteLine("Created by Michael VanOverbeek");
-                            WriteLine(Environment.NewLine + "How to use: Simply type some Lua code and watch it come to life. Code can be executed on one line, and unlike most interpreters, you can access code from one line in another.");
-                            WriteLine(Environment.NewLine + "When you're done, simply press the Enter key to execute the code." + Environment.NewLine);
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "hack":
-                    if(API.Upgrades["hacking"] == true)
-                    {
-                        StartHackingSession("random");
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "virusscanner":
-                case "vscan":
-                    if(API.Upgrades["virusscanner"] == true)
-                    {
-                        WriteLine("Scanning for infected files...");
-                        var goodList = new Dictionary<string, string>();
-                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
-                        {
-                            if(kv.Value.Contains(";"))
-                            {
-                                foreach(string file in kv.Value.Split(';'))
-                                {
-                                    if (goodList.ContainsKey(file))
-                                    {
-                                        goodList[file] += ", " + kv.Key;
-                                    }
-                                    else {
-                                        goodList.Add(file, kv.Key);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                if (goodList.ContainsKey(kv.Value))
-                                {
-                                    goodList[kv.Value] += ", " + kv.Key;
-                                }
-                                else {
-                                    goodList.Add(kv.Value, kv.Key);
-                                }
-                            }
-                        }
-                        WriteLine("Scan complete.");
-                        if (goodList.Count > 0)
-                        {
-                            foreach (KeyValuePair<string, string> kv in goodList)
-                            {
-                                WriteLine("File " + kv.Key + " is infected with " + kv.Value + ". Disinfecting...");
-                                Viruses.DisInfect(kv.Key);
-                            }
-                            WriteLine("Disinfection complete.");
-                        }
-                        else
-                        {
-                            WriteLine("No infections found. You are safe.");
-                        }
-                    }
-                    break;
-                case "infections":
-                    if (API.DeveloperMode == true)
-                    {
-                        foreach (KeyValuePair<string, string> kv in Viruses.Infections)
-                        {
-                            WriteLine(kv.Key + " @ " + kv.Value);
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "binarywater":
-                    if (API.DeveloperMode)
-                    {
-                        ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
-                        WriteLine("Philip Adams is now in the list of hirable hackers.");
-                    }
-                    else
-                    {
-                        WriteLine("I see you went in the ShiftOS source code... ummm yeah... this isn't a developer mode release so I can't just give you a full-skilled hacker even if you beg.");
-                    }
-                    break;
-                case "color":
-                    try
-                    {
-                        if(API.Upgrades["setterminalcolors"] == true)
-                        {
-
-                            Color bcol = SetColor(args[1]);
-                            Color tcol = SetColor(args[2]);
-                            API.CurrentSkin.TerminalTextColor = tcol;
-                            API.CurrentSkin.TerminalBackColor = bcol;
-                            
-                        }
-                    }
-                    catch(Exception)
-                    {
-                        WriteLine("color: Missing arguments.");
-                    }
-                    break;
-                case "encrypt":
-                    if (API.DeveloperMode == true)
-                    {
-                        string messageToEncrypt = command.Replace("encrypt ", "");
-                        string encryptedMessage = API.Encryption.Encrypt(messageToEncrypt);
-                        WriteLine("Encrypted Message: " + encryptedMessage);
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                        break;
-                case "font":
-                    if(API.Upgrades["setterminalfont"] == true)
-                    {
-                        var fname = command.Replace("font ", "");
-                        if(GetFonts().Contains(fname))
-                        {
-                            API.CurrentSkin.TerminalFontStyle = fname;
-                        }
-                        else
-                        {
-                            WriteLine("font: Unrecognized font name \"" + fname + "\". Note: Font names are case sensitive.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "colorlist":
-                    if(API.Upgrades["setterminalcolors"] == true)
-                    {
-                        foreach(string itm in GetColorList())
-                        {
-                            WriteLine(itm);
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "spkg":
-                    if (!API.LimitedMode)
-                    {
-                        if (API.Upgrades["shiftnet"] == true)
-                        {
-                            try
-                            {
-                                switch (args[1].ToLower())
-                                {
-                                    case "install":
-                                        if (args[2] != null && args[2] != "")
-                                        {
-                                            string pkgname = args[2].ToLower().Replace(".pkg", "");
-                                            if (Package_Grabber.GetPackage(pkgname) == true)
-                                            {
-                                                WriteLine("Downloaded package '" + pkgname + "' from shiftnet://main/spkg/ successfully. Installing now.");
-                                                string r = Package_Grabber.ExtractPackage();
-                                                if (r == "fail")
-                                                {
-                                                    WriteLine("[FATAL] Could not install package.");
-                                                    WriteLine("spkg: Killed.");
-                                                }
-                                                else
-                                                {
-                                                    WriteLine("Extracted " + pkgname + " to " + r + "...");
-                                                    var res2 = Package_Grabber.InstallPackage(r + "\\");
-                                                    if (res2 != "success")
-                                                    {
-                                                        WriteLine("[FATAL] Could not install package. " + res2);
-                                                        WriteLine("spkg: Killed.");
-                                                    }
-                                                    else
-                                                    {
-                                                        WriteLine("[DONE] Package installed.");
-                                                    }
-                                                }
-                                            }
-                                            else
-                                            {
-                                                WriteLine("spkg: Package '" + args[2] + "' not found.");
-                                            }
-                                        }
-                                        break;
-                                    default:
-                                        WriteLine("spkg: Invalid argument: " + args[1]);
-                                        break;
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                WriteLine("spkg: " + ex.Message);
-                            }
-                        }
-                        else
-                        {
-                            wrongcommand();
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            if(args[2] == "god_utils")
-                            {
-                                if(FinalMission.EndGameHandler.GodModeInstallEnabled == true)
-                                {
-                                    var t = new Thread(new ThreadStart(new Action(() =>
-                                    {
-                                        WriteLine("Downloading package 'god_utils'... Please wait.");
-                                        Thread.Sleep(10000);
-                                        WriteLine("Download complete.");
-                                        Thread.Sleep(100);
-                                        WriteLine("Beginning installation.");
-                                        Thread.Sleep(1000);
-                                        WriteLine(@" == GOD MODE ==
-
-God Mode gives you FULL control of ShiftOS. You can add/remove Codepoints, buy or unbuy Shiftorium upgrades, and can do whatever you want.
-
-Installing core applications...");
-                                        Thread.Sleep(250);
-                                        WriteLine("Installing subpackage 'json_edit'...");
-                                        Thread.Sleep(250);
-                                        WriteLine("Installing subpackage 'upgrade_mod'...");
-                                        Thread.Sleep(100);
-                                        WriteLine("Installing subpackage 'hijacker'...");
-                                        Thread.Sleep(500);
-                                        WriteLine(@" == HIJACKER by DevX ==
-
-HIJACKER is a utility that allows you to hijack any system and install ShiftOS on it during a hacker battle.");
-                                        Thread.Sleep(100);
-                                        WriteLine("[hijacker] Injecting HIJACKER code into hbattleui.sft...");
-                                        Thread.Sleep(150);
-                                        WriteLine("[hijacker] Done.");
-                                        this.Invoke(new Action(() =>
-                                        {
-                                            StartChoice1EndStory();
-                                        }));
-                                    })));
-                                    t.Start();
-                                }                                
-                                else
-                                {
-                                    WriteLine("spkg: Package '" + args[2] + "' not found.");
-                                }
-                            }
-                            else
-                            {
-                                WriteLine("spkg: Package '" + args[2] + "' not found.");
-                            }
-                        }
-                        catch
-                        {
-                            WriteLine("spkg: Missing arguments.");
-                        }
-                    }
-                    break;
-                case "alias":
-                    try
-                    {
-                        switch(args[1])
-                        {
-                            case "-?":
-                            case "--help":
-                                WriteLine("Aliases Help" + Environment.NewLine);
-                                WriteLine("Alias is a command that lets you create aliases for other commands. You could make a command 'upgrade' alias 'shiftorium' if you wanted." + Environment.NewLine);
-                                WriteLine("Arguments:");
-                                WriteLine(" -h, --help: Displays this screen.");
-                                WriteLine("-a, --add <alias> <command>: Adds a new alias.");
-                                WriteLine("-d, --delete <alias>: Deletes an alias.");
-                                WriteLine("-l, --list: Shows all available aliases.");
-                                break;
-                            case "--add":
-                            case "-a":
-                                if(API.AddAlias(args[2], command.Replace("alias " + args[1] + " " + args[2] + " ", "")))
-                                {
-                                    WriteLine("Alias added successfully.");
-                                    API.SaveAliases();
-                                }
-                                else
-                                {
-                                    WriteLine("That alias already exists.");
-                                }
-                                break;
-                            case "--delete":
-                            case "-d":
-                                if(API.RemoveAlias(args[2]) == true)
-                                {
-                                    WriteLine("Alias \"" + args[2] + "\" removed successfully.");
-                                    API.SaveAliases();
-                                }
-                                else
-                                {
-                                    WriteLine("That alias doesn't exist.");
-                                }
-                                break;
-                            case "-l":
-                            case "--list":
-                                WriteLine("Aliases:");
-                                foreach(KeyValuePair<string, string> kv in API.CommandAliases)
-                                {
-                                    WriteLine(kv.Key + " => " + kv.Value);
-                                }
-                                break;
-                            default:
-                                WriteLine("alias: Invalid argument. Try alias --help for help with the Alias command.");
-                                break;
-                        }
-                    }
-                    catch
-                    {
-                        WriteLine("alias: Missing arguments. Try alias --help for help with the Alias command.");
-                    }
-                    break;
-                case "username":
-                    if(API.Upgrades["customusername"] == true)
-                    {
-                        try
-                        {
-                            API.CurrentSave.username = args[1];
-                        }
-                        catch
-                        {
-                            WriteLine("username: Missing arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "osname":
-                    if (API.Upgrades["customusername"] == true)
-                    {
-                        try
-                        {
-                            API.CurrentSave.osname = args[1];
-                        }
-                        catch 
-                        {
-                            WriteLine("osname: Missing arguments.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-
-                case "unity":
-                    if (API.Upgrades["unitymode"] == true)
-                    {
-                        API.CurrentSession.SetUnityMode();
-                        API.CurrentSession.SetupDesktop();
-                        txtterm.Focus();
-                    } else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "time":
-                    if (API.Upgrades["pmandam"] == false)
-                    {
-                        if (API.Upgrades["hourssincemidnight"] == false)
-                        {
-                            if (API.Upgrades["minutessincemidnight"] == false)
-                            {
-                                if (API.Upgrades["secondssincemidnight"] == true) {
-                                    WriteLine("Since midnight, " + API.GetTime() + " seconds have passed.");
-                                } else {
-                                    wrongcommand();
-                                }
-                            } else
-                            {
-                                WriteLine("Since midnight, " + API.GetTime() + " minutes have passed.");
-                            }
-                        }
-                        else
-                        {
-                            WriteLine("Since Midnight, " + API.GetTime() + " hours have passed.");
-                        }
-                    } else
-                    {
-                        WriteLine("Current time: " + API.GetTime());
-                    }
-                    break;
-                case "saa":
-                    if (API.Upgrades["shiftnet"]) {
-                        var f = command.Replace("saa ", "");
-                        if (f.StartsWith("/"))
-                        {
-                            var withoutslash = f.Remove(0, 1);
-                            var dirsep = OSInfo.DirectorySeparator;
-                            var rightdir = $"{Paths.SaveRoot}{dirsep}{f.Replace("/", dirsep)}";
-                            if (File.Exists(rightdir))
-                            {
-                                var finf = new FileInfo(rightdir);
-                                if (finf.Extension == ".saa")
-                                {
-                                    API.LaunchMod(finf.FullName);
-                                }
-                                else
-                                {
-                                    WriteLine("saa: Cannot launch the file '" + finf.FullName + " because it isn't a valid stand-alone app.");
-                                }
-                            }
-                            else
-                            {
-                                WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
-                            }
-                        }
-                        else
-                        {
-                            WriteLine("saa: Cannot launch the file '" + f + "' because it doesn't exist.");
-                        }
-                    }
-                    else
-                    {
-                        wrongcommand();
-                    }
-                    break;
-                case "help":
-                    try
-                    {
-                        showhelp(args[1]);
-                    }
-                    catch
-                    {
-                        showhelp();
-                    }
-                    break;
-                case "codepoints":
-                case "cp":
-                    WriteLine("You have " + API.Codepoints.ToString() + " Codepoints.");
-                    break;
-                case "shutdown":
-                    API.ShutDownShiftOS();
-                    break;
-                case "clear":
-                    txtterm.Text = "";
-                    break;
-                case "close":
-                    if (command.Contains("close "))
-                    {
-                        var pid = command.Replace("close ", "");
-                        if (API.CloseProgram(pid) == true)
-                        {
-                            WriteLine("Closed all running " + pid + "s.");
-                        }
-                        else
-                        {
-                            WriteLine("No processes with id '" + pid + "' were found!");
-                        }
-                    }
-                    else
-                    {
-                        WriteLine("Insufficient arguments.");
-                    }
-                    break;
-                case "05tray":
-                    if (API.DeveloperMode == true)
-                    {
-                        API.AddCodepoints(500);
-                        WriteLine("You've been granted 500 Codepoints.");
-                    } else
-                    {
-                        wrongcommand();
-                    }
-
-                    break;
-                case "debug":
-                    if (API.DeveloperMode == true)
-                    {
-                        try
-                        {
-                            switch (args[1].ToLower())
-                            {
-                                case "shiftnet-story":
-                                    WriteLine("Debugging Shiftnet Story...");
-                                    StartShiftnetStory();
-                                    break;
-                                case "devmode":
-                                    API.DeveloperMode = false;
-                                    WriteLine("Turned off developer mode. Use the passcode to turn it back on.");
-                                    break;
-                                default:
-                                    WriteLine("Invalid argument: " + args[1] + ". Debug can only debug the following: 'shiftnet-story'.");
-                                    break;
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            WriteLine("debug: " + ex.Message);
-                        }
-                    } else {
-                        try
-                        {
-                            switch (args[1].ToLower())
-                            {
-                                case "developers123":
-                                    WriteLine("Turned Developer Mode on!");
-                                    API.DeveloperMode = true;
-                                    break;
-                                default:
-                                    wrongcommand();
-                                    break;
-                            }
-                        } catch
-                        {
-                            wrongcommand(); //Debug command pretends to be an invalid command if an exception is thrown.
-                        }
-                    }
-                    break;
-                case "echo":
-                    if(command.Contains("echo "))
-                    {
-                        WriteLine(command.Replace("echo ", ""));
-                    }
-                    else
-                    {
-                        WriteLine("echo: Insufficient Parameters.");
-                    }
-                    break;
-                case "syncsave":
-                    WriteLine("Command removed.");
-                    break;
-                    
-                default:
-                    if (API.OpenProgram(args[0]) == false)
-                    {
-                        if (API.Upgrades["trmfiles"] == false)
-                        {
-                            bool done = false;
-                            foreach(KeyValuePair<string, string> kv in API.CommandAliases)
-                            {
-                                if(kv.Key == command)
-                                {
-                                    command = kv.Value;
-                                    done = true;
-                                    DoCommand();
-                                }
-                                
-                            }
-                            if(done == false)
-                            {
-                                wrongcommand();
-                            }
-                        }
-                        else
-                        {
-                            var f = command.Replace("\\", "/");
-                            if (f.StartsWith("/"))
-                            {
-                                var withoutslash = f.Remove(0, 1);
-                                var dirsep = OSInfo.DirectorySeparator;
-                                var proper = $"{Paths.SaveRoot}{dirsep}{withoutslash.Replace("/", dirsep)}";
-                                if (File.Exists(proper))
-                                {
-                                    runterminalfile(proper);
-                                }
-                                else
-                                {
-                                    wrongcommand();
-                                }
-                            }
-                            else
-                            {
-                                bool done = false;
-                                foreach (KeyValuePair<string, string> kv in API.CommandAliases)
-                                {
-                                    if (kv.Key == command)
-                                    {
-                                        command = kv.Value;
-                                        done = true;
-                                        DoCommand();
-                                    }
-
-                                }
-                                if (done == false)
-                                {
-                                    wrongcommand();
-                                }
-                            }
-                        }
-                    }
-                    break;
-            }
-        }
-
-        private void StartChoice1EndStory()
+        public void StartOtherPlayerStory()
         {
             var t = new System.Windows.Forms.Timer();
-            int i = 0;
             t.Interval = 4000;
+            int i = 0;
             t.Tick += (object s, EventArgs a) =>
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
-                        WriteLine("User '<unknown>' connected as '???'");
+                        WriteLine("IP Address <hidden> is connecting as '???'...");
                         break;
                     case 1:
-                        WriteLine($"???: {API.Username}! What are you doing!?");
+                        WriteLine("Connection established.");
                         break;
                     case 2:
-                        WriteLine("???: I went onto the Hacker Alliance room earlier and DevX was on there...");
+                        WriteLine("???: Hi, ShiftOS user. I have something to tell you.");
                         break;
                     case 3:
-                        WriteLine("???: And he told me you SIDED WITH HIM.");
+                        WriteLine("???: I'm not a hacker. I'm not a programmer. I am just like you.");
                         break;
                     case 4:
-                        WriteLine("???: This is a HUGE mistake! Listen!");
+                        WriteLine("???: I am... the Other Player.");
                         break;
                     case 5:
-                        WriteLine("???: He's lying to you. Listen. DevX is not what you think he is.");
+                        WriteLine("???: I too have heard DevX's story about ShiftOS being an experimental operating system.");
                         break;
                     case 6:
-                        WriteLine("???: He isn't a human! He's an AI! We were all played!");
+                        WriteLine("???: I have also met another user. We'll call him... I don't know... Robert.");
                         break;
                     case 7:
-                        WriteLine("???: I'm telling the truth, I swear!");
+                        WriteLine("???: And this Robert guy, well, he knows a lot about ShiftOS, and DevX.");
                         break;
                     case 8:
-                        WriteLine("???: You want proof? - holochat_cmd: ERROR: Remote host closed connection.");
+                        WriteLine("???: Robert is a fake name I'm calling him. You might know him as Hacker101.");
                         break;
                     case 9:
-                        WriteLine("spkg: Rebooting system in 8 seconds.");
+                        WriteLine("???: Anyways, He told me about you, so I figured I would help you get out of this mess.");
+                        break;
+                    case 10:
+                        WriteLine("???: He said he'll help me get my hard drive back, and get ShiftOS off my system. Once he does, I'll tell you.");
                         break;
                     case 11:
-                        API.Upgrades["titlebar"] = false;
-                        API.Upgrades["windowedterminal"] = false; //terminals must be fullscreen
-                        var trm = new Terminal();
+                        WriteLine("???: In the meantime, I have one word for you. Survive. Do NOT let DevX get to you. Do not fall for his tricks. Just play along until I contact you.");
+                        break;
+                    case 12:
+                        WriteLine("???: I'll talk to you about this soon.");
+                        break;
+                    case 13:
+                        t.Stop();
                         this.Close();
-                        API.CreateForm(trm, "Terminal", API.GetIcon("Terminal"));
-                        trm.StartReboot();
+                        API.Upgrades["otherplayerstory1"] = true;
                         break;
                 }
                 i += 1;
             };
             t.Start();
         }
-        
-        public void StartReboot()
-        {
-            txtterm.Text = "";
-            var t1 = new Thread(new ThreadStart(new Action(() =>
-            {
-                Thread.Sleep(500);
-                WriteLine("ShiftOS: Kernel deactivated.");
-                Thread.Sleep(1000);
-                this.Invoke(new Action(() =>
-                {
-                    txtterm.Text = "";
-                }));
-                Thread.Sleep(1000);
-                WriteLine("Welcome to ShiftOS.");
-                Thread.Sleep(500);
-                WriteLine("Starting core...");
-                API.Upgrades["windowedterminal"] = true;
-                Thread.Sleep(450);
-                WriteLine($"Your username is {API.Username}.");
-                Thread.Sleep(100);
-                WriteLine($"You have {API.Codepoints} Codepoints.");
-                WriteLine("Loading modules...");
-                Thread.Sleep(750);
-                foreach(var upg in API.Upgrades)
-                {
-                    if(upg.Value == true)
-                    {
-                        WriteLine($"Loaded module {upg.Key}...");
-                    }
-                    Thread.Sleep(100);
-                }
-                WriteLine("Starting desktop.");
-                this.Invoke(new Action(() =>
-                {
-                    var s = new ShiftOSDesktop();
-                    s.Show();
-                    s.EndGame_AttachEvents();
-                }));
-                Thread.Sleep(1000);
-                this.Invoke(new Action(() =>
-                {
-                    FinalMission.EndGameHandler.GoToNextObjective();
-                }));
-                API.Upgrades["titlebar"] = true;
-            })));
-            t1.Start();
-        }
-
-        public void Crash()
-        {
-            txtterm.Text = "";
-            WriteLine(" *** SYSTEM PANIC *** ");
-            WriteLine(Environment.NewLine);
-            WriteLine("PANIC_ID: 750_15_4W3S0M3");
-            WriteLine("PANIC_DESC: System became too unstable to function properly. In 5 seconds, your session will be resumed.");
-            var t = new System.Windows.Forms.Timer();
-            t.Interval = 1000;
-            int p = 0;
-            t.Tick += (object s, EventArgs a) =>
-            {
-                if(p == 4)
-                {
-                    t.Stop();
-                    this.Close();
-                }
-                p += 1;
-            };
-            t.Start();
-        }
-
-        private void wrongcommand()
-        {
-            txtterm.Text = txtterm.Text + Environment.NewLine + "Command not recognized - Type 'help' for a list of commands!" + Environment.NewLine;
-        }
-
-        bool Hacking = false;
-
-        private Control objToWriteTo = null;
-        private string UpgradeToHack = null;
-
-        public void StartHackingSession(string id)
-        {
-            UpgradeToHack = id;
-            objToWriteTo = txtterm;
-            Hacking = true;
-            txtterm.ReadOnly = true;
-            WriteLine("To continue, choose which way you  ");
-            WriteLine("would like to go about this.       ");
-            WriteLine("                                   ");
-            WriteLine("1. Go it alone.                    ");
-            WriteLine("2. Hire someone.                   ");
-            WriteLine("                                   ");
-            WriteLine("Press the key that corresponds to  ");
-            WriteLine("the option you want.               ");
-            
-        }
-
-        public void showhackinghelp()
-        {
-            WriteLine(" - Hacking - ");
-            WriteLine(Environment.NewLine + "Hacking allows you to gain more features and upgrades by unlocking more of the OS's capabilities.");
-            WriteLine(Environment.NewLine + "There are two ways you can execute a hack:");
-            WriteLine(" - On your own: It'll take skill, and time, but if you have the correct tools you can do it on your own.");
-            WriteLine(" - With a more competent partner: You have the option of employing a partner from a list of various hackers. The speed and success of the hack depends on their skill, and how fast they can pull it off. You will need to pay them a fee of Codepoints however. They can also grant you tools to do it on your own.");
-            WriteLine(Environment.NewLine + "Some hacks are capable of:");
-            WriteLine(" - Decreasing or increasing the price of Shiftorium Upgrades");
-            WriteLine(" - Decreasing or increasing the amount of Codepoints earned by doing various tasks.");
-            WriteLine(" - Unlocking more upgrades.");
-            WriteLine(Environment.NewLine + "To start a hack, go to a locked or empty Shiftorium category and click the \"Hack It\" button.");
-            API.Upgrades["hacking"] = true;
-        }
-
-        public void showhelp(string topic)
-        {
-            switch(topic)
-            {
-                case "hacking":
-                    showhackinghelp();
-                    break;
-                default:
-                    WriteLine("No help available for this topic. Try 'help' for general help.");
-                    break;
-            }
-        }
-
-        public void showhelp()
-        {
-            listinfo();
-            WriteLine(" ");
-            listcommands();
-            listprograms();
-        }
-
-        private void listprograms()
-        {
-            WriteLine("Programs installed: " + Environment.NewLine);
-            WriteLine(" - terminal: A command-line application that lets you run programs in ShiftOS");
-            WriteLine(" - shiftorium: An application where you can buy upgrades and new apps using codepoints.");
-            /* TEMP-REMOVED - I just can't get it to work.
-            WriteLine(" - jumper: A simple 'jump over the obstacle' game.");
-            */
-            WriteLine(" - knowledge_input: Test your knowledge, and gain some Codepoints too.");
-            if (API.Upgrades["shifter"] == true)
-                WriteLine(" - shifter: Allows you to customize ShiftOS.");
-            if (API.Upgrades["skinning"] == true)
-                WriteLine(" - skinloader: Load and save ShiftOS skins.");
-            if (API.Upgrades["pong"] == true)
-                WriteLine(" - pong: A good ole' game of Pong.");
-            if (API.Upgrades["fileskimmer"] == true)
-                WriteLine(" - fileskimmer: Browse the files on your computer.");
-            if (API.Upgrades["textpad"] == true)
-                WriteLine(" - textpad: \"Write, save, and open a text document.\" - Philip Adams");
-            if (API.Upgrades["artpad"] == true)
-                WriteLine(" - artpad: A simple, but useful drawing application.");
-            if (API.Upgrades["shiftnet"] == true)
-                WriteLine("Also, more apps can be run by opening .saa files. Apps can also be installed using spkg or by double clicking .pkg or .stp files.");
-        }
-
-        public void listcommands()
-        {
-            WriteLine(" == Commands == " + Environment.NewLine);
-            WriteLine(" - clear: Clears the screen.");
-            WriteLine(" - shutdown: Shuts down your PC.");
-            WriteLine(" - codepoints: Shows how many codepoints you have.");
-            WriteLine(" - help: Shows this screen.");
-            if(API.Upgrades["secondssincemidnight"] == true)
-            {
-                WriteLine(" - time: Shows the current time.");
-            }
-            if (API.Upgrades["unitymode"] == true)
-                WriteLine(" - unity: Toggles Unity Mode.");
-            if (API.Upgrades["customusername"] == true)
-            {
-                WriteLine(" - username <new_name>: Changes your username.");
-                WriteLine(" - osname <newname>: Changes the operating system name.");
-            }
-            if(API.Upgrades["shiftnet"] == true)
-            {
-                WriteLine(" - saa: Runs a specified .saa file.");
-                WriteLine(" - spkg: Shiftnet Package Manager (more info at shiftnet://main/spkg");
-            }
-        }
-
-        public void listinfo()
-        {
-            WriteLine(SaveSystem.Utilities.LoadedSave.osname + " - Version " + SaveSystem.Utilities.LoadedSave.ingameversion);
-            WriteLine("==========================" + Environment.NewLine);
-            WriteLine(" == Info == " + Environment.NewLine);
-            if(API.Upgrades["applaunchermenu"] == true)
-            {
-                WriteLine(" - Apps can be run using the App Launcher on the desktop.");
-            } else
-            {
-                WriteLine(" - Apps can be run by typing their name in the Terminal.");
-            }
-            if (API.Upgrades["windowedterminal"] == true)
-            {
-                WriteLine(" - The Terminal runs in a window.");
-            }
-            else
-            {
-                WriteLine(" - The Terminal runs fullscreen at all times.");
-            }
-            if(API.Upgrades["titlebar"] == true)
-            {
-                WriteLine(" - Applications have a titlebar to help distinguish between other apps.");
-            }
-            if(API.Upgrades["windowborders"] == true)
-            {
-                WriteLine(" - Applications have a window border to help distinguish between other apps.");
-            }
-            if(API.Upgrades["multitasking"] == true)
-            {
-                WriteLine(" - Multiple apps can be run at the same time, and you can even run more than one of the same app!");
-            }
-            if(API.Upgrades["movablewindows"] == true)
-            {
-                WriteLine(" - Applications can be moved using CTRL+W,A,S,D.");
-            }
-            if(API.Upgrades["draggablewindows"] == true)
-            {
-                WriteLine(" - You can drag apps around the screen by dragging their titlebars.");
-            }
-            if(API.Upgrades["resizablewindows"] == true)
-            {
-                WriteLine(" - You can resize windows by dragging their borders.");
-            }
-            if(API.Upgrades["panelbuttons"] == true)
-            {
-                WriteLine($" - A list of open apps is shown at the {API.CurrentSkin.desktoppanelposition.ToLower()} of the screen.");
-            }
-            if(API.Upgrades["usefulpanelbuttons"] == true)
-            {
-                WriteLine(" - You can minimize and restore apps using the panel buttons.");
-            }
-            if(API.Upgrades["titletext"] == true)
-            {
-                WriteLine(" - Apps display their names on the titlebar.");
-            }
-            if(API.Upgrades["appicons"] == true)
-            {
-                WriteLine(" - Apps display their icons, and they are displayed in their titlebars.");
-            }
-            if(API.Upgrades["autoscrollterminal"] == true)
-            {
-                WriteLine(" - The Terminal will automatically scroll to the bottom.");
-            }
-            if(API.Upgrades["terminalscrollbar"] == true)
-            {
-                WriteLine(" - You can scroll up and down the Terminal's buffer.");
-            }
-            if(API.Upgrades["zoomableterminal"] == true)
-            {
-                WriteLine(" - You can zoom the Terminal in and out by holding CTRL and scrolling up or down.");
-            }
-        }
-
-
-        // ERROR: Handles clauses are not supported in C#
-        private void tmrfirstrun_Tick(object sender, EventArgs e)
-        {
-            switch (firstrun)
-            {
-                case 1:
-                    txtterm.Text = txtterm.Text + "Installation Successfull" + Environment.NewLine;
-                    blockctrlt = true;
-                    break;
-                case 2:
-                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connecting..." + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                    API.PlaySound(Properties.Resources.dial_up_modem_02);
-                    break;
-                case 12:
-                    txtterm.Text = txtterm.Text + "IP 199.108.232.1 Connected!" + Environment.NewLine + "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 15:
-                    txtterm.Text = txtterm.Text + "DevX: Hi, my name is DevX and you are now using an early version of my operating system \"ShiftOS\"." + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 22:
-                    txtterm.Text = txtterm.Text + "DevX: Currently the terminal is open and I am using it to communicate with you remotely." + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 28:
-                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is going to be the most revolutionary operating system in the world that will run on every electronic device you can think of." + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 36:
-                    txtterm.Text = txtterm.Text + "DevX: I can't tell you much about my future plans right now but if you can help me then I may tell you more in future" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 44:
-                    txtterm.Text = txtterm.Text + "DevX: ShiftOS is barely usable in it's current state so I need you to help me evolve it using codepoints" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 50:
-                    txtterm.Text = txtterm.Text + "DevX: Once you acquire codepoints you can use them to upgrade certain components of ShiftOS or add new software" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 59:
-                    txtterm.Text = txtterm.Text + "DevX: I'll close the terminal now and send you to the blank ShiftOS desktop" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 65:
-                    txtterm.Text = txtterm.Text + "DevX: You can open and close the terminal at any time by pressing CTRL + T" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 70:
-                    txtterm.Text = txtterm.Text + "DevX: Once you are on the desktop open the terminal, type \"help\" and then press enter for a guide on using ShiftOS" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 80:
-                    txtterm.Text = txtterm.Text + "DevX: Gotta run now but I'll contact you soon to see how you are going with evolving ShiftOS for me while I... Work on something else" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 89:
-                    txtterm.Text = txtterm.Text + "DevX: Remember to always click the black desktop first and then press press CTRL + T to open the terminal otherwise the terminal won't open!" + Environment.NewLine + "User@ShiftOS $> ";
-                    API.PlaySound(Properties.Resources.writesound);
-                    break;
-                case 94:
-                    API.PlaySound(Properties.Resources.typesound);
-                    txtterm.Text = "User@" + SaveSystem.Utilities.LoadedSave.osname + " $> ";
-                    tmrfirstrun.Stop();
-                    this.Close();
-                    blockctrlt = false;
-                    SaveSystem.Utilities.saveGame();
-                    break;
-            }
-            firstrun = firstrun + 1;
-            txtterm.SelectionStart = txtterm.TextLength;
-        }
-
-        public void runterminalfile(string path)
-        {
-            if(File.Exists(path))
-            {
-                string[] cmds = File.ReadAllLines(path);
-                foreach(string cmd in cmds)
-                {
-                    command = cmd;
-                    DoCommand();
-                }
-            }
-        }
-
-        // ERROR: Handles clauses are not supported in C#
-        private void tmrshutdown_Tick(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        public void WriteLine(string text)
-        {
-            API.CurrentSession.Invoke(new Action(() =>
-            {
-                if (txtterm.Text.Length > 0)
-                {
-                    txtterm.Text += Environment.NewLine + text;
-                }
-                else
-                {
-                    txtterm.Text += text;
-                }
-                txtterm.Select(txtterm.TextLength, 0);
-                txtterm.ScrollToCaret();
-            }));
-        }
-        private bool Zooming = false;
-
-        private void ScrollDeactivate(object sender, KeyEventArgs e)
-        {
-            if(Zooming == true)
-            {
-                Zooming = false;
-            }
-        }
-
-        private int ZoomMultiplier = 1;
-
-        private void ResetTerminalFont()
-        {
-            string fname = "Font";
-            if(API.Upgrades["setterminalfont"] == true)
-            {
-                fname = API.CurrentSkin.TerminalFontStyle;
-            }
-            else
-            {
-                fname = OSInfo.GetMonospaceFont();
-            }
-            int fsize = 9 * ZoomMultiplier;
-            try {
-                txtterm.Font = new Font(fname, fsize);
-            }
-            catch
-            {
-                txtterm.Font = new Font(fname, 9);
-            }
-        }
-
-        private void Zoom(object sender, ScrollEventArgs e)
-        {
-            
-        }
-
-        private void ScrollTerm(object sender, MouseEventArgs e)
-        {
-            if(Zooming == true)
-            {
-                
-            } else
-            {
-                if(API.Upgrades["terminalscrollbar"] == true)
-                {
-                    txtterm.ScrollBars = ScrollBars.Vertical;
-                }
-            }
-        }
-
-        private void tmrsetfont_Tick(object sender, EventArgs e)
-        {
-            ResetTerminalFont();
-            if(API.Upgrades["setterminalcolors"] == true)
-            {
-                txtterm.BackColor = API.CurrentSkin.TerminalBackColor;
-                txtterm.ForeColor = API.CurrentSkin.TerminalTextColor;
-            }
-        }
     }
-      
 }

@@ -216,17 +216,17 @@
     <Compile Include="Dialogs\Graphic_Picker.Designer.cs">
       <DependentUpon>Graphic_Picker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gameplay\Hacking.cs" />
-    <Compile Include="Gameplay\HackUI.cs">
+    <Compile Include="Hacking\Hacking.cs" />
+    <Compile Include="Hacking\HackUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gameplay\HackUI.Designer.cs">
+    <Compile Include="Hacking\HackUI.Designer.cs">
       <DependentUpon>HackUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gameplay\HijackScreen.cs">
+    <Compile Include="Hacking\HijackScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gameplay\HijackScreen.Designer.cs">
+    <Compile Include="Hacking\HijackScreen.Designer.cs">
       <DependentUpon>HijackScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Apps\HoloChat.cs">
@@ -464,10 +464,10 @@
     <EmbeddedResource Include="Dialogs\Graphic_Picker.resx">
       <DependentUpon>Graphic_Picker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gameplay\HackUI.resx">
+    <EmbeddedResource Include="Hacking\HackUI.resx">
       <DependentUpon>HackUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gameplay\HijackScreen.resx">
+    <EmbeddedResource Include="Hacking\HijackScreen.resx">
       <DependentUpon>HijackScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\HoloChat.resx">

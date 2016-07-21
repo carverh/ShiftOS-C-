@@ -1,18 +1,15 @@
 ShiftOS #VER#
 
+== Developers ==
+Michael VanOverbeek
+Philip Adams
+GabrielTK
+PCSource
+The Gitter Badger
+Carver Harrison
 
 
-A game by Michael VanOverbeek
-
-
-
-
-
-
-
-
-
- == External Libraries / Dependencies == 
+== External Libraries / Dependencies == 
 
   JSON.NET - Version 8.0.2
   By James Newton-King
@@ -29,8 +26,6 @@ A game by Michael VanOverbeek
 
 
   and various other amazing .NET libraries
-
-
 
 
 == Music ==
@@ -50,48 +45,47 @@ SUPPORT THESE BRILLIANT ARTISTS!
 
 • Support Miza:
 https://soundcloud.com/miza-official1
-https://soundcloud.com/miza-official1
-https://www.facebook.com/miza.official.page
+https://facebook.com/miza.official.page
 
 Support Lastep:
-https://www.youtube.com/channel/UCQoGdkBRqzjx12htDBhiCxQ
+https://youtube.com/channel/UCQoGdkBRqzjx12htDBhiCxQ
 https://soundcloud.com/lastepmusic
 https://twitter.com/LastepMusic
 
 Support Tom Vanko:
 https://soundcloud.com/tomvanko
-https://www.facebook.com/tomvankomusic
+https://facebook.com/tomvankomusic
 https://twitter.com/tomvankomusic
 
 Support Timmo Hendriks:
 https://soundcloud.com/dj-timmo
-https://www.facebook.com/TimmoHendriksofficial
+https://facebook.com/TimmoHendriksofficial
 https://twitter.com/Timmo_Hendriks
-https://www.instagram.com/timmohendriks/
-https://www.youtube.com/c/TimmoHendriks
+https://instagram.com/timmohendriks/
+https://youtube.com/c/TimmoHendriks
 Snapchat: Timmo_Hendriks
 
 Support Mark Vank:
 https://soundcloud.com/markvank
-https://www.youtube.com/channel/UCb4ch0_TAKSDvq89NUIElLA
+https://youtube.com/channel/UCb4ch0_TAKSDvq89NUIElLA
 https://twitter.com/MarkVank_
-https://www.facebook.com/HardMixOfficial
+https://facebook.com/HardMixOfficial
 
 Support HardMix:
 https://soundcloud.com/hardmix-ap3x
-http://www.instagram.com/mebn2
-http://www.youtube.com/VoltiDubstep
+http://instagram.com/mebn2
+http://youtube.com/VoltiDubstep
 
 Support Eric Rodriguez:
 https://soundcloud.com/ericrodriguezofficial
 https://instagram.com/ericrodriguezmusic/
-https://www.youtube.com/user/ericrodriguezmusic
+https://youtube.com/user/ericrodriguezmusic
 
 Go check out Free Songs To Use (and thank them for this brilliant music)
-Facebook: https://www.facebook.com/FreeSongsToUse
+Facebook: https://facebook.com/FreeSongsToUse
 Twitter: https://twitter.com/FreeSongsToUse
 Soundcloud: https://soundcloud.com/FreeSongsToUse
-Instagram: https://www.instagram.com/freesongstouse_official
+Instagram: https://instagram.com/freesongstouse_official
 
 
 == More of Michael's things ==
@@ -99,9 +93,12 @@ Instagram: https://www.instagram.com/freesongstouse_official
 Enjoyed ShiftOS? Want to see more games and projects from Michael? Why not visit his website at http://michael.playshiftos.ml?
 
 
+== More of Carver's things ==
+
+The More Bug Testing the Better. Check Me Out at http://www.harri.cf.
 
 
- == Special Thanks ==
+== Special Thanks ==
 
 On behalf of the ShiftOS development team, we would love to thank the following amazing people and groups:
 
@@ -109,13 +106,8 @@ On behalf of the ShiftOS development team, we would love to thank the following 
  - Philip Adams, a.k.a OSFirstTimer
  - All the amazing people on the ShiftOS Forums
 
-Without your help, ShiftOS just wouldn't be what it is today. It probably wouldn't exist if it weren't for OSFirstTimer, and without BizSpark and Azure hosting our website and servers, you wouldn't be able to hear the amazing music you hear right now. That, and without the amazing people at the ShiftOS community bringing us new ideas, suggestions, bug reports, and being generally nice people, the project wouldn't get as far as it has.
-
-
-
-
-
-
-
+Without your help, ShiftOS just wouldn't be what it is today.
+It probably wouldn't exist if it weren't for OSFirstTimer, and without BizSpark and Azure hosting our website and servers, you wouldn't be able to hear the amazing music you hear right now.
+That, and without the amazing people at the ShiftOS community bringing us new ideas, suggestions, bug reports, and being generally nice people, the project wouldn't get as far as it has.
 
 And finally, we want to thank you, #USER#, for giving our game a try. We hope you enjoyed and continue to enjoy it!
