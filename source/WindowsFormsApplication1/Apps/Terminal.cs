@@ -858,7 +858,7 @@ namespace ShiftOS
                         WriteLine("make: Invalid arguments.");
                     }
                     break;
-                case "linux":
+                case "devupg":
                     if (API.DeveloperMode)
                     {
                         WriteLine("Upgrading your system...");
@@ -1014,6 +1014,7 @@ namespace ShiftOS
                     {
                         ShiftOS.Hacking.AddCharacter(new Character("Philip Adams", "Hello, and welcome to another episode of OSFirstTimer.", 100, 100, 0));
                         WriteLine("Philip Adams is now in the list of hirable hackers.");
+                        WriteLine("\" I Don't Think This is Canon \" -Carver");
                     }
                     else
                     {
@@ -1478,6 +1479,12 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                 case "syncsave":
                     WriteLine("Command removed.");
                     break;
+                case "year":
+                    WriteLine("Year: 2002");  // Histacom Reference
+                    break;
+                case "timedistorter":
+                    WriteLine("Install 'timedistorter' by going to shiftnet://12padams");  // Histacom Reference
+                    break;
 
                 default:
                     if (API.OpenProgram(args[0]) == false)
@@ -1576,6 +1583,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         break;
                     case 8:
                         WriteLine("???: You want proof? - holochat_cmd: ERROR: Remote host closed connection.");
+                        WriteLine("But if he is an AI, who created him?");
                         break;
                     case 9:
                         WriteLine("spkg: Rebooting system in 8 seconds.");
@@ -1600,7 +1608,7 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             var t1 = new Thread(new ThreadStart(new Action(() =>
             {
                 Thread.Sleep(500);
-                WriteLine("ShiftOS: Kernel deactivated.");
+                WriteLine("shift-init: Disconnecting From System Bus...");
                 Thread.Sleep(1000);
                 this.Invoke(new Action(() =>
                 {
