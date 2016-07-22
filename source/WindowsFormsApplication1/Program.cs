@@ -181,7 +181,6 @@ namespace ShiftOS
                 MessageBox.Show("Sorry to break the immersion, but we're currently downloading ShiftOS dependencies that'll make the game run MUCH better, such as the Lua engine and Gecko web renderer. Give us a moment. ShiftOS will continue to run while this happens but some things won't work right until we're finished.");
                 wc.DownloadFileAsync(new Uri("http://playshiftos.ml/shiftos/dependencies/ShiftOS_Dependencies.zip"), zippath);
             }
-            
         }
     }
 }

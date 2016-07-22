@@ -5,8 +5,8 @@ Michael VanOverbeek
 Philip Adams
 GabrielTK
 PCSource
-The Gitter Badger
 Carver Harrison
+AShifter
 
 
 == External Libraries / Dependencies == 
@@ -23,7 +23,6 @@ Carver Harrison
 
   GeckoFX .NET wrapper for Gecko and xulrunner - 1.0.5
   By EmaGht
-
 
   and various other amazing .NET libraries
 
@@ -107,7 +106,7 @@ On behalf of the ShiftOS development team, we would love to thank the following 
  - All the amazing people on the ShiftOS Forums
 
 Without your help, ShiftOS just wouldn't be what it is today.
-It probably wouldn't exist if it weren't for OSFirstTimer, and without BizSpark and Azure hosting our website and servers, you wouldn't be able to hear the amazing music you hear right now.
+This probably wouldn't exist if it wasn't for OSFirstTimer, BizSpark and Azure for hosting our website and servers, you wouldn't be able to play this amazing game.
 That, and without the amazing people at the ShiftOS community bringing us new ideas, suggestions, bug reports, and being generally nice people, the project wouldn't get as far as it has.
 
 And finally, we want to thank you, #USER#, for giving our game a try. We hope you enjoyed and continue to enjoy it!
