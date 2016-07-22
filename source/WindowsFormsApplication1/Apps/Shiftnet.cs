@@ -75,7 +75,7 @@ namespace ShiftOS
             {
                 try
                 {
-                    string content = wc.DownloadString(url.Replace("shiftnet://", "http://www.playshiftos.ml/shiftnet/www/"));
+                    string content = wc.DownloadString(url.Replace("shiftnet://", "http://releases.playshiftos.ml/shiftnet/www/"));
                     if (content.StartsWith("<!STML>"))
                     {
                         LastUrl = url;

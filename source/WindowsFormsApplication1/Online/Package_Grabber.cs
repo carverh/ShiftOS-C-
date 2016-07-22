@@ -188,7 +188,7 @@ namespace ShiftOS
                     Directory.CreateDirectory(downloadpath);
                 }
                 WebClient wc = new WebClient();
-                wc.DownloadFile("http://playshiftos.ml/shiftnet/packages/" + pkgname + ".pkg", downloadpath + pkgname + ".pkg");
+                wc.DownloadFile("http://releases.playshiftos.ml/shiftnet/packages/" + pkgname + ".pkg", downloadpath + pkgname + ".pkg");
                 LastPackage_DownloadPath = downloadpath + pkgname + ".pkg";
             }
             catch

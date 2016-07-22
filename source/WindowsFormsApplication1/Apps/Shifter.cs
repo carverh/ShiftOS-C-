@@ -19,6 +19,7 @@ namespace ShiftOS
             InitializeComponent();
         }
 
+        /*
         public Skinning.Skin CustomizingSkin = null;
         public Skinning.Images CustomizingImages = null;
         private bool EarnCP = false;
@@ -1442,7 +1443,7 @@ namespace ShiftOS
             HideAll();
             pnlmenuoptions.Show();
             pnlmenuoptions.BringToFront();
-            SetPreviewSkin(true);*/
+            SetPreviewSkin(true);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -3088,6 +3089,6 @@ You can add options in the Lua interpreter using the shifter_add_category(string
                 };
                 
             }
-        }
+        }*/
     }
 }
