@@ -1561,15 +1561,6 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             }
         }
 
-        public void cmd_bash(String[] args)
-        {
-                Process p = new Process();
-                p.StartInfo.FileName = "powershell";
-                p.StartInfo.Arguments = "C:\\ShiftOS\\bin\\bash.exe";
-                p.StartInfo.WorkingDirectory = current_dir;
-                p.Start();
-        }
-
         public void cmd_default(String[] args)
         {
             if (API.OpenProgram(args[0]) == false)
@@ -1626,11 +1617,14 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         {
                             // This runs EXE Applications like Core Utils
                             // Created By Carver Harrison (@carverh)
-                            wrongcommand();
-                        }
-                        else
-                        {
-                            wrongcommand();
+                            if (File.Exists("C:\\ShiftOS\\bin\\" + args[0] + ".exe"))
+                            {
+                                runExe(args);
+                            }
+                            else
+                            {
+                                wrongcommand();
+                            }
                         }
                     }
                 }
@@ -1666,7 +1660,42 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
         /// Created By Carver Harrison (@carverh)
         /// </summary>
         /// <param name="args">string[] args</param>
-        
+        public void runExe(string[] args)
+        {
+            bool isFirstArg = true;
+            string exeArgs = "";
+            foreach (string arg in args)
+            {
+                if (!isFirstArg)
+                {
+                    exeArgs = exeArgs + " " + arg;
+                }
+                else
+                {
+                    isFirstArg = false;
+                }
+            }
+            string lp = "C:\\ShiftOS\\bin\\" + args[0] + ".exe";
+            Process p = new Process();
+            p.StartInfo.Arguments = exeArgs;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardInput = true;
+            p.StartInfo.FileName = lp;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.ErrorDialog = false;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.StartInfo.WorkingDirectory = current_dir;
+            this.Invoke(new Action(() =>
+            {
+                p.Start();
+                StreamWriter sw = p.StandardInput;
+                while (!p.HasExited)
+                {
+                    txtterm.Text += p.StandardOutput.Read();
+                }
+            }));
+        }
         #endregion
 
         private void StartChoice1EndStory()
