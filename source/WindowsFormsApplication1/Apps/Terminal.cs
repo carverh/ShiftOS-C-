@@ -1615,12 +1615,43 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         }
                         if (done == false)
                         {
-                            // Lua Executer By Carver Harrison (@carverh)
+                            // This runs LUA and EXE Applications
+                            // Created By Carver Harrison (@carverh)
                             if (File.Exists("C:\\ShiftOS\\LuaApps\\" + args[0] + ".lua"))
                             {
-                                String lp = "C:\\ShiftOS\\LuaApps\\" + args[0] + ".lua";
+                                string lp = "C:\\ShiftOS\\LuaApps\\" + args[0] + ".lua";
                                 WriteLine(lp);
                                 var l = new LuaInterpreter(lp);
+                            }
+                            else if (File.Exists("C:\\ShiftOS\\bin\\" + args[0] + ".exe"))
+                            {
+                                bool isFirstArg = true;
+                                string exeArgs = "";
+                                foreach (string arg in args)
+                                {
+                                    if (!isFirstArg)
+                                    {
+                                        exeArgs = exeArgs + " " + arg;
+                                    }
+                                    else
+                                    {
+                                        isFirstArg = false;
+                                    }
+                                }
+                                string lp = "C:\\ShiftOS\\bin\\" + args[0] + ".exe";
+                                Process p = new Process();
+                                p.StartInfo.Arguments = exeArgs;
+                                p.StartInfo.UseShellExecute = false;
+                                p.StartInfo.RedirectStandardOutput = true;
+                                p.StartInfo.FileName = lp;
+                                p.StartInfo.CreateNoWindow = true;
+                                p.StartInfo.ErrorDialog = false;
+                                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                p.StartInfo.WorkingDirectory = current_dir;
+                                p.Start();
+
+                                WriteLine(p.StandardOutput.ReadToEnd());
+                                p.WaitForExit();
                             }
                             else
                             {
