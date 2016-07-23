@@ -1686,15 +1686,9 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             p.StartInfo.ErrorDialog = false;
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.StartInfo.WorkingDirectory = current_dir;
-            this.Invoke(new Action(() =>
-            {
-                p.Start();
-                StreamWriter sw = p.StandardInput;
-                while (!p.HasExited)
-                {
-                    txtterm.Text += p.StandardOutput.Read();
-                }
-            }));
+            p.Start();
+            WriteLine(p.StandardOutput.ReadToEnd());
+            p.WaitForExit();
         }
         #endregion
 
