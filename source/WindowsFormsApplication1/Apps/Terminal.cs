@@ -1561,6 +1561,15 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             }
         }
 
+        public void cmd_bash(String[] args)
+        {
+                Process p = new Process();
+                p.StartInfo.FileName = "powershell";
+                p.StartInfo.Arguments = "C:\\ShiftOS\\bin\\bash.exe";
+                p.StartInfo.WorkingDirectory = current_dir;
+                p.Start();
+        }
+
         public void cmd_default(String[] args)
         {
             if (API.OpenProgram(args[0]) == false)
@@ -1615,48 +1624,13 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
                         }
                         if (done == false)
                         {
-                            // This runs LUA and EXE Applications
+                            // This runs EXE Applications like Core Utils
                             // Created By Carver Harrison (@carverh)
-                            if (File.Exists("C:\\ShiftOS\\LuaApps\\" + args[0] + ".lua"))
-                            {
-                                string lp = "C:\\ShiftOS\\LuaApps\\" + args[0] + ".lua";
-                                WriteLine(lp);
-                                var l = new LuaInterpreter(lp);
-                            }
-                            else if (File.Exists("C:\\ShiftOS\\bin\\" + args[0] + ".exe"))
-                            {
-                                bool isFirstArg = true;
-                                string exeArgs = "";
-                                foreach (string arg in args)
-                                {
-                                    if (!isFirstArg)
-                                    {
-                                        exeArgs = exeArgs + " " + arg;
-                                    }
-                                    else
-                                    {
-                                        isFirstArg = false;
-                                    }
-                                }
-                                string lp = "C:\\ShiftOS\\bin\\" + args[0] + ".exe";
-                                Process p = new Process();
-                                p.StartInfo.Arguments = exeArgs;
-                                p.StartInfo.UseShellExecute = false;
-                                p.StartInfo.RedirectStandardOutput = true;
-                                p.StartInfo.FileName = lp;
-                                p.StartInfo.CreateNoWindow = true;
-                                p.StartInfo.ErrorDialog = false;
-                                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                                p.StartInfo.WorkingDirectory = current_dir;
-                                p.Start();
-
-                                WriteLine(p.StandardOutput.ReadToEnd());
-                                p.WaitForExit();
-                            }
-                            else
-                            {
-                                wrongcommand();
-                            }
+                            wrongcommand();
+                        }
+                        else
+                        {
+                            wrongcommand();
                         }
                     }
                 }
@@ -1683,6 +1657,16 @@ HIJACKER is a utility that allows you to hijack any system and install ShiftOS o
             WriteLine("Package 'timedistorter' not installed");
         }
 
+        #endregion
+
+        #region RunEXE By Carver Harrison
+        /// <summary>
+        /// RunExe 1.1
+        /// This will run .exe files inside of /bin
+        /// Created By Carver Harrison (@carverh)
+        /// </summary>
+        /// <param name="args">string[] args</param>
+        
         #endregion
 
         private void StartChoice1EndStory()

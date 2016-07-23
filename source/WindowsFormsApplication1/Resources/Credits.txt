@@ -3,9 +3,10 @@ ShiftOS #VER#
 == Developers ==
 Michael VanOverbeek
 Philip Adams
+Carver Harrison
+William
 GabrielTK
 PCSource
-Carver Harrison
 AShifter
 
 
